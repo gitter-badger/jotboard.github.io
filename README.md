@@ -1,4 +1,2 @@
-textnet.github.io
-=================
+## Textnet
 
-Potatoes.
