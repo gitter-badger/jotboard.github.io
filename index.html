@@ -1,1 +1,124 @@
-Opened!!
+<!DOCTYPE html>
+<html id="html">
+<head>
+
+<!-- Basic -->
+<title>Textnet</title>
+<base target="_blank">
+<meta name="viewport" content="initial-scale=1.1, maximum-scale=1.1, user-scalable=no, width=device-width">
+<link rel="dns-prefetch" href="//sociao.github.io/"/>
+<link rel="dns-prefetch" href="https://ajax.googleapis.com/"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="robots" content="index,follow">
+<meta name="revisit-after" content="7 days">
+
+<!-- Google -->
+<meta name="title" content="Textnet">
+<meta name="description" content="Textnet is a semi-anonymous social network that serves as a digital notebook and collaborative textbox for kicks.">
+<meta name="Keywords" content="textnet, semi-anonymous, social, collaborate, storage, textbox, storage">
+<link href="https://plus.google.com/108766666836826673443" rel="publisher" />
+
+<!-- Visual -->
+<link rel="apple-touch-icon" href="//img3.wikia.nocookie.net/__cb20140507102442/humble/images/7/75/FaviconTN.ico" />
+<link rel="shortcut icon" href="//img3.wikia.nocookie.net/__cb20140507102442/humble/images/7/75/FaviconTN.ico" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:300|Source+Code+Pro:400,700" type="text/css" data-noprefix />
+<link rel="stylesheet" href="//fontawesome.io/assets/font-awesome/css/font-awesome.css" type="text/css" data-noprefix />
+
+<!-- Facebook -->
+<div id="fb-root"></div>
+<meta property="og:title" content="Textnet"/>
+<meta property="og:description" content="Textnet is a semi-anonymous social network that serves as a digital notebook and collaborative textbox for kicks."/>
+<meta property="og:url" content="http://sociao.github.io/textnet/" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@SociaoPeople">
+<meta name="twitter:title" content="Textnet">
+<meta name="twitter:description" content="Textnet is a semi-anonymous social network that serves as a digital notebook and collaborative textbox for kicks.">
+<meta name="twitter:creator" content="@SociaoChris">
+<meta name="twitter:image:src" content="http://p-hold.com/city/506/190">
+<meta name="twitter:domain" content="http://sociao.github.io/textnet/">
+
+<!-- Microsoft Windows -->
+<meta name="application-name" content="Textnet" />
+<meta name="msapplication-TileColor" content="#2086E5" />
+
+</head>
+<body style="display: none;" id="body">
+
+<div class="body container">
+	<!-- Main Application -->
+	<div class="main no-select" id="main">
+		<textarea id="form"></textarea>
+	</div>
+	<!-- Playlist -->
+	<div class="tn-radio-frame no-select"></div>
+	<!-- .navagation -->
+	<div default-cur class="navagation no-select">
+		<!-- .container -->
+		<div class="container">
+			<form role="search" action="http://sociao.github.io/cdn/emph/" method="get" target="_blank">
+				<div class="form-group">
+					<input type="text" id="namespace" name="q" class="form-control" placeholder="load, overwrite, look..." />
+				</div>
+			</form>
+			<div class="nav-select" onclick="credits()">Textnet</div>
+			<div class="nav-select" id="save" onclick="save()" title="Save Textnet">Save</div>
+			<div class="nav-select" id="load" onclick="load()" title="Load Textnet">Load</div>
+			<div class="nav-select" id="menu-btn" title="Toggle Menu">More</div>
+			<div class="block" id="submenu">
+				<div class="select" onclick="hashIt('groupies')">Groupies</div>
+				<div class="select" onclick="hashIt('selectAll')">Select All</div>
+				<div class="select" onclick="hashIt('fbShare')">Status</div>
+				<div class="select" onclick="hashIt('twShare')">Tweet</div>
+				<div class="select" onclick="hashIt('autosave')" id="autosave-btn">#autosave</div>
+				<div class="select" onclick="hashIt('youtube')">#youtube</div>
+				<div class="select" onclick="hashIt('spotify')">#spotify</div>
+				<div class="select" onclick="hashIt('gamecenter')">#gamecenter</div>
+				<div class="select" onclick="hashIt('mjxscape')">#mjxscape</div>
+			</div>
+		</div>
+		<!-- /.container -->
+	</div>
+	<!-- /.navagation -->
+</div>
+
+<!-- jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+<!-- This be Automatic, also Bootstrap. -->
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet" data-noprefix />
+<!-- Sociao.IO -->
+<link rel="stylesheet" href="//sociao.github.io/textnet/files/system.css" data-noprefix />
+
+<script>
+(function() {
+        // Backend
+        var backend = document.createElement("script");
+        var backend_type = document.getElementsByTagName("script")[0];
+        backend.type = "text/javascript";
+        backend.async = true;
+        backend.src = "//sociao.github.io/textnet/files/backend.js";
+        backend_type.parentNode.insertBefore(backend, backend_type);
+        // System.JS
+        var make = document.createElement("script");
+        var make_type = document.getElementsByTagName("script")[0];
+        make.parentNode.insertBefore(make, make_type);
+        make.type = "text/javascript";
+        make.async = true;
+        make.src = "//sociao.github.io/textnet/files/system.js";
+})();
+
+// Groupies
+TogetherJSConfig_siteName = "Textnet";
+TogetherJSConfig_toolName = "Groupies";
+TogetherJSConfig_dontShowClicks = true;
+TogetherJSConfig_youtube = true;
+TogetherJSConfig_disableWebRTC = false;
+TogetherJSConfig_suppressInvite = false;
+TogetherJSConfig_suppressJoinConfirmation = true;
+</script>
+
+</body>
+</html>
