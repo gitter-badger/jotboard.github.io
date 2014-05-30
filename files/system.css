@@ -1,0 +1,235 @@
+/* Fonts Bro, they get updated man! */
+[raleway], .raleway { font-family: "Raleway", san-serif; }
+[source-code-pro], .source-code-pro { font-family: "Source Code Pro", san-serif; }
+
+/* Cursor Attributes (cuz im lazy) */
+[default-cur] { cursor: default; }
+[pointer-cur] { cursor: pointer; }
+[none-cur] { cursor: none; }
+
+.nowrap-auto {
+    /* A pretty neat class I managed to make in Bootstrap, for navbars'n'stuff */
+	white-space: nowrap;
+	width: auto;
+}
+
+#_player_frame {
+	width: 100%;
+	height: 320px;
+	margin-top: 10px;
+}
+
+.tn-radio-frame {
+	min-width: 260px;
+	max-width: 400px;
+	position: fixed;
+	right: 12px;
+	bottom: 6px;
+	opacity: 0.5;
+}
+
+.tn-radio-frame:hover {
+	transition: opacity 0.2s linear;
+	transition: width 0.5s ease;
+	width: 48%;
+	opacity: 1;
+}
+
+.tn-radio {
+	height: 80px;
+	width: 100%;
+}
+
+.togetherjs #togetherjs-dock-participants .togetherjs-dock-person,
+.togetherjs #togetherjs-dock-participants .togetherjs-dock-person.togetherjs-active,
+.togetherjs #togetherjs-buttons #togetherjs-profile-button,
+.togetherjs #togetherjs-buttons #togetherjs-share-button,
+.togetherjs #togetherjs-buttons #togetherjs-audio-button,
+.togetherjs #togetherjs-buttons #togetherjs-chat-button {
+	background-color: transparent !important;
+}
+
+div.bootbox.modal, div.bootbox.modal *,
+#togetherjs-dock, #togetherjs-dock * {
+	outline: none;
+}
+
+#togetherjs-dock.togetherjs-dock-right {
+	top: 0 !important;
+	right: 0 !important;
+}
+
+.togetherjs #togetherjs-buttons .togetherjs-button {
+	border-top: 0;
+}
+
+.togetherjs .togetherjs-window header button.togetherjs-close {
+	border-left: 1px solid transparent !important;
+}
+
+#togetherjs-dock-anchor,
+#togetherjs-window-pointer-right {
+	display: none !important;
+}
+
+#togetherjs-dock {
+	background-color: transparent;
+	box-shadow: 0 0 0 transparent;
+}
+
+#body, #main {
+    background: #0B8BFF;
+}
+
+#form {
+	background: #0B8BFF;
+	font: 14px "Source Code Pro", sans-serif;
+	color: #F2F2F2;
+	width: calc(100% - 10.5%);
+	border-radius: 0;
+	height: 100%;
+	float: right;
+}
+#form::-webkit-input-placeholder {
+	font: 65px "Raleway", san-serif;
+	color: #292929;
+}
+#form::-moz-input-placeholder {
+	font: 65px "Raleway", san-serif;
+	color: #292929;
+}
+#form::-o-input-placeholder {
+	font: 65px "Raleway", san-serif;
+	color: #292929;
+}
+#form::-ms-input-placeholder {
+	font: 65px "Raleway", san-serif;
+	color: #292929;
+}
+
+div.bootbox.modal, div.bootbox.modal *, 
+.no-select, .no-select * {
+	user-select: none;
+}
+
+#main {
+	box-sizing: border-box;
+	width: 100%;
+	height: 100%;
+	min-width: 100%;
+	min-height: 100%;
+	max-width: 100%;
+	max-height: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+html, body, #html, #body {
+	transition: background 0.650s ease;
+}
+
+.navagation #namespace {
+	text-align: center;
+	width: 100%;
+	margin-top: 10px;
+	margin-left: -1%;
+}
+
+.navagation .container {
+	width: 98%;
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.navagation .container .select {
+    width: 98%;
+}
+
+.navagation .nav-select,
+.navagation .select {
+	text-align: center;
+	width: 98%;
+	margin: 7px .5% 7px .5%;
+	cursor: pointer;
+}
+
+.navagation .nav-select {
+	font-size: 18px;
+}
+
+.navagation .select {
+	font-size: 14px;
+}
+
+.navagation:hover {
+	width: 185px;
+}
+
+.navagation {
+	transition: width 0.174s ease;
+	width: 10%;
+	overflow-y: scroll;
+	overflow-x: scroll;
+	white-space: nowrap;
+	font-family: "Raleway", san-serif;
+	height: 100%;
+	max-height: 100%;
+	position: fixed;
+	left: 0;
+	top: 0;
+	background: #D4D4D4;
+	box-shadow: inset 0 0 5px #D0D0D0;
+	padding: 1%;
+}
+
+div.body.container {
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+	min-width: 100%;
+	min-height: 100%;
+	max-width: 100%;
+	max-height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+html, body, #html, #body {
+	overflow: hidden;
+	margin: 0;
+	padding: 0.5%;
+	width: 100%;
+	height: 99.5%;
+}
+
+iframe, textarea, input {
+	resize: none;
+	outline: none;
+	border: none;
+}
+
+*,:hover { transform: translateZ(0); }
+.block, [block=true] { display: none !important; }
+.no-block, [block=false] { display: visible !important; }
+[link], .link { cursor: pointer !important; }
+[spacer] { height: 5px; }
+
+*::-webkit-scrollbar { background: none; width: 0; }
+*::-webkit-scrollbar-thumb { background: none; }
+*::-webkit-scrollbar-thumb:hover { background: none; }
+*::-webkit-scrollbar-thumb:active { background: none; }
+
+*::-moz-scrollbar { background: none; width: 0; }
+*::-moz-scrollbar-thumb { background: none; }
+*::-moz-scrollbar-thumb:hover { background: none; }
+*::-moz-scrollbar-thumb:active { background: none; }
+
+*::-o-scrollbar { background: none; width: 0; }
+*::-o-scrollbar-thumb { background: none; }
+*::-o-scrollbar-thumb:hover { background: none; }
+*::-o-scrollbar-thumb:active { background: none; }
+
+*::-ms-scrollbar { background: none; width: 0; }
+*::-ms-scrollbar-thumb { background: none; }
+*::-ms-scrollbar-thumb:hover { background: none; }
+*::-ms-scrollbar-thumb:active { background: none; }
