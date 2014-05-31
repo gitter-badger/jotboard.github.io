@@ -97,20 +97,17 @@ $.getScript("https://marcuswestin.github.io/store.js/store.min.js").done(functio
         console.error("Backend.js: Store.js > crashed.");
 });
 
-$.fn.toggleAttr = function(_0, _1, _2) {
+jQuery.fn.toggleAttr = function(attr) {
         return this.each(function() {
-                var self = $(this);
-                if (self.attr(_0) == _1) self.attr(_0, _2);
-                else self.attr(_0, _1);
+                $(this).attr(attr) ? $(this).removeAttr(attr) : $(this).attr(attr, attr);
         });
 };
 
-$.fn.toggleText = function(_0, _1) {
+jQuery.fn.toggleText = function(_0, _1) {
         return this.each(function() {
-                var $this = $(this),
-                        text = $this.text();
-                if (text.indexOf(_0) > -1) $this.text(text.replace(_0, _1));
-                else $this.text(text.replace(_1, _0));
+                var text = $(this).text();
+                if (text.indexOf(_0) > -1) $(this).text(text.replace(_0, _1));
+                else $(this).text(text.replace(_1, _0));
         });
 };
 
