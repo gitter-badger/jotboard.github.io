@@ -1,18 +1,3 @@
-jQuery.fn.toggleAttr = function(attr, attr1, attr2) {
-        return this.each(function() {
-                if ($(this).attr(attr) == attr1) $(this).attr(attr, attr2);
-                else $(this).attr(attr, attr1);
-        });
-};
-
-jQuery.fn.toggleText = function(_0, _1) {
-        return this.each(function() {
-                var text = $(this).text();
-                if (text.indexOf(_0) > -1) $(this).text(text.replace(_0, _1));
-                else $(this).text(text.replace(_1, _0));
-        });
-};
-
 $(window).load(function() {
         // Stream (constant)
         var streamFunction = function() {
@@ -56,6 +41,9 @@ $(window).load(function() {
                                         for (var i = 1; i < hashes.length; i++) {
                                                 // Run the function. We run the # value through the window to grab the function, hence the name #MODS.
                                                 window[hashes[i]]();
+                                                if (typeof hashes === "undefined") {
+                                                        console.error("Hash doesn't exist, hit us up on http://textnet.github.io/report/ to submit a new feature.");
+                                                }
                                                 // Thanks to @noahgelman from CSS-Tricks to help me out with this.
                                         }
                                 }
@@ -81,6 +69,21 @@ var grabSelectorAll = function(u) { return document.querySelectorAll(u); };
 var grabID = function(u) { return document.getElementById(u); };
 var grabClass = function(u) { return document.getElementsByClassName(u); };
 var grabTag = function(u) { return document.getElementsByTagName(u); };
+
+jQuery.fn.toggleAttr = function(attr, attr1, attr2) {
+        return this.each(function() {
+                if ($(this).attr(attr) == attr1) $(this).attr(attr, attr2);
+                else $(this).attr(attr, attr1);
+        });
+};
+
+jQuery.fn.toggleText = function(_0, _1) {
+        return this.each(function() {
+                var text = $(this).text();
+                if (text.indexOf(_0) > -1) $(this).text(text.replace(_0, _1));
+                else $(this).text(text.replace(_1, _0));
+        });
+};
 
 $.getScript("//cdn.craig.is/js/mousetrap/mousetrap.min.js").done(function() {
         console.info("Backend.js: Mousetrap > loaded.");
@@ -134,18 +137,6 @@ function load() {
                 notify("Loaded", "Your Textnet '" + namespace.value + "' has been successfully loaded.");
                 console.info("Backend.js: " + namespace.value + " > loaded.");
         }
-}
-
-function player(uri) {
-        $(".tn-radio-frame").append("<div><iframe class='tn-radio' src='https://embed.spotify.com/?uri=" + uri + "'></iframe></div>");
-        console.info("System.JS: Player function executed.");
-}
-
-function notify(l4, l4_1) {
-        new Notify(l4, {
-                body: l4_1,
-                icon: "http://static4.wikia.nocookie.net/humble/images/1/18/TextnetFBPhoto.png"
-        }).show();
 }
 
 function hashIt(hash) {
@@ -224,6 +215,18 @@ function hashIt(hash) {
                 window.location.href = "http://" + window.location.host + "/textnet/" + "#" + hash;
                 location.reload(true);
         }
+}
+
+function player(uri) {
+        $(".tn-radio-frame").append("<div><iframe class='tn-radio' src='https://embed.spotify.com/?uri=" + uri + "'></iframe></div>");
+        console.info("System.JS: Player function executed.");
+}
+
+function notify(l4, l4_1) {
+        new Notify(l4, {
+                body: l4_1,
+                icon: "http://static4.wikia.nocookie.net/humble/images/1/18/TextnetFBPhoto.png"
+        }).show();
 }
 
 $.getScript("https://cdn.rawgit.com/alexgibson/notify.js/master/notify.js").done(function() {
