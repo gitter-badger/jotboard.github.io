@@ -97,6 +97,7 @@ $(window).load(function() {
 });
 
 // Grabbers
+var loadScript = function(a, b, c) { $.getScript(a).done(b).fail(c); };
 var hashline = function(u) { return window.location.href.indexOf("#" + u) != -1; };
 var grabSelector = function(u) { return document.querySelector(u); };
 var grabSelectorAll = function(u) { return document.querySelectorAll(u); };
@@ -144,8 +145,12 @@ function load() {
 }
 
 function hashIt(hash) {
-        if (hash == "spotify") { player("spotify:user:1249813849:playlist:7gMrshUGhhYAKThn2RT8eQ"); }
-        if (hash == "mjxscape") { player("spotify:album:7pomP86PUhoJpY3fsC0WDQ"); }
+        if (hash == "spotify") {
+                player("spotify:user:1249813849:playlist:7gMrshUGhhYAKThn2RT8eQ");
+        }
+        if (hash == "mjxscape") {
+                player("spotify:album:7pomP86PUhoJpY3fsC0WDQ");
+        }
         if (hash == "groupies") {
                 TogetherJS(this);
                 notify("Groupies", "Be sure not to expose personal infomation when in a public room.");
@@ -214,10 +219,19 @@ function hashIt(hash) {
 }
 
 $(function() {
-        $.when(
-        $.getScript(("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/analytics.js"), $.getScript("https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"), $.getScript("https://marcuswestin.github.io/store.js/store.min.js"), $.getScript("https://cdn.rawgit.com/alexgibson/notify.js/master/notify.js"), $.getScript("https://leaverou.github.io/prefixfree/prefixfree.min.js"), $.getScript("//cdn.craig.is/js/mousetrap/mousetrap.min.js"), $.getScript("//momentjs.com/downloads/moment.min.js"), $.getScript("//apis.google.com/js/platform.js"), $.getScript("//togetherjs.com/togetherjs-min.js"), $.getScript("//bootboxjs.com/bootbox.js"), $.Deferred(function(deferred) {
-                $(deferred.resolve);
-        })).done(function() {
+        loadScript(("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/analytics.js", function() {
+                var _gaq = _gaq || [];
+                _gaq.push(["_setAccount", "UA-37813397-3"]);
+                _gaq.push(["_trackPageview"]);
+        }, function() {
+                console.error("Analytics loaded");
+        });
+        loadScript("https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js", function() {
+                console.info("Bootstrap loaded");
+        }, function() {
+                console.error("Bootstrap crashed");
+        });
+        loadScript("https://marcuswestin.github.io/store.js/store.min.js", function() {
                 console.info("Backend.js: Store.js > loaded.");
                 var form = grabSelectorAll("#form");
                 var namespace = grabSelectorAll("#namespace");
@@ -227,9 +241,20 @@ $(function() {
                 } else {
                         console.log("Hello");
                 }
-                var _gaq = _gaq || [];
-                _gaq.push(["_setAccount", "UA-37813397-3"]);
-                _gaq.push(["_trackPageview"]);
+        }, function() {
+                console.error("Store.JS crashed");
+        });
+        loadScript("https://cdn.rawgit.com/alexgibson/notify.js/master/notify.js", function() {
+                console.info("Notify.JS loaded");
+        }, function() {
+                console.error("Notify.JS crashed");
+        });
+        loadScript("http://leaverou.github.io/prefixfree/prefixfree.min.js", function() {
+                console.info("Prefixfree loaded");
+        }, function() {
+                console.error("Prefixfree crashed");
+        });
+        loadScript("//cdn.craig.is/js/mousetrap/mousetrap.min.js", function() {
                 // Keyboard Combos
                 Mousetrap.bind("mod+a", selectTextnet);
                 Mousetrap.bind("mod+m", save);
@@ -240,6 +265,28 @@ $(function() {
                                 message: "YOU BLOODY DID IT, WOOOO YEEEEAAAHHH!!!"
                         });
                 });
+        }, function() {
+                console.error("Mousetrap crashed");
+        });
+        loadScript("//momentjs.com/downloads/moment.min.js", function() {
+                console.info("MomentJS loaded");
+        }, function() {
+                console.error("MomentJS crashed");
+        });
+        loadScript("//apis.google.com/js/platform.js", function() {
+                console.info("Google Platform loaded");
+        }, function() {
+                console.error("Google Platform crashed");
+        });
+        loadScript("//togetherjs.com/togetherjs-min.js", function() {
+                console.info("TogetherJS loaded");
+        }, function() {
+                console.error("TogetherJS crashed");
+        });
+        loadScript("//bootboxjs.com/bootbox.js", function() {
+                console.info("Bootbox loaded");
+        }, function() {
+                console.error("Bootbox crashed");
         });
 });
 
