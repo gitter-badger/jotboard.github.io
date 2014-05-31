@@ -1,9 +1,3 @@
-$("#menu-btn").click(function() {
-        $(this).toggleText("More", "Less");
-        $(this).toggleAttr("title", "Open Menu", "Close Menu");
-        classToggle("#submenu", "block");
-});
-
 function feature() {
         bootbox.dialog({
                 title: "Textnet Featurettes, a special unlisted selection for Textnet masters.",
@@ -25,20 +19,8 @@ function mjxscape() {
 function newUpdate() {
         bootbox.dialog({
                 title: "Update Notes:",
-                message: "The new update features the new navagation made from the ground-up."
+                message: "The new update features a snazzy new address, and new #MODS."
         });
-}
-
-function player(uri) {
-        $(".tn-radio-frame").append("<div><iframe class='tn-radio' src='https://embed.spotify.com/?uri=" + uri + "'></iframe></div>");
-        console.info("System.JS: Player function executed.");
-}
-
-function notify(l4, l4_1) {
-        new Notify(l4, {
-                body: l4_1,
-                icon: "http://static4.wikia.nocookie.net/humble/images/1/18/TextnetFBPhoto.png"
-        }).show();
 }
 
 function openWebpage() {
