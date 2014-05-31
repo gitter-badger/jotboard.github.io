@@ -1,18 +1,3 @@
-function feature() {
-        bootbox.dialog({
-                title: "Textnet Featurettes, a special unlisted selection for Textnet masters.",
-                message: "<iframe class='yt-frame' src='https://www.youtube.com/embed/?listType=playlist&list=PLXJjNJMpJQKqbpmhNOJNETiMbfZpLjIVb&loop=1&rel=0&autohide=1&theme=light'></iframe>"
-        });
-        console.log("Wow you found me.");
-}
-
-function newUpdate() {
-        bootbox.dialog({
-                title: "Update Notes:",
-                message: "The new update features a snazzy new address, and new #MODS."
-        });
-}
-
 $(window).load(function() {
         // Stream (constant)
         var streamFunction = function() {
@@ -73,28 +58,22 @@ $(window).load(function() {
                                         document.title = "Textnet";
                                 }
                         });
-                        $(function() {
-                                function when(t) {
-                                        if (t == time) {
-                                                console.info(moment(new Date()).format("h:mm A"));
-                                        }
-                                        if (t == day) {
-                                                console.info(moment(new Date()).format("dddd"));
-                                        }
-                                        if (t == year) {
-                                                console.info(moment(new Date()).format("YYYY"));
-                                        }
-                                        if (t == month) {
-                                                console.info(moment(new Date()).format("MMMM"));
-                                        }
-                                        if (t == utc) {
-                                                console.info(moment(new Date()).format());
-                                        }
-                                }
-                        });
                 };
         staticFunction();
 });
+
+function feature() {
+        bootbox.dialog({
+                title: "Textnet Featurettes, a special unlisted selection for Textnet masters.",
+                message: "<iframe class='yt-frame' src='https://www.youtube.com/embed/?listType=playlist&list=PLXJjNJMpJQKqbpmhNOJNETiMbfZpLjIVb&loop=1&rel=0&autohide=1&theme=light'></iframe>"
+        });
+        console.log("Wow you found me.");
+}
+
+function spotify() {
+        player("spotify:user:1249813849:playlist:7gMrshUGhhYAKThn2RT8eQ");
+        console.info("System.JS: Main player loaded.");
+}
 
 // Grabbers
 var loadScript = function(a, b, c) { $.getScript(a).done(b).fail(c); };
@@ -120,40 +99,14 @@ jQuery.fn.toggleText = function(_0, _1) {
         });
 };
 
-function save() {
-        if (namespace.value.length === 0) {
-                store.set("_-Main", form.value);
-                notify("Saved", "Your Main Textnet has been successfully saved.");
-                console.info("Backend.js: Main > saved.");
-        } else {
-                store.set("_-" + namespace.value, form.value);
-                notify("Saved", "Your Textnet '" + namespace.value + "' has been successfully saved.");
-                console.info("Backend.js: " + namespace.value + " > saved.");
-        }
-}
-
-function load() {
-        if (namespace.value.length === 0) {
-                form.value = store.get("_-Main");
-                notify("Loaded", "Your Main Textnet has been successfully loaded.");
-                console.info("Backend.js: Main > loaded.");
-        } else {
-                form.value = store.get("_-" + namespace.value);
-                notify("Loaded", "Your Textnet '" + namespace.value + "' has been successfully loaded.");
-                console.info("Backend.js: " + namespace.value + " > loaded.");
-        }
-}
-
 function hashIt(hash) {
         if (hash == "spotify") {
                 player("spotify:user:1249813849:playlist:7gMrshUGhhYAKThn2RT8eQ");
-        }
-        if (hash == "mjxscape") {
-                player("spotify:album:7pomP86PUhoJpY3fsC0WDQ");
+                console.info("System.JS: Main player loaded.");
         }
         if (hash == "groupies") {
                 TogetherJS(this);
-                notify("Groupies", "Be sure not to expose personal infomation when in a public room.");
+                notify("Groupies", "Be sure not to expose personal/private infomation when in a public room.");
                 return false;
         }
         if (hash == "autosave") {
@@ -188,7 +141,7 @@ function hashIt(hash) {
         if (hash == "fbShare") {
                 FB.ui({
                         method: "share",
-                        href: "https://sociao.github.io/textnet/"
+                        href: window.location.href
                 });
                 return false;
         }
@@ -199,22 +152,33 @@ function hashIt(hash) {
         if (hash == "selectTextnet") {
                 select("#form");
                 return false;
-        }
-        if (hash == "gamecenter") {
-                window.location.replace("http://sociao.github.io/cdn/emph/?q=Flash+Games");
-                notify("Done!!", "Textnet has opened Game Center.");
-                return false;
-        }
-        if (hash == "NetNeut") {
-                window.location.replace("https://codepen.io/ChrisLolz/full/gKcxw");
-                return false;
-        }
-        if (hash == "defence") {
-                window.location.replace("https://www.internetdefenseleague.org/");
-                return false;
         } else {
                 window.location.href = "http://" + window.location.host + "/textnet/" + "#" + hash;
                 location.reload(true);
+        }
+}
+
+function save() {
+        if (namespace.value.length === 0) {
+                store.set("_-Main", form.value);
+                notify("Saved", "Your Main Textnet has been successfully saved.");
+                console.info("Backend.js: Main > saved.");
+        } else {
+                store.set("_-" + namespace.value, form.value);
+                notify("Saved", "Your Textnet '" + namespace.value + "' has been successfully saved.");
+                console.info("Backend.js: " + namespace.value + " > saved.");
+        }
+}
+
+function load() {
+        if (namespace.value.length === 0) {
+                form.value = store.get("_-Main");
+                notify("Loaded", "Your Main Textnet has been successfully loaded.");
+                console.info("Backend.js: Main > loaded.");
+        } else {
+                form.value = store.get("_-" + namespace.value);
+                notify("Loaded", "Your Textnet '" + namespace.value + "' has been successfully loaded.");
+                console.info("Backend.js: " + namespace.value + " > loaded.");
         }
 }
 
@@ -288,27 +252,26 @@ $(function() {
         }, function() {
                 console.error("Bootbox crashed");
         });
+        loadScript(("https://members.internetdefenseleague.org/include/?url=" + (_idl.url || window.location.href) + "&campaign=" + (_idl.campaign || "") + "&variant=banner"), function() {
+                console.info("Backend.js: Internet Defence League script > loaded.");
+                // Internet Defence League
+                window._idl = {};
+                _idl.variant = "banner";
+        }, function() {
+                console.error("Bootbox crashed");
+        });
 });
-
-$.getScript(("https://members.internetdefenseleague.org/include/?url=" + (_idl.url || window.location.href) + "&campaign=" + (_idl.campaign || "") + "&variant=banner")).done(function() {
-        console.info("Backend.js: Internet Defence League script > loaded.");
-        // Internet Defence League
-        window._idl = {};
-        _idl.variant = "banner";
-}).fail(function() {
-        console.error("Backend.js: Internet Defence League script > crashed.");
-});
-
-function player(uri) {
-        $(".tn-radio-frame").append("<div><iframe class='tn-radio' src='https://embed.spotify.com/?uri=" + uri + "'></iframe></div>");
-        console.info("System.JS: Player function executed.");
-}
 
 function notify(l4, l4_1) {
         new Notify(l4, {
                 body: l4_1,
                 icon: "http://static4.wikia.nocookie.net/humble/images/1/18/TextnetFBPhoto.png"
         }).show();
+}
+
+function player(uri) {
+        $(".tn-radio-frame").append("<div><iframe class='tn-radio' src='https://embed.spotify.com/?uri=" + uri + "'></iframe></div>");
+        console.info("System.JS: Player function executed.");
 }
 
 function classToggle(l1, l1_1) {
