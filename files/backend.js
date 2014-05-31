@@ -1,3 +1,17 @@
+jQuery.fn.toggleAttr = function(attr, attr_1, attr_2) {
+        return this.each(function() {
+                if ($(this).attr(attr) == attr_1) $(this).attr(attr, attr_2);
+                else $(this).attr(attr, attr_1);
+        });
+};
+
+jQuery.fn.toggleText = function(attr, attr_1) {
+        return this.each(function() {
+                if ($(this).text().indexOf(attr) > -1) $(this).text($(this).text().replace(attr, attr_1));
+                else $(this).text($(this).text().replace(attr_1, attr));
+        });
+};
+
 $(window).load(function() {
         // Stream (constant)
         var streamFunction = function() {
@@ -62,42 +76,14 @@ $(window).load(function() {
         staticFunction();
 });
 
-function feature() {
-        bootbox.dialog({
-                title: "Textnet Featurettes, a special unlisted selection for Textnet masters.",
-                message: "<iframe class='yt-frame' src='https://www.youtube.com/embed/?listType=playlist&list=PLXJjNJMpJQKqbpmhNOJNETiMbfZpLjIVb&loop=1&rel=0&autohide=1&theme=light'></iframe>"
-        });
-        console.log("Wow you found me.");
-}
-
-function spotify() {
-        player("spotify:user:1249813849:playlist:7gMrshUGhhYAKThn2RT8eQ");
-        console.info("System.JS: Main player loaded.");
-}
-
 // Grabbers
-var loadScript = function(a, b, c) { $.getScript(a).done(b).fail(c); };
+var loadScript = function(attr, attr_1, attr_2) { $.getScript(attr).done(attr_1).fail(attr_2); };
 var hashline = function(u) { return window.location.href.indexOf("#" + u) != -1; };
 var grabSelector = function(u) { return document.querySelector(u); };
 var grabSelectorAll = function(u) { return document.querySelectorAll(u); };
 var grabID = function(u) { return document.getElementById(u); };
 var grabClass = function(u) { return document.getElementsByClassName(u); };
 var grabTag = function(u) { return document.getElementsByTagName(u); };
-
-jQuery.fn.toggleAttr = function(attr, attr1, attr2) {
-        return this.each(function() {
-                if ($(this).attr(attr) == attr1) $(this).attr(attr, attr2);
-                else $(this).attr(attr, attr1);
-        });
-};
-
-jQuery.fn.toggleText = function(_0, _1) {
-        return this.each(function() {
-                var text = $(this).text();
-                if (text.indexOf(_0) > -1) $(this).text(text.replace(_0, _1));
-                else $(this).text(text.replace(_1, _0));
-        });
-};
 
 function hashIt(hash) {
         if (hash == "spotify") {
@@ -258,31 +244,39 @@ $(function() {
                 window._idl = {};
                 _idl.variant = "banner";
         }, function() {
-                console.error("Bootbox crashed");
+                console.error("Internet Defence League script > crashed");
         });
 });
 
-function notify(l4, l4_1) {
-        new Notify(l4, {
-                body: l4_1,
+function notify(attr, attr_1) {
+        new Notify(attr, {
+                body: attr_1,
                 icon: "http://static4.wikia.nocookie.net/humble/images/1/18/TextnetFBPhoto.png"
         }).show();
 }
 
-function player(uri) {
-        $(".tn-radio-frame").append("<div><iframe class='tn-radio' src='https://embed.spotify.com/?uri=" + uri + "'></iframe></div>");
+function player(attr) {
+        $(".tn-radio-frame").append("<div><iframe class='tn-radio' src='https://embed.spotify.com/?uri=" + attr + "'></iframe></div>");
         console.info("System.JS: Player function executed.");
 }
 
-function classToggle(l1, l1_1) {
-        $(l1).toggleClass(l1_1);
-        console.info("Backend.js: " + l1_1 + " > classToggle > " + l1);
+function classToggle(attr, attr_1) {
+        $(attr).toggleClass(attr_1);
+        console.info("Backend.js: " + attr_1 + " > classToggle > " + attr);
 }
 
-function select(l3) {
-        grabSelectorAll(l3).focus();
-        grabSelectorAll(l3).select();
-        console.info("Backend.js: " + l3 + " > select");
+function select(attr) {
+        grabSelectorAll(attr).focus();
+        grabSelectorAll(attr).select();
+        console.info("Backend.js: " + attr + " > select");
+}
+
+function feature() {
+        bootbox.dialog({
+                title: "Textnet Featurettes, a special unlisted selection for Textnet masters.",
+                message: "<iframe class='yt-frame' src='https://www.youtube.com/embed/?listType=playlist&list=PLXJjNJMpJQKqbpmhNOJNETiMbfZpLjIVb&loop=1&rel=0&autohide=1&theme=light'></iframe>"
+        });
+        console.log("Wow you found me.");
 }
 
 (function(d, s, id) {
