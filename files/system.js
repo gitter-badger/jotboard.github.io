@@ -41,6 +41,10 @@ function notify(l4, l4_1) {
         }).show();
 }
 
+function openWebpage() {
+        hashIt("url");
+}
+
 function gamingcenter() { hashIt("gamingcenter"); }
 function youtube() { hashIt("youtube"); }
 function NetNeut() { hashIt("NetNeut"); }
