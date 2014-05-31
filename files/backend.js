@@ -219,37 +219,37 @@ function select(l3) {
 }
 
 $.getScript("https://leaverou.github.io/prefixfree/prefixfree.min.js").done(function() {
-        console.info("Backend.js: Prefixfree loaded.");
+        console.info("Backend.js: Prefixfree > loaded.");
 }).fail(function() {
-        console.error("Backend.js: Prefixfree crashed.");
+        console.error("Backend.js: Prefixfree > crashed.");
 });
 
 $.getScript("//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js").done(function() {
         // Bootstrap (JS)
-        console.info("Backend.js: Bootstrap (JS) loaded.");
+        console.info("Backend.js: Bootstrap (JS) > loaded.");
 }).fail(function() {
-        console.error("Backend.js: Bootstrap (JS) crashed.");
+        console.error("Backend.js: Bootstrap (JS) > crashed.");
 });
 
 $.getScript("//momentjs.com/downloads/moment.min.js").done(function() {
         // MomentJS
-        console.info("Backend.js: MomentJS loaded.");
+        console.info("Backend.js: MomentJS > loaded.");
 }).fail(function() {
-        console.error("Backend.js: MomentJS crashed.");
+        console.error("Backend.js: MomentJS > crashed.");
 });
 
 $.getScript("//togetherjs.com/togetherjs-min.js").done(function() {
         // TogetherJS
-        console.info("Backend.js: TogetherJS loaded.");
+        console.info("Backend.js: TogetherJS > loaded.");
 }).fail(function() {
-        console.error("Backend.js: TogetherJS crashed.");
+        console.error("Backend.js: TogetherJS > crashed.");
 });
 
 $.getScript("//bootboxjs.com/bootbox.js").done(function() {
         // TogetherJS
-        console.info("Backend.js: Bootbox loaded.");
+        console.info("Backend.js: Bootbox > loaded.");
 }).fail(function() {
-        console.error("Backend.js: Bootbox crashed.");
+        console.error("Backend.js: Bootbox > crashed.");
 });
 
 $.getScript(("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/analytics.js").done(function() {
