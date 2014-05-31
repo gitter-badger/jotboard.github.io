@@ -16,6 +16,11 @@ $(window).load(function() {
         // Static
         var staticFunction = function() {
                         $(function() {
+                                $("#menu-btn").click(function() {
+                                        $(this).toggleText("More", "Less");
+                                        $(this).toggleAttr("title", "Open Menu", "Close Menu");
+                                        classToggle("#submenu", "block");
+                                });
                                 $("body").toggleAttr("style", "display: none;", "display: visible;");
                                 $("iframe").attr("scrolling", "no").attr("frameborder", "0").attr("allowtransparency", "true");
                                 $("[disabled]").addClass("disabled");
@@ -63,7 +68,7 @@ var grabClass = function(u) { return document.getElementsByClassName(u); };
 var grabTag = function(u) { return document.getElementsByTagName(u); };
 
 $.getScript("//cdn.craig.is/js/mousetrap/mousetrap.min.js").done(function() {
-        console.info("Backend.js: Mousetrap loaded.");
+        console.info("Backend.js: Mousetrap > loaded.");
         // Keyboard Combos
         Mousetrap.bind("mod+a", selectTextnet);
         Mousetrap.bind("mod+m", save);
@@ -75,11 +80,11 @@ $.getScript("//cdn.craig.is/js/mousetrap/mousetrap.min.js").done(function() {
                 });
         });
 }).fail(function() {
-        console.error("Backend.js: Mousetrap crashed");
+        console.error("Backend.js: Mousetrap > crashed");
 });
 
 $.getScript("https://marcuswestin.github.io/store.js/store.min.js").done(function() {
-        console.info("Backend.js: Store.js loaded.");
+        console.info("Backend.js: Store.js > loaded.");
         var form = grabSelectorAll("#form");
         var namespace = grabSelectorAll("#namespace");
         if (window.localStorage["_-Main"]) {
@@ -89,7 +94,7 @@ $.getScript("https://marcuswestin.github.io/store.js/store.min.js").done(functio
                 console.log("Hello");
         }
 }).fail(function() {
-        console.error("Backend.js: Store.js crashed.");
+        console.error("Backend.js: Store.js > crashed.");
 });
 
 $.fn.toggleAttr = function(_0, _1, _2) {
@@ -131,6 +136,18 @@ function load() {
                 notify("Loaded", "Your Textnet '" + namespace.value + "' has been successfully loaded.");
                 console.info("Backend.js: " + namespace.value + " > loaded.");
         }
+}
+
+function player(uri) {
+        $(".tn-radio-frame").append("<div><iframe class='tn-radio' src='https://embed.spotify.com/?uri=" + uri + "'></iframe></div>");
+        console.info("System.JS: Player function executed.");
+}
+
+function notify(l4, l4_1) {
+        new Notify(l4, {
+                body: l4_1,
+                icon: "http://static4.wikia.nocookie.net/humble/images/1/18/TextnetFBPhoto.png"
+        }).show();
 }
 
 function hashIt(hash) {
