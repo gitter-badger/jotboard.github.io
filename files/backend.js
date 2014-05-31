@@ -1,3 +1,17 @@
+jQuery.fn.toggleAttr = function(attr) {
+        return this.each(function() {
+                $(this).attr(attr) ? $(this).removeAttr(attr) : $(this).attr(attr, attr);
+        });
+};
+
+jQuery.fn.toggleText = function(_0, _1) {
+        return this.each(function() {
+                var text = $(this).text();
+                if (text.indexOf(_0) > -1) $(this).text(text.replace(_0, _1));
+                else $(this).text(text.replace(_1, _0));
+        });
+};
+
 $(window).load(function() {
         // Stream (constant)
         var streamFunction = function() {
@@ -96,20 +110,6 @@ $.getScript("https://marcuswestin.github.io/store.js/store.min.js").done(functio
 }).fail(function() {
         console.error("Backend.js: Store.js > crashed.");
 });
-
-jQuery.fn.toggleAttr = function(attr) {
-        return this.each(function() {
-                $(this).attr(attr) ? $(this).removeAttr(attr) : $(this).attr(attr, attr);
-        });
-};
-
-jQuery.fn.toggleText = function(_0, _1) {
-        return this.each(function() {
-                var text = $(this).text();
-                if (text.indexOf(_0) > -1) $(this).text(text.replace(_0, _1));
-                else $(this).text(text.replace(_1, _0));
-        });
-};
 
 function save() {
         if (namespace.value.length === 0) {
