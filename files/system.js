@@ -23,10 +23,7 @@ function newUpdate() {
         });
 }
 
-function openWebpage() {
-        hashIt("url");
-}
-
+function openWebpage() { hashIt("url"); }
 function gamingcenter() { hashIt("gamingcenter"); }
 function youtube() { hashIt("youtube"); }
 function NetNeut() { hashIt("NetNeut"); }
