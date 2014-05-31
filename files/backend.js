@@ -62,23 +62,6 @@ var grabID = function(u) { return document.getElementById(u); };
 var grabClass = function(u) { return document.getElementsByClassName(u); };
 var grabTag = function(u) { return document.getElementsByTagName(u); };
 
-$.fn.toggleAttr = function(_0, _1, _2) {
-        return this.each(function() {
-                var self = $(this);
-                if (self.attr(_0) == _1) self.attr(_0, _2);
-                else self.attr(_0, _1);
-        });
-};
-
-$.fn.toggleText = function(_0, _1) {
-        return this.each(function() {
-                var $this = $(this),
-                        text = $this.text();
-                if (text.indexOf(_0) > -1) $this.text(text.replace(_0, _1));
-                else $this.text(text.replace(_1, _0));
-        });
-};
-
 $.getScript("//cdn.craig.is/js/mousetrap/mousetrap.min.js").done(function() {
         console.info("Backend.js: Mousetrap loaded.");
         // Keyboard Combos
@@ -109,11 +92,22 @@ $.getScript("https://marcuswestin.github.io/store.js/store.min.js").done(functio
         console.error("Backend.js: Store.js crashed.");
 });
 
-$.getScript("https://cdn.rawgit.com/alexgibson/notify.js/master/notify.js").done(function() {
-        console.info("Backend.js: Notify.js loaded.");
-}).fail(function() {
-        console.error("Backend.js: Mousetrap crashed");
-});
+$.fn.toggleAttr = function(_0, _1, _2) {
+        return this.each(function() {
+                var self = $(this);
+                if (self.attr(_0) == _1) self.attr(_0, _2);
+                else self.attr(_0, _1);
+        });
+};
+
+$.fn.toggleText = function(_0, _1) {
+        return this.each(function() {
+                var $this = $(this),
+                        text = $this.text();
+                if (text.indexOf(_0) > -1) $this.text(text.replace(_0, _1));
+                else $this.text(text.replace(_1, _0));
+        });
+};
 
 function save() {
         if (namespace.value.length === 0) {
@@ -207,21 +201,10 @@ function hashIt(hash) {
         }
 }
 
-function classToggle(l1, l1_1) {
-        $(l1).toggleClass(l1_1);
-        console.info("Backend.js: " + l1_1 + " > classToggle > " + l1);
-}
-
-function select(l3) {
-        grabSelectorAll(l3).focus();
-        grabSelectorAll(l3).select();
-        console.info("Backend.js: " + l3 + " > select");
-}
-
-$.getScript("https://leaverou.github.io/prefixfree/prefixfree.min.js").done(function() {
-        console.info("Backend.js: Prefixfree > loaded.");
+$.getScript("https://cdn.rawgit.com/alexgibson/notify.js/master/notify.js").done(function() {
+        console.info("Backend.js: Notify.js loaded.");
 }).fail(function() {
-        console.error("Backend.js: Prefixfree > crashed.");
+        console.error("Backend.js: Mousetrap crashed");
 });
 
 $.getScript("//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js").done(function() {
@@ -231,11 +214,16 @@ $.getScript("//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js").don
         console.error("Backend.js: Bootstrap (JS) > crashed.");
 });
 
-$.getScript("//momentjs.com/downloads/moment.min.js").done(function() {
-        // MomentJS
-        console.info("Backend.js: MomentJS > loaded.");
+$.getScript("https://leaverou.github.io/prefixfree/prefixfree.min.js").done(function() {
+        console.info("Backend.js: Prefixfree > loaded.");
 }).fail(function() {
-        console.error("Backend.js: MomentJS > crashed.");
+        console.error("Backend.js: Prefixfree > crashed.");
+});
+
+$.getScript("//apis.google.com/js/platform.js").done(function() {
+        console.info("Backend.js: Google Platform > loaded");
+}).fail(function() {
+        console.error("Backend.js: Google Platform > crashed");
 });
 
 $.getScript("//togetherjs.com/togetherjs-min.js").done(function() {
@@ -243,13 +231,6 @@ $.getScript("//togetherjs.com/togetherjs-min.js").done(function() {
         console.info("Backend.js: TogetherJS > loaded.");
 }).fail(function() {
         console.error("Backend.js: TogetherJS > crashed.");
-});
-
-$.getScript("//bootboxjs.com/bootbox.js").done(function() {
-        // TogetherJS
-        console.info("Backend.js: Bootbox > loaded.");
-}).fail(function() {
-        console.error("Backend.js: Bootbox > crashed.");
 });
 
 $.getScript(("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/analytics.js").done(function() {
@@ -262,10 +243,29 @@ $.getScript(("https:" == document.location.protocol ? "https://ssl" : "http://ww
         console.error("Backend.js: Traffic Analytics > crashed");
 });
 
-$.getScript("//apis.google.com/js/platform.js").done(function() {
-        console.info("Backend.js: Google Platform > loaded");
+function classToggle(l1, l1_1) {
+        $(l1).toggleClass(l1_1);
+        console.info("Backend.js: " + l1_1 + " > classToggle > " + l1);
+}
+
+function select(l3) {
+        grabSelectorAll(l3).focus();
+        grabSelectorAll(l3).select();
+        console.info("Backend.js: " + l3 + " > select");
+}
+
+$.getScript("//momentjs.com/downloads/moment.min.js").done(function() {
+        // MomentJS
+        console.info("Backend.js: MomentJS > loaded.");
 }).fail(function() {
-        console.error("Backend.js: Google Platform > crashed");
+        console.error("Backend.js: MomentJS > crashed.");
+});
+
+$.getScript("//bootboxjs.com/bootbox.js").done(function() {
+        // TogetherJS
+        console.info("Backend.js: Bootbox > loaded.");
+}).fail(function() {
+        console.error("Backend.js: Bootbox > crashed.");
 });
 
 $.getScript(("https://members.internetdefenseleague.org/include/?url=" + (_idl.url || window.location.href) + "&campaign=" + (_idl.campaign || "") + "&variant=banner")).done(function() {
