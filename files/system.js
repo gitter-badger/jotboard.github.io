@@ -6,20 +6,20 @@ $("#menu-btn").click(function() {
 
 function feature() {
         bootbox.dialog({
-                title: "Featured, a selection of videos from Textnet.",
+                title: "Textnet Featurettes, a special unlisted selection for Textnet masters.",
                 message: "<iframe class='yt-frame' src='https://www.youtube.com/embed/?listType=playlist&list=PLXJjNJMpJQKqbpmhNOJNETiMbfZpLjIVb&loop=1&rel=0&autohide=1&theme=light'></iframe>"
         });
-        console.log("feature");
+        console.log("Wow you found me.");
 }
 
 function spotify() {
         player("spotify:user:1249813849:playlist:7gMrshUGhhYAKThn2RT8eQ");
-        console.info("Spotify Player loaded");
+        console.info("System.js: Main player loaded.");
 }
 
 function mjxscape() {
         player("spotify:album:7pomP86PUhoJpY3fsC0WDQ");
-        console.log("I miss you.");
+        console.log("System.js: I miss you.");
 }
 
 function newUpdate() {
@@ -31,6 +31,7 @@ function newUpdate() {
 
 function player(uri) {
         $(".tn-radio-frame").append("<div><iframe class='tn-radio' src='https://embed.spotify.com/?uri=" + uri + "'></iframe></div>");
+        console.info("Player function executed.");
 }
 
 function notify(l4, l4_1) {
