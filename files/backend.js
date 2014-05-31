@@ -18,8 +18,8 @@ $(window).load(function() {
                         $(function() {
                                 $("#menu-btn").click(function() {
                                         $(this).toggleText("More", "Less");
-                                        $(this).toggleAttr("title", "Open Menu", "Close Menu");
-                                        classToggle("#submenu", "block");
+                                        $(this).toggleAttr("title", "Close Menu", "Open Menu");
+                                        $("#submenu").toggleAttr("style", "display: visible;", "display: none;");
                                 });
                                 $("body").toggleAttr("style", "display: visible;", "display: none;");
                                 $("iframe").attr("scrolling", "no").attr("frameborder", "0").attr("allowtransparency", "true");
