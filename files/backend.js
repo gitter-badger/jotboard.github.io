@@ -1,6 +1,7 @@
-jQuery.fn.toggleAttr = function(attr) {
+jQuery.fn.toggleAttr = function(attr, attr1, attr2) {
         return this.each(function() {
-                $(this).attr(attr) ? $(this).removeAttr(attr) : $(this).attr(attr, attr);
+                if ($(this).attr(attr) == attr1) $(this).attr(attr, attr2);
+                else $(this).attr(attr, attr1);
         });
 };
 
@@ -35,7 +36,7 @@ $(window).load(function() {
                                         $(this).toggleAttr("title", "Open Menu", "Close Menu");
                                         classToggle("#submenu", "block");
                                 });
-                                $("body").toggleAttr("style", "display: none;", "display: visible;");
+                                $("body").toggleAttr("style", "display: visible;", "display: none;");
                                 $("iframe").attr("scrolling", "no").attr("frameborder", "0").attr("allowtransparency", "true");
                                 $("[disabled]").addClass("disabled");
                                 $(window).tooltip({
