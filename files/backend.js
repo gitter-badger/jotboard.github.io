@@ -1,3 +1,18 @@
+function feature() {
+        bootbox.dialog({
+                title: "Textnet Featurettes, a special unlisted selection for Textnet masters.",
+                message: "<iframe class='yt-frame' src='https://www.youtube.com/embed/?listType=playlist&list=PLXJjNJMpJQKqbpmhNOJNETiMbfZpLjIVb&loop=1&rel=0&autohide=1&theme=light'></iframe>"
+        });
+        console.log("Wow you found me.");
+}
+
+function newUpdate() {
+        bootbox.dialog({
+                title: "Update Notes:",
+                message: "The new update features a snazzy new address, and new #MODS."
+        });
+}
+
 $(window).load(function() {
         // Stream (constant)
         var streamFunction = function() {
@@ -58,6 +73,25 @@ $(window).load(function() {
                                         document.title = "Textnet";
                                 }
                         });
+                        $(function() {
+                                function when(t) {
+                                        if (t == time) {
+                                                console.info(moment(new Date()).format("h:mm A"));
+                                        }
+                                        if (t == day) {
+                                                console.info(moment(new Date()).format("dddd"));
+                                        }
+                                        if (t == year) {
+                                                console.info(moment(new Date()).format("YYYY"));
+                                        }
+                                        if (t == month) {
+                                                console.info(moment(new Date()).format("MMMM"));
+                                        }
+                                        if (t == utc) {
+                                                console.info(moment(new Date()).format());
+                                        }
+                                }
+                        });
                 };
         staticFunction();
 });
@@ -85,36 +119,6 @@ jQuery.fn.toggleText = function(_0, _1) {
         });
 };
 
-$.getScript("//cdn.craig.is/js/mousetrap/mousetrap.min.js").done(function() {
-        console.info("Backend.js: Mousetrap > loaded.");
-        // Keyboard Combos
-        Mousetrap.bind("mod+a", selectTextnet);
-        Mousetrap.bind("mod+m", save);
-        Mousetrap.bind("up up down down left right left right b a enter", function() {
-                // Konami Code
-                bootbox.dialog({
-                        title: "THA KONAMI COOOODE!!",
-                        message: "YOU BLOODY DID IT, WOOOO YEEEEAAAHHH!!!"
-                });
-        });
-}).fail(function() {
-        console.error("Backend.js: Mousetrap > crashed");
-});
-
-$.getScript("https://marcuswestin.github.io/store.js/store.min.js").done(function() {
-        console.info("Backend.js: Store.js > loaded.");
-        var form = grabSelectorAll("#form");
-        var namespace = grabSelectorAll("#namespace");
-        if (window.localStorage["_-Main"]) {
-                form.value = store.get("_-Main");
-                console.log("Hello, friend");
-        } else {
-                console.log("Hello");
-        }
-}).fail(function() {
-        console.error("Backend.js: Store.js > crashed.");
-});
-
 function save() {
         if (namespace.value.length === 0) {
                 store.set("_-Main", form.value);
@@ -140,29 +144,11 @@ function load() {
 }
 
 function hashIt(hash) {
+        if (hash == "spotify") { player("spotify:user:1249813849:playlist:7gMrshUGhhYAKThn2RT8eQ"); }
+        if (hash == "mjxscape") { player("spotify:album:7pomP86PUhoJpY3fsC0WDQ"); }
         if (hash == "groupies") {
                 TogetherJS(this);
                 notify("Groupies", "Be sure not to expose personal infomation when in a public room.");
-                return false;
-        }
-        // Open a webpage on Textnet, cleanly
-        if (hash == "url" || hash == "URL") {
-                bootbox.prompt("Open...", function(addr) {
-                        if (addr === null) {
-                                return false;
-                        } else {
-                                window.open(addr, "_blank");
-                        }
-                });
-        }
-        if (hash == "youtube") {
-                bootbox.prompt("YouTube Search", function(srch) {
-                        if (srch === null) {
-                                return false;
-                        } else {
-                                window.open("https://www.youtube.com/results?utm_source=opensearch&search_query=" + srch, "_blank");
-                        }
-                });
                 return false;
         }
         if (hash == "autosave") {
@@ -184,17 +170,14 @@ function hashIt(hash) {
                 };
                 return false;
         }
-        if (hash == "gamecenter") {
-                window.location.replace("http://sociao.github.io/cdn/emph/?q=Flash+Games");
-                notify("Done!!", "Textnet has opened Game Center.");
-                return false;
-        }
-        if (hash == "selectTextnet") {
-                select("#form");
-                return false;
-        }
-        if (hash == "NetNeut") {
-                window.location.replace("https://codepen.io/ChrisLolz/full/gKcxw");
+        if (hash == "youtube") {
+                bootbox.prompt("YouTube Search", function(srch) {
+                        if (srch === null) {
+                                return false;
+                        } else {
+                                window.open("https://www.youtube.com/results?utm_source=opensearch&search_query=" + srch, "_blank");
+                        }
+                });
                 return false;
         }
         if (hash == "fbShare") {
@@ -208,6 +191,19 @@ function hashIt(hash) {
                 window.open("https://sociao.github.io/share/#textnet_twshare", "_blank");
                 return false;
         }
+        if (hash == "selectTextnet") {
+                select("#form");
+                return false;
+        }
+        if (hash == "gamecenter") {
+                window.location.replace("http://sociao.github.io/cdn/emph/?q=Flash+Games");
+                notify("Done!!", "Textnet has opened Game Center.");
+                return false;
+        }
+        if (hash == "NetNeut") {
+                window.location.replace("https://codepen.io/ChrisLolz/full/gKcxw");
+                return false;
+        }
         if (hash == "defence") {
                 window.location.replace("https://www.internetdefenseleague.org/");
                 return false;
@@ -216,6 +212,45 @@ function hashIt(hash) {
                 location.reload(true);
         }
 }
+
+$(function() {
+        $.when(
+        $.getScript(("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/analytics.js"), $.getScript("https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"), $.getScript("https://marcuswestin.github.io/store.js/store.min.js"), $.getScript("https://cdn.rawgit.com/alexgibson/notify.js/master/notify.js"), $.getScript("https://leaverou.github.io/prefixfree/prefixfree.min.js"), $.getScript("//cdn.craig.is/js/mousetrap/mousetrap.min.js"), $.getScript("//momentjs.com/downloads/moment.min.js"), $.getScript("//apis.google.com/js/platform.js"), $.getScript("//togetherjs.com/togetherjs-min.js"), $.getScript("//bootboxjs.com/bootbox.js"), $.Deferred(function(deferred) {
+                $(deferred.resolve);
+        })).done(function() {
+                console.info("Backend.js: Store.js > loaded.");
+                var form = grabSelectorAll("#form");
+                var namespace = grabSelectorAll("#namespace");
+                if (window.localStorage["_-Main"]) {
+                        form.value = store.get("_-Main");
+                        console.log("Hello, friend");
+                } else {
+                        console.log("Hello");
+                }
+                var _gaq = _gaq || [];
+                _gaq.push(["_setAccount", "UA-37813397-3"]);
+                _gaq.push(["_trackPageview"]);
+                // Keyboard Combos
+                Mousetrap.bind("mod+a", selectTextnet);
+                Mousetrap.bind("mod+m", save);
+                Mousetrap.bind("up up down down left right left right b a enter", function() {
+                        // Konami Code
+                        bootbox.dialog({
+                                title: "THA KONAMI COOOODE!!",
+                                message: "YOU BLOODY DID IT, WOOOO YEEEEAAAHHH!!!"
+                        });
+                });
+        });
+});
+
+$.getScript(("https://members.internetdefenseleague.org/include/?url=" + (_idl.url || window.location.href) + "&campaign=" + (_idl.campaign || "") + "&variant=banner")).done(function() {
+        console.info("Backend.js: Internet Defence League script > loaded.");
+        // Internet Defence League
+        window._idl = {};
+        _idl.variant = "banner";
+}).fail(function() {
+        console.error("Backend.js: Internet Defence League script > crashed.");
+});
 
 function player(uri) {
         $(".tn-radio-frame").append("<div><iframe class='tn-radio' src='https://embed.spotify.com/?uri=" + uri + "'></iframe></div>");
@@ -229,48 +264,6 @@ function notify(l4, l4_1) {
         }).show();
 }
 
-$.getScript("https://cdn.rawgit.com/alexgibson/notify.js/master/notify.js").done(function() {
-        console.info("Backend.js: Notify.js loaded.");
-}).fail(function() {
-        console.error("Backend.js: Mousetrap crashed");
-});
-
-$.getScript("//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js").done(function() {
-        // Bootstrap (JS)
-        console.info("Backend.js: Bootstrap (JS) > loaded.");
-}).fail(function() {
-        console.error("Backend.js: Bootstrap (JS) > crashed.");
-});
-
-$.getScript("https://leaverou.github.io/prefixfree/prefixfree.min.js").done(function() {
-        console.info("Backend.js: Prefixfree > loaded.");
-}).fail(function() {
-        console.error("Backend.js: Prefixfree > crashed.");
-});
-
-$.getScript("//apis.google.com/js/platform.js").done(function() {
-        console.info("Backend.js: Google Platform > loaded");
-}).fail(function() {
-        console.error("Backend.js: Google Platform > crashed");
-});
-
-$.getScript("//togetherjs.com/togetherjs-min.js").done(function() {
-        // TogetherJS
-        console.info("Backend.js: TogetherJS > loaded.");
-}).fail(function() {
-        console.error("Backend.js: TogetherJS > crashed.");
-});
-
-$.getScript(("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/analytics.js").done(function() {
-        // Google Analytics
-        console.info("Backend.js: Traffic Analytics > loaded");
-        var _gaq = _gaq || [];
-        _gaq.push(["_setAccount", "UA-37813397-3"]);
-        _gaq.push(["_trackPageview"]);
-}).fail(function() {
-        console.error("Backend.js: Traffic Analytics > crashed");
-});
-
 function classToggle(l1, l1_1) {
         $(l1).toggleClass(l1_1);
         console.info("Backend.js: " + l1_1 + " > classToggle > " + l1);
@@ -281,29 +274,6 @@ function select(l3) {
         grabSelectorAll(l3).select();
         console.info("Backend.js: " + l3 + " > select");
 }
-
-$.getScript("//momentjs.com/downloads/moment.min.js").done(function() {
-        // MomentJS
-        console.info("Backend.js: MomentJS > loaded.");
-}).fail(function() {
-        console.error("Backend.js: MomentJS > crashed.");
-});
-
-$.getScript("//bootboxjs.com/bootbox.js").done(function() {
-        // TogetherJS
-        console.info("Backend.js: Bootbox > loaded.");
-}).fail(function() {
-        console.error("Backend.js: Bootbox > crashed.");
-});
-
-$.getScript(("https://members.internetdefenseleague.org/include/?url=" + (_idl.url || window.location.href) + "&campaign=" + (_idl.campaign || "") + "&variant=banner")).done(function() {
-        console.info("Backend.js: Internet Defence League script > loaded.");
-        // Internet Defence League
-        window._idl = {};
-        _idl.variant = "banner";
-}).fail(function() {
-        console.error("Backend.js: Internet Defence League script > crashed.");
-});
 
 (function(d, s, id) {
         // Facebook
