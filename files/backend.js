@@ -32,18 +32,18 @@ $(window).load(function() {
                                 var hashes = bse_url.split("#");
                                 // Check if the array is bigger 1 value.
                                 if (hashes.length > 1) {
-                                        // Set to 1 because the indentation needs to be set at a static number.
+                                        // Set to 1 because the indentation needs to be set to a static number.
                                         for (var i = 1; i < hashes.length; i++) {
-                                                // Run the function. We run the # value through the window to grab the function.
+                                                // Run the function. We run the # value through the window to grab the function, hence the name #MODS.
                                                 window[hashes[i]]();
-                                                // Thanks to @noahgelman from CSS-Tricks to help me out with this one.
+                                                // Thanks to @noahgelman from CSS-Tricks to help me out with this.
                                         }
                                 }
-                                // Exclusion list for Hash Mods
-                                if (hashline("groupies") || hashline("gamecenter") || hashline("fbShare") || hashline("twShare")) {
+                                // Exclusion list for #MODS.
+                                if (hashline("groupies") || hashline("fbShare") || hashline("twShare")) {
                                         return false;
                                 }
-                                // Checking whether its using Hash Mods or not.
+                                // Checking whether user is using #MODS or not.
                                 if (window.location.hash) {
                                         document.title = "# Textnet";
                                 } else {
@@ -55,7 +55,7 @@ $(window).load(function() {
 });
 
 // Grabbers
-function hashline(hash) { return window.location.href.indexOf("#" + hash) != -1; }
+var hashline = function(u) { return window.location.href.indexOf("#" + u) != -1; };
 var grabSelector = function(u) { return document.querySelector(u); };
 var grabSelectorAll = function(u) { return document.querySelectorAll(u); };
 var grabID = function(u) { return document.getElementById(u); };
@@ -134,15 +134,20 @@ function load() {
 }
 
 function hashIt(hash) {
-        if (hash == "gamecenter") {
-                window.location.replace("http://sociao.github.io/cdn/emph/?q=Flash+Games");
-                notify("Done!!", "Textnet has opened Game Center.");
-                return false;
-        }
         if (hash == "groupies") {
                 TogetherJS(this);
                 notify("Groupies", "Be sure not to expose personal infomation when in a public room.");
                 return false;
+        }
+        // Open a webpage on Textnet, cleanly
+        if (hash == "url" || hash == "URL") {
+                bootbox.prompt("Open...", function(addr) {
+                        if (addr === null) {
+                                return false;
+                        } else {
+                                window.open(addr, "_blank");
+                        }
+                });
         }
         if (hash == "youtube") {
                 bootbox.prompt("YouTube Search", function(srch) {
@@ -152,21 +157,6 @@ function hashIt(hash) {
                                 window.open("https://www.youtube.com/results?utm_source=opensearch&search_query=" + srch, "_blank");
                         }
                 });
-                return false;
-        }
-        if (hash == "NetNeut") {
-                window.location.replace("https://codepen.io/ChrisLolz/full/gKcxw");
-                return false;
-        }
-        if (hash == "fbShare") {
-                FB.ui({
-                        method: "share",
-                        href: "https://sociao.github.io/textnet/"
-                });
-                return false;
-        }
-        if (hash == "twShare") {
-                window.open("https://sociao.github.io/share/#textnet_twshare", "_blank");
                 return false;
         }
         if (hash == "autosave") {
@@ -188,12 +178,32 @@ function hashIt(hash) {
                 };
                 return false;
         }
-        if (hash == "defence") {
-                window.location.replace("https://www.internetdefenseleague.org/");
+        if (hash == "gamecenter") {
+                window.location.replace("http://sociao.github.io/cdn/emph/?q=Flash+Games");
+                notify("Done!!", "Textnet has opened Game Center.");
                 return false;
         }
         if (hash == "selectTextnet") {
                 select("#form");
+                return false;
+        }
+        if (hash == "NetNeut") {
+                window.location.replace("https://codepen.io/ChrisLolz/full/gKcxw");
+                return false;
+        }
+        if (hash == "fbShare") {
+                FB.ui({
+                        method: "share",
+                        href: "https://sociao.github.io/textnet/"
+                });
+                return false;
+        }
+        if (hash == "twShare") {
+                window.open("https://sociao.github.io/share/#textnet_twshare", "_blank");
+                return false;
+        }
+        if (hash == "defence") {
+                window.location.replace("https://www.internetdefenseleague.org/");
                 return false;
         } else {
                 window.location.href = "http://" + window.location.host + "/textnet/" + "#" + hash;
