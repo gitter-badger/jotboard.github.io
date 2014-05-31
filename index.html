@@ -95,22 +95,26 @@
 <link rel="stylesheet" href="//textnet.github.io/files/system.css" data-noprefix />
 
 <script>
-(function() {
-        // Backend
-        var backend = document.createElement("script");
-        var backend_type = document.getElementsByTagName("script")[0];
-        backend.type = "text/javascript";
-        backend.async = true;
-        backend.src = "//textnet.github.io/files/backend.js";
-        backend_type.parentNode.insertBefore(backend, backend_type);
-        // System.JS
-        var make = document.createElement("script");
-        var make_type = document.getElementsByTagName("script")[0];
-        make.parentNode.insertBefore(make, make_type);
-        make.type = "text/javascript";
-        make.async = true;
-        make.src = "//textnet.github.io/files/system.js";
-})();
+$(function() {
+        (function() {
+                // Backend
+                var backend = document.createElement("script");
+                var backend_type = document.getElementsByTagName("script")[0];
+                backend.type = "text/javascript";
+                backend.async = true;
+                backend.src = "//textnet.github.io/files/backend.js";
+                backend_type.parentNode.insertBefore(backend, backend_type);
+        })();
+        (function() {
+                // System.JS
+                var make = document.createElement("script");
+                var make_type = document.getElementsByTagName("script")[0];
+                make.type = "text/javascript";
+                make.async = true;
+                make.src = "//textnet.github.io/files/system.js";
+                make.parentNode.insertBefore(make, make_type);
+        })();
+});
 
 // Groupies
 TogetherJSConfig_siteName = "Textnet";
