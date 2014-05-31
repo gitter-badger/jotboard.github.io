@@ -30,13 +30,13 @@ $(window).load(function() {
         // Static
         var staticFunction = function() {
                         $(function() {
+                                $("body").toggleAttr("style", "display: visible;", "display: none;");
+                                $("iframe").attr("scrolling", "no").attr("frameborder", "0").attr("allowtransparency", "true");
                                 $("#menu-btn").click(function() {
                                         $(this).toggleText("More", "Less");
                                         $(this).toggleAttr("title", "Close Menu", "Open Menu");
                                         $("#submenu").toggleAttr("style", "display: visible;", "display: none;");
                                 });
-                                $("body").toggleAttr("style", "display: visible;", "display: none;");
-                                $("iframe").attr("scrolling", "no").attr("frameborder", "0").attr("allowtransparency", "true");
                                 $("[disabled]").addClass("disabled");
                                 $(window).tooltip({
                                         selector: "[data-title]",
@@ -206,7 +206,7 @@ $(function() {
         });
         loadScript("//cdn.craig.is/js/mousetrap/mousetrap.min.js", function() {
                 // Keyboard Combos
-                Mousetrap.bind("mod+a", selectTextnet);
+                Mousetrap.bind("mod+a", hashIt("selectTextnet"));
                 Mousetrap.bind("mod+m", save);
                 Mousetrap.bind("up up down down left right left right b a enter", function() {
                         // Konami Code
