@@ -14,12 +14,12 @@ function feature() {
 
 function spotify() {
         player("spotify:user:1249813849:playlist:7gMrshUGhhYAKThn2RT8eQ");
-        console.info("System.js: Main player loaded.");
+        console.info("System.JS: Main player loaded.");
 }
 
 function mjxscape() {
         player("spotify:album:7pomP86PUhoJpY3fsC0WDQ");
-        console.log("System.js: I miss you.");
+        console.log("System.JS: I miss you.");
 }
 
 function newUpdate() {
@@ -31,7 +31,7 @@ function newUpdate() {
 
 function player(uri) {
         $(".tn-radio-frame").append("<div><iframe class='tn-radio' src='https://embed.spotify.com/?uri=" + uri + "'></iframe></div>");
-        console.info("Player function executed.");
+        console.info("System.JS: Player function executed.");
 }
 
 function notify(l4, l4_1) {
