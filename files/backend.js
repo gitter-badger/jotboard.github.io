@@ -1,20 +1,18 @@
-$(document).load(function() {
+$(window).load(function() {
         var u = function() {
-                        $(function() {
-                                $("body").toggleAttr("style", "display: visible;", "display: none;");
-                                $("#menu-btn").click(function() {
-                                        $(this).toggleText("More", "Less");
-                                        $(this).toggleAttr("title", "Close Menu", "Open Menu");
-                                        $("#submenu").toggleAttr("style", "display: visible;", "display: none;");
-                                });
-                                $("[disabled]").addClass("disabled");
-                                $(window).tooltip({
-                                        selector: "[data-title]",
-                                        trigger: "hover",
-                                        animation: false
-                                });
-                                $("iframe").attr("scrolling", "no").attr("frameborder", "0").attr("allowtransparency", "true");
+                        $("body").toggleAttr("style", "display: visible;", "display: none;");
+                        $("#menu-btn").click(function() {
+                                $(this).toggleText("More", "Less");
+                                $(this).toggleAttr("title", "Close Menu", "Open Menu");
+                                $("#submenu").toggleAttr("style", "display: visible;", "display: none;");
                         });
+                        $("[disabled]").addClass("disabled");
+                        $(window).tooltip({
+                                selector: "[data-title]",
+                                trigger: "hover",
+                                animation: false
+                        });
+                        $("iframe").attr("scrolling", "no").attr("frameborder", "0").attr("allowtransparency", "true");
                         // Below the script get's the full url.
                         var bse_url = window.location.href;
                         // Create an array.
@@ -46,7 +44,7 @@ $(document).load(function() {
 });
 
 // Grabbers
-var loadScript = function(attr, attr_1, attr_2) { $.getScript(attr).done(attr_1).fail(attr_2); };
+function loadScript(attr, attr_1, attr_2) { $.getScript(attr).done(attr_1).fail(attr_2); }
 var hashline = function(u) { return window.location.href.indexOf("#" + u) != -1; };
 var grabSelector = function(u) { return document.querySelector(u); };
 var grabSelectorAll = function(u) { return document.querySelectorAll(u); };
@@ -156,23 +154,19 @@ function load() {
 }
 
 $(function() {
-        loadScript("https://marcuswestin.github.io/store.js/store.min.js", function() {
+        $.getScript("https://marcuswestin.github.io/store.js/store.min.js").done(function() {
                 console.info("Backend.js: Store.js > loaded.");
                 var form = grabSelectorAll("#form");
                 var namespace = grabSelectorAll("#namespace");
                 if (window.localStorage["_-Main"]) {
                         form.value = store.get("_-Main");
-                        console.log("Hello, friend");
-                }
-                if (window.localStorage["_-hate"]) {
-                        console.log("What do you hate?");
                 } else {
-                        console.log("Hello");
+                        return false;
                 }
-        }, function() {
+        }).fail(function() {
                 console.error("Store.JS crashed");
         });
-        loadScript("//momentjs.com/downloads/moment.min.js", function() {
+        $.getScript("//momentjs.com/downloads/moment.min.js").done(function() {
                 var updateTime = function() {
                                 // Making it work
                                 $("#form.day").attr("placeholder", moment(new Date()).format("[Hi, it's ]dddd[, the] Do [of] MMMM YYYY[ and time is] h:mm a[.]"));
@@ -186,11 +180,11 @@ $(function() {
                         };
                 updateTime();
                 setInterval(updateTime, 1);
-        }, function() {
+        }).fail(function() {
                 console.error("MomentJS crashed");
                 $("#form").attr("placeholder", "Welcome to Textnet.");
         });
-        loadScript("//cdn.craig.is/js/mousetrap/mousetrap.min.js", function() {
+        $.getScript("//cdn.craig.is/js/mousetrap/mousetrap.min.js").done(function() {
                 // Keyboard Combos
                 Mousetrap.bind("mod+a", hashIt("selectTextnet"));
                 Mousetrap.bind("mod+m", save);
@@ -201,16 +195,13 @@ $(function() {
                                 message: "YOU BLOODY DID IT, WOOOO YEEEEAAAHHH!!!"
                         });
                 });
-        }, function() {
+        }).fail(function() {
                 console.error("Mousetrap crashed");
         });
-        loadScript(("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/analytics.js", function() {
-                console.error("Analytics loaded");
+        $.getScript(("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/analytics.js").done(function() {}).fail(function() {
                 var _gaq = _gaq || [];
                 _gaq.push(["_setAccount", "UA-37813397-3"]);
                 _gaq.push(["_trackPageview"]);
-        }, function() {
-                console.error("Analytics crashed");
         });
 });
 
