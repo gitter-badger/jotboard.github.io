@@ -266,6 +266,9 @@ function classToggle(attr, attr_1) {
 }
 
 function select(attr) {
+        if (typeof attr == "undefined") {
+                console.error("Bad Response: Attr undefined");
+        }
         grabSelectorAll(attr).focus();
         grabSelectorAll(attr).select();
         console.info("Backend.js: " + attr + " > select");
