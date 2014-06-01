@@ -1,17 +1,3 @@
-jQuery.fn.toggleAttr = function(attr, attr_1, attr_2) {
-        return this.each(function() {
-                if ($(this).attr(attr) == attr_1) $(this).attr(attr, attr_2);
-                else $(this).attr(attr, attr_1);
-        });
-};
-
-jQuery.fn.toggleText = function(attr, attr_1) {
-        return this.each(function() {
-                if ($(this).text().indexOf(attr) > -1) $(this).text($(this).text().replace(attr, attr_1));
-                else $(this).text($(this).text().replace(attr_1, attr));
-        });
-};
-
 $(window).load(function() {
         // Stream (constant)
         var streamFunction = function() {
@@ -30,6 +16,18 @@ $(window).load(function() {
         // Static
         var staticFunction = function() {
                         $(function() {
+                                jQuery.fn.toggleAttr = function(attr, attr_1, attr_2) {
+                                        return this.each(function() {
+                                                if ($(this).attr(attr) == attr_1) $(this).attr(attr, attr_2);
+                                                else $(this).attr(attr, attr_1);
+                                        });
+                                };
+                                jQuery.fn.toggleText = function(attr, attr_1) {
+                                        return this.each(function() {
+                                                if ($(this).text().indexOf(attr) > -1) $(this).text($(this).text().replace(attr, attr_1));
+                                                else $(this).text($(this).text().replace(attr_1, attr));
+                                        });
+                                };
                                 $("body").toggleAttr("style", "display: visible;", "display: none;");
                                 $("iframe").attr("scrolling", "no").attr("frameborder", "0").attr("allowtransparency", "true");
                                 $("#menu-btn").click(function() {
@@ -92,12 +90,18 @@ function hashIt(hash) {
         }
         if (hash == "groupies") {
                 TogetherJS(this);
-                notify("Groupies", "Be sure not to expose personal/private infomation when in a public room.");
+                new Notify("Groupies", {
+                        body: "Be sure not to expose personal/private infomation when in a public room.",
+                        icon: "http://static4.wikia.nocookie.net/humble/images/1/18/TextnetFBPhoto.png"
+                }).show();
                 return false;
         }
         if (hash == "autosave") {
                 classToggle("#save, #load, #autosave-btn", "block");
-                notify("System shift", "Any keypress will automatically save the Main Textnet.");
+                new Notify("System shift", {
+                        body: "Any keypress will automatically save the Main Textnet.",
+                        icon: "http://static4.wikia.nocookie.net/humble/images/1/18/TextnetFBPhoto.png"
+                }).show();
                 form.onkeydown = function() {
                         if (namespace.value.length === 0) {
                                 store.set("_-Main", form.value);
@@ -147,35 +151,40 @@ function hashIt(hash) {
 function save() {
         if (namespace.value.length === 0) {
                 store.set("_-Main", form.value);
-                notify("Saved", "Your Main Textnet has been successfully saved.");
                 console.info("Backend.js: Main > saved.");
+                new Notify("Saved", {
+                        body: "Your Main Textnet has been successfully saved.",
+                        icon: "http://static4.wikia.nocookie.net/humble/images/1/18/TextnetFBPhoto.png"
+                }).show();
         } else {
                 store.set("_-" + namespace.value, form.value);
-                notify("Saved", "Your Textnet '" + namespace.value + "' has been successfully saved.");
                 console.info("Backend.js: " + namespace.value + " > saved.");
+                new Notify("Saved", {
+                        body: "Your Textnet '" + namespace.value + "' has been successfully saved.",
+                        icon: "http://static4.wikia.nocookie.net/humble/images/1/18/TextnetFBPhoto.png"
+                }).show();
         }
 }
 
 function load() {
         if (namespace.value.length === 0) {
                 form.value = store.get("_-Main");
-                notify("Loaded", "Your Main Textnet has been successfully loaded.");
                 console.info("Backend.js: Main > loaded.");
+                new Notify("Loaded", {
+                        body: "Your Main Textnet has been successfully saved.",
+                        icon: "http://static4.wikia.nocookie.net/humble/images/1/18/TextnetFBPhoto.png"
+                }).show();
         } else {
                 form.value = store.get("_-" + namespace.value);
-                notify("Loaded", "Your Textnet '" + namespace.value + "' has been successfully loaded.");
                 console.info("Backend.js: " + namespace.value + " > loaded.");
+                new Notify("Loaded", {
+                        body: "Your Textnet '" + namespace.value + "' has been successfully loaded.",
+                        icon: "http://static4.wikia.nocookie.net/humble/images/1/18/TextnetFBPhoto.png"
+                }).show();
         }
 }
 
 $(function() {
-        loadScript(("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/analytics.js", function() {
-                var _gaq = _gaq || [];
-                _gaq.push(["_setAccount", "UA-37813397-3"]);
-                _gaq.push(["_trackPageview"]);
-        }, function() {
-                console.error("Analytics loaded");
-        });
         loadScript("https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js", function() {
                 console.info("Bootstrap loaded");
         }, function() {
@@ -188,21 +197,39 @@ $(function() {
                 if (window.localStorage["_-Main"]) {
                         form.value = store.get("_-Main");
                         console.log("Hello, friend");
+                }
+                if (window.localStorage["_-hate"]) {
+                        console.log("What do you hate?");
                 } else {
                         console.log("Hello");
                 }
         }, function() {
                 console.error("Store.JS crashed");
         });
+        loadScript("http://leaverou.github.io/prefixfree/prefixfree.min.js", function() {
+                console.info("Prefixfree loaded");
+        }, function() {
+                console.error("Prefixfree crashed");
+        });
         loadScript("https://cdn.rawgit.com/alexgibson/notify.js/master/notify.js", function() {
                 console.info("Notify.JS loaded");
         }, function() {
                 console.error("Notify.JS crashed");
         });
-        loadScript("http://leaverou.github.io/prefixfree/prefixfree.min.js", function() {
-                console.info("Prefixfree loaded");
+        loadScript("//momentjs.com/downloads/moment.min.js", function() {
+                console.info("MomentJS loaded");
         }, function() {
-                console.error("Prefixfree crashed");
+                console.error("MomentJS crashed");
+        });
+        loadScript("//togetherjs.com/togetherjs-min.js", function() {
+                console.info("TogetherJS loaded");
+        }, function() {
+                console.error("TogetherJS crashed");
+        });
+        loadScript("//bootboxjs.com/bootbox.js", function() {
+                console.info("Bootbox loaded");
+        }, function() {
+                console.error("Bootbox crashed");
         });
         loadScript("//cdn.craig.is/js/mousetrap/mousetrap.min.js", function() {
                 // Keyboard Combos
@@ -218,42 +245,28 @@ $(function() {
         }, function() {
                 console.error("Mousetrap crashed");
         });
-        loadScript("//momentjs.com/downloads/moment.min.js", function() {
-                console.info("MomentJS loaded");
-        }, function() {
-                console.error("MomentJS crashed");
-        });
         loadScript("//apis.google.com/js/platform.js", function() {
                 console.info("Google Platform loaded");
         }, function() {
                 console.error("Google Platform crashed");
         });
-        loadScript("//togetherjs.com/togetherjs-min.js", function() {
-                console.info("TogetherJS loaded");
+        loadScript(("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/analytics.js", function() {
+                console.error("Analytics loaded");
+                var _gaq = _gaq || [];
+                _gaq.push(["_setAccount", "UA-37813397-3"]);
+                _gaq.push(["_trackPageview"]);
         }, function() {
-                console.error("TogetherJS crashed");
-        });
-        loadScript("//bootboxjs.com/bootbox.js", function() {
-                console.info("Bootbox loaded");
-        }, function() {
-                console.error("Bootbox crashed");
+                console.error("Analytics crashed");
         });
         loadScript(("https://members.internetdefenseleague.org/include/?url=" + (_idl.url || window.location.href) + "&campaign=" + (_idl.campaign || "") + "&variant=banner"), function() {
-                console.info("Backend.js: Internet Defence League script > loaded.");
+                console.info("Backend.js: Internet Defence League script loaded.");
                 // Internet Defence League
                 window._idl = {};
                 _idl.variant = "banner";
         }, function() {
-                console.error("Internet Defence League script > crashed");
+                console.error("Internet Defence League script crashed");
         });
 });
-
-function notify(attr, attr_1) {
-        new Notify(attr, {
-                body: attr_1,
-                icon: "http://static4.wikia.nocookie.net/humble/images/1/18/TextnetFBPhoto.png"
-        }).show();
-}
 
 function player(attr) {
         $(".tn-radio-frame").append("<div><iframe class='tn-radio' src='https://embed.spotify.com/?uri=" + attr + "'></iframe></div>");
@@ -266,11 +279,11 @@ function classToggle(attr, attr_1) {
 }
 
 function select(attr) {
-        document.querySelectorAll(attr).focus();
-        document.querySelectorAll(attr).select();
         if (typeof attr == "undefined") {
                 console.error("Bad Response: Attr undefined");
         }
+        document.querySelectorAll(attr).focus();
+        document.querySelectorAll(attr).select();
         console.info("Backend.js: " + attr + " > select");
 }
 
