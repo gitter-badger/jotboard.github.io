@@ -1,4 +1,4 @@
-$(window).load(function() {
+$(function() {
         // Stream (constant)
         var streamFunction = function() {
                         // Making it work
@@ -16,18 +16,6 @@ $(window).load(function() {
         // Static
         var staticFunction = function() {
                         $(function() {
-                                jQuery.fn.toggleAttr = function(attr, attr_1, attr_2) {
-                                        return this.each(function() {
-                                                if ($(this).attr(attr) == attr_1) $(this).attr(attr, attr_2);
-                                                else $(this).attr(attr, attr_1);
-                                        });
-                                };
-                                jQuery.fn.toggleText = function(attr, attr_1) {
-                                        return this.each(function() {
-                                                if ($(this).text().indexOf(attr) > -1) $(this).text($(this).text().replace(attr, attr_1));
-                                                else $(this).text($(this).text().replace(attr_1, attr));
-                                        });
-                                };
                                 $("body").toggleAttr("style", "display: visible;", "display: none;");
                                 $("iframe").attr("scrolling", "no").attr("frameborder", "0").attr("allowtransparency", "true");
                                 $("#menu-btn").click(function() {
@@ -54,13 +42,13 @@ $(window).load(function() {
                                                 // Run the function. We run the # value through the window to grab the function, hence the name #MODS.
                                                 window[hashes[i]]();
                                                 if (typeof hashes === "undefined") {
-                                                        console.error("Hash doesn't exist, hit us up on http://textnet.github.io/report/ to submit a new feature.");
+                                                        console.error("Hash doesn't exist, hit us up on http://textnet.github.io/report/ to submit a new feature or bug to fix.");
                                                 }
                                                 // Thanks to @noahgelman from CSS-Tricks to help me out with this.
                                         }
                                 }
                                 // Exclusion list for #MODS.
-                                if (hashline("groupies") || hashline("fbShare") || hashline("twShare")) {
+                                if (hashline("groupies") || hashline("hashIt") || hashline("fbShare") || hashline("twShare")) {
                                         return false;
                                 }
                                 // Checking whether user is using #MODS or not.
@@ -84,10 +72,6 @@ var grabClass = function(u) { return document.getElementsByClassName(u); };
 var grabTag = function(u) { return document.getElementsByTagName(u); };
 
 function hashIt(hash) {
-        if (hash == "spotify") {
-                player("spotify:user:1249813849:playlist:7gMrshUGhhYAKThn2RT8eQ");
-                console.info("System.JS: Main player loaded.");
-        }
         if (hash == "groupies") {
                 TogetherJS(this);
                 new Notify("Groupies", {
@@ -118,16 +102,6 @@ function hashIt(hash) {
                 };
                 return false;
         }
-        if (hash == "youtube") {
-                bootbox.prompt("YouTube Search", function(srch) {
-                        if (srch === null) {
-                                return false;
-                        } else {
-                                window.open("https://www.youtube.com/results?utm_source=opensearch&search_query=" + srch, "_blank");
-                        }
-                });
-                return false;
-        }
         if (hash == "fbShare") {
                 FB.ui({
                         method: "share",
@@ -139,9 +113,23 @@ function hashIt(hash) {
                 window.open("https://sociao.github.io/share/#textnet_twshare", "_blank");
                 return false;
         }
+        if (hash == "youtube") {
+                bootbox.prompt("YouTube Search", function(srch) {
+                        if (srch === null) {
+                                return false;
+                        } else {
+                                window.open("https://www.youtube.com/results?utm_source=opensearch&search_query=" + srch, "_blank");
+                        }
+                });
+                return false;
+        }
         if (hash == "selectTextnet") {
                 select("#form");
                 return false;
+        }
+        if (hash == "spotify") {
+                player("spotify:user:1249813849:playlist:7gMrshUGhhYAKThn2RT8eQ");
+                console.info("System.JS: Main player loaded.");
         } else {
                 window.location.href = "http://" + window.location.host + "/textnet/" + "#" + hash;
                 location.reload(true);
@@ -258,20 +246,7 @@ $(function() {
         }, function() {
                 console.error("Analytics crashed");
         });
-        loadScript(("https://members.internetdefenseleague.org/include/?url=" + (_idl.url || window.location.href) + "&campaign=" + (_idl.campaign || "") + "&variant=banner"), function() {
-                console.info("Backend.js: Internet Defence League script loaded.");
-                // Internet Defence League
-                window._idl = {};
-                _idl.variant = "banner";
-        }, function() {
-                console.error("Internet Defence League script crashed");
-        });
 });
-
-function player(attr) {
-        $(".tn-radio-frame").append("<div><iframe class='tn-radio' src='https://embed.spotify.com/?uri=" + attr + "'></iframe></div>");
-        console.info("System.JS: Player function executed.");
-}
 
 function classToggle(attr, attr_1) {
         $(attr).toggleClass(attr_1);
