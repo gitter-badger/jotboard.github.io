@@ -1,23 +1,7 @@
-$(function() {
-        // Stream (constant)
-        var streamFunction = function() {
-                        // Making it work
-                        $("#form.day").attr("placeholder", moment(new Date()).format("[Hi, it's ]dddd[, the] Do [of] MMMM YYYY[ and time is] h:mm a[.]"));
-                        $("#form.night").attr("placeholder", moment(new Date()).format("[Hows it goin? it was a nice ]dddd, Do [of] MMMM YYYY[ and the time is] h:mm a[, goodnight.]"));
-                        // Pushing the Marquee, the hard and only way.
-                        if (0 <= new Date().getHours() && new Date().getHours() < 18) {
-                                $("#form").addClass("day");
-                        } else {
-                                $("#form").addClass("night");
-                        }
-                };
-        streamFunction();
-        setInterval(streamFunction, 1);
-        // Static
-        var staticFunction = function() {
+$(document).load(function() {
+        var u = function() {
                         $(function() {
                                 $("body").toggleAttr("style", "display: visible;", "display: none;");
-                                $("iframe").attr("scrolling", "no").attr("frameborder", "0").attr("allowtransparency", "true");
                                 $("#menu-btn").click(function() {
                                         $(this).toggleText("More", "Less");
                                         $(this).toggleAttr("title", "Close Menu", "Open Menu");
@@ -29,37 +13,36 @@ $(function() {
                                         trigger: "hover",
                                         animation: false
                                 });
+                                $("iframe").attr("scrolling", "no").attr("frameborder", "0").attr("allowtransparency", "true");
                         });
-                        $(function() {
-                                // Below the script get's the full url.
-                                var bse_url = window.location.href;
-                                // Create an array.
-                                var hashes = bse_url.split("#");
-                                // Check if the array is bigger 1 value.
-                                if (hashes.length > 1) {
-                                        // Set to 1 because the indentation needs to be set to a static number.
-                                        for (var i = 1; i < hashes.length; i++) {
-                                                // Run the function. We run the # value through the window to grab the function, hence the name #MODS.
-                                                window[hashes[i]]();
-                                                if (typeof hashes === "undefined") {
-                                                        console.error("Hash doesn't exist, hit us up on http://textnet.github.io/report/ to submit a new feature or bug to fix.");
-                                                }
-                                                // Thanks to @noahgelman from CSS-Tricks to help me out with this.
+                        // Below the script get's the full url.
+                        var bse_url = window.location.href;
+                        // Create an array.
+                        var hashes = bse_url.split("#");
+                        // Check if the array is bigger 1 value.
+                        if (hashes.length > 1) {
+                                // Set to 1 because the indentation needs to be set to a static number.
+                                for (var i = 1; i < hashes.length; i++) {
+                                        // Run the function. We run the # value through the window to grab the function, hence the name #MODS.
+                                        window[hashes[i]]();
+                                        if (typeof hashes === "undefined") {
+                                                console.error("Hash doesn't exist, hit us up on http://textnet.github.io/report/ to submit a new feature or bug to fix.");
                                         }
+                                        // Thanks to @noahgelman from CSS-Tricks to help me out with this.
                                 }
-                                // Exclusion list for #MODS.
-                                if (hashline("groupies") || hashline("hashIt") || hashline("fbShare") || hashline("twShare")) {
-                                        return false;
-                                }
-                                // Checking whether user is using #MODS or not.
-                                if (window.location.hash) {
-                                        document.title = "# Textnet";
-                                } else {
-                                        document.title = "Textnet";
-                                }
-                        });
+                        }
+                        // Exclusion list for #MODS.
+                        if (hashline("groupies") || hashline("hashIt") || hashline("fbShare") || hashline("twShare")) {
+                                return false;
+                        }
+                        // Checking whether user is using #MODS or not.
+                        if (window.location.hash) {
+                                document.title = "# Textnet";
+                        } else {
+                                document.title = "Textnet";
+                        }
                 };
-        staticFunction();
+        u();
 });
 
 // Grabbers
@@ -190,9 +173,22 @@ $(function() {
                 console.error("Store.JS crashed");
         });
         loadScript("//momentjs.com/downloads/moment.min.js", function() {
-                console.info("MomentJS loaded");
+                var updateTime = function() {
+                                // Making it work
+                                $("#form.day").attr("placeholder", moment(new Date()).format("[Hi, it's ]dddd[, the] Do [of] MMMM YYYY[ and time is] h:mm a[.]"));
+                                $("#form.night").attr("placeholder", moment(new Date()).format("[Hows it goin? it was a nice ]dddd, Do [of] MMMM YYYY[ and the time is] h:mm a[, goodnight.]"));
+                                // Pushing the Marquee, the hard and only way.
+                                if (0 <= new Date().getHours() && new Date().getHours() < 18) {
+                                        $("#form").addClass("day");
+                                } else {
+                                        $("#form").addClass("night");
+                                }
+                        };
+                updateTime();
+                setInterval(updateTime, 1);
         }, function() {
                 console.error("MomentJS crashed");
+                $("#form").attr("placeholder", "Welcome to Textnet.");
         });
         loadScript("//cdn.craig.is/js/mousetrap/mousetrap.min.js", function() {
                 // Keyboard Combos
@@ -218,11 +214,6 @@ $(function() {
         });
 });
 
-function classToggle(attr, attr_1) {
-        $(attr).toggleClass(attr_1);
-        console.info("Backend.js: " + attr_1 + " > classToggle > " + attr);
-}
-
 function select(attr) {
         if (typeof attr == "undefined") {
                 console.error("Bad Response: Attr undefined");
@@ -230,6 +221,11 @@ function select(attr) {
         document.querySelectorAll(attr).focus();
         document.querySelectorAll(attr).select();
         console.info("Backend.js: " + attr + " > select");
+}
+
+function classToggle(attr, attr_1) {
+        $(attr).toggleClass(attr_1);
+        console.info("Backend.js: " + attr_1 + " > classToggle > " + attr);
 }
 
 function feature() {
