@@ -173,11 +173,6 @@ function load() {
 }
 
 $(function() {
-        loadScript("https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js", function() {
-                console.info("Bootstrap loaded");
-        }, function() {
-                console.error("Bootstrap crashed");
-        });
         loadScript("https://marcuswestin.github.io/store.js/store.min.js", function() {
                 console.info("Backend.js: Store.js > loaded.");
                 var form = grabSelectorAll("#form");
@@ -194,30 +189,10 @@ $(function() {
         }, function() {
                 console.error("Store.JS crashed");
         });
-        loadScript("http://leaverou.github.io/prefixfree/prefixfree.min.js", function() {
-                console.info("Prefixfree loaded");
-        }, function() {
-                console.error("Prefixfree crashed");
-        });
-        loadScript("https://cdn.rawgit.com/alexgibson/notify.js/master/notify.js", function() {
-                console.info("Notify.JS loaded");
-        }, function() {
-                console.error("Notify.JS crashed");
-        });
         loadScript("//momentjs.com/downloads/moment.min.js", function() {
                 console.info("MomentJS loaded");
         }, function() {
                 console.error("MomentJS crashed");
-        });
-        loadScript("//togetherjs.com/togetherjs-min.js", function() {
-                console.info("TogetherJS loaded");
-        }, function() {
-                console.error("TogetherJS crashed");
-        });
-        loadScript("//bootboxjs.com/bootbox.js", function() {
-                console.info("Bootbox loaded");
-        }, function() {
-                console.error("Bootbox crashed");
         });
         loadScript("//cdn.craig.is/js/mousetrap/mousetrap.min.js", function() {
                 // Keyboard Combos
@@ -232,11 +207,6 @@ $(function() {
                 });
         }, function() {
                 console.error("Mousetrap crashed");
-        });
-        loadScript("//apis.google.com/js/platform.js", function() {
-                console.info("Google Platform loaded");
-        }, function() {
-                console.error("Google Platform crashed");
         });
         loadScript(("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/analytics.js", function() {
                 console.error("Analytics loaded");
