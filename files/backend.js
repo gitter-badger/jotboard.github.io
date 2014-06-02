@@ -1,4 +1,4 @@
-LazyLoad.js("https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js", function() {
+head.load("https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js", function() {
         jQuery.fn.toggleAttr = function(attr, attr1, attr2) {
                 return this.each(function() {
                         if ($(this).attr(attr) == attr1) $(this).attr(attr, attr2);
@@ -11,6 +11,16 @@ LazyLoad.js("https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js", 
                         else $(this).html(attr, attr1);
                 });
         };
+        $("body").toggleAttr("style", "display: visible;", "display: none;");
+        $("#menu-btn").click(function() {
+                $(this).toggleHTML("More", "Less");
+                $(this).toggleAttr("title", "Close Menu", "Open Menu");
+                $("#submenu").toggleAttr("style", "display: visible;", "display: none;");
+        });
+        $("iframe").attr("scrolling", "no").attr("frameborder", "0").attr("allowtransparency", "true");
+});
+
+$(function () {
         // Below the script get's the full url.
         var bse_url = window.location.href;
         // Create an array.
@@ -32,18 +42,15 @@ LazyLoad.js("https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js", 
                 return false;
         }
         // Checking whether user is using #MODS or not.
-        if (window.location.hash) { document.title = "# Textnet"; }
-        else { document.title = "Textnet"; }
-        $("body").toggleAttr("style", "display: visible;", "display: none;");
-        $("#menu-btn").click(function() {
-                $(this).toggleHTML("More", "Less");
-                $(this).toggleAttr("title", "Close Menu", "Open Menu");
-                $("#submenu").toggleAttr("style", "display: visible;", "display: none;");
-        });
-        $("iframe").attr("scrolling", "no").attr("frameborder", "0").attr("allowtransparency", "true");
+        if (window.location.hash) {
+                document.title = "# Textnet";
+        }
+        else {
+                document.title = "Textnet";
+        }
 });
 
-LazyLoad.js("//momentjs.com/downloads/moment.min.js", function() {
+head.load("//momentjs.com/downloads/moment.min.js", function() {
         var updateTime = function() {
                         // Making it work
                         $("#form.day").attr("placeholder", moment(new Date()).format("[Hi, it's ]dddd[, the] Do [of] MMMM YYYY[ and time is] h:mm a[.]"));
@@ -59,7 +66,7 @@ LazyLoad.js("//momentjs.com/downloads/moment.min.js", function() {
         setInterval(updateTime, 1);
 });
 
-LazyLoad.js("https://marcuswestin.github.io/store.js/store.min.js", function() {
+head.load("https://marcuswestin.github.io/store.js/store.min.js", function() {
         console.info("Backend.js: Store.js > loaded.");
         var form = grabSelectorAll("#form");
         var namespace = grabSelectorAll("#namespace");
@@ -70,7 +77,7 @@ LazyLoad.js("https://marcuswestin.github.io/store.js/store.min.js", function() {
         }
 });
 
-LazyLoad.js([
+head.load([
         "http://leaverou.github.io/prefixfree/prefixfree.min.js",
         "https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js",
         "https://cdn.rawgit.com/alexgibson/notify.js/master/notify.js",
@@ -79,7 +86,7 @@ LazyLoad.js([
         console.info("Loaded Bootbox, Prefixfree, Bootstrap (JS) and Notify.JS");
 });
 
-LazyLoad.js("//cdn.craig.is/js/mousetrap/mousetrap.min.js", function() {
+head.load("//cdn.craig.is/js/mousetrap/mousetrap.min.js", function() {
         // Keyboard Combos
         Mousetrap.bind("mod+a", hashIt("selectTextnet"));
         Mousetrap.bind("mod+m", change("save"));
@@ -93,7 +100,7 @@ LazyLoad.js("//cdn.craig.is/js/mousetrap/mousetrap.min.js", function() {
         });
 });
 
-LazyLoad.js("//togetherjs.com/togetherjs-min.js", function() {
+head.load("//togetherjs.com/togetherjs-min.js", function() {
         // Groupies
         TogetherJSConfig_siteName = "Textnet";
         TogetherJSConfig_toolName = "Groupies";
@@ -104,14 +111,14 @@ LazyLoad.js("//togetherjs.com/togetherjs-min.js", function() {
         TogetherJSConfig_suppressJoinConfirmation = true;
 });
 
-LazyLoad.js(("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/analytics.js", function() {
+head.load(("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/analytics.js", function() {
         var _gaq = _gaq || [];
         _gaq.push(["_setAccount", "UA-37813397-3"]);
         _gaq.push(["_trackPageview"]);
 });
 
 // CSS
-LazyLoad.css([
+head.load([
         "//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css",
         "https://fonts.googleapis.com/css?family=Raleway:300|Source+Code+Pro:400,700",
         "//fontawesome.io/assets/font-awesome/css/font-awesome.css"
