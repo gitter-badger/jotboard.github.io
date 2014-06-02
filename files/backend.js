@@ -40,11 +40,6 @@ LazyLoad.js("https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js", 
                 $(this).toggleAttr("title", "Close Menu", "Open Menu");
                 $("#submenu").toggleAttr("style", "display: visible;", "display: none;");
         });
-        $(window).tooltip({
-                selector: "[data-title]",
-                trigger: "hover",
-                animation: false
-        });
         LazyLoad.js("//momentjs.com/downloads/moment.min.js", function() {
                 var updateTime = function() {
                                 // Making it work
