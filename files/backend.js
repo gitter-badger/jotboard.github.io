@@ -5,10 +5,10 @@ LazyLoad.js("https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js", 
                         else $(this).attr(attr, attr1);
                 });
         };
-        jQuery.fn.toggleText = function(attr, attr1, attr2) {
+        jQuery.fn.toggleHTML = function(attr, attr1, attr2) {
                 return this.each(function() {
-                        if ($(attr).html() === attr1) $(attr).html(attr2);
-                        else $(attr).html(attr1);
+                        if ($(this).html() === attr1) $(this).html(attr2);
+                        else $(this).html(attr1);
                 });
         };
         // Below the script get's the full url.
@@ -36,7 +36,7 @@ LazyLoad.js("https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js", 
         else { document.title = "Textnet"; }
         $("body").toggleAttr("style", "display: visible;", "display: none;");
         $("#menu-btn").click(function() {
-                $(this).toggleText("More", "Less");
+                $(this).toggleHTML("More", "Less");
                 $(this).toggleAttr("title", "Close Menu", "Open Menu");
                 $("#submenu").toggleAttr("style", "display: visible;", "display: none;");
         });
