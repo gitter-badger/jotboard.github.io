@@ -1,18 +1,90 @@
-$(window).load(function() {
+// Groupies
+TogetherJSConfig_siteName = "Textnet";
+TogetherJSConfig_toolName = "Groupies";
+TogetherJSConfig_dontShowClicks = true;
+TogetherJSConfig_youtube = true;
+TogetherJSConfig_disableWebRTC = false;
+TogetherJSConfig_suppressInvite = false;
+TogetherJSConfig_suppressJoinConfirmation = true;
+
+LazyLoad.js("https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js", function() {
+        $("body").toggleAttr("style", "display: visible;", "display: none;");
+        $("#menu-btn").click(function() {
+                $(this).toggleText("More", "Less");
+                $(this).toggleAttr("title", "Close Menu", "Open Menu");
+                $("#submenu").toggleAttr("style", "display: visible;", "display: none;");
+        });
+        $("[disabled]").addClass("disabled");
+        $(window).tooltip({
+                selector: "[data-title]",
+                trigger: "hover",
+                animation: false
+        });
+        $("iframe").attr("scrolling", "no").attr("frameborder", "0").attr("allowtransparency", "true");
+});
+
+// JS
+LazyLoad.js("http://leaverou.github.io/prefixfree/prefixfree.min.js");
+LazyLoad.js("https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js");
+LazyLoad.js("https://cdn.rawgit.com/alexgibson/notify.js/master/notify.js");
+LazyLoad.js("//apis.google.com/js/platform.js");
+LazyLoad.js("//togetherjs.com/togetherjs-min.js");
+LazyLoad.js("//bootboxjs.com/bootbox.js");
+
+// CSS
+LazyLoad.css("//textnet.github.io/files/system.css");
+LazyLoad.css("//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css");
+LazyLoad.css("//fontawesome.io/assets/font-awesome/css/font-awesome.css");
+LazyLoad.css("https://fonts.googleapis.com/css?family=Raleway:300|Source+Code+Pro:400,700");
+
+LazyLoad.js("https://marcuswestin.github.io/store.js/store.min.js", function() {
+        console.info("Backend.js: Store.js > loaded.");
+        var form = grabSelectorAll("#form");
+        var namespace = grabSelectorAll("#namespace");
+        if (window.localStorage["_-Main"]) {
+                form.value = store.get("_-Main");
+        } else {
+                return false;
+        }
+});
+
+LazyLoad.js("//momentjs.com/downloads/moment.min.js", function() {
+        var updateTime = function() {
+                        // Making it work
+                        $("#form.day").attr("placeholder", moment(new Date()).format("[Hi, it's ]dddd[, the] Do [of] MMMM YYYY[ and time is] h:mm a[.]"));
+                        $("#form.night").attr("placeholder", moment(new Date()).format("[Hows it goin? it was a nice ]dddd, Do [of] MMMM YYYY[ and the time is] h:mm a[, goodnight.]"));
+                        // Pushing the Marquee, the hard and only way.
+                        if (0 <= new Date().getHours() && new Date().getHours() < 18) {
+                                $("#form").addClass("day");
+                        } else {
+                                $("#form").addClass("night");
+                        }
+                };
+        updateTime();
+        setInterval(updateTime, 1);
+});
+
+LazyLoad.js("//cdn.craig.is/js/mousetrap/mousetrap.min.js", function() {
+        // Keyboard Combos
+        Mousetrap.bind("mod+a", hashIt("selectTextnet"));
+        Mousetrap.bind("mod+m", save);
+        Mousetrap.bind("up up down down left right left right b a enter", function() {
+                // Konami Code
+                bootbox.dialog({
+                        title: "THA KONAMI COOOODE!!",
+                        message: "YOU BLOODY DID IT, WOOOO YEEEEAAAHHH!!!"
+                });
+        });
+});
+
+LazyLoad.js(("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/analytics.js", function() {
+        var _gaq = _gaq || [];
+        _gaq.push(["_setAccount", "UA-37813397-3"]);
+        _gaq.push(["_trackPageview"]);
+});
+
+$(function() {
         var u = function() {
-                        $("body").toggleAttr("style", "display: visible;", "display: none;");
-                        $("#menu-btn").click(function() {
-                                $(this).toggleText("More", "Less");
-                                $(this).toggleAttr("title", "Close Menu", "Open Menu");
-                                $("#submenu").toggleAttr("style", "display: visible;", "display: none;");
-                        });
-                        $("[disabled]").addClass("disabled");
-                        $(window).tooltip({
-                                selector: "[data-title]",
-                                trigger: "hover",
-                                animation: false
-                        });
-                        $("iframe").attr("scrolling", "no").attr("frameborder", "0").attr("allowtransparency", "true");
                         // Below the script get's the full url.
                         var bse_url = window.location.href;
                         // Create an array.
@@ -152,58 +224,6 @@ function load() {
                 }).show();
         }
 }
-
-$(function() {
-        $.getScript("https://marcuswestin.github.io/store.js/store.min.js").done(function() {
-                console.info("Backend.js: Store.js > loaded.");
-                var form = grabSelectorAll("#form");
-                var namespace = grabSelectorAll("#namespace");
-                if (window.localStorage["_-Main"]) {
-                        form.value = store.get("_-Main");
-                } else {
-                        return false;
-                }
-        }).fail(function() {
-                console.error("Store.JS crashed");
-        });
-        $.getScript("//momentjs.com/downloads/moment.min.js").done(function() {
-                var updateTime = function() {
-                                // Making it work
-                                $("#form.day").attr("placeholder", moment(new Date()).format("[Hi, it's ]dddd[, the] Do [of] MMMM YYYY[ and time is] h:mm a[.]"));
-                                $("#form.night").attr("placeholder", moment(new Date()).format("[Hows it goin? it was a nice ]dddd, Do [of] MMMM YYYY[ and the time is] h:mm a[, goodnight.]"));
-                                // Pushing the Marquee, the hard and only way.
-                                if (0 <= new Date().getHours() && new Date().getHours() < 18) {
-                                        $("#form").addClass("day");
-                                } else {
-                                        $("#form").addClass("night");
-                                }
-                        };
-                updateTime();
-                setInterval(updateTime, 1);
-        }).fail(function() {
-                console.error("MomentJS crashed");
-                $("#form").attr("placeholder", "Welcome to Textnet.");
-        });
-        $.getScript("//cdn.craig.is/js/mousetrap/mousetrap.min.js").done(function() {
-                // Keyboard Combos
-                Mousetrap.bind("mod+a", hashIt("selectTextnet"));
-                Mousetrap.bind("mod+m", save);
-                Mousetrap.bind("up up down down left right left right b a enter", function() {
-                        // Konami Code
-                        bootbox.dialog({
-                                title: "THA KONAMI COOOODE!!",
-                                message: "YOU BLOODY DID IT, WOOOO YEEEEAAAHHH!!!"
-                        });
-                });
-        }).fail(function() {
-                console.error("Mousetrap crashed");
-        });
-        $.getScript(("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/analytics.js").done(function() {}).fail(function() {
-                var _gaq = _gaq || [];
-                _gaq.push(["_setAccount", "UA-37813397-3"]);
-                _gaq.push(["_trackPageview"]);
-        });
-});
 
 function select(attr) {
         if (typeof attr == "undefined") {
