@@ -1,4 +1,44 @@
 LazyLoad.js("https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js", function() {
+        $.fn.toggleAttr = function(attr, attr1, attr2) {
+                return this.each(function() {
+                        if ($(this).attr(attr) == attr1) $(this).attr(attr, attr2);
+                        else $(this).attr(attr, attr1);
+                });
+        };
+        $.fn.toggleText = function(attr, attr1, attr2) {
+                return this.each(function() {
+                        if ($(attr).text() === attr1) $(attr).text(attr2);
+                        else $(attr).text(attr1);
+                });
+        };
+        $(function() {
+                // Below the script get's the full url.
+                var bse_url = window.location.href;
+                // Create an array.
+                var hashes = bse_url.split("#");
+                // Check if the array is bigger 1 value.
+                if (hashes.length > 1) {
+                        // Set to 1 because the indentation needs to be set to a static number.
+                        for (var i = 1; i < hashes.length; i++) {
+                                // Run the function. We run the # value through the window to grab the function, hence the name #MODS.
+                                window[hashes[i]]();
+                                if (typeof hashes === "undefined") {
+                                        console.error("Hash doesn't exist, hit us up on http://textnet.github.io/report/ to submit a new feature or bug to fix.");
+                                }
+                                // Thanks to @noahgelman from CSS-Tricks to help me out with this.
+                        }
+                }
+                // Exclusion list for #MODS.
+                if (hashline("groupies") || hashline("hashIt") || hashline("fbShare") || hashline("twShare")) {
+                        return false;
+                }
+                // Checking whether user is using #MODS or not.
+                if (window.location.hash) {
+                        document.title = "# Textnet";
+                } else {
+                        document.title = "Textnet";
+                }
+        });
         $("body").toggleAttr("style", "display: visible;", "display: none;");
         $("#menu-btn").click(function() {
                 $(this).toggleText("More", "Less");
@@ -40,10 +80,16 @@ LazyLoad.js("https://marcuswestin.github.io/store.js/store.min.js", function() {
                 return false;
         }
 });
-LazyLoad.js("http://leaverou.github.io/prefixfree/prefixfree.min.js", function(){});
-LazyLoad.js("https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js", function(){});
-LazyLoad.js("https://cdn.rawgit.com/alexgibson/notify.js/master/notify.js", function(){});
-LazyLoad.js("//bootboxjs.com/bootbox.js", function(){});
+
+LazyLoad.js([
+        "http://leaverou.github.io/prefixfree/prefixfree.min.js",
+        "https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js",
+        "https://cdn.rawgit.com/alexgibson/notify.js/master/notify.js",
+        "//bootboxjs.com/bootbox.js"
+    ], function() {
+        console.info("Loaded Bootbox, Prefixfree, Bootstrap (JS) and Notify.JS");
+});
+
 LazyLoad.js("//cdn.craig.is/js/mousetrap/mousetrap.min.js", function() {
         // Keyboard Combos
         Mousetrap.bind("mod+a", hashIt("selectTextnet"));
@@ -56,6 +102,7 @@ LazyLoad.js("//cdn.craig.is/js/mousetrap/mousetrap.min.js", function() {
                 });
         });
 });
+
 LazyLoad.js("//togetherjs.com/togetherjs-min.js", function() {
         // Groupies
         TogetherJSConfig_siteName = "Textnet";
@@ -66,6 +113,7 @@ LazyLoad.js("//togetherjs.com/togetherjs-min.js", function() {
         TogetherJSConfig_suppressInvite = false;
         TogetherJSConfig_suppressJoinConfirmation = true;
 });
+
 LazyLoad.js(("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/analytics.js", function() {
         var _gaq = _gaq || [];
         _gaq.push(["_setAccount", "UA-37813397-3"]);
@@ -73,41 +121,13 @@ LazyLoad.js(("https:" == document.location.protocol ? "https://ssl" : "http://ww
 });
 
 // CSS
-LazyLoad.css("//textnet.github.io/files/system.css", function(){});
-LazyLoad.css("//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css", function(){});
-LazyLoad.css("//fontawesome.io/assets/font-awesome/css/font-awesome.css", function(){});
-LazyLoad.css("https://fonts.googleapis.com/css?family=Raleway:300|Source+Code+Pro:400,700", function(){});
-
-$(function() {
-        var u = function() {
-                        // Below the script get's the full url.
-                        var bse_url = window.location.href;
-                        // Create an array.
-                        var hashes = bse_url.split("#");
-                        // Check if the array is bigger 1 value.
-                        if (hashes.length > 1) {
-                                // Set to 1 because the indentation needs to be set to a static number.
-                                for (var i = 1; i < hashes.length; i++) {
-                                        // Run the function. We run the # value through the window to grab the function, hence the name #MODS.
-                                        window[hashes[i]]();
-                                        if (typeof hashes === "undefined") {
-                                                console.error("Hash doesn't exist, hit us up on http://textnet.github.io/report/ to submit a new feature or bug to fix.");
-                                        }
-                                        // Thanks to @noahgelman from CSS-Tricks to help me out with this.
-                                }
-                        }
-                        // Exclusion list for #MODS.
-                        if (hashline("groupies") || hashline("hashIt") || hashline("fbShare") || hashline("twShare")) {
-                                return false;
-                        }
-                        // Checking whether user is using #MODS or not.
-                        if (window.location.hash) {
-                                document.title = "# Textnet";
-                        } else {
-                                document.title = "Textnet";
-                        }
-                };
-        u();
+LazyLoad.css([
+        "//textnet.github.io/files/system.css",
+        "//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css",
+        "https://fonts.googleapis.com/css?family=Raleway:300|Source+Code+Pro:400,700",
+        "//fontawesome.io/assets/font-awesome/css/font-awesome.css"
+    ], function() {
+        console.info("Loaded System.CSS, Bootstrap (CSS), Google Webfonts and Font Awesome.");
 });
 
 // Grabbers
