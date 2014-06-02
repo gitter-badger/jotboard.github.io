@@ -1,14 +1,14 @@
 LazyLoad.js("https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js", function() {
-        $.fn.toggleAttr = function(attr, attr1, attr2) {
+        jQuery.fn.toggleAttr = function(attr, attr1, attr2) {
                 return this.each(function() {
                         if ($(this).attr(attr) == attr1) $(this).attr(attr, attr2);
                         else $(this).attr(attr, attr1);
                 });
         };
-        $.fn.toggleText = function(attr, attr1, attr2) {
+        jQuery.fn.toggleText = function(attr, attr1, attr2) {
                 return this.each(function() {
-                        if ($(attr).text() === attr1) $(attr).text(attr2);
-                        else $(attr).text(attr1);
+                        if ($(attr).html() === attr1) $(attr).html(attr2);
+                        else $(attr).html(attr1);
                 });
         };
         // Below the script get's the full url.
