@@ -111,12 +111,11 @@ LazyLoad.js(("https:" == document.location.protocol ? "https://ssl" : "http://ww
 
 // CSS
 LazyLoad.css([
-        "//textnet.github.io/files/system.css",
         "//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css",
         "https://fonts.googleapis.com/css?family=Raleway:300|Source+Code+Pro:400,700",
         "//fontawesome.io/assets/font-awesome/css/font-awesome.css"
     ], function() {
-        console.info("Loaded System.CSS, Bootstrap (CSS), Google Webfonts and Font Awesome.");
+        console.info("Loaded, Bootstrap (CSS), Google Webfonts and Font Awesome.");
 });
 
 // Grabbers
