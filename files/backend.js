@@ -11,47 +11,40 @@ LazyLoad.js("https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js", 
                         else $(attr).text(attr1);
                 });
         };
-        $(function() {
-                // Below the script get's the full url.
-                var bse_url = window.location.href;
-                // Create an array.
-                var hashes = bse_url.split("#");
-                // Check if the array is bigger 1 value.
-                if (hashes.length > 1) {
-                        // Set to 1 because the indentation needs to be set to a static number.
-                        for (var i = 1; i < hashes.length; i++) {
-                                // Run the function. We run the # value through the window to grab the function, hence the name #MODS.
-                                window[hashes[i]]();
-                                if (typeof hashes === "undefined") {
-                                        console.error("Hash doesn't exist, hit us up on http://textnet.github.io/report/ to submit a new feature or bug to fix.");
-                                }
-                                // Thanks to @noahgelman from CSS-Tricks to help me out with this.
+        // Below the script get's the full url.
+        var bse_url = window.location.href;
+        // Create an array.
+        var hashes = bse_url.split("#");
+        // Check if the array is bigger 1 value.
+        if (hashes.length > 1) {
+                // Set to 1 because the indentation needs to be set to a static number.
+                for (var i = 1; i < hashes.length; i++) {
+                        // Run the function. We run the # value through the window to grab the function, hence the name #MODS.
+                        window[hashes[i]]();
+                        if (typeof hashes === "undefined") {
+                                console.error("Hash doesn't exist, hit us up on http://textnet.github.io/report/ to submit a new feature or bug to fix.");
                         }
+                        // Thanks to @noahgelman from CSS-Tricks to help me out with this.
                 }
-                // Exclusion list for #MODS.
-                if (hashline("groupies") || hashline("hashIt") || hashline("fbShare") || hashline("twShare")) {
-                        return false;
-                }
-                // Checking whether user is using #MODS or not.
-                if (window.location.hash) {
-                        document.title = "# Textnet";
-                } else {
-                        document.title = "Textnet";
-                }
-        });
+        }
+        // Exclusion list for #MODS.
+        if (hashline("groupies") || hashline("hashIt") || hashline("fbShare") || hashline("twShare")) {
+                return false;
+        }
+        // Checking whether user is using #MODS or not.
+        if (window.location.hash) { document.title = "# Textnet"; }
+        else { document.title = "Textnet"; }
         $("body").toggleAttr("style", "display: visible;", "display: none;");
         $("#menu-btn").click(function() {
                 $(this).toggleText("More", "Less");
                 $(this).toggleAttr("title", "Close Menu", "Open Menu");
                 $("#submenu").toggleAttr("style", "display: visible;", "display: none;");
         });
-        $("[disabled]").addClass("disabled");
         $(window).tooltip({
                 selector: "[data-title]",
                 trigger: "hover",
                 animation: false
         });
-        $("iframe").attr("scrolling", "no").attr("frameborder", "0").attr("allowtransparency", "true");
         LazyLoad.js("//momentjs.com/downloads/moment.min.js", function() {
                 var updateTime = function() {
                                 // Making it work
@@ -67,6 +60,7 @@ LazyLoad.js("https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js", 
                 updateTime();
                 setInterval(updateTime, 1);
         });
+        $("iframe").attr("scrolling", "no").attr("frameborder", "0").attr("allowtransparency", "true");
 });
 
 // JS
