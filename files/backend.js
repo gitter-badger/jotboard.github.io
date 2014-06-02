@@ -12,33 +12,24 @@ LazyLoad.js("https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js", 
                 animation: false
         });
         $("iframe").attr("scrolling", "no").attr("frameborder", "0").attr("allowtransparency", "true");
+        LazyLoad.js("//momentjs.com/downloads/moment.min.js", function() {
+                var updateTime = function() {
+                                // Making it work
+                                $("#form.day").attr("placeholder", moment(new Date()).format("[Hi, it's ]dddd[, the] Do [of] MMMM YYYY[ and time is] h:mm a[.]"));
+                                $("#form.night").attr("placeholder", moment(new Date()).format("[Hows it goin? it was a nice ]dddd, Do [of] MMMM YYYY[ and the time is] h:mm a[, goodnight.]"));
+                                // Pushing the Marquee, the hard and only way.
+                                if (0 <= new Date().getHours() && new Date().getHours() < 18) {
+                                        $("#form").addClass("day");
+                                } else {
+                                        $("#form").addClass("night");
+                                }
+                        };
+                updateTime();
+                setInterval(updateTime, 1);
+        });
 });
 
 // JS
-LazyLoad.js("http://leaverou.github.io/prefixfree/prefixfree.min.js");
-LazyLoad.js("https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js");
-LazyLoad.js("https://cdn.rawgit.com/alexgibson/notify.js/master/notify.js");
-LazyLoad.js("//apis.google.com/js/platform.js");
-
-LazyLoad.js("//togetherjs.com/togetherjs-min.js", function(){
-        // Groupies
-        TogetherJSConfig_siteName = "Textnet";
-        TogetherJSConfig_toolName = "Groupies";
-        TogetherJSConfig_dontShowClicks = true;
-        TogetherJSConfig_youtube = true;
-        TogetherJSConfig_disableWebRTC = false;
-        TogetherJSConfig_suppressInvite = false;
-        TogetherJSConfig_suppressJoinConfirmation = true;
-});
-
-LazyLoad.js("//bootboxjs.com/bootbox.js");
-
-// CSS
-LazyLoad.css("//textnet.github.io/files/system.css");
-LazyLoad.css("//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css");
-LazyLoad.css("//fontawesome.io/assets/font-awesome/css/font-awesome.css");
-LazyLoad.css("https://fonts.googleapis.com/css?family=Raleway:300|Source+Code+Pro:400,700");
-
 LazyLoad.js("https://marcuswestin.github.io/store.js/store.min.js", function() {
         console.info("Backend.js: Store.js > loaded.");
         var form = grabSelectorAll("#form");
@@ -49,23 +40,10 @@ LazyLoad.js("https://marcuswestin.github.io/store.js/store.min.js", function() {
                 return false;
         }
 });
-
-LazyLoad.js("//momentjs.com/downloads/moment.min.js", function() {
-        var updateTime = function() {
-                        // Making it work
-                        $("#form.day").attr("placeholder", moment(new Date()).format("[Hi, it's ]dddd[, the] Do [of] MMMM YYYY[ and time is] h:mm a[.]"));
-                        $("#form.night").attr("placeholder", moment(new Date()).format("[Hows it goin? it was a nice ]dddd, Do [of] MMMM YYYY[ and the time is] h:mm a[, goodnight.]"));
-                        // Pushing the Marquee, the hard and only way.
-                        if (0 <= new Date().getHours() && new Date().getHours() < 18) {
-                                $("#form").addClass("day");
-                        } else {
-                                $("#form").addClass("night");
-                        }
-                };
-        updateTime();
-        setInterval(updateTime, 1);
-});
-
+LazyLoad.js("http://leaverou.github.io/prefixfree/prefixfree.min.js", function(){});
+LazyLoad.js("https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js", function(){});
+LazyLoad.js("https://cdn.rawgit.com/alexgibson/notify.js/master/notify.js", function(){});
+LazyLoad.js("//bootboxjs.com/bootbox.js", function(){});
 LazyLoad.js("//cdn.craig.is/js/mousetrap/mousetrap.min.js", function() {
         // Keyboard Combos
         Mousetrap.bind("mod+a", hashIt("selectTextnet"));
@@ -78,12 +56,27 @@ LazyLoad.js("//cdn.craig.is/js/mousetrap/mousetrap.min.js", function() {
                 });
         });
 });
-
+LazyLoad.js("//togetherjs.com/togetherjs-min.js", function() {
+        // Groupies
+        TogetherJSConfig_siteName = "Textnet";
+        TogetherJSConfig_toolName = "Groupies";
+        TogetherJSConfig_dontShowClicks = true;
+        TogetherJSConfig_youtube = true;
+        TogetherJSConfig_disableWebRTC = false;
+        TogetherJSConfig_suppressInvite = false;
+        TogetherJSConfig_suppressJoinConfirmation = true;
+});
 LazyLoad.js(("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/analytics.js", function() {
         var _gaq = _gaq || [];
         _gaq.push(["_setAccount", "UA-37813397-3"]);
         _gaq.push(["_trackPageview"]);
 });
+
+// CSS
+LazyLoad.css("//textnet.github.io/files/system.css", function(){});
+LazyLoad.css("//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css", function(){});
+LazyLoad.css("//fontawesome.io/assets/font-awesome/css/font-awesome.css", function(){});
+LazyLoad.css("https://fonts.googleapis.com/css?family=Raleway:300|Source+Code+Pro:400,700", function(){});
 
 $(function() {
         var u = function() {
@@ -191,39 +184,40 @@ function hashIt(hash) {
         }
 }
 
-function save() {
-        if (namespace.value.length === 0) {
-                store.set("_-Main", form.value);
-                console.info("Backend.js: Main > saved.");
-                new Notify("Saved", {
-                        body: "Your Main Textnet has been successfully saved.",
-                        icon: "http://static4.wikia.nocookie.net/humble/images/1/18/TextnetFBPhoto.png"
-                }).show();
-        } else {
-                store.set("_-" + namespace.value, form.value);
-                console.info("Backend.js: " + namespace.value + " > saved.");
-                new Notify("Saved", {
-                        body: "Your Textnet '" + namespace.value + "' has been successfully saved.",
-                        icon: "http://static4.wikia.nocookie.net/humble/images/1/18/TextnetFBPhoto.png"
-                }).show();
+function change(type) {
+        if (type == "save") {
+                if (namespace.value.length === 0) {
+                        store.set("_-Main", form.value);
+                        console.info("Backend.js: Main > saved.");
+                        new Notify("Saved", {
+                                body: "Your Main Textnet has been successfully saved.",
+                                icon: "http://static4.wikia.nocookie.net/humble/images/1/18/TextnetFBPhoto.png"
+                        }).show();
+                } else {
+                        store.set("_-" + namespace.value, form.value);
+                        console.info("Backend.js: " + namespace.value + " > saved.");
+                        new Notify("Saved", {
+                                body: "Your Textnet '" + namespace.value + "' has been successfully saved.",
+                                icon: "http://static4.wikia.nocookie.net/humble/images/1/18/TextnetFBPhoto.png"
+                        }).show();
+                }
         }
-}
-
-function load() {
-        if (namespace.value.length === 0) {
-                form.value = store.get("_-Main");
-                console.info("Backend.js: Main > loaded.");
-                new Notify("Loaded", {
-                        body: "Your Main Textnet has been successfully saved.",
-                        icon: "http://static4.wikia.nocookie.net/humble/images/1/18/TextnetFBPhoto.png"
-                }).show();
-        } else {
-                form.value = store.get("_-" + namespace.value);
-                console.info("Backend.js: " + namespace.value + " > loaded.");
-                new Notify("Loaded", {
-                        body: "Your Textnet '" + namespace.value + "' has been successfully loaded.",
-                        icon: "http://static4.wikia.nocookie.net/humble/images/1/18/TextnetFBPhoto.png"
-                }).show();
+        if (type == "load") {
+                if (namespace.value.length === 0) {
+                        form.value = store.get("_-Main");
+                        console.info("Backend.js: Main > loaded.");
+                        new Notify("Loaded", {
+                                body: "Your Main Textnet has been successfully saved.",
+                                icon: "http://static4.wikia.nocookie.net/humble/images/1/18/TextnetFBPhoto.png"
+                        }).show();
+                } else {
+                        form.value = store.get("_-" + namespace.value);
+                        console.info("Backend.js: " + namespace.value + " > loaded.");
+                        new Notify("Loaded", {
+                                body: "Your Textnet '" + namespace.value + "' has been successfully loaded.",
+                                icon: "http://static4.wikia.nocookie.net/humble/images/1/18/TextnetFBPhoto.png"
+                        }).show();
+                }
         }
 }
 
