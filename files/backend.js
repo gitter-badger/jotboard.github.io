@@ -188,7 +188,8 @@ function hashIt(hash) {
                 return false;
         }
         if (hash == "selectTextnet") {
-                select("#form");
+                document.querySelectorAll("#form").focus();
+                document.querySelectorAll("#form").select();
                 return false;
         }
         if (hash == "spotify") {
@@ -235,15 +236,6 @@ function change(type) {
                         }).show();
                 }
         }
-}
-
-function select(attr) {
-        if (typeof attr == "undefined") {
-                console.error("Bad Response: Attr undefined");
-        }
-        document.querySelectorAll(attr).focus();
-        document.querySelectorAll(attr).select();
-        console.info("Backend.js: " + attr + " > select");
 }
 
 function classToggle(attr, attr_1) {
