@@ -40,25 +40,25 @@ LazyLoad.js("https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js", 
                 $(this).toggleAttr("title", "Close Menu", "Open Menu");
                 $("#submenu").toggleAttr("style", "display: visible;", "display: none;");
         });
-        LazyLoad.js("//momentjs.com/downloads/moment.min.js", function() {
-                var updateTime = function() {
-                                // Making it work
-                                $("#form.day").attr("placeholder", moment(new Date()).format("[Hi, it's ]dddd[, the] Do [of] MMMM YYYY[ and time is] h:mm a[.]"));
-                                $("#form.night").attr("placeholder", moment(new Date()).format("[Hows it goin? it was a nice ]dddd, Do [of] MMMM YYYY[ and the time is] h:mm a[, goodnight.]"));
-                                // Pushing the Marquee, the hard and only way.
-                                if (0 <= new Date().getHours() && new Date().getHours() < 18) {
-                                        $("#form").addClass("day");
-                                } else {
-                                        $("#form").addClass("night");
-                                }
-                        };
-                updateTime();
-                setInterval(updateTime, 1);
-        });
         $("iframe").attr("scrolling", "no").attr("frameborder", "0").attr("allowtransparency", "true");
 });
 
-// JS
+LazyLoad.js("//momentjs.com/downloads/moment.min.js", function() {
+        var updateTime = function() {
+                        // Making it work
+                        $("#form.day").attr("placeholder", moment(new Date()).format("[Hi, it's ]dddd[, the] Do [of] MMMM YYYY[ and time is] h:mm a[.]"));
+                        $("#form.night").attr("placeholder", moment(new Date()).format("[Hows it goin? it was a nice ]dddd, Do [of] MMMM YYYY[ and the time is] h:mm a[, goodnight.]"));
+                        // Pushing the Marquee, the hard and only way.
+                        if (0 <= new Date().getHours() && new Date().getHours() < 18) {
+                                $("#form").addClass("day");
+                        } else {
+                                $("#form").addClass("night");
+                        }
+                };
+        updateTime();
+        setInterval(updateTime, 1);
+});
+
 LazyLoad.js("https://marcuswestin.github.io/store.js/store.min.js", function() {
         console.info("Backend.js: Store.js > loaded.");
         var form = grabSelectorAll("#form");
@@ -82,7 +82,8 @@ LazyLoad.js([
 LazyLoad.js("//cdn.craig.is/js/mousetrap/mousetrap.min.js", function() {
         // Keyboard Combos
         Mousetrap.bind("mod+a", hashIt("selectTextnet"));
-        Mousetrap.bind("mod+m", save);
+        Mousetrap.bind("mod+m", change("save"));
+        Mousetrap.bind("mod+n", change("load"));
         Mousetrap.bind("up up down down left right left right b a enter", function() {
                 // Konami Code
                 bootbox.dialog({
@@ -115,7 +116,7 @@ LazyLoad.css([
         "https://fonts.googleapis.com/css?family=Raleway:300|Source+Code+Pro:400,700",
         "//fontawesome.io/assets/font-awesome/css/font-awesome.css"
     ], function() {
-        console.info("Loaded, Bootstrap (CSS), Google Webfonts and Font Awesome.");
+        console.info("Loaded Bootstrap (CSS), Google Webfonts and Font Awesome.");
 });
 
 // Grabbers
