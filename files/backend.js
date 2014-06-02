@@ -1,12 +1,3 @@
-// Groupies
-TogetherJSConfig_siteName = "Textnet";
-TogetherJSConfig_toolName = "Groupies";
-TogetherJSConfig_dontShowClicks = true;
-TogetherJSConfig_youtube = true;
-TogetherJSConfig_disableWebRTC = false;
-TogetherJSConfig_suppressInvite = false;
-TogetherJSConfig_suppressJoinConfirmation = true;
-
 LazyLoad.js("https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js", function() {
         $("body").toggleAttr("style", "display: visible;", "display: none;");
         $("#menu-btn").click(function() {
@@ -28,7 +19,18 @@ LazyLoad.js("http://leaverou.github.io/prefixfree/prefixfree.min.js");
 LazyLoad.js("https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js");
 LazyLoad.js("https://cdn.rawgit.com/alexgibson/notify.js/master/notify.js");
 LazyLoad.js("//apis.google.com/js/platform.js");
-LazyLoad.js("//togetherjs.com/togetherjs-min.js");
+
+LazyLoad.js("//togetherjs.com/togetherjs-min.js", function(){
+        // Groupies
+        TogetherJSConfig_siteName = "Textnet";
+        TogetherJSConfig_toolName = "Groupies";
+        TogetherJSConfig_dontShowClicks = true;
+        TogetherJSConfig_youtube = true;
+        TogetherJSConfig_disableWebRTC = false;
+        TogetherJSConfig_suppressInvite = false;
+        TogetherJSConfig_suppressJoinConfirmation = true;
+});
+
 LazyLoad.js("//bootboxjs.com/bootbox.js");
 
 // CSS
@@ -246,25 +248,3 @@ function feature() {
         });
         console.log("Wow you found me.");
 }
-
-(function(d, s, id) {
-        // Facebook
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s);
-        js.id = id;
-        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=176413809071512&version=v2.0";
-        fjs.parentNode.insertBefore(js, fjs);
-}(document, "script", "facebook-jssdk"));
-
-!function(d, s, id) {
-        // Twitter
-        var js, fjs = d.getElementsByTagName(s)[0],
-                p = /^http:/.test(d.location) ? "http" : "https";
-        if (!d.getElementById(id)) {
-                js = d.createElement(s);
-                js.id = id;
-                js.src = p + "://platform.twitter.com/widgets.js";
-                fjs.parentNode.insertBefore(js, fjs);
-        }
-}(document, "script", "twitter-wjs");
