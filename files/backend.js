@@ -46,7 +46,7 @@ $(window).load(function() {
         }
 });
 
-head.load("//momentjs.com/downloads/moment.min.js", function() {
+tnLoad("//momentjs.com/downloads/moment.min.js", function() {
         var updateTime = function() {
                         // Making it work
                         $("#form.day").attr("placeholder", moment(new Date()).format("[Hi, it's ]dddd[, the] Do [of] MMMM YYYY[ and time is] h:mm a[.]"));
@@ -62,7 +62,7 @@ head.load("//momentjs.com/downloads/moment.min.js", function() {
         setInterval(updateTime, 1);
 });
 
-head.load("https://marcuswestin.github.io/store.js/store.min.js", function() {
+tnLoad("https://marcuswestin.github.io/store.js/store.min.js", function() {
         console.info("Backend.js: Store.js > loaded.");
         var form = grabSelectorAll("#form");
         var namespace = grabSelectorAll("#namespace");
@@ -73,11 +73,11 @@ head.load("https://marcuswestin.github.io/store.js/store.min.js", function() {
         }
 });
 
-head.load(["http://leaverou.github.io/prefixfree/prefixfree.min.js", "https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js", "https://cdn.rawgit.com/alexgibson/notify.js/master/notify.js", "//bootboxjs.com/bootbox.js"], function() {
+tnLoad(["http://leaverou.github.io/prefixfree/prefixfree.min.js", "https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js", "https://cdn.rawgit.com/alexgibson/notify.js/master/notify.js", "//bootboxjs.com/bootbox.js"], function() {
         console.info("Loaded Bootbox, Prefixfree, Bootstrap (JS) and Notify.JS");
 });
 
-head.load("//cdn.craig.is/js/mousetrap/mousetrap.min.js", function() {
+tnLoad("//cdn.craig.is/js/mousetrap/mousetrap.min.js", function() {
         // Keyboard Combos
         Mousetrap.bind("mod+a", hashIt("selectTextnet"));
         Mousetrap.bind("mod+m", change("save"));
@@ -91,7 +91,7 @@ head.load("//cdn.craig.is/js/mousetrap/mousetrap.min.js", function() {
         });
 });
 
-head.load("//togetherjs.com/togetherjs-min.js", function() {
+tnLoad("//togetherjs.com/togetherjs-min.js", function() {
         // Groupies
         TogetherJSConfig_siteName = "Textnet";
         TogetherJSConfig_toolName = "Groupies";
@@ -102,14 +102,10 @@ head.load("//togetherjs.com/togetherjs-min.js", function() {
         TogetherJSConfig_suppressJoinConfirmation = true;
 });
 
-head.load(("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/analytics.js", function() {
+tnLoad(("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/analytics.js", function() {
         var _gaq = _gaq || [];
         _gaq.push(["_setAccount", "UA-37813397-3"]);
         _gaq.push(["_trackPageview"]);
-});
-
-head.load(["//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css", "https://fonts.googleapis.com/css?family=Raleway:300|Source+Code+Pro:400,700", "//fontawesome.io/assets/font-awesome/css/font-awesome.css"], function() {
-        console.info("Loaded Bootstrap (CSS), Google Webfonts and Font Awesome.");
 });
 
 // Grabbers
