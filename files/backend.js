@@ -7,7 +7,7 @@ head.load("https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js", fu
         };
         jQuery.fn.toggleHTML = function(attr, attr1, attr2) {
                 return this.each(function() {
-                        if ($(this).html() === attr1) $(this).html(attr2);
+                        if ($(this).html() == attr1) $(this).html(attr2);
                         else $(this).html(attr, attr1);
                 });
         };
