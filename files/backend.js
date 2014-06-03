@@ -1,4 +1,4 @@
-head.load("https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js", function() {
+$(window).load(function() {
         jQuery.fn.toggleAttr = function(attr, attr1, attr2) {
                 return this.each(function() {
                         if ($(this).attr(attr) == attr1) $(this).attr(attr, attr2);
@@ -18,9 +18,6 @@ head.load("https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js", fu
                 $("#submenu").toggleAttr("style", "display: visible;", "display: none;");
         });
         $("iframe").attr("scrolling", "no").attr("frameborder", "0").attr("allowtransparency", "true");
-});
-
-$(function () {
         // Below the script get's the full url.
         var bse_url = window.location.href;
         // Create an array.
@@ -44,8 +41,7 @@ $(function () {
         // Checking whether user is using #MODS or not.
         if (window.location.hash) {
                 document.title = "# Textnet";
-        }
-        else {
+        } else {
                 document.title = "Textnet";
         }
 });
@@ -77,12 +73,7 @@ head.load("https://marcuswestin.github.io/store.js/store.min.js", function() {
         }
 });
 
-head.load([
-        "http://leaverou.github.io/prefixfree/prefixfree.min.js",
-        "https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js",
-        "https://cdn.rawgit.com/alexgibson/notify.js/master/notify.js",
-        "//bootboxjs.com/bootbox.js"
-    ], function() {
+head.load(["http://leaverou.github.io/prefixfree/prefixfree.min.js", "https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js", "https://cdn.rawgit.com/alexgibson/notify.js/master/notify.js", "//bootboxjs.com/bootbox.js"], function() {
         console.info("Loaded Bootbox, Prefixfree, Bootstrap (JS) and Notify.JS");
 });
 
@@ -117,17 +108,11 @@ head.load(("https:" == document.location.protocol ? "https://ssl" : "http://www"
         _gaq.push(["_trackPageview"]);
 });
 
-// CSS
-head.load([
-        "//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css",
-        "https://fonts.googleapis.com/css?family=Raleway:300|Source+Code+Pro:400,700",
-        "//fontawesome.io/assets/font-awesome/css/font-awesome.css"
-    ], function() {
+head.load(["//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css", "https://fonts.googleapis.com/css?family=Raleway:300|Source+Code+Pro:400,700", "//fontawesome.io/assets/font-awesome/css/font-awesome.css"], function() {
         console.info("Loaded Bootstrap (CSS), Google Webfonts and Font Awesome.");
 });
 
 // Grabbers
-function loadScript(attr, attr_1, attr_2) { $.getScript(attr).done(attr_1).fail(attr_2); }
 var hashline = function(u) { return window.location.href.indexOf("#" + u) != -1; };
 var grabSelector = function(u) { return document.querySelector(u); };
 var grabSelectorAll = function(u) { return document.querySelectorAll(u); };
