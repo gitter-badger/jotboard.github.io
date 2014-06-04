@@ -16,7 +16,7 @@ $(window).load(function() {
         jQuery.fn.toggleHTML = function(attr1, attr2) {
                 return this.each(function() {
                         if ($(this).html() == attr1) $(this).html(attr2);
-                        else $(this).html($(this).html(), attr1);
+                        else $(this).html(attr1);
                 });
         };
         $("body").toggleAttr("style", "display: visible;", "display: none;");
