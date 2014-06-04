@@ -55,8 +55,8 @@ div.bootbox.modal, div.bootbox.modal *,
 }
 
 #togetherjs-dock.togetherjs-dock-right {
-	top: 0 !important;
-	right: 0 !important;
+	top: 12px;
+	right: 12px !important;
 }
 
 .togetherjs #togetherjs-buttons .togetherjs-button {
