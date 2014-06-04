@@ -1,3 +1,11 @@
+// Grabbers
+var hashline = function(u) { return window.location.href.indexOf("#" + u) != -1; };
+var grabSelector = function(u) { return document.querySelector(u); };
+var grabSelectorAll = function(u) { return document.querySelectorAll(u); };
+var grabID = function(u) { return document.getElementById(u); };
+var grabClass = function(u) { return document.getElementsByClassName(u); };
+var grabTag = function(u) { return document.getElementsByTagName(u); };
+
 $(window).load(function() {
         jQuery.fn.toggleAttr = function(attr, attr1, attr2) {
                 return this.each(function() {
@@ -5,10 +13,10 @@ $(window).load(function() {
                         else $(this).attr(attr, attr1);
                 });
         };
-        jQuery.fn.toggleHTML = function(attr, attr1, attr2) {
+        jQuery.fn.toggleHTML = function(attr1, attr2) {
                 return this.each(function() {
                         if ($(this).html() == attr1) $(this).html(attr2);
-                        else $(this).html(attr, attr1);
+                        else $(this).html($(this).html(), attr1);
                 });
         };
         $("body").toggleAttr("style", "display: visible;", "display: none;");
@@ -46,6 +54,11 @@ $(window).load(function() {
         }
 });
 
+tnLoad("https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js", function() { console.info("Loaded Bootstrap (JS)"); });
+tnLoad("https://cdn.rawgit.com/alexgibson/notify.js/master/notify.js", function() { console.info("Loaded Notify.JS"); });
+tnLoad("//bootboxjs.com/bootbox.js", function() { console.info("Loaded Bootbox"); });
+tnLoad("http://leaverou.github.io/prefixfree/prefixfree.min.js", function() { console.info("Loaded Prefixfree"); });
+
 tnLoad("//momentjs.com/downloads/moment.min.js", function() {
         var updateTime = function() {
                         // Making it work
@@ -64,17 +77,13 @@ tnLoad("//momentjs.com/downloads/moment.min.js", function() {
 
 tnLoad("https://marcuswestin.github.io/store.js/store.min.js", function() {
         console.info("Backend.js: Store.js > loaded.");
-        var form = grabSelectorAll("#form");
-        var namespace = grabSelectorAll("#namespace");
+        var form = document.querySelectorAll("#form");
+        var namespace = document.querySelectorAll("#namespace");
         if (window.localStorage["_-Main"]) {
                 form.value = store.get("_-Main");
         } else {
                 return false;
         }
-});
-
-tnLoad(["http://leaverou.github.io/prefixfree/prefixfree.min.js", "https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js", "https://cdn.rawgit.com/alexgibson/notify.js/master/notify.js", "//bootboxjs.com/bootbox.js"], function() {
-        console.info("Loaded Bootbox, Prefixfree, Bootstrap (JS) and Notify.JS");
 });
 
 tnLoad("//cdn.craig.is/js/mousetrap/mousetrap.min.js", function() {
@@ -107,14 +116,6 @@ tnLoad(("https:" == document.location.protocol ? "https://ssl" : "http://www") +
         _gaq.push(["_setAccount", "UA-37813397-3"]);
         _gaq.push(["_trackPageview"]);
 });
-
-// Grabbers
-var hashline = function(u) { return window.location.href.indexOf("#" + u) != -1; };
-var grabSelector = function(u) { return document.querySelector(u); };
-var grabSelectorAll = function(u) { return document.querySelectorAll(u); };
-var grabID = function(u) { return document.getElementById(u); };
-var grabClass = function(u) { return document.getElementsByClassName(u); };
-var grabTag = function(u) { return document.getElementsByTagName(u); };
 
 function hashIt(hash) {
         if (hash == "groupies") {
