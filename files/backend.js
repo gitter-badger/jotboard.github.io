@@ -38,15 +38,10 @@ $(window).load(function() {
         }
 });
 
-$(function() {
-        // Using #MOD's as a defence shield, counts for #defence, #idl and #IDL.
-        if (hashline("defence") || hashline("idl") || hashline("IDL")) {
-                window._idl = {};
-                _idl.variant = "modal";
-                tnLoad("http://members.internetdefenseleague.org/include/?url=" + (_idl.url || "") + "&campaign=" + (_idl.campaign || "") + "&variant=" + (_idl.variant || "modal"), function() {
-                        console.info("We will never give the Internet up: The Internet Defence League Script has been loaded.");
-                });
-        }
+window._idl = {};
+_idl.variant = "modal";
+tnLoad("http://members.internetdefenseleague.org/include/?url=" + (_idl.url || "") + "&campaign=" + (_idl.campaign || "") + "&variant=" + (_idl.variant || "modal"), function() {
+        console.info("We will never give the Internet up: The Internet Defence League Script has been loaded.");
 });
 
 tnLoad("https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js", function() { console.info("Loaded Bootstrap (JS)"); });
