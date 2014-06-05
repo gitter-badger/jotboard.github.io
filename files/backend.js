@@ -78,14 +78,13 @@ tnLoad("https://marcuswestin.github.io/store.js/store.min.js", function() {
         console.info("Store.js loaded.");
         var form = document.querySelectorAll("#form");
         var namespace = document.querySelectorAll("#namespace");
-        var initStore = function() {
-                        if (window.localStorage["_-Main"]) {
-                                form.value = store.get("_-Main");
-                        } else {
-                                return false;
-                        }
-                };
-        initStore();
+        $(function() {
+                if (window.localStorage["_-Main"]) {
+                        form.value = store.get("_-Main");
+                } else {
+                        return false;
+                }
+        });
 });
 
 tnLoad("//cdn.craig.is/js/mousetrap/mousetrap.min.js", function() {
