@@ -41,12 +41,13 @@ $(window).load(function() {
 window._idl = {};
 _idl.variant = "modal";
 $(function() {
-        if (hashlie("defence")) {
+        if (hashline("defence")) {
+                console.log("We will never give up the Internet: IDL Script has been loaded.")
                 (function() {
                         var idl = document.createElement('script');
-                        idl.type = 'text/javascript';
+                        idl.type = "text/javascript";
                         idl.async = true;
-                        idl.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'members.internetdefenseleague.org/include/?url=' + (_idl.url || '') + '&campaign=' + (_idl.campaign || '') + '&variant=' + (_idl.variant || 'modal');
+                        idl.src = ("https:" == document.location.protocol ? "https://" : "http://") + "members.internetdefenseleague.org/include/?url=" + (_idl.url || "") + "&campaign=" + (_idl.campaign || "") + "&variant=" + (_idl.variant || "modal");
                         document.getElementsByTagName('body')[0].appendChild(idl);
                 })();
         }
