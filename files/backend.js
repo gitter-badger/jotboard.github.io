@@ -30,6 +30,15 @@ $(window).load(function() {
         if (hashline("groupies") || hashline("hashIt") || hashline("fbShare") || hashline("twShare")) {
                 return false;
         }
+        // Checking whether user is using #MODS or not.
+        if (window.location.hash) {
+                document.title = "# Textnet";
+        } else {
+                document.title = "Textnet";
+        }
+});
+
+$(function() {
         // Using #MOD's as a defence shield, counts for #defence, #idl and #IDL.
         if (hashline("defence") || hashline("idl") || hashline("IDL")) {
                 window._idl = {};
@@ -37,12 +46,6 @@ $(window).load(function() {
                 tnLoad("http://members.internetdefenseleague.org/include/?url=" + (_idl.url || "") + "&campaign=" + (_idl.campaign || "") + "&variant=" + (_idl.variant || "modal"), function() {
                         console.info("We will never give the Internet up: The Internet Defence League Script has been loaded.");
                 });
-        }
-        // Checking whether user is using #MODS or not.
-        if (window.location.hash) {
-                document.title = "# Textnet";
-        } else {
-                document.title = "Textnet";
         }
 });
 
