@@ -26,22 +26,6 @@ $(window).load(function() {
                 $("#submenu").toggleAttr("style", "display: visible;", "display: none;");
         });
         $("iframe").attr("scrolling", "no").attr("frameborder", "0").attr("allowtransparency", "true");
-        // Below the script get's the full url.
-        var bse_url = window.location.href;
-        // Create an array.
-        var hashes = bse_url.split("#");
-        // Check if the array is bigger 1 value.
-        if (hashes.length > 1) {
-                // Set to 1 because the indentation needs to be set to a static number.
-                for (var i = 1; i < hashes.length; i++) {
-                        // Run the function. We run the # value through the window to grab the function, hence the name #MODS.
-                        window[hashes[i]]();
-                        if (typeof hashes === "undefined") {
-                                console.error("Hash doesn't exist, hit us up on http://textnet.github.io/report/ to submit a new feature or bug to fix.");
-                        }
-                        // Thanks to @noahgelman from CSS-Tricks to help me out with this.
-                }
-        }
         // Exclusion list for #MODS.
         if (hashline("groupies") || hashline("hashIt") || hashline("fbShare") || hashline("twShare")) {
                 return false;
@@ -76,14 +60,17 @@ tnLoad("//momentjs.com/downloads/moment.min.js", function() {
 });
 
 tnLoad("https://marcuswestin.github.io/store.js/store.min.js", function() {
-        console.info("Backend.js: Store.js > loaded.");
+        console.info("Store.js loaded.");
         var form = document.querySelectorAll("#form");
         var namespace = document.querySelectorAll("#namespace");
-        if (window.localStorage["_-Main"]) {
-                form.value = store.get("_-Main");
-        } else {
-                return false;
-        }
+        var initStore = function() {
+                        if (window.localStorage["_-Main"]) {
+                                form.value = store.get("_-Main");
+                        } else {
+                                return false;
+                        }
+                };
+        initStore();
 });
 
 tnLoad("//cdn.craig.is/js/mousetrap/mousetrap.min.js", function() {
@@ -124,7 +111,6 @@ function hashIt(hash) {
                         body: "Be sure not to expose personal/private infomation when in a public room.",
                         icon: "http://static4.wikia.nocookie.net/humble/images/1/18/TextnetFBPhoto.png"
                 }).show();
-                return false;
         }
         if (hash == "autosave") {
                 classToggle("#save, #load, #autosave-btn", "block");
@@ -146,18 +132,15 @@ function hashIt(hash) {
                                 store.set("_-" + namespace.value, form.value);
                         }
                 };
-                return false;
         }
         if (hash == "fbShare") {
                 FB.ui({
                         method: "share",
                         href: window.location.href
                 });
-                return false;
         }
         if (hash == "twShare") {
                 window.open("https://sociao.github.io/share/#textnet_twshare", "_blank");
-                return false;
         }
         if (hash == "youtube") {
                 bootbox.prompt("YouTube Search", function(srch) {
@@ -167,19 +150,18 @@ function hashIt(hash) {
                                 window.open("https://www.youtube.com/results?utm_source=opensearch&search_query=" + srch, "_blank");
                         }
                 });
-                return false;
         }
         if (hash == "selectTextnet") {
                 document.querySelectorAll("#form").focus();
                 document.querySelectorAll("#form").select();
-                return false;
         }
         if (hash == "spotify") {
                 player("spotify:user:1249813849:playlist:7gMrshUGhhYAKThn2RT8eQ");
                 console.info("System.JS: Main player loaded.");
         } else {
-                window.location.href = "http://" + window.location.host + "/textnet/" + "#" + hash;
-                location.reload(true);
+                console.log("ping");
+                console.error("ping");
+                return false;
         }
 }
 
