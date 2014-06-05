@@ -90,8 +90,14 @@
 </div>
 <!-- /.body.container -->
 
-<!-- Reload Script -->
-<script> function rel(u) { location.reload(u); } </script>
+<!-- Reloader for Debugging -->
+<script>
+function rel(u) {
+	if (u == 't') location.reload(true);
+	if (u == 'f') location.reload(false);
+	else location.reload();
+}
+</script>
 
 </body>
 </html>
