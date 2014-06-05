@@ -81,8 +81,6 @@ tnLoad("https://marcuswestin.github.io/store.js/store.min.js", function() {
         $(function() {
                 if (window.localStorage["_-Main"]) {
                         form.value = store.get("_-Main");
-                } else {
-                        return false;
                 }
         });
 });
