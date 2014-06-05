@@ -40,8 +40,16 @@ $(window).load(function() {
 
 window._idl = {};
 _idl.variant = "modal";
-tnLoad("http://members.internetdefenseleague.org/include/?url=" + (_idl.url || "") + "&campaign=" + (_idl.campaign || "") + "&variant=" + (_idl.variant || "modal"), function() {
-        console.info("We will never give the Internet up: The Internet Defence League Script has been loaded.");
+$(function() {
+        if (hashlie("defence")) {
+                (function() {
+                        var idl = document.createElement('script');
+                        idl.type = 'text/javascript';
+                        idl.async = true;
+                        idl.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'members.internetdefenseleague.org/include/?url=' + (_idl.url || '') + '&campaign=' + (_idl.campaign || '') + '&variant=' + (_idl.variant || 'modal');
+                        document.getElementsByTagName('body')[0].appendChild(idl);
+                })();
+        }
 });
 
 tnLoad("https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js", function() { console.info("Loaded Bootstrap (JS)"); });
