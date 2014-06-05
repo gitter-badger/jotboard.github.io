@@ -75,7 +75,7 @@ tnLoad("https://marcuswestin.github.io/store.js/store.min.js", function() {
 
 window._idl = {};
 _idl.variant = "modal";
-tnLoad([('https:' == document.location.protocol ? 'https://' : 'http://') + 'members.internetdefenseleague.org/include/?url=' + (_idl.url || '') + '&campaign=' + (_idl.campaign || '') + '&variant=' + (_idl.variant || 'modal')], function () {
+tnLoad(("https:" == document.location.protocol ? "https://" : "http://") + "members.internetdefenseleague.org/include/?url=" + (_idl.url || window.location.href) + "&campaign=" + (_idl.campaign || "") + "&variant=" + (_idl.variant || "modal"), function () {
         console.info("We'll never give the Internet up: Internet Defence League Script Loaded.");
 });
 
