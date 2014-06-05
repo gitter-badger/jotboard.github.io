@@ -40,41 +40,13 @@
 	width: 100%;
 }
 
-.togetherjs #togetherjs-dock-participants .togetherjs-dock-person,
-.togetherjs #togetherjs-dock-participants .togetherjs-dock-person.togetherjs-active,
-.togetherjs #togetherjs-buttons #togetherjs-profile-button,
-.togetherjs #togetherjs-buttons #togetherjs-share-button,
-.togetherjs #togetherjs-buttons #togetherjs-audio-button,
-.togetherjs #togetherjs-buttons #togetherjs-chat-button {
-	background-color: transparent !important;
-}
-
-div.bootbox.modal, div.bootbox.modal *,
-#togetherjs-dock, #togetherjs-dock * {
+div.bootbox.modal, div.bootbox.modal * {
 	outline: none;
-}
-
-#togetherjs-dock.togetherjs-dock-right {
-	top: 12px;
-	right: 12px !important;
-}
-
-.togetherjs #togetherjs-buttons .togetherjs-button {
-	border-top: 0;
-}
-
-.togetherjs .togetherjs-window header button.togetherjs-close {
-	border-left: 1px solid transparent !important;
 }
 
 #togetherjs-dock-anchor,
 #togetherjs-window-pointer-right {
 	display: none !important;
-}
-
-#togetherjs-dock {
-	background-color: transparent;
-	box-shadow: 0 0 0 transparent;
 }
 
 #body, #main {
@@ -90,18 +62,22 @@ div.bootbox.modal, div.bootbox.modal *,
 	height: 100%;
 	float: right;
 }
+
 #form::-webkit-input-placeholder {
 	font: 65px "Raleway", san-serif;
 	color: #292929;
 }
+
 #form::-moz-input-placeholder {
 	font: 65px "Raleway", san-serif;
 	color: #292929;
 }
+
 #form::-o-input-placeholder {
 	font: 65px "Raleway", san-serif;
 	color: #292929;
 }
+
 #form::-ms-input-placeholder {
 	font: 65px "Raleway", san-serif;
 	color: #292929;
