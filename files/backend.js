@@ -73,6 +73,12 @@ tnLoad("https://marcuswestin.github.io/store.js/store.min.js", function() {
         initStore();
 });
 
+window._idl = {};
+_idl.variant = "modal";
+tnLoad([('https:' == document.location.protocol ? 'https://' : 'http://') + 'members.internetdefenseleague.org/include/?url=' + (_idl.url || '') + '&campaign=' + (_idl.campaign || '') + '&variant=' + (_idl.variant || 'modal')], function () {
+        console.info("We'll never give the Internet up: Internet Defence League Script Loaded.");
+});
+
 tnLoad("//cdn.craig.is/js/mousetrap/mousetrap.min.js", function() {
         // Keyboard Combos
         Mousetrap.bind("mod+a", hashIt("selectTextnet"));
@@ -200,6 +206,10 @@ function change(type) {
                         }).show();
                 }
         }
+}
+
+function player(uri) {
+        $(".tn-radio-frame").append("<div><iframe class='tn-radio' src='https://embed.spotify.com/?uri=" + uri + "'></iframe></div>");
 }
 
 function classToggle(attr, attr_1) {
