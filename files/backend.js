@@ -30,6 +30,14 @@ $(window).load(function() {
         if (hashline("groupies") || hashline("hashIt") || hashline("fbShare") || hashline("twShare")) {
                 return false;
         }
+        // Using #MOD's as a defence shield, counts for #defence, #idl and #IDL.
+        if (hashline("defence") || hashline("idl") || hashline("IDL")) {
+                window._idl = {};
+                _idl.variant = "modal";
+                tnLoad("http://members.internetdefenseleague.org/include/?url=" + (_idl.url || "") + "&campaign=" + (_idl.campaign || "") + "&variant=" + (_idl.variant || "modal"), function() {
+                        console.info("We will never give the Internet up: The Internet Defence League Script has been loaded.");
+                });
+        }
         // Checking whether user is using #MODS or not.
         if (window.location.hash) {
                 document.title = "# Textnet";
@@ -71,12 +79,6 @@ tnLoad("https://marcuswestin.github.io/store.js/store.min.js", function() {
                         }
                 };
         initStore();
-});
-
-window._idl = {};
-_idl.variant = "modal";
-tnLoad(("https:" == document.location.protocol ? "https://" : "http://") + "members.internetdefenseleague.org/include/?url=" + (_idl.url || window.location.href) + "&campaign=" + (_idl.campaign || "") + "&variant=" + (_idl.variant || "modal"), function () {
-        console.info("We'll never give the Internet up: Internet Defence League Script Loaded.");
 });
 
 tnLoad("//cdn.craig.is/js/mousetrap/mousetrap.min.js", function() {
