@@ -1,3 +1,11 @@
+// Grabbers
+var hashline = function(u) { return window.location.href.indexOf("#" + u) != -1; };
+var grabSelector = function(u) { return document.querySelector(u); };
+var grabSelectorAll = function(u) { return document.querySelectorAll(u); };
+var grabID = function(u) { return document.getElementById(u); };
+var grabClass = function(u) { return document.getElementsByClassName(u); };
+var grabTag = function(u) { return document.getElementsByTagName(u); };
+
 // tnLoad
 (function() {
         var firstScript = document.getElementsByTagName("script")[0];
