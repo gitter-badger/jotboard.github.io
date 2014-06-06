@@ -75,13 +75,13 @@
 			<div class="nav-select" id="load" onclick="change('load')" title="Load Textnet">Load</div>
 			<div class="nav-select" id="menu-btn">More</div>
 			<div style="display: none;" id="submenu">
-				<div class="select" onclick="hashIt('groupies')">Groupies</div>
-				<div class="select" onclick="hashIt('selectTextnet')">Select All</div>
-				<div class="select" onclick="hashIt('fbShare')">Status</div>
-				<div class="select" onclick="hashIt('twShare')">Tweet</div>
-				<div class="select" onclick="hashIt('youtube')">#youtube</div>
-				<div class="select" onclick="hashIt('autosave')" id="autosave-btn">#autosave</div>
-				<div class="select" onclick="hashIt('spotify')">#spotify</div>
+				<div class="select" onclick="execute('groupies')">Groupies</div>
+				<div class="select" onclick="execute('selectTextnet')">Select All</div>
+				<div class="select" onclick="execute('fbShare')">Status</div>
+				<div class="select" onclick="execute('twShare')">Tweet</div>
+				<div class="select" onclick="execute('youtube')">#youtube</div>
+				<div class="select" onclick="execute('autosave')" id="autosave-btn">#autosave</div>
+				<div class="select" onclick="execute('spotify')">#spotify</div>
 			</div>
 		</div>
 		<!-- /.container -->
@@ -90,7 +90,7 @@
 </div>
 <!-- /.body.container -->
 
-<!-- Reloader for Debugging -->
+<!-- rel(): Reloader for Debugging -->
 <script>
 function rel(u) {
 	if (u == 't') location.reload(true);
