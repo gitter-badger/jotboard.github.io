@@ -38,7 +38,7 @@ jQuery.fn.tn = function(tn, tn1, tn2, tn3) {
 };
 
 // $("a.object").click(function() {
-//         $(this).tn("load", "//example.org/api.js", function() {
+//         $(this).tn("tnLoad", "//example.org/api.js", function() {
 //                 console.log("It loaded.");
 //         });
 // });
