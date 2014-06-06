@@ -157,7 +157,7 @@ jQuery.fn.tn = function(tn, tn1, tn2, tn3) {
                 console.info("Player: " + tn1);
         }
         if (tn == "classToggle") {
-                $(attr).toggleClass(attr_1);
-                console.info(attr_1 + " > classToggle > " + attr);
+                $(tn1).toggleClass(tn2);
+                console.info(tn2 + " > classToggle > " + tn);
         }
 };
