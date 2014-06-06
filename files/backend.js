@@ -41,7 +41,7 @@ $(window).tn("tnload", "//bootboxjs.com/bootbox.js", function() {
         console.log("Bootbox.JS Loaded");
 });
 
-$(window).tn("tnload", "http://leaverou.github.io/prefixfree/prefixfree.min.js", function() {
+$(window).tn("tnload", "https://leaverou.github.io/prefixfree/prefixfree.min.js", function() {
         console.info("Prefixfree Loaded");
 });
 
