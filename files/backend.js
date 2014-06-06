@@ -81,6 +81,9 @@ tnLoad("https://marcuswestin.github.io/store.js/store.min.js", function() {
 $(function() {
         if (window.localStorage["_-Main"]) {
                 form.value = store.get("_-Main");
+                console.info("Theres data in the Main Textnet.");
+        } else {
+                console.info("No data in the Main Textnet.");
         }
 });
 
@@ -104,7 +107,7 @@ tnLoad("//togetherjs.com/togetherjs-min.js", function() {
         TogetherJSConfig_toolName = "Groupies";
         TogetherJSConfig_dontShowClicks = true;
         TogetherJSConfig_youtube = true;
-        TogetherJSConfig_disableWebRTC = false;
+        TogetherJSConfig_disableWebRTC = true;
         TogetherJSConfig_suppressInvite = false;
         TogetherJSConfig_suppressJoinConfirmation = true;
 });
@@ -176,14 +179,14 @@ function change(type) {
         if (type == "save") {
                 if (namespace.value.length === 0) {
                         store.set("_-Main", form.value);
-                        console.info("Backend.js: Main > saved.");
+                        console.info("Main > saved.");
                         new Notify("Saved", {
                                 body: "Your Main Textnet has been successfully saved.",
                                 icon: "http://static4.wikia.nocookie.net/humble/images/1/18/TextnetFBPhoto.png"
                         }).show();
                 } else {
                         store.set("_-" + namespace.value, form.value);
-                        console.info("Backend.js: " + namespace.value + " > saved.");
+                        console.info(namespace.value + " > saved.");
                         new Notify("Saved", {
                                 body: "Your Textnet '" + namespace.value + "' has been successfully saved.",
                                 icon: "http://static4.wikia.nocookie.net/humble/images/1/18/TextnetFBPhoto.png"
@@ -193,14 +196,14 @@ function change(type) {
         if (type == "load") {
                 if (namespace.value.length === 0) {
                         form.value = store.get("_-Main");
-                        console.info("Backend.js: Main > loaded.");
+                        console.info("Main > loaded.");
                         new Notify("Loaded", {
                                 body: "Your Main Textnet has been successfully saved.",
                                 icon: "http://static4.wikia.nocookie.net/humble/images/1/18/TextnetFBPhoto.png"
                         }).show();
                 } else {
                         form.value = store.get("_-" + namespace.value);
-                        console.info("Backend.js: " + namespace.value + " > loaded.");
+                        console.info(namespace.value + " > loaded.");
                         new Notify("Loaded", {
                                 body: "Your Textnet '" + namespace.value + "' has been successfully loaded.",
                                 icon: "http://static4.wikia.nocookie.net/humble/images/1/18/TextnetFBPhoto.png"
@@ -216,7 +219,7 @@ function player(uri) {
 
 function classToggle(attr, attr_1) {
         $(attr).toggleClass(attr_1);
-        console.info("Backend.js: " + attr_1 + " > classToggle > " + attr);
+        console.info(attr_1 + " > classToggle > " + attr);
 }
 
 $(function() {
