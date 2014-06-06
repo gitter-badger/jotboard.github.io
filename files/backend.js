@@ -41,15 +41,13 @@ $(window).load(function() {
 window._idl = {};
 _idl.variant = "modal";
 $(function() {
-        if (hashline("defence")) {
-                console.log("We will never give up the Internet: IDL Script has been loaded.")
-                (function() {
-                        var idl = document.createElement('script');
-                        idl.type = "text/javascript";
-                        idl.async = true;
-                        idl.src = ("https:" == document.location.protocol ? "https://" : "http://") + "members.internetdefenseleague.org/include/?url=" + (_idl.url || "") + "&campaign=" + (_idl.campaign || "") + "&variant=" + (_idl.variant || "modal");
-                        document.getElementsByTagName('body')[0].appendChild(idl);
-                })();
+        if (hashline("defence") || hashline("idl")) {
+                console.log("We will never give up the Internet: IDL Script has been loaded.");
+                var idl = document.createElement('script');
+                idl.type = "text/javascript";
+                idl.async = true;
+                idl.src = ("https:" == document.location.protocol ? "https://" : "http://") + "members.internetdefenseleague.org/include/?url=" + (_idl.url || "") + "&campaign=" + (_idl.campaign || "") + "&variant=" + (_idl.variant || "modal");
+                document.getElementsByTagName('body')[0].appendChild(idl);
         }
 });
 
@@ -78,11 +76,12 @@ tnLoad("https://marcuswestin.github.io/store.js/store.min.js", function() {
         console.info("Store.js loaded.");
         var form = document.querySelectorAll("#form");
         var namespace = document.querySelectorAll("#namespace");
-        $(function() {
-                if (window.localStorage["_-Main"]) {
-                        form.value = store.get("_-Main");
-                }
-        });
+});
+
+$(function() {
+        if (window.localStorage["_-Main"]) {
+                form.value = store.get("_-Main");
+        }
 });
 
 tnLoad("//cdn.craig.is/js/mousetrap/mousetrap.min.js", function() {
@@ -220,10 +219,12 @@ function classToggle(attr, attr_1) {
         console.info("Backend.js: " + attr_1 + " > classToggle > " + attr);
 }
 
-function feature() {
-        bootbox.dialog({
-                title: "Textnet Featurettes, a special unlisted selection for Textnet masters.",
-                message: "<iframe class='yt-frame' src='https://www.youtube.com/embed/?listType=playlist&list=PLXJjNJMpJQKqbpmhNOJNETiMbfZpLjIVb&loop=1&rel=0&autohide=1&theme=light'></iframe>"
-        });
-        console.log("Wow you found me.");
-}
+$(function() {
+        if (hashline("defence")) {
+                bootbox.dialog({
+                        title: "Textnet Featurettes, a special unlisted selection for Textnet masters.",
+                        message: "<iframe class='yt-frame' src='https://www.youtube.com/embed/?listType=playlist&list=PLXJjNJMpJQKqbpmhNOJNETiMbfZpLjIVb&loop=1&rel=0&autohide=1&theme=light'></iframe>"
+                });
+                console.log("Wow you found me.");
+        }
+});
