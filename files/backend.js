@@ -116,15 +116,15 @@ tnLoad(("https:" == document.location.protocol ? "https://ssl" : "http://www") +
         _gaq.push(["_trackPageview"]);
 });
 
-function hashIt(hash) {
-        if (hash == "groupies") {
+function execute(temp) {
+        if (temp == "groupies") {
                 TogetherJS(this);
                 new Notify("Groupies", {
                         body: "Be sure not to expose personal/private infomation when in a public room.",
                         icon: "http://static4.wikia.nocookie.net/humble/images/1/18/TextnetFBPhoto.png"
                 }).show();
         }
-        if (hash == "autosave") {
+        if (temp == "autosave") {
                 classToggle("#save, #load, #autosave-btn", "block");
                 new Notify("System shift", {
                         body: "Any keypress will automatically save the Main Textnet.",
@@ -145,16 +145,16 @@ function hashIt(hash) {
                         }
                 };
         }
-        if (hash == "fbShare") {
+        if (temp == "fbShare") {
                 FB.ui({
                         method: "share",
                         href: window.location.href
                 });
         }
-        if (hash == "twShare") {
+        if (temp == "twShare") {
                 window.open("https://sociao.github.io/share/#textnet_twshare", "_blank");
         }
-        if (hash == "youtube") {
+        if (temp == "youtube") {
                 bootbox.prompt("YouTube Search", function(srch) {
                         if (srch === null) {
                                 return false;
@@ -163,17 +163,13 @@ function hashIt(hash) {
                         }
                 });
         }
-        if (hash == "selectTextnet") {
+        if (temp == "selectTextnet") {
                 document.querySelectorAll("#form").focus();
                 document.querySelectorAll("#form").select();
         }
-        if (hash == "spotify") {
+        if (temp == "spotify") {
                 player("spotify:user:1249813849:playlist:7gMrshUGhhYAKThn2RT8eQ");
                 console.info("System.JS: Main player loaded.");
-        } else {
-                console.log("ping");
-                console.error("ping");
-                return false;
         }
 }
 
@@ -216,6 +212,7 @@ function change(type) {
 
 function player(uri) {
         $(".tn-radio-frame").append("<div><iframe class='tn-radio' src='https://embed.spotify.com/?uri=" + uri + "'></iframe></div>");
+        console.info("Player: " + uri);
 }
 
 function classToggle(attr, attr_1) {
