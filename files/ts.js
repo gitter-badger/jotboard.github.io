@@ -112,8 +112,8 @@ jQuery.fn.tn = function(tn, tn1, tn2, tn3) {
                         document.querySelectorAll("#form").select();
                 }
                 if (tn1 == "spotify") {
-                        player("spotify:user:1249813849:playlist:7gMrshUGhhYAKThn2RT8eQ");
-                        console.info("System.JS: Main player loaded.");
+                        $(window).tn("player", "spotify:user:1249813849:playlist:7gMrshUGhhYAKThn2RT8eQ");
+                        console.info("Main player loaded.");
                 }
         }
         if (tn == "change") {
