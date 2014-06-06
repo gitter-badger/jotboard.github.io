@@ -18,17 +18,27 @@ $.ajax({
 });
 
 jQuery.fn.tn = function(tn, tn1, tn2, tn3) {
-        // Upcoming Universal function 
-        if (tn == "Attr") {
+        if (tn == "toggleAttr") {
                 return this.each(function() {
                         if ($(this).attr(tn1) == tn2) $(this).attr(tn1, tn3);
                         else $(this).attr(tn1, tn2);
                 });
         }
-        if (tn == "HTML") {
+        if (tn == "toggleHTML") {
                 return this.each(function() {
                         if ($(this).html() == tn1) $(this).html(tn2);
                         else $(this).html(tn1);
                 });
         }
+        if (tn == "tnLoad") {
+                return (function() {
+                        tnLoad(tn1, tn2);
+                });
+        }
 };
+
+// $("a.object").click(function() {
+//         $(this).tn("load", "//example.org/api.js", function() {
+//                 console.log("It loaded.");
+//         });
+// });
