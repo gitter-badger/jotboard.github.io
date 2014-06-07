@@ -83,12 +83,6 @@ $(window).tn("tnLoad", "https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.2.0/
         console.log("Bootbox.JS Loaded");
 });
 
-FB.init({
-        appId: "176413809071512",
-        version: "v2.0",
-        status: true
-});
-
 $(window).tn("tnLoad", "//togetherjs.com/togetherjs-min.js", function() {
         // Groupies
         TogetherJSConfig_siteName = "Textnet";
@@ -98,4 +92,19 @@ $(window).tn("tnLoad", "//togetherjs.com/togetherjs-min.js", function() {
         TogetherJSConfig_disableWebRTC = true;
         TogetherJSConfig_suppressInvite = false;
         TogetherJSConfig_suppressJoinConfirmation = true;
+});
+
+(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) { return; }
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+}(document, "script", "facebook-jssdk"));
+
+FB.init({
+        appId: "176413809071512",
+        version: "v2.0",
+        status: true
 });
