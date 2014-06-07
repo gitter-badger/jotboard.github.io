@@ -35,8 +35,11 @@ $(window).load(function() {
                 }
         });
         $(function() {
-                if (window.location.protocol = "http://") {
-                        window.location.protocol = "https://";
+                if (window.location.protocol == "http:") {
+                        window.location.protocol = "https:";
+                } else {
+                        console.log("You're in HTTPS, good.");
+                        return false;
                 }
         });
 });
