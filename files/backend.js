@@ -17,16 +17,28 @@ $(window).load(function() {
         if (hashline("groupies") || hashline("hashIt") || hashline("fbShare") || hashline("twShare")) {
                 return false;
         }
-        // Checking whether user is using #MODS or not.
-        if (window.location.hash) { document.title = "# Textnet"; }
-        else { document.title = "Textnet"; }
-        // Checking if there is any data in the Main Textnet.
-        if (window.localStorage["_-Main"]) {
-                form.value = store.get("_-Main");
-                console.info("Theres data in the Main Textnet.");
-        } else {
-                console.info("No data in the Main Textnet.");
-        }
+        $(function() {
+                // Checking whether user is using #MODS or not.
+                if (window.location.hash) {
+                        document.title = "# Textnet";
+                } else {
+                        document.title = "Textnet";
+                }
+        });
+        $(function() {
+                // Checking if there is any data in the Main Textnet.
+                if (window.localStorage["_-Main"]) {
+                        form.value = store.get("_-Main");
+                        console.info("Theres data in the Main Textnet.");
+                } else {
+                        console.info("No data in the Main Textnet.");
+                }
+        });
+        $(function() {
+                if (window.location.protocol = "http://") {
+                        window.location.protocol = "https://";
+                }
+        });
 });
 
 $(window).tn("tnload", "https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js", function() {
