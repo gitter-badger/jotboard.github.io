@@ -44,6 +44,12 @@ $(window).load(function() {
         });
 });
 
+FB.init({
+        appId: "176413809071512",
+        version: "v2.0",
+        status: true
+});
+
 $(window).tn("tnload", "https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js", function() {
         console.info("Bootstrap (JS) Loaded");
 });
