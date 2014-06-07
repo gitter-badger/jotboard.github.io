@@ -37,21 +37,21 @@ $(window).tn("tnload", "https://cdn.rawgit.com/alexgibson/notify.js/master/notif
         console.info("Notify.JS Loaded");
 });
 
-$(window).tn("tnload", "//bootboxjs.com/bootbox.js", function() {
+$(window).tn("tnload", "https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.2.0/bootbox.min.js", function() {
         console.log("Bootbox.JS Loaded");
 });
 
-$(window).tn("tnload", "https://leaverou.github.io/prefixfree/prefixfree.min.js", function() {
+$(window).tn("tnload", "https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js", function() {
         console.info("Prefixfree Loaded");
 });
 
-$(window).tn("tnload", "https://marcuswestin.github.io/store.js/store.min.js", function() {
+$(window).tn("tnload", "https://cdnjs.cloudflare.com/ajax/libs/store.js/1.3.14/store.min.js", function() {
         console.info("Store.js loaded.");
         var form = document.querySelectorAll("#form");
         var namespace = document.querySelectorAll("#namespace");
 });
 
-$(window).tn("tnload", "//momentjs.com/downloads/moment.min.js", function() {
+$(window).tn("tnload", "https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.6.0/moment.min.js", function() {
         console.log("Moment.JS Loaded");
         var updateTime = function() {
                         // Making it work
