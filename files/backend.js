@@ -44,35 +44,21 @@ $(window).load(function() {
         });
 });
 
-FB.init({
-        appId: "176413809071512",
-        version: "v2.0",
-        status: true
-});
-
-$(window).tn("tnload", "https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js", function() {
+$(window).tn("tnLoad", "https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js", function() {
         console.info("Bootstrap (JS) Loaded");
 });
 
-$(window).tn("tnload", "https://cdn.rawgit.com/alexgibson/notify.js/master/notify.js", function() {
-        console.info("Notify.JS Loaded");
-});
-
-$(window).tn("tnload", "https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.2.0/bootbox.min.js", function() {
-        console.log("Bootbox.JS Loaded");
-});
-
-$(window).tn("tnload", "https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js", function() {
+$(window).tn("tnLoad", "https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js", function() {
         console.info("Prefixfree Loaded");
 });
 
-$(window).tn("tnload", "https://cdnjs.cloudflare.com/ajax/libs/store.js/1.3.14/store.min.js", function() {
+$(window).tn("tnLoad", "https://cdnjs.cloudflare.com/ajax/libs/store.js/1.3.14/store.min.js", function() {
         console.info("Store.js loaded.");
         var form = document.querySelectorAll("#form");
         var namespace = document.querySelectorAll("#namespace");
 });
 
-$(window).tn("tnload", "https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.6.0/moment.min.js", function() {
+$(window).tn("tnLoad", "https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.6.0/moment.min.js", function() {
         console.log("Moment.JS Loaded");
         var updateTime = function() {
                         // Making it work
@@ -89,7 +75,21 @@ $(window).tn("tnload", "https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.6.0/m
         setInterval(updateTime, 1);
 });
 
-$(window).tn("tnload", "//togetherjs.com/togetherjs-min.js", function() {
+$(window).tn("tnLoad", "https://cdn.rawgit.com/alexgibson/notify.js/master/notify.js", function() {
+        console.info("Notify.JS Loaded");
+});
+
+$(window).tn("tnLoad", "https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.2.0/bootbox.min.js", function() {
+        console.log("Bootbox.JS Loaded");
+});
+
+FB.init({
+        appId: "176413809071512",
+        version: "v2.0",
+        status: true
+});
+
+$(window).tn("tnLoad", "//togetherjs.com/togetherjs-min.js", function() {
         // Groupies
         TogetherJSConfig_siteName = "Textnet";
         TogetherJSConfig_toolName = "Groupies";
