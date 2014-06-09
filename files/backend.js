@@ -9,12 +9,9 @@ $(window).load(function() {
         $(".tn-load").click(function() { $(window).tn("change", "load"); });
         $(".tn-groupies").click(function() { $(window).tn("execute", "groupies"); });
         $(".tn-autosave").click(function() { $(window).tn("execute", "autosave"); });
-        $(".tn-fb-status").click(function() { $(window).tn("execute", "fbShare"); });
-        $(".tn-tw-share").click(function() { $(window).tn("execute", "twShare"); });
         $(".tn-youtube").click(function() { $(window).tn("execute", "youtube"); });
-        $(".tn-spotify").click(function() { $(window).tn("execute", "spotify"); });
-        // Exclusion list for #MODS.
-        if (hashline("groupies") || hashline("hashIt") || hashline("fbShare") || hashline("twShare")) {
+        // Exclusion list
+        if (hashline("groupies") || hashline("execute") || hashline("autosave")) {
                 return false;
         }
         $(function() {
@@ -92,19 +89,4 @@ $(window).tn("tnLoad", "//togetherjs.com/togetherjs-min.js", function() {
         TogetherJSConfig_disableWebRTC = true;
         TogetherJSConfig_suppressInvite = false;
         TogetherJSConfig_suppressJoinConfirmation = true;
-});
-
-(function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) { return; }
-        js = d.createElement(s);
-        js.id = id;
-        js.src = "//connect.facebook.net/en_US/sdk.js";
-        fjs.parentNode.insertBefore(js, fjs);
-}(document, "script", "facebook-jssdk"));
-
-FB.init({
-        appId: "176413809071512",
-        version: "v2.0",
-        status: true
 });
