@@ -61,13 +61,6 @@ jQuery.fn.tn = function(tn, tn1, tn2, tn3) {
                 tnLoad(tn1, tn2);
         }
         if (tn == "execute") {
-                if (tn1 == "groupies") {
-                        TogetherJS(this);
-                        new Notify("Groupies", {
-                                body: "Be sure not to expose personal/private infomation when in a public room.",
-                                icon: "http://static4.wikia.nocookie.net/humble/images/1/18/TextnetFBPhoto.png"
-                        }).show();
-                }
                 if (tn1 == "autosave") {
                         classToggle("#save, #load, #autosave-btn", "block");
                         new Notify("System shift", {
@@ -89,15 +82,6 @@ jQuery.fn.tn = function(tn, tn1, tn2, tn3) {
                                 }
                         };
                 }
-                if (tn1 == "fbShare") {
-                        FB.ui({
-                                method: "share",
-                                href: window.location.href
-                        });
-                }
-                if (tn1 == "twShare") {
-                        window.open("https://sociao.github.io/share/#textnet_twshare", "_blank");
-                }
                 if (tn1 == "youtube") {
                         bootbox.prompt("YouTube Search", function(srch) {
                                 if (srch === null) {
@@ -106,14 +90,6 @@ jQuery.fn.tn = function(tn, tn1, tn2, tn3) {
                                         window.open("https://www.youtube.com/results?utm_source=opensearch&search_query=" + srch, "_blank");
                                 }
                         });
-                }
-                if (tn1 == "selectTextnet") {
-                        document.querySelectorAll("#form").focus();
-                        document.querySelectorAll("#form").select();
-                }
-                if (tn1 == "spotify") {
-                        $(window).tn("player", "spotify:user:1249813849:playlist:7gMrshUGhhYAKThn2RT8eQ");
-                        console.info("Main player loaded.");
                 }
         }
         if (tn == "change") {
@@ -151,13 +127,5 @@ jQuery.fn.tn = function(tn, tn1, tn2, tn3) {
                                 }).show();
                         }
                 }
-        }
-        if (tn == "player") {
-                $(".tn-radio-frame").append("<div><iframe class='tn-radio' src='https://embed.spotify.com/?uri=" + tn1 + "'></iframe></div>");
-                console.info("Player: " + tn1);
-        }
-        if (tn == "classToggle") {
-                $(tn1).toggleClass(tn2);
-                console.info(tn2 + " > classToggle > " + tn);
         }
 };
