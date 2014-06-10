@@ -63,10 +63,17 @@ jQuery.fn.tn = function(tn, tn1, tn2, tn3) {
         if (tn == "execute") {
                 if (tn1 == "autosave") {
                         classToggle("#save, #load, #autosave-btn", "block");
-                        new Notify("System shift", {
-                                body: "Any keypress will automatically save the Main Textnet.",
-                                icon: "http://static4.wikia.nocookie.net/humble/images/1/18/TextnetFBPhoto.png"
-                        }).show();
+                        $.bootstrapGrowl("System Shift", {
+                                ele: "body",
+                                // which element to append to
+                                type: "info",
+                                offset: { from: "bottom", amount: 20 },
+                                align: "right",
+                                width: 270,
+                                delay: 4200,
+                                allow_dismiss: true,
+                                stackup_spacing: 10
+                        });
                         form.onkeydown = function() {
                                 if (namespace.value.length === 0) {
                                         store.set("_-Main", form.value);
@@ -97,34 +104,62 @@ jQuery.fn.tn = function(tn, tn1, tn2, tn3) {
                         if (namespace.value.length === 0) {
                                 store.set("_-Main", form.value);
                                 console.info("Main > saved.");
-                                new Notify("Saved", {
-                                        body: "Your Main Textnet has been successfully saved.",
-                                        icon: "http://static4.wikia.nocookie.net/humble/images/1/18/TextnetFBPhoto.png"
-                                }).show();
+                                $.bootstrapGrowl("Main Textnet saved", {
+                                        ele: "body",
+                                        // which element to append to
+                                        type: "success",
+                                        offset: { from: "bottom", amount: 20 },
+                                        align: "right",
+                                        width: 270,
+                                        delay: 4200,
+                                        allow_dismiss: true,
+                                        stackup_spacing: 10
+                                });
                         } else {
                                 store.set("_-" + namespace.value, form.value);
                                 console.info(namespace.value + " > saved.");
-                                new Notify("Saved", {
-                                        body: "Your Textnet '" + namespace.value + "' has been successfully saved.",
-                                        icon: "http://static4.wikia.nocookie.net/humble/images/1/18/TextnetFBPhoto.png"
-                                }).show();
+                                $.bootstrapGrowl(namespace.value + " has been saved", {
+                                        ele: "body",
+                                        // which element to append to
+                                        type: "Info",
+                                        offset: { from: "bottom", amount: 20 },
+                                        align: "right",
+                                        width: 270,
+                                        delay: 4200,
+                                        allow_dismiss: true,
+                                        stackup_spacing: 10
+                                });
                         }
                 }
                 if (tn1 == "load") {
                         if (namespace.value.length === 0) {
                                 form.value = store.get("_-Main");
-                                console.info("Main > loaded.");
-                                new Notify("Loaded", {
-                                        body: "Your Main Textnet has been successfully saved.",
-                                        icon: "http://static4.wikia.nocookie.net/humble/images/1/18/TextnetFBPhoto.png"
-                                }).show();
+                                console.info("Main > loaded");
+                                $.bootstrapGrowl("Your Main Textnet has been loaded.", {
+                                        ele: "body",
+                                        // which element to append to
+                                        type: "info",
+                                        offset: { from: "bottom", amount: 20 },
+                                        align: "right",
+                                        width: 270,
+                                        delay: 4200,
+                                        allow_dismiss: true,
+                                        stackup_spacing: 10
+                                });
                         } else {
                                 form.value = store.get("_-" + namespace.value);
                                 console.info(namespace.value + " > loaded.");
-                                new Notify("Loaded", {
-                                        body: "Your Textnet '" + namespace.value + "' has been successfully loaded.",
-                                        icon: "http://static4.wikia.nocookie.net/humble/images/1/18/TextnetFBPhoto.png"
-                                }).show();
+                                $.bootstrapGrowl(namespace.value + " has been loaded.", {
+                                        ele: "body",
+                                        // which element to append to
+                                        type: "info",
+                                        offset: { from: "bottom", amount: 20 },
+                                        align: "right",
+                                        width: 270,
+                                        delay: 4200,
+                                        allow_dismiss: true,
+                                        stackup_spacing: 10
+                                });
                         }
                 }
         }
