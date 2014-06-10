@@ -72,8 +72,8 @@ $(window).tn("tnLoad", "https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.6.0/m
         setInterval(updateTime, 1);
 });
 
-$(window).tn("tnLoad", "https://cdn.rawgit.com/alexgibson/notify.js/master/notify.js", function() {
-        console.info("Notify.JS Loaded");
+$(window).tn("tnLoad", "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-growl/1.0.0/jquery.bootstrap-growl.min.js", function() {
+        console.info("BootGrowl Loaded");
 });
 
 $(window).tn("tnLoad", "https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.2.0/bootbox.min.js", function() {
