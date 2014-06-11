@@ -1,8 +1,8 @@
 $(function() {
         function e3() {
                 bootbox.dialog({
-                        message: "<iframe class='yt-player' width='100%' height='170' src='https://www.youtube.com/embed/?listType=playlist&list=PLXJjNJMpJQKqbpmhNOJNETiMbfZpLjIVb&autoplay=1&fs=1&loop=1&showinfo=0&autohide=1&theme=light' frameborder='0' allowfullscreen></iframe>",
-                        title: "#E314",
+                        message: "<iframe class='yt-player' width='100%' height='310' src='https://www.youtube.com/embed/?listType=playlist&list=PLXJjNJMpJQKqbpmhNOJNETiMbfZpLjIVb&autoplay=1&fs=1&loop=1&showinfo=0&autohide=1&theme=light' frameborder='0' allowfullscreen></iframe>",
+                        title: "E3 2014",
                         buttons: {
                                 facebook: {
                                         label: "Facebook",
@@ -28,7 +28,7 @@ $(function() {
                                                 return false;
                                         }
                                 },
-                                website: {
+                                official: {
                                         label: "Website",
                                         className: "btn-link",
                                         callback: function() {
