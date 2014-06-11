@@ -1,3 +1,56 @@
+$(function() {
+        function e3() {
+                bootbox.dialog({
+                        message: "<iframe class='yt-player' width='100%' height='170' src='https://www.youtube.com/embed/?listType=playlist&list=PLXJjNJMpJQKqbpmhNOJNETiMbfZpLjIVb&autoplay=1&fs=1&loop=1&showinfo=0&autohide=1&theme=light' frameborder='0' allowfullscreen></iframe>",
+                        title: "#E314",
+                        buttons: {
+                                facebook: {
+                                        label: "Facebook",
+                                        className: "btn-primary",
+                                        callback: function() {
+                                                window.open("https://www.facebook.com/hashtag/E3", "_blank");
+                                                return false;
+                                        }
+                                },
+                                twitter: {
+                                        label: "Twitter",
+                                        className: "btn-info",
+                                        callback: function() {
+                                                window.open("https://www.facebook.com/hashtag/E3", "_blank");
+                                                return false;
+                                        }
+                                },
+                                twitch: {
+                                        label: "Twitch",
+                                        className: "btn-link",
+                                        callback: function() {
+                                                window.open("http://www.twitch.tv/event/e3", "_blank");
+                                                return false;
+                                        }
+                                },
+                                website: {
+                                        label: "Website",
+                                        className: "btn-link",
+                                        callback: function() {
+                                                window.open("http://www.e3expo.com/", "_blank");
+                                                return false;
+                                        }
+                                },
+                                youtube: {
+                                        label: "YouTube",
+                                        className: "btn-danger",
+                                        callback: function() {
+                                                window.open("https://www.youtube.com/results?search_query=E3", "_blank");
+                                                return false;
+                                        }
+                                }
+                        }
+                });
+        }
+        $(".tn-e3").click(function() { e3(); });
+        if (hashline("e3")) { e3(); return false; }
+});
+
 $(window).load(function() {
         $(".tn-menu-btn").click(function() {
                 $(this).tn("toggleHTML", "More", "Less");
