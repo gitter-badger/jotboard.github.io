@@ -2,7 +2,7 @@ $(function() {
         function e3() {
                 bootbox.dialog({
                         message: "<iframe class='yt-player' width='100%' height='310' src='https://www.youtube.com/embed/?listType=playlist&list=PLXJjNJMpJQKqbpmhNOJNETiMbfZpLjIVb&autoplay=1&fs=1&loop=1&showinfo=0&autohide=1&theme=light' frameborder='0' allowfullscreen></iframe>",
-                        title: "E3 2014",
+                        title: "#E314",
                         buttons: {
                                 facebook: {
                                         label: "Facebook",
@@ -16,7 +16,7 @@ $(function() {
                                         label: "Twitter",
                                         className: "btn-info",
                                         callback: function() {
-                                                window.open("https://www.facebook.com/hashtag/E3", "_blank");
+                                                window.open("https://twitter.com/search?q=%23E3", "_blank");
                                                 return false;
                                         }
                                 },
