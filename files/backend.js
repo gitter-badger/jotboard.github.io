@@ -14,6 +14,9 @@ $(window).load(function() {
         if (hashline("groupies") || hashline("execute") || hashline("autosave")) {
                 return false;
         }
+        if (hashline("youtube")) {
+                $(window).tn("execute", "youtube");
+        }
         $(function() {
                 // Checking whether user is using #MODS or not.
                 if (window.location.hash) {
@@ -26,9 +29,6 @@ $(window).load(function() {
                 // Checking if there is any data in the Main Textnet.
                 if (window.localStorage["_-Main"]) {
                         form.value = store.get("_-Main");
-                        console.info("Theres data in the Main Textnet.");
-                } else {
-                        console.info("No data in the Main Textnet.");
                 }
         });
         $(function() {
@@ -41,21 +41,21 @@ $(window).load(function() {
         });
 });
 
-$(window).tn("tnLoad", "http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/js/bootstrap.min.js", function() {
+$(window).tn("tnLoad", "//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/js/bootstrap.min.js", function() {
         console.info("Bootstrap (JS) Loaded");
 });
 
-$(window).tn("tnLoad", "https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js", function() {
+$(window).tn("tnLoad", "//cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js", function() {
         console.info("Prefixfree Loaded");
 });
 
-$(window).tn("tnLoad", "https://cdnjs.cloudflare.com/ajax/libs/store.js/1.3.14/store.min.js", function() {
+$(window).tn("tnLoad", "//cdnjs.cloudflare.com/ajax/libs/store.js/1.3.14/store.min.js", function() {
         console.info("Store.js loaded.");
         var form = document.querySelectorAll("#form");
         var namespace = document.querySelectorAll("#namespace");
 });
 
-$(window).tn("tnLoad", "https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.6.0/moment.min.js", function() {
+$(window).tn("tnLoad", "//cdnjs.cloudflare.com/ajax/libs/moment.js/2.6.0/moment.min.js", function() {
         console.log("Moment.JS Loaded");
         var updateTime = function() {
                         // Making it work
@@ -72,12 +72,12 @@ $(window).tn("tnLoad", "https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.6.0/m
         setInterval(updateTime, 1);
 });
 
-$(window).tn("tnLoad", "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-growl/1.0.0/jquery.bootstrap-growl.min.js", function() {
-        console.info("BootGrowl Loaded");
+$(window).tn("tnLoad", "//cdnjs.cloudflare.com/ajax/libs/bootstrap-growl/1.0.0/jquery.bootstrap-growl.min.js", function() {
+        console.info("Bootstrap Growl Loaded");
 });
 
-$(window).tn("tnLoad", "https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.2.0/bootbox.min.js", function() {
-        console.log("Bootbox.JS Loaded");
+$(window).tn("tnLoad", "//cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.2.0/bootbox.min.js", function() {
+        console.log("Bootbox Loaded");
 });
 
 $(window).tn("tnLoad", "//togetherjs.com/togetherjs-min.js", function() {
