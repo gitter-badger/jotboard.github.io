@@ -51,9 +51,13 @@ $(function() {
                 document.title = "The Electronic Entertainment Expo Hub / Textnet";
                 e3();
         });
-        if (hashline("e3")) {
-                e3();
+        if (window.location.protocol == "https:" && hashline("e3")) {
                 document.title = "The Electronic Entertainment Expo Hub / Textnet";
+                e3();
+                return false;
+        }
+        if (window.location.protocol == "http:" && hashline("e3")) {
+                window.location.protocol = "https:";
                 return false;
         }
 });
@@ -94,9 +98,6 @@ $(window).load(function() {
         $(function() {
                 if (window.location.protocol == "http:") {
                         window.location.protocol = "https:";
-                } else {
-                        console.log("You're in HTTPS, good.");
-                        return false;
                 }
         });
 });
