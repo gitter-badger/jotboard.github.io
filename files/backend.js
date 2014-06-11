@@ -41,7 +41,7 @@ $(window).load(function() {
         });
 });
 
-$(window).tn("tnLoad", "https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js", function() {
+$(window).tn("tnLoad", "http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/js/bootstrap.min.js", function() {
         console.info("Bootstrap (JS) Loaded");
 });
 
