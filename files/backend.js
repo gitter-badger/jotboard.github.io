@@ -98,12 +98,19 @@ $(window).load(function() {
         });
 });
 
-$(window).tn("tnLoad", "//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/js/bootstrap.min.js", function() {
-        console.info("Bootstrap (JS) Loaded");
-});
-
-$(window).tn("tnLoad", "//cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js", function() {
-        console.info("Prefixfree Loaded");
+$(function() {
+        $(window).tn("tnLoad", "//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/js/bootstrap.min.js", function() {
+                console.info("Bootstrap (JS) Loaded");
+        });
+        $(window).tn("tnLoad", "//cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js", function() {
+                console.info("Prefixfree Loaded");
+        });
+        $(window).tn("tnLoad", "//cdnjs.cloudflare.com/ajax/libs/bootstrap-growl/1.0.0/jquery.bootstrap-growl.min.js", function() {
+                console.info("Bootstrap Growl Loaded");
+        });
+        $(window).tn("tnLoad", "//cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.2.0/bootbox.min.js", function() {
+                console.log("Bootbox Loaded");
+        });
 });
 
 $(window).tn("tnLoad", "//cdnjs.cloudflare.com/ajax/libs/store.js/1.3.14/store.min.js", function() {
@@ -127,14 +134,6 @@ $(window).tn("tnLoad", "//cdnjs.cloudflare.com/ajax/libs/moment.js/2.6.0/moment.
                 };
         UT();
         setInterval(UT, 1);
-});
-
-$(window).tn("tnLoad", "//cdnjs.cloudflare.com/ajax/libs/bootstrap-growl/1.0.0/jquery.bootstrap-growl.min.js", function() {
-        console.info("Bootstrap Growl Loaded");
-});
-
-$(window).tn("tnLoad", "//cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.2.0/bootbox.min.js", function() {
-        console.log("Bootbox Loaded");
 });
 
 $(window).tn("tnLoad", "//togetherjs.com/togetherjs-min.js", function() {
