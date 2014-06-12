@@ -121,7 +121,7 @@ jQuery.fn.tn = function(tn, tn1, tn2, tn3) {
                                 $.bootstrapGrowl(namespace.value + " has been saved", {
                                         ele: "body",
                                         // which element to append to
-                                        type: "Info",
+                                        type: "info",
                                         offset: { from: "bottom", amount: 20 },
                                         align: "right",
                                         width: 270,
