@@ -84,15 +84,16 @@ $(window).load(function() {
                 }
         });
         $(function() {
-                if (window.location.protocol == "http:" && hashline(null)) {
+                if (window.location.protocol == "http:") {
                         window.location.protocol = "https:";
                 }
-                $(".tn-e3").click(function() { e3(); });
+                if (window.location.protocol == "https:") {
+                        console.log("HTTPS working.");
+                }
                 if (window.location.protocol == "https:" && hashline("e3")) {
-                        e3(); return false;
-                }
-                if (window.location.protocol == "http:" && hashline("e3")) {
-                        window.location.protocol = "https:";
+                        $(".tn-e3").click(function() { e3(); });
+                        console.log("HTTPS working.");
+                        e3();
                 }
         });
 });
@@ -113,7 +114,7 @@ $(window).tn("tnLoad", "//cdnjs.cloudflare.com/ajax/libs/store.js/1.3.14/store.m
 
 $(window).tn("tnLoad", "//cdnjs.cloudflare.com/ajax/libs/moment.js/2.6.0/moment.min.js", function() {
         console.log("Moment.JS Loaded");
-        var updateTime = function() {
+        var UT = function() {
                         // Making it work
                         $("#form.day").attr("placeholder", moment(new Date()).format("[Hi, it's ]dddd[, the] Do [of] MMMM YYYY[ and time is] h:mm a[.]"));
                         $("#form.night").attr("placeholder", moment(new Date()).format("[Hows it goin? it was a nice ]dddd, Do [of] MMMM YYYY[ and the time is] h:mm a[, goodnight.]"));
@@ -124,8 +125,8 @@ $(window).tn("tnLoad", "//cdnjs.cloudflare.com/ajax/libs/moment.js/2.6.0/moment.
                                 $("#form").addClass("night");
                         }
                 };
-        updateTime();
-        setInterval(updateTime, 1);
+        UT();
+        setInterval(UT, 1);
 });
 
 $(window).tn("tnLoad", "//cdnjs.cloudflare.com/ajax/libs/bootstrap-growl/1.0.0/jquery.bootstrap-growl.min.js", function() {
