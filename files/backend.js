@@ -1,14 +1,7 @@
 $(window).load(function() {
         $(function() {
-                var protocolCheck = function() {
-                                if (window.location.protocol("http:")) {
-                                        return protocol = "https:";
-                                }
-                                if (window.location.protocol("https:")) {
-                                        return protocol = "https:";
-                                }
-                        };
-                protocolCheck();
+                var protocol = protocolCheck; protocolCheck();
+                var protocolCheck = window.location.protocol;
         });
         $(".tn-menu-btn").click(function() {
                 $(this).tn("toggleHTML", "More", "Less");
