@@ -1,12 +1,15 @@
 $(window).load(function() {
-        var protocol = function() {
-                if (window.location.protocol("http:")) {
-                        return "http:";
-                }
-                if (window.location.protocol("https:")) {
-                        return "https:";
-                }
-        };
+        $(function() {
+                var protocolCheck = function() {
+                                if (window.location.protocol("http:")) {
+                                        return "http:";
+                                }
+                                if (window.location.protocol("https:")) {
+                                        return "https:";
+                                }
+                        };
+                protocolCheck();
+        });
         $(".tn-menu-btn").click(function() {
                 $(this).tn("toggleHTML", "More", "Less");
                 $(this).tn("toggleAttr", "title", "Close Menu", "Open Menu");
@@ -91,13 +94,13 @@ $(window).load(function() {
         });
 });
 
-$(window).tn("tnLoad", protocol + "//cdnjs.cloudflare.com/ajax/libs/store.js/1.3.14/store.min.js", function() {
+$(window).tn("tnLoad", protocolCheck + "//cdnjs.cloudflare.com/ajax/libs/store.js/1.3.14/store.min.js", function() {
         console.info("Store.js loaded.");
         var form = document.querySelectorAll("#form");
         var namespace = document.querySelectorAll("#namespace");
 });
 
-$(window).tn("tnLoad", protocol + "//cdnjs.cloudflare.com/ajax/libs/moment.js/2.6.0/moment.min.js", function() {
+$(window).tn("tnLoad", protocolCheck + "//cdnjs.cloudflare.com/ajax/libs/moment.js/2.6.0/moment.min.js", function() {
         console.log("Moment.JS Loaded");
         var UT = function() {
                         // Making it work
@@ -126,16 +129,16 @@ $(window).tn("tnLoad", "//togetherjs.com/togetherjs-min.js", function() {
 });
 
 $(function() {
-        $(window).tn("tnLoad", protocol + "//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/js/bootstrap.min.js", function() {
+        $(window).tn("tnLoad", protocolCheck + "//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/js/bootstrap.min.js", function() {
                 console.info("Bootstrap (JS) Loaded");
         });
-        $(window).tn("tnLoad", protocol + "//cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js", function() {
+        $(window).tn("tnLoad", protocolCheck + "//cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js", function() {
                 console.info("Prefixfree Loaded");
         });
-        $(window).tn("tnLoad", protocol + "//cdnjs.cloudflare.com/ajax/libs/bootstrap-growl/1.0.0/jquery.bootstrap-growl.min.js", function() {
+        $(window).tn("tnLoad", protocolCheck + "//cdnjs.cloudflare.com/ajax/libs/bootstrap-growl/1.0.0/jquery.bootstrap-growl.min.js", function() {
                 console.info("Bootstrap Growl Loaded");
         });
-        $(window).tn("tnLoad", protocol + "//cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.2.0/bootbox.min.js", function() {
+        $(window).tn("tnLoad", protocolCheck + "//cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.2.0/bootbox.min.js", function() {
                 console.log("Bootbox Loaded");
         });
 });
