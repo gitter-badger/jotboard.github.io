@@ -1,4 +1,5 @@
 // Grabbers
+var secure = window.location.protocol;
 var hashline = function(u) { return window.location.href.indexOf("#" + u) != -1; };
 var grabSelector = function(u) { return document.querySelector(u); };
 var grabSelectorAll = function(u) { return document.querySelectorAll(u); };
