@@ -1,9 +1,4 @@
 $(window).load(function() {
-        $(function() {
-                var protocolCheck = window.location.protocol;
-                protocolCheck();
-                var protocol = protocolCheck;
-        });
         $(".tn-menu-btn").click(function() {
                 $(this).tn("toggleHTML", "More", "Less");
                 $(this).tn("toggleAttr", "title", "Close Menu", "Open Menu");
@@ -88,13 +83,13 @@ $(window).load(function() {
         });
 });
 
-$(window).tn("tnLoad", protocol + "//cdnjs.cloudflare.com/ajax/libs/store.js/1.3.14/store.min.js", function() {
+$(window).tn("tnLoad", secure + "//cdnjs.cloudflare.com/ajax/libs/store.js/1.3.14/store.min.js", function() {
         console.info("Store.js loaded.");
         var form = document.querySelectorAll("#form");
         var namespace = document.querySelectorAll("#namespace");
 });
 
-$(window).tn("tnLoad", protocol + "//cdnjs.cloudflare.com/ajax/libs/moment.js/2.6.0/moment.min.js", function() {
+$(window).tn("tnLoad", secure + "//cdnjs.cloudflare.com/ajax/libs/moment.js/2.6.0/moment.min.js", function() {
         console.log("Moment.JS Loaded");
         var UT = function() {
                         // Making it work
@@ -111,7 +106,7 @@ $(window).tn("tnLoad", protocol + "//cdnjs.cloudflare.com/ajax/libs/moment.js/2.
         setInterval(UT, 1);
 });
 
-$(window).tn("tnLoad", protocol + "//togetherjs.com/togetherjs-min.js", function() {
+$(window).tn("tnLoad", secure + "//togetherjs.com/togetherjs-min.js", function() {
         // Groupies
         TogetherJSConfig_siteName = "Textnet";
         TogetherJSConfig_toolName = "Groupies";
@@ -123,16 +118,16 @@ $(window).tn("tnLoad", protocol + "//togetherjs.com/togetherjs-min.js", function
 });
 
 $(function() {
-        $(window).tn("tnLoad", protocol + "//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/js/bootstrap.min.js", function() {
+        $(window).tn("tnLoad", secure + "//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/js/bootstrap.min.js", function() {
                 console.info("Bootstrap (JS) Loaded");
         });
-        $(window).tn("tnLoad", protocol + "//cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js", function() {
+        $(window).tn("tnLoad", secure + "//cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js", function() {
                 console.info("Prefixfree Loaded");
         });
-        $(window).tn("tnLoad", protocol + "//cdnjs.cloudflare.com/ajax/libs/bootstrap-growl/1.0.0/jquery.bootstrap-growl.min.js", function() {
+        $(window).tn("tnLoad", secure + "//cdnjs.cloudflare.com/ajax/libs/bootstrap-growl/1.0.0/jquery.bootstrap-growl.min.js", function() {
                 console.info("Bootstrap Growl Loaded");
         });
-        $(window).tn("tnLoad", protocol + "//cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.2.0/bootbox.min.js", function() {
+        $(window).tn("tnLoad", secure + "//cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.2.0/bootbox.min.js", function() {
                 console.log("Bootbox Loaded");
         });
 });
