@@ -1,10 +1,10 @@
 $(window).load(function() {
         var protocol = function() {
                 if (window.location.protocol == "http:") {
-                        return protocol == "http:";
+                        var protocol = "http:";
                 }
                 if (window.location.protocol == "https:") {
-                        return protocol == "https:";
+                        var protocol = "https:";
                 }
         };
         $(".tn-menu-btn").click(function() {
