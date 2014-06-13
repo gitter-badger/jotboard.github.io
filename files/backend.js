@@ -1,48 +1,37 @@
 $(function() {
         function e3() {
-                document.title = "E3 Hub / Textnet";
                 bootbox.dialog({
                         message: "<iframe class='yt-player' width='100%' height='310' src='https://www.youtube.com/embed/?listType=playlist&list=PLXJjNJMpJQKqbpmhNOJNETiMbfZpLjIVb&autoplay=1&fs=1&loop=1&showinfo=0&autohide=1&theme=light' frameborder='0' allowfullscreen></iframe>",
                         title: "E3 Hub / Textnet",
                         buttons: {
                                 facebook: {
-                                        label: "Facebook",
-                                        className: "btn-primary",
+                                        label: "Facebook", className: "btn-primary",
                                         callback: function() {
-                                                window.open("https://www.facebook.com/hashtag/E3", "_blank");
-                                                return false;
+                                                window.open("https://www.facebook.com/hashtag/E3", "_blank"); return false;
                                         }
                                 },
                                 twitter: {
-                                        label: "Twitter",
-                                        className: "btn-info",
+                                        label: "Twitter", className: "btn-info",
                                         callback: function() {
-                                                window.open("https://twitter.com/search?q=%23E3", "_blank");
-                                                return false;
+                                                window.open("https://twitter.com/search?q=%23E3", "_blank"); return false;
                                         }
                                 },
                                 twitch: {
-                                        label: "Twitch",
-                                        className: "btn-link",
+                                        label: "Twitch", className: "btn-link",
                                         callback: function() {
-                                                window.open("http://www.twitch.tv/event/e3", "_blank");
-                                                return false;
+                                                window.open("http://www.twitch.tv/event/e3", "_blank"); return false;
                                         }
                                 },
                                 official: {
-                                        label: "Website",
-                                        className: "btn-link",
+                                        label: "Website", className: "btn-link",
                                         callback: function() {
-                                                window.open("http://www.e3expo.com/", "_blank");
-                                                return false;
+                                                window.open("http://www.e3expo.com/", "_blank"); return false;
                                         }
                                 },
                                 youtube: {
-                                        label: "YouTube",
-                                        className: "btn-danger",
+                                        label: "YouTube", className: "btn-danger",
                                         callback: function() {
-                                                window.open("https://www.youtube.com/results?search_query=E3", "_blank");
-                                                return false;
+                                                window.open("https://www.youtube.com/results?search_query=E3", "_blank"); return false;
                                         }
                                 }
                         }
@@ -84,16 +73,14 @@ $(window).load(function() {
                 }
         });
         $(function() {
+                if (window.location.protocol == "https:" && hashline("e3")) {
+                        document.title = "E3 Hub / Textnet";
+                        $(".tn-e3").click(function() {
+                                e3();
+                        });
+                }
                 if (window.location.protocol == "http:") {
                         window.location.protocol = "https:";
-                }
-                if (window.location.protocol == "https:") {
-                        console.log("HTTPS working.");
-                }
-                if (window.location.protocol == "https:" && hashline("e3")) {
-                        $(".tn-e3").click(function() { e3(); });
-                        console.log("HTTPS working.");
-                        e3();
                 }
         });
 });
