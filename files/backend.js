@@ -1,7 +1,8 @@
 $(window).load(function() {
         $(function() {
-                var protocol = protocolCheck; protocolCheck();
                 var protocolCheck = window.location.protocol;
+                protocolCheck();
+                var protocol = protocolCheck;
         });
         $(".tn-menu-btn").click(function() {
                 $(this).tn("toggleHTML", "More", "Less");
