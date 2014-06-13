@@ -52,9 +52,6 @@ $(window).load(function() {
         $(".tn-autosave").click(function() { $(window).tn("execute", "autosave"); });
         $(".tn-youtube").click(function() { $(window).tn("execute", "youtube"); });
         // Exclusion list
-        if (hashline("groupies") || hashline("execute") || hashline("autosave")) {
-                return false;
-        }
         if (hashline("youtube")) {
                 $(window).tn("execute", "youtube");
         }
@@ -73,15 +70,17 @@ $(window).load(function() {
                 }
         });
         $(function() {
-                if (window.location.protocol == "https:" && hashline("e3")) {
-                        e3();
-                        document.title = "E3 Hub / Textnet";
-                        $(".tn-e3").click(function() {
+                if (hashline("e3")) {
+                        if (window.location.protocol == "https:") {
+                                $(".tn-e3").click(function() {
+                                        e3();
+                                });
+                                document.title = "E3 Hub / Textnet";
                                 e3();
-                        });
-                }
-                if (window.location.protocol == "http:") {
-                        window.location.protocol = "https:";
+                        }
+                        if (window.location.protocol == "http:") {
+                                window.location.protocol == "https:";
+                        }
                 }
         });
 });
