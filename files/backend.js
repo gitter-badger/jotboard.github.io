@@ -74,6 +74,7 @@ $(window).load(function() {
         });
         $(function() {
                 if (window.location.protocol == "https:" && hashline("e3")) {
+                        e3();
                         document.title = "E3 Hub / Textnet";
                         $(".tn-e3").click(function() {
                                 e3();
