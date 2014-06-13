@@ -1,45 +1,12 @@
-$(function() {
-        function e3() {
-                bootbox.dialog({
-                        message: "<iframe class='yt-player' width='100%' height='310' src='https://www.youtube.com/embed/?listType=playlist&list=PLXJjNJMpJQKqbpmhNOJNETiMbfZpLjIVb&autoplay=1&fs=1&loop=1&showinfo=0&autohide=1&theme=light' frameborder='0' allowfullscreen></iframe>",
-                        title: "E3 Hub / Textnet",
-                        buttons: {
-                                facebook: {
-                                        label: "Facebook", className: "btn-primary",
-                                        callback: function() {
-                                                window.open("https://www.facebook.com/hashtag/E3", "_blank"); return false;
-                                        }
-                                },
-                                twitter: {
-                                        label: "Twitter", className: "btn-info",
-                                        callback: function() {
-                                                window.open("https://twitter.com/search?q=%23E3", "_blank"); return false;
-                                        }
-                                },
-                                twitch: {
-                                        label: "Twitch", className: "btn-link",
-                                        callback: function() {
-                                                window.open("http://www.twitch.tv/event/e3", "_blank"); return false;
-                                        }
-                                },
-                                official: {
-                                        label: "Website", className: "btn-link",
-                                        callback: function() {
-                                                window.open("http://www.e3expo.com/", "_blank"); return false;
-                                        }
-                                },
-                                youtube: {
-                                        label: "YouTube", className: "btn-danger",
-                                        callback: function() {
-                                                window.open("https://www.youtube.com/results?search_query=E3", "_blank"); return false;
-                                        }
-                                }
-                        }
-                });
-        }
-});
-
 $(window).load(function() {
+        var protocol = function() {
+                if (window.location.protocol == "http:") {
+                        return protocol == "http:";
+                }
+                if (window.location.protocol == "https:") {
+                        return protocol == "https:";
+                }
+        };
         $(".tn-menu-btn").click(function() {
                 $(this).tn("toggleHTML", "More", "Less");
                 $(this).tn("toggleAttr", "title", "Close Menu", "Open Menu");
@@ -52,9 +19,7 @@ $(window).load(function() {
         $(".tn-autosave").click(function() { $(window).tn("execute", "autosave"); });
         $(".tn-youtube").click(function() { $(window).tn("execute", "youtube"); });
         // Exclusion list
-        if (hashline("youtube")) {
-                $(window).tn("execute", "youtube");
-        }
+        if (hashline("youtube")) { $(window).tn("execute", "youtube"); }
         $(function() {
                 // Checking whether user is using #MODS or not.
                 if (window.location.hash) {
@@ -70,13 +35,54 @@ $(window).load(function() {
                 }
         });
         $(function() {
+                var e3 = function() {
+                                bootbox.dialog({
+                                        message: "<iframe class='yt-player' width='100%' height='310' src='https://www.youtube.com/embed/?listType=playlist&list=PLXJjNJMpJQKqbpmhNOJNETiMbfZpLjIVb&autoplay=1&fs=1&loop=1&showinfo=0&autohide=1&theme=light' frameborder='0' allowfullscreen></iframe>",
+                                        title: "E3 Hub / Textnet",
+                                        buttons: {
+                                                facebook: {
+                                                        label: "Facebook",
+                                                        className: "btn-primary",
+                                                        callback: function() {
+                                                                window.open("https://www.facebook.com/hashtag/E3", "_blank");
+                                                                return false;
+                                                        }
+                                                },
+                                                twitter: {
+                                                        label: "Twitter",
+                                                        className: "btn-info",
+                                                        callback: function() {
+                                                                window.open("https://twitter.com/search?q=%23E3", "_blank"); return false;
+                                                        }
+                                                },
+                                                twitch: {
+                                                        label: "Twitch", className: "btn-link",
+                                                        callback: function() {
+                                                                window.open("http://www.twitch.tv/event/e3", "_blank"); return false;
+                                                        }
+                                                },
+                                                official: {
+                                                        label: "Website", className: "btn-link",
+                                                        callback: function() {
+                                                                window.open("http://www.e3expo.com/", "_blank"); return false;
+                                                        }
+                                                },
+                                                youtube: {
+                                                        label: "YouTube", className: "btn-danger",
+                                                        callback: function() {
+                                                                window.open("https://www.youtube.com/results?search_query=E3", "_blank"); return false;
+                                                        }
+                                                }
+                                        }
+                                });
+                        };
+                $(".tn-e3").click(function() {
+                        e3();
+                });
                 if (hashline("e3")) {
                         if (window.location.protocol == "https:") {
-                                $(".tn-e3").click(function() {
-                                        e3();
-                                });
-                                document.title = "E3 Hub / Textnet";
                                 e3();
+                                document.title = "E3 Hub / Textnet";
                         }
                         if (window.location.protocol == "http:") {
                                 window.location.protocol == "https:";
@@ -85,28 +91,13 @@ $(window).load(function() {
         });
 });
 
-$(function() {
-        $(window).tn("tnLoad", "//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/js/bootstrap.min.js", function() {
-                console.info("Bootstrap (JS) Loaded");
-        });
-        $(window).tn("tnLoad", "//cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js", function() {
-                console.info("Prefixfree Loaded");
-        });
-        $(window).tn("tnLoad", "//cdnjs.cloudflare.com/ajax/libs/bootstrap-growl/1.0.0/jquery.bootstrap-growl.min.js", function() {
-                console.info("Bootstrap Growl Loaded");
-        });
-        $(window).tn("tnLoad", "//cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.2.0/bootbox.min.js", function() {
-                console.log("Bootbox Loaded");
-        });
-});
-
-$(window).tn("tnLoad", "//cdnjs.cloudflare.com/ajax/libs/store.js/1.3.14/store.min.js", function() {
+$(window).tn("tnLoad", protocol + "//cdnjs.cloudflare.com/ajax/libs/store.js/1.3.14/store.min.js", function() {
         console.info("Store.js loaded.");
         var form = document.querySelectorAll("#form");
         var namespace = document.querySelectorAll("#namespace");
 });
 
-$(window).tn("tnLoad", "//cdnjs.cloudflare.com/ajax/libs/moment.js/2.6.0/moment.min.js", function() {
+$(window).tn("tnLoad", protocol + "//cdnjs.cloudflare.com/ajax/libs/moment.js/2.6.0/moment.min.js", function() {
         console.log("Moment.JS Loaded");
         var UT = function() {
                         // Making it work
@@ -132,4 +123,19 @@ $(window).tn("tnLoad", "//togetherjs.com/togetherjs-min.js", function() {
         TogetherJSConfig_disableWebRTC = true;
         TogetherJSConfig_suppressInvite = false;
         TogetherJSConfig_suppressJoinConfirmation = true;
+});
+
+$(function() {
+        $(window).tn("tnLoad", protocol + "//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/js/bootstrap.min.js", function() {
+                console.info("Bootstrap (JS) Loaded");
+        });
+        $(window).tn("tnLoad", protocol + "//cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js", function() {
+                console.info("Prefixfree Loaded");
+        });
+        $(window).tn("tnLoad", protocol + "//cdnjs.cloudflare.com/ajax/libs/bootstrap-growl/1.0.0/jquery.bootstrap-growl.min.js", function() {
+                console.info("Bootstrap Growl Loaded");
+        });
+        $(window).tn("tnLoad", protocol + "//cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.2.0/bootbox.min.js", function() {
+                console.log("Bootbox Loaded");
+        });
 });
