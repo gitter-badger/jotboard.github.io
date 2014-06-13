@@ -65,9 +65,11 @@ jQuery.fn.tn = function(tn, tn1, tn2, tn3) {
                         classToggle("#save, #load, #autosave-btn", "block");
                         $.bootstrapGrowl("System Shift", {
                                 ele: "body",
-                                // which element to append to
                                 type: "info",
-                                offset: { from: "bottom", amount: 20 },
+                                offset: {
+                                        from: "bottom",
+                                        amount: 20
+                                },
                                 align: "right",
                                 width: 270,
                                 delay: 4200,
@@ -106,9 +108,11 @@ jQuery.fn.tn = function(tn, tn1, tn2, tn3) {
                                 console.info("Main > saved.");
                                 $.bootstrapGrowl("Main Textnet saved", {
                                         ele: "body",
-                                        // which element to append to
                                         type: "success",
-                                        offset: { from: "bottom", amount: 20 },
+                                        offset: {
+                                                from: "bottom",
+                                                amount: 20
+                                        },
                                         align: "right",
                                         width: 270,
                                         delay: 4200,
@@ -120,9 +124,11 @@ jQuery.fn.tn = function(tn, tn1, tn2, tn3) {
                                 console.info(namespace.value + " > saved.");
                                 $.bootstrapGrowl(namespace.value + " has been saved", {
                                         ele: "body",
-                                        // which element to append to
                                         type: "info",
-                                        offset: { from: "bottom", amount: 20 },
+                                        offset: {
+                                                from: "bottom",
+                                                amount: 20
+                                        },
                                         align: "right",
                                         width: 270,
                                         delay: 4200,
@@ -137,9 +143,11 @@ jQuery.fn.tn = function(tn, tn1, tn2, tn3) {
                                 console.info("Main > loaded");
                                 $.bootstrapGrowl("Your Main Textnet has been loaded.", {
                                         ele: "body",
-                                        // which element to append to
                                         type: "info",
-                                        offset: { from: "bottom", amount: 20 },
+                                        offset: {
+                                                from: "bottom",
+                                                amount: 20
+                                        },
                                         align: "right",
                                         width: 270,
                                         delay: 4200,
@@ -151,9 +159,11 @@ jQuery.fn.tn = function(tn, tn1, tn2, tn3) {
                                 console.info(namespace.value + " > loaded.");
                                 $.bootstrapGrowl(namespace.value + " has been loaded.", {
                                         ele: "body",
-                                        // which element to append to
                                         type: "info",
-                                        offset: { from: "bottom", amount: 20 },
+                                        offset: {
+                                                from: "bottom",
+                                                amount: 20
+                                        },
                                         align: "right",
                                         width: 270,
                                         delay: 4200,
