@@ -8,8 +8,8 @@ $(window).load(function() {
         $(".tn-save").click(function() { $(window).tn("change", "save"); });
         $(".tn-load").click(function() { $(window).tn("change", "load"); });
         $(".tn-groupies").click(function() { $(window).tn("execute", "groupies"); });
-        $(".tn-autosave").click(function() { $(window).tn("execute", "autosave"); });
         $(".tn-youtube").click(function() { $(window).tn("execute", "youtube"); });
+        $(".tn-autosave").click(function() { $(window).tn("execute", "autosave"); });
         // Exclusion list
         if (hashline("youtube")) { $(window).tn("execute", "youtube"); }
         $(function() {
