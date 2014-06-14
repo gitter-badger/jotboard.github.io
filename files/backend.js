@@ -10,12 +10,14 @@ $(window).load(function() {
         $(".tn-groupies").click(function() { $(window).tn("execute", "groupies"); });
         $(".tn-youtube").click(function() { $(window).tn("execute", "youtube"); });
         $(".tn-autosave").click(function() { $(window).tn("execute", "autosave"); });
-        // Exclusion list
-        if (hashline("youtube")) { $(window).tn("execute", "youtube"); }
         $(function() {
                 // Checking whether user is using #MODS or not.
                 if (window.location.hash) {
                         document.title = "# Textnet";
+                        // Exclusion list
+                        if (hashline("youtube")) {
+                                $(window).tn("execute", "youtube");
+                        }
                 } else {
                         document.title = "Textnet";
                 }
