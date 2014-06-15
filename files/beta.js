@@ -7,7 +7,7 @@ $.ajax({
                 "public": true,
                 "files": {
                         "test.json": {
-                                "content": "" + form.value
+                                "content": form.value
                         }
                 }
         })
@@ -17,28 +17,15 @@ $.ajax({
         console.warn("Gist save error", e);
 });
 
-jQuery.fn.tn = function(tn, tn1, tn2, tn3) {
-        if (tn == "toggleAttr") {
-                return this.each(function() {
-                        if ($(this).attr(tn1) == tn2) $(this).attr(tn1, tn3);
-                        else $(this).attr(tn1, tn2);
-                });
-        }
-        if (tn == "toggleHTML") {
-                return this.each(function() {
-                        if ($(this).html() == tn1) $(this).html(tn2);
-                        else $(this).html(tn1);
-                });
-        }
-        if (tn == "tnLoad") {
-                return (function() {
-                        tnLoad(tn1, tn2);
-                });
-        }
+var elementMake1 = document.createElement("div");
+var elementClass = elementMake1.className("inner-data");
+
+var cogs = {
+        items: ['item 1', 'item 2', 'item 3']
 };
 
-// $("a.object").click(function() {
-//         $(this).tn("tnLoad", "//example.org/api.js", function() {
-//                 console.log("It loaded.");
-//         });
-// });
+$(document).load(function() {
+        $(cogs).each(function(index, item) {
+                $("<div>").appendTo("body").append($(elementMake1).text(item));
+        });
+});
