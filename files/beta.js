@@ -3,18 +3,18 @@ $.ajax({
         type: "POST",
         dataType: "json",
         data: JSON.stringify({
-                "description": "Made using Gist",
+                "description": "Made with Textnet, saved onto Github Gists.",
                 "public": true,
                 "files": {
-                        "test.json": {
+                        "tnFile.txt": {
                                 "content": form.value
                         }
                 }
         })
 }).success(function(e) {
-        console.log(e);
+        console.info("Gist Save Success", "Tree: " + e);
 }).error(function(e) {
-        console.warn("Gist save error", e);
+        console.error("Gist Save Error", "Tree: " + e);
 });
 
 var elementMake1 = document.createElement("div");
