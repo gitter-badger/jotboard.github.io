@@ -22,7 +22,7 @@
 div.bootbox.modal, div.bootbox.modal * {
 	outline: none;
 }
-
+.
 #togetherjs-dock-anchor,
 #togetherjs-window-pointer-right {
 	display: none !important;
@@ -122,7 +122,7 @@ html, body, #html, #body {
 }
 
 .navagation:hover {
-	width: 185px;
+	width: 120px;
 }
 
 .navagation {
