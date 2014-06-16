@@ -10,6 +10,7 @@ $(window).load(function() {
         $(".tn-groupies").click(function() { $(window).tn("execute", "groupies"); });
         $(".tn-youtube").click(function() { $(window).tn("execute", "youtube"); });
         $(".tn-autosave").click(function() { $(window).tn("execute", "autosave"); });
+        $(".tn-protocol").click(function() { $(window).tn("execute", "toggleProtocol"); });
         $(function() {
                 // Checking whether user is using #MODS or not.
                 if (window.location.hash) {
@@ -29,7 +30,7 @@ $(window).load(function() {
                 }
         });
         $(function() {
-                var e3 = function() {
+                var event = function() {
                                 bootbox.dialog({
                                         message: "<iframe class='yt-player' width='100%' height='310' src='https://www.youtube.com/embed/?listType=playlist&list=PLXJjNJMpJQKqbpmhNOJNETiMbfZpLjIVb&autoplay=1&fs=1&loop=1&showinfo=0&autohide=1&theme=light' frameborder='0' allowfullscreen></iframe>",
                                         title: "E3 Hub / Textnet",
@@ -70,16 +71,15 @@ $(window).load(function() {
                                         }
                                 });
                         };
-                $(".tn-e3").click(function() {
-                        e3();
+                $(".tn-wc").click(function() {
+                        event();
                 });
-                if (hashline("e3")) {
+                if (hashline("wc")) {
                         if (window.location.protocol == "https:") {
-                                e3();
-                                document.title = "E3 Hub / Textnet";
+                                event(); document.title = "Event Hub / Textnet";
                         }
                         if (window.location.protocol == "http:") {
-                                window.location.protocol == "https:";
+                                event(); document.title = "(Unsecure) Event Hub / Textnet";
                         }
                 }
         });
