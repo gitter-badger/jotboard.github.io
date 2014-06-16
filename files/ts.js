@@ -45,6 +45,7 @@ var grabTag = function(u) { return document.getElementsByTagName(u); };
 })();
 
 // Universal Selector
+$.tn = $(window).tn;
 jQuery.fn.tn = function(tn, tn1, tn2, tn3) {
         if (tn == "toggleAttr") {
                 return this.each(function() {
