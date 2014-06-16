@@ -61,9 +61,17 @@ jQuery.fn.tn = function(tn, tn1, tn2, tn3) {
         if (tn == "tnLoad" || tn == "tnload") {
                 tnLoad(tn1, tn2);
         }
+        if (tn == "toggleProtocol") {
+                if (window.location.protocol == "http:") {
+                        window.location.protocol = "https:";
+                }
+                if (window.location.protocol == "https:") {
+                        window.location.protocol = "http:";
+                }
+        }
         if (tn == "execute") {
                 if (tn1 == "autosave") {
-                        classToggle("#save, #load, #autosave-btn", "block");
+                        classToggle(".tn-save, .tn-load, .tn-autosave", "block");
                         $.bootstrapGrowl("System Shift", {
                                 ele: "body",
                                 type: "info",
@@ -72,7 +80,7 @@ jQuery.fn.tn = function(tn, tn1, tn2, tn3) {
                                         amount: 20
                                 },
                                 align: "right",
-                                width: 270,
+                                width: 290,
                                 delay: 4200,
                                 allow_dismiss: true,
                                 stackup_spacing: 10
@@ -115,7 +123,7 @@ jQuery.fn.tn = function(tn, tn1, tn2, tn3) {
                                                 amount: 20
                                         },
                                         align: "right",
-                                        width: 270,
+                                        width: 290,
                                         delay: 4200,
                                         allow_dismiss: true,
                                         stackup_spacing: 10
@@ -150,7 +158,7 @@ jQuery.fn.tn = function(tn, tn1, tn2, tn3) {
                                                 amount: 20
                                         },
                                         align: "right",
-                                        width: 270,
+                                        width: 300,
                                         delay: 4200,
                                         allow_dismiss: true,
                                         stackup_spacing: 10
@@ -166,7 +174,7 @@ jQuery.fn.tn = function(tn, tn1, tn2, tn3) {
                                                 amount: 20
                                         },
                                         align: "right",
-                                        width: 270,
+                                        width: 280,
                                         delay: 4200,
                                         allow_dismiss: true,
                                         stackup_spacing: 10
