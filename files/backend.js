@@ -29,60 +29,61 @@ $(window).load(function() {
                         form.value = store.get("_-Main");
                 }
         });
-        $(function() {
-                var event = function() {
-                                bootbox.dialog({
-                                        message: "<iframe class='yt-player' width='100%' height='310' src='https://www.youtube.com/embed/?listType=playlist&list=PLXJjNJMpJQKqbpmhNOJNETiMbfZpLjIVb&autoplay=1&fs=1&loop=1&showinfo=0&autohide=1&theme=light' frameborder='0' allowfullscreen></iframe>",
-                                        title: "E3 Hub / Textnet",
-                                        buttons: {
-                                                facebook: {
-                                                        label: "Facebook",
-                                                        className: "btn-primary",
-                                                        callback: function() {
-                                                                window.open("https://www.facebook.com/hashtag/E3", "_blank");
-                                                                return false;
-                                                        }
-                                                },
-                                                twitter: {
-                                                        label: "Twitter",
-                                                        className: "btn-info",
-                                                        callback: function() {
-                                                                window.open("https://twitter.com/search?q=%23E3", "_blank"); return false;
-                                                        }
-                                                },
-                                                twitch: {
-                                                        label: "Twitch", className: "btn-link",
-                                                        callback: function() {
-                                                                window.open("http://www.twitch.tv/event/e3", "_blank"); return false;
-                                                        }
-                                                },
-                                                official: {
-                                                        label: "Website", className: "btn-link",
-                                                        callback: function() {
-                                                                window.open("http://www.e3expo.com/", "_blank"); return false;
-                                                        }
-                                                },
-                                                youtube: {
-                                                        label: "YouTube", className: "btn-danger",
-                                                        callback: function() {
-                                                                window.open("https://www.youtube.com/results?search_query=E3", "_blank"); return false;
-                                                        }
+});
+
+$(function() {
+        var event = function() {
+                        bootbox.dialog({
+                                message: "<iframe class='yt-player' width='100%' height='310' src='https://www.youtube.com/embed/?listType=playlist&list=PLXJjNJMpJQKqbpmhNOJNETiMbfZpLjIVb&autoplay=1&fs=1&loop=1&showinfo=0&autohide=1&theme=light' frameborder='0' allowfullscreen></iframe>",
+                                title: "E3",
+                                buttons: {
+                                        facebook: {
+                                                label: "Facebook", className: "btn-primary",
+                                                callback: function() {
+                                                        window.open("https://www.facebook.com/hashtag/E3", "_blank");
+                                                        return false;
+                                                }
+                                        },
+                                        twitter: {
+                                                label: "Twitter", className: "btn-info",
+                                                callback: function() {
+                                                        window.open("https://twitter.com/search?q=%23E3", "_blank"); return false;
+                                                }
+                                        },
+                                        twitch: {
+                                                label: "Twitch", className: "btn-link",
+                                                callback: function() {
+                                                        window.open("http://www.twitch.tv/event/e3", "_blank"); return false;
+                                                }
+                                        },
+                                        official: {
+                                                label: "Website", className: "btn-link",
+                                                callback: function() {
+                                                        window.open("http://www.e3expo.com/", "_blank"); return false;
+                                                }
+                                        },
+                                        youtube: {
+                                                label: "YouTube", className: "btn-danger",
+                                                callback: function() {
+                                                        window.open("https://www.youtube.com/results?search_query=E3", "_blank"); return false;
                                                 }
                                         }
-                                });
-                        };
-                $(".tn-wc").click(function() {
-                        event();
-                });
-                if (hashline("wc")) {
-                        if (window.location.protocol == "https:") {
-                                event(); document.title = "Event Hub / Textnet";
-                        }
-                        if (window.location.protocol == "http:") {
-                                event(); document.title = "(Unsecure) Event Hub / Textnet";
-                        }
-                }
+                                }
+                        });
+                };
+        $(".tn-event").click(function() {
+                event();
         });
+        if (hashline("event")) {
+                if (window.location.protocol == "https:") {
+                        event();
+                        document.title = "Event Hub / Textnet";
+                }
+                if (window.location.protocol == "http:") {
+                        event();
+                        document.title = "(Unsecure) Event Hub / Textnet";
+                }
+        }
 });
 
 $(window).tn("tnLoad", secure + "//cdnjs.cloudflare.com/ajax/libs/store.js/1.3.14/store.min.js", function() {
