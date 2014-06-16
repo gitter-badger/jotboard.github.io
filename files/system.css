@@ -22,7 +22,7 @@
 div.bootbox.modal, div.bootbox.modal * {
 	outline: none;
 }
-.
+
 #togetherjs-dock-anchor,
 #togetherjs-window-pointer-right {
 	display: none !important;
@@ -36,7 +36,7 @@ div.bootbox.modal, div.bootbox.modal * {
 	background: #0B8BFF;
 	font: 14px "Source Code Pro", sans-serif;
 	color: #F2F2F2;
-	width: calc(100% - 10.5%);
+	width: calc(100% - 120px);
 	border-radius: 0;
 	height: 100%;
 	float: right;
@@ -121,13 +121,9 @@ html, body, #html, #body {
 	font-size: 14px;
 }
 
-.navagation:hover {
-	width: 120px;
-}
-
 .navagation {
+	width: 120px;
 	transition: width 0.174s ease;
-	width: 10%;
 	overflow-y: scroll;
 	overflow-x: scroll;
 	white-space: nowrap;
@@ -135,7 +131,7 @@ html, body, #html, #body {
 	height: 100%;
 	max-height: 100%;
 	background: #E0E0E0;
-	box-shadow: inset 0 0 105px #F0F0F0;
+	box-shadow: inset 0 0 200px #2B2B2B;
 	padding: 1%;
 	position: fixed;
 	left: 0;
