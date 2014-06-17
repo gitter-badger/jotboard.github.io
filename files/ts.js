@@ -7,6 +7,11 @@ var grabID = function(u) { return document.getElementById(u); };
 var grabClass = function(u) { return document.getElementsByClassName(u); };
 var grabTag = function(u) { return document.getElementsByTagName(u); };
 
+// prependChild
+Node.prototype.prependChild = function(el) {
+        this.childNodes[1] && this.insertBefore(el, this.childNodes[1]) || this.appendChild(el);
+};
+
 // tnLoad
 (function() {
         var firstScript = document.getElementsByTagName("script")[0];
