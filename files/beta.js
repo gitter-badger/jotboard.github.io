@@ -5,7 +5,7 @@ var load = function(syntax, assets, callback) {
                                 var script = document.createElement("script");
                                 script.src = src;
                                 script.async = false;
-                                head.appendChild(script);
+                                document.getElementsByTagName("head")[0].prependChild(script);
                         });
                         window[callback()];
                 }
@@ -15,7 +15,7 @@ var load = function(syntax, assets, callback) {
                                 link.href = src;
                                 link.rel = "stylesheet";
                                 link.type = "text/css";
-                                head.appendChild(link);
+                                document.getElementsByTagName("head")[0].prependChild(link);
                         });
                         window[callback()];
                 }
