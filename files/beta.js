@@ -17,6 +17,16 @@ $.ajax({
         console.error("Gist Save Error", "Tree: " + e);
 });
 
+var scripts;
+scripts = ["1.js", "2.js"];
+
+scripts.forEach(function(src) {
+        var script = document.createElement('script');
+        script.src = src;
+        script.async = false;
+        document.head.appendChild(script);
+});
+
 var elementMake1 = document.createElement("div");
 var elementClass = elementMake1.className("inner-data");
 
