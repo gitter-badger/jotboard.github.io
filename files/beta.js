@@ -1,25 +1,27 @@
-function oneUP(syn, assets) {
-        var head = document.getElementsByTagName("head")[0];
-        if (syn == "js") {
-                assets.forEach(function(src) {
-                        var script = document.createElement("script");
-                        script.src = src;
-                        script.async = false;
-                        head.appendChild(script);
-                });
-        }
-        if (syn == "css") {
-                assets.forEach(function(src) {
-                        var link = document.createElement("link");
-                        link.href = src;
-                        link.rel = "stylesheet";
-                        link.type = "text/css";
-                        head.appendChild(link);
-                });
-        }
-}
+var load = function(syntax, assets, callback) {
+                var head = document.getElementsByTagName("head")[0];
+                if (syntax == "js") {
+                        assets.forEach(function(src) {
+                                var script = document.createElement("script");
+                                script.src = src;
+                                script.async = false;
+                                head.appendChild(script);
+                        });
+                        window[callback()];
+                }
+                if (syntax == "css") {
+                        assets.forEach(function(src) {
+                                var link = document.createElement("link");
+                                link.href = src;
+                                link.rel = "stylesheet";
+                                link.type = "text/css";
+                                head.appendChild(link);
+                        });
+                        window[callback()];
+                }
+        };
 
-// oneUP("js", "http://test.com/api.js", function() {
+// load("js", ["https://test.com/api.js"], function() {
 //         alert("Test API Loaded.");
 // });
 
