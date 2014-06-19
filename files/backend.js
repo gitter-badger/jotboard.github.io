@@ -131,7 +131,7 @@ $(function() {
             secure + "//cdnjs.cloudflare.com/ajax/libs/bootstrap-growl/1.0.0/jquery.bootstrap-growl.min.js",
             secure + "//cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.2.0/bootbox.min.js"
         ], function() {
-                console.info("Bootstrap (JS) Loaded");
+                console.info("Bootstrap, Bootstrap Growl and Bootbox has been loaded.");
         });
 });
 
