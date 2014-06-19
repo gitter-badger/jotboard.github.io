@@ -1,4 +1,4 @@
-// Notes: add secure+ as a prefix when adding a external plugin, Google Extensions apply.
+// Notes: add secure + as a prefix when adding a external plugin, Google Extensions apply.
 
 $(window).load(function() {
         $(".tn-menu-btn").click(function() {
@@ -122,6 +122,19 @@ $(window).tn("tnLoad", secure + "//cdnjs.cloudflare.com/ajax/libs/moment.js/2.6.
         setInterval(UT, 1);
 });
 
+$(function() {
+        $(window).tn("tnLoad", secure + "//cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js", function() {
+                console.info("Prefixfree Loaded");
+        });
+        $(window).tn("tnLoad", [
+            secure + "//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/js/bootstrap.min.js",
+            secure + "//cdnjs.cloudflare.com/ajax/libs/bootstrap-growl/1.0.0/jquery.bootstrap-growl.min.js",
+            secure + "//cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.2.0/bootbox.min.js"
+        ], function() {
+                console.info("Bootstrap (JS) Loaded");
+        });
+});
+
 $(window).tn("tnLoad", secure + "//togetherjs.com/togetherjs-min.js", function() {
         // Groupies
         TogetherJSConfig_siteName = "Textnet";
@@ -131,17 +144,4 @@ $(window).tn("tnLoad", secure + "//togetherjs.com/togetherjs-min.js", function()
         TogetherJSConfig_disableWebRTC = true;
         TogetherJSConfig_suppressInvite = false;
         TogetherJSConfig_suppressJoinConfirmation = true;
-});
-
-$(function() {
-        $(window).tn("tnLoad", [
-            secure + "//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/js/bootstrap.min.js",
-            secure + "//cdnjs.cloudflare.com/ajax/libs/bootstrap-growl/1.0.0/jquery.bootstrap-growl.min.js",
-            secure + "//cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.2.0/bootbox.min.js"
-        ], function() {
-                console.info("Bootstrap (JS) Loaded");
-        });
-        $(window).tn("tnLoad", secure + "//cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js", function() {
-                console.info("Prefixfree Loaded");
-        });
 });
