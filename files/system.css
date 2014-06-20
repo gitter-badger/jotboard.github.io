@@ -108,16 +108,16 @@ html, body, #html, #body {
 }
 
 .navagation .nav-select {
-	font-size: 17px;
+	font-size: 18px;
 	background-color: #E9E9E9;
-	box-shadow: inset 0 0 3px #E0E0E0;
+	box-shadow: inset 0 0 4px #E0E0E0;
 	color: #020202;
 	padding: 2px;
 	border-radius: 2px;
 }
 
 .navagation .select {
-	font-size: 14px;
+	font-size: 15px;
 }
 
 .navagation {
