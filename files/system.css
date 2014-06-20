@@ -28,12 +28,11 @@ div.bootbox.modal, div.bootbox.modal * {
 	display: none !important;
 }
 
-#body, #main {
-    background: #0B8BFF;
+#body, #main, #form {
+    background: #0077FF;
 }
 
 #form {
-	background: #0B8BFF;
 	font: 14px "Source Code Pro", sans-serif;
 	color: #F2F2F2;
 	width: calc(100% - 120px);
