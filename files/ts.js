@@ -50,7 +50,6 @@ Node.prototype.prependChild = function(el) {
 })();
 
 // Universal Selector
-$.tn = $(window).tn;
 jQuery.fn.tn = function(tn, tn1, tn2, tn3) {
         if (tn == "toggleAttr") {
                 return this.each(function() {
@@ -69,10 +68,14 @@ jQuery.fn.tn = function(tn, tn1, tn2, tn3) {
         }
         if (tn == "toggleProtocol") {
                 if (window.location.protocol == "http:") {
-                        window.location.protocol = "https:";
+                        function() {
+                                window.location.protocol("https:");
+                        };
                 }
                 if (window.location.protocol == "https:") {
-                        window.location.protocol = "http:";
+                        function() {
+                                window.location.protocol("http:");
+                        };
                 }
         }
         if (tn == "execute") {
@@ -121,7 +124,7 @@ jQuery.fn.tn = function(tn, tn1, tn2, tn3) {
                         if (namespace.value.length === 0) {
                                 store.set("_-Main", form.value);
                                 console.info("Main > saved.");
-                                $.bootstrapGrowl("Main Textnet saved", {
+                                $.bootstrapGrowl("Main > Saved", {
                                         ele: "body",
                                         type: "success",
                                         offset: {
@@ -136,8 +139,8 @@ jQuery.fn.tn = function(tn, tn1, tn2, tn3) {
                                 });
                         } else {
                                 store.set("_-" + namespace.value, form.value);
-                                console.info(namespace.value + " > saved.");
-                                $.bootstrapGrowl(namespace.value + " has been saved", {
+                                console.info(namespace.value + " > saved");
+                                $.bootstrapGrowl(namespace.value + " > Saved", {
                                         ele: "body",
                                         type: "info",
                                         offset: {
@@ -156,7 +159,7 @@ jQuery.fn.tn = function(tn, tn1, tn2, tn3) {
                         if (namespace.value.length === 0) {
                                 form.value = store.get("_-Main");
                                 console.info("Main > loaded");
-                                $.bootstrapGrowl("Your Main Textnet has been loaded.", {
+                                $.bootstrapGrowl("Main > Loaded", {
                                         ele: "body",
                                         type: "info",
                                         offset: {
@@ -172,7 +175,7 @@ jQuery.fn.tn = function(tn, tn1, tn2, tn3) {
                         } else {
                                 form.value = store.get("_-" + namespace.value);
                                 console.info(namespace.value + " > loaded.");
-                                $.bootstrapGrowl(namespace.value + " has been loaded.", {
+                                $.bootstrapGrowl(namespace.value + " > Loaded", {
                                         ele: "body",
                                         type: "info",
                                         offset: {
