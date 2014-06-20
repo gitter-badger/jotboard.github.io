@@ -17,9 +17,15 @@ $(window).load(function() {
                 // Checking whether user is using #MODS or not.
                 if (window.location.hash) {
                         document.title = "# Textnet";
-                        // Exclusion list
-                        if (hashline("youtube")) {
+                        // Pointers
+                        if (hashline("yt")) {
                                 $(window).tn("execute", "youtube");
+                        }
+                        if (hashline("yt") && hashline("blackpanthaa")) {
+                                $(window).tn("execute", "youtube-s-blackpanthaa");
+                        }
+                        if (hashline("new") || hashline("n")) {
+                                event();
                         }
                 } else {
                         document.title = "Textnet";
