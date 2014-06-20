@@ -114,6 +114,15 @@ jQuery.fn.tn = function(tn, tn1, tn2, tn3) {
                                 }
                         });
                 }
+                if (tn1 == "youtube-s-blackpanthaa") {
+                        bootbox.prompt("YouTube Search (BlackPanthaa)", function(srch) {
+                                if (srch === null) {
+                                        console.log("No returned.");
+                                } else {
+                                        window.open("https://www.youtube.com/results?utm_source=opensearch&search_query=" + srch, "_blank");
+                                }
+                        });
+                }
         }
         if (tn == "change") {
                 if (tn1 == "save") {
