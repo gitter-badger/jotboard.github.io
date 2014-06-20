@@ -68,14 +68,10 @@ jQuery.fn.tn = function(tn, tn1, tn2, tn3) {
         }
         if (tn == "toggleProtocol") {
                 if (window.location.protocol == "http:") {
-                        function() {
-                                window.location.protocol("https:");
-                        };
+                        window.location.protocol("https:");
                 }
                 if (window.location.protocol == "https:") {
-                        function() {
-                                window.location.protocol("http:");
-                        };
+                        window.location.protocol("http:");
                 }
         }
         if (tn == "execute") {
