@@ -86,18 +86,15 @@ $(function() {
         };
 });
 
-$(window).tn("load", "js", [secure + "//cdnjs.cloudflare.com/ajax/libs/moment.js/2.6.0/moment.min.js"], function() {
+$(window).tn("load", "js", [secure + "//cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js"], function() {
         var UT = function() {
+                if (0 <= new Date().getHours() && new Date().getHours() < 18) { $("#form").addClass("day"); }
+                else { $("#form").addClass("night"); }
                 $("#form.day").attr("placeholder", moment(new Date()).format("[Hi, it's ]dddd[, the] Do [of] MMMM YYYY[ and time is] h:mm a[.]"));
                 $("#form.night").attr("placeholder", moment(new Date()).format("[Hows it goin? it was a nice ]dddd, Do [of] MMMM YYYY[ and the time is] h:mm a[, goodnight.]"));
-                if (0 <= new Date().getHours() && new Date().getHours() < 18) {
-                        $("#form").addClass("day");
-                } else {
-                        $("#form").addClass("night");
-                }
+                setInterval(UT, 1);
         };
         window[UT()];
-        setInterval(UT, 1);
         console.info("MomentJS loaded");
 });
 
