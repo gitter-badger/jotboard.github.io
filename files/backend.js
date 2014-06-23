@@ -17,7 +17,7 @@ $(window).load(function() {
                 // Checking whether user is using #MODS or not.
                 if (window.location.hash) {
                         document.title = "# Textnet";
-                        // Pointers
+                        // Hashline
                         if (hashline("yt")) {
                                 $(window).tn("execute", "youtube");
                         }
@@ -29,10 +29,6 @@ $(window).load(function() {
                 }
         });
         $(function() {
-                bootbox.setDefaults({
-                        backdrop: false,
-                        animate: true
-                });
                 $(window).keyup(function(tnL) {
                         if (tnL.keyCode == 27) {
                                 bootbox.hideAll();
@@ -42,7 +38,9 @@ $(window).load(function() {
 });
 
 $(function() {
-        $(".tn-event").click(function() { event(); });
+        $(".tn-event").click(function() {
+                event();
+        });
         var event = function() {
                 if (hashline("event")) {
                         if (window.location.protocol == "https:") {
@@ -55,39 +53,39 @@ $(function() {
                         }
                 }
                 bootbox.dialog({
-                        message: "<iframe class='yt-player' width='100%' height='310' src='https://www.youtube.com/embed/?listType=playlist&list=PLXJjNJMpJQKqbpmhNOJNETiMbfZpLjIVb&autoplay=1&fs=1&loop=1&showinfo=0&autohide=1&theme=light' frameborder='0' allowfullscreen></iframe>",
+                        message: "<iframe class='block yt-player' width='100%' height='310' src='https://www.youtube.com/embed/?listType=playlist&list=PLXJjNJMpJQKqbpmhNOJNETiMbfZpLjIVb&fs=1&loop=1&showinfo=0&autohide=1&theme=light' frameborder='0' allowfullscreen></iframe>",
                         title: "E3",
                         buttons: {
                                 facebook: {
-                                        label: "Facebook", className: "btn-primary",
+                                        label: "Facebook", className: "block btn-primary",
                                         callback: function() {
                                                 window.open("https://www.facebook.com/hashtag/E3", "_blank");
                                                 return false;
                                         }
                                 },
                                 twitter: {
-                                        label: "Twitter", className: "btn-info",
+                                        label: "Twitter", className: "block btn-info",
                                         callback: function() {
                                                 window.open("https://twitter.com/search?q=%23E3", "_blank");
                                                 return false;
                                         }
                                 },
                                 twitch: {
-                                        label: "Twitch", className: "btn-link",
+                                        label: "Twitch", className: "block btn-link",
                                         callback: function() {
                                                 window.open("http://www.twitch.tv/event/e3", "_blank");
                                                 return false;
                                         }
                                 },
                                 official: {
-                                        label: "Website", className: "btn-link",
+                                        label: "Website", className: "block btn-link",
                                         callback: function() {
                                                 window.open("http://www.e3expo.com/", "_blank");
                                                 return false;
                                         }
                                 },
                                 youtube: {
-                                        label: "YouTube", className: "btn-danger",
+                                        label: "YouTube", className: "block btn-danger",
                                         callback: function() {
                                                 window.open("https://www.youtube.com/results?search_query=E3", "_blank");
                                                 return false;
@@ -105,6 +103,13 @@ $(window).tn("load", "js", [secure + "//cdnjs.cloudflare.com/ajax/libs/store.js/
         if (window.localStorage["_-Main"]) {
                 form.value = store.get("_-Main");
         }
+});
+
+$(window).tn("load", "js", [secure + "//cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.2.0/bootbox.min.js"], function() {
+        bootbox.setDefaults({
+                backdrop: false,
+                animate: true
+        });
 });
 
 $(window).tn("load", "js", [secure + "//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css"], function() {
@@ -140,12 +145,11 @@ $(function() {
         $(window).tn("load", "js", [secure + "//cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"], function() {
                 console.info("Prefixfree Loaded");
         });
-        $(window).tn("load", [
+        $(window).tn("load", "js", [
                 secure + "//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/js/bootstrap.min.js",
-                secure + "//cdnjs.cloudflare.com/ajax/libs/bootstrap-growl/1.0.0/jquery.bootstrap-growl.min.js",
-                secure + "//cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.2.0/bootbox.min.js"
+                secure + "//cdnjs.cloudflare.com/ajax/libs/bootstrap-growl/1.0.0/jquery.bootstrap-growl.min.js"
         ], function() {
-                console.info("Bootstrap, Bootstrap Growl and Bootbox has been loaded.");
+                console.info("Bootstrap (JS) and Bootstrap Growl has been loaded.");
         });
 });
 
