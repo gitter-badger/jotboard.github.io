@@ -87,24 +87,21 @@ $(function() {
 });
 
 $(window).tn("load", "js", [secure + "//cdnjs.cloudflare.com/ajax/libs/moment.js/2.6.0/moment.min.js"], function() {
-        console.log("Moment.JS Loaded");
         var UT = function() {
-                // Making it work
                 $("#form.day").attr("placeholder", moment(new Date()).format("[Hi, it's ]dddd[, the] Do [of] MMMM YYYY[ and time is] h:mm a[.]"));
                 $("#form.night").attr("placeholder", moment(new Date()).format("[Hows it goin? it was a nice ]dddd, Do [of] MMMM YYYY[ and the time is] h:mm a[, goodnight.]"));
-                // Pushing the Marquee, the hard and only way.
                 if (0 <= new Date().getHours() && new Date().getHours() < 18) {
                         $("#form").addClass("day");
                 } else {
                         $("#form").addClass("night");
                 }
         };
-        UT();
+        window[UT()];
         setInterval(UT, 1);
+        console.info("MomentJS loaded");
 });
 
 $(window).tn("load", "js", [secure + "//cdnjs.cloudflare.com/ajax/libs/store.js/1.3.14/store.min.js"], function() {
-        console.info("Store.js loaded.");
         var form = document.querySelectorAll("#form");
         var namespace = document.querySelectorAll("#namespace");
         $(function() {
@@ -112,6 +109,7 @@ $(window).tn("load", "js", [secure + "//cdnjs.cloudflare.com/ajax/libs/store.js/
                         form.value = store.get("_-Main");
                 }
         });
+        console.info("StoreJS loaded");
 });
 
 $(window).tn("load", "js", [secure + "//cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.2.0/bootbox.min.js"], function() {
@@ -124,22 +122,15 @@ $(window).tn("load", "js", [secure + "//cdnjs.cloudflare.com/ajax/libs/bootbox.j
         });
 });
 
-$(window).tn("load", "js", [secure + "//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css"], function() {
-        console.info("Store.js loaded.");
-        var form = document.querySelectorAll("#form");
-        var namespace = document.querySelectorAll("#namespace");
-});
-
 $(window).tn("load", "css", [secure + "//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/css/bootstrap.min.css"], function() {
         console.info("Bootstrap (CSS) Loaded");
 });
 
 $(window).tn("load", "js", [secure + "//cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"], function() {
         console.info("Prefixfree Loaded");
-});
-
-$(window).tn("load", "css", [secure + "//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css"], function() {
-        console.info("Font Awesome Loaded");
+        $(window).tn("load", "css", [secure + "//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css"], function() {
+                console.info("Font Awesome Loaded");
+        });
 });
 
 $(window).tn("load", "js", [
@@ -147,15 +138,14 @@ $(window).tn("load", "js", [
         secure + "//cdnjs.cloudflare.com/ajax/libs/bootstrap-growl/1.0.0/jquery.bootstrap-growl.min.js"
 ], function() {
         console.info("Bootstrap (JS) and Bootstrap Growl has been loaded.");
-});
-
-$(window).tn("load", [secure + "//togetherjs.com/togetherjs-min.js"], function() {
-        // Groupies
-        TogetherJSConfig_siteName = "Textnet";
-        TogetherJSConfig_toolName = "Groupies";
-        TogetherJSConfig_dontShowClicks = true;
-        TogetherJSConfig_youtube = true;
-        TogetherJSConfig_disableWebRTC = true;
-        TogetherJSConfig_suppressInvite = false;
-        TogetherJSConfig_suppressJoinConfirmation = true;
+        $(window).tn("load", "js", [secure + "//togetherjs.com/togetherjs-min.js"], function() {
+                // Groupies
+                TogetherJSConfig_siteName = "Textnet";
+                TogetherJSConfig_toolName = "Groupies";
+                TogetherJSConfig_dontShowClicks = true;
+                TogetherJSConfig_youtube = true;
+                TogetherJSConfig_disableWebRTC = true;
+                TogetherJSConfig_suppressInvite = false;
+                TogetherJSConfig_suppressJoinConfirmation = true;
+        });
 });
