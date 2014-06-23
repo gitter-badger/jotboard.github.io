@@ -3,51 +3,11 @@ var secure = window.location.protocol;
 var hashline = function(u) { return window.location.href.indexOf("#" + u) != -1; };
 var grabSelector = function(u) { return document.querySelector(u); };
 var grabSelectorAll = function(u) { return document.querySelectorAll(u); };
-var grabID = function(u) { return document.getElementById(u); };
-var grabClass = function(u) { return document.getElementsByClassName(u); };
-var grabTag = function(u) { return document.getElementsByTagName(u); };
 
-// prependChild
+// prependChild ts.js add-on
 Node.prototype.prependChild = function(el) {
         this.childNodes[1] && this.insertBefore(el, this.childNodes[1]) || this.appendChild(el);
 };
-
-// tnLoad
-(function() {
-        var firstScript = document.getElementsByTagName("script")[0];
-        var scriptHead = firstScript.parentNode;
-        var re = /ded|co/;
-        var onload = "onload";
-        var onreadystatechange = "onreadystatechange";
-        var readyState = "readyState";
-        var load = function(src, fn) {
-                        var script = document.createElement("script");
-                        script[onload] = script[onreadystatechange] = function() {
-                                if (!this[readyState] || re.test(this[readyState])) {
-                                        script[onload] = script[onreadystatechange] = null;
-                                        fn && fn(script);
-                                        script = null;
-                                }
-                        };
-                        script.async = true;
-                        script.src = src;
-                        scriptHead.insertBefore(script, firstScript);
-                };
-        window.tnLoad = function(srces, fn) {
-                if (typeof srces == "string") {
-                        load(srces, fn);
-                        return;
-                }
-                var src = srces.shift();
-                load(src, function() {
-                        if (srces.length) {
-                                window.tnLoad(srces, fn);
-                        } else {
-                                fn && fn();
-                        }
-                });
-        };
-})();
 
 // Universal Selector
 jQuery.fn.tn = function(tn, tn1, tn2, tn3) {
@@ -63,63 +23,35 @@ jQuery.fn.tn = function(tn, tn1, tn2, tn3) {
                         else $(this).html(tn1);
                 });
         }
-        if (tn == "tnLoad" || tn == "tnload") {
-                tnLoad(tn1, tn2);
-        }
-        if (tn == "toggleProtocol") {
-                if (window.location.protocol == "http:") {
-                        window.location.protocol("https:");
+        if (tn == "load") {
+                var head = document.getElementsByTagName("head")[0];
+                if (tn1 == "js") {
+                        tn2.forEach(function(src) {
+                                var script = document.createElement("script");
+                                script.src = src;
+                                script.async = false;
+                                head.prependChild(script);
+                        });
+                        window[tn3()];
                 }
-                if (window.location.protocol == "https:") {
-                        window.location.protocol("http:");
+                if (tn1 == "css") {
+                        tn2.forEach(function(src) {
+                                var link = document.createElement("link");
+                                link.href = src;
+                                link.rel = "stylesheet";
+                                link.type = "text/css";
+                                head.prependChild(link);
+                        });
+                        window[tn3()];
                 }
         }
         if (tn == "execute") {
-                if (tn1 == "autosave") {
-                        classToggle(".tn-save, .tn-load, .tn-autosave", "block");
-                        $.bootstrapGrowl("System Shift", {
-                                ele: "body",
-                                type: "info",
-                                offset: {
-                                        from: "bottom",
-                                        amount: 20
-                                },
-                                align: "right",
-                                width: 290,
-                                delay: 4200,
-                                allow_dismiss: true,
-                                stackup_spacing: 10
-                        });
-                        form.onkeydown = function() {
-                                if (namespace.value.length === 0) {
-                                        store.set("_-Main", form.value);
-                                } else {
-                                        store.set("_-" + namespace.value, form.value);
-                                }
-                        };
-                        form.onkeyup = function() {
-                                if (namespace.value.length === 0) {
-                                        store.set("_-Main", form.value);
-                                } else {
-                                        store.set("_-" + namespace.value, form.value);
-                                }
-                        };
-                }
                 if (tn1 == "youtube") {
                         bootbox.prompt("YouTube Search", function(srch) {
                                 if (srch === null) {
                                         bootbox.hideAll();
                                 } else {
                                         window.open("https://www.youtube.com/results?utm_source=opensearch&search_query=" + srch, "_blank");
-                                }
-                        });
-                }
-                if (tn1 == "youtube-s-blackpanthaa") {
-                        bootbox.prompt("YouTube Search (BlackPanthaa)", function(srch) {
-                                if (srch === null) {
-                                        bootbox.hideAll();
-                                } else {
-                                        window.open("https://www.youtube.com/results?utm_source=opensearch&search_query=BlackPanthaa+" + srch, "_blank");
                                 }
                         });
                 }
