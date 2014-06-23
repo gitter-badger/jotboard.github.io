@@ -131,6 +131,12 @@ $(window).tn("load", "js", [secure + "//cdnjs.cloudflare.com/ajax/libs/moment.js
 });
 
 $(function() {
+        $(window).tn("load", "css", [secure + "//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/css/bootstrap.min.css"], function() {
+                console.info("Bootstrap (CSS) Loaded");
+        });
+        $(window).tn("load", "css", [secure + "//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css"], function() {
+                console.info("Font Awesome Loaded");
+        });
         $(window).tn("load", "js", [secure + "//cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"], function() {
                 console.info("Prefixfree Loaded");
         });
