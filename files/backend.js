@@ -86,7 +86,7 @@ $(function() {
         };
 });
 
-$(window).tn("load", "js", [secure + "//cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js"], function() {
+$(window).load("js", [secure + "//cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js"], function() {
         var UT = function() {
                 if (0 <= new Date().getHours() && new Date().getHours() < 18) { $("#form").addClass("day"); }
                 else { $("#form").addClass("night"); }
@@ -98,7 +98,7 @@ $(window).tn("load", "js", [secure + "//cdnjs.cloudflare.com/ajax/libs/moment.js
         console.info("MomentJS loaded");
 });
 
-$(window).tn("load", "js", [secure + "//cdnjs.cloudflare.com/ajax/libs/store.js/1.3.14/store.min.js"], function() {
+$(window).load("js", [secure + "//cdnjs.cloudflare.com/ajax/libs/store.js/1.3.14/store.min.js"], function() {
         var form = document.querySelectorAll("#form");
         var namespace = document.querySelectorAll("#namespace");
         $(function() {
@@ -109,7 +109,7 @@ $(window).tn("load", "js", [secure + "//cdnjs.cloudflare.com/ajax/libs/store.js/
         console.info("StoreJS loaded");
 });
 
-$(window).tn("load", "js", [secure + "//cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.2.0/bootbox.min.js"], function() {
+$(window).load("js", [secure + "//cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.2.0/bootbox.min.js"], function() {
         bootbox.setDefaults({
                 onEscape: function() {
                         dialog.modal("hide");
@@ -119,18 +119,18 @@ $(window).tn("load", "js", [secure + "//cdnjs.cloudflare.com/ajax/libs/bootbox.j
         });
 });
 
-$(window).tn("load", "css", [secure + "//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/css/bootstrap.min.css"], function() {
+$(window).load("css", [secure + "//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/css/bootstrap.min.css"], function() {
         console.info("Bootstrap (CSS) Loaded");
 });
 
-$(window).tn("load", "js", [secure + "//cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"], function() {
+$(window).load("js", [secure + "//cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"], function() {
         console.info("Prefixfree Loaded");
         $(window).tn("load", "css", [secure + "//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css"], function() {
                 console.info("Font Awesome Loaded");
         });
 });
 
-$(window).tn("load", "js", [
+$(window).load("js", [
         secure + "//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/js/bootstrap.min.js",
         secure + "//cdnjs.cloudflare.com/ajax/libs/bootstrap-growl/1.0.0/jquery.bootstrap-growl.min.js"
 ], function() {
