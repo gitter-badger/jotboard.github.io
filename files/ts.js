@@ -32,7 +32,7 @@ jQuery.fn.grab = function(syntax, url, callback) {
                 url.forEach(function(src) {
                         var link = document.createElement("link");
                         link.async = "true";
-                        link.type = "text/javascript";
+                        link.type = "text/css";
                         link.src = src;
                         link.onload = link.onreadystatechange = function() {
                                 var state = this.readyState;
