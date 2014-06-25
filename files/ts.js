@@ -32,17 +32,15 @@ jQuery.fn.tn = function(tn, tn1, tn2, tn3) {
                                 script.type = "text/javascript";
                                 script.async = true;
                                 script.onload = script.onreadystatechange = function() {
-                                        var rs = this.readyState;
-                                        if (rs && rs != "complete" && rs != "loaded") return;
+                                        var state = this.readyState;
+                                        if (state && state != "complete" && state != "loaded") return;
                                         try {
                                                 window[callback()];
-                                        } catch (e) {
-                                                window[fail()];
-                                        }
+                                        } catch (e) {}
                                 };
                                 var scriptAf = document.getElementsByTagName("script")[0];
                                 scriptAf.parentNode.insertBefore(script, scriptAf);
-                        }))();
+                        }))(document, "script");
                 }
                 if (tn1 == "css") {
                         tn2.forEach(function(src) {
