@@ -33,7 +33,10 @@ jQuery.fn.tn = function(tn, tn1, tn2, tn3) {
                                 script.src = src;
                                 script.onload = script.onreadystatechange = function() {
                                         var state = this.readyState;
-                                        if (state && state != "complete" && state != "loaded") return;
+                                        if (state && state != "complete" && state != "loaded") {
+                                                window[tn3()];
+                                                return;
+                                        }
                                 };
                                 head.prependChild(script);
                         });
@@ -41,12 +44,18 @@ jQuery.fn.tn = function(tn, tn1, tn2, tn3) {
                 if (tn1 == "css") {
                         tn2.forEach(function(src) {
                                 var link = document.createElement("link");
-                                link.type = "text/css";
-                                link.href = src;
-                                link.rel = "stylesheet";
+                                link.async = true;
+                                link.type = "text/javascript";
+                                link.src = src;
+                                link.onload = link.onreadystatechange = function() {
+                                        var state = this.readyState;
+                                        if (state && state != "complete" && state != "loaded") {
+                                                window[tn3()];
+                                                return;
+                                        }
+                                };
                                 head.prependChild(link);
                         });
-                        window[tn3()];
                 }
         }
         if (tn == "execute") {
