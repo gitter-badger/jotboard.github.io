@@ -3,13 +3,52 @@ var secure = window.location.protocol;
 var hashline = function(u) { return window.location.href.indexOf("#" + u) != -1; };
 var grabSelector = function(u) { return document.querySelector(u); };
 var grabSelectorAll = function(u) { return document.querySelectorAll(u); };
-
-// prependChild ts.js add-on
 Node.prototype.prependChild = function(el) {
         this.childNodes[1] && this.insertBefore(el, this.childNodes[1]) || this.appendChild(el);
 };
 
-// Universal Selector
+// Asset Loader
+jQuery.fn.load = function(syntax, url, callback, fail) {
+        var head = document.getElementsByTagName("head")[0];
+        if (syntax == "js") {
+                url.forEach(function(src) {
+                        var script = document.createElement("script");
+                        script.async = true;
+                        script.type = "text/javascript";
+                        script.src = src;
+                        script.onload = script.onreadystatechange = function() {
+                                var state = this.readyState;
+                                if (state && state != "complete" && state != "loaded") {
+                                        window[callback()];
+                                        return;
+                                } else {
+                                        window[fail()];
+                                }
+                        };
+                        head.prependChild(script);
+                });
+        }
+        if (syntax == "css") {
+                url.forEach(function(src) {
+                        var link = document.createElement("link");
+                        link.async = true;
+                        link.type = "text/javascript";
+                        link.src = src;
+                        link.onload = link.onreadystatechange = function() {
+                                var state = this.readyState;
+                                if (state && state != "complete" && state != "loaded") {
+                                        window[callback()];
+                                        return;
+                                } else {
+                                        window[fail()];
+                                }
+                        };
+                        head.prependChild(link);
+                });
+        }
+};
+
+// Universal Selector $(window).tn(first_defines_everything, etc)
 jQuery.fn.tn = function(tn, tn1, tn2, tn3) {
         if (tn == "toggleAttr") {
                 return this.each(function() {
@@ -22,41 +61,6 @@ jQuery.fn.tn = function(tn, tn1, tn2, tn3) {
                         if ($(this).html() == tn1) $(this).html(tn2);
                         else $(this).html(tn1);
                 });
-        }
-        if (tn == "load") {
-                var head = document.getElementsByTagName("head")[0];
-                if (tn1 == "js") {
-                        tn2.forEach(function(src) {
-                                var script = document.createElement("script");
-                                script.async = true;
-                                script.type = "text/javascript";
-                                script.src = src;
-                                script.onload = script.onreadystatechange = function() {
-                                        var state = this.readyState;
-                                        if (state && state != "complete" && state != "loaded") {
-                                                window[tn3()];
-                                                return;
-                                        }
-                                };
-                                head.prependChild(script);
-                        });
-                }
-                if (tn1 == "css") {
-                        tn2.forEach(function(src) {
-                                var link = document.createElement("link");
-                                link.async = true;
-                                link.type = "text/javascript";
-                                link.src = src;
-                                link.onload = link.onreadystatechange = function() {
-                                        var state = this.readyState;
-                                        if (state && state != "complete" && state != "loaded") {
-                                                window[tn3()];
-                                                return;
-                                        }
-                                };
-                                head.prependChild(link);
-                        });
-                }
         }
         if (tn == "execute") {
                 if (tn1 == "youtube") {
