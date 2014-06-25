@@ -26,20 +26,31 @@ jQuery.fn.tn = function(tn, tn1, tn2, tn3) {
         if (tn == "load") {
                 var head = document.getElementsByTagName("head")[0];
                 if (tn1 == "js") {
-                        tn2.forEach(function(src) {
+                        tn2.forEach((function(src) {
                                 var script = document.createElement("script");
                                 script.src = src;
-                                script.async = false;
-                                head.prependChild(script);
-                        });
-                        window[tn3()];
+                                script.type = "text/javascript";
+                                script.async = true;
+                                script.onload = script.onreadystatechange = function() {
+                                        var rs = this.readyState;
+                                        if (rs && rs != "complete" && rs != "loaded") return;
+                                        try {
+                                                window[callback()];
+                                        } catch (e) {
+                                                window[fail()];
+                                        }
+                                };
+                                var scriptAf = document.getElementsByTagName("script")[0];
+                                scriptAf.parentNode.insertBefore(script, scriptAf);
+                        }))();
                 }
                 if (tn1 == "css") {
                         tn2.forEach(function(src) {
                                 var link = document.createElement("link");
+                                link.type = "text/css";
+                                
                                 link.href = src;
                                 link.rel = "stylesheet";
-                                link.type = "text/css";
                                 head.prependChild(link);
                         });
                         window[tn3()];
