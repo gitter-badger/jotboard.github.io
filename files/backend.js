@@ -88,8 +88,11 @@ $(function() {
 
 $(window).load("js", [secure + "//cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js"], function() {
         var UT = function() {
-                if (0 <= new Date().getHours() && new Date().getHours() < 18) { $("#form").addClass("day"); }
-                else { $("#form").addClass("night"); }
+                if (0 <= new Date().getHours() && new Date().getHours() < 18) {
+                        $("#form").addClass("day");
+                } else {
+                        $("#form").addClass("night");
+                }
                 $("#form.day").attr("placeholder", moment(new Date()).format("[Hi, it's ]dddd[, the] Do [of] MMMM YYYY[ and time is] h:mm a[.]"));
                 $("#form.night").attr("placeholder", moment(new Date()).format("[Hows it goin? it was a nice ]dddd, Do [of] MMMM YYYY[ and the time is] h:mm a[, goodnight.]"));
                 setInterval(UT, 1);
