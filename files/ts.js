@@ -7,13 +7,13 @@ Node.prototype.prependChild = function(el) {
         this.childNodes[1] && this.insertBefore(el, this.childNodes[1]) || this.appendChild(el);
 };
 
-// Asset Loader
-jQuery.fn.load = function(syntax, url, callback, fail) {
+// Asset Loader $(window).grab("js", "//test.io/api.js", function() { comebackwith(); });
+jQuery.fn.grab = function(syntax, url, callback) {
         var head = document.getElementsByTagName("head")[0];
         if (syntax == "js") {
                 url.forEach(function(src) {
                         var script = document.createElement("script");
-                        script.async = true;
+                        script.async = "true";
                         script.type = "text/javascript";
                         script.src = src;
                         script.onload = script.onreadystatechange = function() {
@@ -22,7 +22,7 @@ jQuery.fn.load = function(syntax, url, callback, fail) {
                                         window[callback()];
                                         return;
                                 } else {
-                                        console.error("Failed loading");
+                                        console.error("error > js");
                                 }
                         };
                         head.prependChild(script);
@@ -31,7 +31,7 @@ jQuery.fn.load = function(syntax, url, callback, fail) {
         if (syntax == "css") {
                 url.forEach(function(src) {
                         var link = document.createElement("link");
-                        link.async = true;
+                        link.async = "true";
                         link.type = "text/javascript";
                         link.src = src;
                         link.onload = link.onreadystatechange = function() {
@@ -40,7 +40,7 @@ jQuery.fn.load = function(syntax, url, callback, fail) {
                                         window[callback()];
                                         return;
                                 } else {
-                                        console.error("Failed loading");
+                                        console.error("error > css");
                                 }
                         };
                         head.prependChild(link);
@@ -61,17 +61,6 @@ jQuery.fn.tn = function(tn, tn1, tn2, tn3) {
                         if ($(this).html() == tn1) $(this).html(tn2);
                         else $(this).html(tn1);
                 });
-        }
-        if (tn == "execute") {
-                if (tn1 == "youtube") {
-                        bootbox.prompt("YouTube Search", function(srch) {
-                                if (srch === null) {
-                                        bootbox.hideAll();
-                                } else {
-                                        window.open("https://www.youtube.com/results?utm_source=opensearch&search_query=" + srch, "_blank");
-                                }
-                        });
-                }
         }
         if (tn == "change") {
                 if (tn1 == "save") {
@@ -143,6 +132,17 @@ jQuery.fn.tn = function(tn, tn1, tn2, tn3) {
                                         stackup_spacing: 10
                                 });
                         }
+                }
+        }
+        if (tn == "execute") {
+                if (tn1 == "youtube") {
+                        bootbox.prompt("YouTube Search", function(srch) {
+                                if (srch === null) {
+                                        bootbox.hideAll();
+                                } else {
+                                        window.open("https://www.youtube.com/results?utm_source=opensearch&search_query=" + srch, "_blank");
+                                }
+                        });
                 }
         }
 };
