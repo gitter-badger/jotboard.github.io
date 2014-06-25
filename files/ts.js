@@ -22,7 +22,7 @@ jQuery.fn.load = function(syntax, url, callback, fail) {
                                         window[callback()];
                                         return;
                                 } else {
-                                        window[fail()];
+                                        console.error("Failed loading");
                                 }
                         };
                         head.prependChild(script);
@@ -40,7 +40,7 @@ jQuery.fn.load = function(syntax, url, callback, fail) {
                                         window[callback()];
                                         return;
                                 } else {
-                                        window[fail()];
+                                        console.error("Failed loading");
                                 }
                         };
                         head.prependChild(link);
