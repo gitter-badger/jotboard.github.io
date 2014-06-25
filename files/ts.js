@@ -26,27 +26,22 @@ jQuery.fn.tn = function(tn, tn1, tn2, tn3) {
         if (tn == "load") {
                 var head = document.getElementsByTagName("head")[0];
                 if (tn1 == "js") {
-                        tn2.forEach((function(src) {
+                        tn2.forEach(function(src) {
                                 var script = document.createElement("script");
-                                script.src = src;
-                                script.type = "text/javascript";
                                 script.async = true;
+                                script.type = "text/javascript";
+                                script.src = src;
                                 script.onload = script.onreadystatechange = function() {
                                         var state = this.readyState;
                                         if (state && state != "complete" && state != "loaded") return;
-                                        try {
-                                                window[callback()];
-                                        } catch (e) {}
                                 };
-                                var scriptAf = document.getElementsByTagName("script")[0];
-                                scriptAf.parentNode.insertBefore(script, scriptAf);
-                        }))(document, "script");
+                                head.prependChild(script);
+                        });
                 }
                 if (tn1 == "css") {
                         tn2.forEach(function(src) {
                                 var link = document.createElement("link");
                                 link.type = "text/css";
-                                
                                 link.href = src;
                                 link.rel = "stylesheet";
                                 head.prependChild(link);
