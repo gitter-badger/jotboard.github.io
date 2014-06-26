@@ -22,7 +22,7 @@ jQuery.fn.grab = function(syntax, url, callback) {
                                         window[callback()];
                                         return;
                                 } else {
-                                        console.error("error > js");
+                                        console.error("error > " + src);
                                 }
                         };
                         head.prependChild(script);
@@ -31,16 +31,15 @@ jQuery.fn.grab = function(syntax, url, callback) {
         if (syntax == "css") {
                 url.forEach(function(src) {
                         var link = document.createElement("link");
-                        link.async = "true";
                         link.type = "text/css";
-                        link.src = src;
+                        link.href = src;
                         link.onload = link.onreadystatechange = function() {
                                 var state = this.readyState;
                                 if (state && state != "complete" && state != "loaded") {
                                         window[callback()];
                                         return;
                                 } else {
-                                        console.error("error > css");
+                                        console.error("error > " + src);
                                 }
                         };
                         head.prependChild(link);
