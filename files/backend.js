@@ -43,12 +43,13 @@ $(function() {
                 bootbox.dialog({
                         className: "block",
                         title: "#WhatsCookin",
-                        message: "<iframe class='block yt-player' width='100%' height='310' src='https://www.youtube.com/embed/?listType=playlist&list=PLXJjNJMpJQKqbpmhNOJNETiMbfZpLjIVb&fs=1&loop=1&showinfo=0&autohide=1&theme=light' frameborder='0' allowfullscreen></iframe>",
+                        message: "<iframe class='yt-player' width='100%' height='310' src='https://www.youtube.com/embed/?listType=playlist&list=PLXJjNJMpJQKqbpmhNOJNETiMbfZpLjIVb&fs=1&loop=1&showinfo=0&autohide=1&theme=light' frameborder='0' allowfullscreen></iframe>",
                         buttons: {
                                 enter: {
                                         label: "Button", className: "btn-primary",
                                         callback: function() {
                                                 return false;
+                                                window.open(url, target);
                                         }
                                 }
                         }
