@@ -7,7 +7,10 @@ Node.prototype.prependChild = function(el) {
         this.childNodes[1] && this.insertBefore(el, this.childNodes[1]) || this.appendChild(el);
 };
 
-// Asset Loader $(window).grab("js", "//test.io/api.js", function() { comebackwith(); });
+// Asset Loader
+// $(window).grab("js", "//test.io/api.js", function() {
+//        comebackwith();
+// });
 jQuery.fn.grab = function(syntax, url, callback) {
         var head = document.getElementsByTagName("head")[0];
         if (syntax == "js") {
@@ -20,8 +23,8 @@ jQuery.fn.grab = function(syntax, url, callback) {
                                 var state = this.readyState;
                                 if (state && state != "complete" && state != "loaded") {
                                         window[callback()];
-                                        return;
-                                } else {
+                                        console.log("success > " + src);
+                                } if (e) {
                                         console.error("error > " + src);
                                 }
                         };
@@ -37,8 +40,8 @@ jQuery.fn.grab = function(syntax, url, callback) {
                                 var state = this.readyState;
                                 if (state && state != "complete" && state != "loaded") {
                                         window[callback()];
-                                        return;
-                                } else {
+                                        console.log("success > " + src);
+                                } if (e) {
                                         console.error("error > " + src);
                                 }
                         };
