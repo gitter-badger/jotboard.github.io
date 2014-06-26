@@ -11,14 +11,12 @@ $(window).load(function() {
         $(".tn-load").click(function() { $(window).tn("change", "load"); });
         $(".tn-groupies").click(function() { $(window).tn("execute", "groupies"); });
         $(".tn-youtube").click(function() { $(window).tn("execute", "youtube"); });
-        $(".tn-autosave").click(function() { $(window).tn("execute", "autosave"); });
-        $(".tn-protocol").click(function() { $(window).tn("execute", "toggleProtocol"); });
         $(function() {
-                // Checking whether user is using #MODS or not.
+                // Checking whether #MODS are being used or not.
                 if (window.location.hash) {
                         document.title = "# Textnet";
                         // Hashline
-                        if (hashline("youtube")) {
+                        if (hashline("youtube") || hashline("yt")) {
                                 $(window).tn("execute", "youtube");
                         }
                 } else {
@@ -43,41 +41,13 @@ $(function() {
                         }
                 }
                 bootbox.dialog({
+                        className: "block",
                         title: "#WhatsCookin",
                         message: "<iframe class='block yt-player' width='100%' height='310' src='https://www.youtube.com/embed/?listType=playlist&list=PLXJjNJMpJQKqbpmhNOJNETiMbfZpLjIVb&fs=1&loop=1&showinfo=0&autohide=1&theme=light' frameborder='0' allowfullscreen></iframe>",
                         buttons: {
-                                facebook: {
-                                        label: "Facebook", className: "btn-primary",
+                                enter: {
+                                        label: "Button", className: "btn-primary",
                                         callback: function() {
-                                                window.open("https://www.facebook.com/hashtag/E3", "_blank");
-                                                return false;
-                                        }
-                                },
-                                twitter: {
-                                        label: "Twitter", className: "btn-info",
-                                        callback: function() {
-                                                window.open("https://twitter.com/search?q=%23E3", "_blank");
-                                                return false;
-                                        }
-                                },
-                                twitch: {
-                                        label: "Twitch", className: "btn-link",
-                                        callback: function() {
-                                                window.open("http://www.twitch.tv/event/e3", "_blank");
-                                                return false;
-                                        }
-                                },
-                                official: {
-                                        label: "Website", className: "btn-link",
-                                        callback: function() {
-                                                window.open("http://www.e3expo.com/", "_blank");
-                                                return false;
-                                        }
-                                },
-                                youtube: {
-                                        label: "YouTube", className: "btn-danger",
-                                        callback: function() {
-                                                window.open("https://www.youtube.com/results?search_query=E3", "_blank");
                                                 return false;
                                         }
                                 }
@@ -88,13 +58,13 @@ $(function() {
 
 $(window).grab("js", [secure + "//cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js"], function() {
         var UT = function() {
+                $("#form.day").attr("placeholder", moment(new Date()).format("[Hi, it's ]dddd[, the] Do [of] MMMM YYYY[ and time is] h:mm a[.]"));
+                $("#form.night").attr("placeholder", moment(new Date()).format("[Hows it goin? it was a nice ]dddd, Do [of] MMMM YYYY[ and the time is] h:mm a[, goodnight.]"));
                 if (0 <= new Date().getHours() && new Date().getHours() < 18) {
                         $("#form").addClass("day");
                 } else {
                         $("#form").addClass("night");
                 }
-                $("#form.day").attr("placeholder", moment(new Date()).format("[Hi, it's ]dddd[, the] Do [of] MMMM YYYY[ and time is] h:mm a[.]"));
-                $("#form.night").attr("placeholder", moment(new Date()).format("[Hows it goin? it was a nice ]dddd, Do [of] MMMM YYYY[ and the time is] h:mm a[, goodnight.]"));
         };
         UT(); setInterval(UT, 1);
         console.info("MomentJS loaded");
@@ -116,23 +86,19 @@ $(window).grab("js", [secure + "//cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.2.
         });
 });
 
-$(window).grab("css", [secure + "//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/css/bootstrap.min.css"], function() {
-        console.info("Bootstrap (CSS) Loaded");
-});
-
-$(window).grab("js", [secure + "//cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"], function() {
-        console.info("Prefixfree Loaded");
-});
-
-$(window).grab("css", [secure + "//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css"], function() {
-        console.info("Font Awesome Loaded");
+$(window).grab("css", [
+                secure + "//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/css/bootstrap.min.css",
+                secure + "//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css"
+        ], function() {
+        console.info("Bootstrap (CSS) Font Awesome Loaded");
 });
 
 $(window).grab("js", [
+        secure + "//cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js",
         secure + "//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/js/bootstrap.min.js",
         secure + "//cdnjs.cloudflare.com/ajax/libs/bootstrap-growl/1.0.0/jquery.bootstrap-growl.min.js"
 ], function() {
-        console.info("Bootstrap (JS) and Bootstrap Growl has been loaded.");
+        console.info("Prefixfree, Bootstrap (JS) and Bootstrap Growl have been loaded.");
 });
 
 $(window).grab("js", [secure + "//togetherjs.com/togetherjs-min.js"], function() {
