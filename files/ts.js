@@ -11,7 +11,7 @@ Node.prototype.prependChild = function(el) {
 // $(window).grab("js", "//test.io/api.js", function() {
 //        comebackwith();
 // });
-jQuery.fn.grab = function(syntax, url, callback) {
+jQuery.fn.grab = function(syntax, url, success, fail) {
         var head = document.getElementsByTagName("head")[0];
         if (syntax == "js") {
                 url.forEach(function(src) {
@@ -22,11 +22,13 @@ jQuery.fn.grab = function(syntax, url, callback) {
                         script.onload = script.onreadystatechange = function() {
                                 var state = this.readyState;
                                 if (state && state != "complete" && state != "loaded") {
-                                        window[callback()];
+                                        window[success()];
                                         console.log("success > " + src);
-                                } if (e) {
-                                        console.error("error > " + src);
                                 }
+                        };
+                        script.onerror = function() {
+                                window[fail()];
+                                console.log("fail > " + src);
                         };
                         head.prependChild(script);
                 });
@@ -39,11 +41,14 @@ jQuery.fn.grab = function(syntax, url, callback) {
                         link.onload = link.onreadystatechange = function() {
                                 var state = this.readyState;
                                 if (state && state != "complete" && state != "loaded") {
-                                        window[callback()];
+                                        window[success()];
                                         console.log("success > " + src);
-                                } if (e) {
-                                        console.error("error > " + src);
+                                        return;
                                 }
+                        };
+                        link.onerror = function() {
+                                window[fail()];
+                                console.log("fail > " + src);
                         };
                         head.prependChild(link);
                 });
