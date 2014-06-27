@@ -98,7 +98,7 @@ jQuery.fn.textnet = function(tn, tn1, tn2, tn3, tn4) {
                 }
         }
         if (tn == "grab") {
-                var sculpt = document.getElementsById("assets");
+                var sculpt = document.getElementsById("assets")[0];
                 if (tn1 == "js") {
                         tn2.forEach(function(src) {
                                 var script = createThis("script");
