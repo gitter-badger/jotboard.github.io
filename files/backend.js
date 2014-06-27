@@ -1,11 +1,12 @@
 // Notes: add secure + as a prefix when adding a external plugin.
 w.load(function() {
+        $("body").textnet("toggleAttr", "style", "display: visible;", "display: none;");
         $(".tn-menu-btn").click(function() {
+                $("#submenu").textnet("toggleAttr", "style", "display: visible;", "display: none;");
                 t.textnet("toggleHTML", "More", "Less");
                 t.textnet("toggleAttr", "title", "Close Menu", "Open Menu");
-                $("#submenu").textnet("toggleAttr", "style", "display: visible;", "display: none;");
         });
-        $("body").textnet("toggleAttr", "style", "display: visible;", "display: none;");
+        $(".tn-event").click(function() { event(); });
         $(".tn-save").click(function() { w.textnet("change", "save"); });
         $(".tn-load").click(function() { w.textnet("change", "load"); });
         $(".tn-groupies").click(function() { w.textnet("execute", "groupies"); });
@@ -25,9 +26,6 @@ w.load(function() {
 });
 
 $(function() {
-        $(".tn-event").click(function() {
-                event();
-        });
         var event = function() {
                 if (hashline("event")) {
                         if (window.location.protocol == "https:") {
@@ -57,18 +55,16 @@ $(function() {
         };
 });
 
-w.textnet("grab", "js", [secure + "//cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js"], function() {
-        var UT = function() {
-                $("#form.day").attr("placeholder", moment(new Date()).format("[Hi, it's ]dddd[, the] Do [of] MMMM YYYY[ and time is] h:mm a[.]"));
-                $("#form.night").attr("placeholder", moment(new Date()).format("[Hows it goin? it was a nice ]dddd, Do [of] MMMM YYYY[ and the time is] h:mm a[, goodnight.]"));
-                if (0 <= new Date().getHours() && new Date().getHours() < 18) {
-                        $("#form").addClass("day");
-                } else {
-                        $("#form").addClass("night");
-                }
-        };
-        UT();
-        setInterval(UT, 1);
+w.textnet("grab", "js", [secure + "//cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"], function() {
+        w.textnet("grab", "js", [
+                secure + "//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/js/bootstrap.min.js",
+                secure + "//cdnjs.cloudflare.com/ajax/libs/bootstrap-growl/1.0.0/jquery.bootstrap-growl.min.js"
+        ], function() {
+                w.textnet("grab", "css", [
+                        secure + "//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/css/bootstrap.min.css",
+                        secure + "//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css"
+                ]);
+        });
 });
 
 w.textnet("grab", "js", [secure + "//cdnjs.cloudflare.com/ajax/libs/store.js/1.3.14/store.min.js"], function() {
@@ -77,37 +73,27 @@ w.textnet("grab", "js", [secure + "//cdnjs.cloudflare.com/ajax/libs/store.js/1.3
         if (window.localStorage["_-Main"]) {
                 form.value = store.get("_-Main");
         }
-}, function() {
-        console.error("Contact: gamer381@gmail.com");
-});
-
-w.textnet("grab", "js", [secure + "//cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.2.0/bootbox.min.js"], function() {
-        bootbox.setDefaults({
-                backdrop: false,
-                animate: true
+        w.textnet("grab", "js", [secure + "//cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js"], function() {
+                var UT = function() {
+                        $("#form.day").attr("placeholder", moment(new Date()).format("[Hi, it's ]dddd[, the] Do [of] MMMM YYYY[ and time is] h:mm a[.]"));
+                        $("#form.night").attr("placeholder", moment(new Date()).format("[Hows it goin? it was a nice ]dddd, Do [of] MMMM YYYY[ and the time is] h:mm a[, goodnight.]"));
+                        if (0 <= new Date().getHours() && new Date().getHours() < 18) {
+                                $("#form").addClass("day");
+                        } else {
+                                $("#form").addClass("night");
+                        }
+                };
+                UT();
+                setInterval(UT, 1);
         });
-}, function() {
-        console.warn("Bootbox is not responding, Chris should look into that.");
-});
-
-w.textnet("grab", "css", [
-        secure + "//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/css/bootstrap.min.css",
-        secure + "//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css"
-]);
-
-w.textnet("grab", "js", [
-        secure + "//cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js",
-        secure + "//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/js/bootstrap.min.js",
-        secure + "//cdnjs.cloudflare.com/ajax/libs/bootstrap-growl/1.0.0/jquery.bootstrap-growl.min.js"
-]);
-
-w.textnet("grab", "js", [secure + "//togetherjs.com/togetherjs-min.js"], function() {
-        // Groupies
-        TogetherJSConfig_siteName = "Textnet";
-        TogetherJSConfig_toolName = "Groupies";
-        TogetherJSConfig_dontShowClicks = true;
-        TogetherJSConfig_youtube = true;
-        TogetherJSConfig_disableWebRTC = true;
-        TogetherJSConfig_suppressInvite = false;
-        TogetherJSConfig_suppressJoinConfirmation = true;
+        w.textnet("grab", "js", [secure + "//togetherjs.com/togetherjs-min.js"], function() {
+                // Groupies
+                TogetherJSConfig_siteName = "Textnet";
+                TogetherJSConfig_toolName = "Groupies";
+                TogetherJSConfig_dontShowClicks = true;
+                TogetherJSConfig_youtube = true;
+                TogetherJSConfig_disableWebRTC = true;
+                TogetherJSConfig_suppressInvite = false;
+                TogetherJSConfig_suppressJoinConfirmation = true;
+        });
 });
