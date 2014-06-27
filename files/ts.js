@@ -11,23 +11,31 @@ Node.prototype.prependChild = function(el) {
 // $(window).grab("js", "//test.io/api.js", function() {
 //        comebackwith();
 // });
-jQuery.fn.grab = function(syntax, url, success, fail) {
+$.fn.grab = function(syntax, url, comeback) {
         var head = document.getElementsByTagName("head")[0];
         if (syntax == "js") {
                 url.forEach(function(src) {
                         var script = document.createElement("script");
                         script.type = "text/javascript";
                         script.src = src;
-                        script.onload = script.onreadystatechange = function() {
+                        script.onload = function() {
                                 var state = this.readyState;
-                                if (state && state != "complete" && state != "loaded") {
+                                if (this.readyState && this.readyState != "complete" && this.readyState != "loaded") {
                                         window[success()];
                                         console.log("success > " + src);
+                                        return;
+                                }
+                                if (!this.readyState) {
+                                        window[success()];
+                                        console.log("(readyState not avalible) success > " + src);
+                                        return;
                                 }
                         };
                         script.onerror = function() {
-                                window[fail()];
-                                console.log("fail > " + src);
+                                if (fail) {
+                                        window[fail()];
+                                }
+                                console.log("(readyState not avalible) fail > " + src);
                         };
                         head.prependChild(script);
                 });
@@ -37,17 +45,24 @@ jQuery.fn.grab = function(syntax, url, success, fail) {
                         var link = document.createElement("link");
                         link.type = "text/css";
                         link.href = src;
-                        link.onload = link.onreadystatechange = function() {
+                        link.onload = function() {
                                 var state = this.readyState;
-                                if (state && state != "complete" && state != "loaded") {
+                                if (this.readyState && this.readyState != "complete" && this.readyState != "loaded") {
                                         window[success()];
                                         console.log("success > " + src);
                                         return;
                                 }
+                                if (!this.readyState) {
+                                        window[success()];
+                                        console.log("(readyState not avalible) success > " + src);
+                                        return;
+                                }
                         };
                         link.onerror = function() {
-                                window[fail()];
-                                console.log("fail > " + src);
+                                if (fail) {
+                                        window[fail()];
+                                }
+                                console.log("(readyState not avalible) fail > " + src);
                         };
                         head.prependChild(link);
                 });
