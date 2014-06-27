@@ -125,7 +125,6 @@ jQuery.fn.textnet = function(tn, tn1, tn2, tn3) {
                                 };
                         });
                 }
-                w.textnet("grab", "js", [s + "//test.io/api.js"], success, fail);
                 if (tn1 == "css") {
                         tn2.forEach(function(src) {
                                 var link = createThis("link");
