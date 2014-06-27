@@ -1,5 +1,5 @@
 // Notes: add secure + as a prefix when adding a external plugin.
-w.load(function() {
+head.load("//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", function() {
         $("body").textnet("toggleAttr", "style", "display: visible;", "display: none;");
         $(".tn-menu-btn").click(function() {
                 $("#submenu").textnet("toggleAttr", "style", "display: visible;", "display: none;");
