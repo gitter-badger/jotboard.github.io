@@ -69,7 +69,6 @@ w.grab("js", [secure + "//cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.
         };
         UT();
         setInterval(UT, 1);
-        console.info("MomentJS loaded");
 });
 
 w.grab("js", [secure + "//cdnjs.cloudflare.com/ajax/libs/store.js/1.3.14/store.min.js"], function() {
@@ -78,7 +77,6 @@ w.grab("js", [secure + "//cdnjs.cloudflare.com/ajax/libs/store.js/1.3.14/store.m
         if (window.localStorage["_-Main"]) {
                 form.value = store.get("_-Main");
         }
-        console.info("StoreJS loaded");
 });
 
 w.grab("js", [secure + "//cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.2.0/bootbox.min.js"], function() {
