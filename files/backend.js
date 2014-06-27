@@ -87,7 +87,7 @@ w.textnet("grab", "js", [secure + "//cdnjs.cloudflare.com/ajax/libs/bootbox.js/4
                 animate: true
         });
 }, function() {
-        console.warn("Bootbox is not responding.");
+        console.warn("Bootbox is not responding, Chris should look into that.");
 });
 
 w.textnet("grab", "css", [
