@@ -1,20 +1,19 @@
-// Grabbers
+// Selectors
 var secure = window.location.protocol;
 var hashline = function(u) { return window.location.href.indexOf("#" + u) != -1; };
 var grabSelector = function(u) { return document.querySelector(u); };
 var grabSelectorAll = function(u) { return document.querySelectorAll(u); };
+var w = $(window);
 Node.prototype.prependChild = function(el) {
         this.childNodes[1] && this.insertBefore(el, this.childNodes[1]) || this.appendChild(el);
 };
 
-// $.tn();
-// $(window).grab("js", "//test.io/api.js", function() {
+// w.grab("js", "//test.io/api.js", function() {
 //        success();
 // }, function() {
 //         fail();
 // });
-
-$.fn.grab = function(syntax, url, success, fail) {
+jQuery.fn.grab = function(syntax, url, success, fail) {
         var head = document.getElementsByTagName("head")[0];
         if (syntax == "js") {
                 url.forEach(function(src) {
@@ -70,7 +69,7 @@ $.fn.grab = function(syntax, url, success, fail) {
         }
 };
 
-// Universal Selector $(window).tn(first_defines_everything, etc)
+// Universal Selector w.tn(first_defines_everything, etc);
 jQuery.fn.tn = function(tn, tn1, tn2, tn3) {
         if (tn == "toggleAttr") {
                 return this.each(function() {
