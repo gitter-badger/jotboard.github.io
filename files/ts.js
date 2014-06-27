@@ -97,64 +97,6 @@ jQuery.fn.textnet = function(tn, tn1, tn2, tn3, tn4) {
                         }
                 }
         }
-        if (tn == "grab") {
-                var head = document.getElementsByTagName("head")[0];
-                if (tn1 == "js") {
-                        tn2.forEach(function(src) {
-                                var script = createThis("script");
-                                script.type = "text/javascript";
-                                script.src = src;
-                                script.onload = script.onsuccess = function() {
-                                        if (tn3) {
-                                                window[tn3()];
-                                                console.info("success > " + src);
-                                        }
-                                        if (!tn3) {
-                                                console.info("success > " + src);
-                                        }
-                                };
-                                script.onerror = function() {
-                                        if (tn4) {
-                                                window[tn4()];
-                                                console.error("error > " + src);
-                                        }
-                                        if (!tn4) {
-                                                console.error("error > " + src);
-                                        }
-                                };
-                                head.appendChild(script);
-                        });
-                }
-                if (tn1 == "css") {
-                        tn2.forEach(function(src) {
-                                var link = createThis("link");
-                                link.rel = "stylesheet";
-                                link.type = "text/css";
-                                link.href = src;
-                                // On load / Success
-                                link.onload = link.onsuccess = function() {
-                                        if (tn3) {
-                                                window[tn3()];
-                                                console.info("success > " + src);
-                                        }
-                                        if (!tn3) {
-                                                console.info("success > " + src);
-                                        }
-                                };
-                                // Error
-                                link.onerror = function() {
-                                        if (tn4) {
-                                                window[tn4()];
-                                                console.error("error > " + src);
-                                        }
-                                        if (!tn4) {
-                                                console.error("error > " + src);
-                                        }
-                                };
-                                head.appendChild(link);
-                        });
-                }
-        }
         if (tn == "execute") {
                 if (tn1 == "youtube") {
                         bootbox.prompt("YouTube Search", function(srch) {
