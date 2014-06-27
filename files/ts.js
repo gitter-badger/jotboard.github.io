@@ -150,7 +150,7 @@ jQuery.fn.textnet = function(tn, tn1, tn2, tn3, tn4) {
                                                 console.error("error > " + src);
                                         }
                                 };
-                                head.appendChild(script);
+                                head.appendChild(link);
                         });
                 }
         }
