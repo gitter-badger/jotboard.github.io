@@ -1,22 +1,22 @@
 // Notes: add secure + as a prefix when adding a external plugin, Google Extensions apply.
-$(window).load(function() {
+w.load(function() {
         $(".tn-menu-btn").click(function() {
-                $(this).tn("toggleHTML", "More", "Less");
-                $(this).tn("toggleAttr", "title", "Close Menu", "Open Menu");
+                t.tn("toggleHTML", "More", "Less");
+                t.tn("toggleAttr", "title", "Close Menu", "Open Menu");
                 $("#submenu").tn("toggleAttr", "style", "display: visible;", "display: none;");
         });
         $("body").tn("toggleAttr", "style", "display: visible;", "display: none;");
-        $(".tn-save").click(function() { $(window).tn("change", "save"); });
-        $(".tn-load").click(function() { $(window).tn("change", "load"); });
-        $(".tn-groupies").click(function() { $(window).tn("execute", "groupies"); });
-        $(".tn-youtube").click(function() { $(window).tn("execute", "youtube"); });
+        $(".tn-save").click(function() { w.tn("change", "save"); });
+        $(".tn-load").click(function() { w.tn("change", "load"); });
+        $(".tn-groupies").click(function() { w.tn("execute", "groupies"); });
+        $(".tn-youtube").click(function() { w.tn("execute", "youtube"); });
         $(function() {
                 // Checking whether #MODS are being used or not.
                 if (window.location.hash) {
                         document.title = "# Textnet";
                         // Hashline
                         if (hashline("youtube") || hashline("yt")) {
-                                $(window).tn("execute", "youtube");
+                                w.tn("execute", "youtube");
                         }
                 } else {
                         document.title = "Textnet";
@@ -57,7 +57,7 @@ $(function() {
         };
 });
 
-$(window).grab("js", [secure + "//cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js"], function() {
+w.grab("js", [secure + "//cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js"], function() {
         var UT = function() {
                 $("#form.day").attr("placeholder", moment(new Date()).format("[Hi, it's ]dddd[, the] Do [of] MMMM YYYY[ and time is] h:mm a[.]"));
                 $("#form.night").attr("placeholder", moment(new Date()).format("[Hows it goin? it was a nice ]dddd, Do [of] MMMM YYYY[ and the time is] h:mm a[, goodnight.]"));
@@ -72,7 +72,7 @@ $(window).grab("js", [secure + "//cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0
         console.info("MomentJS loaded");
 });
 
-$(window).grab("js", [secure + "//cdnjs.cloudflare.com/ajax/libs/store.js/1.3.14/store.min.js"], function() {
+w.grab("js", [secure + "//cdnjs.cloudflare.com/ajax/libs/store.js/1.3.14/store.min.js"], function() {
         var form = document.querySelectorAll("#form");
         var namespace = document.querySelectorAll("#namespace");
         if (window.localStorage["_-Main"]) {
@@ -81,7 +81,7 @@ $(window).grab("js", [secure + "//cdnjs.cloudflare.com/ajax/libs/store.js/1.3.14
         console.info("StoreJS loaded");
 });
 
-$(window).grab("js", [secure + "//cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.2.0/bootbox.min.js"], function() {
+w.grab("js", [secure + "//cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.2.0/bootbox.min.js"], function() {
         bootbox.setDefaults({
                 backdrop: false,
                 animate: true
@@ -90,18 +90,18 @@ $(window).grab("js", [secure + "//cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.2.
         console.warn("Bootbox is not responding.");
 });
 
-$(window).grab("css", [
+w.grab("css", [
         secure + "//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/css/bootstrap.min.css",
         secure + "//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css"
 ]);
 
-$(window).grab("js", [
+w.grab("js", [
         secure + "//cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js",
         secure + "//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/js/bootstrap.min.js",
         secure + "//cdnjs.cloudflare.com/ajax/libs/bootstrap-growl/1.0.0/jquery.bootstrap-growl.min.js"
 ]);
 
-$(window).grab("js", [secure + "//togetherjs.com/togetherjs-min.js"], function() {
+w.grab("js", [secure + "//togetherjs.com/togetherjs-min.js"], function() {
         // Groupies
         TogetherJSConfig_siteName = "Textnet";
         TogetherJSConfig_toolName = "Groupies";
