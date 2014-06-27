@@ -4,6 +4,7 @@ var hashline = function(u) { return window.location.href.indexOf("#" + u) != -1;
 var grabSelector = function(u) { return document.querySelector(u); };
 var grabSelectorAll = function(u) { return document.querySelectorAll(u); };
 var w = $(window);
+var t = $(this);
 Node.prototype.prependChild = function(el) {
         this.childNodes[1] && this.insertBefore(el, this.childNodes[1]) || this.appendChild(el);
 };
