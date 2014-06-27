@@ -1,4 +1,5 @@
 // Selectors
+// Shrinking our need for adding the same sort of code.
 var secure = window.location.protocol;
 var hashline = function(u) { return window.location.href.indexOf("#" + u) != -1; };
 var grabSelector = function(u) { return document.querySelector(u); };
@@ -9,11 +10,7 @@ Node.prototype.prependChild = function(el) {
         this.childNodes[1] && this.insertBefore(el, this.childNodes[1]) || this.appendChild(el);
 };
 
-// w.grab("js", "//test.io/api.js", function() {
-//        success();
-// }, function() {
-//         fail();
-// });
+// w.grab
 jQuery.fn.grab = function(syntax, url, success, fail) {
         var head = document.getElementsByTagName("head")[0];
         if (syntax == "js") {
@@ -70,8 +67,8 @@ jQuery.fn.grab = function(syntax, url, success, fail) {
         }
 };
 
-// Universal Selector w.tn(first_defines_everything, etc);
-jQuery.fn.tn = function(tn, tn1, tn2, tn3) {
+// Universal Selector w.textnet
+jQuery.fn.textnet = function(tn, tn1, tn2, tn3) {
         if (tn == "toggleAttr") {
                 return this.each(function() {
                         if ($(this).attr(tn1) == tn2) $(this).attr(tn1, tn3);
