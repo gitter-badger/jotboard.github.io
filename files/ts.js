@@ -18,7 +18,7 @@ jQuery.fn.grab = function(syntax, url, success, fail) {
                         var script = document.createElement("script");
                         script.type = "text/javascript";
                         script.src = src;
-                        script.onsuccess = function() {
+                        script.onload = script.onsuccess = function() {
                                 if (success) {
                                         window[success()];
                                         console.info("success > " + src);
@@ -44,7 +44,7 @@ jQuery.fn.grab = function(syntax, url, success, fail) {
                         var link = document.createElement("link");
                         link.type = "text/css";
                         link.href = src;
-                        link.onsuccess = function() {
+                        link.onload = link.onsuccess = function() {
                                 if (success) {
                                         window[success()];
                                         console.info("success > " + src);
