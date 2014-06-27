@@ -106,7 +106,7 @@ jQuery.fn.textnet = function(tn, tn1, tn2, tn3, tn4) {
                                 script.src = src;
                                 script.onload = script.onsuccess = function() {
                                         if (tn3) {
-                                                window[success()];
+                                                window[tn3()];
                                                 console.info("success > " + src);
                                         }
                                         if (!tn3) {
@@ -115,7 +115,7 @@ jQuery.fn.textnet = function(tn, tn1, tn2, tn3, tn4) {
                                 };
                                 script.onerror = function() {
                                         if (tn4) {
-                                                window[fail()];
+                                                window[tn4()];
                                                 console.error("error > " + src);
                                         }
                                         if (!tn4) {
