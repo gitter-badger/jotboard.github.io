@@ -1,22 +1,22 @@
 // Notes: add secure + as a prefix when adding a external plugin, Google Extensions apply.
 w.load(function() {
         $(".tn-menu-btn").click(function() {
-                t.tn("toggleHTML", "More", "Less");
-                t.tn("toggleAttr", "title", "Close Menu", "Open Menu");
-                $("#submenu").tn("toggleAttr", "style", "display: visible;", "display: none;");
+                t.textnet("toggleHTML", "More", "Less");
+                t.textnet("toggleAttr", "title", "Close Menu", "Open Menu");
+                $("#submenu").textnet("toggleAttr", "style", "display: visible;", "display: none;");
         });
-        $("body").tn("toggleAttr", "style", "display: visible;", "display: none;");
-        $(".tn-save").click(function() { w.tn("change", "save"); });
-        $(".tn-load").click(function() { w.tn("change", "load"); });
-        $(".tn-groupies").click(function() { w.tn("execute", "groupies"); });
-        $(".tn-youtube").click(function() { w.tn("execute", "youtube"); });
+        $("body").textnet("toggleAttr", "style", "display: visible;", "display: none;");
+        $(".tn-save").click(function() { w.textnet("change", "save"); });
+        $(".tn-load").click(function() { w.textnet("change", "load"); });
+        $(".tn-groupies").click(function() { w.textnet("execute", "groupies"); });
+        $(".tn-youtube").click(function() { w.textnet("execute", "youtube"); });
         $(function() {
                 // Checking whether #MODS are being used or not.
                 if (window.location.hash) {
                         document.title = "# Textnet";
                         // Hashline
                         if (hashline("youtube") || hashline("yt")) {
-                                w.tn("execute", "youtube");
+                                w.textnet("execute", "youtube");
                         }
                 } else {
                         document.title = "Textnet";
