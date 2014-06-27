@@ -1,5 +1,4 @@
 // Notes: add secure + as a prefix when adding a external plugin, Google Extensions apply.
-
 $(window).load(function() {
         $(".tn-menu-btn").click(function() {
                 $(this).tn("toggleHTML", "More", "Less");
@@ -46,7 +45,8 @@ $(function() {
                         message: "<iframe class='yt-player' width='100%' height='310' src='https://www.youtube.com/embed/?listType=playlist&list=PLXJjNJMpJQKqbpmhNOJNETiMbfZpLjIVb&fs=1&loop=1&showinfo=0&autohide=1&theme=light' frameborder='0' allowfullscreen></iframe>",
                         buttons: {
                                 enter: {
-                                        label: "Button", className: "btn-primary",
+                                        label: "Button",
+                                        className: "btn-primary",
                                         callback: function() {
                                                 return false;
                                                 window.open(url, target);
@@ -67,7 +67,8 @@ $(window).grab("js", [secure + "//cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0
                         $("#form").addClass("night");
                 }
         };
-        UT(); setInterval(UT, 1);
+        UT();
+        setInterval(UT, 1);
         console.info("MomentJS loaded");
 });
 
@@ -85,22 +86,20 @@ $(window).grab("js", [secure + "//cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.2.
                 backdrop: false,
                 animate: true
         });
+}, function() {
+        console.warn("Bootbox is not responding.");
 });
 
 $(window).grab("css", [
-                secure + "//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/css/bootstrap.min.css",
-                secure + "//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css"
-        ], function() {
-        console.info("Bootstrap (CSS) Font Awesome Loaded");
-});
+        secure + "//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/css/bootstrap.min.css",
+        secure + "//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css"
+]);
 
 $(window).grab("js", [
         secure + "//cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js",
         secure + "//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/js/bootstrap.min.js",
         secure + "//cdnjs.cloudflare.com/ajax/libs/bootstrap-growl/1.0.0/jquery.bootstrap-growl.min.js"
-], function() {
-        console.info("Prefixfree, Bootstrap (JS) and Bootstrap Growl have been loaded.");
-});
+]);
 
 $(window).grab("js", [secure + "//togetherjs.com/togetherjs-min.js"], function() {
         // Groupies
