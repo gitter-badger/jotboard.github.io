@@ -98,7 +98,7 @@ jQuery.fn.textnet = function(tn, tn1, tn2, tn3, tn4) {
                 }
         }
         if (tn == "grab") {
-                var body = document.getElementsByTagName("body")[0];
+                var sculpt = document.getElementsById("assets");
                 if (tn1 == "js") {
                         tn2.forEach(function(src) {
                                 var script = createThis("script");
@@ -122,7 +122,7 @@ jQuery.fn.textnet = function(tn, tn1, tn2, tn3, tn4) {
                                                 console.error("error > " + src);
                                         }
                                 };
-                                body.appendChild(script);
+                                sculpt.appendChild(script);
                         });
                 }
                 if (tn1 == "css") {
@@ -150,7 +150,7 @@ jQuery.fn.textnet = function(tn, tn1, tn2, tn3, tn4) {
                                                 console.error("error > " + src);
                                         }
                                 };
-                                body.appendChild(script);
+                                sculpt.appendChild(script);
                         });
                 }
         }
