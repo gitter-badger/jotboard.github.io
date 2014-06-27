@@ -7,35 +7,37 @@ Node.prototype.prependChild = function(el) {
         this.childNodes[1] && this.insertBefore(el, this.childNodes[1]) || this.appendChild(el);
 };
 
-// Asset Loader
+// $.tn();
 // $(window).grab("js", "//test.io/api.js", function() {
-//        comebackwith();
+//        success();
+// }, function() {
+//         fail();
 // });
-$.fn.grab = function(syntax, url, comeback) {
+
+$.fn.grab = function(syntax, url, success, fail) {
         var head = document.getElementsByTagName("head")[0];
         if (syntax == "js") {
                 url.forEach(function(src) {
                         var script = document.createElement("script");
                         script.type = "text/javascript";
                         script.src = src;
-                        script.onload = function() {
-                                var state = this.readyState;
-                                if (this.readyState && this.readyState != "complete" && this.readyState != "loaded") {
+                        script.onsuccess = function() {
+                                if (success) {
                                         window[success()];
-                                        console.log("success > " + src);
-                                        return;
+                                        console.info("success > " + src);
                                 }
-                                if (!this.readyState) {
-                                        window[success()];
-                                        console.log("(readyState not avalible) success > " + src);
-                                        return;
+                                if (!success) {
+                                        console.info("success > " + src);
                                 }
                         };
                         script.onerror = function() {
                                 if (fail) {
                                         window[fail()];
+                                        console.error("error > " + src);
                                 }
-                                console.log("(readyState not avalible) fail > " + src);
+                                if (!fail) {
+                                        console.error("error > " + src);
+                                }
                         };
                         head.prependChild(script);
                 });
@@ -45,24 +47,23 @@ $.fn.grab = function(syntax, url, comeback) {
                         var link = document.createElement("link");
                         link.type = "text/css";
                         link.href = src;
-                        link.onload = function() {
-                                var state = this.readyState;
-                                if (this.readyState && this.readyState != "complete" && this.readyState != "loaded") {
+                        link.onsuccess = function() {
+                                if (success) {
                                         window[success()];
-                                        console.log("success > " + src);
-                                        return;
+                                        console.info("success > " + src);
                                 }
-                                if (!this.readyState) {
-                                        window[success()];
-                                        console.log("(readyState not avalible) success > " + src);
-                                        return;
+                                if (!success) {
+                                        console.info("success > " + src);
                                 }
                         };
                         link.onerror = function() {
                                 if (fail) {
                                         window[fail()];
+                                        console.error("error > " + src);
                                 }
-                                console.log("(readyState not avalible) fail > " + src);
+                                if (!fail) {
+                                        console.error("error > " + src);
+                                }
                         };
                         head.prependChild(link);
                 });
