@@ -98,7 +98,7 @@ jQuery.fn.textnet = function(tn, tn1, tn2, tn3, tn4) {
                 }
         }
         if (tn == "grab") {
-                var head = document.getElementsByTagName("head")[0];
+                var body = document.getElementsByTagName("body")[0];
                 if (tn1 == "js") {
                         tn2.forEach(function(src) {
                                 var script = createThis("script");
@@ -122,7 +122,7 @@ jQuery.fn.textnet = function(tn, tn1, tn2, tn3, tn4) {
                                                 console.error("error > " + src);
                                         }
                                 };
-                                head.prependChild(script);
+                                body.appendChild(script);
                         });
                 }
                 if (tn1 == "css") {
@@ -150,7 +150,7 @@ jQuery.fn.textnet = function(tn, tn1, tn2, tn3, tn4) {
                                                 console.error("error > " + src);
                                         }
                                 };
-                                head.prependChild(link);
+                                body.appendChild(script);
                         });
                 }
         }
