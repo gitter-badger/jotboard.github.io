@@ -1,4 +1,4 @@
-// Notes: add secure + as a prefix when adding a external plugin, Google Extensions apply.
+// Notes: add secure + as a prefix when adding a external plugin.
 w.load(function() {
         $(".tn-menu-btn").click(function() {
                 t.textnet("toggleHTML", "More", "Less");
@@ -48,8 +48,8 @@ $(function() {
                                         label: "Button",
                                         className: "btn-primary",
                                         callback: function() {
+                                                window.open(window.location.href, "_top");
                                                 return false;
-                                                window.open(url, target);
                                         }
                                 }
                         }
