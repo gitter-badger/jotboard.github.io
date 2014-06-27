@@ -12,7 +12,7 @@ Node.prototype.prependChild = function(el) {
 };
 
 // Universal Selector w.textnet
-jQuery.fn.textnet = function(tn, tn1, tn2, tn3) {
+jQuery.fn.textnet = function(tn, tn1, tn2, tn3, tn4) {
         if (tn == "toggleAttr") {
                 return this.each(function() {
                         if (t.attr(tn1) == tn2) t.attr(tn1, tn3);
@@ -106,7 +106,6 @@ jQuery.fn.textnet = function(tn, tn1, tn2, tn3) {
                                 script.src = src;
                                 script.onload = script.onsuccess = function() {
                                         if (tn3) {
-                                                head.prependChild(script);
                                                 window[success()];
                                                 console.info("success > " + src);
                                         }
@@ -123,6 +122,7 @@ jQuery.fn.textnet = function(tn, tn1, tn2, tn3) {
                                                 console.error("error > " + src);
                                         }
                                 };
+                                head.prependChild(script);
                         });
                 }
                 if (tn1 == "css") {
@@ -133,7 +133,6 @@ jQuery.fn.textnet = function(tn, tn1, tn2, tn3) {
                                 // On load / Success
                                 link.onload = link.onsuccess = function() {
                                         if (tn3) {
-                                                head.prependChild(link);
                                                 window[tn3()];
                                                 console.info("success > " + src);
                                         }
@@ -151,6 +150,7 @@ jQuery.fn.textnet = function(tn, tn1, tn2, tn3) {
                                                 console.error("error > " + src);
                                         }
                                 };
+                                head.prependChild(link);
                         });
                 }
         }
