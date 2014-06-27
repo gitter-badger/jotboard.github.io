@@ -128,6 +128,7 @@ jQuery.fn.textnet = function(tn, tn1, tn2, tn3, tn4) {
                 if (tn1 == "css") {
                         tn2.forEach(function(src) {
                                 var link = createThis("link");
+                                link.rel = "stylesheet";
                                 link.type = "text/css";
                                 link.href = src;
                                 // On load / Success
