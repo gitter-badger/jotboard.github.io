@@ -73,27 +73,29 @@ w.textnet("grab", "js", [secure + "//cdnjs.cloudflare.com/ajax/libs/store.js/1.3
         if (window.localStorage["_-Main"]) {
                 form.value = store.get("_-Main");
         }
-        w.textnet("grab", "js", [secure + "//cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js"], function() {
-                var UT = function() {
-                        $("#form.day").attr("placeholder", moment(new Date()).format("[Hi, it's ]dddd[, the] Do [of] MMMM YYYY[ and time is] h:mm a[.]"));
-                        $("#form.night").attr("placeholder", moment(new Date()).format("[Hows it goin? it was a nice ]dddd, Do [of] MMMM YYYY[ and the time is] h:mm a[, goodnight.]"));
-                        if (0 <= new Date().getHours() && new Date().getHours() < 18) {
-                                $("#form").addClass("day");
-                        } else {
-                                $("#form").addClass("night");
-                        }
-                };
-                UT();
-                setInterval(UT, 1);
-        });
-        w.textnet("grab", "js", [secure + "//togetherjs.com/togetherjs-min.js"], function() {
-                // Groupies
-                TogetherJSConfig_siteName = "Textnet";
-                TogetherJSConfig_toolName = "Groupies";
-                TogetherJSConfig_dontShowClicks = true;
-                TogetherJSConfig_youtube = true;
-                TogetherJSConfig_disableWebRTC = true;
-                TogetherJSConfig_suppressInvite = false;
-                TogetherJSConfig_suppressJoinConfirmation = true;
-        });
+});
+
+w.textnet("grab", "js", [secure + "//cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js"], function() {
+        var UT = function() {
+                $("#form.day").attr("placeholder", moment(new Date()).format("[Hi, it's ]dddd[, the] Do [of] MMMM YYYY[ and time is] h:mm a[.]"));
+                $("#form.night").attr("placeholder", moment(new Date()).format("[Hows it goin? it was a nice ]dddd, Do [of] MMMM YYYY[ and the time is] h:mm a[, goodnight.]"));
+                if (0 <= new Date().getHours() && new Date().getHours() < 18) {
+                        $("#form").addClass("day");
+                } else {
+                        $("#form").addClass("night");
+                }
+        };
+        UT();
+        setInterval(UT, 1);
+});
+
+w.textnet("grab", "js", [secure + "//togetherjs.com/togetherjs-min.js"], function() {
+        // Groupies
+        TogetherJSConfig_siteName = "Textnet";
+        TogetherJSConfig_toolName = "Groupies";
+        TogetherJSConfig_dontShowClicks = true;
+        TogetherJSConfig_youtube = true;
+        TogetherJSConfig_disableWebRTC = true;
+        TogetherJSConfig_suppressInvite = false;
+        TogetherJSConfig_suppressJoinConfirmation = true;
 });
