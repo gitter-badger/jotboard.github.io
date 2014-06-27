@@ -70,10 +70,6 @@ jQuery.fn.grab = function(syntax, url, success, fail) {
 
 // Universal Selector w.textnet
 jQuery.fn.textnet = function(tn, tn1, tn2, tn3) {
-        // w.grab (optional)
-        if (tn == "load") {
-                w.grab(tn, tn1, tn2, tn3);
-        }
         if (tn == "toggleAttr") {
                 return this.each(function() {
                         if (t.attr(tn1) == tn2) t.attr(tn1, tn3);
