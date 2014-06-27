@@ -11,63 +11,6 @@ Node.prototype.prependChild = function(el) {
         this.childNodes[1] && this.insertBefore(el, this.childNodes[1]) || this.appendChild(el);
 };
 
-// w.grab
-jQuery.fn.grab = function(syntax, url, success, fail) {
-        var head = document.getElementsByTagName("head")[0];
-        if (syntax == "js") {
-                url.forEach(function(src) {
-                        var script = createThis("script");
-                        script.type = "text/javascript";
-                        script.src = src;
-                        script.onload = script.onsuccess = function() {
-                                if (success) {
-                                        window[success()];
-                                        console.info("success > " + src);
-                                }
-                                if (!success) {
-                                        console.info("success > " + src);
-                                }
-                        };
-                        script.onerror = function() {
-                                if (fail) {
-                                        window[fail()];
-                                        console.error("error > " + src);
-                                }
-                                if (!fail) {
-                                        console.error("error > " + src);
-                                }
-                        };
-                        head.prependChild(script);
-                });
-        }
-        if (syntax == "css") {
-                url.forEach(function(src) {
-                        var link = createThis("link");
-                        link.type = "text/css";
-                        link.href = src;
-                        link.onload = link.onsuccess = function() {
-                                if (success) {
-                                        window[success()];
-                                        console.info("success > " + src);
-                                }
-                                if (!success) {
-                                        console.info("success > " + src);
-                                }
-                        };
-                        link.onerror = function() {
-                                if (fail) {
-                                        window[fail()];
-                                        console.error("error > " + src);
-                                }
-                                if (!fail) {
-                                        console.error("error > " + src);
-                                }
-                        };
-                        head.prependChild(link);
-                });
-        }
-};
-
 // Universal Selector w.textnet
 jQuery.fn.textnet = function(tn, tn1, tn2, tn3) {
         if (tn == "toggleAttr") {
@@ -152,6 +95,64 @@ jQuery.fn.textnet = function(tn, tn1, tn2, tn3) {
                                         stackup_spacing: 10
                                 });
                         }
+                }
+        }
+        if (tn == "grab") {
+                var head = document.getElementsByTagName("head")[0];
+                if (tn1 == "js") {
+                        tn2.forEach(function(src) {
+                                var script = createThis("script");
+                                script.type = "text/javascript";
+                                script.src = src;
+                                script.onload = script.onsuccess = function() {
+                                        if (tn3) {
+                                                head.prependChild(script);
+                                                window[success()];
+                                                console.info("success > " + src);
+                                        }
+                                        if (!tn3) {
+                                                console.info("success > " + src);
+                                        }
+                                };
+                                script.onerror = function() {
+                                        if (tn4) {
+                                                window[fail()];
+                                                console.error("error > " + src);
+                                        }
+                                        if (!tn4) {
+                                                console.error("error > " + src);
+                                        }
+                                };
+                        });
+                }
+                w.textnet("grab", "js", [s + "//test.io/api.js"], success, fail);
+                if (tn1 == "css") {
+                        tn2.forEach(function(src) {
+                                var link = createThis("link");
+                                link.type = "text/css";
+                                link.href = src;
+                                // On load / Success
+                                link.onload = link.onsuccess = function() {
+                                        if (tn3) {
+                                                head.prependChild(link);
+                                                window[tn3()];
+                                                console.info("success > " + src);
+                                        }
+                                        if (!tn3) {
+                                                console.info("success > " + src);
+                                        }
+                                };
+                                // Error
+                                link.onerror = function() {
+                                        if (tn4) {
+                                                window[tn4()];
+                                                console.error("error > " + src);
+                                        }
+                                        if (!tn4) {
+                                                console.error("error > " + src);
+                                        }
+                                };
+                        });
                 }
         }
         if (tn == "execute") {
