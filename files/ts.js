@@ -16,7 +16,6 @@ jQuery.fn.grab = function(syntax, url, success, fail) {
         if (syntax == "js") {
                 url.forEach(function(src) {
                         var script = document.createElement("script");
-                        script.async = "true";
                         script.type = "text/javascript";
                         script.src = src;
                         script.onload = script.onreadystatechange = function() {
