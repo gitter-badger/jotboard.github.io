@@ -77,6 +77,14 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                         "//cdnjs.cloudflare.com/ajax/libs/bootstrap-growl/1.0.0/jquery.bootstrap-growl.min.js"
                 ], function() {
                         head.load("//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/css/bootstrap.min.css");
+                        head.load("http://bootboxjs.com/bootbox.js", function() {
+                                bootbox.setDefaults({
+                                        locale: "en",
+                                        backdrop: false,
+                                        closeButton: true,
+                                        animate: true
+                                });
+                        });
                 });
         });
         head.load("//togetherjs.com/togetherjs-min.js", function() {
