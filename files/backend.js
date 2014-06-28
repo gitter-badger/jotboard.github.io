@@ -35,33 +35,6 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                         } else {
                                 document.title = "Textnet";
                         }
-                        var event = function() {
-                                if (hashline("event")) {
-                                        if (window.location.protocol == "https:") {
-                                                event();
-                                                document.title = "Event Hub / Textnet";
-                                        }
-                                        if (window.location.protocol == "http:") {
-                                                event();
-                                                document.title = "(Unsecure) Event Hub / Textnet";
-                                        }
-                                }
-                                bootbox.dialog({
-                                        className: "block",
-                                        title: "#WhatsCookin",
-                                        message: "<iframe class='yt-player' width='100%' height='310' src='https://www.youtube.com/embed/?listType=playlist&list=PLXJjNJMpJQKqbpmhNOJNETiMbfZpLjIVb&fs=1&loop=1&showinfo=0&autohide=1&theme=light' frameborder='0' allowfullscreen></iframe>",
-                                        buttons: {
-                                                enter: {
-                                                        label: "Button",
-                                                        className: "btn-primary",
-                                                        callback: function() {
-                                                                window.open(window.location.href, "_top");
-                                                                return false;
-                                                        }
-                                                }
-                                        }
-                                });
-                        };
                 });
         });
         head.load("//cdnjs.cloudflare.com/ajax/libs/store.js/1.3.14/store.min.js", function() {
@@ -72,18 +45,42 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                 }
         });
         head.load("//cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js", function() {
-                head.load([
-                        "//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/js/bootstrap.min.js",
-                        "//cdnjs.cloudflare.com/ajax/libs/bootstrap-growl/1.0.0/jquery.bootstrap-growl.min.js"
-                ], function() {
+                head.load(["//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/js/bootstrap.min.js", "//cdnjs.cloudflare.com/ajax/libs/bootstrap-growl/1.0.0/jquery.bootstrap-growl.min.js"], function() {
                         head.load("//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/css/bootstrap.min.css");
-                        head.load("http://bootboxjs.com/bootbox.js", function() {
+                        head.load("//bootboxjs.com/bootbox.js", function() {
                                 bootbox.setDefaults({
                                         locale: "en",
                                         backdrop: false,
                                         closeButton: true,
                                         animate: true
                                 });
+                                var event = function() {
+                                        if (hashline("event")) {
+                                                if (window.location.protocol == "https:") {
+                                                        event();
+                                                        document.title = "Event Hub / Textnet";
+                                                }
+                                                if (window.location.protocol == "http:") {
+                                                        event();
+                                                        document.title = "(Unsecure) Event Hub / Textnet";
+                                                }
+                                        }
+                                        bootbox.dialog({
+                                                className: "block",
+                                                title: "#WhatsCookin",
+                                                message: "<iframe class='yt-player' width='100%' height='310' src='https://www.youtube.com/embed/?listType=playlist&list=PLXJjNJMpJQKqbpmhNOJNETiMbfZpLjIVb&fs=1&loop=1&showinfo=0&autohide=1&theme=light' frameborder='0' allowfullscreen></iframe>",
+                                                buttons: {
+                                                        enter: {
+                                                                label: "Button",
+                                                                className: "btn-primary",
+                                                                callback: function() {
+                                                                        window.open(window.location.href, "_top");
+                                                                        return false;
+                                                                }
+                                                        }
+                                                }
+                                        });
+                                };
                         });
                 });
         });
