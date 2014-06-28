@@ -13,7 +13,7 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                 UT();
                 setInterval(UT, 1);
         });
-        function() {
+        $(function() {
                 $("body").textnet("toggleAttr", "style", "display: visible;", "display: none;");
                 $(".tn-menu-btn").click(function() {
                         $("#submenu").textnet("toggleAttr", "style", "display: visible;", "display: none;");
@@ -63,7 +63,7 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                                 });
                         };
                 });
-        }
+        });
         head.load("//cdnjs.cloudflare.com/ajax/libs/store.js/1.3.14/store.min.js", function() {
                 var form = document.querySelectorAll("#form");
                 var namespace = document.querySelectorAll("#namespace");
