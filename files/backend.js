@@ -1,5 +1,5 @@
 // Notes: add secure + as a prefix when adding a external plugin.
-head.load("//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", function() {
+head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files/ts.js"], function() {
         head.load(secure + "//cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js", function() {
                 var UT = function() {
                         $("#form.day").attr("placeholder", moment(new Date()).format("[Hi, it's ]dddd[, the] Do [of] MMMM YYYY[ and time is] h:mm a[.]"));
@@ -22,7 +22,6 @@ head.load("//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", functio
         $(".tn-event").click(function() { event(); });
         $(".tn-save").click(function() { w.textnet("change", "save"); });
         $(".tn-load").click(function() { w.textnet("change", "load"); });
-        $(".tn-groupies").click(function() { w.textnet("execute", "groupies"); });
         $(".tn-youtube").click(function() { w.textnet("execute", "youtube"); });
         $(function() {
                 // Checking whether #MODS are being used or not.
@@ -82,6 +81,9 @@ head.load("//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", functio
                 });
         });
         head.load(secure + "//togetherjs.com/togetherjs-min.js", function() {
+                $(".tn-groupies").click(function() {
+                        w.textnet("execute", "groupies");
+                });
                 // Groupies
                 TogetherJSConfig_siteName = "Textnet";
                 TogetherJSConfig_toolName = "Groupies";
