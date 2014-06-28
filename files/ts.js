@@ -106,5 +106,9 @@ jQuery.fn.textnet = function(tn, tn1, tn2, tn3, tn4) {
                                 }
                         });
                 }
+                if (tn1 == "groupies") {
+                        TogetherJS(this);
+                        return false;
+                }
         }
 };
