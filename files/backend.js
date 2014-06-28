@@ -14,7 +14,6 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                 setInterval(UT, 1);
         });
         $(function() {
-                $("body").textnet("toggleAttr", "style", "display: visible;", "display: none;");
                 $(".tn-menu-btn").click(function() {
                         $("#submenu").textnet("toggleAttr", "style", "display: visible;", "display: none;");
                         t.textnet("toggleHTML", "More", "Less");
