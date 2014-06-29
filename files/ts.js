@@ -108,6 +108,19 @@ jQuery.fn.textnet = function(tn, tn1, tn2, tn3, tn4) {
                 }
                 if (tn1 == "groupies") {
                         TogetherJS(this);
+                        $.bootstrapGrowl("Don't give out personal information unless consent is given.", {
+                                ele: "body",
+                                type: "info",
+                                offset: {
+                                        from: "bottom",
+                                        amount: 10
+                                },
+                                align: "left",
+                                width: 100,
+                                delay: 3600,
+                                allow_dismiss: false,
+                                stackup_spacing: 10
+                        });
                         return false;
                 }
         }
