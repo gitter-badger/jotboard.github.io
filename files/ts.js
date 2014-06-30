@@ -4,8 +4,7 @@ var secure = window.location.protocol;
 var hashline = function(u) { return window.location.href.indexOf("#" + u) != -1; };
 var createThis = function(u) { return document.createElement(u); };
 var w = document.getElementsByTagName("body");
-var t = document.querySelectorAll(this) || document.querySelectorAll(this) || $(this);
-var jQThis = $(this);
+var t = $(this);
 var grabSelector = function(u) { return document.querySelector(u); };
 var grabSelectorAll = function(u) { return document.querySelectorAll(u); };
 Node.prototype.prependChild = function(el) {
@@ -16,14 +15,14 @@ Node.prototype.prependChild = function(el) {
 jQuery.fn.textnet = function(tn, tn1, tn2, tn3, tn4) {
         if (tn == "toggleAttr") {
                 return this.each(function() {
-                        if (jQThis.attr(tn1) == tn2) jQThis.attr(tn1, tn3);
-                        else jQThis.attr(tn1, tn2);
+                        if (t.attr(tn1) == tn2) t.attr(tn1, tn3);
+                        else t.attr(tn1, tn2);
                 });
         }
         if (tn == "toggleHTML") {
                 return this.each(function() {
-                        if (jQThis.html() == tn1) jQThis.html(tn2);
-                        else jQThis.html(tn1);
+                        if (t.html() == tn1) t.html(tn2);
+                        else t.html(tn1);
                 });
         }
         if (tn == "change") {
