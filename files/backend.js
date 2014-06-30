@@ -1,5 +1,6 @@
 // Notes: add secure + as a prefix when adding a external plugin.
 head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files/ts.js"], function() {
+        $("body").textnet("toggleAttr", "style", "display: visible;", "display: none;");
         head.load("//cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js", function() {
                 var UT = function() {
                         $("#form.day").attr("placeholder", moment(new Date()).format("[Hi, it's ]dddd[, the] Do [of] MMMM YYYY[ and time is] h:mm a[.]"));
