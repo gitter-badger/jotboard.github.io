@@ -3,7 +3,8 @@
 var secure = window.location.protocol;
 var hashline = function(u) { return window.location.href.indexOf("#" + u) != -1; };
 var createThis = function(u) { return document.createElement(u); };
-var w = jQuery(document.body); var t = grabSelector(this);
+var w = jQuery(document.getElementsByTagName("body"));
+var t = document.querySelectorAll(this);
 var grabSelector = function(u) { return document.querySelector(u); };
 var grabSelectorAll = function(u) { return document.querySelectorAll(u); };
 Node.prototype.prependChild = function(el) {
