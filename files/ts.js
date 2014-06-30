@@ -5,6 +5,7 @@ var hashline = function(u) { return window.location.href.indexOf("#" + u) != -1;
 var createThis = function(u) { return document.createElement(u); };
 var w = document.getElementsByTagName("body");
 var t = document.querySelectorAll(this) || document.querySelectorAll(this) || $(this);
+var t_TAttr = $(this);
 var grabSelector = function(u) { return document.querySelector(u); };
 var grabSelectorAll = function(u) { return document.querySelectorAll(u); };
 Node.prototype.prependChild = function(el) {
@@ -15,7 +16,7 @@ Node.prototype.prependChild = function(el) {
 jQuery.fn.textnet = function(tn, tn1, tn2, tn3, tn4) {
         if (tn == "toggleAttr") {
                 return this.each(function() {
-                        if (t.attr(tn1) == tn2) t.attr(tn1, tn3);
+                        if (t_TAttr.attr(tn1) == tn2) t.attr(tn1, tn3);
                         else t.attr(tn1, tn2);
                 });
         }
