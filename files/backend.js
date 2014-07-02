@@ -1,10 +1,18 @@
 // Notes: add secure + as a prefix when adding a external plugin.
 DevMode = true;
 head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files/ts.js"], function() {
-        var DevMode;
-        if (DevMode == true && window.location.href.indexOf("#forceuse") != -1) window.location.replace("/closed");
-        if (DevMode == true) window.location.replace("/closed");
-        if (DevMode == false) return false;
+        $(function() {
+                var DevMode;
+                if (DevMode == true || DevMode == "true") {
+                        if (window.location.href.indexOf("#forceuse") != -1)) {
+                                return false;
+                        }
+                        else {
+                                window.location.replace("/closed");
+                        }
+                }
+                if (DevMode == false || DevMode == "false") return false;
+        });
         head.load("//cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js", function() {
                 var UT = function() {
                         $("#form.day").attr("placeholder", moment(new Date()).format("[Hi, it's ]dddd[, the] Do [of] MMMM YYYY[ and time is] h:mm a[.]"));
