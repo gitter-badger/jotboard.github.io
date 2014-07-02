@@ -10,6 +10,15 @@ Node.prototype.prependChild = function(el) {
         this.childNodes[1] && this.insertBefore(el, this.childNodes[1]) || this.appendChild(el);
 };
 
+function() {
+        var DevMode;
+        if (DevMode) {
+                if (DevMode == true) window.location.replace("/closed");
+                if (DevMode == false) return;
+                if (DevMode == null) return;
+        }
+}
+
 // Universal Selector w.textnet
 jQuery.fn.textnet = function(tn, tn1, tn2, tn3, tn4) {
         if (tn == "toggleAttr") {
