@@ -1,5 +1,5 @@
 // Notes: add secure + as a prefix when adding a external plugin.
-DevMode = true;
+DevMode = false;
 head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files/ts.js"], function() {
         $(function() {
                 var DevMode;
