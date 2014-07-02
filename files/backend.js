@@ -3,15 +3,10 @@ DevMode = true;
 head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files/ts.js"], function() {
         $(function() {
                 var DevMode;
-                if (DevMode == true || DevMode == "true") {
-                        if (window.location.href.indexOf("#forceuse") != -1)) {
-                                return false;
-                        }
-                        else {
-                                window.location.replace("/closed");
-                        }
+                if (DevMode == true) {
+                        if (hashline("forceuse")) return false;
+                        else window.location.replace("/closed");
                 }
-                if (DevMode == false || DevMode == "false") return false;
         });
         head.load("//cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js", function() {
                 var UT = function() {
