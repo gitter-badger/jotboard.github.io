@@ -13,33 +13,31 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                 UT();
                 setInterval(UT, 1);
         });
-        $("body").textnet("toggleAttr", "style", "display: visible;", "display: none;");
+        $("body").toggleClass("block");
+        $(".tn-menu-btn").click(function() {
+                $("#submenu").textnet("toggleAttr", "style", "display: visible;", "display: none;");
+                t.textnet("toggleHTML", "More", "Less");
+                t.textnet("toggleAttr", "title", "Close Menu", "Open Menu");
+        });
+        $(".tn-event").click(function() { event(); });
+        $(".tn-save").click(function() { w.textnet("change", "save"); });
+        $(".tn-load").click(function() { w.textnet("change", "load"); });
+        $(".tn-youtube").click(function() { w.textnet("execute", "youtube"); });
         $(function() {
-                $(".tn-menu-btn").click(function() {
-                        $("#submenu").textnet("toggleAttr", "style", "display: visible;", "display: none;");
-                        t.textnet("toggleHTML", "More", "Less");
-                        t.textnet("toggleAttr", "title", "Close Menu", "Open Menu");
-                });
-                $(".tn-event").click(function() { event(); });
-                $(".tn-save").click(function() { w.textnet("change", "save"); });
-                $(".tn-load").click(function() { w.textnet("change", "load"); });
-                $(".tn-youtube").click(function() { w.textnet("execute", "youtube"); });
-                $(function() {
-                        // Checking whether #MODS are being used or not.
-                        if (window.location.hash) {
-                                document.title = "# Textnet";
-                                // Hashline
-                                if (hashline("youtube") || hashline("yt")) {
-                                        w.textnet("execute", "youtube");
-                                }
-                        } else {
-                                document.title = "Textnet";
+                // Checking whether #MODS are being used or not.
+                if (window.location.hash) {
+                        document.title = "# Textnet";
+                        // Hashline
+                        if (hashline("youtube") || hashline("yt")) {
+                                w.textnet("execute", "youtube");
                         }
-                });
+                } else {
+                        document.title = "Textnet";
+                }
         });
         head.load("//cdnjs.cloudflare.com/ajax/libs/store.js/1.3.14/store.min.js", function() {
-                var form = document.querySelectorAll("#form");
-                var namespace = document.querySelectorAll("#namespace");
+                var form = document.getElementById("#form");
+                var namespace = document.getElementById("#namespace");
                 if (window.localStorage["_-Main"]) {
                         form.value = store.get("_-Main");
                 }
