@@ -1,6 +1,6 @@
 /* Fonts Bro, they get updated man! */
-[raleway], .raleway { font-family: "Raleway", san-serif; }
-[source-code-pro], .source-code-pro { font-family: "Source Code Pro", san-serif; }
+[lato], .lato { font-family: "Lato", sans-serif; }
+[open-sans], .open-sans { font-family: "Open Sans", sans-serif; }
 
 /* Cursor Attributes (cuz im lazy) */
 [default-cur] { cursor: default; }
@@ -33,7 +33,7 @@ div.bootbox.modal, div.bootbox.modal * {
 }
 
 #form {
-	font: 14px "Source Code Pro", sans-serif;
+	font: 14px "Lato", sans-serif;
 	color: #F2F2F2;
 	width: calc(100% - 120px);
 	border-radius: 0;
@@ -42,22 +42,22 @@ div.bootbox.modal, div.bootbox.modal * {
 }
 
 #form::-webkit-input-placeholder {
-	font: 65px "Raleway", san-serif;
+	font: 65px "Lato", san-serif;
 	color: #292929;
 }
 
 #form::-moz-input-placeholder {
-	font: 65px "Raleway", san-serif;
+	font: 65px "Lato", san-serif;
 	color: #292929;
 }
 
 #form::-o-input-placeholder {
-	font: 65px "Raleway", san-serif;
+	font: 65px "Lato", san-serif;
 	color: #292929;
 }
 
 #form::-ms-input-placeholder {
-	font: 65px "Raleway", san-serif;
+	font: 65px "Lato", san-serif;
 	color: #292929;
 }
 
@@ -127,7 +127,7 @@ html, body, #html, #body {
 	overflow-y: scroll;
 	overflow-x: scroll;
 	white-space: nowrap;
-	font-family: "Raleway", san-serif;
+	font-family: "Open Sans", san-serif;
 	height: 100%;
 	max-height: 100%;
 	background: #EBEBEB;
