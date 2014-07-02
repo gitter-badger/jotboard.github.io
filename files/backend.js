@@ -16,21 +16,24 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
         });
         $("body").toggleClass("block");
         $(".tn-menu-btn").click(function() {
-                $("#submenu").textnet("toggleAttr", "style", "display: visible;", "display: none;");
+                $("#submenu").toggleClass("block");
                 t.textnet("toggleHTML", "More", "Less");
                 t.textnet("toggleAttr", "title", "Close Menu", "Open Menu");
         });
-        $(".tn-event").click(function() { event(); });
-        $(".tn-save").click(function() { w.textnet("change", "save"); });
-        $(".tn-load").click(function() { w.textnet("change", "load"); });
-        $(".tn-youtube").click(function() { w.textnet("execute", "youtube"); });
+        $(".tn-event").click(function() {
+                event();
+        });
+        $(".tn-save").click(function() {
+                $(window).textnet("change", "save"); });
+        $(".tn-load").click(function() { $(window).textnet("change", "load"); });
+        $(".tn-youtube").click(function() { $(window).textnet("execute", "youtube"); });
         $(function() {
                 // Checking whether #MODS are being used or not.
                 if (window.location.hash) {
                         document.title = "# Textnet";
                         // Hashline
                         if (hashline("youtube") || hashline("yt")) {
-                                w.textnet("execute", "youtube");
+                                $(window).textnet("execute", "youtube");
                         }
                 } else {
                         document.title = "Textnet";
