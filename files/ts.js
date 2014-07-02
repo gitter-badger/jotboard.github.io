@@ -1,6 +1,6 @@
 // Selectors
 // Shrinking our need for adding the same sort of code.
-var secure = window.location.protocol;
+var s = window.location.protocol;
 var hashline = function(u) { return window.location.href.indexOf("#" + u) != -1; };
 var createThis = function(u) { return document.createElement(u); };
 var w = document.window; var t = $(this);
