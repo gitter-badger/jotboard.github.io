@@ -1,6 +1,5 @@
 // Selectors
 // Shrinking our need for adding the same sort of code.
-var s = window.location.protocol;
 var hashline = function(u) { return window.location.href.indexOf("#" + u) != -1; };
 var createThis = function(u) { return document.createElement(u); };
 var w = document.window; var t = $(this);
@@ -13,13 +12,13 @@ Node.prototype.prependChild = function(el) {
 // Universal Selector w.textnet
 jQuery.fn.textnet = function(tn, tn1, tn2, tn3, tn4) {
         if (tn == "toggleAttr") {
-                return this.each(function() {
+                return $(this).each(function() {
                         if (t.attr(tn1) == tn2) t.attr(tn1, tn3);
                         else t.attr(tn1, tn2);
                 });
         }
         if (tn == "toggleHTML") {
-                return this.each(function() {
+                return $(this).each(function() {
                         if (t.html() == tn1) t.html(tn2);
                         else t.html(tn1);
                 });
