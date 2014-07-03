@@ -28,7 +28,31 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                 t.textnet("toggleAttr", "title", "Close Menu", "Open Menu");
         });
         $(".tn-event").click(function() {
-                event();
+                if (hashline("event")) {
+                        if (window.location.protocol == "https:") {
+                                event();
+                                document.title = "Event Hub / Textnet";
+                        }
+                        if (window.location.protocol == "http:") {
+                                event();
+                                document.title = "(Unsecure) Event Hub / Textnet";
+                        }
+                }
+                bootbox.dialog({
+                        className: "block",
+                        title: "#WhatsCookin",
+                        message: "<iframe class='yt-player' width='100%' height='310' src='https://www.youtube.com/embed/?listType=playlist&list=PLXJjNJMpJQKqbpmhNOJNETiMbfZpLjIVb&fs=1&loop=1&showinfo=0&autohide=1&theme=light' frameborder='0' allowfullscreen></iframe>",
+                        buttons: {
+                                enter: {
+                                        label: "Button",
+                                        className: "btn-primary",
+                                        callback: function() {
+                                                window.open(window.location.href, "_top");
+                                                return false;
+                                        }
+                                }
+                        }
+                });
         });
         $(".tn-save").click(function() {
                 $(window).textnet("change", "save"); });
@@ -64,33 +88,6 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                                         closeButton: true,
                                         animate: true
                                 });
-                                var event = function() {
-                                        if (hashline("event")) {
-                                                if (window.location.protocol == "https:") {
-                                                        event();
-                                                        document.title = "Event Hub / Textnet";
-                                                }
-                                                if (window.location.protocol == "http:") {
-                                                        event();
-                                                        document.title = "(Unsecure) Event Hub / Textnet";
-                                                }
-                                        }
-                                        bootbox.dialog({
-                                                className: "block",
-                                                title: "#WhatsCookin",
-                                                message: "<iframe class='yt-player' width='100%' height='310' src='https://www.youtube.com/embed/?listType=playlist&list=PLXJjNJMpJQKqbpmhNOJNETiMbfZpLjIVb&fs=1&loop=1&showinfo=0&autohide=1&theme=light' frameborder='0' allowfullscreen></iframe>",
-                                                buttons: {
-                                                        enter: {
-                                                                label: "Button",
-                                                                className: "btn-primary",
-                                                                callback: function() {
-                                                                        window.open(window.location.href, "_top");
-                                                                        return false;
-                                                                }
-                                                        }
-                                                }
-                                        });
-                                };
                         });
                 });
         });
