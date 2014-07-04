@@ -12,13 +12,13 @@ Node.prototype.prependChild = function(el) {
 // Universal Selector w.textnet
 jQuery.fn.textnet = function(tn, tn1, tn2, tn3, tn4) {
         if (tn == "toggleAttr") {
-                return $(this).each(function() {
+                $(this).each(function() {
                         if ($(this).attr(tn1) == tn2) $(this).attr(tn1) == tn3;
                         if ($(this).attr(tn1) == tn3) $(this).attr(tn1) == tn2;
                 });
         }
         if (tn == "toggleHTML") {
-                return $(this).each(function() {
+                $(this).each(function() {
                         if ($(this).html() == tn1) $(this).html() == tn2;
                         if ($(this).html() == tn2) $(this).html() == tn1;
                 });
@@ -27,8 +27,8 @@ jQuery.fn.textnet = function(tn, tn1, tn2, tn3, tn4) {
                 if (tn1 == "save") {
                         if (namespace.value.length === 0) {
                                 store.set("_-Main", form.value);
-                                console.info("Main > saved.");
-                                $.bootstrapGrowl("Main > Saved", {
+                                console.info("Main > saved");
+                                $.bootstrapGrowl("The Main Textnet has been saved.", {
                                         ele: "body",
                                         type: "success",
                                         offset: {
@@ -44,7 +44,7 @@ jQuery.fn.textnet = function(tn, tn1, tn2, tn3, tn4) {
                         } else {
                                 store.set("_-" + namespace.value, form.value);
                                 console.info(namespace.value + " > saved");
-                                $.bootstrapGrowl(namespace.value + " > Saved", {
+                                $.bootstrapGrowl(namespace.value + " has been saved.", {
                                         ele: "body",
                                         type: "info",
                                         offset: {
@@ -63,7 +63,7 @@ jQuery.fn.textnet = function(tn, tn1, tn2, tn3, tn4) {
                         if (namespace.value.length === 0) {
                                 form.value = store.get("_-Main");
                                 console.info("Main > loaded");
-                                $.bootstrapGrowl("Main > Loaded", {
+                                $.bootstrapGrowl("The Main Textnet has been loaded.", {
                                         ele: "body",
                                         type: "info",
                                         offset: {
@@ -78,8 +78,8 @@ jQuery.fn.textnet = function(tn, tn1, tn2, tn3, tn4) {
                                 });
                         } else {
                                 form.value = store.get("_-" + namespace.value);
-                                console.info(namespace.value + " > loaded.");
-                                $.bootstrapGrowl(namespace.value + " > Loaded", {
+                                console.info(namespace.value + " > loaded");
+                                $.bootstrapGrowl(namespace.value + " has been loaded.", {
                                         ele: "body",
                                         type: "info",
                                         offset: {
@@ -101,7 +101,7 @@ jQuery.fn.textnet = function(tn, tn1, tn2, tn3, tn4) {
                                 if (srch === null) {
                                         bootbox.hideAll();
                                 } else {
-                                        window.open("https://www.youtube.com/results?utm_source=opensearch&search_query=" + srch, "_blank");
+                                        window.open("//www.youtube.com/results?utm_source=opensearch&search_query=" + srch, "_blank");
                                 }
                         });
                 }
