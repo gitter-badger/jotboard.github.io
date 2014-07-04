@@ -1,44 +1,15 @@
-// Notes: add secure + as a prefix when adding a external plugin.
 DevMode = false;
 head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files/ts.js"], function() {
         $(function() {
+                $("body").toggleClass("block");
                 var DevMode;
                 if (DevMode == true) {
                         if (hashline("forceuse")) return false;
                         else window.location.replace("/closed");
                 }
         });
-        head.load("//cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js", function() {
-                var UT = function() {
-                        $("#form.day").attr("placeholder", moment(new Date()).format("[Hi, it's ]dddd[, the] Do [of] MMMM YYYY[ and time is] h:mm a[.]"));
-                        $("#form.night").attr("placeholder", moment(new Date()).format("[Hows it goin? it was a nice ]dddd, Do [of] MMMM YYYY[ and the time is] h:mm a[, goodnight.]"));
-                        if (0 <= new Date().getHours() && new Date().getHours() < 18) {
-                                $("#form").addClass("day");
-                        } else {
-                                $("#form").addClass("night");
-                        }
-                };
-                UT();
-                setInterval(UT, 1);
-        });
-        $("body").toggleClass("block");
-        $(".tn-menu-btn").click(function() {
-                $("#submenu").toggleClass("block");
-                t.textnet("toggleHTML", "More", "Less");
-                t.textnet("toggleAttr", "title", "Close Menu", "Open Menu");
-        });
-        $(".tn-event").click(function() {
-                if (hashline("event")) {
-                        if (window.location.protocol == "https:") {
-                                event();
-                                document.title = "Event Hub / Textnet";
-                        }
-                        if (window.location.protocol == "http:") {
-                                event();
-                                document.title = "(Unsecure) Event Hub / Textnet";
-                        }
-                }
-                bootbox.dialog({
+        $(function() {
+                var event = bootbox.dialog({
                         className: "block",
                         title: "#WhatsCookin",
                         message: "<iframe class='yt-player' width='100%' height='310' src='https://www.youtube.com/embed/?listType=playlist&list=PLXJjNJMpJQKqbpmhNOJNETiMbfZpLjIVb&fs=1&loop=1&showinfo=0&autohide=1&theme=light' frameborder='0' allowfullscreen></iframe>",
@@ -54,10 +25,36 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                         }
                 });
         });
+        head.load("//cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js", function() {
+                var UT = function() {
+                        $("#form.day").attr("placeholder", moment(new Date()).format("[Hi, it's ]dddd[, the] Do [of] MMMM YYYY[ and time is] h:mm a[.]"));
+                        $("#form.night").attr("placeholder", moment(new Date()).format("[Hows it goin? it was a nice ]dddd, Do [of] MMMM YYYY[ and the time is] h:mm a[, goodnight.]"));
+                        if (0 <= new Date().getHours() && new Date().getHours() < 18) {
+                                $("#form").addClass("day");
+                        } else {
+                                $("#form").addClass("night");
+                        }
+                };
+                UT();
+                setInterval(UT, 1);
+        });
+        $(".tn-youtube").click(function() {
+                $(window).textnet("execute", "youtube");
+        });
+        $(".tn-event").click(function() {
+                event();
+        });
+        $(".tn-menu-btn").click(function() {
+                $("#submenu").toggleClass("block");
+                t.textnet("toggleHTML", "More", "Less");
+                t.textnet("toggleAttr", "title", "Close Menu", "Open Menu");
+        });
         $(".tn-save").click(function() {
-                $(window).textnet("change", "save"); });
-        $(".tn-load").click(function() { $(window).textnet("change", "load"); });
-        $(".tn-youtube").click(function() { $(window).textnet("execute", "youtube"); });
+                $(window).textnet("change", "save");
+        });
+        $(".tn-load").click(function() {
+                $(window).textnet("change", "load");
+        });
         $(function() {
                 // Checking whether #MODS are being used or not.
                 if (window.location.hash) {
@@ -65,6 +62,9 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                         // Hashline
                         if (hashline("youtube") || hashline("yt")) {
                                 $(window).textnet("execute", "youtube");
+                        }
+                        if (hashline("event")) {
+                                event();
                         }
                 } else {
                         document.title = "Textnet";
