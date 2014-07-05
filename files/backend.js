@@ -7,20 +7,20 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                         if (hashline("forceuse")) return false;
                         else window.location.replace("/closed");
                 }
-        });
-        var event = bootbox.dialog({
-                title: "#WhatsCookin",
-                message: "<iframe class='yt-player' width='100%' height='310' src='//www.youtube.com/embed/?listType=playlist&list=PLXJjNJMpJQKqbpmhNOJNETiMbfZpLjIVb&fs=1&loop=1&showinfo=0&autohide=1&theme=light' frameborder='0' allowfullscreen></iframe>",
-                buttons: {
-                        enter: {
-                                label: "Button",
-                                className: "btn-primary",
-                                callback: function() {
-                                        window.open(window.location.href, "_top");
-                                        return false;
+                var event = bootbox.dialog({
+                        title: "#WhatsCookin",
+                        message: "<iframe class='yt-player' width='100%' height='310' src='//www.youtube.com/embed/?listType=playlist&list=PLXJjNJMpJQKqbpmhNOJNETiMbfZpLjIVb&fs=1&loop=1&showinfo=0&autohide=1&theme=light' frameborder='0' allowfullscreen></iframe>",
+                        buttons: {
+                                enter: {
+                                        label: "Button",
+                                        className: "btn-primary",
+                                        callback: function() {
+                                                window.open(window.location.href, "_top");
+                                                return false;
+                                        }
                                 }
                         }
-                }
+                });
         });
         head.load("//cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js", function() {
                 var UT = function() {
@@ -35,42 +35,49 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                 UT();
                 setInterval(UT, 1);
         });
-        $(".tn-youtube").click(function() {
-                $(window).textnet("execute", "youtube");
-        });
-        $(".tn-event").click(function() {
-                event();
-        });
         $(".tn-menu-btn").click(function() {
                 $("#submenu").toggleClass("block");
                 $(this).textnet("toggleHTML", "More", "Less");
                 $(this).textnet("toggleAttr", "title", "Close Menu", "Open Menu");
         });
-        $(".tn-save").click(function() {
-                $(window).textnet("change", "save");
-        });
-        $(".tn-load").click(function() {
-                $(window).textnet("change", "load");
-        });
+        $(".tn-save").click(function() { $(window).textnet("change", "save"); });
+        $(".tn-load").click(function() { $(window).textnet("change", "load"); });
+        $(".tn-youtube").click(function() { $(window).textnet("execute", "youtube"); });
+        $(".tn-event").click(function() { event(); });
         $(function() {
+                var event = bootbox.dialog({
+                        title: "#WhatsCookin",
+                        message: "<iframe class='yt-player' width='100%' height='310' src='//www.youtube.com/embed/?listType=playlist&list=PLXJjNJMpJQKqbpmhNOJNETiMbfZpLjIVb&fs=1&loop=1&showinfo=0&autohide=1&theme=light' frameborder='0' allowfullscreen></iframe>",
+                        buttons: {
+                                enter: {
+                                        label: "Button",
+                                        className: "btn-primary",
+                                        callback: function() {
+                                                window.open(window.location.href, "_top");
+                                                return false;
+                                        }
+                                }
+                        }
+                });
                 if (window.location.hash) {
                         document.title = "# Textnet";
-                        // Hashline
-                        if (hashline("youtube") || hashline("yt")) {
-                                $(window).textnet("execute", "youtube");
-                        }
-                        if (hashline("event")) {
+                        if (hashline("new") == "true") {
                                 event();
+                                document.title = "#WhatsCookin";
+                        }
+                        if (hashline("yt") == "true") {
+                                $(window).textnet("execute", "youtube");
+                                document.title = "# Textnet";
                         }
                 } else {
                         document.title = "Textnet";
                 }
         });
         head.load("//cdnjs.cloudflare.com/ajax/libs/store.js/1.3.14/store.min.js", function() {
-                var form = document.getElementById("#form");
-                var namespace = document.getElementById("#namespace");
+                var form = document.getElementById("form");
+                var namespace = document.getElementById("namespace");
                 if (window.localStorage["_-Main"]) {
-                        document.getElementById("form").value = store.get("_-Main");
+                        form.value = store.get("_-Main");
                 }
         });
         head.load("//cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js", function() {
