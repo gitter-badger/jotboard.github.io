@@ -85,8 +85,12 @@ html, body, #html, #body {
 .navagation #namespace {
 	text-align: center;
 	width: 100%;
-	margin-top: 14px;
+	margin-top: 13px;
 	margin-left: 0;
+}
+
+.form-control {
+        font-size: 16px;
 }
 
 .navagation .container {
@@ -103,21 +107,21 @@ html, body, #html, #body {
 .navagation .select {
 	text-align: center;
 	width: 98%;
-	margin: 6px .5% 6px .5%;
+	margin: 8px .5% 8px .5%;
 	cursor: pointer;
 }
 
 .navagation .nav-select {
-	font-size: 17px;
-	background-color: #E9E9E9;
-	box-shadow: inset 0 0 4px #E0E0E0;
-	color: #020202;
+	font-size: 18px;
+	background-color: #AFAFAF;
+	box-shadow: 0 2px 5px -1px #2B2B2B;
+	color: #2B2B2B;
 	padding: 2px;
 	border-radius: 2px;
 }
 
 .navagation .select {
-	font-size: 14px;
+	font-size: 15px;
 }
 
 .navagation {
@@ -127,11 +131,11 @@ html, body, #html, #body {
 	overflow-y: scroll;
 	overflow-x: scroll;
 	white-space: nowrap;
-	font-family: "Lato", san-serif;
+	font-family: "Roboto", san-serif;
 	height: 100%;
 	max-height: 100%;
-	background: #EBEBEB;
-	box-shadow: inset 0 0 130px #A3A3A3;
+	background: #9E9E9E;
+	box-shadow: 0 0 20px #2B2B2B;
 	padding: .85%;
 	position: fixed;
 	left: 0;
@@ -150,7 +154,7 @@ div.body.container {
 	padding: 0;
 }
 
-html, body, #html, #body {
+html, body, html#html, body#body {
 	overflow: hidden;
 	margin: 0;
 	padding: 0.5%;
@@ -164,17 +168,10 @@ iframe, textarea, input {
 	border: none;
 }
 
-* {
-	overflow: auto;
-}
-
-*,:hover {
-	transform: translateZ(0);
-}
-
+* { overflow: auto; }
 .block, [block=true] { display: none !important; }
 .no-block, [block=false] { display: visible !important; }
-[link], .link { cursor: pointer !important; }
+.link { cursor: pointer !important; }
 
 *::-webkit-scrollbar { background: none; width: 0; }
 *::-webkit-scrollbar-thumb { background: none; }
