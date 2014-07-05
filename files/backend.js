@@ -80,15 +80,7 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                                                 }
                                         }
                                 });
-                                if (window.location.hash) {
-                                        if (hashline("new") == true) {
-                                                event();
-                                                document.title = "#WhatsCookin";
-                                        }
-                                        if (hashline("new") == false) {
-                                                console.log("//textnet.github.io/#new");
-                                        }
-                                }
+                                if (window.location.hash) if (hashline("new")) event();
                         });
                 });
         });
