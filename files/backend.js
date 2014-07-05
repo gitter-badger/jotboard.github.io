@@ -8,22 +8,19 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                         else window.location.replace("/closed");
                 }
         });
-        $(function() {
-                var event = bootbox.dialog({
-                        className: "no-block",
-                        title: "#WhatsCookin",
-                        message: "<iframe class='yt-player' width='100%' height='310' src='//www.youtube.com/embed/?listType=playlist&list=PLXJjNJMpJQKqbpmhNOJNETiMbfZpLjIVb&fs=1&loop=1&showinfo=0&autohide=1&theme=light' frameborder='0' allowfullscreen></iframe>",
-                        buttons: {
-                                enter: {
-                                        label: "Button",
-                                        className: "btn-primary",
-                                        callback: function() {
-                                                window.open(window.location.href, "_top");
-                                                return false;
-                                        }
+        var event = bootbox.dialog({
+                title: "#WhatsCookin",
+                message: "<iframe class='yt-player' width='100%' height='310' src='//www.youtube.com/embed/?listType=playlist&list=PLXJjNJMpJQKqbpmhNOJNETiMbfZpLjIVb&fs=1&loop=1&showinfo=0&autohide=1&theme=light' frameborder='0' allowfullscreen></iframe>",
+                buttons: {
+                        enter: {
+                                label: "Button",
+                                className: "btn-primary",
+                                callback: function() {
+                                        window.open(window.location.href, "_top");
+                                        return false;
                                 }
                         }
-                });
+                }
         });
         head.load("//cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js", function() {
                 var UT = function() {
@@ -46,8 +43,8 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
         });
         $(".tn-menu-btn").click(function() {
                 $("#submenu").toggleClass("block");
-                t.textnet("toggleHTML", "More", "Less");
-                t.textnet("toggleAttr", "title", "Close Menu", "Open Menu");
+                $(this).textnet("toggleHTML", "More", "Less");
+                $(this).textnet("toggleAttr", "title", "Close Menu", "Open Menu");
         });
         $(".tn-save").click(function() {
                 $(window).textnet("change", "save");
