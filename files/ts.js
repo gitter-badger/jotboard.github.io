@@ -21,7 +21,7 @@ jQuery.fn.textnet = function(tn, tn1, tn2, tn3, tn4) {
         if (tn == "toggleHTML") {
                 return $(this).each($.proxy(function() {
                         if ($(this).html(tn1)) $(this).html(tn2);
-                        else $(this).html(tn1);
+                        if ($(this).html(tn2)) $(this).html(tn1);
                 }));
         }
         if (tn == "change") {
