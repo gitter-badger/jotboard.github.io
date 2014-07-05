@@ -56,7 +56,6 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                 $(window).textnet("change", "load");
         });
         $(function() {
-                // Checking whether #MODS are being used or not.
                 if (window.location.hash) {
                         document.title = "# Textnet";
                         // Hashline
@@ -74,14 +73,13 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                 var form = document.getElementById("#form");
                 var namespace = document.getElementById("#namespace");
                 if (window.localStorage["_-Main"]) {
-                        if (window.localStorage["_-Main"] == null) console.log("Main Textnet is empty.");
-                        else document.getElementById("#form").value(store.get("_-Main"));
+                        document.getElementById("form").value = store.get("_-Main");
                 }
         });
         head.load("//cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js", function() {
                 head.load(["//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/js/bootstrap.min.js", "//cdnjs.cloudflare.com/ajax/libs/bootstrap-growl/1.0.0/jquery.bootstrap-growl.min.js"], function() {
                         head.load("//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/css/bootstrap.min.css");
-                        head.load("//textnet.github.io/files/bootbox.js", function() {
+                        head.load("//cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.2.0/bootbox.js", function() {
                                 bootbox.setDefaults({
                                         locale: "en",
                                         backdrop: false,
@@ -93,8 +91,7 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
         });
         head.load("//togetherjs.com/togetherjs-min.js", function() {
                 $(".tn-groupies").click(function() {
-                        TogetherJS(this);
-                        return false;
+                        $(window).textnet("execute", "groupies");
                 });
                 // Groupies
                 TogetherJSConfig_siteName = "Textnet";
