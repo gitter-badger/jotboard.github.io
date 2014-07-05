@@ -2,7 +2,8 @@
 // Shrinking our need for adding the same sort of code.
 var hashline = function(u) { return window.location.href.indexOf("#" + u) != -1; };
 var createThis = function(u) { return document.createElement(u); };
-var w = document.window; var t = $(this);
+var w = document.window || $(window);
+var t = $(this);
 var grabSelector = function(u) { return document.querySelector(u); };
 var grabSelectorAll = function(u) { return document.querySelectorAll(u); };
 Node.prototype.prependChild = function(el) {
@@ -12,16 +13,16 @@ Node.prototype.prependChild = function(el) {
 // Universal Selector w.textnet
 jQuery.fn.textnet = function(tn, tn1, tn2, tn3, tn4) {
         if (tn == "toggleAttr") {
-                $(this).each(function() {
-                        if ($(this).attr(tn1) == tn2) $(this).attr(tn1) == tn3;
-                        if ($(this).attr(tn1) == tn3) $(this).attr(tn1) == tn2;
-                });
+                return $(this).each($.proxy(function() {
+                        if ($(this).attr(tn1, tn2)) $(this).attr(tn1, tn3);
+                        else $(this).attr(tn1, tn2);
+                }));
         }
         if (tn == "toggleHTML") {
-                $(this).each(function() {
-                        if ($(this).html() == tn1) $(this).html() == tn2;
-                        if ($(this).html() == tn2) $(this).html() == tn1;
-                });
+                return $(this).each($.proxy(function() {
+                        if ($(this).html(tn1)) $(this).html(tn2);
+                        else $(this).html(tn1);
+                }));
         }
         if (tn == "change") {
                 if (tn1 == "save") {
