@@ -1,6 +1,7 @@
 /* Fonts Bro, they get updated man! */
 [lato], .lato { font-family: "Lato", sans-serif; }
 [open-sans], .open-sans { font-family: "Open Sans", sans-serif; }
+[roboto], .roboto { font-family: "Roboto", sans-serif; }
 
 /* Cursor Attributes (cuz im lazy) */
 [default-cur] { cursor: default; }
@@ -135,7 +136,7 @@ html, body, #html, #body {
 	height: 100%;
 	max-height: 100%;
 	background: #9E9E9E;
-	box-shadow: 0 0 20px #2B2B2B;
+	box-shadow: 0 0 8px #F0F0F0;
 	padding: .85%;
 	position: fixed;
 	left: 0;
