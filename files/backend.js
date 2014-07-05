@@ -44,35 +44,12 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
         $(".tn-load").click(function() { $(window).textnet("change", "load"); });
         $(".tn-youtube").click(function() { $(window).textnet("execute", "youtube"); });
         $(".tn-event").click(function() { event(); });
-        $(function() {
-                var event = bootbox.dialog({
-                        title: "#WhatsCookin",
-                        message: "<iframe class='yt-player' width='100%' height='310' src='//www.youtube.com/embed/?listType=playlist&list=PLXJjNJMpJQKqbpmhNOJNETiMbfZpLjIVb&fs=1&loop=1&showinfo=0&autohide=1&theme=light' frameborder='0' allowfullscreen></iframe>",
-                        buttons: {
-                                enter: {
-                                        label: "Button",
-                                        className: "btn-primary",
-                                        callback: function() {
-                                                window.open(window.location.href, "_top");
-                                                return false;
-                                        }
-                                }
-                        }
-                });
-                if (window.location.hash) {
-                        document.title = "# Textnet";
-                        if (hashline("new") == "true") {
-                                event();
-                                document.title = "#WhatsCookin";
-                        }
-                        if (hashline("yt") == "true") {
-                                $(window).textnet("execute", "youtube");
-                                document.title = "# Textnet";
-                        }
-                } else {
-                        document.title = "Textnet";
+        if (window.location.hash) {
+                document.title = "# Textnet";
+                if (hashline("yt") == "true") {
+                        $(window).textnet("execute", "youtube");
                 }
-        });
+        }
         head.load("//cdnjs.cloudflare.com/ajax/libs/store.js/1.3.14/store.min.js", function() {
                 var form = document.getElementById("form");
                 var namespace = document.getElementById("namespace");
@@ -90,6 +67,29 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                                         closeButton: true,
                                         animate: true
                                 });
+                                var event = bootbox.dialog({
+                                        title: "#WhatsCookin",
+                                        message: "<iframe class='yt-player' width='100%' height='310' src='//www.youtube.com/embed/?listType=playlist&list=PLXJjNJMpJQKqbpmhNOJNETiMbfZpLjIVb&fs=1&loop=1&showinfo=0&autohide=1&theme=light' frameborder='0' allowfullscreen></iframe>",
+                                        buttons: {
+                                                enter: {
+                                                        label: "Button",
+                                                        className: "btn-primary",
+                                                        callback: function() {
+                                                                window.open(window.location.href, "_top");
+                                                                return false;
+                                                        }
+                                                }
+                                        }
+                                });
+                                if (window.location.hash) {
+                                        if (hashline("new") === true) {
+                                                event();
+                                                document.title = "#WhatsCookin";
+                                        }
+                                        if (hashline("new") === false) {
+                                                console.log("//textnet.github.io/#new");
+                                        }
+                                }
                         });
                 });
         });
