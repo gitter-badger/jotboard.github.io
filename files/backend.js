@@ -1,4 +1,4 @@
-DevMode = true;
+DevMode = false;
 head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files/ts.js"], function() {
         $(function() {
                 $("body").toggleClass("block");
@@ -36,9 +36,8 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                 setInterval(UT, 1);
         });
         $(".tn-menu-btn").click(function() {
-                $("#submenu").toggleClass("block");
                 $(this).textnet("toggleHTML", "More", "Less");
-                $(this).textnet("toggleAttr", "title", "Close Menu", "Open Menu");
+                $("#submenu").toggleClass("block");
         });
         $(".tn-save").click(function() { $(window).textnet("change", "save"); });
         $(".tn-load").click(function() { $(window).textnet("change", "load"); });
@@ -72,21 +71,21 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                                         message: "<iframe class='yt-player' width='100%' height='310' src='//www.youtube.com/embed/?listType=playlist&list=PLXJjNJMpJQKqbpmhNOJNETiMbfZpLjIVb&fs=1&loop=1&showinfo=0&autohide=1&theme=light' frameborder='0' allowfullscreen></iframe>",
                                         buttons: {
                                                 enter: {
-                                                        label: "Button",
+                                                        label: "?",
                                                         className: "btn-primary",
                                                         callback: function() {
-                                                                window.open(window.location.href, "_top");
+                                                                window.open("//textnet.github.io/wc", "_top");
                                                                 return false;
                                                         }
                                                 }
                                         }
                                 });
                                 if (window.location.hash) {
-                                        if (hashline("new") === true) {
+                                        if (hashline("new") == true) {
                                                 event();
                                                 document.title = "#WhatsCookin";
                                         }
-                                        if (hashline("new") === false) {
+                                        if (hashline("new") == false) {
                                                 console.log("//textnet.github.io/#new");
                                         }
                                 }
