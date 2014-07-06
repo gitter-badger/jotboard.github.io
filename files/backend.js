@@ -7,20 +7,6 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                         if (hashline("forceuse")) return false;
                         else window.location.replace("/closed");
                 }
-                var event = bootbox.dialog({
-                        title: "#WhatsCookin",
-                        message: "<iframe class='yt-player' width='100%' height='310' src='//www.youtube.com/embed/?listType=playlist&list=PLXJjNJMpJQKqbpmhNOJNETiMbfZpLjIVb&fs=1&loop=1&showinfo=0&autohide=1&theme=light' frameborder='0' allowfullscreen></iframe>",
-                        buttons: {
-                                enter: {
-                                        label: "Button",
-                                        className: "btn-primary",
-                                        callback: function() {
-                                                window.open(window.location.href, "_top");
-                                                return false;
-                                        }
-                                }
-                        }
-                });
         });
         head.load("//cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js", function() {
                 var UT = function() {
@@ -39,13 +25,12 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                 $(this).textnet("toggleHTML", "More", "Less");
                 $("#submenu").toggleClass("block");
         });
-        $(".tn-save").click(function() { $(window).textnet("change", "save"); });
-        $(".tn-load").click(function() { $(window).textnet("change", "load"); });
-        $(".tn-youtube").click(function() { $(window).textnet("execute", "youtube"); });
-        $(".tn-event").click(function() { event(); });
+        $(".tn-youtube").click(function() {
+                $(window).textnet("execute", "youtube");
+        });
         if (window.location.hash) {
                 document.title = "# Textnet";
-                if (hashline("yt") == "true") {
+                if (hashline("yt")) {
                         $(window).textnet("execute", "youtube");
                 }
         }
@@ -55,6 +40,12 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                 if (window.localStorage["_-Main"]) {
                         form.value = store.get("_-Main");
                 }
+                $(".tn-save").click(function() {
+                        $(window).textnet("change", "save");
+                });
+                $(".tn-load").click(function() {
+                        $(window).textnet("change", "load");
+                });
         });
         head.load("//cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js", function() {
                 head.load(["//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/js/bootstrap.min.js", "//cdnjs.cloudflare.com/ajax/libs/bootstrap-growl/1.0.0/jquery.bootstrap-growl.min.js"], function() {
@@ -80,7 +71,9 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                                                 }
                                         }
                                 });
+                                $(".tn-event").click(function() { event(); });
                                 if (hashline("event") || hashline("new")) event();
+                                else return false;
                         });
                 });
         });
