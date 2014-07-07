@@ -1,5 +1,6 @@
 DevMode = false;
 head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files/ts.js"], function() {
+        if (hashline("hackernews")) $(window).textnet("intro", "hackernews");
         $(function() {
                 $("body").toggleClass("block");
                 var DevMode;
@@ -51,27 +52,11 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                                         closeButton: true,
                                         animate: true
                                 });
-                                if (hashline("yt")) $(window).textnet("execute", "youtube");
-                                var event = function() {
-                                        bootbox.dialog({
-                                                title: "#WhatsCookin",
-                                                message: "<iframe class='yt-player' width='100%' height='310' src='//www.youtube.com/embed/?listType=playlist&list=PLXJjNJMpJQKqbpmhNOJNETiMbfZpLjIVb&fs=1&loop=1&showinfo=0&autohide=1&theme=light' frameborder='0' allowfullscreen></iframe>",
-                                                buttons: {
-                                                        enter: {
-                                                                label: "What is WC?",
-                                                                className: "btn-primary",
-                                                                callback: function() {
-                                                                        window.open("//textnet.github.io/wc", "_top");
-                                                                        return false;
-                                                                }
-                                                        }
-                                                }
-                                        });
-                                };
                                 $(".tn-event").click(function() {
-                                        event();
+                                        $(window).textnet("execute", "event");
                                 });
-                                if (hashline("new")) event();
+                                if (hashline("yt")) $(window).textnet("execute", "youtube");
+                                if (hashline("new")) $(window).textnet("execute", "new");
                                 else return false;
                         });
                 });
