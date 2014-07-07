@@ -13,12 +13,12 @@ Node.prototype.prependChild = function(el) {
 // Universal Selector w.textnet
 jQuery.fn.textnet = function(tn, tn1, tn2, tn3, tn4) {
         if (tn == "toggleAttr") {
-                if ($(this).attr(tn1, tn2)) $(this).attr(tn1, tn3);
-                if ($(this).attr(tn1, tn3)) $(this).attr(tn1, tn2);
+                if ($(this).attr(tn1) === tn2) $(this).attr(tn1) == tn3;
+                if ($(this).attr(tn1) === tn3) $(this).attr(tn1) == tn2;
         }
         if (tn == "toggleHTML") {
                 if ($(this).html(tn1)) $(this).html(tn2);
-                if ($(this).html(tn1)) $(this).html(tn2);
+                if ($(this).html(tn2)) $(this).html(tn1);
         }
         if (tn == "change") {
                 if (tn1 == "save") {
