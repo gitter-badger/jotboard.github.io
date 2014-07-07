@@ -12,7 +12,7 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                 var UT = function() {
                         $("#form.day").attr("placeholder", moment(new Date()).format("[Hi, it's ]dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[.]"));
                         $("#form.night").attr("placeholder", moment(new Date()).format("[Hows it goin? it was a nice ]dddd, Do [of] MMMM YYYY[ and the time is] h:mm a[, goodnight.]"));
-                        if (0 <= new Date().getHours() && new Date().getHours() < 18) {
+                        if (0 <= new Date().getHours() && new Date().getHours() < 19) {
                                 $("#form").addClass("day");
                         } else {
                                 $("#form").addClass("night");
@@ -28,12 +28,6 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
         $(".tn-youtube").click(function() {
                 $(window).textnet("execute", "youtube");
         });
-        if (window.location.hash) {
-                document.title = "# Textnet";
-                if (hashline("yt")) {
-                        $(window).textnet("execute", "youtube");
-                }
-        }
         head.load("//cdnjs.cloudflare.com/ajax/libs/store.js/1.3.14/store.min.js", function() {
                 var form = document.getElementById("form");
                 var namespace = document.getElementById("namespace");
@@ -57,22 +51,27 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                                         closeButton: true,
                                         animate: true
                                 });
-                                var event = bootbox.dialog({
-                                        title: "#WhatsCookin",
-                                        message: "<iframe class='yt-player' width='100%' height='310' src='//www.youtube.com/embed/?listType=playlist&list=PLXJjNJMpJQKqbpmhNOJNETiMbfZpLjIVb&fs=1&loop=1&showinfo=0&autohide=1&theme=light' frameborder='0' allowfullscreen></iframe>",
-                                        buttons: {
-                                                enter: {
-                                                        label: "?",
-                                                        className: "btn-primary",
-                                                        callback: function() {
-                                                                window.open("//textnet.github.io/wc", "_top");
-                                                                return false;
+                                if (hashline("yt")) $(window).textnet("execute", "youtube");
+                                var event = function() {
+                                        bootbox.dialog({
+                                                title: "#WhatsCookin",
+                                                message: "<iframe class='yt-player' width='100%' height='310' src='//www.youtube.com/embed/?listType=playlist&list=PLXJjNJMpJQKqbpmhNOJNETiMbfZpLjIVb&fs=1&loop=1&showinfo=0&autohide=1&theme=light' frameborder='0' allowfullscreen></iframe>",
+                                                buttons: {
+                                                        enter: {
+                                                                label: "What is WC?",
+                                                                className: "btn-primary",
+                                                                callback: function() {
+                                                                        window.open("//textnet.github.io/wc", "_top");
+                                                                        return false;
+                                                                }
                                                         }
                                                 }
-                                        }
+                                        });
+                                };
+                                $(".tn-event").click(function() {
+                                        event();
                                 });
-                                $(".tn-event").click(function() { event(); });
-                                if (hashline("event") || hashline("new")) event();
+                                if (hashline("new")) event();
                                 else return false;
                         });
                 });
