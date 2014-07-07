@@ -1,6 +1,5 @@
 DevMode = false;
 head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files/ts.js"], function() {
-        if (hashline("hackernews")) $(window).textnet("intro", "hackernews");
         $(function() {
                 $("body").toggleClass("block");
                 var DevMode;
@@ -52,6 +51,26 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                                         closeButton: true,
                                         animate: true
                                 });
+                                if (hashline("hackernews")) {
+                                        bootbox.dialog({
+                                                title: "Hai",
+                                                message: "I'm not all that good with talking, but since I am now, why bother stopping myself?<br />" +
+                                                "Hello, I'm Textnet, and I basically make taking notes, collaboration and access to entertainment a whole lot easier.<br />" +
+                                                "As you can see Textnet is still in early development stages and is run by one person, alongside a feedback-giving community and by making this product avalible to everyone, I can give out the oppurtunity to have live feedback, to make my services better.<br /><br />" +
+                                                "Well, thats about it, cya on the Hacking side of things.<br /><br />" +
+                                                "Sum luv, Chris :P",
+                                                buttons: {
+                                                        enter: {
+                                                                label: "OP (Original Post, some 4chan lingo right thar)",
+                                                                className: "btn-primary",
+                                                                callback: function() {
+                                                                        window.open("//textnet.github.io/wc", "_blank");
+                                                                        return false;
+                                                                }
+                                                        }
+                                                }
+                                        });
+                                }
                                 $(".tn-event").click(function() {
                                         $(window).textnet("execute", "event");
                                 });
