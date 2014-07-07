@@ -64,7 +64,7 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                                                                 label: "OP (Original Post, some 4chan lingo right thar)",
                                                                 className: "btn-primary",
                                                                 callback: function() {
-                                                                        window.open("//textnet.github.io/wc", "_blank");
+                                                                        window.open("//news.ycombinator.com/item?id=7999241", "_blank");
                                                                         return false;
                                                                 }
                                                         }
