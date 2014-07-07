@@ -111,9 +111,9 @@ jQuery.fn.textnet = function(tn, tn1, tn2, tn3, tn4) {
                                         from: "bottom",
                                         amount: 10
                                 },
-                                align: "left",
-                                width: 100,
-                                delay: 3600,
+                                align: "right",
+                                width: "auto",
+                                delay: 4200,
                                 allow_dismiss: false,
                                 stackup_spacing: 10
                         });
