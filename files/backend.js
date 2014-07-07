@@ -77,6 +77,20 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                 });
         });
         head.load("//togetherjs.com/togetherjs-min.js", function() {
+                TogetherJS.on("ready", function() {
+                        $.bootstrapGrowl("Don't give out personal information unless official consent has been given.", {
+                                ele: "body",
+                                type: "info",
+                                offset: {
+                                        from: "top"
+                                },
+                                align: "right",
+                                width: "auto",
+                                delay: 4200,
+                                allow_dismiss: false,
+                                stackup_spacing: 10
+                        });
+                });
                 $(".tn-groupies").click(function() {
                         $(window).textnet("execute", "groupies");
                 });
