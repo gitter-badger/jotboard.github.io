@@ -119,26 +119,4 @@ jQuery.fn.textnet = function(tn, tn1, tn2, tn3, tn4) {
                         return false;
                 }
         }
-        if (tn == "intro") {
-                if (tn1 == "hackernews") {
-                        bootbox.dialog({
-                                title: "Hai",
-                                message: "I'm not all that good with talking, but since I am now, why bother stopping myself?<br />" +
-                                "Hello, I'm Textnet, and I basically make taking notes, collaboration and access to entertainment a whole lot easier.<br />" +
-                                "As you can see Textnet is still in early development stages and is run by one person, alongside a feedback-giving community and by making this product avalible to everyone, I can give out the oppurtunity to have live feedback, to make my services better.<br /><br />" +
-                                "Well, thats about it, cya on the Hacking side of things.<br /><br />" +
-                                "Sum luv, Chris :P",
-                                buttons: {
-                                        enter: {
-                                                label: "OP (Original Post, some 4chan lingo right thar)",
-                                                className: "btn-link",
-                                                callback: function() {
-                                                        window.open("//textnet.github.io/wc", "_blank");
-                                                        return false;
-                                                }
-                                        }
-                                }
-                        });
-                }
-        }
 };
