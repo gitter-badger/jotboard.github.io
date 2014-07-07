@@ -1,11 +1,8 @@
 // Selectors
 // Shrinking our need for adding the same sort of code.
 var hashline = function(u) { return window.location.href.indexOf("#" + u) != -1; };
-var createThis = function(u) { return document.createElement(u); };
 var w = document.window || $(window);
 var t = $(this);
-var grabSelector = function(u) { return document.querySelector(u); };
-var grabSelectorAll = function(u) { return document.querySelectorAll(u); };
 Node.prototype.prependChild = function(el) {
         this.childNodes[1] && this.insertBefore(el, this.childNodes[1]) || this.appendChild(el);
 };
@@ -93,18 +90,55 @@ jQuery.fn.textnet = function(tn, tn1, tn2, tn3, tn4) {
                 }
         }
         if (tn == "execute") {
+                if (tn1 == "event") {
+                        bootbox.dialog({
+                                title: "#WhatsCookin",
+                                message: "<iframe class='yt-player' width='100%' height='310' src='//www.youtube.com/embed/?listType=playlist&list=PLXJjNJMpJQKqbpmhNOJNETiMbfZpLjIVb&fs=1&loop=1&showinfo=0&autohide=1&theme=light' frameborder='0' allowfullscreen></iframe>",
+                                buttons: {
+                                        enter: {
+                                                label: "What is WC?",
+                                                className: "btn-primary",
+                                                callback: function() {
+                                                        window.open("//textnet.github.io/wc", "_top");
+                                                        return false;
+                                                }
+                                        }
+                                }
+                        });
+                }
                 if (tn1 == "youtube") {
                         bootbox.prompt("YouTube Search", function(srch) {
-                                if (srch === null) {
-                                        bootbox.hideAll();
-                                } else {
+                                if (srch) {
                                         window.open("//www.youtube.com/results?utm_source=opensearch&search_query=" + srch, "_blank");
                                 }
+                                if (srch === null) bootbox.hideAll();
                         });
                 }
                 if (tn1 == "groupies") {
                         TogetherJS(this);
                         return false;
+                }
+        }
+        if (tn == "intro") {
+                if (tn1 == "hackernews") {
+                        bootbox.dialog({
+                                title: "Hai",
+                                message: "I'm not all that good with talking, but since I am now, why bother stopping myself?<br />" +
+                                "Hello, I'm Textnet, and I basically make taking notes, collaboration and access to entertainment a whole lot easier.<br />" +
+                                "As you can see Textnet is still in early development stages and is run by one person, alongside a feedback-giving community and by making this product avalible to everyone, I can give out the oppurtunity to have live feedback, to make my services better.<br /><br />" +
+                                "Well, thats about it, cya on the Hacking side of things.<br /><br />" +
+                                "Sum luv, Chris :P",
+                                buttons: {
+                                        enter: {
+                                                label: "OP (Original Post, some 4chan lingo right thar)",
+                                                className: "btn-link",
+                                                callback: function() {
+                                                        window.open("//textnet.github.io/wc", "_blank");
+                                                        return false;
+                                                }
+                                        }
+                                }
+                        });
                 }
         }
 };
