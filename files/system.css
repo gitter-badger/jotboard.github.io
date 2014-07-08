@@ -36,7 +36,7 @@ div.bootbox.modal, div.bootbox.modal * {
 #form {
 	font: 14px "Source Code Pro", sans-serif;
 	color: #F2F2F2;
-	width: calc(100% - 120px);
+	width: calc(100% - 200px);
 	border-radius: 0;
 	height: 100%;
 	float: right;
@@ -126,7 +126,7 @@ html, body, #html, #body {
 }
 
 .navagation {
-	width: 120px;
+	width: 200px;
 	transition: width 0.174s ease;
 	transition: padding 0.174s ease;
 	overflow-y: scroll;
@@ -170,9 +170,6 @@ iframe, textarea, input {
 }
 
 * { overflow: auto; }
-.block, [block=true] { display: none !important; }
-.no-block, [block=false] { display: visible !important; }
-.link { cursor: pointer !important; }
 
 *::-webkit-scrollbar { background: none; width: 0; }
 *::-webkit-scrollbar-thumb { background: none; }
