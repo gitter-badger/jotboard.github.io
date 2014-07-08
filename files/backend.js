@@ -12,7 +12,7 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                 var UT = function() {
                         $("#form.day").attr("placeholder", moment(new Date()).format("[Hi, it's ]dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[.]"));
                         $("#form.night").attr("placeholder", moment(new Date()).format("[Hows it goin? it was a nice ]dddd, Do [of] MMMM YYYY[ and the time is] h:mm a[, goodnight.]"));
-                        if (0 <= new Date().getHours() && new Date().getHours() < 19) {
+                        if (threshold(4, 19)) {
                                 $("#form").addClass("day");
                         } else {
                                 $("#form").addClass("night");
@@ -65,6 +65,14 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                                                                 className: "btn-primary",
                                                                 callback: function() {
                                                                         window.open("//news.ycombinator.com/item?id=7999241", "_blank");
+                                                                        return false;
+                                                                }
+                                                        },
+                                                        gh_repo: {
+                                                                label: "Source Code (textnet/textnet.github.io)",
+                                                                className: "btn-primary",
+                                                                callback: function() {
+                                                                        window.open("https://github.com/textnet/textnet.github.io", "_blank");
                                                                         return false;
                                                                 }
                                                         }
