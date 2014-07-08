@@ -24,17 +24,9 @@ div.bootbox.modal, div.bootbox.modal * {
 	outline: none;
 }
 
-#togetherjs-dock-anchor,
-#togetherjs-window-pointer-right {
-	display: none !important;
-}
-
 #body, #main, #form {
     background: #0077FF;
 }
-
-.navagation:hover #form { width: calc(100% - 300px); }
-.navagation:hover { width: 300px; }
 
 #form {
 	font: 14px "Source Code Pro", sans-serif;
