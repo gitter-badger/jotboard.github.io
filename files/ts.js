@@ -1,8 +1,8 @@
 // Selectors
 // Shrinking our need for adding the same sort of code.
-var hashline = function(u) { return window.location.href.indexOf("#" + u) != -1; };
-var w = document.window || $(window);
-var t = $(this);
+var hashline = function(_) { return window.location.href.indexOf("#" + _) != -1; };
+var threshold = function(_1, _2) { return _1 <= new Date().getHours() && new Date().getHours() < _2; }
+var w = document.window || $(window); var t = $(this);
 Node.prototype.prependChild = function(el) {
         this.childNodes[1] && this.insertBefore(el, this.childNodes[1]) || this.appendChild(el);
 };
