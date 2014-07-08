@@ -22,7 +22,7 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                 setInterval(UT, 1);
         });
         $(".tn-menu-btn").click(function() {
-                $(this).textnet("toggleText", "More", "Less").textnet("toggleAttr", "title", "Open Submenu", "Close Submenu");
+                $(".tn-menu-btn").textnet("toggleHTML", "More", "Less")
                 $("#submenu").toggleClass("block");
         });
         $(".tn-youtube").click(function() {
