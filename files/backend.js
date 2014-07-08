@@ -3,7 +3,7 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
         $(function() {
                 $("body").toggleClass("block");
                 var DevMode;
-                if (DevMode === true) {
+                if (DevMode == true) {
                         if (hashline("forceuse")) return false;
                         else window.location.replace("/closed");
                 }
@@ -22,7 +22,7 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                 setInterval(UT, 1);
         });
         $(".tn-menu-btn").click(function() {
-                $(".tn-menu-btn").textnet("toggleHTML", "More", "Less")
+                $(".tn-menu-btn").textnet("toggleHTML", "More", "Less");
                 $("#submenu").toggleClass("block");
         });
         $(".tn-youtube").click(function() {
@@ -66,7 +66,7 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                                                 "Sum luv, Chris :P",
                                                 buttons: {
                                                         enter: {
-                                                                label: "OP (Original Post, some 4chan lingo right thar)",
+                                                                label: "Original Post",
                                                                 className: "btn-primary",
                                                                 callback: function() {
                                                                         window.open("//news.ycombinator.com/item?id=7999241", "_blank");
@@ -87,7 +87,7 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                                 $(".tn-event").click(function() {
                                         $(window).textnet("execute", "event");
                                 });
-                                if (hashline("new")) $(window).textnet("execute", "new");
+                                if (hashline("new")) $(window).textnet("execute", "event");
                                 else return false;
                         });
                 });
