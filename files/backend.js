@@ -26,7 +26,12 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                 $("#submenu").toggleClass("block");
         });
         $(".tn-youtube").click(function() {
-                $(window).textnet("execute", "youtube");
+                bootbox.prompt("YouTube Search", function(srch) {
+                        if (srch) {
+                                window.open("//www.youtube.com/results?utm_source=opensearch&search_query=" + srch, "_blank");
+                        }
+                        if (srch === null) bootbox.hideAll();
+                });
         });
         head.load("//cdnjs.cloudflare.com/ajax/libs/store.js/1.3.14/store.min.js", function() {
                 var form = document.getElementById("form");
@@ -82,7 +87,6 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                                 $(".tn-event").click(function() {
                                         $(window).textnet("execute", "event");
                                 });
-                                if (hashline("yt")) $(window).textnet("execute", "youtube");
                                 if (hashline("new")) $(window).textnet("execute", "new");
                                 else return false;
                         });
@@ -104,7 +108,8 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                         });
                 });
                 $(".tn-groupies").click(function() {
-                        $(window).textnet("execute", "groupies");
+                        TogetherJS(this);
+                        return false;
                 });
                 // Groupies
                 TogetherJSConfig_siteName = "Textnet";
