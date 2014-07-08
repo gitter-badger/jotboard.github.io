@@ -1,7 +1,7 @@
 // Selectors
 // Shrinking our need for adding the same sort of code.
-var hashline = function(_) { return window.location.href.indexOf("#" + _) != -1; };
-var threshold = function(_1, _2) { return _1 <= new Date().getHours() && new Date().getHours() < _2; }
+var hashline = function(_1) { return window.location.href.indexOf("#" + _1) != -1; };
+var threshold = function(_1, _2) { return _1 <= new Date().getHours() && new Date().getHours() < _2; };
 var w = document.window || $(window);
 var t = $(this);
 Node.prototype.prependChild = function(el) {
@@ -11,12 +11,14 @@ Node.prototype.prependChild = function(el) {
 // Universal Selector w.textnet
 jQuery.fn.textnet = function(tn, tn1, tn2, tn3, tn4) {
         if (tn == "toggleAttr") {
-                if ($(this).attr(tn1) == tn2) $(this).attr(tn1, tn3);
-                if ($(this).attr(tn1) == tn3) $(this).attr(tn1, tn2);
+                return this.each(function() {
+                        $(this).attr(tn2 ? tn1 : tn2);
+                });
         }
         if (tn == "toggleHTML") {
-                if ($(this).html() == tn1) $(this).html(tn2);
-                if ($(this).html() == tn2) $(this).html(tn1);
+                return this.each(function() {
+                        $(this).html($(this).html(tn2 ? tn1 : tn2));
+                });
         }
         if (tn == "change") {
                 if (tn1 == "save") {
