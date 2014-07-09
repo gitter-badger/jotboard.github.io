@@ -12,17 +12,14 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                 var UT = function() {
                         $("#form.day").attr("placeholder", moment(new Date()).format("[Hi, it's ]dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[.]"));
                         $("#form.night").attr("placeholder", moment(new Date()).format("[Hows it goin? it was a nice ]dddd, Do [of] MMMM YYYY[ and the time is] h:mm a[, goodnight.]"));
-                        if (threshold(4, 19)) {
-                                $("#form").addClass("day");
-                        } else {
-                                $("#form").addClass("night");
-                        }
+                        if (threshold(4, 19)) $("#form").addClass("day");
+                        else $("#form").addClass("night");
                 };
                 UT();
                 setInterval(UT, 1);
         });
         $(".tn-menu-btn").click(function() {
-                $(".tn-menu-btn").textnet("toggleHTML", "More", "Less");
+                $(this).textnet("toggleHTML", "More", "Less");
                 $("#submenu").toggleClass("block");
         });
         $(".tn-youtube").click(function() {
@@ -56,6 +53,22 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                                         closeButton: true,
                                         animate: true
                                 });
+                                if (hashline("CISA") || hashline("CISPA")) {
+                                        bootbox.dialog({
+                                                title: "Stop CISPA... I mean CISA",
+                                                message: "<img src='//fbcdn-sphotos-g-a.akamaihd.net/hphotos-ak-xpa1/t1.0-9/10533259_786466921373436_2435169508624049648_n.png' width='100%' height='auto'><br />",
+                                                buttons: {
+                                                        enter: {
+                                                                label: "Take Action",
+                                                                className: "btn-danger",
+                                                                callback: function() {
+                                                                        window.open("//news.ycombinator.com/item?id=7999241", "_blank");
+                                                                        return false;
+                                                                }
+                                                        }
+                                                }
+                                        });
+                                }
                                 if (hashline("hackernews")) {
                                         bootbox.dialog({
                                                 title: "Hai",
