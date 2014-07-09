@@ -2,17 +2,16 @@
 // Shrinking our need for adding the same sort of code.
 var hashline = function(_1) { return window.location.href.indexOf("#" + _1) != -1; };
 var threshold = function(_1, _2) { return _1 <= new Date().getHours() && new Date().getHours() < _2; };
-var w = document.window || $(window);
-var t = $(this);
-Node.prototype.prependChild = function(el) {
-        this.childNodes[1] && this.insertBefore(el, this.childNodes[1]) || this.appendChild(el);
+var w = window; var t = this;
+Node.prototype.prependChild = function(_1) {
+        this.childNodes[1] && this.insertBefore(_1, this.childNodes[1]) || this.appendChild(_1);
 };
 
-// Universal Selector w.textnet
+// Universal Selector $(window).textnet
 jQuery.fn.textnet = function(tn, tn1, tn2, tn3, tn4) {
         if (tn == "toggleAttr") {
-                if ($(this).attr(tn1) === tn2) this.attr(tn1, tn3);
-                if ($(this).attr(tn1) === tn3) this.attr(tn1, tn2);
+                if ($(this).attr(tn1, tn2)) this.attr(tn1, tn3);
+                if ($(this).attr(tn1, tn3)) this.attr(tn1, tn2);
         }
         if (tn == "toggleHTML") {
                 if ($(this).innerHTML(tn1)) this.innerHTML(tn2);
