@@ -3,7 +3,7 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
         $(function() {
                 $("body").toggleClass("block");
                 var DevMode;
-                if (DevMode == true) {
+                if (DevMode === true) {
                         if (hashline("forceuse")) return false;
                         else window.location.replace("/closed");
                 }
@@ -20,12 +20,12 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
         });
         $(".tn-menu-btn").click(function() {
                 $(this).textnet("toggleHTML", "More", "Less");
-                $("#submenu").textnet("toggleAttr", "display: none !important;", "display: block !important;");
+                $("#submenu").textnet("toggleAttr", "display: none;", "display: block;");
         });
         $(".tn-youtube").click(function() {
                 bootbox.prompt("YouTube Search", function(srch) {
                         if (srch) {
-                                window.open("//www.youtube.com/results?utm_source=opensearch&search_query=" + srch, "_blank");
+                                window.open("//www.youtube.com/results?search_query=" + srch, "_blank");
                         }
                         if (srch === null) bootbox.hideAll();
                 });
