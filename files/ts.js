@@ -12,14 +12,22 @@ Node.prototype.prependChild = function(el) {
 jQuery.fn.textnet = function(tn, tn1, tn2, tn3, tn4) {
         if (tn == "toggleAttr") {
                 return this.each(function() {
-                        if ($(this).attr(tn1, tn2)) $(this).attr(tn1, tn3);
-                        if ($(this).attr(tn1, tn3)) $(this).attr(tn1, tn2);
+                        if (this.attr(tn1) == tn2) {
+                                this.attr(tn1, tn3);
+                        }
+                        if (this.attr(tn1) == tn3) {
+                                this.attr(tn1, tn2);
+                        }
                 });
         }
         if (tn == "toggleHTML") {
                 return this.each(function() {
-                        if ($(this).html(tn1)) $(this).html(tn2);
-                        if ($(this).html(tn2)) $(this).html(tn1);
+                        if (this.innerHTML == tn1) {
+                                this.innerHTML = tn2;
+                        }
+                        if (this.innerHTML == tn2) {
+                                this.innerHTML = tn1;
+                        }
                 });
         }
         if (tn == "change") {
