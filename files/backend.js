@@ -55,7 +55,7 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                                 });
                                 if (hashline("CISA") || hashline("CISPA")) {
                                         bootbox.dialog({
-                                                title: "Stop CISPA... I mean CISA",
+                                                title: "Stop CIS(P)A",
                                                 message: "<img src='//fbcdn-sphotos-g-a.akamaihd.net/hphotos-ak-xpa1/t1.0-9/10533259_786466921373436_2435169508624049648_n.png' width='100%' height='auto'><br />",
                                                 buttons: {
                                                         enter: {
@@ -111,7 +111,8 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                                 ele: "body",
                                 type: "info",
                                 offset: {
-                                        from: "top"
+                                        from: "top",
+                                        offset: 0
                                 },
                                 align: "right",
                                 width: "auto",
