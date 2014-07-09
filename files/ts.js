@@ -10,17 +10,17 @@ Node.prototype.prependChild = function(_1) {
 // Universal Selector $(window).textnet
 jQuery.fn.textnet = function(tn, tn1, tn2, tn3, tn4) {
         if (tn == "toggleAttr") {
-                if (document.querySelectorAll(this)[0].getAttribute(tn1) == tn2) {
-                        document.querySelectorAll(this)[0].getAttribute(tn1) == tn3;
+                if (document.querySelectorAll(this).getAttribute(tn1) == tn2) {
+                        document.querySelectorAll(this).getAttribute(tn1) == tn3;
                 } else {
-                        document.querySelectorAll(this)[0].getAttribute(tn1) == tn2;
+                        document.querySelectorAll(this).getAttribute(tn1) == tn2;
                 }
         }
         if (tn == "toggleHTML") {
-                if (document.querySelectorAll(this)[0].innerHTML(tn1)) {
-                        document.querySelectorAll(this)[0].innerHTML(tn2);
+                if (document.querySelectorAll(this).innerHTML(tn1)) {
+                        document.querySelectorAll(this).innerHTML(tn2);
                 } else {
-                        document.querySelectorAll(this)[0].innerHTML(tn1);
+                        document.querySelectorAll(this).innerHTML(tn1);
                 }
         }
         if (tn == "change") {
