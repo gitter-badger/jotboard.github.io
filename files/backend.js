@@ -1,4 +1,4 @@
-DevMode = true;
+DevMode = false;
 head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files/ts.js"], function() {
         $(function() {
                 $("body").toggleClass("block");
@@ -62,7 +62,7 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                                                                 label: "Take Action",
                                                                 className: "btn-danger",
                                                                 callback: function() {
-                                                                        window.open("//news.ycombinator.com/item?id=7999241", "_blank");
+                                                                        window.open("//www.cispaisback.org/", "_blank");
                                                                         return false;
                                                                 }
                                                         }
