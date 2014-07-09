@@ -10,12 +10,18 @@ Node.prototype.prependChild = function(_1) {
 // Universal Selector $(window).textnet
 jQuery.fn.textnet = function(tn, tn1, tn2, tn3, tn4) {
         if (tn == "toggleAttr") {
-                if ($(this).attr(tn1, tn2)) this.attr(tn1, tn3);
-                if ($(this).attr(tn1, tn3)) this.attr(tn1, tn2);
+                if (document.querySelectorAll(this)[0].getAttribute(tn1) == tn2) {
+                        document.querySelectorAll(this)[0].getAttribute(tn1) == tn3;
+                } else {
+                        document.querySelectorAll(this)[0].getAttribute(tn1) == tn2;
+                }
         }
         if (tn == "toggleHTML") {
-                if ($(this).innerHTML(tn1)) this.innerHTML(tn2);
-                if ($(this).innerHTML(tn2)) this.innerHTML(tn1);
+                if (document.querySelectorAll(this)[0].innerHTML(tn1)) {
+                        document.querySelectorAll(this)[0].innerHTML(tn2);
+                } else {
+                        document.querySelectorAll(this)[0].innerHTML(tn1);
+                }
         }
         if (tn == "change") {
                 if (tn1 == "save") {
