@@ -12,7 +12,7 @@ Node.prototype.prependChild = function(_1) {
 jQuery.fn.textnet = function(tn, tn1, tn2, tn3, tn4) {
         // $().textnet("toggleAttr", "title", "More", "Less");
         if (tn == "toggleAttr") {
-                return document.querySelector(this).forEach(function() {
+                return $(this).each(function() {
                         if (document.querySelector(this).getAttribute(tn1) == tn2) {
                                 document.querySelector(this).setAttribute(tn1, tn2);
                         } else {
@@ -22,7 +22,7 @@ jQuery.fn.textnet = function(tn, tn1, tn2, tn3, tn4) {
         }
         // $().textnet("toggleHTML", "More", "Less");
         if (tn == "toggleHTML") {
-                return document.querySelector(this).forEach(function() {
+                return $(this).each(function() {
                         if (document.querySelector(this).innerHTML(tn1)) {
                                 document.querySelector(this).innerHTML(tn2);
                         } else {
