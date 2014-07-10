@@ -13,9 +13,9 @@ jQuery.fn.textnet = function(tn, tn1, tn2, tn3, tn4) {
         if (tn == "toggleAttr") {
                 // $(this).textnet("toggleAttr", "title", "More", "Less");
                 return this.each(function() {
-                        var self = $(this);
-                        if (self.attr(tn1) == tn2) self.attr(tn1, tn3);
-                        else self.attr(tn1, tn2);
+                        var self = document.querySelectorAll(this);
+                        if (self.getAttribute(tn1) == tn2) self.setAttribute(tn1, tn3);
+                        else self.setAttribute(tn1, tn2);
                 });
         }
         if (tn == "toggleTXT") {
