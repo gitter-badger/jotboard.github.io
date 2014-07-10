@@ -11,16 +11,17 @@ Node.prototype.prependChild = function(_1) {
 // Universal Selector $(window).textnet
 jQuery.fn.textnet = function(tn, tn1, tn2, tn3, tn4) {
         if (tn == "toggleAttr") {
-                $(this).each(function() {
-                        if ($(this).attr(tn1) === tn2) $(this).attr(tn1) == tn3;
-                        else $(this).attr(tn1) == tn2;
+                // $(this).textnet("toggleAttr", "title", "More", "Less");
+                return this.each(function() {
+                        var self = $(this);
+                        if (self.attr(tn1) == tn2) self.attr(tn1, tn3);
+                        else self.attr(tn1, tn2);
                 });
         }
         if (tn == "toggleHTML") {
-                $(this).each(function() {
-                        if ($(this).innerHTML(tn1)) $(this).innerHTML(tn2);
-                        else $(this).innerHTML(tn1);
-                });
+                if (this.text() == tn1) this.text(t2);
+                else this.text(t1);
+                return this;
         }
         if (tn == "change") {
                 if (tn1 == "save") {
