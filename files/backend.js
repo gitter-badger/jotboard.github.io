@@ -18,10 +18,6 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                 UT();
                 setInterval(UT, 1);
         });
-        $(".tn-menu-btn").click(function() {
-                $(this).textnet("toggleHTML", "More", "Less");
-                $("#submenu").textnet("toggleAttr", "style", "display: none;", "display: block;");
-        });
         $(".tn-youtube").click(function() {
                 bootbox.prompt("YouTube Search", function(srch) {
                         if (srch) {
