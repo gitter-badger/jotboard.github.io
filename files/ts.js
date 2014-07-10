@@ -3,19 +3,23 @@
 var hashline = function(_1) { return window.location.href.indexOf("#" + _1) != -1; };
 var threshold = function(_1, _2) { return _1 <= new Date().getHours() && new Date().getHours() < _2; };
 var w = window; var t = this;
-var baseTN = window || this || document;
+var wtd = window || this || document;
 Node.prototype.prependChild = function(_1) {
         this.childNodes[1] && this.insertBefore(_1, this.childNodes[1]) || this.appendChild(_1);
 };
 
 // Universal Selector $(window).textnet
 jQuery.fn.textnet = function(tn, tn1, tn2, tn3, tn4) {
+        // $(this).textnet("toggleAttr", "title", "More", "Less");
+        // $(this).textnet("toggleAttr", "title", "More", "Less");
+        var self = document.querySelectorAll(this)[0];
         if (tn == "toggleAttr") {
-                // $(this).textnet("toggleAttr", "title", "More", "Less");
-                return this.each(function() {
-                        var self = document.querySelectorAll(this);
-                        if (self.getAttribute(tn1) == tn2) self.setAttribute(tn1, tn3);
-                        else self.setAttribute(tn1, tn2);
+                return document.querySelectorAll(this)[0].each(function() {
+                        if (document.querySelectorAll(this)[0].getAttribute(tn1) == tn2) {
+                                document.querySelectorAll(this)[0].setAttribute(tn1, tn2);
+                        } else {
+                                document.querySelectorAll(this)[0].setAttribute(tn1, tn2);
+                        }
                 });
         }
         if (tn == "toggleTXT") {
