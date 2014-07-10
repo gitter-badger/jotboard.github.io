@@ -19,7 +19,7 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                 setInterval(UT, 1);
         });
         $(".tn-menu-btn").click(function() {
-                $(this).textnet("toggleTXT", "More", "Less");
+                $(this).textnet("toggleHTML", "More", "Less");
                 $("#submenu").textnet("toggleAttr", "style", "display: none;", "display: block;");
         });
         $(".tn-youtube").click(function() {
@@ -74,7 +74,8 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                                                 title: "Hai",
                                                 message: "I'm not all that good with talking, but since I am now, why bother stopping myself?<br />" +
                                                 "Hello, I'm Textnet, and I basically make taking notes, collaboration and access to entertainment a whole lot easier.<br />" +
-                                                "As you can see Textnet is still in early development stages and is run by one person, alongside a feedback-giving community and by making this product avalible to everyone, I can give out the oppurtunity to have live feedback, to make my services better.<br /><br />" +
+                                                "As you can see Textnet is still in early development stages and is run by one person, alongside a feedback-giving community and by making this product avalible<div></div>" +
+                                                "to everyone, I can give out the opportunity to have live feedback, to make my services better.<br /><br />" +
                                                 "Well, thats about it, cya on the Hacking side of things.<br /><br />" +
                                                 "Sum luv, Chris :P",
                                                 buttons: {
