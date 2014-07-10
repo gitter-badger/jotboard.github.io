@@ -19,8 +19,8 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                 setInterval(UT, 1);
         });
         $(".tn-menu-btn").click(function() {
-                $(this).textnet("toggleHTML", "More", "Less");
-                $("#submenu").textnet("toggleAttr", "display: none;", "display: block;");
+                $(this).textnet("toggleTXT", "More", "Less");
+                $("#submenu").textnet("toggleAttr", "style", "display: none;", "display: block;");
         });
         $(".tn-youtube").click(function() {
                 bootbox.prompt("YouTube Search", function(srch) {
