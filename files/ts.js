@@ -3,6 +3,7 @@
 var hashline = function(_1) { return window.location.href.indexOf("#" + _1) != -1; };
 var threshold = function(_1, _2) { return _1 <= new Date().getHours() && new Date().getHours() < _2; };
 var w = window; var t = this;
+var baseTN = window || this || document;
 Node.prototype.prependChild = function(_1) {
         this.childNodes[1] && this.insertBefore(_1, this.childNodes[1]) || this.appendChild(_1);
 };
@@ -10,18 +11,16 @@ Node.prototype.prependChild = function(_1) {
 // Universal Selector $(window).textnet
 jQuery.fn.textnet = function(tn, tn1, tn2, tn3, tn4) {
         if (tn == "toggleAttr") {
-                if (document.querySelectorAll(this).getAttribute(tn1) == tn2) {
-                        document.querySelectorAll(this).getAttribute(tn1) == tn3;
-                } else {
-                        document.querySelectorAll(this).getAttribute(tn1) == tn2;
-                }
+                $(this).each(function() {
+                        if ($(this).attr(tn1) === tn2) $(this).attr(tn1) == tn3;
+                        else $(this).attr(tn1) == tn2;
+                });
         }
         if (tn == "toggleHTML") {
-                if (document.querySelectorAll(this).innerHTML(tn1)) {
-                        document.querySelectorAll(this).innerHTML(tn2);
-                } else {
-                        document.querySelectorAll(this).innerHTML(tn1);
-                }
+                $(this).each(function() {
+                        if ($(this).innerHTML(tn1)) $(this).innerHTML(tn2);
+                        else $(this).innerHTML(tn1);
+                });
         }
         if (tn == "change") {
                 if (tn1 == "save") {
