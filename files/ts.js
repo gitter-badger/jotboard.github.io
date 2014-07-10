@@ -18,9 +18,9 @@ jQuery.fn.textnet = function(tn, tn1, tn2, tn3, tn4) {
                         else self.attr(tn1, tn2);
                 });
         }
-        if (tn == "toggleHTML") {
-                if (this.text() == tn1) this.text(t2);
-                else this.text(t1);
+        if (tn == "toggleTXT") {
+                if (this.text() == tn1) this.text(tn2);
+                else this.text(tn1);
                 return this;
         }
         if (tn == "change") {
