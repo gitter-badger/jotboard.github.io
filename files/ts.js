@@ -12,13 +12,13 @@ Node.prototype.prependChild = function(_1) {
 jQuery.fn.textnet = function(tn, tn1, tn2, tn3, tn4) {
         // $(this).textnet("toggleAttr", "title", "More", "Less");
         // $(this).textnet("toggleAttr", "title", "More", "Less");
-        var self = document.querySelectorAll(this)[0];
+        var self = document.querySelectorAll(this);
         if (tn == "toggleAttr") {
-                return document.querySelectorAll(this)[0].each(function() {
-                        if (document.querySelectorAll(this)[0].getAttribute(tn1) == tn2) {
-                                document.querySelectorAll(this)[0].setAttribute(tn1, tn2);
+                return document.querySelectorAll(this).each(function() {
+                        if (document.querySelectorAll(this).getAttribute(tn1) == tn2) {
+                                document.querySelectorAll(this).setAttribute(tn1, tn2);
                         } else {
-                                document.querySelectorAll(this)[0].setAttribute(tn1, tn2);
+                                document.querySelectorAll(this).setAttribute(tn1, tn2);
                         }
                 });
         }
