@@ -1,8 +1,8 @@
 DevMode = false;
 head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files/ts.js"], function() {
         $(function() {
-                if (window.location.hash) document.title("# Textnet");
-                if (!window.location.hash) document.title("Textnet");
+                if (window.location.hash) document.title = "# Textnet";
+                if (!window.location.hash) document.title = "Textnet";
                 $("body").toggleClass("block");
                 var DevMode;
                 if (DevMode === true) {
