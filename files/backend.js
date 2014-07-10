@@ -51,7 +51,7 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                                         locale: "en",
                                         backdrop: false,
                                         closeButton: true,
-                                        animate: true
+                                        animate: false
                                 });
                                 if (hashline("CISA") || hashline("CISPA")) {
                                         bootbox.dialog({
