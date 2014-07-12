@@ -15,8 +15,8 @@ jQuery.fn.textnet = function(tn, tn1, tn2, tn3, tn4) {
         }
         // $().textnet("toggleHTML", "More", "Less");
         if (tn == "toggleHTML") {
-                if (this.innerHTML() === tn1) this.innerHTML(tn2);
-                if (this.innerHTML() === tn2) this.innerHTML(tn1);
+                if (this.innerHTML(tn1)) this.innerHTML(tn2);
+                if (this.innerHTML(tn2)) this.innerHTML(tn1);
         }
         if (tn == "change") {
                 if (tn1 == "save") {
