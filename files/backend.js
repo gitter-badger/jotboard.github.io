@@ -20,14 +20,6 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                 UT();
                 setInterval(UT, 1);
         });
-        $(".tn-youtube").click(function() {
-                bootbox.prompt("YouTube Search", function(srch) {
-                        if (srch) {
-                                window.open("//www.youtube.com/results?search_query=" + srch, "_blank");
-                        }
-                        if (srch === null) bootbox.hideAll();
-                });
-        });
         head.load("//cdnjs.cloudflare.com/ajax/libs/store.js/1.3.14/store.min.js", function() {
                 var form = document.getElementById("form");
                 var namespace = document.getElementById("namespace");
@@ -101,6 +93,14 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                                 });
                                 if (sys("hash", "new")) $(window).textnet("execute", "event");
                                 else return false;
+                                $(".tn-youtube").click(function() {
+                                        bootbox.prompt("YouTube Search", function(srch) {
+                                                if (srch) {
+                                                        window.open("//www.youtube.com/results?search_query=" + srch, "_blank");
+                                                }
+                                                if (srch === null) bootbox.hideAll();
+                                        });
+                                });
                         });
                 });
         });
