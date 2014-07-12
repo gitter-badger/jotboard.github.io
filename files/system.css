@@ -4,7 +4,7 @@
 [open-sans], .open-sans { font-family: "Open Sans", sans-serif; }
 
 /* data-html tag */
-[data-html] { content: attr(data-html); }
+[data-html]:before { content: attr(data-html); }
 
 /* Cursor Attributes (cuz im lazy) */
 [default-cur] { cursor: default; }
@@ -152,9 +152,9 @@ div.body.container {
 
 div.bootbox.modal, div.bootbox.modal * {
         outline: none;
+	user-select: none;
 }
 
-div.bootbox.modal, div.bootbox.modal *,
 .no-select, .no-select * {
 	user-select: none;
 }
