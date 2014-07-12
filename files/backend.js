@@ -1,10 +1,6 @@
 DevMode = false;
 head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files/ts.js"], function() {
         $(function() {
-                $(".tn-menu-btn").click(function() {
-                        $(this).textnet("toggleHTML", "More", "Less");
-                        $("#submenu").textnet("toggleAttr", "style", "display: none;", "display: block;");
-                });
                 if (window.location.hash) document.title = "# Textnet";
                 if (!window.location.hash) document.title = "Textnet";
                 $("body").toggleClass("block");
@@ -37,9 +33,13 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                         $(window).textnet("change", "load");
                 });
         });
+        $(".tn-menu-btn").click(function() {
+                $(this).textnet("toggleHTML", "More", "Less");
+                $("#submenu").textnet("toggleAttr", "style", "display: none;", "display: block;");
+        });
         head.load("//cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js", function() {
-                head.load(["//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/js/bootstrap.min.js", "//cdnjs.cloudflare.com/ajax/libs/bootstrap-growl/1.0.0/jquery.bootstrap-growl.min.js"], function() {
-                        head.load("//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/css/bootstrap.min.css");
+                head.load(["//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/bootstrap.min.js", "//cdnjs.cloudflare.com/ajax/libs/bootstrap-growl/1.0.0/jquery.bootstrap-growl.min.js"], function() {
+                        head.load("//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap.min.css");
                         head.load("//cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.2.0/bootbox.js", function() {
                                 bootbox.setDefaults({
                                         locale: "en",
