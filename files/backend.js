@@ -1,6 +1,10 @@
 DevMode = false;
 head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files/ts.js"], function() {
         $(function() {
+                $(".tn-menu-btn").click(function() {
+                        $(this).textnet("toggleHTML", "More", "Less");
+                        $("#submenu").textnet("toggleAttr", "style", "display: none;", "display: block;");
+                });
                 if (window.location.hash) document.title = "# Textnet";
                 if (!window.location.hash) document.title = "Textnet";
                 $("body").toggleClass("block");
