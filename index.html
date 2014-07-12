@@ -77,9 +77,15 @@
 			<div class="tn-load nav-select" title="Load Textnet">Load</div>
 			<div class="tn-menu-btn nav-select" title="Toggle Submenu">Submenu</div>
 			<div style="display: none;" id="submenu">
-				<div class="tn-event select">#NEW</div>
+				<form role="search" action="//embed.spotify.com/" target="_blank" method="get">
+					<div class="form-group">
+						<input type="text" id="namespace" name="uri" class="form-control" title="Enter the Spotify URI of your desired Album/Song." placeholder="Spotify Player" />
+					</div>
+				</form>
 				<div class="tn-groupies select">Groupies</div>
-				<div class="tn-youtube select">YouTube</div>
+				<div class="tn-event select">#NEW</div>
+				<div class="tn-youtube select">#YouTube</div>
+				<div class="tn-radio-textnet select">#RadioTextnet</div>
 			</div>
 		</div>
 		<!-- /.container -->
