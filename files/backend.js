@@ -6,7 +6,7 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                 $("body").toggleClass("block");
                 var DevMode;
                 if (DevMode === true) {
-                        if (hashline("forceuse")) return false;
+                        if (sys("hash", "forceuse")) return false;
                         else window.location.replace("/closed");
                 }
         });
@@ -14,7 +14,7 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                 var UT = function() {
                         $("#form.day").attr("placeholder", moment(new Date()).format("[Hi, it's ]dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[.]"));
                         $("#form.night").attr("placeholder", moment(new Date()).format("[Hows it goin? it was a nice ]dddd, Do [of] MMMM YYYY[ and the time is] h:mm a[, goodnight.]"));
-                        if (threshold(4, 19)) $("#form").addClass("day");
+                        if (sys("threshold", 4, 19)) $("#form").addClass("day");
                         else $("#form").addClass("night");
                 };
                 UT();
@@ -51,7 +51,7 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                                         closeButton: true,
                                         animate: false
                                 });
-                                if (hashline("CISA") || hashline("CISPA")) {
+                                if (sys("hash", "CISA") || sys("hash", "CISPA")) {
                                         bootbox.dialog({
                                                 title: "Stop CIS(P)A",
                                                 message: "<img src='//fbcdn-sphotos-g-a.akamaihd.net/hphotos-ak-xpa1/t1.0-9/10533259_786466921373436_2435169508624049648_n.png' width='100%' height='auto'><br />",
@@ -67,7 +67,7 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                                                 }
                                         });
                                 }
-                                if (hashline("hackernews")) {
+                                if (sys("hash", "hackernews")) {
                                         bootbox.dialog({
                                                 title: "Hai",
                                                 message: "I'm not all that good with talking, but since I am now, why bother stopping myself?<br />" +
@@ -99,7 +99,7 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                                 $(".tn-event").click(function() {
                                         $(window).textnet("execute", "event");
                                 });
-                                if (hashline("new")) $(window).textnet("execute", "event");
+                                if (sys("hash", "new")) $(window).textnet("execute", "event");
                                 else return false;
                         });
                 });
