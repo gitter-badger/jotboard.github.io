@@ -64,7 +64,7 @@
 		<textarea id="form"></textarea>
 	</div>
 	<!-- .navagation.no-select -->
-	<div default-cur class="navagation no-select">
+	<div class="navagation no-select">
 		<!-- .container -->
 		<div class="container">
 			<form role="search" action="//www.google.com/" target="_blank" method="get">
@@ -75,7 +75,7 @@
 			<div class="nav-select">Textnet</div>
 			<div class="tn-save nav-select" title="Save Textnet">Save</div>
 			<div class="tn-load nav-select" title="Load Textnet">Load</div>
-			<div class="tn-menu-btn nav-select" title="Toggle Submenu">Submenu</div>
+			<div class="tn-menu-btn nav-select" title="Open Submenu" data-html="Submenu"></div>
 			<!-- #submenu -->
 			<div style="display: none;" id="submenu">
 				<div class="block" id="_spotify_insert">
@@ -90,11 +90,12 @@
 				<div class="tn-youtube select">#YouTube</div>
 				<div class="tn-radio-textnet select">#RadioTextnet</div>
 			</div>
+			<!-- /#submenu -->
 			<iframe src="//embed.spotify.com/?uri=spotify:track:6HFbq7cewJ7rPiffV0ciil" class="block" id="_spotify" name="_spotify"></iframe>
 		</div>
 		<!-- /.container -->
 	</div>
-	<!-- /.navagation -->
+	<!-- /.navagation.no-select -->
 </div>
 <!-- /.body.container -->
 
