@@ -3,15 +3,8 @@
 [roboto], .roboto { font-family: "Roboto", sans-serif; }
 [open-sans], .open-sans { font-family: "Open Sans", sans-serif; }
 
-#submenu {
-	transition: opacity .250s ease;
-	opacity: .35;
-}
-
-#submenu:hover {
-	transition: opacity .385s ease;
-	opacity: 1;
-}
+/* data-html tag */
+[data-html] { content: attr(data-html); }
 
 /* Cursor Attributes (cuz im lazy) */
 [default-cur] { cursor: default; }
