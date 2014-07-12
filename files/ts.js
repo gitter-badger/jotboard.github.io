@@ -6,22 +6,17 @@ var sys = function (main, _1, _2, _3) {
         if (main == "this") return this;
 };
 
-// Alternative Child Functions
-Node.prototype.prependChild = function(_1) {
-        this.childNodes[1] && this.insertBefore(_1, this.childNodes[1]) || this.appendChild(_1);
-};
-
 // Universal Selector $().textnet
 jQuery.fn.textnet = function(tn, tn1, tn2, tn3, tn4) {
         // $().textnet("toggleAttr", "title", "More", "Less");
         if (tn == "toggleAttr") {
-                if (sys("this").getAttribute(tn1) === tn2) sys("this").setAttribute(tn1, tn3);
-                if (sys("this").getAttribute(tn1) === tn3) sys("this").setAttribute(tn1, tn2);
+                if (this.getAttribute(tn1) === tn2) this.setAttribute(tn1, tn3);
+                if (this.getAttribute(tn1) === tn3) this.setAttribute(tn1, tn2);
         }
         // $().textnet("toggleHTML", "More", "Less");
         if (tn == "toggleHTML") {
-                if (sys("this").innerHTML() == tn1) sys("this").innerHTML(tn2);
-                if (sys("this").innerHTML() == tn2) sys("this").innerHTML(tn1);
+                if (this.innerHTML() === tn1) this.innerHTML(tn2);
+                if (this.innerHTML() === tn2) this.innerHTML(tn1);
         }
         if (tn == "change") {
                 if (tn1 == "save") {
