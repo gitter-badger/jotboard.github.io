@@ -6,7 +6,7 @@ var sys = function (main, _1, _2, _3) {
         if (main == "this") return this;
 };
 
-// Alternative 
+// Alternative Child Functions
 Node.prototype.prependChild = function(_1) {
         this.childNodes[1] && this.insertBefore(_1, this.childNodes[1]) || this.appendChild(_1);
 };
