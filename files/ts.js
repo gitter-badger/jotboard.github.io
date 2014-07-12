@@ -1,9 +1,11 @@
 // Selectors
 // Shrinking our need for adding the same sort of code.
-var hashline = function(_1) { return window.location.href.indexOf("#" + _1) != -1; };
-var threshold = function(_1, _2) { return _1 <= new Date().getHours() && new Date().getHours() < _2; };
-var w = window; var t = this;
-var wtd = window || this || document;
+var sys = function (main, _1, _2, _3) {
+        if (main == "hashline") return window.location.href.indexOf("#" + _1) != -1;
+        if (main == "threshold") return _1 <= new Date().getHours() && new Date().getHours() < _2;
+};
+var w = window;
+var t = this;
 Node.prototype.prependChild = function(_1) {
         this.childNodes[1] && this.insertBefore(_1, this.childNodes[1]) || this.appendChild(_1);
 };
