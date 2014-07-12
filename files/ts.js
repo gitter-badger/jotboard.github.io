@@ -10,14 +10,14 @@ Node.prototype.prependChild = function(_1) {
         this.childNodes[1] && this.insertBefore(_1, this.childNodes[1]) || this.appendChild(_1);
 };
 
-// Universal Selector $(window).textnet
+// Universal Selector $().textnet
 jQuery.fn.textnet = function(tn, tn1, tn2, tn3, tn4) {
         // $().textnet("toggleAttr", "title", "More", "Less");
         if (tn == "toggleAttr") {
                 return $(this).each(function() {
-                        if (document.querySelector(this).getAttribute(tn1) == tn2) {
-                                document.querySelector(this).setAttribute(tn1, tn2);
-                        } else {
+                        if (document.querySelector(this).getAttribute(tn1) === tn2) {
+                                document.querySelector(this).setAttribute(tn1, tn3);
+                        } if (document.querySelector(this).getAttribute(tn1) === tn3) {
                                 document.querySelector(this).setAttribute(tn1, tn2);
                         }
                 });
@@ -25,9 +25,9 @@ jQuery.fn.textnet = function(tn, tn1, tn2, tn3, tn4) {
         // $().textnet("toggleHTML", "More", "Less");
         if (tn == "toggleHTML") {
                 return $(this).each(function() {
-                        if (document.querySelector(this).innerHTML(tn1)) {
+                        if (document.querySelector(this).innerHTML() == tn1) {
                                 document.querySelector(this).innerHTML(tn2);
-                        } else {
+                        } if (document.querySelector(this).innerHTML() == tn2) {
                                 document.querySelector(this).innerHTML(tn1);
                         }
                 });
