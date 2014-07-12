@@ -34,7 +34,7 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                 });
         });
         $(".tn-menu-btn").click(function() {
-                $(this).textnet("toggleHTML", "More", "Less");
+                $(this).textnet("toggleHTML", "Submenu", "X");
                 $("#submenu").textnet("toggleAttr", "style", "display: none;", "display: block;");
         });
         head.load("//cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js", function() {
