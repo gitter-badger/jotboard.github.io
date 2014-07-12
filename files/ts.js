@@ -1,11 +1,12 @@
-// Selectors
-// Shrinking our need for adding the same sort of code.
+// Commons: Linear values in one function
 var sys = function (main, _1, _2, _3) {
         if (main == "hashline") return window.location.href.indexOf("#" + _1) != -1;
         if (main == "threshold") return _1 <= new Date().getHours() && new Date().getHours() < _2;
+        if (main == "window") return window;
+        if (main == "this") return this;
 };
-var w = window;
-var t = this;
+
+// Alternative 
 Node.prototype.prependChild = function(_1) {
         this.childNodes[1] && this.insertBefore(_1, this.childNodes[1]) || this.appendChild(_1);
 };
