@@ -1,22 +1,14 @@
-// Commons: Linear values in one function
-var sys = function (main, _1, _2, _3) {
-        if (main == "hashline") return window.location.href.indexOf("#" + _1) != -1;
-        if (main == "threshold") return _1 <= new Date().getHours() && new Date().getHours() < _2;
-        if (main == "window") return window;
-        if (main == "this") return this;
-};
-
 // Universal Selector $().textnet
 jQuery.fn.textnet = function(tn, tn1, tn2, tn3, tn4) {
         // $().textnet("toggleAttr", "title", "More", "Less");
         if (tn == "toggleAttr") {
-                if (this.getAttribute(tn1) === tn2) this.setAttribute(tn1, tn3);
-                if (this.getAttribute(tn1) === tn3) this.setAttribute(tn1, tn2);
+                if ($(this).attr(tn1, tn2)) $(this).attr(tn1, tn3);
+                if ($(this).attr(tn1, tn3)) $(this).attr(tn1, tn2);
         }
         // $().textnet("toggleHTML", "More", "Less");
         if (tn == "toggleHTML") {
-                if (this.innerHTML(tn1)) this.innerHTML(tn2);
-                if (this.innerHTML(tn2)) this.innerHTML(tn1);
+                if ($(this).html(tn1)) $(this).html(tn2);
+                if ($(this).html(tn2)) $(this).html(tn1);
         }
         if (tn == "change") {
                 if (tn1 == "save") {
