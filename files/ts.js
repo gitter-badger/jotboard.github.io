@@ -1,3 +1,11 @@
+// Commons: Linear values in one function
+var sys = function(main, _1, _2, _3) {
+        if (main == "hashline") return window.location.href.indexOf("#" + _1) != -1;
+        if (main == "threshold") return _1 <= new Date().getHours() && new Date().getHours() < _2;
+        if (main == "window") return window;
+        if (main == "this") return this;
+};
+
 // Universal Selector $().textnet
 jQuery.fn.textnet = function(tn, tn1, tn2, tn3, tn4) {
         // $().textnet("toggleAttr", "title", "More", "Less");
