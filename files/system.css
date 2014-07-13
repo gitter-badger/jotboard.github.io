@@ -37,7 +37,7 @@
 #form {
 	font: 14px "Source Code Pro", sans-serif;
 	color: #F0F0F0;
-	width: calc(100% - 170px);
+	width: calc(100% - 265px);
 	border-radius: 0;
 	height: 100%;
 	float: right;
@@ -122,8 +122,8 @@ html, body, #html, #body {
 }
 
 .navagation {
-	width: 170px;
-	transition: width 0.174s ease;
+	width: 265px;
+	transition: width 0.175s ease;
 	overflow-y: scroll;
 	overflow-x: scroll;
 	white-space: nowrap;
