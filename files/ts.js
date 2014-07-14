@@ -4,19 +4,28 @@ var sys = function(main, _1, _2, _3) {
         if (main == "threshold") return _1 <= new Date().getHours() && new Date().getHours() < _2;
         if (main == "window") return window;
         if (main == "this") return this;
+        if (main == "JQthis") return this;
 };
+
+
 
 // Universal Selector $().textnet
 jQuery.fn.textnet = function(tn, tn1, tn2, tn3, tn4) {
         // $().textnet("toggleAttr", "title", "More", "Less");
         if (tn == "toggleAttr") {
-                if ($(this).attr(tn1, tn2)) $(this).attr(tn1, tn3);
-                if ($(this).attr(tn1, tn3)) $(this).attr(tn1, tn2);
+                $(this).toggle(function() {
+                        $(this).attr(tn1, tn2);
+                }, function() {
+                        $(this).attr(tn1, tn3);
+                });
         }
         // $().textnet("toggleHTML", "More", "Less");
         if (tn == "toggleHTML") {
-                if ($(this).html(tn1)) $(this).html(tn2);
-                if ($(this).html(tn2)) $(this).html(tn1);
+                $(this).toggle(function() {
+                        $(this).html(tn1);
+                }, function() {
+                        $(this).attr(tn2);
+                });
         }
         if (tn == "change") {
                 if (tn1 == "save") {
