@@ -9,7 +9,7 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                 if (!window.location.hash) document.title = "Textnet";
                 $("body").toggleClass("block");
                 var DevMode;
-                if (DevMode == true || DevMode == "true") {
+                if (DevMode === true || DevMode == "true") {
                         if (sys("hash", "forceuse")) return false;
                         else window.location.replace("/closed");
                 }
@@ -38,7 +38,7 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                 });
         });
         $(".tn-menu-btn").click(function() {
-                $(this).textnet("toggleHTML", "More", "Less");
+                $(".tn-menu-btn").textnet("toggleHTML", "More", "Less");
                 $("#submenu").toggleClass("block");
         });
         $(".tn-radio-textnet").click(function() {
@@ -55,6 +55,28 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                                         closeButton: true,
                                         animate: false
                                 });
+                                if (sys("hash", "rtn")) {
+                                        $("#_spotify").toggleClass("block");
+                                        $("#_spotify_insert").toggleClass("block");
+                                }
+                                if (sys("hash", "rtn_news")) {
+                                        bootbox.dialog({
+                                                title: "Radio Textnet",
+                                                message: "After a Three Month hiatus, it's finally back!!!<br />" +
+                                                "Radio Textnet now serves as a shortcut to our exclusive playlist as well as" +
+                                                "a miniplayer for your favourite music on Spotify.",
+                                                buttons: {
+                                                        enter: {
+                                                                label: "Continue",
+                                                                className: "btn-primary",
+                                                                callback: function() {
+                                                                        $("#_spotify").toggleClass("block");
+                                                                        $("#_spotify_insert").toggleClass("block");
+                                                                }
+                                                        }
+                                                }
+                                        });
+                                }
                                 if (sys("hash", "CISA") || sys("hash", "CISPA")) {
                                         bootbox.dialog({
                                                 title: "Stop CIS(P)A",
@@ -117,21 +139,6 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                 });
         });
         head.load("//togetherjs.com/togetherjs-min.js", function() {
-                TogetherJS.on("ready", function() {
-                        $.bootstrapGrowl("Don't give out personal information unless official consent has been given.", {
-                                ele: "body",
-                                type: "info",
-                                offset: {
-                                        from: "top",
-                                        offset: 0
-                                },
-                                align: "right",
-                                width: "auto",
-                                delay: 4200,
-                                allow_dismiss: false,
-                                stackup_spacing: 10
-                        });
-                });
                 $(".tn-groupies").click(function() {
                         TogetherJS(this);
                         return false;
