@@ -2,10 +2,16 @@
 var sys = function(main, _1, _2, _3) {
         if (main == "hash") return window.location.href.indexOf("#" + _1) != -1;
         if (main == "threshold") return _1 <= new Date().getHours() && new Date().getHours() < _2;
+        if (main == "prefix") return "TN_-";
+        if (main == "MainNamespace") return "Main";
+        if (main == "NamespaceValue") return $("#namespace").val();
+        if (main == "FormValue") return $("#namespace").val();
         if (main == "window") return window;
         if (main == "this") return this;
         if (main == "JQthis") return $(this);
 };
+
+var IE7_PNG_SUFFIX = ".png";
 
 // Universal Selector $.textnet() or jQuery.textnet()
 jQuery.fn.textnet = function(tn, tn1, tn2, tn3, tn4) {
@@ -19,10 +25,10 @@ jQuery.fn.textnet = function(tn, tn1, tn2, tn3, tn4) {
         }
         if (tn == "change") {
                 if (tn1 == "save") {
-                        if (!$("#namespace").val()) {
-                                store.set("_-Main", form.value);
-                                console.info("Main > saved");
-                                $.bootstrapGrowl("The Main Textnet has been saved.", {
+                        if (!sys("NamespaceValue")) {
+                                store.set(sys("prefix") + sys("MainNamespace"), sys("FormValue"));
+                                console.info(sys("MainNamespace") + " > saved");
+                                $.bootstrapGrowl("The " + sys("MainNamespace") + " Textnet has been saved.", {
                                         ele: "body",
                                         type: "success",
                                         offset: {
@@ -35,10 +41,10 @@ jQuery.fn.textnet = function(tn, tn1, tn2, tn3, tn4) {
                                         allow_dismiss: true,
                                         stackup_spacing: 10
                                 });
-                        } if ($("#namespace").val()) {
-                                store.set("_-" + $("#namespace").val(), $("#form").val());
-                                console.info(namespace.value + " > saved");
-                                $.bootstrapGrowl(namespace.value + " has been saved.", {
+                        } else {
+                                store.set(sys("prefix") + sys("NamespaceValue"), sys("FormValue"));
+                                console.info(sys("NamespaceValue") + " > saved");
+                                $.bootstrapGrowl(sys("NamespaceValue") + " has been saved.", {
                                         ele: "body",
                                         type: "info",
                                         offset: {
@@ -54,10 +60,10 @@ jQuery.fn.textnet = function(tn, tn1, tn2, tn3, tn4) {
                         }
                 }
                 if (tn1 == "load") {
-                        if (!$("#namespace").val()) {
-                                form.value = store.get("_-Main");
-                                console.info("Main > loaded");
-                                $.bootstrapGrowl("The Main Textnet has been loaded.", {
+                        if (!sys("NamespaceValue")) {
+                                form.value = store.get(sys("prefix") + sys("MainNamespace"));
+                                console.info(sys("MainNamespace") + " > loaded");
+                                $.bootstrapGrowl("The " + sys("MainNamespace") + " Textnet has been loaded.", {
                                         ele: "body",
                                         type: "info",
                                         offset: {
@@ -70,10 +76,10 @@ jQuery.fn.textnet = function(tn, tn1, tn2, tn3, tn4) {
                                         allow_dismiss: true,
                                         stackup_spacing: 10
                                 });
-                        } if ($("#namespace").val()) {
-                                form.value = store.get("_-" + $("#namespace").val());
-                                console.info(namespace.value + " > loaded");
-                                $.bootstrapGrowl(namespace.value + " has been loaded.", {
+                        } else {
+                                form.value = store.get(sys("prefix") + sys("NamespaceValue"));
+                                console.info(sys("NamespaceValue") + " > loaded");
+                                $.bootstrapGrowl(sys("NamespaceValue") + " has been loaded.", {
                                         ele: "body",
                                         type: "info",
                                         offset: {
