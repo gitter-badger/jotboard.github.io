@@ -31,8 +31,9 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
         head.load("//cdnjs.cloudflare.com/ajax/libs/store.js/1.3.14/store.min.js", function() {
                 var form = document.getElementById("form");
                 var namespace = document.getElementById("namespace");
-                if (window.localStorage["_-Main"]) {
-                        form.value = store.get("_-Main");
+                if (window.localStorage["_-Main"]) form.value = store.get("_-Main");
+                if (!window.localStorage["_-Main"] || store.get("_-Main") === "") {
+                        console.info("The Main Textnet is empty, you should use it.");
                 }
                 $(".tn-save").click(function() {
                         $(window).textnet("change", "save");
@@ -42,7 +43,7 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                 });
         });
         $(".tn-menu-btn").click(function() {
-                $(".tn-menu-btn").textnet("toggleHTML", "More", "Less");
+                $(this).textnet("toggleHTML", "More", "Less");
                 $("#submenu").toggleClass("block");
         });
         $(".tn-radio-textnet").click(function() {
