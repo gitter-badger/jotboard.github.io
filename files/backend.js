@@ -60,38 +60,18 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                                         closeButton: true,
                                         animate: false
                                 });
-                                if (sys("hash", "rtn")) {
-                                        $("#_spotify").toggleClass("block");
-                                        $("#_spotify_insert").toggleClass("block");
-                                }
-                                if (sys("hash", "rtn_news")) {
+                                if (sys("hash", "rtn")) $(".tn-radio-textnet").click();
+                                if (sys("hash", "campaign")) {
                                         bootbox.dialog({
-                                                title: "Radio Textnet",
-                                                message: "After a Three Month hiatus, it's finally back!!!<br />" +
-                                                "Radio Textnet now serves as a shortcut to our exclusive playlist as well as" +
-                                                "a miniplayer for your favourite music on Spotify.",
-                                                buttons: {
-                                                        enter: {
-                                                                label: "Continue",
-                                                                className: "btn-primary",
-                                                                callback: function() {
-                                                                        $("#_spotify").toggleClass("block");
-                                                                        $("#_spotify_insert").toggleClass("block");
-                                                                }
-                                                        }
-                                                }
-                                        });
-                                }
-                                if (sys("hash", "CISA") || sys("hash", "CISPA")) {
-                                        bootbox.dialog({
-                                                title: "Stop CIS(P)A",
-                                                message: "<img src='//fbcdn-sphotos-g-a.akamaihd.net/hphotos-ak-xpa1/t1.0-9/10533259_786466921373436_2435169508624049648_n.png' width='100%' height='auto'><br />",
+                                                title: "Stop CIS(P)A, and save the Internet from Team Cable",
+                                                message: "<img src='//fbcdn-sphotos-g-a.akamaihd.net/hphotos-ak-xap1/t1.0-9/10511205_789505097736285_8236092997387247943_n.png' width='100%' height='auto'><br />",
                                                 buttons: {
                                                         enter: {
                                                                 label: "Take Action",
                                                                 className: "btn-danger",
                                                                 callback: function() {
                                                                         window.open("//www.cispaisback.org/", "_blank");
+                                                                        window.open("//www.battleforthenet.com/", "_blank");
                                                                         return false;
                                                                 }
                                                         }
@@ -130,7 +110,7 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                                 $(".tn-event").click(function() {
                                         $(window).textnet("execute", "event");
                                 });
-                                if (sys("hash", "new")) $(window).textnet("execute", "event");
+                                if (sys("hash", "new")) $(".tn-event").click();
                                 else return false;
                                 $(".tn-youtube").click(function() {
                                         bootbox.prompt("YouTube Search", function(srch) {
