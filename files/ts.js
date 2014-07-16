@@ -14,7 +14,7 @@ var sys = function(main, _1, _2, _3) {
 jQuery.fn.textnet = function(tn, tn1, tn2, tn3, tn4) {
         // $().textnet("toggleAttr", "title", "More", "Less");
         if (tn == "toggleAttr") {
-                $(this).attr((tn1, tn2) ? (tn1, tn2) : (tn1, tn3));
+                $(this).attr(tn1, tn2 ? tn1, tn2 : tn1, tn3);
         }
         // $().textnet("toggleHTML", "More", "Less");
         if (tn == "toggleHTML") {
