@@ -33,7 +33,7 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                 var namespace = document.getElementById("namespace");
                 if (window.localStorage["_-Main"]) form.value = store.get("_-Main");
                 if (!window.localStorage["_-Main"] || store.get("_-Main") === "") {
-                        console.info("The Main Textnet is empty, you should use it.");
+                        console.info("The Main Textnet is empty, you should use it, bud.");
                 }
                 $(".tn-save").click(function() {
                         $(window).textnet("change", "save");
@@ -133,7 +133,7 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                 TogetherJSConfig_toolName = "Groupies";
                 TogetherJSConfig_dontShowClicks = true;
                 TogetherJSConfig_youtube = true;
-                TogetherJSConfig_disableWebRTC = true;
+                TogetherJSConfig_disableWebRTC = false;
                 TogetherJSConfig_suppressInvite = false;
                 TogetherJSConfig_suppressJoinConfirmation = true;
         });
