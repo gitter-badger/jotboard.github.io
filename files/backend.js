@@ -1,4 +1,4 @@
-DevMode = false;
+DevMode = true;
 head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files/ts.js"], function() {
         $(function() {
                 $("iframe").attr({
