@@ -5,13 +5,10 @@ var sys = function(main, _1, _2, _3) {
         if (main == "prefix") return "TN_-";
         if (main == "MainNamespace") return "Main";
         if (main == "NamespaceValue") return $("#namespace").val();
-        if (main == "FormValue") return $("#namespace").val();
+        if (main == "FormValue") return $("#form").val();
         if (main == "window") return window;
         if (main == "this") return this;
-        if (main == "JQthis") return $(this);
 };
-
-var IE7_PNG_SUFFIX = ".png";
 
 // Universal Selector $.textnet() or jQuery.textnet()
 jQuery.fn.textnet = function(tn, tn1, tn2, tn3, tn4) {
