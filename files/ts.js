@@ -14,11 +14,11 @@ var sys = function(main, _1, _2, _3) {
 $.fn.textnet = function(tn, tn1, tn2, tn3, tn4) {
         // $().textnet("toggleAttr", "title", "More", "Less");
         if (tn == "toggleAttr") {
-                $(this).attr(tn1, tn2 ? tn1, tn2 : tn1, tn3);
+                $(this).attr(tn1) == tn2 ? tn2 : tn3;
         }
         // $().textnet("toggleHTML", "More", "Less");
         if (tn == "toggleHTML") {
-                $(this).html(tn1 ? tn1 : tn2);
+                $(this).html() == tn1 ? tn1 : tn2;
         }
         if (tn == "change") {
                 if (tn1 == "save") {
