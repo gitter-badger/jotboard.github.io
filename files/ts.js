@@ -12,14 +12,29 @@ var sys = function(main, _1, _2, _3) {
 
 // Universal Selector $.textnet() or jQuery.textnet()
 $.fn.textnet = function(tn, tn1, tn2, tn3, tn4) {
-        // $().textnet("toggleAttr", "title", "More", "Less");
-        if (tn == "toggleAttr") {
-                $(this).attr(tn1) == $(this).attr(tn1, tn2) ? tn3 : tn2;
+        // $.textnet("toggleAttr", "title", "More", "Less");
+        if (tn == "toggleAttr" || tn == "toggleATTR") {
+                var attrArg;
+                if ($(this).attr(tn1) == tn2) {
+                        attrArg = $(this).attr(tn1, tn3);
+                }
+                if ($(this).attr(tn1) == tn3) {
+                        attrArg = $(this).attr(tn1, tn2);
+                }
+                window[attrArg()];
         }
-        // $().textnet("toggleHTML", "More", "Less");
-        if (tn == "toggleHTML") {
-                $(this).html() == $(this).html(tn1) ? tn2 : tn1;
+        // $.textnet("toggleHTML", "More", "Less");
+        if (tn == "toggleHTML" || tn == "toggleHtml") {
+                var htmlArg;
+                if ($(this).html(tn1)) {
+                        htmlArg = $(this).html(tn2);
+                }
+                if ($(this).html(tn2)) {
+                        htmlArg = $(this).html(tn1);
+                }
+                window[htmlArg()];
         }
+        // $().textnet("change", "save/load")
         if (tn == "change") {
                 if (tn1 == "save") {
                         if (!sys("NamespaceValue")) {
