@@ -2,10 +2,10 @@
 var sys = function(main, _1, _2, _3) {
         if (main == "hash") return window.location.href.indexOf("#" + _1) != -1;
         if (main == "threshold") return _1 <= new Date().getHours() && new Date().getHours() < _2;
-        if (main == "prefix") return "TN_-";
-        if (main == "MainNamespace") return "Main";
         if (main == "NamespaceValue") return $("#namespace").val();
         if (main == "FormValue") return $("#form").val();
+        if (main == "prefix") return "TN_-";
+        if (main == "MainNamespace") return "Main";
         if (main == "window") return window;
         if (main == "this") return this;
 };
@@ -14,11 +14,11 @@ var sys = function(main, _1, _2, _3) {
 $.fn.textnet = function(tn, tn1, tn2, tn3, tn4) {
         // $().textnet("toggleAttr", "title", "More", "Less");
         if (tn == "toggleAttr") {
-                $(this).attr(tn1, $(this).attr(tn1, tn2) ? tn3 : tn2);
+                $(this).attr(tn1) == $(this).attr(tn1, tn2) ? tn3 : tn2;
         }
         // $().textnet("toggleHTML", "More", "Less");
         if (tn == "toggleHTML") {
-                $(this).html($(this).html(tn1) ? tn2 : tn1);
+                $(this).html() == $(this).html(tn1) ? tn2 : tn1;
         }
         if (tn == "change") {
                 if (tn1 == "save") {
