@@ -1,4 +1,4 @@
-DevMode = true;
+var DevMode = true;
 head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files/ts.js"], function() {
         $(function() {
                 $("iframe").attr({
@@ -8,8 +8,7 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                 if (window.location.hash) document.title = "# Textnet";
                 if (!window.location.hash) document.title = "Textnet";
                 $("body").toggleClass("block");
-                var DevMode;
-                if (DevMode === true || DevMode == "true") {
+                if (DevMode == true || DevMode == "true") {
                         if (sys("hash", "forceuse")) return false;
                         else window.location.replace("/closed");
                 }
