@@ -19,8 +19,13 @@ $.fn.textnet = function(tn, tn1, tn2, tn3, tn4) {
         }
         // $.textnet("toggleTXT/toggleTxt/toggleText/toggleTEXT");
         if (tn == "toggleTXT" || tn == "toggleTxt" || tn == "toggleText" || tn == "toggleTEXT") {
-                if ($(this).text($(this).attr("text-org-state"))) $(this).text($(this).attr("text-swap-state"));
-                if ($(this).text($(this).attr("text-swap-state"))) $(this).text($(this).attr("text-org-state"));
+                var el = $(this);
+                if (el.text() == el.data("text-swap")) {
+                        el.text(el.data("text-original"));
+                } else {
+                        el.data("text-original", el.text());
+                        el.text(el.data("text-swap"));
+                }
         }
         // $.textnet("toggleHTML/toggleHtml", "More", "Less"); (not working)
         if (tn == "toggleHTML" || tn == "toggleHtml") {
