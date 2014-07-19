@@ -19,7 +19,8 @@ $.fn.textnet = function(tn, tn1, tn2, tn3, tn4) {
                         attrArg = function() {
                                 $(this).attr(tn1, tn3);
                         };
-                } if ($(this).attr(tn1, tn3)) {
+                }
+                if ($(this).attr(tn1, tn3)) {
                         attrArg = function() {
                                 $(this).attr(tn1, tn2);
                         };
@@ -29,11 +30,12 @@ $.fn.textnet = function(tn, tn1, tn2, tn3, tn4) {
         // $.textnet("toggleHTML", "More", "Less");
         if (tn == "toggleHTML" || tn == "toggleHtml") {
                 var htmlArg;
-                if ($(this).html() == tn1) {
+                if ($(this).html(tn1)) {
                         htmlArg = function() {
                                 $(this).html(tn2);
                         };
-                } if ($(this).html() == tn2) {
+                }
+                if ($(this).html(tn2)) {
                         htmlArg = function() {
                                 $(this).html(tn1);
                         };
