@@ -1,6 +1,7 @@
 var DevMode = false;
 head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files/ts.js"], function() {
         $(function() {
+                $("[text-org-state]").text($(this).attr("text-org-state"));
                 $("iframe").attr({
                         "frameborder": "0",
                         "allowtransparency": "true"
@@ -44,7 +45,7 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                 });
         });
         $(".tn-menu-btn").click(function() {
-                $(this).textnet("toggleHTML", "More", "Less");
+                $(this).textnet("toggleTXT");
                 $("#submenu").toggleClass("block");
         });
         $(".tn-radio-textnet").click(function() {
@@ -65,7 +66,7 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                                 if (sys("hash", "campaign")) {
                                         bootbox.dialog({
                                                 title: "Save The Web",
-                                                message: "<div align='center'><iframe src='//www.battleforthenet.com/embed.html' frameborder='0' scrolling='no' allowtransparency='true' style='width: 598px; height: 460px;'></iframe></div>",
+                                                message: "<div align='center'><iframe src='//www.battleforthenet.com/embed.html' frameborder='0' scrolling='no' allowtransparency='true' style='width: 100%; height: 453px;'></iframe></div>",
                                                 buttons: {
                                                         action: {
                                                                 label: "Join The Battle!",
