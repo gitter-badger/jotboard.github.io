@@ -64,16 +64,21 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                                 if (sys("hash", "rtn")) $(".tn-radio-textnet").click();
                                 if (sys("hash", "campaign")) {
                                         bootbox.dialog({
-                                                title: "Stop CIS(P)A, and save the Internet from Team Cable",
-                                                message: "<img src='//fbcdn-sphotos-g-a.akamaihd.net/hphotos-ak-xap1/t1.0-9/10511205_789505097736285_8236092997387247943_n.png' width='100%' height='auto'><br />",
+                                                title: "Save The Web",
+                                                message: "<div align='center'><iframe src='//www.battleforthenet.com/embed.html' frameborder='0' scrolling='no' allowtransparency='true' style='width: 598px; height: 460px;'></iframe></div>",
                                                 buttons: {
-                                                        enter: {
-                                                                label: "Take Action",
-                                                                className: "btn-danger",
+                                                        action: {
+                                                                label: "Join The Battle!",
+                                                                className: "btn-primary",
                                                                 callback: function() {
-                                                                        window.open("//www.cispaisback.org/", "_blank");
                                                                         window.open("//www.battleforthenet.com/", "_blank");
-                                                                        return false;
+                                                                }
+                                                        },
+                                                        donate: {
+                                                                label: "Donate",
+                                                                className: "btn-link",
+                                                                callback: function() {
+                                                                        window.open("https://act.freepress.net/donate/internet_15_15/", "_blank");
                                                                 }
                                                         }
                                                 }
