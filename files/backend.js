@@ -114,19 +114,23 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                                                 }
                                         });
                                 }
-                                $(".tn-event").click(function() {
-                                        $(window).textnet("execute", "event");
-                                });
-                                if (sys("hash", "new")) $(".tn-event").click();
-                                else return false;
-                                $(".tn-youtube").click(function() {
-                                        bootbox.prompt("YouTube Search", function(srch) {
+                                var youtube_srch = function() {
+                                        bootbox.prompt("YouTube", function(srch) {
                                                 if (srch) {
                                                         window.open("//www.youtube.com/results?search_query=" + srch, "_blank");
                                                 }
                                                 if (srch === null) bootbox.hideAll();
                                         });
+                                };
+                                $(".tn-event").click(function() {
+                                        $(window).textnet("execute", "event");
                                 });
+                                $(".tn-youtube").click(function() {
+                                        window[youtube_srch()];
+                                });
+                                if (sys("hash", "youtube") || sys("hash", "yt")) $(".tn-youtube").click();
+                                if (sys("hash", "new")) $(".tn-event").click();
+                                else return false;
                         });
                 });
         });
@@ -134,6 +138,20 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                 $(".tn-groupies").click(function() {
                         TogetherJS(this);
                         return false;
+                });
+                TogetherJS.on("ready", function() {
+                        window[$.bootstrapGrowl("Do not share personal information.", {
+                                ele: "body",
+                                type: "info",
+                                offset: {
+                                        from: "bottom",
+                                        amount: 20
+                                },
+                                align: "right",
+                                width: 290,
+                                delay: 3500,
+                                allow_dismiss: false
+                        })];
                 });
                 // Groupies
                 TogetherJSConfig_siteName = "Textnet";
