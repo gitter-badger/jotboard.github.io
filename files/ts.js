@@ -19,7 +19,7 @@ $.fn.textnet = function(tn, tn1, tn2, tn3, tn4) {
         }
         // $.textnet("toggleTXT");
         if (tn == "toggleTXT") {
-                var self = document.querySelectorAll(this)[0];
+                var self = document.querySelector(this);
                 if (self.getAttribute("text-swap") == self.innerHTML) {
                         self.innerHTML = self.getAttribute("text-original");
                 } else {
