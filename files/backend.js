@@ -1,7 +1,6 @@
 var DevMode = false;
 head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files/ts.js"], function() {
         $(function() {
-                $("[text-org-state]").text($(this).attr("text-org-state"));
                 $("iframe").attr({
                         "frameborder": "0",
                         "allowtransparency": "true"
