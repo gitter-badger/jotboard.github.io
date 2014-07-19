@@ -20,12 +20,7 @@ $.fn.textnet = function(tn, tn1, tn2, tn3, tn4) {
         // $.textnet("toggleTXT/toggleTxt/toggleText/toggleTEXT");
         if (tn == "toggleTXT" || tn == "toggleTxt" || tn == "toggleText" || tn == "toggleTEXT") {
                 var el = $(this);
-                if (el.text() == el.data("text-swap")) {
-                        el.text(el.data("text-original"));
-                } else {
-                        el.data("text-original", el.text());
-                        el.text(el.data("text-swap"));
-                }
+                el.text() == el.data("text-swap") ? el.text(el.data("text-original")) : el.text(el.data("text-swap"));
         }
         // $.textnet("toggleHTML/toggleHtml", "More", "Less"); (not working)
         if (tn == "toggleHTML" || tn == "toggleHtml") {
