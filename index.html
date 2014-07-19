@@ -71,7 +71,7 @@
 	<div class="navagation no-select">
 		<!-- .container -->
 		<div class="container">
-			<form role="search" action="//www.google.com/" target="_blank" method="get">
+			<form role="search" action="//www.google.com/search" target="_blank" method="get">
 				<div class="form-group">
 					<input type="text" id="namespace" name="q" class="form-control" title="Make a Textnet, Load a Textnet, Overwrite a Textnet or Search the Web" placeholder="Hero Box" />
 				</div>
@@ -79,23 +79,19 @@
 			<div class="nav-select">Textnet</div>
 			<div class="tn-save nav-select" title="Save Textnet">Save</div>
 			<div class="tn-load nav-select" title="Load Textnet">Load</div>
-			<div class="tn-menu-btn nav-select">More</div>
+			<div text-1="More" text-2="Less" class="tn-menu-btn nav-select"></div>
 			<!-- #submenu.block -->
-			<div class="block" id="submenu">
+			<div style="display: none;" id="submenu">
 				<div class="tn-groupies select">Groupies</div>
 				<div class="tn-event select">#NEW</div>
 				<div class="tn-youtube select">#YouTube</div>
 				<div class="tn-radio-textnet select">#RadioTextnet</div>
-				<div class="block" id="_spotify_insert">
-					<div class="panel panel-default">
-						<div class="panel-body">
-							<form role="search" action="//embed.spotify.com/" target="_spotify" method="get">
-								<div class="form-group">
-									<input type="text" id="spotify_URI" name="uri" class="form-control" title="Enter the Spotify URI of your desired Album/Song." placeholder="Spotify Player" />
-								</div>
-							</form>
+				<div style="display: none;" id="_spotify_insert">
+					<form role="search" action="//embed.spotify.com/" target="_spotify" method="get">
+						<div class="form-group">
+							<input type="text" id="spotify_URI" name="uri" class="form-control" title="Enter the Spotify URI of your desired Album/Song." placeholder="Spotify Player" />
 						</div>
-					</div>
+					</form>
 				</div>
 			</div>
 			<!-- /#submenu -->
