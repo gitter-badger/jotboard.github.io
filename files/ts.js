@@ -13,12 +13,12 @@ var sys = function(main, _1, _2, _3) {
 // Universal Selector $.textnet() or jQuery.textnet()
 $.fn.textnet = function(tn, tn1, tn2, tn3, tn4) {
         // $.textnet("toggleAttr", "title", "More", "Less"); (not working)
-        if (tn == "toggleATTR" || tn == "toggleAttr") {
+        if (tn == "toggleAttr") {
                 if ($(this).attr(tn1, tn2)) window[$(this).attr(tn1, tn3)];
                 if ($(this).attr(tn1, tn3)) window[$(this).attr(tn1, tn2)];
         }
-        // $.textnet("toggleTXT/toggleTxt/toggleText/toggleTEXT");
-        if (tn == "toggleTXT" || tn == "toggleTxt" || tn == "toggleText" || tn == "toggleTEXT") {
+        // $.textnet("toggleTXT");
+        if (tn == "toggleTXT") {
                 var self = document.querySelectorAll(this)[0];
                 if (self.getAttribute("text-swap") == self.innerHTML) {
                         self.innerHTML = self.getAttribute("text-original");
@@ -27,8 +27,8 @@ $.fn.textnet = function(tn, tn1, tn2, tn3, tn4) {
                         self.innerHTML = self.getAttribute("text-swap");
                 }
         }
-        // $.textnet("toggleHTML/toggleHtml", "More", "Less"); (not working)
-        if (tn == "toggleHTML" || tn == "toggleHtml") {
+        // $.textnet("toggleHTML", "More", "Less"); (not working)
+        if (tn == "toggleHTML") {
                 if ($(this).html(tn1)) window[$(this).html(tn2)];
                 if ($(this).html(tn2)) window[$(this).html(tn1)];
         }
