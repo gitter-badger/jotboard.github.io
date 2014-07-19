@@ -19,8 +19,7 @@ $.fn.textnet = function(tn, tn1, tn2, tn3, tn4) {
                         attrArg = function() {
                                 $(this).attr(tn1, tn3);
                         };
-                }
-                if ($(this).attr(tn1) == tn3) {
+                } else {
                         attrArg = function() {
                                 $(this).attr(tn1, tn2);
                         };
@@ -34,8 +33,7 @@ $.fn.textnet = function(tn, tn1, tn2, tn3, tn4) {
                         htmlArg = function() {
                                 $(this).html(tn2);
                         };
-                }
-                if ($(this).html(tn2)) {
+                } else {
                         htmlArg = function() {
                                 $(this).html(tn1);
                         };
