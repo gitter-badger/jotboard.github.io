@@ -14,35 +14,15 @@ var sys = function(main, _1, _2, _3) {
 $.fn.textnet = function(tn, tn1, tn2, tn3, tn4) {
         // $.textnet("toggleAttr", "title", "More", "Less");
         if (tn == "toggleATTR" || tn == "toggleAttr") {
-                var attrArg;
-                if ($(this).attr(tn1, tn2)) {
-                        attrArg = function() {
-                                $(this).attr(tn1, tn3);
-                        };
-                }
-                if ($(this).attr(tn1, tn3)) {
-                        attrArg = function() {
-                                $(this).attr(tn1, tn2);
-                        };
-                }
-                window[attrArg()];
+                if ($(this).attr(tn1, tn2)) window[$(this).attr(tn1, tn3)];
+                if ($(this).attr(tn1, tn3)) window[$(this).attr(tn1, tn2)];
         }
         // $.textnet("toggleHTML", "More", "Less");
         if (tn == "toggleHTML" || tn == "toggleHtml") {
-                var htmlArg;
-                if ($(this).html(tn1)) {
-                        htmlArg = function() {
-                                $(this).html(tn2);
-                        };
-                }
-                if ($(this).html(tn2)) {
-                        htmlArg = function() {
-                                $(this).html(tn1);
-                        };
-                }
-                window[htmlArg()];
+                if ($(this).html(tn1)) window[$(this).html(tn2)];
+                if ($(this).html(tn2)) window[$(this).html(tn1)];
         }
-        // $().textnet("change", "save/load")
+        // $.textnet("change", "save/load")
         if (tn == "change") {
                 if (tn1 == "save") {
                         if (!sys("NamespaceValue")) {
