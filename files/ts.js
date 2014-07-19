@@ -12,12 +12,17 @@ var sys = function(main, _1, _2, _3) {
 
 // Universal Selector $.textnet() or jQuery.textnet()
 $.fn.textnet = function(tn, tn1, tn2, tn3, tn4) {
-        // $.textnet("toggleAttr", "title", "More", "Less");
+        // $.textnet("toggleAttr", "title", "More", "Less"); (not working)
         if (tn == "toggleATTR" || tn == "toggleAttr") {
                 if ($(this).attr(tn1, tn2)) window[$(this).attr(tn1, tn3)];
                 if ($(this).attr(tn1, tn3)) window[$(this).attr(tn1, tn2)];
         }
-        // $.textnet("toggleHTML", "More", "Less");
+        // $.textnet("toggleTXT/toggleTxt/toggleText/toggleTEXT");
+        if (tn == "toggleTXT" || tn == "toggleTxt" || tn == "toggleText" || tn == "toggleTEXT") {
+                if ($(this).text($(this).attr("text-org-state"))) $(this).text($(this).attr("text-swap-state"));
+                if ($(this).text($(this).attr("text-swap-state"))) $(this).text($(this).attr("text-org-state"));
+        }
+        // $.textnet("toggleHTML/toggleHtml", "More", "Less"); (not working)
         if (tn == "toggleHTML" || tn == "toggleHtml") {
                 if ($(this).html(tn1)) window[$(this).html(tn2)];
                 if ($(this).html(tn2)) window[$(this).html(tn1)];
