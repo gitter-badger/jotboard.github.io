@@ -10,6 +10,22 @@ var sys = function(main, _1, _2, _3) {
         if (main == "this") return this;
 };
 
+// Submenu
+$.fn.submenu = function() {
+        var More = $(".tn-menu-btn").html("More");
+        var Less = $(".tn-menu-btn").html("Less");
+        More ? Less : More;
+        var ShowMenu = $("#submenu").removeClass("block");
+        var HideMenu = $(".tn-menu-btn").addClass("block");
+        ShowMenu ? HideMenu : ShowMenu;
+};
+
+// Radio Textnet
+$.fn.radio = function() {
+        $("#_spotify").toggleClass("block");
+        $("#_spotify_insert").toggleClass("block");
+};
+
 // Universal Selector $.textnet() or jQuery.textnet()
 $.fn.textnet = function(tn, tn1, tn2, tn3, tn4) {
         // $.textnet("toggleAttr", "title", "More", "Less"); (not working)
