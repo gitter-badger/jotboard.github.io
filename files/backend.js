@@ -44,12 +44,10 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                 });
         });
         $(".tn-menu-btn").click(function() {
-                $(this).textnet("toggleTXT");
-                $("#submenu").toggleClass("block");
+                $.submenu();
         });
         $(".tn-radio-textnet").click(function() {
-                $("#_spotify").toggleClass("block");
-                $("#_spotify_insert").toggleClass("block");
+                $.radio();
         });
         head.load("//cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js", function() {
                 head.load(["//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/bootstrap.min.js", "//cdnjs.cloudflare.com/ajax/libs/bootstrap-growl/1.0.0/jquery.bootstrap-growl.min.js"], function() {
