@@ -18,10 +18,10 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                         if (sys("threshold", 4, 19)) $("#form").addClass("day");
                         else $("#form").addClass("night");
                         $("#form.day").attr({
-                                "placeholder": moment(new Date()).format("[Hi, it's ]dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[.]")
+                                "placeholder": moment(new Date()).format("[Hows it goin? It's ]dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, have fun :P.]")
                         });
                         $("#form.night").attr({
-                                "placeholder": moment(new Date()).format("[Hows it goin? it was a nice ]dddd, Do [of] MMMM YYYY[ and the time is] h:mm a[, goodnight.]")
+                                "placeholder": moment(new Date()).format("[Good afternoon, its currently] dddd, Do [of] MMMM YYYY[ and the time is] h:mm a[, goodnight.]")
                         });
                 };
                 UT();
