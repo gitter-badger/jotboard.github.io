@@ -10,13 +10,8 @@ var sys = function(main, _1, _2, _3) {
         if (main == "this") return this;
         // Submenu Init
         if (main == "submenu") {
-                var More = $(".tn-menu-btn").html("More");
-                var Less = $(".tn-menu-btn").html("Less");
-                var ShowMenu = $("#submenu").removeClass("block");
-                var HideMenu = $("#submenu").addClass("block");
-                var MenuHasBlock = $("#submenu").hasClass("block");
-                More ? Less : More;
-                MenuHasBlock ? HideMenu : ShowMenu;
+                $(".tn-menu-btn").html("More") ? $(".tn-menu-btn").html("Less") : $(".tn-menu-btn").html("More");
+                $("#submenu").hasClass("block") ? $("#submenu").removeClass("block") : $("#submenu").addClass("block");
         }
         // Radio
         if (main == "radio") {
