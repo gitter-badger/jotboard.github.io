@@ -14,8 +14,9 @@ var sys = function(main, _1, _2, _3) {
                 var Less = $(".tn-menu-btn").html("Less");
                 var ShowMenu = $("#submenu").removeClass("block");
                 var HideMenu = $("#submenu").addClass("block");
+                var MenuHasBlock = $("#submenu").hasClass("block");
                 More ? Less : More;
-                ShowMenu ? HideMenu : ShowMenu;
+                MenuHasBlock ? HideMenu : ShowMenu;
         }
         // Radio
         if (main == "radio") {
