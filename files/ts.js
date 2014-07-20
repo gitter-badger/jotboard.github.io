@@ -10,8 +10,7 @@ var sys = function(main, _1, _2, _3) {
         if (main == "this") return this;
         // Submenu Init
         if (main == "submenu") {
-                if ($(".tn-menu-btn").text("More")) $(".tn-menu-btn").text("Less");
-                if ($(".tn-menu-btn").text("Less")) $(".tn-menu-btn").text("More");
+                $(".tn-menu-btn").text("More") ? $(".tn-menu-btn").text("Less") : $(".tn-menu-btn").text("More");
                 $("#submenu").hasClass("block") ? $("#submenu").removeClass("block") : $("#submenu").addClass("block");
         }
         // Radio
