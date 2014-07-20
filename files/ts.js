@@ -16,7 +16,7 @@ $.fn.submenu = function() {
         var Less = $(".tn-menu-btn").html("Less");
         More ? Less : More;
         var ShowMenu = $("#submenu").removeClass("block");
-        var HideMenu = $(".tn-menu-btn").addClass("block");
+        var HideMenu = $("#submenu").addClass("block");
         ShowMenu ? HideMenu : ShowMenu;
 };
 
