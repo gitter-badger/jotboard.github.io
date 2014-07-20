@@ -8,22 +8,20 @@ var sys = function(main, _1, _2, _3) {
         if (main == "MainNamespace") return "Main";
         if (main == "window") return window;
         if (main == "this") return this;
-};
-
-// Submenu
-$.fn.submenu = function() {
-        var More = $(".tn-menu-btn").html("More");
-        var Less = $(".tn-menu-btn").html("Less");
-        More ? Less : More;
-        var ShowMenu = $("#submenu").removeClass("block");
-        var HideMenu = $("#submenu").addClass("block");
-        ShowMenu ? HideMenu : ShowMenu;
-};
-
-// Radio Textnet
-$.fn.radio = function() {
-        $("#_spotify").toggleClass("block");
-        $("#_spotify_insert").toggleClass("block");
+        // Submenu Init
+        if (main == "submenu") {
+                var More = $(".tn-menu-btn").html("More");
+                var Less = $(".tn-menu-btn").html("Less");
+                var ShowMenu = $("#submenu").removeClass("block");
+                var HideMenu = $("#submenu").addClass("block");
+                More ? Less : More;
+                ShowMenu ? HideMenu : ShowMenu;
+        }
+        // Radio
+        if (main == "radio") {
+                $("#_spotify").toggleClass("block");
+                $("#_spotify_insert").toggleClass("block");
+        }
 };
 
 // Universal Selector $.textnet() or jQuery.textnet()
