@@ -10,13 +10,14 @@ var sys = function(main, _1, _2, _3) {
         if (main == "this") return this;
         // Submenu Init
         if (main == "submenu") {
-                $(".tn-menu-btn").text("More") ? $(this).text("Less") : $(this).text("More");
+                if ($(".tn-menu-btn").text("More")) $(".tn-menu-btn").text("Less");
+                if ($(".tn-menu-btn").text("Less")) $(".tn-menu-btn").text("More");
                 $("#submenu").hasClass("block") ? $("#submenu").removeClass("block") : $("#submenu").addClass("block");
         }
         // Radio
         if (main == "radio") {
-                $("#_spotify").toggleClass("block");
-                $("#_spotify_insert").toggleClass("block");
+                $("#_spotify").hasClass("block") ? $("#_spotify").removeClass("block") : $("#_spotify").addClass("block");
+                $("#_spotify_insert").hasClass("block") ? $("#_spotify_insert").removeClass("block") : $("#_spotify_insert").addClass("block");
         }
 };
 
