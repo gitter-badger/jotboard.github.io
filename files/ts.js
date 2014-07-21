@@ -10,19 +10,26 @@ var sys = function(main, _1, _2, _3) {
         if (main == "this") return this;
         // Submenu Init
         if (main == "submenu") {
-                $(".tn-menu-btn").hasClass("fa-chevron-down") ? function() {
+                $(".tn-menu-btn").hasClass("fa fa-chevron-down") ? function() {
+                        $(".tn-menu-btn").addClass("fa-chevron-up");
+                        $(".tn-menu-btn").removeClass("fa-chevron-down");
+                } : function() {
                         $(".tn-menu-btn").removeClass("fa-chevron-down");
                         $(".tn-menu-btn").addClass("fa-chevron-up");
-                } : function() {
-                        $(".tn-menu-btn").addClass("fa-chevron-down");
-                        $(".tn-menu-btn").removeClass("fa-chevron-up");
                 };
-                $("#submenu").hasClass("block") ? $("#submenu").removeClass("block") : $("#submenu").addClass("block");
+                $("#submenu").hasClass("block") ? function() {
+                        $("#submenu").removeClass("block");
+                } : function() {
+                        $("#submenu").addClass("block");
+                };
         }
         // Radio
         if (main == "radio") {
-                $("#_spotify").hasClass("block") ? $("#_spotify").removeClass("block") : $("#_spotify").addClass("block");
-                $("#_spotify_insert").hasClass("block") ? $("#_spotify_insert").removeClass("block") : $("#_spotify_insert").addClass("block");
+                $("#_spotify, #_spotify_insert").hasClass("block") ? function() {
+                        $("#_spotify_insert").removeClass("block");
+                } : function() {
+                        $("#_spotify_insert").addClass("block");
+                };
         }
 };
 
