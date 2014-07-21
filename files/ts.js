@@ -27,11 +27,11 @@ $.fn.textnet = function(tn, tn1, tn2, tn3, tn4) {
         // $.textnet("toggleTXT");
         if (tn == "toggleTXT") {
                 var self = document.querySelector(this);
-                if (self.getAttribute("text-swap") == self.innerHTML) {
-                        self.innerHTML = self.getAttribute("text-original");
+                if (self.getAttribute("text-swap") == self.innerText) {
+                        self.innerText = self.getAttribute("text-original");
                 } else {
-                        self.setAttribute("text-original", self.innerHTML);
-                        self.innerHTML = self.getAttribute("text-swap");
+                        self.setAttribute("text-original", self.innerText);
+                        self.innerText = self.getAttribute("text-swap");
                 }
         }
         // $.textnet("toggleHTML", "More", "Less"); (not working)
