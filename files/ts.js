@@ -8,28 +8,12 @@ var sys = function(main, _1, _2, _3) {
         if (main == "MainNamespace") return "Main";
         if (main == "window") return window;
         if (main == "this") return this;
+        // Radio Textnet
+        if (main == "radio") $("#_spotify, #_spotify_insert").toggleClass("block");
         // Submenu Init
         if (main == "submenu") {
-                $(".tn-menu-btn").hasClass("fa fa-chevron-down") ? function() {
-                        $(".tn-menu-btn").addClass("fa-chevron-up");
-                        $(".tn-menu-btn").removeClass("fa-chevron-down");
-                } : function() {
-                        $(".tn-menu-btn").removeClass("fa-chevron-down");
-                        $(".tn-menu-btn").addClass("fa-chevron-up");
-                };
-                $("#submenu").hasClass("block") ? function() {
-                        $("#submenu").removeClass("block");
-                } : function() {
-                        $("#submenu").addClass("block");
-                };
-        }
-        // Radio
-        if (main == "radio") {
-                $("#_spotify, #_spotify_insert").hasClass("block") ? function() {
-                        $("#_spotify_insert").removeClass("block");
-                } : function() {
-                        $("#_spotify_insert").addClass("block");
-                };
+                $(".tn-menu-btn").toggleClass("fa-chevron-down").toggleClass("fa-chevron-up");
+                $("#submenu").toggleClass("block");
         }
 };
 
