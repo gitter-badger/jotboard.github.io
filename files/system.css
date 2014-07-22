@@ -3,17 +3,7 @@
 [roboto], .roboto { font-family: "Roboto", sans-serif; }
 [open-sans], .open-sans { font-family: "Open Sans", sans-serif; }
 
-/* Cursor Attributes (cuz im lazy) */
-[default-cur] { cursor: default; }
-[pointer-cur] { cursor: pointer; }
-[none-cur] { cursor: none; }
-
-.fa {
-	display: block !important;
-}
-
 .nowrap-auto {
-	/* A pretty neat class I managed to make in Bootstrap, for navbars and stuff */
 	white-space: nowrap;
 	width: auto;
 }
@@ -173,6 +163,13 @@ iframe, textarea, input {
 	outline: none;
 	border: none;
 }
+
+/* Cursor Attributes (cuz im lazy) */
+[default-cur] { cursor: default; }
+[pointer-cur] { cursor: pointer; }
+[none-cur] { cursor: none; }
+
+.fa { display: block !important; }
 
 * { overflow: auto; }
 
