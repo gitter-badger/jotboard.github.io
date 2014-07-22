@@ -9,7 +9,7 @@
 [none-cur] { cursor: none; }
 
 .fa {
-	display: block;
+	display: block !important;
 }
 
 .nowrap-auto {
