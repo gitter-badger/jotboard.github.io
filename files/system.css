@@ -3,13 +3,14 @@
 [roboto], .roboto { font-family: "Roboto", sans-serif; }
 [open-sans], .open-sans { font-family: "Open Sans", sans-serif; }
 
-/* data-html tag */
-[data-html]:before { content: attr(data-html); }
-
 /* Cursor Attributes (cuz im lazy) */
 [default-cur] { cursor: default; }
 [pointer-cur] { cursor: pointer; }
 [none-cur] { cursor: none; }
+
+.fa {
+	display: block;
+}
 
 .nowrap-auto {
 	/* A pretty neat class I managed to make in Bootstrap, for navbars and stuff */
