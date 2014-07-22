@@ -5,9 +5,6 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                         "frameborder": "0",
                         "allowtransparency": "true"
                 }).addClass("iframe");
-                $(".fa").css({
-                        "display": "block"
-                });
                 if (window.location.hash) document.title = "# Textnet";
                 if (!window.location.hash) document.title = "Textnet";
                 $("body").toggleClass("block");
