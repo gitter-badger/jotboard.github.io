@@ -84,7 +84,7 @@ html, body, #html, #body {
 	transition: background 0.650s ease;
 }
 
-.navagation #namespace {
+.navagation #namespace, .navagation #spotify_URI {
 	text-align: center;
 	width: 100%;
 	margin-top: 13px;
