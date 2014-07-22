@@ -8,6 +8,7 @@ var sys = function(main, _1, _2, _3) {
         if (main == "MainNamespace") return "Main";
         if (main == "window") return window;
         if (main == "this") return this;
+        if (main == "toggleBody") return $("body").toggleClass("block");
         // Radio Textnet
         if (main == "radio") $("#_spotify, #_spotify_insert").toggleClass("block");
         // Submenu Init
