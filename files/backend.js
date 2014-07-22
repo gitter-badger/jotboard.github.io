@@ -7,10 +7,10 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                 }).addClass("iframe");
                 if (window.location.hash) document.title = "# Textnet";
                 if (!window.location.hash) document.title = "Textnet";
-                $("body").toggleClass("block");
+                if (DevMode == false || DevMode == "false") sys("toggleBody");
                 if (DevMode == true || DevMode == "true") {
-                        if (sys("hash", "forceuse")) return false;
-                        else window.location.replace("/closed");
+                        if (sys("hash", "forceuse")) sys("toggleBody");
+                        else return false;
                 }
         });
         head.load("//cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js", function() {
@@ -32,8 +32,9 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                 var namespace = document.getElementById("namespace");
                 if (window.localStorage[sys("prefix") + sys("MainNamespace")]) {
                         form.value = store.get(sys("prefix") + sys("MainNamespace"));
+                        console.info("The " + sys("MainNamespace") + " Textnet is avalible.");
                 }
-                if (!window.localStorage[sys("prefix") + sys("MainNamespace")] || store.get(sys("prefix") + sys("MainNamespace")) === "") {
+                if (store.get(sys("prefix") + sys("MainNamespace")) === "") {
                         console.info("The " + sys("MainNamespace") + " Textnet is empty.");
                 }
                 $(".tn-save").click(function() {
