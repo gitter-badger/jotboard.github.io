@@ -23,14 +23,8 @@ var sys = function(main, _1, _2, _3) {
 $.fn.textnet = function(tn, tn1, tn2, tn3, tn4) {
         // $.textnet("toggleAttr", "title", "More", "Less"); (currently being discussed)
         if (tn == "toggleAttr") {
-                if ((tn1 && tn1 !== 'undefined') && (tn2 && tn2 !== 'undefined')) {
-                        $(this).attr(tn1, tn2);
-                } else if ((tn1 && tn1 !== 'undefined') && (tn3 && tn3 !== 'undefined')) {
-                        $(this).attr(tn1, tn3);
-                } else {
-                        // None of the conditions are met.
-                        // E.g. tn2 and tn3 are missing.
-                }
+                if (tn1 !== tn2) $(this).attr(tn1, tn3);
+                if (tn1 !== tn3) $(this).attr(tn1, tn2);
         }
         // $.textnet("toggleHTML", "More", "Less"); (not working)
         if (tn == "toggleHTML") {
