@@ -1,19 +1,18 @@
 // Commons: Linear values in one function
 var sys = function(main, _1, _2, _3) {
-        if (main == "hash") return window.location.href.indexOf("#" + _1) != -1;
-        if (main == "threshold") return _1 <= new Date().getHours() && new Date().getHours() < _2;
-        if (main == "NamespaceValue") return $("#namespace").val();
-        if (main == "FormValue") return $("#form").val();
-        if (main == "prefix") return "TN_-";
-        if (main == "MainNamespace") return "Main";
-        if (main == "window") return window;
-        if (main == "this") return this;
-        if (main == "toggleBody") return $("body").toggleClass("block");
         if (main == "SiteName") return "Textnet";
         if (main == "CollabName") return "Groupies";
-        // Radio Textnet
+        if (main == "prefix") return "TN_-";
+        if (main == "MainNamespace") return "Main";
+        if (main == "toggleBody") return $("body").toggleClass("block");
         if (main == "radio") $("#_spotify, #_spotify_insert").toggleClass("block");
-        // Submenu Init
+        if (main == "NamespaceValue") return $("#namespace").val();
+        if (main == "FormValue") return $("#form").val();
+        if (main == "window") return window;
+        if (main == "this") return this;
+        if (main == "hash") return window.location.href.indexOf("#" + _1) != -1;
+        if (main == "threshold") return _1 <= new Date().getHours() && new Date().getHours() < _2;
+        // Submenu
         if (main == "submenu") {
                 $(".tn-menu-btn").toggleClass("fa-chevron-down").toggleClass("fa-chevron-up");
                 $("#submenu").toggleClass("block");
@@ -22,19 +21,15 @@ var sys = function(main, _1, _2, _3) {
 
 // Universal Selector $.textnet() or jQuery.textnet()
 $.fn.textnet = function(tn, tn1, tn2, tn3, tn4) {
-        // $.textnet("toggleAttr", "title", "More", "Less"); (not working)
+        // $.textnet("toggleAttr", "title", "More", "Less"); (currently being discussed)
         if (tn == "toggleAttr") {
-                if ($(this).attr(tn1, tn2)) window[$(this).attr(tn1, tn3)];
-                if ($(this).attr(tn1, tn3)) window[$(this).attr(tn1, tn2)];
-        }
-        // $.textnet("toggleTXT");
-        if (tn == "toggleTXT") {
-                var self = document.querySelector(this);
-                if (self.getAttribute("text-swap") == self.innerText) {
-                        self.innerText = self.getAttribute("text-original");
+                if ((tn1 && tn1 !== 'undefined') && (tn2 && tn2 !== 'undefined')) {
+                        $(this).attr(tn1, tn2);
+                } else if ((tn1 && tn1 !== 'undefined') && (tn3 && tn3 !== 'undefined')) {
+                        $(this).attr(tn1, tn3);
                 } else {
-                        self.setAttribute("text-original", self.innerText);
-                        self.innerText = self.getAttribute("text-swap");
+                        // None of the conditions are met.
+                        // E.g. tn2 and tn3 are missing.
                 }
         }
         // $.textnet("toggleHTML", "More", "Less"); (not working)
