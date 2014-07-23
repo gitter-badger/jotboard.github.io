@@ -55,9 +55,9 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                         head.load("//cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.2.0/bootbox.js", function() {
                                 bootbox.setDefaults({
                                         locale: "en",
-                                        backdrop: false,
+                                        backdrop: true,
                                         closeButton: true,
-                                        animate: false
+                                        animate: true
                                 });
                                 if (sys("hash", "rtn")) $(".tn-radio-textnet").click();
                                 if (sys("hash", "campaign")) {
@@ -136,27 +136,36 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                         TogetherJS(this);
                         return false;
                 });
-                TogetherJS.on("ready", function() {
-                        window[$.bootstrapGrowl("Do not share personal information unless official consent is given.", {
-                                ele: "body",
-                                type: "info",
-                                offset: {
-                                        from: "bottom",
-                                        amount: 20
-                                },
-                                align: "right",
-                                width: 290,
-                                delay: 3500,
-                                allow_dismiss: false
-                        })];
-                });
-                // Groupies
-                TogetherJSConfig_siteName = "Textnet";
-                TogetherJSConfig_toolName = "Groupies";
-                TogetherJSConfig_dontShowClicks = true;
-                TogetherJSConfig_youtube = true;
-                TogetherJSConfig_disableWebRTC = false;
-                TogetherJSConfig_suppressInvite = false;
+                TogetherJSConfig_on = {
+                        ready: function() {
+                                window[$.bootstrapGrowl("Do not share personal information unless official consent is given.", {
+                                        ele: "body",
+                                        type: "info",
+                                        offset: {
+                                                from: "bottom",
+                                                amount: 20
+                                        },
+                                        align: "right",
+                                        width: 240,
+                                        delay: 3500,
+                                        allow_dismiss: false
+                                })];
+                        },
+                        close: function() {
+                                console.info("Groupies Session closed.");
+                        }
+                };
+                TogetherJSConfig_siteName = sys("SiteName");
+                TogetherJSConfig_toolName = sys("CollabName");
+                TogetherJSConfig_dontShowClicks = $(".navigation, .navigation *");
+                TogetherJSConfig_useMinimizedCode = true;
+                TogetherJSConfig_findRoom = {
+                        prefix: "TN-Room",
+                        max: 6
+                };
                 TogetherJSConfig_suppressJoinConfirmation = true;
+                TogetherJSConfig_inviteFromRoom = true;
+                TogetherJSConfig_suppressInvite = false;
+                TogetherJSConfig_ignoreMessages = true;
         });
 });
