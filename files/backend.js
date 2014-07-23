@@ -50,6 +50,7 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
         $(".tn-radio-textnet").click(function() {
                 sys("radio");
         });
+        if (sys("hash", "radio")) sys("radio");
         head.load("//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css", function() {
                 console.log("Font Awesome loaded.");
         });
@@ -57,6 +58,12 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                 head.load(["//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/bootstrap.min.js", "//cdnjs.cloudflare.com/ajax/libs/bootstrap-growl/1.0.0/jquery.bootstrap-growl.min.js"], function() {
                         head.load("//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap.min.css");
                         head.load("//cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.2.0/bootbox.js", function() {
+                                bootbox.setDefaults({
+                                        locale: "en",
+                                        backdrop: true,
+                                        closeButton: true,
+                                        animate: true
+                                });
                                 var whatscookin = function() {
                                         bootbox.dialog({
                                                 title: "#WhatsCookin",
@@ -71,15 +78,7 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                                                         }
                                                 }
                                         });
-                                }
-                                bootbox.setDefaults({
-                                        locale: "en",
-                                        backdrop: true,
-                                        closeButton: true,
-                                        animate: true
-                                });
-                                if (sys("hash", "whatscookin")) window[whatscookin()];
-                                if (sys("hash", "rtn")) $(".tn-radio-textnet").click();
+                                };
                                 if (sys("hash", "campaign")) {
                                         bootbox.dialog({
                                                 title: "Save The Web",
@@ -89,7 +88,7 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                                                                 label: "Join The Battle!",
                                                                 className: "btn-primary",
                                                                 callback: function() {
-                                                                        window.open("//www.battleforthenet.com/", "_blank");
+                                                                        window.open("https://www.battleforthenet.com/", "_blank");
                                                                 }
                                                         },
                                                         donate: {
@@ -97,35 +96,6 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                                                                 className: "btn-link",
                                                                 callback: function() {
                                                                         window.open("https://act.freepress.net/donate/internet_15_15/", "_blank");
-                                                                }
-                                                        }
-                                                }
-                                        });
-                                }
-                                if (sys("hash", "hackernews")) {
-                                        bootbox.dialog({
-                                                title: "Hai",
-                                                message: "I'm not all that good with talking, but since I am now, why bother stopping myself?<br />" +
-                                                "Hello, I'm Textnet, and I basically make taking notes, collaboration and access to entertainment a whole lot easier.<br />" +
-                                                "As you can see Textnet is still in early development stages and is run by one person, alongside a feedback-giving community and by making this product avalible<div></div>" +
-                                                "to everyone, I can give out the opportunity to have live feedback, to make my services better.<br /><br />" +
-                                                "Well, thats about it, cya on the Hacking side of things.<br /><br />" +
-                                                "Sum luv, Chris :P",
-                                                buttons: {
-                                                        enter: {
-                                                                label: "Original Post",
-                                                                className: "btn-primary",
-                                                                callback: function() {
-                                                                        window.open("//news.ycombinator.com/item?id=7999241", "_blank");
-                                                                        return false;
-                                                                }
-                                                        },
-                                                        gh_repo: {
-                                                                label: "Source Code (textnet/textnet.github.io)",
-                                                                className: "btn-primary",
-                                                                callback: function() {
-                                                                        window.open("https://github.com/textnet/textnet.github.io", "_blank");
-                                                                        return false;
                                                                 }
                                                         }
                                                 }
@@ -139,15 +109,15 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                                                 if (srch === null) bootbox.hideAll();
                                         });
                                 };
+                                if (sys("hash", "whatscookin")) {
+                                        window[whatscookin()];
+                                }
                                 $(".tn-wc").click(function() {
                                         window[whatscookin()];
                                 });
                                 $(".tn-youtube").click(function() {
                                         window[youtube_srch()];
                                 });
-                                if (sys("hash", "youtube") || sys("hash", "yt")) $(".tn-youtube").click();
-                                if (sys("hash", "new")) $(".tn-event").click();
-                                else return false;
                         });
                 });
         });
