@@ -44,15 +44,34 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                         $(window).textnet("change", "load");
                 });
         });
-        $(".tn-menu-btn").click(function() { sys("submenu"); });
-        $(".tn-radio-textnet").click(function() { sys("radio"); });
-        head.load("//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css", function(){
+        $(".tn-menu-btn").click(function() {
+                sys("submenu");
+        });
+        $(".tn-radio-textnet").click(function() {
+                sys("radio");
+        });
+        head.load("//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css", function() {
                 console.log("Font Awesome loaded.");
         });
         head.load("//cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js", function() {
                 head.load(["//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/bootstrap.min.js", "//cdnjs.cloudflare.com/ajax/libs/bootstrap-growl/1.0.0/jquery.bootstrap-growl.min.js"], function() {
                         head.load("//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap.min.css");
                         head.load("//cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.2.0/bootbox.js", function() {
+                                if (sys("hash", "whatscookin")) {
+                                        bootbox.dialog({
+                                                title: "#WhatsCookin",
+                                                message: "<iframe class='yt-player' width='100%' height='310' src='//www.youtube.com/embed/?listType=playlist&list=PLXJjNJMpJQKqbpmhNOJNETiMbfZpLjIVb&fs=1&loop=1&showinfo=0&autohide=1&theme=light' frameborder='0' allowfullscreen></iframe>",
+                                                buttons: {
+                                                        enter: {
+                                                                label: "Mandatory Fun on iTunes",
+                                                                className: "btn-primary",
+                                                                callback: function() {
+                                                                        window.open("//smarturl.it/weirdalfun", "_blank");
+                                                                }
+                                                        }
+                                                }
+                                        });
+                                }
                                 bootbox.setDefaults({
                                         locale: "en",
                                         backdrop: true,
