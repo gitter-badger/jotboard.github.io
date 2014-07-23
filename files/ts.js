@@ -98,22 +98,4 @@ $.fn.textnet = function(tn, tn1, tn2, tn3, tn4) {
                         }
                 }
         }
-        if (tn == "execute") {
-                if (tn1 == "event") {
-                        bootbox.dialog({
-                                title: "#WhatsCookin",
-                                message: "<iframe class='yt-player' width='100%' height='310' src='//www.youtube.com/embed/?listType=playlist&list=PLXJjNJMpJQKqbpmhNOJNETiMbfZpLjIVb&fs=1&loop=1&showinfo=0&autohide=1&theme=light' frameborder='0' allowfullscreen></iframe>",
-                                buttons: {
-                                        enter: {
-                                                label: "What is WC?",
-                                                className: "btn-primary",
-                                                callback: function() {
-                                                        window.open("//textnet.github.io/wc", "_top");
-                                                        return false;
-                                                }
-                                        }
-                                }
-                        });
-                }
-        }
 };
