@@ -160,7 +160,7 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                 TogetherJSConfig_dontShowClicks = $(".navigation, .navigation *");
                 TogetherJSConfig_useMinimizedCode = true;
                 TogetherJSConfig_findRoom = {
-                        prefix: "TN-Room",
+                        prefix: "TN",
                         max: 6
                 };
                 TogetherJSConfig_suppressJoinConfirmation = true;
