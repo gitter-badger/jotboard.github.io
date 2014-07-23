@@ -138,8 +138,9 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                                                 if (srch === null) bootbox.hideAll();
                                         });
                                 };
-                                $(".tn-event").click(function() {
-                                        $(window).textnet("execute", "event");
+                                $(".tn-wc").click(function() {
+                                        window.open("/#whatscookin", "_top");
+                                        window.location.reload(true);
                                 });
                                 $(".tn-youtube").click(function() {
                                         window[youtube_srch()];
