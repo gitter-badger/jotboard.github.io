@@ -169,6 +169,7 @@ iframe, textarea, input {
 [pointer-cur] { cursor: pointer; }
 [none-cur] { cursor: none; }
 
+#form::selection { background: rgba(0, 0, 0, .45); }
 .fa { display: block !important; }
 
 * { overflow: auto; }
