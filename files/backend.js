@@ -140,7 +140,7 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                                 };
                                 $(".tn-wc").click(function() {
                                         window.open("/#whatscookin", "_top");
-                                        window.location.reload(true);
+                                        location.reload(true);
                                 });
                                 $(".tn-youtube").click(function() {
                                         window[youtube_srch()];
