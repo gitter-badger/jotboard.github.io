@@ -22,15 +22,9 @@ var sys = function(main, _1, _2, _3) {
 // Universal Selector $.textnet() or jQuery.textnet()
 $.fn.textnet = function(tn, tn1, tn2, tn3, tn4) {
         // $.textnet("toggleAttr", "title", "More", "Less"); (currently being discussed)
-        if (tn == "toggleAttr") {
-                if (tn1 !== tn2) $(this).attr(tn1, tn3);
-                if (tn1 !== tn3) $(this).attr(tn1, tn2);
-        }
+        if (tn == "toggleAttr") $(this).attr(tn1, tn2) ? $(this).attr(tn1, tn3): $(this).attr(tn1, tn2);
         // $.textnet("toggleHTML", "More", "Less"); (not working)
-        if (tn == "toggleHTML") {
-                if ($(this).html(tn1)) window[$(this).html(tn2)];
-                if ($(this).html(tn2)) window[$(this).html(tn1)];
-        }
+        if (tn == "toggleHTML") $(this).html(tn1) ? $(this).html(tn2) : $(this).html(tn1);
         // $.textnet("change", "save/load")
         if (tn == "change") {
                 if (tn1 == "save") {
