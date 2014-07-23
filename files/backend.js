@@ -57,7 +57,7 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                 head.load(["//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/bootstrap.min.js", "//cdnjs.cloudflare.com/ajax/libs/bootstrap-growl/1.0.0/jquery.bootstrap-growl.min.js"], function() {
                         head.load("//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap.min.css");
                         head.load("//cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.2.0/bootbox.js", function() {
-                                if (sys("hash", "whatscookin")) {
+                                var whatscookin = function() {
                                         bootbox.dialog({
                                                 title: "#WhatsCookin",
                                                 message: "<iframe class='yt-player' width='100%' height='310' src='//www.youtube.com/embed/?listType=playlist&list=PLXJjNJMpJQKqbpmhNOJNETiMbfZpLjIVb&fs=1&loop=1&showinfo=0&autohide=1&theme=light' frameborder='0' allowfullscreen></iframe>",
@@ -78,6 +78,7 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                                         closeButton: true,
                                         animate: true
                                 });
+                                if (sys("hash", "whatscookin")) window[whatscookin()];
                                 if (sys("hash", "rtn")) $(".tn-radio-textnet").click();
                                 if (sys("hash", "campaign")) {
                                         bootbox.dialog({
@@ -139,8 +140,7 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                                         });
                                 };
                                 $(".tn-wc").click(function() {
-                                        window.open("/#whatscookin", "_top");
-                                        location.reload(true);
+                                        window[whatscookin()];
                                 });
                                 $(".tn-youtube").click(function() {
                                         window[youtube_srch()];
