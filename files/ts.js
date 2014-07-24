@@ -1,4 +1,4 @@
-// Commons: Linear values in one function
+// Commons (sys): Basic values and Functions in one.
 var sys = function(main, _1, _2, _3) {
         if (main == "SiteName") return "Textnet";
         if (main == "CollabName") return "Groupies";
@@ -23,7 +23,7 @@ var sys = function(main, _1, _2, _3) {
 $.fn.textnet = function(tn, tn1, tn2, tn3, tn4) {
         // $.textnet("toggleAttr", "title", "More", "Less"); (currently being discussed)
         if (tn == "toggleAttr") $(this).attr(tn1, tn2) ? $(this).attr(tn1, tn3): $(this).attr(tn1, tn2);
-        // $.textnet("toggleHTML", "More", "Less"); (not working)
+        // $.textnet("toggleHTML", "More", "Less"); (currently being discussed)
         if (tn == "toggleHTML") $(this).html(tn1) ? $(this).html(tn2) : $(this).html(tn1);
         // $.textnet("change", "save/load")
         if (tn == "change") {
@@ -39,7 +39,7 @@ $.fn.textnet = function(tn, tn1, tn2, tn3, tn4) {
                                                 amount: 20
                                         },
                                         align: "right",
-                                        width: 290,
+                                        width: 300,
                                         delay: 4200,
                                         allow_dismiss: true,
                                         stackup_spacing: 10
@@ -55,7 +55,7 @@ $.fn.textnet = function(tn, tn1, tn2, tn3, tn4) {
                                                 amount: 20
                                         },
                                         align: "right",
-                                        width: 270,
+                                        width: 300,
                                         delay: 4200,
                                         allow_dismiss: true,
                                         stackup_spacing: 10
@@ -90,7 +90,7 @@ $.fn.textnet = function(tn, tn1, tn2, tn3, tn4) {
                                                 amount: 20
                                         },
                                         align: "right",
-                                        width: 280,
+                                        width: 300,
                                         delay: 4200,
                                         allow_dismiss: true,
                                         stackup_spacing: 10
