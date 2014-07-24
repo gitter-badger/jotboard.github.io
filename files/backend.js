@@ -140,14 +140,14 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                 TogetherJSConfig_siteName = sys("SiteName");
                 TogetherJSConfig_toolName = sys("CollabName");
                 TogetherJSConfig_dontShowClicks = $(".navigation, .navigation *");
-                TogetherJSConfig_useMinimizedCode = true;
                 TogetherJSConfig_findRoom = {
                         prefix: "TN",
                         max: 6
                 };
-                TogetherJSConfig_suppressJoinConfirmation = true;
+                TogetherJSConfig_useMinimizedCode = true;
+                TogetherJSConfig_ignoreMessages = true;
                 TogetherJSConfig_inviteFromRoom = true;
                 TogetherJSConfig_suppressInvite = false;
-                TogetherJSConfig_ignoreMessages = true;
+                TogetherJSConfig_suppressJoinConfirmation = false;
         });
 });
