@@ -34,22 +34,14 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                         form.value = store.get(sys("prefix") + sys("MainNamespace"));
                         console.info("The " + sys("MainNamespace") + " Textnet is avalible.");
                 }
-                if (store.get(sys("prefix") + sys("MainNamespace")) === "") {
-                        console.info("The " + sys("MainNamespace") + " Textnet is empty.");
-                }
-                $(".tn-save").click(function() {
-                        $(window).textnet("change", "save");
-                });
+                if (store.get(sys("prefix") + sys("MainNamespace")) === "") console.info("The " + sys("MainNamespace") + " Textnet is empty.");
+                $(".tn-save").click(function() { $(window).textnet("change", "save"); });
                 $(".tn-load").click(function() {
                         $(window).textnet("change", "load");
                 });
         });
-        $(".tn-menu-btn").click(function() {
-                sys("submenu");
-        });
-        $(".tn-radio-textnet").click(function() {
-                sys("radio");
-        });
+        $(".tn-menu-btn").click(function() { sys("submenu"); });
+        $(".tn-radio-textnet").click(function() { sys("radio"); });
         if (sys("hash", "radio")) sys("radio");
         head.load("//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css", function() {
                 console.log("Font Awesome loaded.");
@@ -136,7 +128,7 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                                                 amount: 20
                                         },
                                         align: "right",
-                                        width: 240,
+                                        width: 260,
                                         delay: 3500,
                                         allow_dismiss: false
                                 })];
