@@ -3,11 +3,6 @@
 [roboto], .roboto { font-family: "Roboto", sans-serif; }
 [open-sans], .open-sans { font-family: "Open Sans", sans-serif; }
 
-.nowrap-auto {
-	white-space: nowrap;
-	width: auto;
-}
-
 #_spotify {
 	width: 100%;
 	height: 80px;
@@ -171,6 +166,15 @@ iframe, textarea, input {
 
 #form::selection { background: rgba(0, 0, 0, .45); }
 .fa { display: block !important; }
+
+div.bootbox.modal, div.bootbox.modal * { font-family: "Roboto", san-serif !important; }
+div.bootbox.modal .modal-header { border-bottom: 0; }
+div.bootbox.modal .modal-footer { border-top: 0; }
+
+.nowrap-auto {
+	white-space: nowrap;
+	width: auto;
+}
 
 * { overflow: auto; }
 
