@@ -73,21 +73,38 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                                 };
                                 if (sys("hash", "campaign")) {
                                         bootbox.dialog({
-                                                title: "Save The Web",
-                                                message: "<div align='center'><iframe src='//www.battleforthenet.com/embed.html' frameborder='0' scrolling='no' allowtransparency='true' style='width: 100%; height: 453px;'></iframe></div>",
+                                                title: "A message to the odd Internet User",
+                                                message: "The Internet really has become something to be proud of, especially for early Internet Adopters, it went from an idea trying to create an internationalized network of amazing communities, to a lifestyle that has changed the way live and work.<br /><br />" +
+                                                "This message is to point out the current, past and future actions that have been taken to damage the Internets Integrity, whether it be mass censorship, mass spying or the way Net Neutrality presents itself as a money-related threat towards Cable Companies like Comcast, Verizon and Time Warner Cable are to never happen again.<br /><br />" +
+                                                "The way the Internet is is perfect, we wouldn't have it any other way, and regardless of what the implications are to the corporate side of things, we need to make sure these shambles never happen again, by making how much of a positive result Internet has done to our world as clear as possible and making sure the corporate businesses of the world know what will happen if such things are to pass through.<br /><br />" +
+                                                "This message is aimed at Politicians, Families, Frequent Internet Users, and the odd Selfie Takers, please share this message to as many people as you possibly can so we all know what were up against!",
                                                 buttons: {
-                                                        action: {
-                                                                label: "Join The Battle!",
+                                                        battleforthenet: {
+                                                                label: "Battle For The Net",
                                                                 className: "btn-primary",
                                                                 callback: function() {
                                                                         window.open("https://www.battleforthenet.com/", "_blank");
                                                                 }
                                                         },
-                                                        donate: {
-                                                                label: "Donate",
-                                                                className: "btn-link",
+                                                        idl: {
+                                                                label: "Internet Defence League",
+                                                                className: "btn-primary",
                                                                 callback: function() {
-                                                                        window.open("https://act.freepress.net/donate/internet_15_15/", "_blank");
+                                                                        window.open("https://www.battleforthenet.com/", "_blank");
+                                                                }
+                                                        },
+                                                        techcrunch: {
+                                                                label: "TechCrunch",
+                                                                className: "btn-primary",
+                                                                callback: function() {
+                                                                        window.open("http://sunlight-assets.s3.amazonaws.com/tcleaderboard/production/index.html", "_blank");
+                                                                }
+                                                        },
+                                                        crikey: {
+                                                                label: "Crikey's Multiple Posts",
+                                                                className: "btn-primary",
+                                                                callback: function() {
+                                                                        window.open("http://sunlight-assets.s3.amazonaws.com/tcleaderboard/production/index.html", "_blank");
                                                                 }
                                                         }
                                                 }
@@ -127,14 +144,12 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                 };
                 TogetherJSConfig_siteName = sys("SiteName");
                 TogetherJSConfig_toolName = sys("CollabName");
-                TogetherJSConfig_dontShowClicks = $(".navigation, .navigation *");
-                TogetherJSConfig_findRoom = {
-                        max: 3
-                };
+                TogetherJSConfig_dontShowClicks = $(".navigation, .navigation *") || document.querySelector(".navigation, .navigation *");
+                TogetherJSConfig_findRoom = { max: 3 };
                 TogetherJSConfig_useMinimizedCode = true;
                 TogetherJSConfig_ignoreMessages = true;
                 TogetherJSConfig_inviteFromRoom = true;
-                TogetherJSConfig_suppressInvite = false;
+                TogetherJSConfig_suppressInvite = true;
                 TogetherJSConfig_suppressJoinConfirmation = false;
         });
 });
