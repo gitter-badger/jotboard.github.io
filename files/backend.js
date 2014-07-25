@@ -34,11 +34,11 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                         form.value = store.get(sys("prefix") + sys("MainNamespace"));
                         console.info("The " + sys("MainNamespace") + " Textnet is avalible.");
                 }
-                if (store.get(sys("prefix") + sys("MainNamespace")) === "") console.info("The " + sys("MainNamespace") + " Textnet is empty.");
+                if (store.get(sys("prefix") + sys("MainNamespace")) === "") {
+                        console.info("The " + sys("MainNamespace") + " Textnet is empty.");
+                }
                 $(".tn-save").click(function() { $(window).textnet("change", "save"); });
-                $(".tn-load").click(function() {
-                        $(window).textnet("change", "load");
-                });
+                $(".tn-load").click(function() { $(window).textnet("change", "load"); });
         });
         $(".tn-menu-btn").click(function() { sys("submenu"); });
         $(".tn-radio-textnet").click(function() { sys("radio"); });
@@ -101,23 +101,14 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                                                 if (srch === null) bootbox.hideAll();
                                         });
                                 };
-                                if (sys("hash", "whatscookin")) {
-                                        window[whatscookin()];
-                                }
-                                $(".tn-wc").click(function() {
-                                        window[whatscookin()];
-                                });
-                                $(".tn-youtube").click(function() {
-                                        window[youtube_srch()];
-                                });
+                                if (sys("hash", "whatscookin")) window[whatscookin()];
+                                $(".tn-wc").click(function() { window[whatscookin()]; });
+                                $(".tn-youtube").click(function() { window[youtube_srch()]; });
                         });
                 });
         });
         head.load("//togetherjs.com/togetherjs-min.js", function() {
-                $(".tn-groupies").click(function() {
-                        TogetherJS(this);
-                        return false;
-                });
+                $(".tn-groupies").click(function() { sys("groupies"); });
                 TogetherJSConfig_on = {
                         ready: function() {
                                 window[$.bootstrapGrowl("Do not share personal information unless official consent is given.", {
@@ -132,17 +123,13 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                                         delay: 3500,
                                         allow_dismiss: false
                                 })];
-                        },
-                        close: function() {
-                                console.info("Groupies Session closed.");
                         }
                 };
                 TogetherJSConfig_siteName = sys("SiteName");
                 TogetherJSConfig_toolName = sys("CollabName");
                 TogetherJSConfig_dontShowClicks = $(".navigation, .navigation *");
                 TogetherJSConfig_findRoom = {
-                        prefix: "TN",
-                        max: 6
+                        max: 3
                 };
                 TogetherJSConfig_useMinimizedCode = true;
                 TogetherJSConfig_ignoreMessages = true;
