@@ -4,6 +4,10 @@ var sys = function(main, _1, _2, _3) {
         if (main == "CollabName") return "Groupies";
         if (main == "prefix") return "TN_-";
         if (main == "MainNamespace") return "Main";
+        if (main == "groupies") {
+                TogetherJS(this);
+                return false;
+        }
         if (main == "toggleBody") return $("body").toggleClass("block");
         if (main == "radio") $("#_spotify, #_spotify_insert").toggleClass("block");
         if (main == "NamespaceValue") return $("#namespace").val();
