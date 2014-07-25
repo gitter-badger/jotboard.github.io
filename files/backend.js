@@ -7,11 +7,8 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                 }).addClass("iframe");
                 if (window.location.hash) document.title = "# Textnet";
                 if (!window.location.hash) document.title = "Textnet";
-                if (DevMode == false || DevMode == "false") sys("toggleBody");
-                if (DevMode == true || DevMode == "true") {
-                        if (sys("hash", "forceuse")) sys("toggleBody");
-                        else return false;
-                }
+                if (DevMode === false || DevMode == "false") sys("toggleBody");
+                if (DevMode === true || DevMode == "true") if (sys("hash", "forceuse")) sys("toggleBody");
         });
         head.load("//cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js", function() {
                 var UT = function() {
