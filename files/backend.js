@@ -87,21 +87,21 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                                                                 label: "Internet Defence League",
                                                                 className: "btn-primary",
                                                                 callback: function() {
-                                                                        window.open("https://www.battleforthenet.com/", "_blank");
+                                                                        window.open("https://internetdefenseleague.org/", "_blank");
                                                                 }
                                                         },
                                                         techcrunch: {
                                                                 label: "TechCrunch",
                                                                 className: "btn-primary",
                                                                 callback: function() {
-                                                                        window.open("http://sunlight-assets.s3.amazonaws.com/tcleaderboard/production/index.html", "_blank");
+                                                                        window.open("//sunlight-assets.s3.amazonaws.com/tcleaderboard/production/index.html", "_blank");
                                                                 }
                                                         },
                                                         crikey: {
                                                                 label: "Crikey",
                                                                 className: "btn-primary",
                                                                 callback: function() {
-                                                                        window.open("http://sunlight-assets.s3.amazonaws.com/tcleaderboard/production/index.html", "_blank");
+                                                                        window.open("//www.crikey.com.au/topic/war-on-the-internet/", "_blank");
                                                                 }
                                                         }
                                                 }
