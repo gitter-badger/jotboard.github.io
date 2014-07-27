@@ -145,7 +145,6 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                 TogetherJSConfig_findRoom = { max: 3 };
                 TogetherJSConfig_useMinimizedCode = true;
                 TogetherJSConfig_ignoreMessages = true;
-                TogetherJSConfig_inviteFromRoom = true;
                 TogetherJSConfig_suppressInvite = true;
                 TogetherJSConfig_suppressJoinConfirmation = false;
         });
