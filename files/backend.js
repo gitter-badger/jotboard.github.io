@@ -117,6 +117,7 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                                 };
                                 if (sys("hash", "whatscookin")) window[whatscookin()];
                                 $(".tn-wc").click(function() { window[whatscookin()]; });
+                                if (sys("hash", "youtube")) window[youtube_srch()];
                                 $(".tn-youtube").click(function() { window[youtube_srch()]; });
                         });
                 });
@@ -142,10 +143,13 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                 TogetherJSConfig_siteName = sys("SiteName");
                 TogetherJSConfig_toolName = sys("CollabName");
                 TogetherJSConfig_dontShowClicks = $(".navigation, .navigation *") || document.querySelector(".navigation, .navigation *");
-                TogetherJSConfig_findRoom = { max: 3 };
+                TogetherJSConfig_findRoom = {
+                        prefix: "groupies",
+                        max: 4
+                };
                 TogetherJSConfig_useMinimizedCode = true;
                 TogetherJSConfig_ignoreMessages = true;
-                TogetherJSConfig_suppressInvite = true;
+                TogetherJSConfig_suppressInvite = false;
                 TogetherJSConfig_suppressJoinConfirmation = false;
         });
 });
