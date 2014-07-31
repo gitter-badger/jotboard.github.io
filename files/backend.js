@@ -134,12 +134,12 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                                                 amount: 20
                                         },
                                         align: "right",
-                                        width: 260,
+                                        width: "auto",
                                         delay: 3500,
-                                        allow_dismiss: false
+                                        allow_dismiss: true
                                 })];
                                 window[function() {
-                                        form.value = store.get(sys("prefix") + sys("Groupies") || sys("prefix") + sys("groupies") || sys("prefix") + sys("collab"));
+                                        form.value = store.get(sys("prefix") + "Groupies" || sys("prefix") + "groupies" || sys("prefix") + "collab");
                                 }];
                         }
                 };
