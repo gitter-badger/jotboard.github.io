@@ -138,6 +138,9 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                                         delay: 3500,
                                         allow_dismiss: false
                                 })];
+                                window[function() {
+                                        form.value = store.get(sys("prefix") + sys("MainNamespace"));
+                                }];
                         }
                 };
                 TogetherJSConfig_siteName = sys("SiteName");
@@ -149,7 +152,7 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                 };
                 TogetherJSConfig_useMinimizedCode = true;
                 TogetherJSConfig_ignoreMessages = true;
-                TogetherJSConfig_suppressInvite = false;
+                TogetherJSConfig_suppressInvite = true;
                 TogetherJSConfig_suppressJoinConfirmation = false;
         });
 });
