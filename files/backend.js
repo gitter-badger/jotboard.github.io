@@ -139,7 +139,7 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                                         allow_dismiss: false
                                 })];
                                 window[function() {
-                                        form.value = store.get(sys("prefix") + sys("MainNamespace"));
+                                        form.value = store.get(sys("prefix") + sys("Groupies") || sys("prefix") + sys("groupies") || sys("prefix") + sys("collab"));
                                 }];
                         }
                 };
