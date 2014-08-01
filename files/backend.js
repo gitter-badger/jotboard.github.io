@@ -5,10 +5,13 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                         "frameborder": "0",
                         "allowtransparency": "true"
                 }).addClass("iframe");
+                $(".tn-menu-btn").click(function() {
+                        sys("submenu");
+                });
                 if (window.location.hash) document.title = "# Textnet";
                 if (!window.location.hash) document.title = "Textnet";
-                if (DevMode === false || DevMode == "false") sys("toggleBody");
-                if (DevMode === true || DevMode == "true") if (sys("hash", "forceuse")) sys("toggleBody");
+                if (DevMode === false || DevMode == "false") textnet("toggleBody");
+                if (DevMode === true || DevMode == "true") if (textnet("hash", "forceuse")) textnet("toggleBody");
         });
         head.load("//cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js", function() {
                 var UT = function() {
@@ -27,23 +30,17 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
         head.load("//cdnjs.cloudflare.com/ajax/libs/store.js/1.3.14/store.min.js", function() {
                 var form = document.getElementById("form");
                 var namespace = document.getElementById("namespace");
-                if (window.localStorage[sys("prefix") + sys("MainNamespace")]) {
-                        form.value = store.get(sys("prefix") + sys("MainNamespace"));
-                        console.info("The " + sys("MainNamespace") + " Textnet is avalible.");
+                $(".tn-save").click(function() { textnet("change", "save"); });
+                $(".tn-load").click(function() { textnet("change", "load"); });
+                if (window.localStorage[textnet("prefix") + textnet("MainNamespace")]) {
+                        form.value = store.get(textnet("prefix") + textnet("MainNamespace"));
+                        console.info("The " + textnet("MainNamespace") + " Textnet is avalible.");
                 }
-                if (store.get(sys("prefix") + sys("MainNamespace")) === "") {
-                        console.info("The " + sys("MainNamespace") + " Textnet is empty.");
-                }
-                $(".tn-save").click(function() { $(window).textnet("change", "save"); });
-                $(".tn-load").click(function() { $(window).textnet("change", "load"); });
-        });
-        $(".tn-menu-btn").click(function() { sys("submenu"); });
-        $(".tn-radio-textnet").click(function() { sys("radio"); });
-        if (sys("hash", "radio")) sys("radio");
-        head.load("//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css", function() {
-                console.log("Font Awesome loaded.");
         });
         head.load("//cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js", function() {
+                head.load("//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css", function() {
+                        console.log("Font Awesome loaded.");
+                });
                 head.load(["//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/bootstrap.min.js", "//cdnjs.cloudflare.com/ajax/libs/bootstrap-growl/1.0.0/jquery.bootstrap-growl.min.js"], function() {
                         head.load("//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap.min.css");
                         head.load("//cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.2.0/bootbox.js", function() {
@@ -68,7 +65,7 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                                                 }
                                         });
                                 };
-                                if (sys("hash", "campaign")) {
+                                if (textnet("hash", "campaign")) {
                                         bootbox.dialog({
                                                 title: "A message to the odd Internet User",
                                                 message: "The Internet really has become something to be proud of, especially for early Internet Adopters, it went from an idea trying to create an internationalized network of amazing communities, to a lifestyle that has changed the way live and work.<br /><br />" +
@@ -115,15 +112,17 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                                                 if (srch === null) bootbox.hideAll();
                                         });
                                 };
-                                if (sys("hash", "whatscookin")) window[whatscookin()];
+                                if (textnet("hash", "radio")) textnet("radio");
+                                $(".tn-radio-textnet").click(function() { textnet("radio"); });
+                                if (textnet("hash", "whatscookin")) window[whatscookin()];
                                 $(".tn-wc").click(function() { window[whatscookin()]; });
-                                if (sys("hash", "youtube")) window[youtube_srch()];
+                                if (textnet("hash", "youtube")) window[youtube_srch()];
                                 $(".tn-youtube").click(function() { window[youtube_srch()]; });
                         });
                 });
         });
         head.load("//togetherjs.com/togetherjs-min.js", function() {
-                $(".tn-groupies").click(function() { sys("groupies"); });
+                $(".tn-groupies").click(function() { textnet("groupies"); });
                 TogetherJSConfig_on = {
                         ready: function() {
                                 window[$.bootstrapGrowl("Do not share personal information unless official consent is given.", {
@@ -139,12 +138,12 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                                         allow_dismiss: true
                                 })];
                                 window[function() {
-                                        form.value = store.get(sys("prefix") + "Groupies" || sys("prefix") + "groupies" || sys("prefix") + "collab");
+                                        form.value = store.get(textnet("prefix") + "Groupies" || textnet("prefix") + "groupies");
                                 }];
                         }
                 };
-                TogetherJSConfig_siteName = sys("SiteName");
-                TogetherJSConfig_toolName = sys("CollabName");
+                TogetherJSConfig_siteName = textnet("SiteName");
+                TogetherJSConfig_toolName = textnet("CollabName");
                 TogetherJSConfig_dontShowClicks = $(".navigation, .navigation *") || document.querySelector(".navigation, .navigation *");
                 TogetherJSConfig_findRoom = {
                         prefix: "groupies",
