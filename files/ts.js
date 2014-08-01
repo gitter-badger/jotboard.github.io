@@ -20,7 +20,7 @@ var textnet = function(main, _1, _2, _3, _4) {
                 $(".tn-menu-btn").toggleClass("fa-chevron-down").toggleClass("fa-chevron-up");
                 $("#submenu").toggleClass("block");
         }
-        // sys("change", "save/load")
+        // textnet("change", "save/load")
         if (main == "change") {
                 if (_1 == "save") {
                         if (!textnet("NamespaceValue")) {
