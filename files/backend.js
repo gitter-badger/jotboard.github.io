@@ -15,7 +15,7 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
         });
         head.load("//cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js", function() {
                 var UT = function() {
-                        if (sys("threshold", 4, 19)) $("#form").addClass("day");
+                        if (textnet("threshold", 4, 19)) $("#form").addClass("day");
                         else $("#form").addClass("night");
                         $("#form.day").attr({
                                 "placeholder": moment(new Date()).format("[Hows it goin? It's ]dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, have fun :P.]")
