@@ -1,5 +1,4 @@
-// Commons (sys): Basic values and Functions in one.
-var sys = function(main, _1, _2, _3) {
+var textnet = function(main, _1, _2, _3, _4) {
         if (main == "SiteName") return "Textnet";
         if (main == "CollabName") return "Groupies";
         if (main == "prefix") return "TN_-";
@@ -21,21 +20,13 @@ var sys = function(main, _1, _2, _3) {
                 $(".tn-menu-btn").toggleClass("fa-chevron-down").toggleClass("fa-chevron-up");
                 $("#submenu").toggleClass("block");
         }
-};
-
-// Universal Selector $.textnet() or jQuery.textnet()
-$.fn.textnet = function(tn, tn1, tn2, tn3, tn4) {
-        // $.textnet("toggleAttr", "title", "More", "Less"); (currently being discussed)
-        if (tn == "toggleAttr") $(this).attr(tn1, tn2) ? $(this).attr(tn1, tn3): $(this).attr(tn1, tn2);
-        // $.textnet("toggleHTML", "More", "Less"); (currently being discussed)
-        if (tn == "toggleHTML") $(this).html(tn1) ? $(this).html(tn2) : $(this).html(tn1);
-        // $.textnet("change", "save/load")
-        if (tn == "change") {
-                if (tn1 == "save") {
-                        if (!sys("NamespaceValue")) {
-                                store.set(sys("prefix") + sys("MainNamespace"), sys("FormValue"));
-                                console.info(sys("MainNamespace") + " > saved");
-                                $.bootstrapGrowl("The " + sys("MainNamespace") + " Textnet has been saved.", {
+        // sys("change", "save/load")
+        if (main == "change") {
+                if (_1 == "save") {
+                        if (!textnet("NamespaceValue")) {
+                                store.set(textnet("prefix") + textnet("MainNamespace"), textnet("FormValue"));
+                                console.info(textnet("MainNamespace") + " > saved");
+                                $.bootstrapGrowl("The " + textnet("MainNamespace") + " Textnet has been saved.", {
                                         ele: "body",
                                         type: "success",
                                         offset: {
@@ -49,9 +40,9 @@ $.fn.textnet = function(tn, tn1, tn2, tn3, tn4) {
                                         stackup_spacing: 10
                                 });
                         } else {
-                                store.set(sys("prefix") + sys("NamespaceValue"), sys("FormValue"));
-                                console.info(sys("NamespaceValue") + " > saved");
-                                $.bootstrapGrowl(sys("NamespaceValue") + " has been saved.", {
+                                store.set(textnet("prefix") + textnet("NamespaceValue"), textnet("FormValue"));
+                                console.info(textnet("NamespaceValue") + " > saved");
+                                $.bootstrapGrowl(textnet("NamespaceValue") + " has been saved.", {
                                         ele: "body",
                                         type: "info",
                                         offset: {
@@ -66,11 +57,11 @@ $.fn.textnet = function(tn, tn1, tn2, tn3, tn4) {
                                 });
                         }
                 }
-                if (tn1 == "load") {
-                        if (!sys("NamespaceValue")) {
-                                form.value = store.get(sys("prefix") + sys("MainNamespace"));
-                                console.info(sys("MainNamespace") + " > loaded");
-                                $.bootstrapGrowl("The " + sys("MainNamespace") + " Textnet has been loaded.", {
+                if (_1 == "load") {
+                        if (!textnet("NamespaceValue")) {
+                                form.value = store.get(textnet("prefix") + textnet("MainNamespace"));
+                                console.info(textnet("MainNamespace") + " > loaded");
+                                $.bootstrapGrowl("The " + textnet("MainNamespace") + " Textnet has been loaded.", {
                                         ele: "body",
                                         type: "info",
                                         offset: {
@@ -84,9 +75,9 @@ $.fn.textnet = function(tn, tn1, tn2, tn3, tn4) {
                                         stackup_spacing: 10
                                 });
                         } else {
-                                form.value = store.get(sys("prefix") + sys("NamespaceValue"));
-                                console.info(sys("NamespaceValue") + " > loaded");
-                                $.bootstrapGrowl(sys("NamespaceValue") + " has been loaded.", {
+                                form.value = store.get(textnet("prefix") + textnet("NamespaceValue"));
+                                console.info(textnet("NamespaceValue") + " > loaded");
+                                $.bootstrapGrowl(textnet("NamespaceValue") + " has been loaded.", {
                                         ele: "body",
                                         type: "info",
                                         offset: {
