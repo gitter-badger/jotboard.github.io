@@ -138,7 +138,7 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                                         allow_dismiss: true
                                 })];
                                 window[function() {
-                                        form.value = store.get(textnet("prefix") + "Groupies" || textnet("prefix") + "groupies");
+                                        form.value = store.get(textnet("prefix") + "groupies");
                                 }];
                         }
                 };
