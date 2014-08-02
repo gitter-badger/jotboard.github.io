@@ -1,5 +1,6 @@
 var DevMode = false;
-head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files/ts.js"], function() {
+head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files/frame.js"], function() {
+        console.log("jQuery, Frame.JS");
         $(function() {
                 $("iframe").attr({
                         "frameborder": "0",
@@ -14,6 +15,7 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                 if (DevMode === true || DevMode == "true") if (textnet("hash", "forceuse")) textnet("toggleBody");
         });
         head.load("//cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js", function() {
+                console.log("MomentJS");
                 var UT = function() {
                         if (textnet("threshold", 4, 19)) $("#form").addClass("day");
                         else $("#form").addClass("night");
@@ -28,6 +30,7 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                 setInterval(UT, 1);
         });
         head.load("//cdnjs.cloudflare.com/ajax/libs/store.js/1.3.14/store.min.js", function() {
+                console.log("Store.JS");
                 var form = document.getElementById("form");
                 var namespace = document.getElementById("namespace");
                 $(".tn-save").click(function() { textnet("change", "save"); });
@@ -38,12 +41,17 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                 }
         });
         head.load("//cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js", function() {
+                console.log("-Prefixfree");
                 head.load("//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css", function() {
-                        console.log("Font Awesome loaded.");
+                        console.log("Font Awesome");
                 });
-                head.load(["//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/bootstrap.min.js", "//cdnjs.cloudflare.com/ajax/libs/bootstrap-growl/1.0.0/jquery.bootstrap-growl.min.js"], function() {
-                        head.load("//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap.min.css");
+                head.load(["//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/bootstrap.min.js", "//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap.min.css"], function() {
+                        console.log("Bootstrap JS, Bootstrap CSS");
+                        head.load("//cdnjs.cloudflare.com/ajax/libs/bootstrap-growl/1.0.0/jquery.bootstrap-growl.min.js", function() {
+                                console.log("Bootstrap Growl");
+                        });
                         head.load("//cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.2.0/bootbox.js", function() {
+                                console.log("Bootbox");
                                 bootbox.setDefaults({
                                         locale: "en",
                                         backdrop: true,
@@ -122,7 +130,10 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                 });
         });
         head.load("//togetherjs.com/togetherjs-min.js", function() {
-                $(".tn-groupies").click(function() { textnet("groupies"); });
+                console.log("TogetherJS");
+                $(".tn-groupies").click(function() {
+                        textnet("groupies");
+                });
                 TogetherJSConfig_on = {
                         ready: function() {
                                 window[$.bootstrapGrowl("Do not share personal information unless official consent is given.", {
@@ -136,8 +147,7 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                                         width: "auto",
                                         delay: 3500,
                                         allow_dismiss: true
-                                })];
-                                window[function() {
+                                })], window[function() {
                                         form.value = store.get(textnet("prefix") + "groupies");
                                 }];
                         }
@@ -150,8 +160,8 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                         max: 4
                 };
                 TogetherJSConfig_useMinimizedCode = true;
-                TogetherJSConfig_ignoreMessages = true;
                 TogetherJSConfig_suppressInvite = true;
+                TogetherJSConfig_ignoreMessages = false;
                 TogetherJSConfig_suppressJoinConfirmation = false;
         });
 });
