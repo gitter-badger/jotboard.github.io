@@ -30,11 +30,11 @@ var textnet = function(main, _1, _2, _3, _4) {
                                         ele: "body",
                                         type: "success",
                                         offset: {
-                                                from: "bottom",
+                                                from: "top",
                                                 amount: 20
                                         },
                                         align: "right",
-                                        width: 300,
+                                        width: 290,
                                         delay: 4200,
                                         allow_dismiss: true,
                                         stackup_spacing: 10
@@ -46,11 +46,11 @@ var textnet = function(main, _1, _2, _3, _4) {
                                         ele: "body",
                                         type: "info",
                                         offset: {
-                                                from: "bottom",
+                                                from: "top",
                                                 amount: 20
                                         },
                                         align: "right",
-                                        width: 300,
+                                        width: 290,
                                         delay: 4200,
                                         allow_dismiss: true,
                                         stackup_spacing: 10
@@ -69,7 +69,7 @@ var textnet = function(main, _1, _2, _3, _4) {
                                                 amount: 20
                                         },
                                         align: "right",
-                                        width: 300,
+                                        width: 290,
                                         delay: 4200,
                                         allow_dismiss: true,
                                         stackup_spacing: 10
@@ -85,7 +85,7 @@ var textnet = function(main, _1, _2, _3, _4) {
                                                 amount: 20
                                         },
                                         align: "right",
-                                        width: 300,
+                                        width: 290,
                                         delay: 4200,
                                         allow_dismiss: true,
                                         stackup_spacing: 10
