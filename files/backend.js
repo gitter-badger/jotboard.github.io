@@ -64,10 +64,10 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                                                 message: "<iframe class='yt-player' width='100%' height='310' src='//www.youtube.com/embed/?listType=playlist&list=PLXJjNJMpJQKqbpmhNOJNETiMbfZpLjIVb&fs=1&loop=1&showinfo=0&autohide=1&theme=light' frameborder='0' allowfullscreen></iframe>",
                                                 buttons: {
                                                         enter: {
-                                                                label: "Mandatory Fun on iTunes",
+                                                                label: "#WhatsCookin",
                                                                 className: "btn-primary",
                                                                 callback: function() {
-                                                                        window.open("//smarturl.it/weirdalfun", "_blank");
+                                                                        window.open("//www.youtube.com/playlist?list=PLXJjNJMpJQKqbpmhNOJNETiMbfZpLjIVb", "_blank");
                                                                 }
                                                         }
                                                 }
