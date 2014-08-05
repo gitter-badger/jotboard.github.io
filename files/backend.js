@@ -1,6 +1,6 @@
 var DevMode = false;
 head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files/frame.js"], function() {
-        console.log("jQuery, Frame.JS");
+        console.log("jQuery, Frame");
         $(function() {
                 $("iframe").attr({
                         "frameborder": "0",
