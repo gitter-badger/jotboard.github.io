@@ -68,6 +68,7 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                                                                 className: "btn-link",
                                                                 callback: function() {
                                                                         window.open("//www.youtube.com/playlist?list=PLXJjNJMpJQKqbpmhNOJNETiMbfZpLjIVb", "_blank");
+                                                                        return false;
                                                                 }
                                                         }
                                                 }
