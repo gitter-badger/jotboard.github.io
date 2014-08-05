@@ -30,8 +30,8 @@ var textnet = function(main, _1, _2, _3, _4) {
                                         ele: "body",
                                         type: "success",
                                         offset: {
-                                                from: "top",
-                                                amount: 20
+                                                from: "bottom",
+                                                amount: 10
                                         },
                                         align: "right",
                                         width: 290,
@@ -47,7 +47,7 @@ var textnet = function(main, _1, _2, _3, _4) {
                                         type: "info",
                                         offset: {
                                                 from: "top",
-                                                amount: 20
+                                                amount: 10
                                         },
                                         align: "right",
                                         width: 290,
@@ -66,7 +66,7 @@ var textnet = function(main, _1, _2, _3, _4) {
                                         type: "info",
                                         offset: {
                                                 from: "bottom",
-                                                amount: 20
+                                                amount: 10
                                         },
                                         align: "right",
                                         width: 290,
@@ -82,7 +82,7 @@ var textnet = function(main, _1, _2, _3, _4) {
                                         type: "info",
                                         offset: {
                                                 from: "bottom",
-                                                amount: 20
+                                                amount: 10
                                         },
                                         align: "right",
                                         width: 290,
