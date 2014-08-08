@@ -25,25 +25,25 @@
 }
 
 #form::-webkit-input-placeholder {
-	font-family: "Lato", san-serif;
+	font-family: "Roboto", san-serif;
 	font-size: 65px;
 	color: #292929;
 }
 
 #form::-moz-input-placeholder {
-	font-family: "Lato", san-serif;
+	font-family: "Roboto", san-serif;
 	font-size: 65px;
 	color: #292929;
 }
 
 #form::-o-input-placeholder {
-	font-family: "Lato", san-serif;
+	font-family: "Roboto", san-serif;
 	font-size: 65px;
 	color: #292929;
 }
 
 #form::-ms-input-placeholder {
-	font-family: "Lato", san-serif;
+	font-family: "Roboto", san-serif;
 	font-size: 65px;
 	color: #292929;
 }
@@ -108,7 +108,7 @@ html, body, #html, #body {
 	overflow-y: scroll;
 	overflow-x: scroll;
 	white-space: nowrap;
-	font-family: "Lato", san-serif;
+	font-family: "Roboto", san-serif;
 	height: 100%;
 	max-height: 100%;
 	background: #E9E9E9;
