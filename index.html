@@ -4,29 +4,26 @@
 
 <!-- Main Assets -->
 <script src="//cdnjs.cloudflare.com/ajax/libs/headjs/1.0.3/head.load.min.js"></script>
-
-<!-- Backend (Loads System's Standards and Configuration) -->
-<script src="files/backend.js"></script>
-
-<!--[if lt IE 9]>
-<script src="//ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
-<![endif]-->
-
 <!-- Other Assets (To be placed after backend.js) -->
 <link href="//fonts.googleapis.com/css?family=Lato|Roboto|Source+Code+Pro" data-noprefix rel="stylesheet" type="text/css" />
-<link href="files/system.css" data-noprefix rel="stylesheet" type="text/css" />
+<!-- Backend (Loads System's Standards and Configuration) -->
+<script src="/files/backend.js"></script>
+<link data-noprefix href="files/system.css" rel="stylesheet" type="text/css" />
+<!-- Compatibility -->
+  <!--[if lt IE 9]>
+    <script src="//ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+  <![endif]-->
+<!-- Compatibility -->
 
 <!-- Fluid Icon (For Mac) -->
 <link rel="fluid-icon" title="Textnet" href="//cloud.githubusercontent.com/assets/3656841/3341194/1ae15c70-f886-11e3-8d9b-dd8ad2d88751.png" />
-
 <!-- Apple Bookmark -->
 <link rel="apple-touch-icon" href="//cloud.githubusercontent.com/assets/3656841/3341194/1ae15c70-f886-11e3-8d9b-dd8ad2d88751.png" />
-
 <!-- Shortcut Favicon -->
 <link rel="shortcut icon" href="//cloud.githubusercontent.com/assets/3656841/3341194/1ae15c70-f886-11e3-8d9b-dd8ad2d88751.png" />
 
 <!-- Basic -->
-<title>Textnet...</title>
+<title>Textnet..</title>
 <base target="_blank">
 <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width" />
 <link rel="dns-prefetch" href="//cdnjs.cloudflare.com/" />
@@ -36,21 +33,21 @@
 
 <!-- Google -->
 <meta name="title" content="Textnet" />
-<meta name="description" content="Textnet is a semi-anonymous social network that serves as a digital notebook and collaborative textbox for kicks." />
-<meta name="Keywords" content="textnet, semi-anonymous, social, storage, textbox" />
+<meta name="description" content="A segmented-social-network that serves as a digital diary and a collaborative textbox for kicks." />
+<meta name="Keywords" content="textnet, segemented, social, storage, textbox" />
 <link href="//plus.google.com/108766666836826673443" rel="publisher" />
 
 <!-- Facebook -->
 <meta property="og:site_name" content="Textnet" />
-<meta property="og:title" content="Sociao Ent.: Textnet" />
-<meta property="og:description" content="Textnet is a semi-anonymous social network that serves as a digital notebook and collaborative textbox for kicks." />
+<meta property="og:title" content="Textnet" />
+<meta property="og:description" content="A segmented-social-network that serves as a digital diary and a collaborative textbox for kicks." />
 <meta property="og:url" content="//textnet.github.io/" />
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@SociaoPeople" />
 <meta name="twitter:title" content="Sociao Ent.: Textnet" />
-<meta name="twitter:description" content="Textnet is a semi-anonymous social network that serves as a digital notebook and collaborative textbox for kicks." />
+<meta name="twitter:description" content="A segmented-social-network that serves as a digital diary and a collaborative textbox for kicks." />
 <meta name="twitter:creator" content="@ChrisLowles" />
 <meta name="twitter:domain" content="//textnet.github.io/" />
 
@@ -63,60 +60,61 @@
 
 <!-- .body.container -->
 <div class="body container">
-	<!-- .main.no-select#main -->
-	<div class="main no-select" id="main">
-		<textarea id="form"></textarea>
-	</div>
-	<!-- .navagation.no-select -->
-	<div class="navagation no-select">
-                <!-- .container -->
-                <div class="container">
-                        <div class="panel panel-default">
-                                <div class="panel-body">
-                                        <form role="search" action="//www.google.com/search" target="_blank" method="get">
-                                                <div class="form-group">
-                                                        <input type="text" id="namespace" name="q" class="form-control" title="Make a Textnet, Load a Textnet, Overwrite a Textnet or Search the Web" placeholder="Hero Box" />
-                                                </div>
-                                        </form>
-                                        <div class="nav-select">Textnet</div>
-                                        <div class="tn-save nav-select" title="Save Textnet">Save</div>
-                                        <div class="tn-load nav-select" title="Load Textnet">Load</div>
-                                        <div class="tn-menu-btn nav-select fa fa-chevron-down"></div>
-                                        <!-- #submenu -->
-                                        <div class="block" id="submenu">
-                                                <div class="tn-groupies select">Groupies</div>
-                                                <div class="tn-wc select">#WhatsCookin</div>
-                                                <div class="tn-youtube select">#YouTube</div>
-                                                <div class="tn-radio-textnet select">Radio Textnet</div>
-                                                <div class="block" id="_spotify_insert">
-                                                        <form role="search" action="//embed.spotify.com/" target="_spotify" method="get">
-                                                                <div class="form-group">
-                                                                        <input type="text" id="spotify_URI" name="uri" class="form-control" title="Enter the Spotify URI of your desired Album/Song/Playlist" placeholder="Spotify" />
-                                                                </div>
-                                                        </form>
-                                                </div>
-                                        </div>
-                                        <!-- /#submenu -->
-                                        <iframe src="//embed.spotify.com/?uri=spotify:user:1249813849:playlist:7gMrshUGhhYAKThn2RT8eQ" class="block" id="_spotify" name="_spotify"></iframe>
-                                </div>
-                        </div>
+  <!-- .main.no-select#main -->
+  <div class="main no-select" id="main">
+    <textarea id="form"></textarea>
+  </div>
+  <!-- .navagation.no-select -->
+  <div class="navagation no-select">
+    <!-- .container -->
+    <div class="container">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <form role="search" action="//www.google.com/search" target="_blank" method="get">
+            <div class="form-group">
+              <input type="text" id="namespace" name="q" class="form-control" title="Make a Textnet, Load a Textnet, Overwrite a Textnet or Search the Web" placeholder="Hero Box" />
+            </div>
+          </form>
+          <div class="nav-select">Textnet</div>
+          <div class="tn-save nav-select" title="Save Textnet">Save</div>
+          <div class="tn-load nav-select" title="Load Textnet">Load</div>
+          <div class="tn-menu-btn nav-select fa fa-chevron-down"></div>
+          <!-- #submenu -->
+          <div class="block" id="submenu">
+            <div class="tn-groupies select">Groupies</div>
+            <div class="tn-wc select">#WhatsCookin</div>
+            <div class="tn-youtube select">#YouTube</div>
+            <div class="tn-radio-textnet select">#RadioTextnet</div>
+            <div class="block" id="_spotify_insert">
+              <form role="search" action="//embed.spotify.com/" target="_spotify" method="get">
+                <div class="form-group">
+                  <input type="text" id="spotify_URI" name="uri" class="form-control" title="Enter the Spotify URI of your desired Album/Song/Playlist" placeholder="Spotify" />
                 </div>
+              </form>
+            </div>
+          </div>
+          <!-- /#submenu -->
+          <iframe src="//embed.spotify.com/?uri=spotify:user:1249813849:playlist:7gMrshUGhhYAKThn2RT8eQ" class="block" id="_spotify" name="_spotify"></iframe>
+        </div>
+      </div>
+    </div>
 		<!-- /.container -->
-	</div>
-	<!-- /.navagation.no-select -->
+    </div>
+  <!-- /.navagation.no-select -->
 </div>
 <!-- /.body.container -->
 
 <!-- rel(): Reloader for Debugging -->
 <script>
-function rel(_) {
-	if (_ == 'f') location.reload(false);
-	else location.reload(true);
-}
+var rel = function(_) {
+  if (_ == 'f') location.reload(false);
+  else location.reload(true);
+};
 </script>
 
 <style>
 .block { display: none !important; }
+.no-block { display: none !important; }
 </style>
 
 </body>

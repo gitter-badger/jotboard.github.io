@@ -116,9 +116,7 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
         }
         var youtube_srch = function() {
           bootbox.prompt("YouTube", function(srch) {
-            if (srch) {
-              window.open("//www.youtube.com/results?search_query=" + srch, "_blank");
-            }
+            if (srch) window.open("//www.youtube.com/results?search_query=" + srch, "_blank");
             if (srch === null) bootbox.hideAll();
           });
         };

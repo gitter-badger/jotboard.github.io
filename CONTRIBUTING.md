@@ -1,6 +1,6 @@
 # Contributing to Textnet
 
-> As we welcome Feature Requests and Bug Reports, please read these guidelines before submitting one. 
+> As we welcome Feature Requests and Bug Reports, please read these guidelines before submitting one.
 
 <span class="warning">**Words that begin with the at sign (`@`) must be wrapped in backticks!** </span>. As a courtesy to avoid sending notifications to any user that might have the `@username` being referenced, please remember that GitHub usernames also start with the @ sign. If you don't wrap them in backticks, users will get unintended notifications from you.
 
@@ -8,7 +8,7 @@ GitHub has other great Markdown features as well, [go to there help page to find
 
 ## Reporting an Issue
 
-We only accept issues that are inline with the avalible categories. Bugs must be isolated and reproducible problems that we can fix within the Textnet core. Please read the following guidelines before opening any kind of issue. 
+We only accept issues that are inline with the avalible categories. Bugs must be isolated and reproducible problems that we can fix within the Textnet core. Please read the following guidelines before opening any kind of issue.
 
 1. **Search for existing issues.** Since this is the one and only place to submit reports, its likely that we could get a lot of duplicate submissions, and you'd help us out a lot by first checking if someone else has reported the same issue. Moreover, the issue may have already been resolved with a fix being under development.
 2. **Create an isolated and reproducible test case.** Be sure the problem exists in Textnet's code with [reduced test cases](http://textnet.github.io/#bugged) that should be included in each bug report.
