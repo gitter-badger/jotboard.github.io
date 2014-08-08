@@ -1,4 +1,4 @@
-var DevMode = true;
+var DevMode = false;
 head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files/frame.js"], function() {
   console.log("jQuery, Frame");
   $(function() {
@@ -13,7 +13,7 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
     if (!window.location.hash) document.title = "Textnet";
     if (DevMode === false || DevMode == "false") textnet("toggleBody");
     if (DevMode === true || DevMode == "true")
-      if (textnet("hash", "forceuse")) textnet("toggleBody");
+    if (textnet("hash", "forceuse")) textnet("toggleBody");
   });
   head.load("//cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js", function() {
     console.log("MomentJS");
@@ -34,19 +34,15 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
     console.log("Store.JS");
     var form = document.getElementById("form");
     var namespace = document.getElementById("namespace");
-    $(".tn-save").click(function() {
-      textnet("change", "save");
-    });
-    $(".tn-load").click(function() {
-      textnet("change", "load");
-    });
+    $(".tn-save").click(function() { textnet("change", "save"); });
+    $(".tn-load").click(function() { textnet("change", "load"); });
     if (window.localStorage[textnet("prefix") + textnet("MainNamespace")]) {
       form.value = store.get(textnet("prefix") + textnet("MainNamespace"));
       console.info("The " + textnet("MainNamespace") + " Textnet is avalible.");
     }
   });
   head.load("//cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js", function() {
-    console.log("-Prefixfree");
+    console.log("Prefix Free");
     head.load("//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css", function() {
       console.log("Font Awesome");
     });
