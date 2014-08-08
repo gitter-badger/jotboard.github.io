@@ -25,25 +25,25 @@
 }
 
 #form::-webkit-input-placeholder {
-	font-family: "Roboto", san-serif;
+	font-family: "Lato", san-serif;
 	font-size: 65px;
 	color: #292929;
 }
 
 #form::-moz-input-placeholder {
-	font-family: "Roboto", san-serif;
+	font-family: "Lato", san-serif;
 	font-size: 65px;
 	color: #292929;
 }
 
 #form::-o-input-placeholder {
-	font-family: "Roboto", san-serif;
+	font-family: "Lato", san-serif;
 	font-size: 65px;
 	color: #292929;
 }
 
 #form::-ms-input-placeholder {
-	font-family: "Roboto", san-serif;
+	font-family: "Lato", san-serif;
 	font-size: 65px;
 	color: #292929;
 }
