@@ -152,12 +152,6 @@ iframe, textarea, input {
 	border: none;
 }
 
-[lato], .lato { font-family: "Lato", sans-serif; }
-[roboto], .roboto { font-family: "Roboto", sans-serif; }
-[open-sans], .open-sans { font-family: "Open Sans", sans-serif; }
-[default-cur] { cursor: default; }
-[pointer-cur] { cursor: pointer; }
-[none-cur] { cursor: none; }
 #form::selection { background: rgba(0, 0, 0, .45); }
 div.bootbox.modal, div.bootbox.modal * { font-family: "Roboto", san-serif !important; }
 div.bootbox.modal .modal-header { border-bottom: 0; }
