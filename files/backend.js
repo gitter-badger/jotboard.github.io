@@ -6,9 +6,7 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
       "frameborder": "0",
       "allowtransparency": "true"
     }).addClass("iframe");
-    $(".tn-menu-btn").click(function() {
-      textnet("submenu");
-    });
+    $(".tn-menu-btn").click(function() { textnet("submenu"); });
     if (window.location.hash) document.title = "# Textnet";
     if (!window.location.hash) document.title = "Textnet";
     if (DevMode === false || DevMode == "false") textnet("toggleBody");
