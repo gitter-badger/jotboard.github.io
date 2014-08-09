@@ -6,12 +6,15 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
       "frameborder": "0",
       "allowtransparency": "true"
     }).addClass("iframe");
-    $(".tn-menu-btn").click(function() { textnet("submenu"); });
+    $(".tn-menu-btn").click(function() {
+      textnet("submenu");
+    });
     if (window.location.hash) document.title = "# Textnet";
     if (!window.location.hash) document.title = "Textnet";
     if (DevMode === false || DevMode == "false") textnet("toggleBody");
-    if (DevMode === true || DevMode == "true")
-    if (textnet("hash", "forceuse")) textnet("toggleBody");
+    if (DevMode === true || DevMode == "true") {
+      if (textnet("hash", "forceuse")) textnet("toggleBody");
+    }
   });
   head.load("//cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js", function() {
     console.log("MomentJS");
