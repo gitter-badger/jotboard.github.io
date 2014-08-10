@@ -88,7 +88,9 @@ html, body, #html, #body {
 	cursor: pointer;
 }
 
-.navagation .select:first-child {
+#_spotify_insert form .form-group {
+  margin-bottom: 6px !important;
+} .navagation .select:first-child {
   margin-top: 9px !important;
 } .navagation .select:last-child {
   margin-bottom: 0 !important;
