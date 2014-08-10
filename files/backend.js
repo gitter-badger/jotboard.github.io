@@ -18,8 +18,8 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
   });
   head.load("//cdn.jsdelivr.net/momentjs/2.8.1/moment.min.js", function() {
     console.log("MomentJS");
-    var UT = function() {
-      if (textnet("threshold", 4, 19)) $("#form").addClass("day");
+    var marki = function() {
+      if (textnet("threshold", 0, 13)) $("#form").addClass("day");
       else $("#form").addClass("night");
       $("#form.day").attr({
         "placeholder": moment(new Date()).format("[Hows it goin? It's ]dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, have fun :P.]")
@@ -28,8 +28,8 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
         "placeholder": moment(new Date()).format("[Hi, its currently] dddd, Do [of] MMMM YYYY[ and the time is] h:mm a[, have fun.]")
       });
     };
-    UT();
-    setInterval(UT, 1);
+    marki();
+    setInterval(marki, 1);
   });
   head.load("//cdnjs.cloudflare.com/ajax/libs/store.js/1.3.14/store.min.js", function() {
     console.log("Store.JS");
@@ -62,11 +62,11 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
         });
         var whatscookin = function() {
           bootbox.dialog({
-            title: "#WhatsCookin",
+            title: "#TextnetWC",
             message: "<iframe id='_youtube' src='//www.youtube.com/embed/?listType=playlist&list=PLXJjNJMpJQKqbpmhNOJNETiMbfZpLjIVb&fs=1&loop=1&showinfo=0&autohide=1&theme=light' frameborder='0' allowfullscreen></iframe>",
             buttons: {
               enter: {
-                label: "#WhatsCookin",
+                label: "#TextnetWC",
                 className: "btn-link",
                 callback: function() {
                   window.open("//www.youtube.com/playlist?list=PLXJjNJMpJQKqbpmhNOJNETiMbfZpLjIVb", "_blank");
