@@ -26,21 +26,15 @@
 	font-family: "Lato", san-serif;
 	font-size: 65px;
 	color: #292929;
-}
-
-#form::-moz-input-placeholder {
+} #form::-moz-input-placeholder {
 	font-family: "Lato", san-serif;
 	font-size: 65px;
 	color: #292929;
-}
-
-#form::-o-input-placeholder {
+} #form::-o-input-placeholder {
 	font-family: "Lato", san-serif;
 	font-size: 65px;
 	color: #292929;
-}
-
-#form::-ms-input-placeholder {
+} #form::-ms-input-placeholder {
 	font-family: "Lato", san-serif;
 	font-size: 65px;
 	color: #292929;
@@ -145,7 +139,7 @@ div.bootbox.modal, div.bootbox.modal * {
 
 .no-select, .no-select * {
   user-select: none;
-  }
+}
 
 html, body, html#html, body#body {
 	overflow: hidden;
