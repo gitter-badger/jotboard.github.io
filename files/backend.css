@@ -54,6 +54,8 @@
 
 html, body, #html, #body {
 	transition: background 0.650s ease;
+  text-rendering: optimizeLegibility !important;
+  -webkit-font-smoothing: antialiased !important;
 }
 
 .navagation #namespace, .navagation #spotify_URI,
