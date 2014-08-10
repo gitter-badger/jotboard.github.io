@@ -143,7 +143,9 @@ div.bootbox.modal, div.bootbox.modal * {
 	user-select: none;
 }
 
-.no-select, .no-select * { user-select: none; }
+.no-select, .no-select * {
+  user-select: none;
+  }
 
 html, body, html#html, body#body {
 	overflow: hidden;
