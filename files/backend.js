@@ -16,7 +16,7 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
       if (textnet("hash", "forceuse")) textnet("toggleBody");
     }
   });
-  head.load("//cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js", function() {
+  head.load("//cdn.jsdelivr.net/momentjs/2.8.1/moment.min.js", function() {
     console.log("MomentJS");
     var UT = function() {
       if (textnet("threshold", 4, 19)) $("#form").addClass("day");
