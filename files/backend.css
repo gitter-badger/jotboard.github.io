@@ -152,6 +152,10 @@ iframe, textarea, input {
 	border: none;
 }
 
+input#namespace:focus, input#namespace {
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+}
+
 #form::selection { background: rgba(0, 0, 0, .45); }
 div.bootbox.modal, div.bootbox.modal * { font-family: "Roboto", san-serif !important; }
 div.bootbox.modal .modal-header { border-bottom: 0; }
