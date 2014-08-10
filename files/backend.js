@@ -63,7 +63,7 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
         var whatscookin = function() {
           bootbox.dialog({
             title: "#WhatsCookin",
-            message: "<iframe class='yt-player' width='100%' height='310' src='//www.youtube.com/embed/?listType=playlist&list=PLXJjNJMpJQKqbpmhNOJNETiMbfZpLjIVb&fs=1&loop=1&showinfo=0&autohide=1&theme=light' frameborder='0' allowfullscreen></iframe>",
+            message: "<iframe id='_youtube' src='//www.youtube.com/embed/?listType=playlist&list=PLXJjNJMpJQKqbpmhNOJNETiMbfZpLjIVb&fs=1&loop=1&showinfo=0&autohide=1&theme=light' frameborder='0' allowfullscreen></iframe>",
             buttons: {
               enter: {
                 label: "#WhatsCookin",
@@ -76,7 +76,7 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
             }
           });
         };
-        if (textnet("hash", "campaign")) {
+        if (textnet("hash", "campaign") || textnet("hash", "savetheweb")) {
           bootbox.dialog({
             title: "A message to the odd Internet User",
             message: "The Internet really has become something to be proud of, especially for early Internet Adopters, it went from an idea trying to create an internationalized network of amazing communities, to a lifestyle that has changed the way live and work.<br /><br />" +
@@ -117,7 +117,7 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
         }
         var youtube_srch = function() {
           bootbox.prompt("YouTube", function(srch) {
-            if (srch) window.open("//www.youtube.com/results?search_query=" + srch, "_blank");
+            if (srch) window.open("//www.youtube.com/results?search_query=" + srch, "_blank"), console.log("YouTube:" + srch);
             if (srch === null) bootbox.hideAll();
           });
         };
