@@ -1,4 +1,11 @@
 var DevMode = false;
+var head_conf = {
+  html5: true,
+  browsers: [
+    { ie: { min: 6, max: 11 } },
+    { ff: { min: 3, max: 26 } }
+  ]
+};
 head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files/frame.js"], function() {
   console.log("jQuery, Frame");
   $(function() {
