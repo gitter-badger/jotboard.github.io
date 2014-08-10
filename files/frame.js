@@ -47,13 +47,13 @@ var textnet = function(main, _1, _2, _3, _4) {
                                         type: "info",
                                         offset: {
                                                 from: "top",
-                                                amount: 10
+                                                amount: 20
                                         },
                                         align: "right",
                                         width: 290,
                                         delay: 4200,
                                         allow_dismiss: true,
-                                        stackup_spacing: 10
+                                        stackup_spacing: 20
                                 });
                         }
                 }
@@ -66,13 +66,13 @@ var textnet = function(main, _1, _2, _3, _4) {
                                         type: "info",
                                         offset: {
                                                 from: "bottom",
-                                                amount: 10
+                                                amount: 20
                                         },
                                         align: "right",
                                         width: 290,
                                         delay: 4200,
                                         allow_dismiss: true,
-                                        stackup_spacing: 10
+                                        stackup_spacing: 20
                                 });
                         } else {
                                 form.value = store.get(textnet("prefix") + textnet("NamespaceValue"));
@@ -82,13 +82,13 @@ var textnet = function(main, _1, _2, _3, _4) {
                                         type: "info",
                                         offset: {
                                                 from: "bottom",
-                                                amount: 10
+                                                amount: 20
                                         },
                                         align: "right",
                                         width: 290,
                                         delay: 4200,
                                         allow_dismiss: true,
-                                        stackup_spacing: 10
+                                        stackup_spacing: 20
                                 });
                         }
                 }
