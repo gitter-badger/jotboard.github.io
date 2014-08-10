@@ -37,7 +37,7 @@ var textnet = function(main, _1, _2, _3, _4) {
                                         width: 290,
                                         delay: 4200,
                                         allow_dismiss: true,
-                                        stackup_spacing: 20
+                                        stackup_spacing: 10
                                 });
                         } else {
                                 store.set(textnet("prefix") + textnet("NamespaceValue"), textnet("FormValue"));
@@ -53,7 +53,7 @@ var textnet = function(main, _1, _2, _3, _4) {
                                         width: 290,
                                         delay: 4200,
                                         allow_dismiss: true,
-                                        stackup_spacing: 20
+                                        stackup_spacing: 10
                                 });
                         }
                 }
@@ -72,7 +72,7 @@ var textnet = function(main, _1, _2, _3, _4) {
                                         width: 290,
                                         delay: 4200,
                                         allow_dismiss: true,
-                                        stackup_spacing: 20
+                                        stackup_spacing: 10
                                 });
                         } else {
                                 form.value = store.get(textnet("prefix") + textnet("NamespaceValue"));
@@ -88,7 +88,7 @@ var textnet = function(main, _1, _2, _3, _4) {
                                         width: 290,
                                         delay: 4200,
                                         allow_dismiss: true,
-                                        stackup_spacing: 20
+                                        stackup_spacing: 10
                                 });
                         }
                 }
