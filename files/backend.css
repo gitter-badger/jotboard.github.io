@@ -64,6 +64,10 @@ html, body, #html, #body {
 	transition: background 0.650s ease;
 }
 
+.navagation .select:last-child {
+  margin-bottom: 0 !important;
+}
+
 .navagation #namespace, .navagation #spotify_URI,
 .navagation #namespace:focus, .navagation #spotify_URI:focus {
 	text-align: center;
@@ -71,6 +75,7 @@ html, body, #html, #body {
   font-size: 20px;
 	margin-top: 12px;
 	margin-left: 0;
+	margin-right: 0;
   height: inherit;
   box-shadow: 0 0 0 rgba(0, 0, 0, 0);
   border: none !important;
