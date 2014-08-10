@@ -64,11 +64,16 @@ html, body, #html, #body {
 	transition: background 0.650s ease;
 }
 
-.navagation #namespace, .navagation #spotify_URI {
+.navagation #namespace, .navagation #spotify_URI,
+.navagation #namespace:focus, .navagation #spotify_URI:focus {
 	text-align: center;
 	width: 100%;
+  font-size: 20px;
 	margin-top: 13px;
 	margin-left: 0;
+  height: inherit;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  border: none !important;
 }
 
 .navagation .container {
@@ -150,13 +155,6 @@ iframe, textarea, input {
 	resize: none;
 	outline: none;
 	border: none;
-}
-
-input#namespace:focus, input#namespace {
-  font-size: 20px;
-  height: inherit;
-  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
-  border: none !important;
 }
 
 #form::selection { background: rgba(0, 0, 0, .45); }
