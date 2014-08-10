@@ -153,8 +153,10 @@ iframe, textarea, input {
 }
 
 input#namespace:focus, input#namespace {
-  font-size: 25px;
+  font-size: 20px;
+  height: inherit;
   box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  border: none !important;
 }
 
 #form::selection { background: rgba(0, 0, 0, .45); }
