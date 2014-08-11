@@ -22,6 +22,17 @@
 	float: right;
 }
 
+.notes-container {
+  width: 100%;
+} .notes {
+  width: 100%;
+  height: 200px;
+	font: 14px "Source Code Pro", sans-serif;
+	background: none;
+	color: #2B2B2B;
+}
+
+
 #form::-webkit-input-placeholder {
 	font-family: "Lato", san-serif;
 	font-size: 65px;
