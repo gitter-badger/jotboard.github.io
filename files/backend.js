@@ -39,6 +39,14 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
   });
   head.load("//cdnjs.cloudflare.com/ajax/libs/store.js/1.3.14/store.min.js", function() {
     console.log("Store.JS");
+    $(function() {
+      if (store.get("TNNotes")) $("#notes").val(store.get("TNNotes"));
+      $("#notes").keyup(function() {
+        store.set("TNNotes", $(this).val());
+      }).keydown(function() {
+        store.set("TNNotes", $(this).val());
+      });
+    });
     var form = document.getElementById("form");
     var namespace = document.getElementById("namespace");
     $(".tn-save").click(function() { textnet("change", "save"); });
