@@ -23,10 +23,10 @@
 }
 
 .notes-container {
-  width: 100%;
-} .notes {
-  margin: 1%;
   width: 98%;
+  padding: 1%;
+} .notes {
+  width: 100%;
   height: 320px;
 	font: 12px "Roboto", sans-serif !important;
 	background: none;
