@@ -52,8 +52,12 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
     });
     var form = document.getElementById("form");
     var namespace = document.getElementById("namespace");
-    $(".tn-save").click(function() { textnet("change", "save"); });
-    $(".tn-load").click(function() { textnet("change", "load"); });
+    $(".tn-save").click(function() {
+      textnet("change", "save");
+    });
+    $(".tn-load").click(function() {
+      textnet("change", "load");
+    });
     if (window.localStorage[textnet("prefix") + textnet("MainNamespace")]) {
       form.value = store.get(textnet("prefix") + textnet("MainNamespace"));
       console.info("The " + textnet("MainNamespace") + " Textnet is avalible.");
@@ -73,26 +77,32 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
         console.log("Bootbox");
         bootbox.setDefaults({
           locale: "en",
-          backdrop: true,
+          backdrop: false,
           closeButton: true,
-          animate: true
+          animate: false
+          onEscape: function() {
+            bootbox.hideAll();
+          }
         });
         var whatscookin = function() {
           bootbox.dialog({
-            title: "#TextnetWC",
+            title: "Whats Cookin? (#TextnetWC)",
             message: "<iframe id='_youtube' src='//www.youtube.com/embed/?listType=playlist&list=PLXJjNJMpJQKqbpmhNOJNETiMbfZpLjIVb&fs=1&loop=1&showinfo=0&autohide=1&theme=light' frameborder='0' allowfullscreen></iframe>",
             buttons: {
               enter: {
                 label: "#TextnetWC",
                 className: "btn-link",
                 callback: function() {
-                  window.open("//www.youtube.com/playlist?list=PLXJjNJMpJQKqbpmhNOJNETiMbfZpLjIVb", "_blank");
+                  window.open("/#p#WhatsCookin", "_blank");
                   return false;
                 }
               }
             }
           });
         };
+        if (textnet("hash", "p")) {
+          if (textnet("hash", "WhatsCookin")) window.open("//www.youtube.com/playlist?list=PLXJjNJMpJQKqbpmhNOJNETiMbfZpLjIVb", "_blank");
+        }
         if (textnet("hash", "campaign") || textnet("hash", "savetheweb")) {
           bootbox.dialog({
             title: "A message to the odd Internet User",
