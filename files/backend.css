@@ -26,7 +26,7 @@
   width: 98%;
   height: 320px;
   padding: 1%;
-} .notes {
+} textarea#notes {
 	font: 12px "Roboto", sans-serif !important;
 	color: #2B2B2B !important;
   text-align: center;
@@ -36,7 +36,6 @@
   margin: 0;
 	background: none;
 }
-
 
 #form::-webkit-input-placeholder {
 	font-family: "Lato", san-serif;
