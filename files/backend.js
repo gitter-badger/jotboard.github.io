@@ -1,10 +1,12 @@
 var DevMode = false;
+
 var head_conf = {
   html5: true, browsers: [
     { ie: { min: 6, max: 11 } },
     { ff: { min: 3, max: 26 } }
   ]
 };
+
 head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files/frame.js"], function() {
   console.log("jQuery, Frame");
   $(function() {
@@ -24,7 +26,7 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
   });
   head.load("//cdn.jsdelivr.net/momentjs/2.8.1/moment.min.js", function() {
     console.log("MomentJS");
-    var marki = function() {
+    var ChangeUp = function() {
       if (textnet("threshold", 0, 13)) $("#form").addClass("day");
       else $("#form").addClass("night");
       $("#form.day").attr({
@@ -34,8 +36,8 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
         "placeholder": moment(new Date()).format("[Hi, its currently] dddd, Do [of] MMMM YYYY[ and the time is] h:mm a[, have fun.]")
       });
     };
-    marki();
-    setInterval(marki, 1);
+    ChangeUp();
+    setInterval(ChangeUp, 1);
   });
   head.load("//cdnjs.cloudflare.com/ajax/libs/store.js/1.3.14/store.min.js", function() {
     console.log("Store.JS");
