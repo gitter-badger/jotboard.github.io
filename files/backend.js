@@ -93,16 +93,13 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                 label: "#TextnetWC",
                 className: "btn-link",
                 callback: function() {
-                  window.open("/#p#WhatsCookin", "_blank");
+                  window.open("//www.youtube.com/playlist?list=PLXJjNJMpJQKqbpmhNOJNETiMbfZpLjIVb", "_blank");
                   return false;
                 }
               }
             }
           });
         };
-        if (textnet("hash", "p")) {
-          if (textnet("hash", "WhatsCookin")) window.open("//www.youtube.com/playlist?list=PLXJjNJMpJQKqbpmhNOJNETiMbfZpLjIVb", "_blank");
-        }
         if (textnet("hash", "campaign") || textnet("hash", "savetheweb")) {
           bootbox.dialog({
             title: "A message to the odd Internet User",
