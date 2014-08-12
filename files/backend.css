@@ -10,7 +10,7 @@
 }
 
 #body, #main, #form {
-  background: #0045FF;
+	  background: #0045FF;
 }
 
 #form {
@@ -23,15 +23,15 @@
 }
 
 .notes-container {
-  width: 98%;
-  height: 320px;
-  padding: 1%;
+	width: 100%;
+  padding: 1% !important;
+  margin: 0;
 } textarea#notes {
 	font: 12px "Roboto", sans-serif !important;
 	color: #2B2B2B !important;
   text-align: center;
   width: 100%;
-  height: 100%;
+  height: 320px;
   padding: 0;
   margin: 0;
 	background: none;
