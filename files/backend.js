@@ -79,7 +79,7 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
           locale: "en",
           backdrop: false,
           closeButton: true,
-          animate: false
+          animate: false,
           onEscape: function() {
             bootbox.hideAll();
           }
