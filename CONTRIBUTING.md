@@ -17,7 +17,7 @@ We only accept issues that are inline with the avalible categories. Bugs must be
 
 ## Feature Requests
 
-Side-note: Feature Requests are almost always accepted (depending on whether its SFW or not) and are nested into the submenu.
+Side-note: Feature Requests are almost always accepted (depending on whether its safe for work or not) and are nested into the submenu.
 
 * Please search for existing feature requests first to see if something similar already exists and if it exists in the submenu.
 * Include a clear and specific use-case. We love new ideas, but we do not add features without a good reason.
@@ -29,7 +29,4 @@ _Pull requests are encouraged!_
 
 * Start by forking the Textnet Repo.
 * Then atempt to modify parts that seem to be in need for a change.
-* If your pull request solves an existing issue, but it's different in some way, _please create a new issue_ and make sure to discuss it with the core contributors. Otherwise you risk your hard work being rejected.
-
-## Developing Chrome Extensions
-Chrome Extensions for Textnet are currently being considered, more info as we update on the matter.
+* If your pull request solves an existing issue, but it's different in some way, _please create a new issue_ and make sure to discuss it with the main contributors. Otherwise you risk your hard work being rejected.
