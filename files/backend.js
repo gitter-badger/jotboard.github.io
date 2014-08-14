@@ -1,5 +1,4 @@
 var DevMode = false;
-
 var head_conf = {
   html5: true, browsers: [
     { ie: { min: 6, max: 11 } },
