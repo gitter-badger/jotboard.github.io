@@ -10,10 +10,10 @@ GitHub has other great Markdown features as well, [go to there help page to find
 
 We only accept issues that are inline with the avalible categories. Bugs must be isolated and reproducible problems that we can fix within the Textnet core. Please read the following guidelines before opening any kind of issue.
 
-1. **Search for existing issues.** Since this is the one and only place to submit reports, its likely that we could get a lot of duplicate submissions, and you'd help us out a lot by first checking if someone else has reported the same issue. Moreover, the issue may have already been resolved with a fix being under development.
-2. **Create an isolated and reproducible test case.** Be sure the problem exists in Textnet's code with [reduced test cases](http://textnet.github.io/#bugged) that should be included in each bug report.
-4. **Share as much information as possible.** Include operating system and browser. Describe how you use Textnet, and try to include steps to reproduce the bug.
-5. If you have a solution or suggestion for how to fix the bug you're reporting, please include it, or make a pull request - don't assume the maintainers know how to fix it just because you do.
+1. ** Search for existing issues.** Since this is the one and only place to submit reports, its likely that we could get a lot of duplicate submissions, and you'd help us out a lot by first checking if someone else has reported the same issue. Moreover, the issue may have already been resolved with a fix being under development.
+2. ** Create an isolated and reproducible test case.** Be sure the problem exists in Textnet's code with [reduced test cases](http://textnet.github.io/#bugged) that should be included in each bug report.
+4. ** Share as much information as possible.** Include operating system and browser. Describe how you use Textnet, and try to include steps to reproduce the bug.
+5. ** If you have a solution or suggestion for how to fix the bug you're reporting, please include it, or make a pull request - don't assume the maintainers know how to fix it just because you do.
 
 ## Feature Requests
 
