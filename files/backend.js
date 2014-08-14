@@ -5,7 +5,6 @@ var head_conf = {
     { ff: { min: 3, max: 26 } }
   ]
 };
-
 head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files/frame.js"], function() {
   console.log("jQuery, Frame");
   $(function() {
