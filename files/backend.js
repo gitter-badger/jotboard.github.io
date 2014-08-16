@@ -147,7 +147,7 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
         };
         if (textnet("hash", "radio")) textnet("radio");
         $(".tn-radio-textnet").click(function() { textnet("radio"); });
-        if (textnet("hash", "whatscookin")||textnet("hash", "tnwc")) window[whatscookin()];
+        if (textnet("hash", "whatscookin") || textnet("hash", "tnwc")) window[whatscookin()];
         $(".tn-wc").click(function() { window[whatscookin()]; });
         if (textnet("hash", "youtube")) window[youtube_srch()];
         $(".tn-youtube").click(function() { window[youtube_srch()]; });
