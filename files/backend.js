@@ -42,7 +42,9 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
     console.log("Store.JS");
     $(function() {
       if (store.get("TNNotes")) $("textarea#notes").val(store.get("TNNotes"));
-      $("textarea#notes").keyup(function() {
+      $("textarea#notes").attr({
+        "placeholder": "Make Some Notes"
+      }).keyup(function() {
         store.set("TNNotes", $(this).val());
       }).keydown(function() {
         store.set("TNNotes", $(this).val());
