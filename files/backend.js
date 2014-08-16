@@ -5,6 +5,7 @@ var head_conf = {
     { ff: { min: 3, max: 26 } }
   ]
 };
+
 head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files/frame.js"], function() {
   console.log("jQuery, Frame");
   $(function() {
@@ -40,7 +41,6 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
   head.load("//cdnjs.cloudflare.com/ajax/libs/store.js/1.3.14/store.min.js", function() {
     console.log("Store.JS");
     $(function() {
-      $("textarea#notes").attr("placeholder", "Make Some Notes");
       if (store.get("TNNotes")) $("textarea#notes").val(store.get("TNNotes"));
       $("textarea#notes").keyup(function() {
         store.set("TNNotes", $(this).val());
@@ -84,11 +84,11 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
         });
         var whatscookin = function() {
           bootbox.dialog({
-            title: "Whats Cookin? (#TextnetWC)",
+            title: "Whats Cookin? (#TNWC)",
             message: "<iframe id='_youtube' src='//www.youtube.com/embed/?listType=playlist&list=PLOSutk9k0C3ofKYoP447uBfibpuAUKCoP&fs=1&loop=1&showinfo=0&autohide=1&theme=light' frameborder='0' allowfullscreen></iframe>",
             buttons: {
               enter: {
-                label: "#TextnetWC",
+                label: "#TNWC",
                 className: "btn-link",
                 callback: function() {
                   window.open("//www.youtube.com/playlist?list=PLXJjNJMpJQKqbpmhNOJNETiMbfZpLjIVb", "_blank");
@@ -145,7 +145,7 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
         };
         if (textnet("hash", "radio")) textnet("radio");
         $(".tn-radio-textnet").click(function() { textnet("radio"); });
-        if (textnet("hash", "whatscookin")) window[whatscookin()];
+        if (textnet("hash", "whatscookin")||textnet("hash", "tnwc")) window[whatscookin()];
         $(".tn-wc").click(function() { window[whatscookin()]; });
         if (textnet("hash", "youtube")) window[youtube_srch()];
         $(".tn-youtube").click(function() { window[youtube_srch()]; });
@@ -157,6 +157,7 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
     $(".tn-groupies").click(function() { textnet("groupies"); });
     TogetherJSConfig_on = {
       ready: function() {
+        window[form.value = store.get(textnet("prefix") + "groupies")];
         window[$.bootstrapGrowl("Do not share personal information unless official consent is given.", {
           ele: "body",
           type: "info",
@@ -168,9 +169,7 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
           width: "auto",
           delay: 3500,
           allow_dismiss: true
-        })], window[function() {
-          form.value = store.get(textnet("prefix") + "groupies");
-        }];
+        })];
       }
     };
     TogetherJSConfig_siteName = textnet("SiteName");
