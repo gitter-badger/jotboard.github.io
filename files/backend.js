@@ -77,8 +77,7 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
         console.log("Bootbox");
         bootbox.setDefaults({
           locale: "en",
-          backdrop: false,
-          closeButton: true,
+          backdrop: true,
           animate: false,
           onEscape: function() {
             bootbox.hideAll();
