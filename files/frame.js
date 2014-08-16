@@ -30,7 +30,7 @@ var textnet = function(main, _1, _2, _3, _4) {
                                         ele: "body",
                                         type: "success",
                                         offset: {
-                                                from: "top",
+                                                from: "bottom",
                                                 amount: 20
                                         },
                                         align: "right",
@@ -46,7 +46,7 @@ var textnet = function(main, _1, _2, _3, _4) {
                                         ele: "body",
                                         type: "info",
                                         offset: {
-                                                from: "top",
+                                                from: "bottom",
                                                 amount: 20
                                         },
                                         align: "right",
@@ -65,7 +65,7 @@ var textnet = function(main, _1, _2, _3, _4) {
                                         ele: "body",
                                         type: "info",
                                         offset: {
-                                                from: "top",
+                                                from: "bottom",
                                                 amount: 20
                                         },
                                         align: "right",
@@ -81,7 +81,7 @@ var textnet = function(main, _1, _2, _3, _4) {
                                         ele: "body",
                                         type: "info",
                                         offset: {
-                                                from: "top",
+                                                from: "bottom",
                                                 amount: 20
                                         },
                                         align: "right",
