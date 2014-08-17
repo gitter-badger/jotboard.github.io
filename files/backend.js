@@ -58,7 +58,7 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
     $(".tn-load").click(function() {
       textnet("change", "load");
     });
-    if (window.localStorage[textnet("prefix") + textnet("MainNamespace")]) {
+    if (store.get(textnet("prefix") + textnet("MainNamespace"))) {
       form.value = store.get(textnet("prefix") + textnet("MainNamespace"));
       console.info("The " + textnet("MainNamespace") + " Textnet is avalible.");
     }

@@ -117,8 +117,12 @@ html, body, #html, #body {
 	border-radius: 2px;
 }
 
-.navagation .select { font-size: 100px; }
-.navagation .tn-groupies.select {  }
+.navagation .select {
+  font-size: 100px;
+  text-shadow: 0 0 3px #2B2B2B;
+}
+
+.navagation .tn-groupies.select { color: #2B2B2B; }
 .navagation .tn-wc.select { color: #1337D6; }
 .navagation .tn-youtube.select { color: #E52D27; }
 .navagation .tn-radio-textnet.select { color: #6AE368; }
