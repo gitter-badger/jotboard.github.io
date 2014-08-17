@@ -5,6 +5,7 @@ var head_conf = {
     { ff: { min: 3, max: 26 } }
   ]
 };
+
 head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files/frame.js"], function() {
   console.log("jQuery, Frame");
   $(function() {
@@ -147,16 +148,18 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
     }
     head.load("//togetherjs.com/togetherjs-min.js", function() {
       console.log("TogetherJS");
-      $(".tn-groupies").click(function() { textnet("groupies"); });
+      $(".tn-groupies").click(function() {
+        textnet("groupies");
+      });
       TogetherJS.on("ready", function() {
-        if (store.get("groupies")) $("#form").val(store.get("groupies"));
-        $("#form").val(store.get("groupies")).bind("keyup", function() {
+        if (store.get("TNGroupies")) $("#form").val(store.get("TNGroupies"));
+        $("#form").val(store.get("TNGroupies")).bind("keyup", function() {
           store.set("TNGroupies", $(this).val());
         }).bind("keydown", function() {
           store.set("TNGroupies", $(this).val());
         });
         $(function() {
-          $(".tn-save, .tn-load").remove();
+          $(".tn-save, .tn-load").toggleClass("block");
           $.bootstrapGrowl("Do not share personal information unless official consent is given.", {
             ele: "body",
             type: "info",
@@ -172,7 +175,7 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
         });
       });
       TogetherJS.on("close", function() {
-        $("#form").unbind("keyup").unbind("keydown");
+        $("#form").unbind("keyup").unbind("keydown").val(store.get(textnet("prefix") + textnet("MainNamespace")));
         $.bootstrapGrowl("Thank You for using Groupies!", {
           ele: "body",
           type: "info",
