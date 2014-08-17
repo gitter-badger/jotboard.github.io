@@ -118,14 +118,14 @@ html, body, #html, #body {
 }
 
 .navagation .select {
-  font-size: 100px;
+  font-size: 65px;
   text-shadow: 0 0 3px #2B2B2B;
 }
 
-.navagation .tn-groupies.select { color: #2B2B2B; }
-.navagation .tn-wc.select { color: #1337D6; }
-.navagation .tn-youtube.select { color: #E52D27; }
-.navagation .tn-radio-textnet.select { color: #6AE368; }
+.navagation .tn-groupies.select { text-shadow:0 0 3px #2B2B2B; color: #2B2B2B; }
+.navagation .tn-wc.select { text-shadow: 0 0 3px #1337D6; color: #1337D6; }
+.navagation .tn-youtube.select { text-shadow: 0 0 3px #E52D27; color: #E52D27; }
+.navagation .tn-radio-textnet.select { text-shadow: 0 0 3px #6AE368; color: #6AE368; }
 
 .navagation {
 	width: 265px;
