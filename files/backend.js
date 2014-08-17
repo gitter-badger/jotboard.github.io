@@ -5,7 +5,6 @@ var head_conf = {
     { ff: { min: 3, max: 26 } }
   ]
 };
-
 head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files/frame.js"], function() {
   console.log("jQuery, Frame");
   $(function() {
@@ -13,9 +12,7 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
       "frameborder": "0",
       "allowtransparency": "true"
     }).addClass("iframe");
-    $(".tn-menu-btn").click(function() {
-      textnet("submenu");
-    });
+    $(".tn-menu-btn").on("click", function() { textnet("submenu"); });
     if (window.location.hash) document.title = "# Textnet";
     if (!window.location.hash) document.title = "Textnet";
     if (DevMode === false || DevMode == "false") textnet("toggleBody");
@@ -37,47 +34,6 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
     };
     ChangeUp();
     setInterval(ChangeUp, 1);
-  });
-  head.load("//cdnjs.cloudflare.com/ajax/libs/store.js/1.3.14/store.min.js", function() {
-    console.log("Store.JS");
-    $(function() {
-      if (store.get("TNNotes")) $("textarea#notes").val(store.get("TNNotes"));
-      $("textarea#notes").attr({
-        "placeholder": "Make Some Notes"
-      }).keyup(function() {
-        store.set("TNNotes", $(this).val());
-      }).keydown(function() {
-        store.set("TNNotes", $(this).val());
-      });
-    });
-    var TGJSReady = function() {
-      window[form.value = store.get(textnet("prefix") + "groupies")];
-      window[$(".tn-save, .tn-load").remove()];
-      window[$.bootstrapGrowl("Do not share personal information unless official consent is given.", {
-        ele: "body",
-        type: "info",
-        offset: {
-          from: "bottom",
-          amount: 20
-        },
-        align: "right",
-        width: "auto",
-        delay: 3500,
-        allow_dismiss: true
-      })];
-    };
-    var form = document.getElementById("form");
-    var namespace = document.getElementById("namespace");
-    $(".tn-save").click(function() {
-      textnet("change", "save");
-    });
-    $(".tn-load").click(function() {
-      textnet("change", "load");
-    });
-    if (store.get(textnet("prefix") + textnet("MainNamespace"))) {
-      form.value = store.get(textnet("prefix") + textnet("MainNamespace"));
-      console.info("The " + textnet("MainNamespace") + " Textnet is avalible.");
-    }
   });
   head.load("//cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js", function() {
     console.log("Prefix Free");
@@ -169,24 +125,78 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
       });
     });
   });
-  head.load("//togetherjs.com/togetherjs-min.js", function() {
-    console.log("TogetherJS");
-    $(".tn-groupies").click(function() { textnet("groupies"); });
-    TogetherJSConfig_on = {
-      ready: function() {
-        TGJSReady();
-      }
-    };
-    TogetherJSConfig_siteName = textnet("SiteName");
-    TogetherJSConfig_toolName = textnet("CollabName");
-    TogetherJSConfig_dontShowClicks = $(".navigation, .navigation *") || document.querySelector(".navigation, .navigation *");
-    TogetherJSConfig_findRoom = {
-      prefix: "groupies",
-      max: 4
-    };
-    TogetherJSConfig_useMinimizedCode = true;
-    TogetherJSConfig_suppressInvite = true;
-    TogetherJSConfig_ignoreMessages = false;
-    TogetherJSConfig_suppressJoinConfirmation = false;
+  head.load("//cdnjs.cloudflare.com/ajax/libs/store.js/1.3.14/store.min.js", function() {
+    console.log("Store.JS");
+    $(function() {
+      if (store.get("TNNotes")) $("textarea#notes").val(store.get("TNNotes"));
+      $("textarea#notes").attr({
+        "placeholder": "Make Some Notes"
+      }).bind("keyup", function() {
+        store.set("TNNotes", $(this).val());
+      }).bind("keydown", function() {
+        store.set("TNNotes", $(this).val());
+      });
+    });
+    var form = document.getElementById("form");
+    var namespace = document.getElementById("namespace");
+    $(".tn-save").click(function() { textnet("change", "save"); });
+    $(".tn-load").click(function() { textnet("change", "load"); });
+    if (store.get(textnet("prefix") + textnet("MainNamespace"))) {
+      form.value = store.get(textnet("prefix") + textnet("MainNamespace"));
+      console.info("The " + textnet("MainNamespace") + " Textnet is avalible.");
+    }
+    head.load("//togetherjs.com/togetherjs-min.js", function() {
+      console.log("TogetherJS");
+      $(".tn-groupies").click(function() { textnet("groupies"); });
+      TogetherJS.on("ready", function() {
+        if (store.get("groupies")) $("#form").val(store.get("groupies"));
+        $("#form").val(store.get("groupies")).bind("keyup", function() {
+          store.set("TNNotes", $(this).val());
+        }).bind("keydown", function() {
+          store.set("TNNotes", $(this).val());
+        });
+        $(function() {
+          $(".tn-save, .tn-load").remove();
+          $.bootstrapGrowl("Do not share personal information unless official consent is given.", {
+            ele: "body",
+            type: "info",
+            offset: {
+              from: "bottom",
+              amount: 20
+            },
+            align: "right",
+            width: "auto",
+            delay: 3500,
+            allow_dismiss: true
+          });
+        });
+      });
+      TogetherJS.on("close", function() {
+        $("#form").unbind("keyup").unbind("keydown");
+        $.bootstrapGrowl("Thanks for using Groupies!", {
+          ele: "body",
+          type: "info",
+          offset: {
+            from: "bottom",
+            amount: 20
+          },
+          align: "right",
+          width: "auto",
+          delay: 3500,
+          allow_dismiss: true
+        });
+      });
+      TogetherJSConfig_siteName = textnet("SiteName");
+      TogetherJSConfig_toolName = textnet("CollabName");
+      TogetherJSConfig_dontShowClicks = $(".navigation, .navigation *") || document.querySelector(".navigation, .navigation *");
+      TogetherJSConfig_findRoom = {
+        prefix: "groupies",
+        max: 4
+      };
+      TogetherJSConfig_useMinimizedCode = true;
+      TogetherJSConfig_suppressInvite = true;
+      TogetherJSConfig_ignoreMessages = false;
+      TogetherJSConfig_suppressJoinConfirmation = false;
+    });
   });
 });
