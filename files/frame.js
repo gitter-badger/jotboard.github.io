@@ -22,7 +22,7 @@ var textnet = function(main, _1, _2, _3, _4) {
   if (main == "threshold") return _1 <= new Date().getHours() && new Date().getHours() < _2;
   // Submenu
   if (main == "submenu") {
-    $(".tn-menu-btn").toggleClass("fa-angle-double-down").toggleClass("fa-angle-double-up");
+    $(".tn-menu-btn").toggleClass("fa-chevron-down").toggleClass("fa-chevron-up");
     $("#submenu").toggleClass("block");
   }
   // textnet("change", "save/load")

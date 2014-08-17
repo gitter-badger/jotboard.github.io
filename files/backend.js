@@ -151,9 +151,9 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
       TogetherJS.on("ready", function() {
         if (store.get("groupies")) $("#form").val(store.get("groupies"));
         $("#form").val(store.get("groupies")).bind("keyup", function() {
-          store.set("TNNotes", $(this).val());
+          store.set("TNGroupies", $(this).val());
         }).bind("keydown", function() {
-          store.set("TNNotes", $(this).val());
+          store.set("TNGroupies", $(this).val());
         });
         $(function() {
           $(".tn-save, .tn-load").remove();
@@ -173,7 +173,7 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
       });
       TogetherJS.on("close", function() {
         $("#form").unbind("keyup").unbind("keydown");
-        $.bootstrapGrowl("Thanks for using Groupies!", {
+        $.bootstrapGrowl("Thank You for using Groupies!", {
           ele: "body",
           type: "info",
           offset: {
