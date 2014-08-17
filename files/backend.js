@@ -50,6 +50,22 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
         store.set("TNNotes", $(this).val());
       });
     });
+    var TGJSReady = function() {
+      window[form.value = store.get(textnet("prefix") + "groupies")];
+      window[$(".tn-save, .tn-load").remove()];
+      window[$.bootstrapGrowl("Do not share personal information unless official consent is given.", {
+        ele: "body",
+        type: "info",
+        offset: {
+          from: "bottom",
+          amount: 20
+        },
+        align: "right",
+        width: "auto",
+        delay: 3500,
+        allow_dismiss: true
+      })];
+    };
     var form = document.getElementById("form");
     var namespace = document.getElementById("namespace");
     $(".tn-save").click(function() {
@@ -158,19 +174,7 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
     $(".tn-groupies").click(function() { textnet("groupies"); });
     TogetherJSConfig_on = {
       ready: function() {
-        window[form.value = store.get(textnet("prefix") + "groupies")];
-        window[$.bootstrapGrowl("Do not share personal information unless official consent is given.", {
-          ele: "body",
-          type: "info",
-          offset: {
-            from: "bottom",
-            amount: 20
-          },
-          align: "right",
-          width: "auto",
-          delay: 3500,
-          allow_dismiss: true
-        })];
+        TGJSReady();
       }
     };
     TogetherJSConfig_siteName = textnet("SiteName");
