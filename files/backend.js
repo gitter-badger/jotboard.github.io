@@ -174,7 +174,7 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
         });
       });
       TogetherJS.on("close", function() {
-        $("#tn-give").append(
+        $(".tn-give").prepend(
           '<div class="tn-save nav-select" title="Save Textnet">Save</div>' +
           '<div class="tn-load nav-select" title="Load Textnet">Load</div>'
         );
@@ -188,7 +188,7 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
           },
           align: "right",
           width: "auto",
-          delay: 3500,
+          delay: 2500,
           allow_dismiss: true
         });
       });
