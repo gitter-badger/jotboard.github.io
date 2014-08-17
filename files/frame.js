@@ -40,7 +40,7 @@ var textnet = function(main, _1, _2, _3, _4) {
           },
           align: "right",
           width: 290,
-          delay: 4200,
+          delay: 3500,
           allow_dismiss: true,
           stackup_spacing: 10
         });
@@ -56,7 +56,7 @@ var textnet = function(main, _1, _2, _3, _4) {
           },
           align: "right",
           width: 290,
-          delay: 4200,
+          delay: 3500,
           allow_dismiss: true,
           stackup_spacing: 10
         });
@@ -75,7 +75,7 @@ var textnet = function(main, _1, _2, _3, _4) {
           },
           align: "right",
           width: 290,
-          delay: 4200,
+          delay: 3500,
           allow_dismiss: true,
           stackup_spacing: 10
         });
@@ -91,7 +91,7 @@ var textnet = function(main, _1, _2, _3, _4) {
           },
           align: "right",
           width: 290,
-          delay: 4200,
+          delay: 3500,
           allow_dismiss: true,
           stackup_spacing: 10
         });
