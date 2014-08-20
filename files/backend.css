@@ -129,7 +129,7 @@ html, body, #html, #body {
 
 .navagation {
 	width: 265px;
-	transition: width 0.175s ease;
+	transition: background-color 0.175s ease;
 	overflow-y: scroll;
 	overflow-x: scroll;
 	white-space: nowrap;
@@ -179,7 +179,10 @@ iframe, textarea, input {
 	border: none;
 }
 
-#form::selection { background: rgba(0, 0, 0, .45); }
+#form::selection {
+  background: rgba(0, 0, 0, .45);
+}
+
 div.bootbox.modal, div.bootbox.modal * { font-family: "Roboto", san-serif !important; }
 div.bootbox.modal .modal-header { border-bottom: 0; }
 div.bootbox.modal .modal-footer { border-top: 0; }
