@@ -79,22 +79,22 @@
             <div class="tn-load nav-select" title="Load Textnet">Load</div>
           </tn-give>
           <div class="tn-menu-btn nav-select fa fa-chevron-down"></div>
+          <div class="block" id="_spotify_insert">
+            <form role="search" action="//embed.spotify.com/" target="_spotify" method="get">
+              <div class="form-group">
+                <input type="text" id="spotify_URI" name="uri" class="form-control" title="Enter a Spotify URI of your desired Album, Track or Playlist" placeholder="Enter URI" />
+              </div>
+            </form>
+          </div>
+          <iframe src="//embed.spotify.com/?uri=spotify:user:1249813849:playlist:7gMrshUGhhYAKThn2RT8eQ" class="block" id="_spotify" name="_spotify"></iframe>
           <!-- #submenu -->
           <div class="block" id="submenu">
             <div class="tn-groupies select fa fa-pencil" title="Groupies"></div>
             <div class="tn-wc select fa fa-youtube-play" title="Whats Cookin?"></div>
             <div class="tn-youtube select fa fa-youtube-play" title="#YouTube"></div>
             <div class="tn-radio-textnet select fa fa-spotify" title="#RadioTextnet"></div>
-            <div class="block" id="_spotify_insert">
-              <form role="search" action="//embed.spotify.com/" target="_spotify" method="get">
-                <div class="form-group">
-                  <input type="text" id="spotify_URI" name="uri" class="form-control" title="Enter a Spotify URI of your desired Album, Track or Playlist" placeholder="Enter URI" />
-                </div>
-              </form>
-            </div>
           </div>
           <!-- /#submenu -->
-          <iframe src="//embed.spotify.com/?uri=spotify:user:1249813849:playlist:7gMrshUGhhYAKThn2RT8eQ" class="block" id="_spotify" name="_spotify"></iframe>
         </div>
         <div class="notes-container">
           <textarea id="notes"></textarea>
