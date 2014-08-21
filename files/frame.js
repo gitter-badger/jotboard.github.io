@@ -1,17 +1,8 @@
 var textnet = function(main, _1, _2, _3, _4) {
-  if (main == "ColorShadowMix") {
-    $(".navagation" + _1).css({
-      'text-shadow': ' 0 0 3px ' + $(".navagation" + _1).css('color')
-    });
-  }
   if (main == "SiteName") return "Textnet";
   if (main == "CollabName") return "Groupies";
   if (main == "prefix") return "TN_-";
   if (main == "MainNamespace") return "Main";
-  if (main == "groupies") {
-    TogetherJS(this);
-    return false;
-  }
   if (main == "toggleBody") return $("body").toggleClass("block");
   if (main == "radio") $("#_spotify, #_spotify_insert").toggleClass("block");
   if (main == "NamespaceValue") return $("#namespace").val();
@@ -20,6 +11,10 @@ var textnet = function(main, _1, _2, _3, _4) {
   if (main == "this") return this;
   if (main == "hash") return window.location.href.indexOf("#" + _1) != -1;
   if (main == "threshold") return _1 <= new Date().getHours() && new Date().getHours() < _2;
+  if (main == "groupies") {
+    TogetherJS(this);
+    return false;
+  }
   // Submenu
   if (main == "submenu") {
     $(".tn-menu-btn").toggleClass("fa-chevron-down").toggleClass("fa-chevron-up");
