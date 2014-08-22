@@ -70,6 +70,7 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
             }
           });
         };
+        if (textnet("hash", "menu")) textnet("submenu");
         if (textnet("hash", "campaign") || textnet("hash", "savetheweb")) {
           bootbox.dialog({
             title: "A message to the odd Internet User",
