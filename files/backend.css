@@ -79,6 +79,7 @@ html, body, #html, #body {
 	text-align: center;
 	width: 100%;
 	font-size: 20px; /* Font size */
+	margin-top: 12px;
 	margin-left: 0;
 	margin-right: 0;
 	height: inherit;
@@ -187,9 +188,7 @@ div.bootbox.modal .modal-header { border-bottom: 0; }
 div.bootbox.modal .modal-footer { border-top: 0; }
 .fa { display: block !important; }
 .nowrap-auto { white-space: nowrap; width: auto; }
-
 * { overflow: auto; }
-/* Scrollbar */
 *::-webkit-scrollbar { background: none; width: 0; }
 *::-webkit-scrollbar-thumb { background: none; }
 *::-webkit-scrollbar-thumb:hover { background: none; }
