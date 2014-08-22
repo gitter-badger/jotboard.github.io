@@ -2,6 +2,7 @@ var load = function(syntax, assets, callback) {
   //  load("js", ["https://test.com/api.js"], function() {
   //    alert("Test API Loaded.");
   //  });
+  // Only use when all else fails.
   var head = document.getElementsByTagName("head")[0];
   if (syntax == "js") {
     assets.forEach(function(src) {
