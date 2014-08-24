@@ -9,7 +9,15 @@ head.load('//connect.facebook.net/en_US/all.js', function() {
   });
 });
 
-head.load('//twitter.com/api.js', function() {
-  // I'm sure this isn't the url for the Twitter API,
-  // but its a placeholder for now so yeah.
-});
+!function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (!d.getElementById(id)) {
+    js = d.createElement(s);
+    js.id = id;
+    js.src = '//platform.twitter.com/widgets.js';
+    fjs.parentNode.insertBefore(js, fjs);
+  }
+  twttr.events.bind('tweet', function(event) {
+    // Do something there
+  });
+}(document, 'script', 'twitter-wjs');
