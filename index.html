@@ -2,8 +2,9 @@
 <html>
 <head>
 
-<!-- HeadJS -->
+<!-- HeadJS Base Framework -->
 <script src="//cdnjs.cloudflare.com/ajax/libs/headjs/1.0.3/head.load.min.js"></script>
+
 <!-- Backend (Loads System's Standards and Configuration) -->
 <script src="files/backend.js"></script>
 <link data-noprefix href="files/backend.css" rel="stylesheet" type="text/css" />
@@ -43,12 +44,13 @@
 <meta property="og:url" content="//textnet.github.io/" />
 
 <!-- Twitter -->
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:site" content="@SociaoPeople" />
-<meta name="twitter:title" content="Textnet" />
-<meta name="twitter:description" content="Note-keeping, with a twist." />
-<meta name="twitter:creator" content="@ChrisLowles" />
-<meta name="twitter:domain" content="//textnet.github.io/" />
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@TextnetIsGoofy">
+<meta name="twitter:title" content="Textnet">
+<meta name="twitter:description" content="Note-keeping, with a twist.">
+<meta name="twitter:creator" content="@ChrisLowles">
+<meta name="twitter:image:src" content="https://textnet.github.io/images/Twitter430x300.png">
+<meta name="twitter:domain" content="https://textnet.github.io/">
 
 <!-- Microsoft Windows -->
 <meta name="application-name" content="Textnet" />
@@ -109,10 +111,8 @@
 
 <!-- rel(): Reloader for Debugging -->
 <script>
-var rel = function(_) {
-  if (_ == 'f') location.reload(false);
-  else location.reload(true);
-};
+var rel = function(_) {if (_ == 'f') location.reload(false);
+else location.reload(true); };
 </script>
 
 <style>
