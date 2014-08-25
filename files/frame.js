@@ -15,18 +15,18 @@ var textnet = function(main, _1, _2, _3, _4) {
     TogetherJS(this);
     return false;
   }
-  // Submenu
   if (main == "submenu") {
+    // Submenu: Alternate Functions on Textnet
     $(".tn-menu-btn").toggleClass("fa-chevron-down").toggleClass("fa-chevron-up");
     $("#submenu").toggleClass("block");
   }
-  // textnet("change", "save/load")
   if (main == "change") {
+    // textnet("save/load"): The main function used in Textnet, period.
     if (_1 == "save") {
       if (!textnet("NamespaceValue")) {
         store.set(textnet("prefix") + textnet("MainNamespace"), textnet("FormValue"));
         console.info(textnet("MainNamespace") + " > saved");
-        $.bootstrapGrowl("The " + textnet("MainNamespace") + " Textnet has been saved.", {
+        $.bootstrapGrowl("The " + textnet("MainNamespace") + " Textnet has been saved!", {
           ele: "body",
           type: "success",
           offset: {
@@ -35,14 +35,14 @@ var textnet = function(main, _1, _2, _3, _4) {
           },
           align: "right",
           width: 290,
-          delay: 3500,
+          delay: 3100,
           allow_dismiss: true,
           stackup_spacing: 10
         });
       } else {
         store.set(textnet("prefix") + textnet("NamespaceValue"), textnet("FormValue"));
         console.info(textnet("NamespaceValue") + " > saved");
-        $.bootstrapGrowl(textnet("NamespaceValue") + " has been saved.", {
+        $.bootstrapGrowl(textnet("NamespaceValue") + " has been saved!", {
           ele: "body",
           type: "info",
           offset: {
@@ -51,7 +51,7 @@ var textnet = function(main, _1, _2, _3, _4) {
           },
           align: "right",
           width: 290,
-          delay: 3500,
+          delay: 3100,
           allow_dismiss: true,
           stackup_spacing: 10
         });
@@ -61,7 +61,7 @@ var textnet = function(main, _1, _2, _3, _4) {
       if (!textnet("NamespaceValue")) {
         form.value = store.get(textnet("prefix") + textnet("MainNamespace"));
         console.info(textnet("MainNamespace") + " > loaded");
-        $.bootstrapGrowl("The " + textnet("MainNamespace") + " Textnet has been loaded.", {
+        $.bootstrapGrowl("The " + textnet("MainNamespace") + " Textnet has been loaded!", {
           ele: "body",
           type: "info",
           offset: {
@@ -70,14 +70,14 @@ var textnet = function(main, _1, _2, _3, _4) {
           },
           align: "right",
           width: 290,
-          delay: 3500,
+          delay: 3100,
           allow_dismiss: true,
           stackup_spacing: 10
         });
       } else {
         form.value = store.get(textnet("prefix") + textnet("NamespaceValue"));
         console.info(textnet("NamespaceValue") + " > loaded");
-        $.bootstrapGrowl(textnet("NamespaceValue") + " has been loaded.", {
+        $.bootstrapGrowl(textnet("NamespaceValue") + " has been loaded!", {
           ele: "body",
           type: "info",
           offset: {
@@ -86,7 +86,7 @@ var textnet = function(main, _1, _2, _3, _4) {
           },
           align: "right",
           width: 290,
-          delay: 3500,
+          delay: 3100,
           allow_dismiss: true,
           stackup_spacing: 10
         });

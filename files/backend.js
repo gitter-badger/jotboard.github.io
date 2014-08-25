@@ -4,6 +4,7 @@ var DevMode = false, head_conf = {
     { ff: { min: 3, max: 26 } }
   ]
 };
+
 head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files/frame.js"], function() {
   console.log("jQuery, Frame");
   $(function() {
@@ -11,7 +12,9 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
       "frameborder": "0",
       "allowtransparency": "true"
     }).addClass("iframe");
-    $(".tn-menu-btn").on("click", function() { textnet("submenu"); });
+    $(".tn-menu-btn").on("click", function() {
+      textnet("submenu");
+    });
     if (window.location.hash) document.title = "# Textnet";
     if (!window.location.hash) document.title = "Textnet";
     if (DevMode === false || DevMode == "false") textnet("toggleBody");
@@ -137,10 +140,13 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
         store.set("TNNotes", $(this).val());
       });
     });
-    var form = document.getElementById("form");
-    var namespace = document.getElementById("namespace");
-    $(".tn-save").click(function() { textnet("change", "save"); });
-    $(".tn-load").click(function() { textnet("change", "load"); });
+    var form = document.getElementById("form"),
+      namespace = document.getElementById("namespace");
+    $("tn-give .tn-save").click(function() {
+      textnet("change", "save");
+    }); $("tn-give .tn-load").click(function() {
+      textnet("change", "load");
+    });
     if (store.get(textnet("prefix") + textnet("MainNamespace"))) {
       form.value = store.get(textnet("prefix") + textnet("MainNamespace"));
       console.info("The " + textnet("MainNamespace") + " Textnet is avalible.");
@@ -158,7 +164,7 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
           store.set("TNGroupies", $(this).val());
         });
         $(function() {
-          $(".tn-save, .tn-load").toggleClass("block");
+          $("tn-give .tn-save, tn-give .tn-load").remove();
           $.bootstrapGrowl("Do not share personal information unless official consent is given.", {
             ele: "body",
             type: "info",
@@ -174,7 +180,11 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
         });
       });
       TogetherJS.on("close", function() {
-        $("tn-give").prepend(
+        $("tn-give .tn-save").click(function() {
+          textnet("change", "save");
+        }); $("tn-give .tn-load").click(function() {
+          textnet("change", "load");
+        }); $("tn-give").prepend(
           '<div class="tn-save nav-select" title="Save Textnet">Save</div>' +
           '<div class="tn-load nav-select" title="Load Textnet">Load</div>'
         );
@@ -194,15 +204,11 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
       });
       TogetherJSConfig_siteName = textnet("SiteName");
       TogetherJSConfig_toolName = textnet("CollabName");
-      TogetherJSConfig_dontShowClicks = $(".navigation, .navigation *") || document.querySelector(".navigation, .navigation *");
-      TogetherJSConfig_findRoom = {
-        prefix: "groupies",
-        max: 4
-      };
+      TogetherJSConfig_dontShowClicks = true;
       TogetherJSConfig_useMinimizedCode = true;
       TogetherJSConfig_suppressInvite = true;
-      TogetherJSConfig_ignoreMessages = false;
-      TogetherJSConfig_suppressJoinConfirmation = false;
+      TogetherJSConfig_ignoreMessages = true;
+      TogetherJSConfig_suppressJoinConfirmation = true;
     });
   });
 });
