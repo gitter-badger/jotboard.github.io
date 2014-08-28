@@ -1,25 +1,25 @@
 #body, #main, #form {
-	background: #0045FF;
+  background: #0045FF;
 }
 
 #_spotify {
-	width: 100%;
-	height: 80px;
+  width: 100%;
+  height: 80px;
 }
 
 #_youtube {
-	width: 100%;
-	height: 320px;
-	margin-top: 20px;
+  width: 100%;
+  height: 320px;
+  margin-top: 20px;
 }
 
 #form {
-	font: 14px "Source Code Pro", sans-serif;
-	color: #F0F0F0;
-	width: calc(100% - 265px);
-	border-radius: 0;
-	height: 100%;
-	float: right;
+  font: 14px "Source Code Pro", sans-serif;
+  color: #F0F0F0;
+  width: calc(100% - 265px);
+  border-radius: 0;
+  height: 100%;
+  float: right;
 }
 
 .notes-container {
@@ -39,21 +39,25 @@ textarea#notes {
 }
 
 #form::-webkit-input-placeholder {
-	font-family: "Lato", san-serif;
-	font-size: 65px;
-	color: #292929;
+  /* Webkit (Chrome, Safari, Opera) */
+  font-family: "Lato", san-serif;
+  font-size: 65px;
+  color: #292929;
 } #form::-moz-input-placeholder {
-	font-family: "Lato", san-serif;
-	font-size: 65px;
-	color: #292929;
+  /* Firefox Placeholder */
+  font-family: "Lato", san-serif;
+  font-size: 65px;
+  color: #292929;
 } #form::-o-input-placeholder {
-	font-family: "Lato", san-serif;
-	font-size: 65px;
-	color: #292929;
+  /* Opera Placeholder */
+  font-family: "Lato", san-serif;
+  font-size: 65px;
+  color: #292929;
 } #form::-ms-input-placeholder {
-	font-family: "Lato", san-serif;
-	font-size: 65px;
-	color: #292929;
+  /* IE Placeholder */
+  font-family: "Lato", san-serif;
+  font-size: 65px;
+  color: #292929;
 }
 
 #main {
