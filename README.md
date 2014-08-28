@@ -1,5 +1,8 @@
 # Textnet
+This Project was created out of shear anger of the want of a entertainment-enriched Note-keeping service, want to make notes while having some damn fun? We sure do.
 
-> [fb.me/TextnetIsGoofy](https://fb.me/TextnetIsGoofy)
+> [Website ](https://fb.me/TextnetIsGoofy)
 
-> [@Textnet](https://twitter.com/TextnetIsGoofy)
+> [Facebook ](https://fb.me/TextnetIsGoofy)
+
+> [ Twitter](https://twitter.com/TextnetIsGoofy)
