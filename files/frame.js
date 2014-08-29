@@ -17,7 +17,7 @@ var textnet = function(main, _1, _2, _3, _4) {
   }
   if (main == "submenu") {
     // Submenu: Alternate Functions on Textnet
-    $(".tn-menu-btn").toggleClass("fa-chevron-down").toggleClass("fa-chevron-up");
+    $(".tn-menu-btn").toggleClass("fa-toggle-off").toggleClass("fa-toggle-on");
     $("#submenu").toggleClass("block");
   }
   if (main == "change") {
