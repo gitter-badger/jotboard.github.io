@@ -1,21 +1,18 @@
-var DevMode = false, head_conf = {
-  html5: true, browsers: [
-    { ie: { min: 6, max: 11 } },
-    { ff: { min: 3, max: 26 } }
-  ]
+var DevMode = true, head_conf = {
+  html5: true
+}, _bftn_options = {
+  animation: 'banner',
+  theme: 'dark'
 };
 
+head.load('//widget.battleforthenet.com/widget.min.js', function() {
+  console.log('CAMPAIGN');
+});
+
 head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files/frame.js"], function() {
-  console.log("jQuery, Frame");
+  console.log("jQuery, Main Frame");
   $(function() {
-    // Dunno what this is, but it looks important.
-    TogetherJSConfig_siteName = textnet("SiteName");
-    TogetherJSConfig_toolName = textnet("CollabName");
-    TogetherJSConfig_dontShowClicks = true;
-    TogetherJSConfig_useMinimizedCode = true;
-    TogetherJSConfig_suppressInvite = true;
-    TogetherJSConfig_ignoreMessages = true;
-    TogetherJSConfig_suppressJoinConfirmation = true;
+    textnet("_radio_play", "user:1249813849:playlist:7gMrshUGhhYAKThn2RT8eQ");
     $("iframe").attr({
       "frameborder": "0",
       "allowtransparency": "true"
@@ -31,30 +28,24 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
     }
   });
   head.load("//cdn.jsdelivr.net/momentjs/2.8.1/moment.min.js", function() {
-    // Moment.JS: Easily parse time in JavaScript.
     console.log("MomentJS");
-    var ChangeUp = function() {
+    var TimeShift = function() {
       if (textnet("threshold", 0, 13)) $("#form").addClass("day");
       else $("#form").addClass("night");
       $("#form.day").attr({
-        "placeholder": moment(new Date()).format("[Hows it goin? It's ]dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, have fun!]")
-      });
-      $("#form.night").attr({
+        "placeholder": moment(new Date()).format("[Hows it goin? It's ]dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, have fun :)]")
+      }); $("#form.night").attr({
         "placeholder": moment(new Date()).format("[Hi, its currently] dddd, Do [of] MMMM YYYY[ and the time is] h:mm a[, have fun.]")
       });
-    };
-    ChangeUp();
-    setInterval(ChangeUp, 1);
+    }; TimeShift();
+    setInterval(TimeShift, 1);
   });
   head.load("//cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js", function() {
     console.log("Prefixfree");
-    head.load("//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css", function() {
+    head.load("//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css", function() {
       console.log("Font Awesome");
     });
-    head.load([
-      "//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/bootstrap.min.js",
-      "//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap.min.css"
-    ], function() {
+    head.load(["//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/bootstrap.min.js", "//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap.min.css"], function() {
       console.log("Bootstrap JS, Bootstrap CSS");
       head.load("//cdnjs.cloudflare.com/ajax/libs/bootstrap-growl/1.0.0/jquery.bootstrap-growl.min.js", function() {
         console.log("Bootstrap Growl");
@@ -71,7 +62,7 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
         });
         var whatscookin = function() {
           bootbox.dialog({
-            title: "Whats Cookin? (#TNWC)",
+            title: "#TNWC: Whats Cookin?",
             message: "<iframe id='_youtube' src='//www.youtube.com/embed/?listType=playlist&list=PLOSutk9k0C3ofKYoP447uBfibpuAUKCoP&fs=1&loop=1&showinfo=0&autohide=1&theme=light' frameborder='0' allowfullscreen></iframe>",
             buttons: {
               enter: {
@@ -85,28 +76,45 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
             }
           });
         };
-        if (textnet("hash", "menu")) textnet("submenu");
+        if (textnet("hash", "whatscookin") || textnet("hash", "tnwc")) window[whatscookin()];
+        $(".tn-wc").click(function() { window[whatscookin()]; }); // End Whats Cookin? #TNWC
         if (textnet("hash", "campaign")) {
           bootbox.dialog({
-            title: "Open Letter",
+            title: "Textnet's Open Letter",
             message: "The Internet really has become something to be proud of, especially for early Internet Adopters, it went from an idea trying to create an internationalized network of amazing communities, to a lifestyle that has changed the way we live and work.<br /><br />" +
-            "This message is to point out the current, past and future actions that have been taken to damage the Internets Integrity, whether it be mass censorship, Illegal Spying or the way Net Neutrality presents itself as a money-related threat towards Cable Companies like Comcast, Verizon and Time Warner Cable and that it should never come to this again.<br /><br />" +
+            "This message is to point out the current, past and future actions that have been taken to damage the Internet's Integrity, whether it be Mass Censorship, Illegal Spying or the way Net Neutrality presents itself as a money-related threat towards Cable Companies like Comcast, Verizon and Time Warner Cable and that it should never come to this again.<br /><br />" +
             "The way the Internet is is perfect, we wouldn't have it any other way, and regardless of what the implications are to the corporate side of things, we need to make sure these sort of things never happen again, by making how much of a positive impact the Internet has made on us and our world as clear as possible to make sure the corporate businesses of the modern world know what will happen if such things are to be passed through Congress or Governments sanctions.<br /><br />" +
             "This message is aimed at Politicians, Families, Frequent Internet Users, and the odd Selfie Takers, please share this message to as many people as you possibly can so we all know what were up against!",
+            buttons: {
+              action: {
+                label: "Supporters of IDL",
+                className: "btn-primary",
+                callback: function() {
+                  window.open("https://internetdefenseleague.org/", "_blank");
+                }
+              }
+            }
           });
-        }
+        } // End Campaign
         var youtube_srch = function() {
           bootbox.prompt("YouTube", function(srch) {
             if (srch) window.open("//www.youtube.com/results?search_query=" + srch, "_blank"), console.log("YouTube:" + srch);
             if (srch === null) bootbox.hideAll();
           });
         };
-        if (textnet("hash", "radio")) textnet("radio");
-        $(".tn-radio-textnet").click(function() { textnet("radio"); });
-        if (textnet("hash", "whatscookin") || textnet("hash", "tnwc")) window[whatscookin()];
-        $(".tn-wc").click(function() { window[whatscookin()]; });
-        if (textnet("hash", "youtube")) window[youtube_srch()];
-        $(".tn-youtube").click(function() { window[youtube_srch()]; });
+        if (textnet("hash", "youtube") || textnet("hash", "YouTube")) window[youtube_srch()];
+        $(".tn-youtube").click(function() { window[youtube_srch()]; }); // End YouTube
+        var humble_srch = function() {
+          bootbox.prompt("Humble Wiki", function(srch) {
+            if (srch) window.open("http://humble.wikia.com/wiki/Special:Search?search=" + srch, "_blank"), console.log("Humble Wiki:" + srch);
+            if (srch === null) bootbox.hideAll();
+          });
+        };
+        if (textnet("hash", "humble")) window[humble_srch()];
+        $(".tn-humble").click(function() { window[humble_srch()]; }); // End Humble Search
+        if (textnet("hash", "radio") || textnet("hash", "radiotextnet")) textnet("radio");
+        $(".tn-radio").click(function() { textnet("radio"); }); // End Radio
+        if (textnet("hash", "menu") || textnet("hash", "submenu")) textnet("submenu"); // End Menu
       });
     });
   });
@@ -140,9 +148,9 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
       });
       TogetherJS.on("ready", function() {
         if (store.get("TNGroupies")) $("#form").val(store.get("TNGroupies"));
-        $("#form").val(store.get("TNGroupies")).bind("keyup", function() {
+        $("#form").val(store.get("TNGroupies")).bind("keydown", function() {
           store.set("TNGroupies", $(this).val());
-        }).bind("keydown", function() {
+        }).bind("keyup", function() {
           store.set("TNGroupies", $(this).val());
         });
         $(function() {
@@ -156,21 +164,20 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
             },
             align: "right",
             width: "auto",
-            delay: 3100,
+            delay: 3500,
             allow_dismiss: true
           });
         });
       });
       TogetherJS.on("close", function() {
-        $("tn-give").prepend(
-          '<div class="tn-save nav-select" title="Save Textnet">Save</div>' +
-          '<div class="tn-load nav-select" title="Load Textnet">Load</div>'
-        ); $("tn-give .tn-save").click(function() {
+        $("tn-give .tn-save").click(function() {
           textnet("change", "save");
         }); $("tn-give .tn-load").click(function() {
           textnet("change", "load");
-        });
-        $("#form").unbind("keyup").unbind("keydown").val(store.get(textnet("prefix") + textnet("MainNamespace")));
+        }); $("tn-give").prepend(
+          '<div class="tn-save nav-select" title="Save Textnet">Save</div>' +
+          '<div class="tn-load nav-select" title="Load Textnet">Load</div>'
+        ); $("#form").unbind("keyup").unbind("keydown").val(store.get(textnet("prefix") + textnet("MainNamespace")));
         $.bootstrapGrowl("Thank You for using Groupies!", {
           ele: "body",
           type: "info",
@@ -184,6 +191,13 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
           allow_dismiss: true
         });
       });
+      TogetherJSConfig_siteName = textnet("SiteName");
+      TogetherJSConfig_toolName = textnet("CollabName");
+      TogetherJSConfig_dontShowClicks = true;
+      TogetherJSConfig_useMinimizedCode = true;
+      TogetherJSConfig_suppressInvite = true;
+      TogetherJSConfig_ignoreMessages = true;
+      TogetherJSConfig_suppressJoinConfirmation = true;
     });
   });
 });
