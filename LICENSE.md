@@ -1,11 +1,11 @@
-## The MIT License (MIT)*
+# The MIT License (MIT)**
 
-_Copyright (C) 2014, [Sociao Ent. (Chris Lowles)](https://github.com/sociao)_
+_Copyright (C) 2014 [Sociao Entertainment (Chris Lowles)](https://github.com/sociao)_
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of the Project's Source Code and associated documentation (the "Core", the "Project Code"), to deal with the Project Code without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the modified project, and to permit persons to whom the Project is furnished to do so, subject to the following conditions:
+Permission is hereby granted, free of charge, to any person obtaining a copy of the project's base code and associated documentation files (the "Core", the "Project Code", service "Textnet"), to deal with the project code without restriction, including without limitation the rights to use, copy, modify, publish, distribute, sublicense, and/or sell copies of a modified version of this product, and to permit persons to whom the product is furnished to do so, subject to the following conditions:
 
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Repository.
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Project Files.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE PROJECT FILES OR THE USE OR OTHER DEALINGS IN THE PROJECT.
+THE PRODUCT IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE PROJECT FILES OR THE USE OR OTHER DEALINGS IN THE PROJECT.
 
-<sup>_*Terminology in this license statement may have been modified._</sup>
+_**Terminology in this license statement may have been modified to fit product criteria._
