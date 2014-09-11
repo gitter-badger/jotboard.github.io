@@ -1,11 +1,14 @@
 // head.load("/files/social.js") to load Social API's with ease.
 
-head.load('//connect.facebook.net/en_US/all.js', function() {
-  $.ajaxSetup({
-    cache: true
-  });
+head.load("//connect.facebook.net/es_US/sdk.js", function() {
   FB.init({
     appId: '196947013668110',
+  });
+  FB.ui({
+    method: 'share',
+    href: 'https://developers.facebook.com/docs/'
+  }, function(response) {
+    blah();
   });
 });
 
