@@ -1,25 +1,25 @@
 #body, #main, #form {
-  background: #0045FF;
+	background: #0045FF;
 }
 
-#_spotify {
-  width: 100%;
-  height: 80px;
+#_radio {
+	width: 100%;
+	height: 80px;
 }
 
 #_youtube {
-  width: 100%;
-  height: 320px;
-  margin-top: 20px;
+	width: 100%;
+	height: 320px;
+	margin-top: 20px;
 }
 
 #form {
-  font: 14px "Source Code Pro", sans-serif;
-  color: #F0F0F0;
-  width: calc(100% - 265px);
-  border-radius: 0;
-  height: 100%;
-  float: right;
+	font: 14px 'Source Code Pro', sans-serif;
+	color: #F0F0F0;
+	width: calc(100% - 265px);
+	border-radius: 0;
+	height: 100%;
+	float: right;
 }
 
 .notes-container {
@@ -30,7 +30,7 @@
 }
 
 textarea#notes {
-  font: 19px "Roboto", sans-serif !important;
+  font: 19px 'Roboto', sans-serif !important;
   color: #2B2B2B !important;
   width: 100%;
   height: 50px;
@@ -39,25 +39,21 @@ textarea#notes {
 }
 
 #form::-webkit-input-placeholder {
-  /* Webkit (Chrome, Safari, Opera) */
-  font-family: "Lato", san-serif;
-  font-size: 65px;
-  color: #292929;
+	font-family: 'Lato', san-serif;
+	font-size: 65px;
+	color: #292929;
 } #form::-moz-input-placeholder {
-  /* Firefox Placeholder */
-  font-family: "Lato", san-serif;
-  font-size: 65px;
-  color: #292929;
+	font-family: 'Lato', san-serif;
+	font-size: 65px;
+	color: #292929;
 } #form::-o-input-placeholder {
-  /* Opera Placeholder */
-  font-family: "Lato", san-serif;
-  font-size: 65px;
-  color: #292929;
+	font-family: 'Lato', san-serif;
+	font-size: 65px;
+	color: #292929;
 } #form::-ms-input-placeholder {
-  /* IE Placeholder */
-  font-family: "Lato", san-serif;
-  font-size: 65px;
-  color: #292929;
+	font-family: 'Lato', san-serif;
+	font-size: 65px;
+	color: #292929;
 }
 
 #main {
@@ -78,8 +74,8 @@ html, body, #html, #body {
 	-webkit-font-smoothing: antialiased !important;
 }
 
-.navagation #namespace, .navagation #spotify_URI,
-.navagation #namespace:focus, .navagation #spotify_URI:focus {
+.navagation #namespace, .navagation #radio_URI,
+.navagation #namespace:focus, .navagation #radio_URI:focus {
 	text-align: center;
 	width: 100%;
 	font-size: 20px; /* Font size */
@@ -104,7 +100,7 @@ html, body, #html, #body {
 	cursor: pointer;
 }
 
-#_spotify_insert form .form-group {
+#_radio_insert form .form-group {
 	margin-bottom: 6px !important;
 } .navagation .select:first-child {
 	margin-top: 9px !important;
@@ -116,7 +112,7 @@ html, body, #html, #body {
 	font-size: 18px;
 	background-color: #C2C2C2;
 	box-shadow: inset 0 1px 1px rgba(0, 0, 0, .22);
-	color: #222222;
+	color: #222;
 	padding: 2px;
 	border-radius: 2px;
 }
@@ -126,18 +122,13 @@ html, body, #html, #body {
   text-shadow: 0 0 3px #2B2B2B;
 }
 
-.navagation .tn-groupies.select { text-shadow:0 0 3px #2B2B2B; color: #2B2B2B; }
-.navagation .tn-wc.select { text-shadow: 0 0 3px #1337D6; color: #1337D6; }
-.navagation .tn-youtube.select { text-shadow: 0 0 3px #E52D27; color: #E52D27; }
-.navagation .tn-radio-textnet.select { text-shadow: 0 0 3px #6AE368; color: #6AE368; }
-
 .navagation {
 	width: 265px;
 	transition: background-color 0.175s ease;
 	overflow-y: scroll;
 	overflow-x: scroll;
 	white-space: nowrap;
-	font-family: "Roboto", san-serif;
+	font-family: 'Roboto', san-serif;
 	height: 100%;
 	max-height: 100%;
 	background: #C2C2C2;
@@ -173,6 +164,13 @@ html, body, html#html, body#body {
 	height: 99.5%;
 }
 
+.navagation .tn-groupies.select { text-shadow:0 0 3px #2B2B2B; color: #2B2B2B; }
+.navagation .tn-wc.select { text-shadow: 0 0 3px #1337D6; color: #1337D6; }
+.navagation .tn-youtube.select { text-shadow: 0 0 3px #E52D27; color: #E52D27; }
+.navagation .tn-radio.select { text-shadow: 0 0 3px #6AE368; color: #6AE368; }
+.navagation .tn-humble.select { text-shadow: 0 0 3px #2B2B2B; color: #2B2B2B; }
+
+iframe { overflow: hidden; }
 iframe, textarea, input {
 	resize: none;
 	outline: none;
@@ -181,7 +179,7 @@ iframe, textarea, input {
 
 .no-select, .no-select * { user-select: none; }
 #form::selection { background: rgba(0, 0, 0, .45); }
-div.bootbox.modal, div.bootbox.modal * { font-family: "Roboto", san-serif !important; }
+div.bootbox.modal, div.bootbox.modal * { font-family: 'Roboto', san-serif !important; }
 div.bootbox.modal .modal-header { border-bottom: 0; }
 div.bootbox.modal .modal-footer { border-top: 0; }
 .fa { display: block !important; }
