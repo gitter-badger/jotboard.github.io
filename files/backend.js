@@ -5,12 +5,12 @@ var DevMode = true, head_conf = {
   theme: 'dark'
 };
 
-head.load('//widget.battleforthenet.com/widget.min.js', function() {
-  console.log('CAMPAIGN');
-});
 
 head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files/frame.js"], function() {
   console.log("jQuery, Main Frame");
+  head.load('//widget.battleforthenet.com/widget.min.js', function() {
+    console.log('CAMPAIGN');
+  });
   $(function() {
     textnet("_radio_play", "user:1249813849:playlist:7gMrshUGhhYAKThn2RT8eQ");
     $("iframe").attr({
