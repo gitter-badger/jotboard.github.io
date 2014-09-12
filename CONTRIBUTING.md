@@ -1,12 +1,11 @@
-<span style="font-size: 27px;">Contributing to Textnet</span>
-
+## Contributing to Textnet
 <div style="height: 12px;"></div>
 
 > As we welcome Feedback on every aspect of Textnet, please read these guidelines before submitting any, just to be sure.
 
 > Words that begin with the @ sign must be wrapped in backticks, this is to avoid unnessesary notifications to users of the same name.
 
-<span style="font-size: 22px;">Reporting an Issue</span>
+### Reporting an Issue
 <div style="height: 10px;"></div>
 
 We only accept issues that are inline with the avalible categories and labels. Bugs must be isolated and reproducible problems that we can fix within the core, if the following isnt possible, it'll make it a little harder for us to figure out the issue. Please read the following guidelines before opening any kind of issue.
@@ -16,7 +15,7 @@ We only accept issues that are inline with the avalible categories and labels. B
 3. **Share as much information as possible.** Include operating system and browser. Describe how you use Textnet, and try to include steps to reproduce the bug.
 4. **If you have a solution or suggestion for how to fix the bug you're reporting, please include it, or make a pull request** - don't assume the maintainers know how to fix it just because you do.
 
-<span style="font-size: 22px;">Feature Requests</span>
+### Feature Requests
 <div style="height: 10px;"></div>
 
 <sup>Side-note: Feature Requests are almost always accepted (depending on whether its safe for work or not) and will be nested into the <a href="https://textnet.github.io/#menu">submenu</a> if they get suggested.</sup>
@@ -25,7 +24,7 @@ We only accept issues that are inline with the avalible categories and labels. B
 2. Include a clear and specific use-case. We love new ideas, but we don't add features without a good reason.
 3. Consider whether or not your feature would be better as an optional function (HashMod) or implemented as a default interaction like Groupies.
 
-<span style="font-size: 22px;">Pull Requests</span>
+### Pull Requests
 <div style="height: 10px;"></div>
 
 _Pull requests are encouraged!_
