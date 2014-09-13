@@ -13,8 +13,8 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
     $(".tn-menu-btn").on("click", function() { textnet("submenu"); });
     if (window.location.hash) document.title = "# Textnet";
     if (!window.location.hash) document.title = "Textnet";
-    if (DevMode == false) textnet("toggleBody");
-    if (DevMode == true) {
+    if (DevMode === false) textnet("toggleBody");
+    if (DevMode === true) {
       if (textnet("hash", "forceuse")) textnet("toggleBody");
     }
   });
