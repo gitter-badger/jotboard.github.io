@@ -3,9 +3,14 @@ var textnet = function(main, _1, _2, _3, _4) {
   if (main == "CollabName") return "Groupies";
   if (main == "prefix") return "TN_-";
   if (main == "MainNamespace") return "Main";
-  if (main == "toggleBody") return $("body").css({
-    "display": "visible"
-  });
+  if (main == "toggleBody") {
+    if ($("body").css({
+      "display": "none"
+    })) $("body").css("display", "visible");
+    if ($("body").css({
+      "display": "visible"
+    })) $("body").css("display", "none");
+  }
   if (main == "radio") /* Standard switch function for Radio Textnet */ $("#_radio, #_radio_insert").toggleClass("block");
   if (main == "NamespaceValue") /* Returns Value of Hero Box (Namespace's) */ return $("#namespace").val();
   if (main == "FormValue") /* Return Form Value */ return $("#form").val();
