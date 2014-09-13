@@ -5,11 +5,11 @@ var DevMode = false, head_conf = {
 head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files/frame.js"], function() {
   console.log("jQuery, Main Frame");
   $(function() {
-    textnet("_radio_play", "user:1249813849:playlist:7gMrshUGhhYAKThn2RT8eQ");
     $("iframe").attr({
       "frameborder": "0",
       "allowtransparency": "true"
     }).addClass("iframe");
+    textnet("_radio_play", "user:1249813849:playlist:7gMrshUGhhYAKThn2RT8eQ");
     $(".tn-menu-btn").on("click", function() { textnet("submenu"); });
     if (window.location.hash) document.title = "# Textnet";
     if (!window.location.hash) document.title = "Textnet";
