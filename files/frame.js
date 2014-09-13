@@ -6,10 +6,10 @@ var textnet = function(main, _1, _2, _3, _4) {
   if (main == "toggleBody") {
     if ($("body").css({
       "display": "none"
-    })) $("body").css("display", "visible");
+    })) $("body").css("display", "visible"), console.log('body is visible');
     if ($("body").css({
       "display": "visible"
-    })) $("body").css("display", "none");
+    })) $("body").css("display", "none"), console.log("body isn't visible");
   }
   if (main == "radio") /* Standard switch function for Radio Textnet */ $("#_radio, #_radio_insert").toggleClass("block");
   if (main == "NamespaceValue") /* Returns Value of Hero Box (Namespace's) */ return $("#namespace").val();
