@@ -3,7 +3,7 @@ var textnet = function(main, _1, _2, _3, _4) {
   if (main == "CollabName") return "Groupies";
   if (main == "prefix") return "TN_-";
   if (main == "MainNamespace") return "Main";
-  if (main == "toggleBody") {
+  if (main == "toggleBody") return {
     if ($("body").css("display", "none")) $("body").css("display", "visible");
     else $("body").css("display", "none");
   }
