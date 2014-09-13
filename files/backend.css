@@ -1,5 +1,10 @@
-#body, #main, #form {
-	background: #0045FF;
+#main, #form {
+	background: none;
+}
+
+body#body {
+  background: -webkit-linear-gradient(45deg, hsla(253, 66%, 44%, 1) 0%, hsla(253, 66%, 44%, 0) 70%), -webkit-linear-gradient(135deg, hsla(165, 73%, 60%, 1) 10%, hsla(165, 73%, 60%, 0) 80%), -webkit-linear-gradient(225deg, hsla(224, 33%, 51%, 1) 10%, hsla(224, 33%, 51%, 0) 80%), -webkit-linear-gradient(315deg, hsla(238, 100%, 33%, 1) 100%, hsla(238, 100%, 33%, 0) 70%);
+	background: linear-gradient(45deg, hsla(253, 66%, 44%, 1) 0%, hsla(253, 66%, 44%, 0) 70%), linear-gradient(135deg, hsla(165, 73%, 60%, 1) 10%, hsla(165, 73%, 60%, 0) 80%), linear-gradient(225deg, hsla(224, 33%, 51%, 1) 10%, hsla(224, 33%, 51%, 0) 80%), linear-gradient(315deg, hsla(238, 100%, 33%, 1) 100%, hsla(238, 100%, 33%, 0) 70%);
 }
 
 #_radio {
