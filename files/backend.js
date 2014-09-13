@@ -1,4 +1,4 @@
-var DevMode = true, head_conf = {
+var DevMode = false, head_conf = {
   html5: true
 };
 
