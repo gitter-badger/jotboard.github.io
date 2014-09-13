@@ -17,7 +17,9 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
       "display": "block"
     });
     if (DevMode === true) {
-      if (textnet("hash", "forceuse")) textnet("toggleBody");
+      if (textnet("hash", "forceuse")) $("body").css({
+      "display": "block"
+    });
     }
   });
   head.load("//cdn.jsdelivr.net/momentjs/2.8.1/moment.min.js", function() {
