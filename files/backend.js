@@ -13,13 +13,10 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
     $(".tn-menu-btn").on("click", function() { textnet("submenu"); });
     if (window.location.hash) document.title = "# Textnet";
     if (!window.location.hash) document.title = "Textnet";
-    if (DevMode === false) $("body").css({
-      "display": "block"
-    });
-    if (DevMode === true) {
-      if (textnet("hash", "forceuse")) $("body").css({
-      "display": "block"
-    });
+    if (DevMode === false) {
+      $("body").css({
+        "display": "block"
+      });
     }
   });
   head.load("//cdn.jsdelivr.net/momentjs/2.8.1/moment.min.js", function() {
