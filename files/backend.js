@@ -1,14 +1,15 @@
+window._idl = {
+  url: '//humble.wikia.com/w/Thread:4687',
+  position: 'bottomright',
+  theme: 'light'
+};
+
 var DevMode = false, head_conf = {
   html5: true
 };
 
 head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files/frame.js"], function() {
   console.log("jQuery, Main Frame");
-  window._idl = {
-    url: '//humble.wikia.com/w/Thread:4687',
-    position: 'bottomright',
-    theme: 'light'
-  };
   head.load([('https:' == document.location.protocol ? 'https://' : 'http://') + 'members.internetdefenseleague.org/include/?url=' + (_idl.url || '') + '&campaign=' + _idl.campaign + '&variant=banner'], function() {
     console.log('Campaign for Net Neutrality');
   });
