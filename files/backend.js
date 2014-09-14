@@ -4,6 +4,15 @@ var DevMode = false, head_conf = {
 
 head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files/frame.js"], function() {
   console.log("jQuery, Main Frame");
+  window._idl = {
+    animation: 'banner',
+    url: '//humble.wikia.com/w/Thread:4687',
+    position: 'bottomright',
+    theme: 'light'
+  };
+  head.load([('https:' == document.location.protocol ? 'https://' : 'http://') + 'members.internetdefenseleague.org/include/?url=' + (_idl.url || '') + '&campaign=' + (_idl.campaign || '') + '&variant=' + (_idl.variant || 'modal')], function() {
+    console.log('Campaign for Net Neutrality');
+  });
   $(function() {
     $("iframe").attr({
       "frameborder": "0",
