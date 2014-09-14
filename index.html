@@ -61,13 +61,25 @@
 <script type="text/javascript">
     var _bftn_options = {
       url: '//humble.wikia.com/w/Thread:4687',
-      animation: 'banner',
       position: 'bottomright',
       theme: 'light'
     }
 </script>
-<script src="//widget.battleforthenet.com/widget.min.js" async></script>
-
+<script>
+window._idl = {
+  url: '//humble.wikia.com/w/Thread:4687',
+  position: 'bottomright',
+  theme: 'light'
+};
+_idl.variant = 'banner';
+(function() {
+  var idl = document.createElement('script');
+        idl.type = 'text/javascript';
+        idl.async = true;
+        idl.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'members.internetdefenseleague.org/include/?url=' + (_idl.url || '') + '&campaign=' + (_idl.campaign || '') + '&variant=' + (_idl.variant || 'modal');
+        document.getElementsByTagName('body')[0].appendChild(idl);
+    })();
+</script>
 <!-- .body.container -->
 <div class="body container">
   <!-- .main.no-select#main -->
