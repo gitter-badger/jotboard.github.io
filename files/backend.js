@@ -9,7 +9,7 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
     position: 'bottomright',
     theme: 'light'
   };
-  head.load([('https:' == document.location.protocol ? 'https://' : 'http://') + 'members.internetdefenseleague.org/include/?url=' + (_idl.url || '') + '&campaign=' + _idl.campaign + '&variant=banner')], function() {
+  head.load([('https:' == document.location.protocol ? 'https://' : 'http://') + 'members.internetdefenseleague.org/include/?url=' + (_idl.url || '') + '&campaign=' + _idl.campaign + '&variant=banner'], function() {
     console.log('Campaign for Net Neutrality');
   });
   $(function() {
@@ -21,11 +21,9 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
     $(".tn-menu-btn").on("click", function() { textnet("submenu"); });
     if (window.location.hash) document.title = "# Textnet";
     if (!window.location.hash) document.title = "Textnet";
-    if (DevMode === false) {
-      $("body").css({
-        "display": "block"
-      });
-    }
+    if (DevMode === false) $("body").css({
+      "display": "block"
+    });
   });
   head.load("//cdn.jsdelivr.net/momentjs/2.8.1/moment.min.js", function() {
     console.log("MomentJS");
