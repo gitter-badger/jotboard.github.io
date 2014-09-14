@@ -61,7 +61,7 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
                 label: "Open Playlist in YouTube",
                 className: "btn-link",
                 callback: function() {
-                  window.open("//www.youtube.com/playlist?list=PLXJjNJMpJQKqbpmhNOJNETiMbfZpLjIVb", "_blank");
+                  window.open("//www.youtube.com/playlist?list=PLOSutk9k0C3ofKYoP447uBfibpuAUKCoP", "_blank");
                   return false;
                 }
               }
