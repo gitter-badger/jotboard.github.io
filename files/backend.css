@@ -172,11 +172,11 @@ html, body, html#html, body#body {
 	height: 99.5%;
 }
 
-.navagation .tn-groupies.select { text-shadow:0 0 3px #2B2B2B; color: #2B2B2B; }
-.navagation .tn-wc.select { text-shadow: 0 0 3px #1337D6; color: #1337D6; }
-.navagation .tn-youtube.select { text-shadow: 0 0 3px #E52D27; color: #E52D27; }
-.navagation .tn-radio.select { text-shadow: 0 0 3px #6AE368; color: #6AE368; }
-.navagation .tn-humble.select { text-shadow: 0 0 3px #2B2B2B; color: #2B2B2B; }
+.navagation .jb-groupies.select { text-shadow:0 0 3px #2B2B2B; color: #2B2B2B; }
+.navagation .jb-wc.select { text-shadow: 0 0 3px #1337D6; color: #1337D6; }
+.navagation .jb-youtube.select { text-shadow: 0 0 3px #E52D27; color: #E52D27; }
+.navagation .jb-radio.select { text-shadow: 0 0 3px #6AE368; color: #6AE368; }
+.navagation .jb-humble.select { text-shadow: 0 0 3px #2B2B2B; color: #2B2B2B; }
 
 iframe { overflow: hidden; }
 iframe, textarea, input {
