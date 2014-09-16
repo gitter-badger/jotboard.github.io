@@ -1,11 +1,11 @@
+var DevMode = false, head_conf = {
+  html5: true
+};
+
 window._idl = {
   url: '//humble.wikia.com/w/Thread:4687',
   position: 'bottomright',
   theme: 'light'
-};
-
-var DevMode = false, head_conf = {
-  html5: true
 };
 
 head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files/frame.js"], function() {
