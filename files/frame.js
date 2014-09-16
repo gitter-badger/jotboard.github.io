@@ -1,7 +1,7 @@
-var textnet = function(main, _1, _2, _3, _4) {
-  if (main == "SiteName") return "Textnet";
+var jotboard = function(main, _1, _2, _3, _4) {
+  if (main == "SiteName") return "Jotboard";
   if (main == "CollabName") return "Groupies";
-  if (main == "prefix") return "TN_-";
+  if (main == "prefix") return "JB_-";
   if (main == "MainNamespace") return "Main";
   if (main == "toggleBody") {
     if ($("body").css("display", "none")) $("body").css("display", "visible");
@@ -25,16 +25,16 @@ var textnet = function(main, _1, _2, _3, _4) {
   }
   if (main == "submenu") {
     // Submenu: Alternate Functions on Textnet that don't rely on the Local Data aspect of Textnet.
-    $(".tn-menu-btn").toggleClass("fa-chevron-down").toggleClass("fa-chevron-up");
+    $(".jb-menu-btn").toggleClass("fa-chevron-down").toggleClass("fa-chevron-up");
     $("#submenu").toggleClass("block");
   }
   if (main == "change") {
     // textnet("save or load"): Used to get and set Form Values and Textnet Data.
     if (_1 == "save") {
-      if (!textnet("NamespaceValue")) {
-        store.set(textnet("prefix") + textnet("MainNamespace"), textnet("FormValue"));
-        console.info(textnet("MainNamespace") + " > saved");
-        $.bootstrapGrowl(textnet("MainNamespace") + " has been saved.", {
+      if (!jotboard("NamespaceValue")) {
+        store.set(jotboard("prefix") + jotboard("MainNamespace"), jotboard("FormValue"));
+        console.info(jotboard("MainNamespace") + " > saved");
+        $.bootstrapGrowl(jotboard("MainNamespace") + " has been saved.", {
           ele: "body",
           type: "success",
           offset: {
@@ -48,9 +48,9 @@ var textnet = function(main, _1, _2, _3, _4) {
           stackup_spacing: 10
         });
       } else {
-        store.set(textnet("prefix") + textnet("NamespaceValue"), textnet("FormValue"));
-        console.info(textnet("NamespaceValue") + " > saved");
-        $.bootstrapGrowl(textnet("NamespaceValue") + " has been saved.", {
+        store.set(jotboard("prefix") + jotboard("NamespaceValue"), jotboard("FormValue"));
+        console.info(jotboard("NamespaceValue") + " > saved");
+        $.bootstrapGrowl(jotboard("NamespaceValue") + " has been saved.", {
           ele: "body",
           type: "info",
           offset: {
@@ -66,10 +66,10 @@ var textnet = function(main, _1, _2, _3, _4) {
       }
     }
     if (_1 == "load") {
-      if (!textnet("NamespaceValue")) {
-        form.value = store.get(textnet("prefix") + textnet("MainNamespace"));
-        console.info(textnet("MainNamespace") + " > loaded");
-        $.bootstrapGrowl(textnet("MainNamespace") + " has been loaded.", {
+      if (!jotboard("NamespaceValue")) {
+        form.value = store.get(jotboard("prefix") + jotboard("MainNamespace"));
+        console.info(jotboard("MainNamespace") + " > loaded");
+        $.bootstrapGrowl(jotboard("MainNamespace") + " has been loaded.", {
           ele: "body",
           type: "info",
           offset: {
@@ -83,9 +83,9 @@ var textnet = function(main, _1, _2, _3, _4) {
           stackup_spacing: 10
         });
       } else {
-        form.value = store.get(textnet("prefix") + textnet("NamespaceValue"));
-        console.info(textnet("NamespaceValue") + " > loaded");
-        $.bootstrapGrowl(textnet("NamespaceValue") + " has been loaded.", {
+        form.value = store.get(jotboard("prefix") + jotboard("NamespaceValue"));
+        console.info(jotboard("NamespaceValue") + " > loaded");
+        $.bootstrapGrowl(jotboard("NamespaceValue") + " has been loaded.", {
           ele: "body",
           type: "info",
           offset: {
