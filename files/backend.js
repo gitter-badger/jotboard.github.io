@@ -20,8 +20,8 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
     }).addClass("iframe");
     jotboard("_radio_play", "user:1249813849:playlist:7gMrshUGhhYAKThn2RT8eQ");
     $(".jb-menu-btn").on("click", function() { jotboard("submenu"); });
-    if (window.location.hash) document.title = "# Textnet";
-    if (!window.location.hash) document.title = "Textnet";
+    if (window.location.hash) document.title = "# Jotboard";
+    if (!window.location.hash) return;
     if (DevMode === false) $("body").css({
       "display": "block"
     });
