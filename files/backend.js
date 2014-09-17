@@ -19,21 +19,24 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
       "allowtransparency": "true"
     }).addClass("iframe");
     jotboard("_radio_play", "user:1249813849:playlist:7gMrshUGhhYAKThn2RT8eQ");
-    $(".jb-menu-btn").on("click", function() { jotboard("submenu"); });
+    $(".jb-menu-btn").on("click", function() {
+      jotboard("submenu");
+    });
     if (window.location.hash) document.title = "# Jotboard";
-    if (!window.location.hash) return;
+    if (!window.location.hash) document.title = "Jotboard";
     if (DevMode === false) $("body").css({
       "display": "block"
     });
   });
-  head.load("//cdn.jsdelivr.net/momentjs/2.8.1/moment.min.js", function() {
+  head.load("//cdn.jsdelivr.net/momentjs/2.8.3/moment.min.js", function() {
     console.log("MomentJS");
     var TimeShift = function() {
       if (textnet("threshold", 0, 13)) $("#form").addClass("day");
       else $("#form").addClass("night");
       $("#form.day").attr({
         "placeholder": moment(new Date()).format("[Hows it goin? It's ]dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, have fun :)]")
-      }); $("#form.night").attr({
+      });
+      $("#form.night").attr({
         "placeholder": moment(new Date()).format("[Hi, its currently] dddd, Do [of] MMMM YYYY[ and the time is] h:mm a[, have fun.]")
       });
     }; TimeShift();
@@ -61,7 +64,7 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
         });
         var whatscookin = function() {
           bootbox.dialog({
-            title: "Whats Cookin?",
+            title: "#WC: Whats Cookin?",
             message: "<iframe id='_youtube' src='//www.youtube.com/embed/?listType=playlist&list=PLOSutk9k0C3ofKYoP447uBfibpuAUKCoP&fs=1&loop=1&showinfo=0&autohide=1&theme=light' frameborder='0' allowfullscreen></iframe>",
             buttons: {
               enter: {
@@ -76,8 +79,8 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
           });
         };
         if (jotboard("hash", "whatscookin") || jotboard("hash", "wc")) window[whatscookin()];
-        $(".jb-wc").click(function() { window[whatscookin()]; }); // End Whats Cookin? #TNWC
-        if (textnet("hash", "campaign")) {
+        $(".jb-wc").click(function() { window[whatscookin()]; }); // End Whats Cookin? #JBWC
+        if (jotboard("hash", "campaign")) {
           bootbox.dialog({
             title: "Jotboard's Open Letter",
             message: "The Internet really has become something to be proud of, especially for early Internet Adopters, it went from an idea trying to create an internationalized network of amazing communities, to a lifestyle that has changed the way we live and work.<br /><br />" +
@@ -131,8 +134,12 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
     });
     var form = document.getElementById("form");
     var namespace = document.getElementById("namespace");
-    $("jb-give .jb-save").click(function() { jotboard("change", "save"); });
-    $("jb-give .jb-load").click(function() { jotboard("change", "load"); });
+    $("jb-give .jb-save").click(function() {
+      jotboard("change", "save");
+    });
+    $("jb-give .jb-load").click(function() {
+      jotboard("change", "load");
+    });
     if (store.get(jotboard("prefix") + jotboard("MainNamespace"))) {
       form.value = store.get(jotboard("prefix") + jotboard("MainNamespace"));
       console.info("The " + jotboard("MainNamespace") + " board is avalible.");
@@ -166,8 +173,12 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
         });
       });
       TogetherJS.on("close", function() {
-        $("jb-give .jb-save").click(function() { jotboard("change", "save"); });
-        $("jb-give .jb-load").click(function() { jotboard("change", "load"); });
+        $("jb-give .jb-save").click(function() {
+          jotboard("change", "save");
+        });
+        $("jb-give .jb-load").click(function() {
+          jotboard("change", "load");
+        });
         $("jb-give").prepend(
           '<div class="jb-save nav-select" title="Save Board">Save</div>' +
           '<div class="jb-load nav-select" title="Load Board">Load</div>'
