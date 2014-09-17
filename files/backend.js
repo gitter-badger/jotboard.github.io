@@ -18,8 +18,8 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
       "frameborder": "0",
       "allowtransparency": "true"
     }).addClass("iframe");
-    textnet("_radio_play", "user:1249813849:playlist:7gMrshUGhhYAKThn2RT8eQ");
-    $(".tn-menu-btn").on("click", function() { textnet("submenu"); });
+    jotboard("_radio_play", "user:1249813849:playlist:7gMrshUGhhYAKThn2RT8eQ");
+    $(".jb-menu-btn").on("click", function() { jotboard("submenu"); });
     if (window.location.hash) document.title = "# Textnet";
     if (!window.location.hash) document.title = "Textnet";
     if (DevMode === false) $("body").css({
@@ -61,7 +61,7 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
         });
         var whatscookin = function() {
           bootbox.dialog({
-            title: "#TNWC: Whats Cookin?",
+            title: "Whats Cookin?",
             message: "<iframe id='_youtube' src='//www.youtube.com/embed/?listType=playlist&list=PLOSutk9k0C3ofKYoP447uBfibpuAUKCoP&fs=1&loop=1&showinfo=0&autohide=1&theme=light' frameborder='0' allowfullscreen></iframe>",
             buttons: {
               enter: {
@@ -75,8 +75,8 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
             }
           });
         };
-        if (textnet("hash", "whatscookin") || textnet("hash", "tnwc")) window[whatscookin()];
-        $(".tn-wc").click(function() { window[whatscookin()]; }); // End Whats Cookin? #TNWC
+        if (jotboard("hash", "whatscookin") || jotboard("hash", "wc")) window[whatscookin()];
+        $(".jb-wc").click(function() { window[whatscookin()]; }); // End Whats Cookin? #TNWC
         if (textnet("hash", "campaign")) {
           bootbox.dialog({
             title: "Jotboard's Open Letter",
@@ -129,13 +129,10 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
         store.set("JBNotes", $(this).val());
       });
     });
-    var form = document.getElementById("form"),
-      namespace = document.getElementById("namespace");
-    $("jb-give .jb-save").click(function() {
-      jotboard("change", "save");
-    }); $("jb-give .jb-load").click(function() {
-      jotboard("change", "load");
-    });
+    var form = document.getElementById("form");
+    var namespace = document.getElementById("namespace");
+    $("jb-give .jb-save").click(function() { jotboard("change", "save"); });
+    $("jb-give .jb-load").click(function() { jotboard("change", "load"); });
     if (store.get(jotboard("prefix") + jotboard("MainNamespace"))) {
       form.value = store.get(jotboard("prefix") + jotboard("MainNamespace"));
       console.info("The " + jotboard("MainNamespace") + " board is avalible.");
@@ -169,12 +166,8 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
         });
       });
       TogetherJS.on("close", function() {
-        $("jb-give .jb-save").click(function() {
-          jotboard("change", "save");
-        });
-        $("jb-give .jb-load").click(function() {
-          jotboard("change", "load");
-        });
+        $("jb-give .jb-save").click(function() { jotboard("change", "save"); });
+        $("jb-give .jb-load").click(function() { jotboard("change", "load"); });
         $("jb-give").prepend(
           '<div class="jb-save nav-select" title="Save Board">Save</div>' +
           '<div class="jb-load nav-select" title="Load Board">Load</div>'
