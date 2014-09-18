@@ -31,7 +31,7 @@ head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files
   head.load("//cdn.jsdelivr.net/momentjs/2.8.3/moment.min.js", function() {
     console.log("MomentJS");
     var TimeShift = function() {
-      if (textnet("threshold", 0, 13)) $("#form").addClass("day");
+      if (jotboard("threshold", 0, 13)) $("#form").addClass("day");
       else $("#form").addClass("night");
       $("#form.day").attr({
         "placeholder": moment(new Date()).format("[Hows it goin? It's ]dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, have fun :)]")
