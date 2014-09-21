@@ -13,7 +13,7 @@ var jotboard = function(main, _1, _2, _3, _4) {
   if (main == "window") return window;
   if (main == "this") return this;
   if (main == "_radio_play") return window.open("//embed.spotify.com/?uri=" + _1, "_radio");
-  if (main == "hash") /* Used for HashMods */ return window.location.href.indexOf("#" + _1) != -1;
+  if (main == "hash") /* Used for #Mods */ return window.location.href.indexOf("#" + _1) != -1;
   if (main == "threshold") {
     // Returns current hour threshold (used for marquee)
     return _1 <= new Date().getHours() && new Date().getHours() < _2;
@@ -34,7 +34,7 @@ var jotboard = function(main, _1, _2, _3, _4) {
       if (!jotboard("NamespaceValue")) {
         store.set(jotboard("prefix") + jotboard("MainNamespace"), jotboard("FormValue"));
         console.info(jotboard("MainNamespace") + " > saved");
-        $.bootstrapGrowl(jotboard("MainNamespace") + " has been saved.", {
+        $.bootstrapGrowl("The " + jotboard("MainNamespace") + " has been saved.", {
           ele: "body",
           type: "success",
           offset: {
@@ -69,7 +69,7 @@ var jotboard = function(main, _1, _2, _3, _4) {
       if (!jotboard("NamespaceValue")) {
         form.value = store.get(jotboard("prefix") + jotboard("MainNamespace"));
         console.info(jotboard("MainNamespace") + " > loaded");
-        $.bootstrapGrowl(jotboard("MainNamespace") + " has been loaded.", {
+        $.bootstrapGrowl("The " + jotboard("MainNamespace") + " board has been loaded.", {
           ele: "body",
           type: "info",
           offset: {
@@ -77,8 +77,8 @@ var jotboard = function(main, _1, _2, _3, _4) {
             amount: 20
           },
           align: "right",
-          width: 290,
-          delay: 3100,
+          width: "auto",
+          delay: 1350,
           allow_dismiss: true,
           stackup_spacing: 10
         });
