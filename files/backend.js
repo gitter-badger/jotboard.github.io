@@ -101,22 +101,20 @@ var startUp = function() {
                 }
               });
             } // End Campaign
-            var youtube_srch = function() {
-              bootbox.prompt("YouTube", function(srch) {
+            var srch = function(pat) {
+              if (pat == "youtube") bootbox.prompt("YouTube", function(srch) {
                 if (srch) window.open("//www.youtube.com/results?search_query=" + srch, "_blank"), console.log("YouTube:" + srch);
                 if (srch === null) bootbox.hideAll();
               });
-            };
-            if (jotboard("hash", "youtube") || jotboard("hash", "YouTube")) window[youtube_srch()];
-            $(".jb-youtube").click(function() { window[youtube_srch()]; }); // End YouTube
-            var humble_srch = function() {
-              bootbox.prompt("Humble Wiki", function(srch) {
-                if (srch) window.open("http://humble.wikia.com/wiki/Special:Search?search=" + srch, "_blank"), console.log("Humble Wiki:" + srch);
+              if (pat == "facebook") bootbox.prompt("Facebook", function(srch) {
+                if (srch) window.open("//www.facebook.com/search/more/?q=" + srch, "_blank"), console.log("Facebook:" + srch);
                 if (srch === null) bootbox.hideAll();
               });
             };
-            if (jotboard("hash", "humble")) window[humble_srch()];
-            $(".jb-humble").click(function() { window[humble_srch()]; }); // End Humble Search
+            if (jotboard("hash", "youtube")) window[srch("youtube")];
+            $(".jb-youtube").click(function() { window[srch("youtube")]; });
+            if (jotboard("hash", "facebook")) window[srch("facebook")];
+            $(".jb-facebook").click(function() { window[srch("facebook")]; }); // End Search
             if (jotboard("hash", "radio")) jotboard("radio");
             $(".jb-radio").click(function() { jotboard("radio"); }); // End Radio
             if (jotboard("hash", "menu") || jotboard("hash", "submenu")) jotboard("submenu"); // End Menu
