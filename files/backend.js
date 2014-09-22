@@ -65,59 +65,53 @@ var startUp = function() {
                 bootbox.hideAll();
               }
             });
-            var whatscookin = function() {
-              bootbox.dialog({
-                title: "#WC: Whats Cookin?",
-                message: "<iframe id='_youtube' src='//www.youtube.com/embed/?listType=playlist&list=PLOSutk9k0C3ofKYoP447uBfibpuAUKCoP&fs=1&loop=1&showinfo=0&autohide=1&theme=light' frameborder='0' allowfullscreen></iframe>",
-                buttons: {
-                  enter: {
-                    label: "Open Playlist in YouTube",
-                    className: "btn-link",
-                    callback: function() {
-                      window.open("//www.youtube.com/playlist?list=PLOSutk9k0C3ofKYoP447uBfibpuAUKCoP", "_blank");
-                      return false;
+            var bootboxOpen = function(pattern) {
+              if (pattern == "whatscookin") bootbox.dialog({
+                  title: "#WC: Whats Cookin?",
+                  message: "<iframe id='_youtube' src='//www.youtube.com/embed/?listType=playlist&list=PLOSutk9k0C3ofKYoP447uBfibpuAUKCoP&fs=1&loop=1&showinfo=0&autohide=1&theme=light' frameborder='0' allowfullscreen></iframe>",
+                  buttons: {
+                    enter: {
+                      label: "Open Playlist in YouTube",
+                      className: "btn-link",
+                      callback: function() {
+                        window.open("//www.youtube.com/playlist?list=PLOSutk9k0C3ofKYoP447uBfibpuAUKCoP", "_blank");
+                        return false;
+                      }
                     }
                   }
-                }
-              });
-            };
-            if (jotboard("hash", "whatscookin") || jotboard("hash", "wc")) window[whatscookin()];
-            $(".jb-wc").click(function() { window[whatscookin()]; }); // End Whats Cookin? #JBWC
-            if (jotboard("hash", "campaign")) {
-              bootbox.dialog({
-                title: "Jotboard's Open Letter",
-                message: "The Internet really has become something to be proud of, especially for early Internet Adopters, it went from an idea trying to create an internationalized network of amazing communities, to a lifestyle that has changed the way we live and work.<br /><br />" +
-                "This message is to point out the current, past and future actions that have been taken to damage the Internet's Integrity, whether it be Mass Censorship, Illegal Spying or the way Net Neutrality presents itself as a money-related threat towards Cable Companies like Comcast, Verizon and Time Warner Cable and that it should never come to this again.<br /><br />" +
-                "The way the Internet is is perfect, we wouldn't have it any other way, and regardless of what the implications are to the corporate side of things, we need to make sure these sort of things never happen again, by making how much of a positive impact the Internet has made on us and our world as clear as possible to make sure the corporate businesses of the modern world know what will happen if such things are to be passed through Congress or Governments sanctions.<br /><br />" +
-                "This message is aimed at Politicians, Families, Frequent Internet Users, and the odd Selfie Takers, please share this message to as many people as you possibly can so we all know what were up against!",
-                buttons: {
-                  action: {
-                    label: "Supporters of IDL",
-                    className: "btn-primary",
-                    callback: function() {
-                      window.open("https://internetdefenseleague.org/", "_blank");
+                });
+                if (pattern == "campaign") bootbox.dialog({
+                  title: "Jotboard's Open Letter",
+                  message: "The Internet really has become something to be proud of, especially for early Internet Adopters, it went from an idea trying to create an internationalized network of amazing communities, to a lifestyle that has changed the way we live and work.<br /><br />" + "This message is to point out the current, past and future actions that have been taken to damage the Internet's Integrity, whether it be Mass Censorship, Illegal Spying or the way Net Neutrality presents itself as a money-related threat towards Cable Companies like Comcast, Verizon and Time Warner Cable and that it should never come to this again.<br /><br />" + "The way the Internet is is perfect, we wouldn't have it any other way, and regardless of what the implications are to the corporate side of things, we need to make sure these sort of things never happen again, by making how much of a positive impact the Internet has made on us and our world as clear as possible to make sure the corporate businesses of the modern world know what will happen if such things are to be passed through Congress or Governments sanctions.<br /><br />" + "This message is aimed at Politicians, Families, Frequent Internet Users, and the odd Selfie Takers, please share this message to as many people as you possibly can so we all know what were up against!",
+                  buttons: {
+                    enter: {
+                      label: "Supporters of IDL",
+                      className: "btn-primary",
+                      callback: function() {
+                        window.open("https://internetdefenseleague.org/", "_blank");
+                      }
                     }
                   }
-                }
-              });
-            } // End Campaign
-            var srch = function(pat) {
-              if (pat == "youtube") bootbox.prompt("YouTube", function(srch) {
-                if (srch) window.open("//www.youtube.com/results?search_query=" + srch, "_blank"), console.log("YouTube:" + srch);
-                if (srch === null) bootbox.hideAll();
-              });
-              if (pat == "facebook") bootbox.prompt("Facebook", function(srch) {
-                if (srch) window.open("//www.facebook.com/search/more/?q=" + srch, "_blank"), console.log("Facebook:" + srch);
-                if (srch === null) bootbox.hideAll();
-              });
-            };
-            if (jotboard("hash", "youtube")) window[srch("youtube")];
-            $(".jb-youtube").click(function() { window[srch("youtube")]; });
-            if (jotboard("hash", "facebook")) window[srch("facebook")];
-            $(".jb-facebook").click(function() { window[srch("facebook")]; }); // End Search
+                });
+                if (pattern == "youtube-srch") bootbox.prompt("YouTube", function(srch) {
+                  if (srch) window.open("//www.youtube.com/results?search_query=" + srch, "_blank"), console.log("YouTube:" + srch);
+                  if (srch === null) bootbox.hideAll();
+                });
+                if (pattern == "facebook-srch") bootbox.prompt("Facebook", function(srch) {
+                  if (srch) window.open("//www.facebook.com/search/more/?q=" + srch, "_blank"), console.log("Facebook:" + srch);
+                  if (srch === null) bootbox.hideAll();
+                });
+              };
+            if (jotboard("hash", "whatscookin")) window[bootboxOpen("whatscookin")];
+            $(".jb-wc").click(function() { window[bootboxOpen("whatscookin")]; }); // Whats Cookin?
+            if (jotboard("hash", "campaign")) window[bootboxOpen("campaign")]; // Campaign
+            if (jotboard("hash", "youtube")) window[srch("youtube-srch")];
+            $(".jb-youtube").click(function() { window[bootboxOpen("youtube-srch")]; }); // YouTube
+            if (jotboard("hash", "facebook")) window[bootboxOpen("facebook-srch")];
+            $(".jb-facebook").click(function() { window[bootboxOpen("facebook-srch")]; }); // Facebook
             if (jotboard("hash", "radio")) jotboard("radio");
-            $(".jb-radio").click(function() { jotboard("radio"); }); // End Radio
-            if (jotboard("hash", "menu") || jotboard("hash", "submenu")) jotboard("submenu"); // End Menu
+            $(".jb-radio").click(function() { jotboard("radio"); }); // Radio
+            if (jotboard("hash", "menu")) jotboard("submenu"); // Menu
           });
         });
       });
