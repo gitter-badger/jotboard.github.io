@@ -21,10 +21,8 @@ var startUp = function() {
           "frameborder": "0",
           "allowtransparency": "true"
         }).addClass("iframe");
-        jotboard("_radio_play", "user:1249813849:playlist:7gMrshUGhhYAKThn2RT8eQ");
-        $(".jb-menu-btn").on("click", function() {
-          jotboard("submenu");
-        });
+        window.open("//charts.spotify.com/embed?object=tracks&rank=most_streamed&country=global&windowtype=daily&date=latest", "_radio");
+        $(".jb-menu-btn").on("click", function() { jotboard("submenu"); });
         if (window.location.hash) document.title = "# Jotboard";
         if (!window.location.hash) document.title = "Jotboard";
         if (DevMode === false) $("body").css({
