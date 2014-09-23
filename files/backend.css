@@ -39,7 +39,9 @@ textarea#notes {
   background: none;
 }
 
-#form::-webkit-input-placeholder {
+#form::selection {
+  background: rgba(0, 0, 0, .45);
+} #form::-webkit-input-placeholder {
 	font-family: 'Lato', san-serif;
 	font-size: 65px;
 	color: #292929;
@@ -186,7 +188,7 @@ iframe, textarea, input {
 }
 
 .no-select, .no-select * { user-select: none; }
-#form::selection { background: rgba(0, 0, 0, .45); }
+#main, #form { background: none; }
 div.bootbox.modal, div.bootbox.modal * { font-family: 'Roboto', san-serif !important; }
 div.bootbox.modal .modal-header { border-bottom: 0; }
 div.bootbox.modal .modal-footer { border-top: 0; }
@@ -209,4 +211,3 @@ div.bootbox.modal .modal-footer { border-top: 0; }
 *::-ms-scrollbar-thumb { background: none; }
 *::-ms-scrollbar-thumb:hover { background: none; }
 *::-ms-scrollbar-thumb:active { background: none; }
-#main, #form { background: none; }
