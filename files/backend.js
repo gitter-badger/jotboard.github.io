@@ -37,7 +37,7 @@ var startUp = function() {
           if (jotboard("threshold", 0, 13)) $("#form").addClass("day");
           else $("#form").addClass("night");
           $("#form.day").attr({
-            "placeholder": moment(new Date()).format("[Hows it goin? It's ]dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, have fun :)]")
+            "placeholder": moment(new Date()).format("[Hows it goin? It's ]dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, have fun!]")
           });
           $("#form.night").attr({
             "placeholder": moment(new Date()).format("[Hi, its currently] dddd, Do [of] MMMM YYYY[ and the time is] h:mm a[, have fun.]")
@@ -111,7 +111,7 @@ var startUp = function() {
             $(".jb-facebook").click(function() { window[bootboxOpen("facebook-srch")]; }); // Facebook
             if (jotboard("hash", "radio")) jotboard("radio");
             $(".jb-radio").click(function() { jotboard("radio"); }); // Radio
-            if (jotboard("hash", "menu")) jotboard("submenu"); // Menu
+            if (jotboard("hash", "submenu")) jotboard("submenu"); // Menu
           });
         });
       });
@@ -168,16 +168,12 @@ var startUp = function() {
             });
           });
           TogetherJS.on("close", function() {
-            $("jb-give .jb-save").click(function() {
-              jotboard("change", "save");
-            });
-            $("jb-give .jb-load").click(function() {
-              jotboard("change", "load");
-            });
             $("jb-give").prepend(
               '<div class="jb-save nav-select" title="Save Board">Save</div>' +
               '<div class="jb-load nav-select" title="Load Board">Load</div>'
             );
+            $("jb-give .jb-save").click(function() { jotboard("change", "save"); });
+            $("jb-give .jb-load").click(function() { jotboard("change", "load"); });
             $("#form").unbind("keyup").unbind("keydown").val(store.get(jotboard("prefix") + jotboard("MainNamespace")));
             $.bootstrapGrowl("Thank You for using Groupies!", {
               ele: "body",
