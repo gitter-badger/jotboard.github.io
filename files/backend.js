@@ -21,8 +21,10 @@ var startUp = function() {
           "frameborder": "0",
           "allowtransparency": "true"
         }).addClass("iframe");
-        window.open("//charts.spotify.com/embed?object=tracks&rank=most_streamed&country=global&windowtype=daily&date=latest", "_radio");
-        $(".jb-menu-btn").on("click", function() { jotboard("submenu"); });
+        jotboard("radio-play", "user:1249813849:playlist:7gMrshUGhhYAKThn2RT8eQ");
+        $(".jb-menu-btn").on("click", function() {
+          jotboard("submenu");
+        });
         if (window.location.hash) document.title = "# Jotboard";
         if (!window.location.hash) document.title = "Jotboard";
         if (DevMode === false) $("body").css({
@@ -35,7 +37,7 @@ var startUp = function() {
           if (jotboard("threshold", 0, 13)) $("#form").addClass("day");
           else $("#form").addClass("night");
           $("#form.day").attr({
-            "placeholder": moment(new Date()).format("[Hows it goin? It's ]dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, have fun!]")
+            "placeholder": moment(new Date()).format("[Hello, it's ]dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, have fun!]")
           });
           $("#form.night").attr({
             "placeholder": moment(new Date()).format("[Hi, its currently] dddd, Do [of] MMMM YYYY[ and the time is] h:mm a[, have fun.]")
@@ -65,7 +67,7 @@ var startUp = function() {
             });
             var bootboxOpen = function(pattern) {
               if (pattern == "whatscookin") bootbox.dialog({
-                  title: "#WC: Whats Cookin?",
+                  title: "Whats Cookin?",
                   message: "<iframe id='_youtube' src='//www.youtube.com/embed/?listType=playlist&list=PLOSutk9k0C3ofKYoP447uBfibpuAUKCoP&fs=1&loop=1&showinfo=0&autohide=1&theme=light' frameborder='0' allowfullscreen></iframe>",
                   buttons: {
                     enter: {
@@ -80,7 +82,10 @@ var startUp = function() {
                 });
                 if (pattern == "campaign") bootbox.dialog({
                   title: "Jotboard's Open Letter",
-                  message: "The Internet really has become something to be proud of, especially for early Internet Adopters, it went from an idea trying to create an internationalized network of amazing communities, to a lifestyle that has changed the way we live and work.<br /><br />" + "This message is to point out the current, past and future actions that have been taken to damage the Internet's Integrity, whether it be Mass Censorship, Illegal Spying or the way Net Neutrality presents itself as a money-related threat towards Cable Companies like Comcast, Verizon and Time Warner Cable and that it should never come to this again.<br /><br />" + "The way the Internet is is perfect, we wouldn't have it any other way, and regardless of what the implications are to the corporate side of things, we need to make sure these sort of things never happen again, by making how much of a positive impact the Internet has made on us and our world as clear as possible to make sure the corporate businesses of the modern world know what will happen if such things are to be passed through Congress or Governments sanctions.<br /><br />" + "This message is aimed at Politicians, Families, Frequent Internet Users, and the odd Selfie Takers, please share this message to as many people as you possibly can so we all know what were up against!",
+                  message: "The Internet really has become something to be proud of, especially for early Internet Adopters, it went from an idea trying to create an internationalized network of amazing communities, to a lifestyle that has changed the way we live and work.<br /><br />" +
+                  "This message is to point out the current, past and future actions that have been taken to damage the Internet's Integrity, whether it be Mass Censorship, Illegal Spying or the way Net Neutrality presents itself as a money-related threat towards Cable Companies like Comcast, Verizon and Time Warner Cable and that it should never come to this again.<br /><br />" +
+                  "The way the Internet is is perfect, we wouldn't have it any other way, and regardless of what the implications are to the corporate side of things, we need to make sure these sort of things never happen again, by making how much of a positive impact the Internet has made on us and our world as clear as possible to make sure the corporate businesses of the modern world know what will happen if such things are to be passed through Congress or Governments sanctions.<br /><br />" +
+                  "This message is aimed at Politicians, Families, Frequent Internet Users, and the odd Selfie Takers, please share this message to as many people as you possibly can so we all know what were up against!",
                   buttons: {
                     enter: {
                       label: "Supporters of IDL",
@@ -96,7 +101,7 @@ var startUp = function() {
                   if (srch === null) bootbox.hideAll();
                 });
                 if (pattern == "facebook-srch") bootbox.prompt("Facebook", function(srch) {
-                  if (srch) window.open("//www.facebook.com/search/more/?q=" + srch, "_blank"), console.log("Facebook:" + srch);
+                  if (srch) window.open("//www.facebook.com/search/?q=" + srch, "_blank"), console.log("Facebook:" + srch);
                   if (srch === null) bootbox.hideAll();
                 });
               };
@@ -151,7 +156,7 @@ var startUp = function() {
             });
             $(function() {
               $("jb-give .jb-save, jb-give .jb-load").remove();
-              $.bootstrapGrowl("Do not share personal information unless official consent is given.", {
+              $.bootstrapGrowl("Do not give personal information unless official and/or legitimate consent is given.", {
                 ele: "body",
                 type: "info",
                 offset: {

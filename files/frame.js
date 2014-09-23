@@ -4,15 +4,19 @@ var jotboard = function(main, _1, _2, _3, _4) {
   if (main == "prefix") return "JB_-";
   if (main == "MainNamespace") return "Main";
   if (main == "toggleBody") {
-    if ($("body").css("display", "none")) $("body").css("display", "visible");
-    if ($("body").css("display", "visible")) $("body").css("display", "none");
+    if ($("body").css("display", "none")) $("body").css({
+      "display": "visible"
+    });
+    if ($("body").css("display", "visible")) $("body").css({
+      "display": "none"
+    });
   }
   if (main == "radio") /* Standard switch function for Radio */ $("#_radio, #_radio_insert").toggleClass("block");
   if (main == "NamespaceValue") /* Returns Value of Hero Box (Namespace's) */ return $("#namespace").val();
   if (main == "FormValue") /* Return Form Value */ return $("#form").val();
   if (main == "window") return window;
   if (main == "this") return this;
-  if (main == "_radio_play") return window.open("//embed.spotify.com/?uri=" + _1, "_radio");
+  if (main == "radio-play") return window.open("//embed.spotify.com/?uri=" + _1, "_radio");
   if (main == "hash") /* Used for #Mods */ return window.location.href.indexOf("#" + _1) != -1;
   if (main == "threshold") {
     // Returns current hour threshold (used for marquee)
