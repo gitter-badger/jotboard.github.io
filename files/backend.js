@@ -80,31 +80,31 @@ var startUp = function() {
                     }
                   }
                 });
-                if (pattern == "campaign") bootbox.dialog({
-                  title: "Jotboard's Open Letter",
-                  message: "The Internet really has become something to be proud of, especially for early Internet Adopters, it went from an idea trying to create an internationalized network of amazing communities, to a lifestyle that has changed the way we live and work.<br /><br />" +
-                  "This message is to point out the current, past and future actions that have been taken to damage the Internet's Integrity, whether it be Mass Censorship, Illegal Spying or the way Net Neutrality presents itself as a money-related threat towards Cable Companies like Comcast, Verizon and Time Warner Cable and that it should never come to this again.<br /><br />" +
-                  "The way the Internet is is perfect, we wouldn't have it any other way, and regardless of what the implications are to the corporate side of things, we need to make sure these sort of things never happen again, by making how much of a positive impact the Internet has made on us and our world as clear as possible to make sure the corporate businesses of the modern world know what will happen if such things are to be passed through Congress or Governments sanctions.<br /><br />" +
-                  "This message is aimed at Politicians, Families, Frequent Internet Users, and the odd Selfie Takers, please share this message to as many people as you possibly can so we all know what were up against!",
-                  buttons: {
-                    enter: {
-                      label: "Supporters of IDL",
-                      className: "btn-primary",
-                      callback: function() {
-                        window.open("https://internetdefenseleague.org/", "_blank");
-                      }
+              if (pattern == "campaign") bootbox.dialog({
+                title: "Jotboard's Open Letter",
+                message: "The Internet really has become something to be proud of, especially for early Internet Adopters, it went from an idea trying to create an internationalized network of amazing communities, to a lifestyle that has changed the way we live and work.<br /><br />" +
+                "This message is to point out the current, past and future actions that have been taken to damage the Internet's Integrity, whether it be Mass Censorship, Illegal Spying or the way Net Neutrality presents itself as a money-related threat towards Cable Companies like Comcast, Verizon and Time Warner Cable and that it should never come to this again.<br /><br />" +
+                "The way the Internet is is perfect, we wouldn't have it any other way, and regardless of what the implications are to the corporate side of things, we need to make sure these sort of things never happen again, by making how much of a positive impact the Internet has made on us and our world as clear as possible to make sure the corporate businesses of the modern world know what will happen if such things are to be passed through Congress or Governments sanctions.<br /><br />" +
+                "This message is aimed at Politicians, Families, Frequent Internet Users, and the odd Selfie Takers, please share this message to as many people as you possibly can so we all know what were up against!",
+                buttons: {
+                  enter: {
+                    label: "Supporters of IDL",
+                    className: "btn-primary",
+                    callback: function() {
+                      window.open("https://internetdefenseleague.org/", "_blank");
                     }
                   }
-                });
-                if (pattern == "youtube-srch") bootbox.prompt("YouTube", function(srch) {
-                  if (srch) window.open("//www.youtube.com/results?search_query=" + srch, "_blank"), console.log("YouTube:" + srch);
-                  if (srch === null) bootbox.hideAll();
-                });
-                if (pattern == "facebook-srch") bootbox.prompt("Facebook", function(srch) {
-                  if (srch) window.open("//www.facebook.com/search/?q=" + srch, "_blank"), console.log("Facebook:" + srch);
-                  if (srch === null) bootbox.hideAll();
-                });
-              };
+                }
+              });
+              if (pattern == "youtube-srch") bootbox.prompt("YouTube", function(srch) {
+                if (srch) window.open("//www.youtube.com/results?search_query=" + srch, "_blank"), console.log("YouTube:" + srch);
+                if (srch === null) bootbox.hideAll();
+              });
+              if (pattern == "facebook-srch") bootbox.prompt("Facebook", function(srch) {
+                if (srch) window.open("//www.facebook.com/search/?q=" + srch, "_blank"), console.log("Facebook:" + srch);
+                if (srch === null) bootbox.hideAll();
+              });
+            };
             if (jotboard("hash", "whatscookin")) window[bootboxOpen("whatscookin")];
             $(".jb-wc").click(function() { window[bootboxOpen("whatscookin")]; }); // Whats Cookin?
             if (jotboard("hash", "campaign")) window[bootboxOpen("campaign")]; // Campaign
