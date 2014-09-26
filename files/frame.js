@@ -35,10 +35,10 @@ var jotboard = function(main, _1, _2, _3, _4) {
   if (main == "change") {
     // textnet("save or load"): Used to get and set Form Values and Textnet Data.
     if (_1 == "save") {
-      if (!jotboard("NamespaceValue")) {
+      if (!jotboard("NamespaceValue") || $("#namespace").val("Main")) {
         store.set(jotboard("prefix") + jotboard("MainNamespace"), jotboard("FormValue"));
         console.info(jotboard("MainNamespace") + " > saved");
-        $.bootstrapGrowl("The " + jotboard("MainNamespace") + " has been saved.", {
+        $.bootstrapGrowl("The " + jotboard("MainNamespace") + " board has been saved.", {
           ele: "body",
           type: "success",
           offset: {
@@ -70,7 +70,7 @@ var jotboard = function(main, _1, _2, _3, _4) {
       }
     }
     if (_1 == "load") {
-      if (!jotboard("NamespaceValue")) {
+      if (!jotboard("NamespaceValue") || $("#namespace").val("Main")) {
         form.value = store.get(jotboard("prefix") + jotboard("MainNamespace"));
         console.info(jotboard("MainNamespace") + " > loaded");
         $.bootstrapGrowl("The " + jotboard("MainNamespace") + " board has been loaded.", {
