@@ -127,10 +127,10 @@ html, body, #html, #body {
 }
 
 .navagation {
-	transition: background-color 0.175s ease;
-  background-color: rgba(0, 0, 0, .17);
+	transition: background-color 0.170s ease;
+  background-color: rgba(0, 0, 0, .06);
 } .navagation:hover {
-  background-color: rgba(0, 0, 0, .9);
+  background-color: rgba(0, 0, 0, .95);
 }
 
 .navagation {
