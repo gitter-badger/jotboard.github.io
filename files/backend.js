@@ -2,19 +2,13 @@ var DevMode = false, head_conf = {
   html5: true
 };
 
-window._idl = {
-  url: '//humble.wikia.com/w/Thread:4687',
-  position: 'bottomright',
-  theme: 'light'
-};
-
 var startUp = function() {
   if (window.location.protocol == "http:") window.location.protocol = "https:";
   if (window.location.protocol == "https:") {
     head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files/frame.js"], function() {
-      console.log("jQuery, Main Frame");
-      head.load([('https:' == document.location.protocol ? 'https://' : 'http://') + 'members.internetdefenseleague.org/include/?url=' + _idl.url + '&campaign=' + _idl.campaign + '&variant=banner'], function() {
-        console.log('Campaign for Net Neutrality');
+      console.log("jQuery, Frame");
+      head.load([('https:' == document.location.protocol ? 'https://' : 'http://') + 'members.internetdefenseleague.org/include/?url=' + _idl.url + '&campaign=' + _idl.campaign + '&variant=modal'], function() {
+        console.log('Internet Defence League');
       });
       $(function() {
         $("iframe").attr({
@@ -22,9 +16,7 @@ var startUp = function() {
           "allowtransparency": "true"
         }).addClass("iframe");
         jotboard("radio-play", "user:1249813849:playlist:7gMrshUGhhYAKThn2RT8eQ");
-        $(".jb-menu-btn").on("click", function() {
-          jotboard("submenu");
-        });
+        $(".jb-menu-btn").click(function() { jotboard("submenu"); });
         if (window.location.hash) document.title = "# Jotboard";
         if (!window.location.hash) document.title = "Jotboard";
         if (DevMode === false) $("body").css({
@@ -97,11 +89,11 @@ var startUp = function() {
                 }
               });
               if (pattern == "youtube-srch") bootbox.prompt("YouTube", function(srch) {
-                if (srch) window.open("//www.youtube.com/results?search_query=" + srch, "_blank"), console.log("YouTube:" + srch);
+                if (srch) window.open("//www.youtube.com/results?search_query=" + srch, "_blank");
                 if (srch === null) bootbox.hideAll();
               });
               if (pattern == "facebook-srch") bootbox.prompt("Facebook", function(srch) {
-                if (srch) window.open("//www.facebook.com/search/?q=" + srch, "_blank"), console.log("Facebook:" + srch);
+                if (srch) window.open("//www.facebook.com/search/?q=" + srch, "_blank");
                 if (srch === null) bootbox.hideAll();
               });
             };
