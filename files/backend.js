@@ -1,6 +1,4 @@
 window._idl = {};
-_idl.variant = "modal";
-
 var DevMode = false, head_conf = {
   html5: true
 };
