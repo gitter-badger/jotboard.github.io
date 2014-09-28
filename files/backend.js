@@ -11,6 +11,11 @@ var startUp = function() {
       head.load([('https:' == document.location.protocol ? 'https://' : 'http://') + 'members.internetdefenseleague.org/include/?url=' + _idl.url + '&campaign=' + _idl.campaign + '&variant=modal'], function() {
         console.log('Internet Defence League');
       });
+      head.load(['//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js'], function() {
+        Mousetrap.bind('esc', function() {
+          jotboard('toggleVisible', '.navagation');
+        });
+      });
       $(function() {
         $("iframe").attr({
           "frameborder": "0",

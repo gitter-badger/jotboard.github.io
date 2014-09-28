@@ -11,9 +11,13 @@ var jotboard = function(main, _1, _2, _3, _4) {
       "display": "none"
     });
   }
+  if (main == "toggleVisible") {
+    if ($(_1).css("display", "none")) $(_1).css("display", "block");
+    if ($(_1).css("display", "block")) $(_1).css("display", "none");
+  }
   if (main == "toggleNav") {
-    $(".navagation").toggleClass("-nick");
-    $(".navagation-drop").toggleClass("-nick");
+    jotboard("toggleVisible", ".navagation");
+    jotboard("toggleVisible", ".navagation-drop");
   }
   if (main == "radio") /* Standard switch function for Radio */ $("#_radio, #_radio_insert").toggleClass("block");
   if (main == "NamespaceValue") /* Returns Value of Hero Box (Namespace's) */ return $("#namespace").val();
