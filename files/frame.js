@@ -12,10 +12,8 @@ var jotboard = function(main, _1, _2, _3, _4) {
     });
   }
   if (main == "toggleNav") {
-    if ($(".navagation").css("display", "none")) $(this).css("display", "block");
-    if ($(".navagation").css("display", "block")) $(this).css("display", "none");
-    if ($(".navagation-drop").css("display", "none")) $(this).css("display", "block");
-    if ($(".navagation-drop").css("display", "block")) $(this).css("display", "none");
+    $(".navagation").toggleClass("-nick");
+    $(".navagation-drop").toggleClass("-nick");
   }
   if (main == "radio") /* Standard switch function for Radio */ $("#_radio, #_radio_insert").toggleClass("block");
   if (main == "NamespaceValue") /* Returns Value of Hero Box (Namespace's) */ return $("#namespace").val();
