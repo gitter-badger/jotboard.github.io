@@ -11,6 +11,12 @@ var jotboard = function(main, _1, _2, _3, _4) {
       "display": "none"
     });
   }
+  if (main == "toggleNav") {
+    if ($(".navagation").css("display", "none")) $(this).css("display", "block");
+    if ($(".navagation").css("display", "block")) $(this).css("display", "none");
+    if ($(".navagation-drop").css("display", "none")) $(this).css("display", "block");
+    if ($(".navagation-drop").css("display", "block")) $(this).css("display", "none");
+  }
   if (main == "radio") /* Standard switch function for Radio */ $("#_radio, #_radio_insert").toggleClass("block");
   if (main == "NamespaceValue") /* Returns Value of Hero Box (Namespace's) */ return $("#namespace").val();
   if (main == "FormValue") /* Return Form Value */ return $("#form").val();
@@ -28,12 +34,12 @@ var jotboard = function(main, _1, _2, _3, _4) {
     return false;
   }
   if (main == "submenu") {
-    // Submenu: Alternate Functions on Textnet that don't rely on the Local Data aspect of Textnet.
+    // Submenu: Alternate Functions on Textnet that don't rely on the Local Data aspect of Jotboard.
     $(".jb-menu-btn").toggleClass("fa-chevron-down").toggleClass("fa-chevron-up");
     $("#submenu").toggleClass("block");
   }
   if (main == "change") {
-    // textnet("save or load"): Used to get and set Form Values and Textnet Data.
+    // jotboard("save or load"): Used to get and set Form Values and Jotboard Data.
     if (_1 == "save") {
       if (!jotboard("NamespaceValue")) {
         store.set(jotboard("prefix") + jotboard("MainNamespace"), jotboard("FormValue"));
