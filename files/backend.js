@@ -1,5 +1,5 @@
 window._idl = {};
-var DevMode = false, head_conf = {
+var DevMode = false, IDLCamp = false, head_conf = {
   html5: true
 };
 
@@ -8,12 +8,10 @@ var startUp = function() {
   if (window.location.protocol == "https:") {
     head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files/frame.js"], function() {
       console.log("jQuery, Frame");
-      head.load([('https:' == document.location.protocol ? 'https://' : 'http://') + 'members.internetdefenseleague.org/include/?url=' + _idl.url + '&campaign=' + _idl.campaign + '&variant=modal'], function() {
-        console.log('Internet Defence League');
-      });
       head.load(['//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js'], function() {
         Mousetrap.bind('esc', function() {
-          jotboard('toggleVisible', '.navagation');
+          if ($('.navagation').css('display', 'none')) $(this).css('display', 'block');
+          if ($('.navagation').css('display', 'block')) $(this).css('display', 'none');
         });
       });
       $(function() {
@@ -21,6 +19,11 @@ var startUp = function() {
           "frameborder": "0",
           "allowtransparency": "true"
         }).addClass("iframe");
+        if (IDLCamp === true) {
+          head.load([('https:' == document.location.protocol ? 'https://' : 'http://') + 'members.internetdefenseleague.org/include/?url=' + _idl.url + '&campaign=' + _idl.campaign + '&variant=modal'], function() {
+            console.log('Internet Defence League');
+          });
+        }
         jotboard("radio-play", "user:1249813849:playlist:7gMrshUGhhYAKThn2RT8eQ");
         $(".jb-menu-btn").click(function() { jotboard("submenu"); });
         if (window.location.hash) document.title = "# Jotboard";
