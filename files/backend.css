@@ -127,10 +127,11 @@ html, body, #html, #body {
   font-size: 95px;
   text-shadow: 0 0 3px #2B2B2B;
 } .navagation {
-	transition: background-color 0.170s ease;
-  background-color: rgba(0, 0, 0, .06);
+	transition: background 0.170s ease;
+  background: rgba(0, 0, 0, .05);
 } .navagation:hover {
-  background-color: rgba(0, 0, 0, .95);
+  background: -webkit-linear-gradient(45deg, hsla(0, 0%, 54%, 1) 0%, hsla(0, 0%, 54%, 0) 70%), -webkit-linear-gradient(315deg, hsla(0, 0%, 100%, 1) 10%, hsla(0, 0%, 100%, 0) 80%), -webkit-linear-gradient(225deg, hsla(0, 0%, 42%, 1) 10%, hsla(0, 0%, 42%, 0) 80%), -webkit-linear-gradient(135deg, hsla(0, 0%, 73%, 1) 100%, hsla(0, 0%, 73%, 0) 70%);
+	background: linear-gradient(45deg, hsla(0, 0%, 54%, 1) 0%, hsla(0, 0%, 54%, 0) 70%), linear-gradient(135deg, hsla(0, 0%, 100%, 1) 10%, hsla(0, 0%, 100%, 0) 80%), linear-gradient(225deg, hsla(0, 0%, 42%, 1) 10%, hsla(0, 0%, 42%, 0) 80%), linear-gradient(315deg, hsla(0, 0%, 73%, 1) 100%, hsla(0, 0%, 73%, 0) 70%);
 }
 
 .navagation {
@@ -150,19 +151,6 @@ html, body, #html, #body {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-}
-
-.navagation-drop {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  padding: 6px 10px 6px 10px;
-  font-size: 44px;
-  background: rgba(0, 170, 255, 0.35);
-  margin: 0 5px 5px 0;
-  border: 1px solid #333;
-  border-radius: 3px;
-  box-shadow: inset 0 0 14px #333;
 }
 
 div.body.container {
