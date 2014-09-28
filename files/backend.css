@@ -127,12 +127,11 @@ html, body, #html, #body {
   font-size: 95px;
   text-shadow: 0 0 3px #2B2B2B;
 } .navagation {
-	transition: background 1.5s ease;
-	background: -webkit-linear-gradient(45deg, hsla(0, 0%, 0%, 1) 0%, hsla(0, 0%, 0%, 0) 70%), -webkit-linear-gradient(315deg, hsla(0, 0%, 0%, 1) 10%, hsla(0, 0%, 0%, 0) 80%), -webkit-linear-gradient(225deg, hsla(0, 0%, 0%, 1) 10%, hsla(0, 0%, 0%, 0) 80%), -webkit-linear-gradient(135deg, hsla(0, 0%, 0%, 1) 100%, hsla(0, 0%, 0%, 0) 70%);
-	background: linear-gradient(45deg, hsla(0, 0%, 0%, 1) 0%, hsla(0, 0%, 0%, 0) 70%), linear-gradient(135deg, hsla(0, 0%, 0%, 1) 10%, hsla(0, 0%, 0%, 0) 80%), linear-gradient(225deg, hsla(0, 0%, 0%, 1) 10%, hsla(0, 0%, 0%, 0) 80%), linear-gradient(315deg, hsla(0, 0%, 0%, 1) 100%, hsla(0, 0%, 0%, 0) 70%);
+  background: rgba(0, 0, 0, .1);
+	transition: opacity 1.5s ease;
+	opacity: .1;
 } .navagation:hover {
-  background: -webkit-linear-gradient(45deg, hsla(0, 0%, 54%, 1) 0%, hsla(0, 0%, 54%, 0) 70%), -webkit-linear-gradient(315deg, hsla(0, 0%, 100%, 1) 10%, hsla(0, 0%, 100%, 0) 80%), -webkit-linear-gradient(225deg, hsla(0, 0%, 42%, 1) 10%, hsla(0, 0%, 42%, 0) 80%), -webkit-linear-gradient(135deg, hsla(0, 0%, 73%, 1) 100%, hsla(0, 0%, 73%, 0) 70%);
-	background: linear-gradient(45deg, hsla(0, 0%, 54%, 1) 0%, hsla(0, 0%, 54%, 0) 70%), linear-gradient(135deg, hsla(0, 0%, 100%, 1) 10%, hsla(0, 0%, 100%, 0) 80%), linear-gradient(225deg, hsla(0, 0%, 42%, 1) 10%, hsla(0, 0%, 42%, 0) 80%), linear-gradient(315deg, hsla(0, 0%, 73%, 1) 100%, hsla(0, 0%, 73%, 0) 70%);
+  opacity: 1;
 }
 
 .navagation {
