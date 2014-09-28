@@ -9,6 +9,10 @@ body#body {
 	height: 80px;
 }
 
+.panel-body {
+  padding: 5px;
+}
+
 #_youtube {
 	width: 100%;
 	height: 320px;
@@ -18,7 +22,7 @@ body#body {
 #form {
 	font: 14px 'Source Code Pro', sans-serif;
 	color: #F0F0F0;
-	width: calc(100% - 240px);
+	width: calc(100% - 250px);
 	border-radius: 0;
 	height: 100%;
 	float: right;
@@ -134,7 +138,7 @@ html, body, #html, #body {
 }
 
 .navagation {
-	width: 240px;
+	width: 250px;
 	white-space: nowrap;
 	font-family: 'Roboto', san-serif;
 	height: 100%;
