@@ -128,7 +128,7 @@ html, body, #html, #body {
   text-shadow: 0 0 3px #2B2B2B;
 } .navagation {
   background: rgba(0, 0, 0, .1);
-	transition: opacity 1.5s ease;
+	transition: opacity .320s ease;
 	opacity: .1;
 } .navagation:hover {
   opacity: 1;
