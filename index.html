@@ -107,15 +107,21 @@
     </div>
 		<!-- /.container -->
     </div>
-  <!-- /.navagation.no-select -->
+  <!-- /.navagation.no-select#main -->
 </div>
 <!-- /.body.container -->
 
-<script> var __ = function(_) {
-if (_ == 'f') location.reload(false);
-else location.reload(true); }; </script>
-<style> .block { display: none !important; }
-.no-block { display: none !important; } </style>
+<script>
+var _refresh = function(_) {
+  if (_ == 'f') location.reload(false);
+  else location.reload(true);
+};
+</script>
+
+<style>
+.block { display: none !important; }
+.no-block { display: visible !important; }
+</style>
 
 </body>
 </html>
