@@ -10,8 +10,8 @@ var startUp = function() {
       console.log("jQuery, Frame");
       head.load(['//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js'], function() {
         Mousetrap.bind('esc', function() {
-          if ($('.navagation').css('display', 'none')) $(this).css('display', 'block');
-          if ($('.navagation').css('display', 'block')) $(this).css('display', 'none');
+          if ($('.navagation').css('display', 'none')) $('.navagation').css('display', 'block');
+          if ($('.navagation').css('display', 'block')) $('.navagation').css('display', 'none');
         });
       });
       $(function() {
