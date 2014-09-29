@@ -59,26 +59,23 @@ var startUp = function() {
             bootbox.setDefaults({
               locale: "en",
               backdrop: true,
-              animate: true,
-              onEscape: function() {
-                bootbox.hideAll();
-              }
+              animate: true
             });
             var bootboxOpen = function(pattern) {
               if (pattern == "whatscookin") bootbox.dialog({
-                  title: "Whats Cookin?",
-                  message: "<iframe id='_youtube' src='//www.youtube.com/embed/?listType=playlist&list=PLOSutk9k0C3ofKYoP447uBfibpuAUKCoP&fs=1&loop=1&showinfo=0&autohide=1&theme=light' frameborder='0' allowfullscreen></iframe>",
-                  buttons: {
-                    enter: {
-                      label: "Open Playlist in YouTube",
-                      className: "btn-link",
-                      callback: function() {
-                        window.open("//www.youtube.com/playlist?list=PLOSutk9k0C3ofKYoP447uBfibpuAUKCoP&playnext=1", "_blank");
-                        return false;
-                      }
+                title: "Whats Cookin?",
+                message: "<iframe id='_youtube' src='//www.youtube.com/embed/?listType=playlist&list=PLOSutk9k0C3ofKYoP447uBfibpuAUKCoP&fs=1&loop=1&showinfo=0&autohide=1&theme=light' frameborder='0' allowfullscreen></iframe>",
+                buttons: {
+                  enter: {
+                    label: "YouTube >>",
+                    className: "btn-link",
+                    callback: function() {
+                      window.open("//www.youtube.com/playlist?list=PLOSutk9k0C3ofKYoP447uBfibpuAUKCoP&playnext=1", "_blank");
+                      return false;
                     }
                   }
-                });
+                }
+              });
               if (pattern == "campaign") bootbox.dialog({
                 title: "Jotboard's Open Letter",
                 message: "The Internet really has become something to be proud of, especially for early Internet Adopters, it went from an idea trying to create an internationalized network of amazing communities, to a lifestyle that has changed the way we live and work.<br /><br />" +
