@@ -10,11 +10,9 @@ var startUp = function() {
       console.log("jQuery, Frame");
       head.load(['//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js'], function() {
         console.log('Mousetrap');
-        $(document).keydown(function(q) {
-          if (q.keyCode == 27) {
-            if ($('.navagation').css('display', 'none')) $('.navagation').css('display', 'block');
-            if ($('.navagation').css('display', 'block')) $('.navagation').css('display', 'none');
-          }
+        Mousetrap.bind("escape, esc", function() {
+          if ($('.navagation').css('display', 'none')) $('.navagation').css('display', 'block');
+          if ($('.navagation').css('display', 'block')) $('.navagation').css('display', 'none');
         });
       });
       $(function() {
@@ -22,18 +20,14 @@ var startUp = function() {
           "frameborder": "0",
           "allowtransparency": "true"
         }).addClass("iframe");
-        if (IDLCamp === true) {
-          head.load([('https:' == document.location.protocol ? 'https://' : 'http://') + 'members.internetdefenseleague.org/include/?url=' + _idl.url + '&campaign=' + _idl.campaign + '&variant=modal'], function() {
-            console.log('Internet Defence League');
-          });
-        }
+        if (IDLCamp === true) head.load([('https:' == document.location.protocol ? 'https://' : 'http://') + 'members.internetdefenseleague.org/include/?url=' + _idl.url + '&campaign=' + _idl.campaign + '&variant=modal'], function() {
+          console.log('Internet Defence League');
+        });
         jotboard("radio-play", "user:1249813849:playlist:7gMrshUGhhYAKThn2RT8eQ");
         $(".jb-menu-btn").click(function() { jotboard("submenu"); });
         if (window.location.hash) document.title = "# Jotboard";
         if (!window.location.hash) document.title = "Jotboard";
-        if (DevMode === false) $("body").css({
-          "display": "block"
-        });
+        if (DevMode === false) $("body").css("display", "block");
       });
       head.load("//cdn.jsdelivr.net/momentjs/2.8.3/moment.min.js", function() {
         console.log("MomentJS");
