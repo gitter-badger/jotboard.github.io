@@ -10,7 +10,9 @@ var startUp = function() {
       console.log("jQuery, Frame");
       head.load(['//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js'], function() {
         console.log('Mousetrap');
-        Mousetrap.bind('esc', $('.navagation').toggleClass('block'));
+        Mousetrap.bind('esc', function() {
+          $('.navagation').toggleClass('block');
+        });
       });
       $(function() {
         $("iframe").attr({
