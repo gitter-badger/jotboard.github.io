@@ -9,12 +9,13 @@ var startUp = function() {
     head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "files/frame.js"], function() {
       console.log("jQuery, Frame");
       head.load(['//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js'], function() {
-        if ($("textarea#form").focus() || !$("textarea#form").focus()) {
-          Mousetrap.bind('esc', function() {
+        console.log('Mousetrap');
+        $('*').keypress(function(q) {
+          if (q.keyCode == 27) {
             if ($('.navagation').css('display', 'none')) $('.navagation').css('display', 'block');
             if ($('.navagation').css('display', 'block')) $('.navagation').css('display', 'none');
-          });
-        }
+          }
+        });
       });
       $(function() {
         $("iframe").attr({
