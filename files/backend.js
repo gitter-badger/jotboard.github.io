@@ -69,7 +69,7 @@ var startUp = function() {
                       label: "Open Playlist in YouTube",
                       className: "btn-link",
                       callback: function() {
-                        window.open("//www.youtube.com/playlist?list=PLOSutk9k0C3ofKYoP447uBfibpuAUKCoP", "_blank");
+                        window.open("//www.youtube.com/playlist?list=PLOSutk9k0C3ofKYoP447uBfibpuAUKCoP&playnext=1", "_blank");
                         return false;
                       }
                     }
