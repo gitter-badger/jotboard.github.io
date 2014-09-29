@@ -162,7 +162,7 @@ var startUp = function() {
                   from: "bottom",
                   amount: 20
                 },
-                align: "right",
+                align: "left",
                 width: "auto",
                 delay: 3500,
                 allow_dismiss: true
@@ -181,7 +181,7 @@ var startUp = function() {
                 from: "bottom",
                 amount: 20
               },
-              align: "right",
+              align: "left",
               width: "auto",
               delay: 2500,
               allow_dismiss: true

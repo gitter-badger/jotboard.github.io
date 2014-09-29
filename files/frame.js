@@ -45,7 +45,7 @@ var jotboard = function(main, _1, _2, _3, _4) {
             from: "bottom",
             amount: 20
           },
-          align: "right",
+          align: "left",
           width: 300,
           delay: 3100,
           allow_dismiss: true,
@@ -61,7 +61,7 @@ var jotboard = function(main, _1, _2, _3, _4) {
           from: "bottom",
             amount: 20
           },
-          align: "right",
+          align: "left",
           width: 300,
           delay: 3100,
           allow_dismiss: true,
@@ -80,7 +80,7 @@ var jotboard = function(main, _1, _2, _3, _4) {
             from: "bottom",
             amount: 20
           },
-          align: "right",
+          align: "left",
           width: "auto",
           delay: 1350,
           allow_dismiss: true,
@@ -96,7 +96,7 @@ var jotboard = function(main, _1, _2, _3, _4) {
             from: "bottom",
             amount: 20
           },
-          align: "right",
+          align: "left",
           width: 290,
           delay: 3100,
           allow_dismiss: true,
