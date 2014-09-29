@@ -23,7 +23,9 @@ var startUp = function() {
           console.log('Internet Defence League');
         });
         jotboard("radio-play", "user:1249813849:playlist:7gMrshUGhhYAKThn2RT8eQ");
-        $(".jb-menu-btn").click(function() { jotboard("submenu"); });
+        $(".jb-menu-btn").click(function() {
+          jotboard("submenu");
+        });
         if (window.location.hash) document.title = "# Jotboard";
         if (!window.location.hash) document.title = "Jotboard";
         if (DevMode === false) $("body").css("display", "block");
@@ -57,7 +59,7 @@ var startUp = function() {
             bootbox.setDefaults({
               locale: "en",
               backdrop: true,
-              animate: false,
+              animate: true,
               onEscape: function() {
                 bootbox.hideAll();
               }
@@ -168,10 +170,7 @@ var startUp = function() {
             });
           });
           TogetherJS.on("close", function() {
-            $("jb-give").prepend(
-              '<div class="jb-save nav-select" title="Save Board">Save</div>' +
-              '<div class="jb-load nav-select" title="Load Board">Load</div>'
-            );
+            $("jb-give").prepend('<div class="jb-save nav-select" title="Save Board">Save</div>' + '<div class="jb-load nav-select" title="Load Board">Load</div>');
             $("jb-give .jb-save").click(function() { jotboard("change", "save"); });
             $("jb-give .jb-load").click(function() { jotboard("change", "load"); });
             $("#form").unbind("keyup").unbind("keydown").val(store.get(jotboard("prefix") + jotboard("MainNamespace")));

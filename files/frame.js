@@ -28,12 +28,12 @@ var jotboard = function(main, _1, _2, _3, _4) {
     return false;
   }
   if (main == "submenu") {
-    // Submenu: Alternate Functions on Textnet that don't rely on the Local Data aspect of Jotboard.
+    // Submenu: Alternate actions that don't rely on the Local Data aspect of Jotboard.
     $(".jb-menu-btn").toggleClass("fa-chevron-down").toggleClass("fa-chevron-up");
     $("#submenu").toggleClass("block");
   }
   if (main == "change") {
-    // jotboard("save or load"): Used to get and set Form Values and Jotboard Data.
+    // jotboard("save or load"): Used to get and set the values of Jotboard Data.
     if (_1 == "save") {
       if (!jotboard("NamespaceValue")) {
         store.set(jotboard("prefix") + jotboard("MainNamespace"), jotboard("FormValue"));

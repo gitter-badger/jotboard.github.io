@@ -20,7 +20,7 @@ body#body {
 }
 
 #form {
-	font: 14px 'Source Code Pro', sans-serif;
+	font: 15px 'Source Code Pro', sans-serif;
 	color: #F0F0F0;
 	width: calc(100%);
 	border-radius: 0;
@@ -45,7 +45,7 @@ textarea#notes {
 }
 
 #form::selection {
-  background: rgba(0, 0, 0, .45);
+  background: rgba(0, 0, 0, .40);
 } #form::-webkit-input-placeholder {
 	font-family: 'Lato', san-serif;
 	font-size: 65px;
@@ -110,9 +110,7 @@ html, body, #html, #body {
 
 #_radio_insert form .form-group {
 	margin-bottom: 6px !important;
-}
-
-.navagation .select:first-child {
+} .navagation .select:first-child {
 	margin-top: 9px !important;
 } .navagation .select:last-child {
 	margin-bottom: 0 !important;
@@ -128,10 +126,27 @@ html, body, #html, #body {
   text-shadow: 0 0 3px #2B2B2B;
 } .navagation {
   background: rgba(0, 0, 0, .1);
-	transition: opacity .320s ease;
+	transition: opacity .210s ease;
 	opacity: .1;
 } .navagation:hover {
   opacity: 1;
+}
+
+.navagation .jb-groupies.select {
+  text-shadow: 0 0 3px #AD00FF;
+  color: #AD00FF;
+} .navagation .jb-wc.select {
+  text-shadow: 0 0 3px #1337D6;
+  color: #1337D6;
+} .navagation .jb-youtube.select {
+  text-shadow: 0 0 3px #E52D27;
+  color: #E52D27;
+} .navagation .jb-radio.select {
+  text-shadow: 0 0 3px #6AE368;
+  color: #6AE368;
+} .navagation .jb-facebook.select {
+  text-shadow: 0 0 3px #3B5998;
+  color: #3B5998;
 }
 
 .navagation {
@@ -178,19 +193,13 @@ html, body, html#html, body#body {
 	height: 99.5%;
 }
 
-.navagation .jb-groupies.select { text-shadow:0 0 3px #2B2B2B; color: #2B2B2B; }
-.navagation .jb-wc.select { text-shadow: 0 0 3px #1337D6; color: #1337D6; }
-.navagation .jb-youtube.select { text-shadow: 0 0 3px #E52D27; color: #E52D27; }
-.navagation .jb-radio.select { text-shadow: 0 0 3px #6AE368; color: #6AE368; }
-.navagation .jb-facebook.select { text-shadow: 0 0 3px #3B5998; color: #3B5998; }
-
-iframe { overflow: hidden; }
 iframe, textarea, input {
 	resize: none;
 	outline: none;
 	border: none;
 }
 
+iframe { overflow: hidden; }
 .no-select, .no-select * { user-select: none; }
 #main, #form { background: none; }
 div.bootbox.modal, div.bootbox.modal * { font-family: 'Roboto', san-serif !important; }
