@@ -37,11 +37,11 @@ var startUp = function() {
           else $("#form").addClass("night");
           $("#form.day").attr({
             "placeholder": moment(new Date()).format("[Hello, it's ]dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, have fun!]"),
-            "title": moment(new Date()).format("[Press escape to open or close the navigation.]")
+            "title": "Press escape to open or close the navigation"
           });
           $("#form.night").attr({
             "placeholder": moment(new Date()).format("[Hello, it's ]dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, have fun!]"),
-            "title": moment(new Date()).format("[Press escape to open or close the navigation.]")
+            "title": "Press escape to open or close the navigation"
           });
         }; TimeShift();
         setInterval(TimeShift, 1);
