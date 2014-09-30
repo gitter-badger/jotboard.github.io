@@ -36,10 +36,12 @@ var startUp = function() {
           if (jotboard("threshold", 0, 13)) $("#form").addClass("day");
           else $("#form").addClass("night");
           $("#form.day").attr({
-            "placeholder": moment(new Date()).format("[Hello, it's ]dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, have fun!]")
+            "placeholder": moment(new Date()).format("[Hello, it's ]dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, have fun!]"),
+            "title": moment(new Date()).format("[Press escape to open or close the navigation.]")
           });
           $("#form.night").attr({
-            "placeholder": moment(new Date()).format("[Hi, its currently] dddd, Do [of] MMMM YYYY[ and the time is] h:mm a[, have fun.]")
+            "placeholder": moment(new Date()).format("[Hello, it's ]dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, have fun!]"),
+            "title": moment(new Date()).format("[Press escape to open or close the navigation.]")
           });
         }; TimeShift();
         setInterval(TimeShift, 1);
@@ -59,7 +61,7 @@ var startUp = function() {
             bootbox.setDefaults({
               locale: "en",
               backdrop: true,
-              animate: true
+              animate: false
             });
             var bootboxOpen = function(pattern) {
               if (pattern == "whatscookin") bootbox.dialog({
@@ -67,7 +69,7 @@ var startUp = function() {
                 message: "<iframe id='_youtube' src='//www.youtube.com/embed/?listType=playlist&list=PLOSutk9k0C3ofKYoP447uBfibpuAUKCoP&fs=1&loop=1&showinfo=0&autohide=1&theme=light' frameborder='0' allowfullscreen></iframe>",
                 buttons: {
                   enter: {
-                    label: "YouTube >>",
+                    label: "Open",
                     className: "btn-link",
                     callback: function() {
                       window.open("//www.youtube.com/playlist?list=PLOSutk9k0C3ofKYoP447uBfibpuAUKCoP&playnext=1", "_blank");
@@ -110,7 +112,6 @@ var startUp = function() {
             $(".jb-facebook").click(function() { window[bootboxOpen("facebook-srch")]; }); // Facebook
             if (jotboard("hash", "radio")) jotboard("radio");
             $(".jb-radio").click(function() { jotboard("radio"); }); // Radio
-            if (jotboard("hash", "submenu")) jotboard("submenu"); // Menu
           });
         });
       });
