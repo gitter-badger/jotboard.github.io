@@ -115,19 +115,19 @@ html, body, #html, #body {
 } .navagation .select:last-child {
 	margin-bottom: 0 !important;
 } .navagation .nav-select {
-	font-size: 20px;
-	background-color: #D5D5D5;
-	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.38);
+	font-size: 26px;
 	color: #000;
+	background-color: #DADAC4;
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.38);
 	padding: 5px;
-	border-radius: 4px;
+	border-radius: 5px;
 } .navagation .select {
-  font-size: 95px;
+  font-size: 90px;
   text-shadow: 0 0 3px #2B2B2B;
 } .navagation {
   background: rgba(0, 0, 0, .1);
 	transition: opacity .210s ease;
-	opacity: .1;
+	opacity: .25;
 } .navagation:hover {
   opacity: 1;
 }
