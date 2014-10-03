@@ -93,8 +93,8 @@
           <div class="block" id="submenu">
             <div class="jb-groupies select fa fa-pencil" title="Groupies"></div>
             <div class="jb-radio select fa fa-spotify" title="#radio"></div>
-            <div class="jb-youtube select fa fa-youtube-play" title="#youtube"></div>
             <div class="jb-wc select fa fa-users" title="#whatscookin"></div>
+            <div class="jb-youtube select fa fa-youtube-play" title="#youtube"></div>
             <div class="jb-facebook select fa fa-facebook" title="#facebook"></div>
           </div>
           <!-- /.block#submenu -->
@@ -115,7 +115,7 @@
 <script>
 var _refresh = function(_) {
   if (_ == 'f') location.reload(false);
-  else location.reload(true);
+  if (!_ || _ == 't') location.reload(true);
 };
 </script>
 

@@ -19,27 +19,29 @@ var startUp = function() {
           "frameborder": "0",
           "allowtransparency": "true"
         }).addClass("iframe");
-        if (IDLCamp === true) head.load([('https:' == document.location.protocol ? 'https://' : 'http://') + 'members.internetdefenseleague.org/include/?url=' + _idl.url + '&campaign=' + _idl.campaign + '&variant=modal'], function() {
-          console.log('Internet Defence League');
-        });
+        if (window.location.hash) document.title = "# Jotboard";
+        if (!window.location.hash) document.title = "Jotboard";
+        if (DevMode === false) $("body").css("display", "block");
+        if (IDLCamp === true) {
+          head.load([('https:' == document.location.protocol ? 'https://' : 'http://') + 'members.internetdefenseleague.org/include/?url=' + _idl.url + '&campaign=' + _idl.campaign + '&variant=modal'], function() {
+            console.log('Internet Defence League');
+          });
+        }
         jotboard("radio-play", "user:1249813849:playlist:7gMrshUGhhYAKThn2RT8eQ");
         $(".jb-menu-btn").click(function() {
           jotboard("submenu");
         });
-        if (window.location.hash) document.title = "# Jotboard";
-        if (!window.location.hash) document.title = "Jotboard";
-        if (DevMode === false) $("body").css("display", "block");
       });
       head.load("//cdn.jsdelivr.net/momentjs/2.8.3/moment.min.js", function() {
         console.log("MomentJS");
+        // TimeShift is used to simulate real-time activity, not actually
+        // real-time, but its per 1 millisecond so its close enough.
         var TimeShift = function() {
-          if (jotboard("threshold", 0, 13)) $("#form").addClass("day");
-          else $("#form").addClass("night");
-          $("#form.day").attr({
+          if (jotboard("threshold", 0, 13)) $("#form").attr({
             "placeholder": moment(new Date()).format("[Hello, it's ]dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, have fun!]"),
             "title": "Press escape to open or close the navigation"
           });
-          $("#form.night").attr({
+          else $("#form").attr({
             "placeholder": moment(new Date()).format("[Hello, it's ]dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, have fun!]"),
             "title": "Press escape to open or close the navigation"
           });
@@ -104,14 +106,22 @@ var startUp = function() {
               });
             };
             if (jotboard("hash", "whatscookin")) window[bootboxOpen("whatscookin")];
-            $(".jb-wc").click(function() { window[bootboxOpen("whatscookin")]; }); // Whats Cookin?
+            $(".jb-wc").click(function() {
+              window[bootboxOpen("whatscookin")];
+            }); // Whats Cookin?
             if (jotboard("hash", "campaign")) window[bootboxOpen("campaign")]; // Campaign
             if (jotboard("hash", "youtube")) window[srch("youtube-srch")];
-            $(".jb-youtube").click(function() { window[bootboxOpen("youtube-srch")]; }); // YouTube
+            $(".jb-youtube").click(function() {
+              window[bootboxOpen("youtube-srch")];
+            }); // YouTube
             if (jotboard("hash", "facebook")) window[bootboxOpen("facebook-srch")];
-            $(".jb-facebook").click(function() { window[bootboxOpen("facebook-srch")]; }); // Facebook
+            $(".jb-facebook").click(function() {
+              window[bootboxOpen("facebook-srch")];
+            }); // Facebook
             if (jotboard("hash", "radio")) jotboard("radio");
-            $(".jb-radio").click(function() { jotboard("radio"); }); // Radio
+            $(".jb-radio").click(function() {
+              jotboard("radio");
+            }); // Radio
           });
         });
       });
