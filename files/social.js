@@ -3,13 +3,71 @@
 head.load('//connect.facebook.net/es_US/sdk.js', function() {
   FB.init({
     appId: '196947013668110',
+    version: 'v2.1',
+    status: true,
+    xfbml: true
   });
-  FB.ui({
-    method: 'share',
-    href: window.location.href
-  }, function(response) {
-    blah();
+  FB.getLoginStatus(function(response) {
+    if (response.status === 'connected') {
+      // Logged in and authenticicated.
+      var fbShare = function() {
+  FB.api('/me/feed', 'post', { message: $("#form").val() }, function(response) {
+    if (!response || response.error) {
+      bootbox.dialog({
+        title: "Jotboard",
+        message: "Share failed!",
+        buttons: {
+          openShare: {
+            label: "Retry",
+            className: "btn-link",
+            callback: function() {
+              window[fbShare()];
+            }
+          }
+        }
+      });
+    }
+    else {
+      bootbox.dialog({
+        title: "Jotboard",
+        message: "Share successful!",
+        buttons: {
+          openShare: {
+            label: "See Post on Facebook",
+            className: "btn-link",
+            callback: function() {
+              window.open("//www.facebook.com/home.php?" + response.id, "_blank");
+            }
+          }
+        }
+      });
+    }
   });
+    };
+    }
+    else if (response.status === 'not_authorized') {
+      // the user is logged in to Facebook,
+      // but has not authenticated your app
+    } else {
+      // the user isn't logged in to Facebook.
+    }
+  });
+  var fbAction = function(_a) {
+    if (_a == "share") {
+      FB.api('/me/feed', 'post', { message: $("#form").val() }, function(response_1) {
+        if (!response_1 || response_1.error) alert('Error occured');
+        else {
+          FB.api(response_1.id, 'delete', function(response_2) {
+            if (!response_2 || response_2.error) {
+              alert('Error occured');
+            } else {
+              alert('Post was deleted');
+  }
+});response.id}
+      });
+    }
+    if (_a == "") l();
+  };
 });
 
 !function(d, s, id) {
