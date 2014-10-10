@@ -1,6 +1,6 @@
 // head.load("/files/social.js") to load Social API's with ease.
 
-head.load('//connect.facebook.net/es_US/sdk.js', function() {
+head.load('//connect.facebook.net/es_US/sdk.js', function(response) {
   FB.init({
     appId: '196947013668110',
     version: 'v2.1',
@@ -8,52 +8,9 @@ head.load('//connect.facebook.net/es_US/sdk.js', function() {
     xfbml: true
   });
   FB.getLoginStatus(function(response) {
-    if (response.status === 'connected') {
-      // Logged in and authenticicated.
-      var fbShare = function() {
-        FB.api('/me/feed', 'post', {
-          title: $('#namespace').val(),
-          message: $('#form').val()
-        }, function(response) {
-          if (!response || response.error) {
-            bootbox.dialog({
-              title: "Jotboard",
-              message: "Share failed!",
-              buttons: {
-                openShare: {
-                  label: "Retry",
-                  className: "btn-link",
-                  callback: function() {
-                    window[fbShare()];
-                  }
-                }
-              }
-            });
-          }
-          else {
-            bootbox.dialog({
-              title: "Jotboard",
-              message: "Share successful!",
-              buttons: {
-                openShare: {
-                  label: "See Post",
-                  className: "btn-link",
-                  callback: function() {
-                    window.open("//www.facebook.com/home.php?id=" + response.id, "_blank");
-                  }
-                }
-              }
-            });
-          }
-        });
-      };
-    }
-    else if (response.status === 'not_authorized') {
-      // the user is logged in to Facebook,
-      // but has not authenticated your app
-    } else {
-      // the user isn't logged in to Facebook.
-    }
+    if (response.status === 'connected') console.log('Welcome, ' + response.name);
+    if (response.status === 'connected') console.log('Logged in.');
+    else FB.login();
   });
 });
 
