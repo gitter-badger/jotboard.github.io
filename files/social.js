@@ -11,39 +11,42 @@ head.load('//connect.facebook.net/es_US/sdk.js', function() {
     if (response.status === 'connected') {
       // Logged in and authenticicated.
       var fbShare = function() {
-  FB.api('/me/feed', 'post', { message: $("#form").val() }, function(response) {
-    if (!response || response.error) {
-      bootbox.dialog({
-        title: "Jotboard",
-        message: "Share failed!",
-        buttons: {
-          openShare: {
-            label: "Retry",
-            className: "btn-link",
-            callback: function() {
-              window[fbShare()];
-            }
+        FB.api('/me/feed', 'post', {
+          title: $('#namespace').val(),
+          message: $('#form').val()
+        }, function(response) {
+          if (!response || response.error) {
+            bootbox.dialog({
+              title: "Jotboard",
+              message: "Share failed!",
+              buttons: {
+                openShare: {
+                  label: "Retry",
+                  className: "btn-link",
+                  callback: function() {
+                    window[fbShare()];
+                  }
+                }
+              }
+            });
           }
-        }
-      });
-    }
-    else {
-      bootbox.dialog({
-        title: "Jotboard",
-        message: "Share successful!",
-        buttons: {
-          openShare: {
-            label: "See Post on Facebook",
-            className: "btn-link",
-            callback: function() {
-              window.open("//www.facebook.com/home.php?" + response.id, "_blank");
-            }
+          else {
+            bootbox.dialog({
+              title: "Jotboard",
+              message: "Share successful!",
+              buttons: {
+                openShare: {
+                  label: "See Post",
+                  className: "btn-link",
+                  callback: function() {
+                    window.open("//www.facebook.com/home.php?id=" + response.id, "_blank");
+                  }
+                }
+              }
+            });
           }
-        }
-      });
-    }
-  });
-    };
+        });
+      };
     }
     else if (response.status === 'not_authorized') {
       // the user is logged in to Facebook,
@@ -52,22 +55,6 @@ head.load('//connect.facebook.net/es_US/sdk.js', function() {
       // the user isn't logged in to Facebook.
     }
   });
-  var fbAction = function(_a) {
-    if (_a == "share") {
-      FB.api('/me/feed', 'post', { message: $("#form").val() }, function(response_1) {
-        if (!response_1 || response_1.error) alert('Error occured');
-        else {
-          FB.api(response_1.id, 'delete', function(response_2) {
-            if (!response_2 || response_2.error) {
-              alert('Error occured');
-            } else {
-              alert('Post was deleted');
-  }
-});response.id}
-      });
-    }
-    if (_a == "") l();
-  };
 });
 
 !function(d, s, id) {
