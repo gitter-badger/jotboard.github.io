@@ -1,6 +1,16 @@
 var jotboard = function(main, _1, _2, _3, _4) {
   if (main == "SiteName") return "Jotboard";
+  if (main == "#ModBodyTitle") return "# Jotboard";
   if (main == "CollabName") return "Groupies";
+  if (main == "CollabNote") return "Groupies";
+  if (main == "FormInfoDay") return {
+    "placeholder": moment(new Date()).format("[Hello, it's ]dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, have fun!]"),
+    "title": "Press escape to open or close the navigation"
+  };
+  if (main == "FormInfoNight") return {
+    "placeholder": moment(new Date()).format("[Hello, it's ]dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, have fun!]"),
+    "title": "Press escape to open or close the navigation"
+  };
   if (main == "prefix") return "JB_-";
   if (main == "MainNamespace") return "Main";
   if (main == "toggleBody") {

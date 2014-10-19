@@ -19,8 +19,8 @@ var startUp = function() {
           "frameborder": "0",
           "allowtransparency": "true"
         }).addClass("iframe");
-        if (window.location.hash) document.title = "# Jotboard";
-        if (!window.location.hash) document.title = "Jotboard";
+        if (window.location.hash) document.title = jotboard("#ModBodyTitle");
+        if (!window.location.hash) document.title = jotboard("SiteName");
         if (DevMode === false) $("body").css("display", "block");
         if (IDLCamp === true) {
           head.load([('https:' == document.location.protocol ? 'https://' : 'http://') + 'members.internetdefenseleague.org/include/?url=' + _idl.url + '&campaign=' + _idl.campaign + '&variant=modal'], function() {
@@ -37,14 +37,8 @@ var startUp = function() {
         // TimeShift is used to simulate real-time activity, not actually
         // real-time, but its per 1 millisecond so its close enough.
         var TimeShift = function() {
-          if (jotboard("threshold", 0, 13)) $("#form").attr({
-            "placeholder": moment(new Date()).format("[Hello, it's ]dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, have fun!]"),
-            "title": "Press escape to open or close the navigation"
-          });
-          else $("#form").attr({
-            "placeholder": moment(new Date()).format("[Hello, it's ]dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, have fun!]"),
-            "title": "Press escape to open or close the navigation"
-          });
+          if (jotboard("threshold", 0, 13)) $("#form").attr(jotboard('FormInfoDay'));
+          else $("#form").attr(jotboard('FormInfoNight'));
         }; TimeShift();
         setInterval(TimeShift, 1);
       });
@@ -63,7 +57,7 @@ var startUp = function() {
             bootbox.setDefaults({
               locale: "en",
               backdrop: true,
-              animate: false
+              animate: true
             });
             var bootboxOpen = function(pattern) {
               if (pattern == "whatscookin") bootbox.dialog({
@@ -130,7 +124,7 @@ var startUp = function() {
         $(function() {
           if (store.get("JBNotes")) $("textarea#notes").val(store.get("JBNotes"));
           $("textarea#notes").attr({
-            "placeholder": "Make Some Notes"
+            "placeholder": "Notes go here"
           }).bind("keyup", function() {
             store.set("JBNotes", $(this).val());
           }).bind("keydown", function() {
@@ -178,11 +172,18 @@ var startUp = function() {
             });
           });
           TogetherJS.on("close", function() {
-            $("jb-give").prepend('<div class="jb-save nav-select" title="Save Board">Save</div>' + '<div class="jb-load nav-select" title="Load Board">Load</div>');
-            $("jb-give .jb-save").click(function() { jotboard("change", "save"); });
-            $("jb-give .jb-load").click(function() { jotboard("change", "load"); });
+            $("jb-give").prepend(
+              '<div class="jb-save nav-select" title="Save Board">Save</div>'
+            ).prepend(
+              '<div class="jb-load nav-select" title="Load Board">Load</div>'
+            );
+            $("jb-give .jb-save").click(function() {
+              jotboard("change", "save");
+            }); $("jb-give .jb-load").click(function() {
+              jotboard("change", "load");
+            });
             $("#form").unbind("keyup").unbind("keydown").val(store.get(jotboard("prefix") + jotboard("MainNamespace")));
-            $.bootstrapGrowl("Thank You for using Groupies!", {
+            $.bootstrapGrowl("Thank You for using Jotboard Groupies!", {
               ele: "body",
               type: "info",
               offset: {
@@ -191,7 +192,7 @@ var startUp = function() {
               },
               align: "left",
               width: "auto",
-              delay: 2500,
+              delay: 2200,
               allow_dismiss: true
             });
           });
