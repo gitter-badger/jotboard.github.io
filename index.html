@@ -16,9 +16,8 @@
 
 <!-- Head.JS & Backend (Loads System's Standards and Configuration) -->
 <script src="//cdnjs.cloudflare.com/ajax/libs/headjs/1.0.3/head.load.min.js"></script>
-
-<!-- To be placed after head.js and backend.js -->
 <script src="files/backend.js"></script>
+<!-- To be placed after head.js and backend.js -->
 <link data-noprefix href="files/backend.css" rel="stylesheet" type="text/css" />
 <link data-noprefix href="//fonts.googleapis.com/css?family=Lato|Roboto|Source+Code+Pro" rel="stylesheet" type="text/css" />
 
@@ -71,36 +70,39 @@
   <div class="navagation half-vis no-select">
     <!-- .container -->
     <div class="container">
-      <div class="panel panel-default">
-        <div class="panel-body">
-          <form role="search" action="//www.google.com/search" target="_blank" method="get">
-            <div class="form-group">
-              <input type="text" id="namespace" name="q" class="form-control" title="Make, Load, Overwrite a Board or Search the Web" placeholder="Jotboard" />
-            </div>
-          </form>
-          <jb-give>
-            <div class="jb-save nav-select" title="Save Board">Save</div>
-            <div class="jb-load nav-select" title="Load Board">Load</div>
-          </jb-give>
-          <div class="jb-menu-btn nav-select fa fa-chevron-down"></div>
-          <iframe class="block" src="about:blank" id="_radio" name="_radio"></iframe>
-          <div class="block" id="_radio_insert">
-            <form role="search" action="//embed.spotify.com/" target="_radio" method="get">
-              <div class="form-group">
-                <input type="text" id="radio_URI" name="uri" class="form-control" title="Enter the Spotify URI of your desired Album, Track or Playlist" placeholder="Enter URI" />
-              </div>
-            </form>
-          </div>
-          <!-- .block#submenu -->
-          <div class="block" id="submenu">
-            <div class="jb-groupies select fa fa-pencil" title="Groupies"></div>
-            <div class="jb-radio select fa fa-spotify" title="#radio"></div>
-            <div class="jb-wc select fa fa-users" title="#whatscookin"></div>
-            <div class="jb-youtube select fa fa-youtube-play" title="#youtube"></div>
-            <div class="jb-facebook select fa fa-facebook" title="#facebook"></div>
-          </div>
-          <!-- /.block#submenu -->
+      <form role="search" action="//www.google.com/search" target="_blank" method="get">
+        <div class="form-group">
+          <input type="text" id="namespace" name="q" class="form-control" title="Make, Load, Overwrite a Board or Search the Web" placeholder="Jotboard" />
         </div>
+      </form>
+      <jb-give>
+        <div class="jb-save nav-select" title="Save Board">Save</div>
+        <div class="jb-load nav-select" title="Load Board">Load</div>
+      </jb-give>
+
+      <div class="jb-menu-btn nav-select fa fa-chevron-down"></div>
+
+      <iframe class="block" src="about:blank" id="_radio" name="_radio"></iframe>
+
+      <div class="block" id="_radio_insert">
+        <form role="search" action="//embed.spotify.com/" target="_radio" method="get">
+          <div class="form-group">
+            <input type="text" id="radio_URI" name="uri" class="form-control" title="Enter the Spotify URI of your desired Album, Track or Playlist" placeholder="Enter URI" />
+          </div>
+        </form>
+      </div>
+
+      <!-- .block#submenu -->
+      <div class="block" id="submenu">
+        <div class="jb-groupies select fa fa-pencil" title="Groupies"></div>
+        <div class="jb-radio select fa fa-spotify" title="#radio"></div>
+        <div class="jb-wc select fa fa-users" title="#whatscookin"></div>
+        <div class="jb-youtube select fa fa-youtube-play" title="#youtube"></div>
+        <div class="jb-facebook select fa fa-facebook" title="#facebook"></div>
+      </div>
+      <!-- /.block#submenu -->
+
+    </div>
         <!-- .notes-container -->
         <div class="notes-container">
           <textarea id="notes"></textarea>
