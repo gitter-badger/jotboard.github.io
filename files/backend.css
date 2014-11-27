@@ -35,7 +35,7 @@ textarea#notes {
   font: 19px 'Roboto', sans-serif !important;
   color: #E0E0E0 !important;
   width: 100%;
-  height: 36px;
+  height: 31px;
   padding: 2px;
   text-align: center;
   background: #2B2B2B;
@@ -113,18 +113,18 @@ html, body, #html, #body {
 } .navagation .select:last-child {
 	margin-bottom: 0 !important;
 } .navagation .nav-select {
-	font-size: 26px;
-	color: #000;
-	background-color: #DADAC4;
-	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.38);
+	font-size: 23px;
+	color: #2B2B2B;
+	background-color: rgba(204, 189, 219, 0.75);
+	box-shadow: inset 0 1px 1px rgba(0,0,0,0.38);
 	padding: 5px;
-	border-radius: 5px;
+	border-radius: 3px;
 } .navagation .select {
-  font-size: 90px;
+  font-size: 85px;
   text-shadow: 0 0 3px #2B2B2B;
 } .navagation {
 	background: rgba(31, 47, 58, .9);
-	transition: opacity .130s ease;
+	transition: opacity .150s ease;
 	opacity: .15;
 } .navagation:hover {
   opacity: 1;
@@ -148,15 +148,15 @@ html, body, #html, #body {
 }
 
 .navagation {
-  width: 282px;
+  width: 310px;
 	white-space: nowrap;
-	font-family: 'Roboto', san-serif;
+	font-family: 'Lato', san-serif;
 	height: 100%;
 	max-height: 100%;
   position: fixed;
   right: 0;
   top: 0;
-	padding: 1.5%;
+	padding: 1.8%;
 	overflow-y: scroll;
 	overflow-x: scroll;
   -webkit-touch-callout: none;
@@ -202,7 +202,7 @@ iframe, textarea, input {
 iframe { overflow: hidden; }
 .no-select, .no-select * { user-select: none; }
 #main, #form { background: none; }
-div.bootbox.modal, div.bootbox.modal * { font-family: 'Roboto', san-serif !important; }
+div.bootbox.modal, div.bootbox.modal * { font-family: 'Lato', san-serif !important; }
 div.bootbox.modal .modal-header { border-bottom: 0; }
 div.bootbox.modal .modal-footer { border-top: 0; }
 .fa { display: block !important; }
