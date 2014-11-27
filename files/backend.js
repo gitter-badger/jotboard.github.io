@@ -100,11 +100,11 @@ var startUp = function() {
             $(".jb-wc").click(function() {
               window[bootboxOpen("whatscookin")];
             }); // Whats Cookin?
-            if (jotboard("hash", "campaign")) window[bootboxOpen("campaign")]; // Campaign
-            if (jotboard("hash", "youtube")) window[srch("youtube-srch")];
+            if (jotboard("hash", "campaign")) window[bootboxOpen("campaign")]; // Campaign 
+            if (jotboard("hash", "youtube")) window[srch("youtube-srch")]; // YouTube
             $(".jb-youtube").click(function() {
               window[bootboxOpen("youtube-srch")];
-            }); // YouTube
+            });
             if (jotboard("hash", "facebook")) window[bootboxOpen("facebook-srch")];
             $(".jb-facebook").click(function() {
               window[bootboxOpen("facebook-srch")];
@@ -121,7 +121,7 @@ var startUp = function() {
         $(function() {
           if (store.get("JBNotes")) $("textarea#notes").val(store.get("JBNotes"));
           $("textarea#notes").attr({
-            "placeholder": "Notes go here"
+            "placeholder": "Notes go here..."
           }).bind("keyup", function() {
             store.set("JBNotes", $(this).val());
           }).bind("keydown", function() {
@@ -154,7 +154,7 @@ var startUp = function() {
             });
             $(function() {
               $("jb-give .jb-save, jb-give .jb-load").remove();
-              $.bootstrapGrowl("Do not give personal information unless official and/or legitimate consent is given.", {
+              $.bootstrapGrowl("Do not give personal info unless official and/or legitimate consent is given.", {
                 ele: "body",
                 type: "info",
                 offset: {
