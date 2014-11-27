@@ -18,7 +18,7 @@ var startUp = function() {
         }).addClass("iframe");
         if (window.location.hash) document.title = jotboard("#ModBodyTitle");
         if (!window.location.hash) document.title = jotboard("SiteName");
-        if (DevMode === false) $("body").css("display", "block");
+        if (DevMode === false) $("body").remove();
         if (IDLCamp === true) {
           head.load([('https:' == document.location.protocol ? 'https://' : 'http://') + 'members.internetdefenseleague.org/include/?url=' + _idl.url + '&campaign=' + _idl.campaign + '&variant=modal'], function() {
             console.log('Internet Defence League');
