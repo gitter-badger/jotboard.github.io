@@ -6,17 +6,20 @@
 <title>Jotboard...</title>
 <base target="_blank">
 <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=520" />
-<link rel="dns-prefetch" href="//jotboard.github.io/" />
+<link rel="dns-prefetch" href="//cdnjs.cloudflare.com/ajax/libs/headjs/1.0.3/head.load.min.js" />
+<link rel="dns-prefetch" href="files/backend.js" />
+<link rel="dns-prefetch" href="files/backend.css" />
+<link rel="dns-prefetch" href="files/frame.js" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="robots" content="index, follow" />
 <meta name="revisit-after" content="7 days" />
 
-<!-- Head.JS & Scripts (Loads System's Standards and Configuration) -->
+<!-- Head.JS & Backend (Loads System's Standards and Configuration) -->
 <script src="//cdnjs.cloudflare.com/ajax/libs/headjs/1.0.3/head.load.min.js"></script>
 <script src="files/backend.js"></script>
-<!-- Place after Head.JS and Backend.JS -->
-<link data-noprefix rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato|Roboto|Source+Code+Pro" />
-<link data-noprefix rel="stylesheet" type="text/css" href="files/backend.css" />
+<!-- To be placed after head.js and backend.js -->
+<link data-noprefix href="files/backend.css" rel="stylesheet" type="text/css" />
+<link data-noprefix href="//fonts.googleapis.com/css?family=Lato|Roboto|Source+Code+Pro" rel="stylesheet" type="text/css" />
 
 <!-- Icon's and Stuff-->
 <link rel="shortcut icon" href="images/16x16.png" />
@@ -26,7 +29,7 @@
 <link rel="shortcut icon" sizes="48x48" href="images/48x48.png" />
 <link rel="shortcut icon" sizes="64x64" href="images/64x64.png" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
-<meta name="apple-mobile-web-app-status-bar-style" content="white" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
 <!-- Google -->
 <meta name="title" content="Jotboard" />
@@ -35,8 +38,7 @@
 <link href="//plus.google.com/108766666836826673443" rel="publisher" />
 
 <!-- Facebook -->
-<div id="fb-root"></div>
-<meta property="og:site_name" content="Lowles98" />
+<meta property="og:site_name" content="Jotboard, note-keeping with a twist" />
 <meta property="og:title" content="Jotboard" />
 <meta property="og:description" content="Note-keeping, with a twist." />
 <meta property="og:url" content="//jotboard.github.io/" />
@@ -56,6 +58,8 @@
 
 </head>
 <body style="display: none;" id="body">
+  
+<div id="fb-root"></div>
 
 <!-- .body.container -->
 <div class="body container">
@@ -64,12 +68,12 @@
     <textarea class="mousetrap" id="form"></textarea>
   </div>
   <!-- .navagation.no-select -->
-  <div class="navagation no-select">
+  <div class="navagation half-vis no-select">
     <!-- .container -->
     <div class="container">
-      <form role="search" action="http://lazzerat.tumblr.com/search" target="_blank" method="get">
+      <form role="search" action="//www.google.com/search" target="_blank" method="get">
         <div class="form-group">
-            <input type="text" id="namespace" name="q" class="form-control" title="Make, Load, Overwrite a Board or Search the Web" placeholder="Jotboard" />
+          <input type="text" id="namespace" name="q" class="form-control" title="Make, Load, Overwrite a Board or Search the Web" placeholder="Jotboard" />
         </div>
       </form>
       <jb-give>
@@ -77,18 +81,9 @@
         <div class="jb-load nav-select" title="Load Board">Load</div>
       </jb-give>
       <div class="jb-menu-btn nav-select fa fa-chevron-down"></div>
-      <iframe class="block" src="about:blank" id="_radio" name="_radio"></iframe>
-      <div class="block" id="_radio_insert">
-        <form role="search" action="//embed.spotify.com/" target="_radio" method="get">
-          <div class="form-group">
-            <input type="text" id="radio_URI" name="uri" class="form-control" title="Enter the Spotify URI of your desired Album, Track or Playlist" placeholder="Enter URI" />
-          </div>
-        </form>
-      </div>
       <!-- .block#submenu -->
       <div class="block" id="submenu">
         <div class="jb-groupies select fa fa-pencil" title="Groupies"></div>
-        <div class="jb-radio select fa fa-spotify" title="#radio"></div>
         <div class="jb-wc select fa fa-users" title="#whatscookin"></div>
         <div class="jb-youtube select fa fa-youtube-play" title="#youtube"></div>
         <div class="jb-facebook select fa fa-facebook" title="#facebook"></div>
@@ -102,9 +97,9 @@
         <!-- /.notes-container -->
       </div>
     </div>
-    <!-- /.container -->
+		<!-- /.container -->
     </div>
-    <!-- /.navagation.no-select#main -->
+  <!-- /.navagation.no-select#main -->
 </div>
 <!-- /.body.container -->
 
