@@ -1,6 +1,6 @@
 body#body {
 	transition: background 0.550s ease;
-	background: -webkit-linear-gradient(45deg, hsla(253, 66%, 44%, 1) 0%, hsla(253, 66%, 44%, 0) 70%), -webkit-linear-gradient(135deg, hsla(165, 73%, 60%, 1) 10%, hsla(165, 73%, 60%, 0) 80%), -webkit-linear-gradient(225deg, hsla(224, 33%, 51%, 1) 10%, hsla(224, 33%, 51%, 0) 80%), -webkit-linear-gradient(315deg, hsla(238, 100%, 33%, 1) 100%, hsla(238, 100%, 33%, 0) 70%);
+  background: -webkit-linear-gradient(45deg, hsla(253, 66%, 44%, 1) 0%, hsla(253, 66%, 44%, 0) 70%), -webkit-linear-gradient(135deg, hsla(165, 73%, 60%, 1) 10%, hsla(165, 73%, 60%, 0) 80%), -webkit-linear-gradient(225deg, hsla(224, 33%, 51%, 1) 10%, hsla(224, 33%, 51%, 0) 80%), -webkit-linear-gradient(315deg, hsla(238, 100%, 33%, 1) 100%, hsla(238, 100%, 33%, 0) 70%);
 	background: linear-gradient(45deg, hsla(253, 66%, 44%, 1) 0%, hsla(253, 66%, 44%, 0) 70%), linear-gradient(135deg, hsla(165, 73%, 60%, 1) 10%, hsla(165, 73%, 60%, 0) 80%), linear-gradient(225deg, hsla(224, 33%, 51%, 1) 10%, hsla(224, 33%, 51%, 0) 80%), linear-gradient(315deg, hsla(238, 100%, 33%, 1) 100%, hsla(238, 100%, 33%, 0) 70%);
 }
 
@@ -16,9 +16,9 @@ body#body {
 }
 
 #form {
-	font: 16px 'Source Code Pro', sans-serif;
+	font: 15px 'Source Code Pro', sans-serif;
 	color: #F0F0F0;
-	width: 100%;
+	width: calc(100%);
 	border-radius: 0;
 	height: 100%;
 	float: left;
@@ -33,13 +33,11 @@ body#body {
 
 textarea#notes {
   font: 19px 'Roboto', sans-serif !important;
-  color: #E0E0E0 !important;
-  background: #2B2B2B;
-  border-radius: 3px;
+  color: #2B2B2B !important;
   width: 100%;
-  height: 31px;
-  padding: 2px;
+  height: 50px;
   text-align: center;
+  background: none;
 }
 
 #form::selection {
@@ -82,15 +80,14 @@ html, body, #html, #body {
 
 .navagation #namespace, .navagation #radio_URI,
 .navagation #namespace:focus, .navagation #radio_URI:focus {
-	font-size: 20px;
-	background-color: #2A2A2A;
-	box-shadow: inset 0 0 11px rgba(0, 0, 0, .7);
 	text-align: center;
 	width: 100%;
+	font-size: 20px; /* Font size */
 	margin-top: 12px;
 	margin-left: 0;
 	margin-right: 0;
 	height: inherit;
+	box-shadow: 0 0 0 rgba(0, 0, 0, 0);
 	border: none !important;
 }
 
@@ -114,18 +111,18 @@ html, body, #html, #body {
 } .navagation .select:last-child {
 	margin-bottom: 0 !important;
 } .navagation .nav-select {
-	font-size: 23px;
-	color: #2B2B2B;
-	background-color: rgba(204, 189, 219, 0.75);
-	box-shadow: inset 0 1px 1px rgba(0,0,0,0.38);
+	font-size: 26px;
+	color: #000;
+	background-color: #DADAC4;
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.38);
 	padding: 5px;
-	border-radius: 3px;
+	border-radius: 5px;
 } .navagation .select {
-  font-size: 85px;
+  font-size: 90px;
   text-shadow: 0 0 3px #2B2B2B;
 } .navagation {
 	background: rgba(31, 47, 58, .9);
-	transition: opacity .150s ease;
+	transition: opacity .130s ease;
 	opacity: .15;
 } .navagation:hover {
   opacity: 1;
@@ -149,7 +146,7 @@ html, body, #html, #body {
 }
 
 .navagation {
-  width: 310px;
+  width: 282px;
 	white-space: nowrap;
 	font-family: 'Roboto', san-serif;
 	height: 100%;
@@ -157,7 +154,7 @@ html, body, #html, #body {
   position: fixed;
   right: 0;
   top: 0;
-	padding: 1.8%;
+	padding: 1.5%;
 	overflow-y: scroll;
 	overflow-x: scroll;
   -webkit-touch-callout: none;
@@ -203,7 +200,7 @@ iframe, textarea, input {
 iframe { overflow: hidden; }
 .no-select, .no-select * { user-select: none; }
 #main, #form { background: none; }
-div.bootbox.modal, div.bootbox.modal * { font-family: 'Lato', san-serif !important; }
+div.bootbox.modal, div.bootbox.modal * { font-family: 'Roboto', san-serif !important; }
 div.bootbox.modal .modal-header { border-bottom: 0; }
 div.bootbox.modal .modal-footer { border-top: 0; }
 .fa { display: block !important; }
