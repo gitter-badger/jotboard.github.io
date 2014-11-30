@@ -4,11 +4,6 @@ body#body {
 	background: linear-gradient(45deg, hsla(253, 66%, 44%, 1) 0%, hsla(253, 66%, 44%, 0) 70%), linear-gradient(135deg, hsla(165, 73%, 60%, 1) 10%, hsla(165, 73%, 60%, 0) 80%), linear-gradient(225deg, hsla(224, 33%, 51%, 1) 10%, hsla(224, 33%, 51%, 0) 80%), linear-gradient(315deg, hsla(238, 100%, 33%, 1) 100%, hsla(238, 100%, 33%, 0) 70%);
 }
 
-#_radio {
-	width: 100%;
-	height: 80px;
-}
-
 #_youtube {
 	width: 100%;
 	height: 320px;
@@ -29,9 +24,7 @@ body#body {
   height: auto;
   padding: 1% !important;
   margin: 0;
-}
-
-textarea#notes {
+} textarea#notes {
   font: 19px 'Roboto', sans-serif !important;
   color: #2B2B2B !important;
   width: 100%;
@@ -76,19 +69,6 @@ html, body, #html, #body {
 	transition: background 0.600s ease;
 	text-rendering: optimizeLegibility !important;
 	-webkit-font-smoothing: antialiased !important;
-}
-
-.navagation #namespace, .navagation #radio_URI,
-.navagation #namespace:focus, .navagation #radio_URI:focus {
-	text-align: center;
-	width: 100%;
-	font-size: 20px; /* Font size */
-	margin-top: 12px;
-	margin-left: 0;
-	margin-right: 0;
-	height: inherit;
-	box-shadow: 0 0 0 rgba(0, 0, 0, 0);
-	border: none !important;
 }
 
 .navagation .container {
@@ -146,23 +126,23 @@ html, body, #html, #body {
 }
 
 .navagation {
-  width: 282px;
+	width: 282px;
 	white-space: nowrap;
 	font-family: 'Roboto', san-serif;
 	height: 100%;
 	max-height: 100%;
-  position: fixed;
-  right: 0;
-  top: 0;
+	position: fixed;
+	right: 0;
+	top: 0;
 	padding: 1.5%;
 	overflow-y: scroll;
 	overflow-x: scroll;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 }
 
 div.body.container {
@@ -175,6 +155,18 @@ div.body.container {
 	max-height: 100%;
 	margin: 0;
 	padding: 0;
+}
+
+div#togetherjs-dock {
+  bottom: 5px !important;
+  height: auto !important;
+  right: 0;
+}
+
+div#togetherjs-dock-anchor,
+div#togetherjs-window-pointer-right,
+div#togetherjs-window-pointer-left {
+  display: none !important;
 }
 
 div.bootbox.modal, div.bootbox.modal * {
