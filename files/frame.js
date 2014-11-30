@@ -21,12 +21,10 @@ var jotboard = function(main, _1, _2, _3, _4) {
       "display": "none"
     });
   }
-  if (main == "radio") /* Standard switch function for Radio */ $("#_radio, #_radio_insert").toggleClass("block");
   if (main == "NamespaceValue") /* Returns Value of Hero Box (Namespace's) */ return $("#namespace").val();
   if (main == "FormValue") /* Return Form Value */ return $("#form").val();
   if (main == "window") return window;
   if (main == "this") return this;
-  if (main == "radio-play") return window.open("//embed.spotify.com/?uri=" + _1, "_radio");
   if (main == "hash") /* Used for #Mods */ return window.location.href.indexOf("#" + _1) != -1;
   if (main == "threshold") {
     // Returns current hour threshold (used for marquee)
@@ -38,12 +36,12 @@ var jotboard = function(main, _1, _2, _3, _4) {
     return false;
   }
   if (main == "submenu") {
-    // Submenu: Alternate actions that don't rely on the Local Text Data aspect of Jotboard.
+    // Submenu: Alternate actions that don't rely on the Local Data aspect of Jotboard.
     $(".jb-menu-btn").toggleClass("fa-chevron-down").toggleClass("fa-chevron-up");
     $("#submenu").toggleClass("block");
   }
   if (main == "change") {
-    // jotboard("save or load"): Used to get and set the values of Data on Jotboard.
+    // jotboard("save or load"): Used to get and set the values of Jotboard Data.
     if (_1 == "save") {
       if (!jotboard("NamespaceValue")) {
         store.set(jotboard("prefix") + jotboard("MainNamespace"), jotboard("FormValue"));
