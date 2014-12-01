@@ -123,6 +123,25 @@ html, body, #html, #body {
   color: rgba(59, 89, 152, 1);
 }
 
+input#namespace {
+  text-align: center;
+  width: 100%;
+  height: auto !important;
+  padding: 10px 0 10px 0;
+  font-size: 21px;
+  line-height: 1.42857143;
+  color: #E0E0E0;
+  background-color: #2B2B2B;
+  background-image: none;
+  border: 1px solid #2A2A2A;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .15);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .15);
+  -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+  -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
 .navagation {
 	width: 282px;
 	white-space: nowrap;
