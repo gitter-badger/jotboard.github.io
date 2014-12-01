@@ -13,7 +13,7 @@ body#body {
 #form {
 	font: 15px 'Source Code Pro', sans-serif;
 	color: #F0F0F0;
-	width: calc(100%);
+	width: 100%;
 	border-radius: 0;
 	height: 100%;
 	float: left;
@@ -96,7 +96,7 @@ html, body, #html, #body {
   padding: 3px;
   border-radius: 4px;
 } .navagation .select {
-  font-size: 90px;
+  font-size: 73px;
   text-shadow: 0 0 3px #2B2B2B;
 } .navagation {
 	background: rgba(31, 47, 58, .9);
