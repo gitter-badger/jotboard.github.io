@@ -25,8 +25,8 @@ body#body {
   padding: 1% !important;
   margin: 0;
 } textarea#notes {
-  font: 19px 'Roboto', sans-serif !important;
-  color: #2B2B2B !important;
+  font: 22px 'Roboto', sans-serif !important;
+  color: #E0E0E0 !important;
   width: 100%;
   height: 50px;
   text-align: center;
@@ -84,19 +84,17 @@ html, body, #html, #body {
 	cursor: pointer;
 }
 
-#_radio_insert form .form-group {
-	margin-bottom: 6px !important;
-} .navagation .select:first-child {
+.navagation .select:first-child {
 	margin-top: 9px !important;
 } .navagation .select:last-child {
 	margin-bottom: 0 !important;
 } .navagation .nav-select {
-	font-size: 26px;
-	color: #000;
-	background-color: #DADAC4;
-	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.38);
-	padding: 5px;
-	border-radius: 5px;
+  font-size: 25px;
+  color: #E0E0E0;
+  background-color: #2B2B2B;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .060);
+  padding: 3px;
+  border-radius: 4px;
 } .navagation .select {
   font-size: 90px;
   text-shadow: 0 0 3px #2B2B2B;
