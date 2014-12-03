@@ -1,14 +1,13 @@
 var jotboard = function(main, _1, _2, _3, _4) {
-  if (main == "SiteName") return "Jotboard";
-  if (main == "#ModBodyTitle") return "# Jotboard";
-  if (main == "CollabName") return "Groupies";
-  if (main == "CollabNote") return "Groupies";
+  if (main == "sitename") return "Jotboard";
+  if (main == "hashmod") return "# Jotboard";
+  if (main == "collab") return "Groupies";
   if (main == "FormInfoDay") return {
-    "placeholder": moment(new Date()).format("[Hello, it's ]dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, have fun!]"),
+    "placeholder": moment(new Date()).format("[Hello, it's ]dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, have an awesome day!]"),
     "title": "Press escape to open or close the navigation"
   };
   if (main == "FormInfoNight") return {
-    "placeholder": moment(new Date()).format("[Hello, it's ]dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, have fun!]"),
+    "placeholder": moment(new Date()).format("[Hello, it's ]dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, goodnight!]"),
     "title": "Press escape to open or close the navigation"
   };
   if (main == "prefix") return "JB_-";
@@ -21,11 +20,11 @@ var jotboard = function(main, _1, _2, _3, _4) {
       "display": "none"
     });
   }
-  if (main == "NamespaceValue") /* Returns Value of Hero Box (Namespace's) */ return $("#namespace").val();
+  if (main == "NamespaceValue") /* Returns Value of Hero Box */ return $("#namespace").val();
   if (main == "FormValue") /* Return Form Value */ return $("#form").val();
   if (main == "window") return window;
   if (main == "this") return this;
-  if (main == "hash") /* Used for #Mods */ return window.location.href.indexOf("#" + _1) != -1;
+  if (main == "hash") /* Used for Hashmods */ return window.location.href.indexOf("#" + _1) != -1;
   if (main == "threshold") {
     // Returns current hour threshold (used for marquee)
     return _1 <= new Date().getHours() && new Date().getHours() < _2;

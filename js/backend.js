@@ -16,8 +16,8 @@ var startUp = function() {
           "frameborder": "0",
           "allowtransparency": "true"
         }).addClass("iframe");
-        if (window.location.hash) document.title = jotboard("#ModBodyTitle");
-        if (!window.location.hash) document.title = jotboard("SiteName");
+        if (window.location.hash) document.title = jotboard("hashmod");
+        if (!window.location.hash) document.title = jotboard("sitename");
         if (DevMode === false) $("body").css("display", "block");
         if (IDLCamp === true) {
           head.load([('https:' == document.location.protocol ? 'https://' : 'http://') + 'members.internetdefenseleague.org/include/?url=' + _idl.url + '&campaign=' + _idl.campaign + '&variant=modal'], function() {
@@ -169,9 +169,9 @@ var startUp = function() {
           });
           TogetherJS.on("close", function() {
             $("jb-give").prepend(
-              '<div class="jb-save nav-select" title="Save Board">Save</div>'
-            ).prepend(
               '<div class="jb-load nav-select" title="Load Board">Load</div>'
+            ).prepend(
+              '<div class="jb-save nav-select" title="Save Board">Save</div>'
             );
             $("jb-give .jb-save").click(function() {
               jotboard("change", "save");
@@ -192,8 +192,8 @@ var startUp = function() {
               allow_dismiss: true
             });
           });
-          TogetherJSConfig_siteName = jotboard("SiteName");
-          TogetherJSConfig_toolName = jotboard("CollabName");
+          TogetherJSConfig_siteName = jotboard("sitename");
+          TogetherJSConfig_toolName = jotboard("collab");
           TogetherJSConfig_dontShowClicks = true;
           TogetherJSConfig_useMinimizedCode = true;
           TogetherJSConfig_suppressInvite = true;
