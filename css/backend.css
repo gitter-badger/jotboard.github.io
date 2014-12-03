@@ -54,15 +54,15 @@ body#body {
 }
 
 #main {
-	box-sizing: border-box;
-	width: 100%;
-	height: 100%;
-	min-width: 100%;
-	min-height: 100%;
-	max-width: 100%;
-	max-height: 100%;
-	padding: 0;
-	margin: 0;
+  box-sizing: border-box;
+  width: calc(100% - 282px);
+  height: 100%;
+  min-width: calc(100% - 282px);
+  min-height: 100%;
+  max-width: calc(100% - 282px);
+  max-height: 100%;
+  padding: 0;
+  margin: 0;
 }
 
 html, body, #html, #body {
@@ -71,20 +71,37 @@ html, body, #html, #body {
 	-webkit-font-smoothing: antialiased !important;
 }
 
-.navagation .container {
+.navagation {
+	background: rgba(31, 47, 58, .9);
+	transition: opacity .130s ease;
+	opacity: .15;
+	width: 282px;
+	white-space: nowrap;
+	font-family: 'Roboto', san-serif;
+	height: 100%;
+	max-height: 100%;
+	position: fixed;
+	right: 0;
+	top: 0;
+	padding: 1.5%;
+	overflow-y: scroll;
+	overflow-x: scroll;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+} .navagation .container {
 	width: 98%;
 	padding-left: 0;
 	padding-right: 0;
-}
-
-.navagation .nav-select, .navagation .select {
+} .navagation .nav-select, .navagation .select {
 	text-align: center;
 	width: 100%;
 	margin: 8px .5% 8px calc(.5% - 1px);
 	cursor: pointer;
-}
-
-.navagation .select:first-child {
+} .navagation .select:first-child {
 	margin-top: 9px !important;
 } .navagation .select:last-child {
 	margin-bottom: 0 !important;
@@ -98,15 +115,9 @@ html, body, #html, #body {
 } .navagation .select {
   font-size: 73px;
   text-shadow: 0 0 3px #2B2B2B;
-} .navagation {
-	background: rgba(31, 47, 58, .9);
-	transition: opacity .130s ease;
-	opacity: .15;
 } .navagation:hover {
   opacity: 1;
-}
-
-.navagation .jb-groupies.select {
+} .navagation .jb-groupies.select {
   text-shadow: 0 0 3px rgba(173, 0, 255, 1);
   color: rgba(173, 0, 255, 1);
 } .navagation .jb-wc.select {
@@ -140,26 +151,6 @@ input#namespace {
   -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
   -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
   transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
-}
-
-.navagation {
-	width: 282px;
-	white-space: nowrap;
-	font-family: 'Roboto', san-serif;
-	height: 100%;
-	max-height: 100%;
-	position: fixed;
-	right: 0;
-	top: 0;
-	padding: 1.5%;
-	overflow-y: scroll;
-	overflow-x: scroll;
-	-webkit-touch-callout: none;
-	-webkit-user-select: none;
-	-khtml-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
 }
 
 div.body.container {
