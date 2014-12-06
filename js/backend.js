@@ -70,6 +70,10 @@ var startUp = function() {
                   }
                 }
               });
+              if (pattern == "radio") bootbox.dialog({
+                title: '"Radio"',
+                message: "<iframe id='_radio' src='' frameborder='0' allowfullscreen></iframe>",
+              });
               if (pattern == "campaign") bootbox.dialog({
                 title: "Jotboard's Open Letter",
                 message: "The Internet really has become something to be proud of, especially for early Internet Adopters, it went from an idea trying to create an internationalized network of amazing communities, to a lifestyle that has changed the way we live and work.<br /><br />" +
