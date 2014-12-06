@@ -72,7 +72,16 @@ var startUp = function() {
               });
               if (pattern == "radio") bootbox.dialog({
                 title: '"Radio"',
-                message: "<iframe id='_radio' src='' frameborder='0' allowfullscreen></iframe>",
+                message: "<iframe id='_radio' src='//embed.spotify.com/?uri=spotify:user:1249813849:playlist:5o7cdB84b0R0H6giCTorLn' frameborder='0' allowfullscreen></iframe>",
+                buttons: {
+                  enter: {
+                    label: "Open",
+                    className: "btn-link",
+                    callback: function() {
+                      window.open("//open.spotify.com/user/1249813849/playlist/7gMrshUGhhYAKThn2RT8eQ", "_blank");
+                    }
+                  }
+                }
               });
               if (pattern == "campaign") bootbox.dialog({
                 title: "Jotboard's Open Letter",
