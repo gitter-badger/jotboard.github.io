@@ -4,16 +4,6 @@ body#body {
 	background: linear-gradient(45deg, hsla(253, 66%, 44%, 1) 0%, hsla(253, 66%, 44%, 0) 70%), linear-gradient(135deg, hsla(165, 73%, 60%, 1) 10%, hsla(165, 73%, 60%, 0) 80%), linear-gradient(225deg, hsla(224, 33%, 51%, 1) 10%, hsla(224, 33%, 51%, 0) 80%), linear-gradient(315deg, hsla(238, 100%, 33%, 1) 100%, hsla(238, 100%, 33%, 0) 70%);
 }
 
-#_youtube {
-	width: 100%;
-	height: 320px;
-	margin-top: 20px;
-} #_radio {
-	width: 100%;
-	height: 80px;
-	margin-top: 10px;
-}
-
 #form {
 	font: 15px 'Source Code Pro', sans-serif;
 	color: #F0F0F0;
@@ -121,26 +111,6 @@ html, body, #html, #body {
   text-shadow: 0 0 3px #2B2B2B;
 } .navagation:hover {
   opacity: 1;
-}
-
-.navagation .jb-soundcloud.select {
-  text-shadow: 0 0 3px #F30;
-  color: #F30;
-} .navagation .jb-groupies.select {
-  text-shadow: 0 0 3px rgba(173, 0, 255, 1);
-  color: rgba(173, 0, 255, 1);
-} .navagation .jb-wc.select {
-  text-shadow: 0 0 3px rgba(19, 55, 214, 1);
-  color: rgba(19, 55, 214, 1);
-} .navagation .jb-youtube.select {
-  text-shadow: 0 0 3px rgba(229, 45, 39, 1);
-  color: rgba(229, 45, 39, 1);
-} .navagation .jb-radio.select {
-  text-shadow: 0 0 3px rgba(129, 183, 26, 1);
-  color: rgba(129, 183, 26, 1);
-} .navagation .jb-facebook.select {
-  text-shadow: 0 0 3px rgba(59, 89, 152, 1);
-  color: rgba(59, 89, 152, 1);
 }
 
 input#namespace {

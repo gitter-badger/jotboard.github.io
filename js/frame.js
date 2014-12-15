@@ -34,11 +34,6 @@ var jotboard = function(main, _1, _2, _3, _4) {
     TogetherJS(this);
     return false;
   }
-  if (main == "submenu") {
-    // Submenu: Alternate actions that don't rely on the Local Data aspect of Jotboard.
-    $(".jb-menu-btn").toggleClass("fa-chevron-down").toggleClass("fa-chevron-up");
-    $("#submenu").toggleClass("block");
-  }
   if (main == "change") {
     // jotboard("save or load"): Used to get and set the values of Jotboard Data.
     if (_1 == "save") {

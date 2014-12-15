@@ -24,9 +24,6 @@ var startUp = function() {
             console.log('Internet Defence League');
           });
         }
-        $(".jb-menu-btn").click(function() {
-          jotboard("submenu");
-        });
       });
       head.load("//cdn.jsdelivr.net/momentjs/2.8.3/moment.min.js", function() {
         console.log("MomentJS");
@@ -48,7 +45,7 @@ var startUp = function() {
           head.load("//cdnjs.cloudflare.com/ajax/libs/bootstrap-growl/1.0.0/jquery.bootstrap-growl.min.js", function() {
             console.log("Bootstrap Growl");
           });
-          head.load("//cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.2.0/bootbox.js", function() {
+          head.load("//cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.3.0/bootbox.js", function() {
             console.log("Bootbox");
             bootbox.setDefaults({
               locale: "en",
@@ -56,33 +53,6 @@ var startUp = function() {
               animate: true
             });
             var bootboxOpen = function(pattern) {
-              if (pattern == "whatscookin") bootbox.dialog({
-                title: "Whats Cookin?",
-                message: "<iframe id='_youtube' src='//www.youtube.com/embed/?listType=playlist&list=PLOSutk9k0C3ofKYoP447uBfibpuAUKCoP&fs=1&loop=1&showinfo=0&autohide=1&theme=light' frameborder='0' allowfullscreen></iframe>",
-                buttons: {
-                  enter: {
-                    label: "Open",
-                    className: "btn-link",
-                    callback: function() {
-                      window.open("//www.youtube.com/playlist?list=PLOSutk9k0C3ofKYoP447uBfibpuAUKCoP&playnext=1", "_blank");
-                      return false;
-                    }
-                  }
-                }
-              });
-              if (pattern == "radio") bootbox.dialog({
-                title: '"Radio"',
-                message: "<iframe id='_radio' src='//embed.spotify.com/?uri=spotify:user:1249813849:playlist:5o7cdB84b0R0H6giCTorLn' frameborder='0' allowfullscreen></iframe>",
-                buttons: {
-                  enter: {
-                    label: "Open",
-                    className: "btn-link",
-                    callback: function() {
-                      window.open("//open.spotify.com/user/1249813849/playlist/7gMrshUGhhYAKThn2RT8eQ", "_blank");
-                    }
-                  }
-                }
-              });
               if (pattern == "campaign") bootbox.dialog({
                 title: "Jotboard's Open Letter",
                 message: "The Internet really has become something to be proud of, especially for early Internet Adopters, it went from an idea trying to create an internationalized network of amazing communities, to a lifestyle that has changed the way we live and work.<br /><br />" +
@@ -99,32 +69,9 @@ var startUp = function() {
                   }
                 }
               });
-              if (pattern == "youtube-srch") bootbox.prompt("YouTube", function(srch) {
-                if (srch) window.open("//www.youtube.com/results?search_query=" + srch, "_blank");
-                if (srch === null) bootbox.hideAll();
-              });
-              if (pattern == "facebook-srch") bootbox.prompt("Facebook", function(srch) {
-                if (srch) window.open("//www.facebook.com/search/?q=" + srch, "_blank");
-                if (srch === null) bootbox.hideAll();
-              });
+            }; if (jotboard("hash", "campaign")) {
+              window[bootboxOpen("campaign")];
             };
-            if (jotboard("hash", "whatscookin")) window[bootboxOpen("whatscookin")];
-            $(".jb-wc").click(function() {
-              window[bootboxOpen("whatscookin")];
-            }); // Whats Cookin?
-            if (jotboard("hash", "campaign")) window[bootboxOpen("campaign")]; // Campaign
-            if (jotboard("hash", "youtube")) window[srch("youtube-srch")];
-            $(".jb-youtube").click(function() {
-              window[bootboxOpen("youtube-srch")];
-            }); // YouTube
-            if (jotboard("hash", "facebook")) window[bootboxOpen("facebook-srch")];
-            $(".jb-facebook").click(function() {
-              window[bootboxOpen("facebook-srch")];
-            }); // Facebook
-            if (jotboard("hash", "radio")) jotboard("radio");
-            $(".jb-radio").click(function() {
-              jotboard("radio");
-            }); // Radio
           });
         });
       });
@@ -188,11 +135,12 @@ var startUp = function() {
             );
             $("jb-give .jb-save").click(function() {
               jotboard("change", "save");
-            }); $("jb-give .jb-load").click(function() {
+            });
+            $("jb-give .jb-load").click(function() {
               jotboard("change", "load");
             });
             $("#form").unbind("keyup").unbind("keydown").val(store.get(jotboard("prefix") + jotboard("MainNamespace")));
-            $.bootstrapGrowl("Thank You for using Jotboard Groupies!", {
+            $.bootstrapGrowl("Thank You for using Groupies!", {
               ele: "body",
               type: "info",
               offset: {
