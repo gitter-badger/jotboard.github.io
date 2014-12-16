@@ -5,7 +5,7 @@ body#body {
 }
 
 #form {
-	font: 15px 'Source Code Pro', sans-serif;
+	font: 16px 'Source Code Pro', sans-serif;
 	color: #F0F0F0;
 	width: 100%;
 	border-radius: 0;
@@ -31,36 +31,33 @@ body#body {
   background: rgba(0, 0, 0, .40);
 } #form::-webkit-input-placeholder {
 	font-family: 'Lato', san-serif;
-	font-size: 65px;
+	font-size: 67px;
 	color: #292929;
 } #form::-moz-input-placeholder {
 	font-family: 'Lato', san-serif;
-	font-size: 65px;
+	font-size: 67px;
 	color: #292929;
 } #form::-o-input-placeholder {
 	font-family: 'Lato', san-serif;
-	font-size: 65px;
+	font-size: 67px;
 	color: #292929;
 } #form::-ms-input-placeholder {
 	font-family: 'Lato', san-serif;
-	font-size: 65px;
+	font-size: 67px;
 	color: #292929;
 }
 
 #main {
   box-sizing: border-box;
-  width: calc(100%);
-  height: 100%;
-  min-width: calc(100%);
-  min-height: 100%;
-  max-width: calc(100%);
-  max-height: 100%;
-  padding: 0;
-  margin: 0;
+  width: 100%; height: 100%;
+  min-width: 100%; min-height: 100%;
+  max-width: 100%; max-height: 100%;
+  padding: 0; margin: 0;
 }
 
 html, body, #html, #body {
 	transition: background 0.600s ease;
+	transition: background-color 0.600s ease;
 	text-rendering: optimizeLegibility !important;
 	-webkit-font-smoothing: antialiased !important;
 }
@@ -86,50 +83,54 @@ html, body, #html, #body {
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
-} .navagation .container {
-	width: 98%;
-	padding-left: 0;
-	padding-right: 0;
-} .navagation .nav-select, .navagation .select {
+} .navagation:hover {
+  opacity: 1;
+}
+
+.navagation .nav-select, .navagation .select {
 	text-align: center;
 	width: 100%;
 	margin: 8px .5% 8px calc(.5% - 1px);
 	cursor: pointer;
-} .navagation .select:first-child {
-	margin-top: 9px !important;
-} .navagation .select:last-child {
-	margin-bottom: 0 !important;
-} .navagation .nav-select {
+}
+
+.navagation .nav-select {
   font-size: 25px;
   color: #E0E0E0;
   background-color: #2B2B2B;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, .060);
   padding: 3px;
   border-radius: 4px;
-} .navagation .select {
-  font-size: 73px;
-  text-shadow: 0 0 3px #2B2B2B;
-} .navagation:hover {
-  opacity: 1;
 }
 
-input#namespace {
+.navagation .container {
+	width: 98%;
+	padding-left: 0;
+	padding-right: 0;
+}
+
+#namespace {
   text-align: center;
   width: 100%;
   height: auto !important;
   padding: 10px 0 10px 0;
   font-size: 21px;
   line-height: 1.42857143;
-  color: #E0E0E0;
   background-color: #2B2B2B;
   background-image: none;
   border: 1px solid #2A2A2A;
   border-radius: 4px;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .15);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, .15);
-  -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
-  -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
-  transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+  color: #E0E0E0;
+} #namespace::-webkit-input-placeholder {
+	color: #E0E0E0;
+} #namespace::-moz-input-placeholder {
+	color: #E0E0E0;
+} #namespace::-o-input-placeholder {
+	color: #E0E0E0;
+} #namespace::-ms-input-placeholder {
+	color: #E0E0E0;
 }
 
 div.body.container {
@@ -173,11 +174,10 @@ iframe, textarea, input {
 	resize: none;
 	outline: none;
 	border: none;
+} iframe {
+  overflow: hidden;
 }
 
-.panel-body { padding: 5px; }
-iframe { overflow: hidden; }
-.no-select, .no-select * { user-select: none; }
 #main, #form { background: none; }
 div.bootbox.modal, div.bootbox.modal * { font-family: 'Roboto', san-serif !important; }
 div.bootbox.modal .modal-header { border-bottom: 0; }

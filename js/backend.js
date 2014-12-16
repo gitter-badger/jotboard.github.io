@@ -25,7 +25,7 @@ var startUp = function() {
           });
         }
       });
-      head.load("//cdn.jsdelivr.net/momentjs/2.8.3/moment.min.js", function() {
+      head.load("//cdn.jsdelivr.net/momentjs/2.8.4/moment.min.js", function() {
         console.log("MomentJS");
         // TimeShift is used to simulate real-time activity, not actually
         // real-time, but its per 1 millisecond so its close enough.
@@ -71,7 +71,7 @@ var startUp = function() {
               });
             }; if (jotboard("hash", "campaign")) {
               window[bootboxOpen("campaign")];
-            };
+            }
           });
         });
       });
@@ -132,11 +132,9 @@ var startUp = function() {
               '<div class="jb-load nav-select" title="Load Board">Load</div>'
             ).prepend(
               '<div class="jb-save nav-select" title="Save Board">Save</div>'
-            );
-            $("jb-give .jb-save").click(function() {
+            ); $("jb-give .jb-save").click(function() {
               jotboard("change", "save");
-            });
-            $("jb-give .jb-load").click(function() {
+            }); $("jb-give .jb-load").click(function() {
               jotboard("change", "load");
             });
             $("#form").unbind("keyup").unbind("keydown").val(store.get(jotboard("prefix") + jotboard("MainNamespace")));

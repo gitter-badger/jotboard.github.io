@@ -3,12 +3,9 @@ var jotboard = function(main, _1, _2, _3, _4) {
   if (main == "hashmod") return "# Jotboard";
   if (main == "collab") return "Groupies";
   if (main == "FormInfoDay") return {
-    "placeholder": moment(new Date()).format("[Hello, it's ]dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, have an awesome day!]"),
-    "title": "Press escape to open or close the navigation"
-  };
-  if (main == "FormInfoNight") return {
-    "placeholder": moment(new Date()).format("[Hello, it's ]dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, goodnight!]"),
-    "title": "Press escape to open or close the navigation"
+    "placeholder": moment(new Date()).format("[Hello, Welcome to Jotboard! it's currently ]dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, have an awesome day!]"),
+  }; if (main == "FormInfoNight") return {
+    "placeholder": moment(new Date()).format("[Hows it going? it's ]dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, CYA!]"),
   };
   if (main == "prefix") return "JB_-";
   if (main == "MainNamespace") return "Main";
@@ -35,7 +32,7 @@ var jotboard = function(main, _1, _2, _3, _4) {
     return false;
   }
   if (main == "change") {
-    // jotboard("save or load"): Used to get and set the values of Jotboard Data.
+    // jotboard("change", "save/load"): Used to get and set the values of Jotboard Data.
     if (_1 == "save") {
       if (!jotboard("NamespaceValue")) {
         store.set(jotboard("prefix") + jotboard("MainNamespace"), jotboard("FormValue"));
