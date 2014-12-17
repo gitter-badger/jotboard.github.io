@@ -146,9 +146,11 @@ div.body.container {
 }
 
 div#togetherjs-dock {
-  bottom: 5px !important;
+  bottom: 15% !important;
   height: auto !important;
-  right: 0;
+  right: 6px !important;
+  top: 15%;
+  overflow-x: scroll;
 }
 
 div#togetherjs-dock-anchor,
