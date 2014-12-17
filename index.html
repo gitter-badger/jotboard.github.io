@@ -63,11 +63,12 @@
 
 <!-- .body.container -->
 <div class="body container">
-  <!-- .main.no-select#main -->
-  <div class="main no-select" id="main">
+  <!-- .main#main -->
+  <div class="main" id="main">
     <textarea class="mousetrap" id="form"></textarea>
   </div>
-  <!-- .navagation.no-select -->
+  <!-- .main#main -->
+  <!-- .navagation -->
   <div class="navagation">
     <!-- .container -->
     <div class="container">
@@ -76,24 +77,22 @@
           <input type="text" id="namespace" name="q" class="form-control" title="Make, Load, Overwrite a Board or Search the Web" placeholder="Jotboard" />
         </div>
       </form>
+      <!-- jb-give -->
       <jb-give>
         <div class="jb-save nav-select" title="Save Board">Save</div>
         <div class="jb-load nav-select" title="Load Board">Load</div>
         <div class="jb-groupies nav-select" title="Collaborative text editing on the fly!">Groupies</div>
       </jb-give>
+      <!-- /jb-give -->
     </div>
-        <!-- .notes-container -->
-        <div class="notes-container">
-          <textarea id="notes"></textarea>
-        </div>
-        <!-- /.notes-container -->
-      </div>
+    <!-- /.container -->
+    <div class="notes-container">
+      <textarea id="notes"></textarea>
     </div>
-		<!-- /.container -->
-    </div>
-  <!-- /.navagation.no-select#main -->
+  </div>
+  <!-- /.navagation -->
 </div>
-<!-- /.body.container -->
+<!-- .body.container -->
 
 <script>
 var _refresh = function(_) {

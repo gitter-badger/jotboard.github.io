@@ -7,10 +7,10 @@ body#body {
 #form {
 	font: 16px 'Source Code Pro', sans-serif;
 	color: #F0F0F0;
-	width: 100%;
+	width: calc(100% - 282px);
 	border-radius: 0;
 	height: 100%;
-	float: left;
+	float: right;
 }
 
 .notes-container {
@@ -65,14 +65,13 @@ html, body, #html, #body {
 .navagation {
 	background: rgba(31, 47, 58, .9);
 	transition: opacity .130s ease;
-	opacity: .15;
 	width: 282px;
 	white-space: nowrap;
 	font-family: 'Roboto', san-serif;
 	height: 100%;
 	max-height: 100%;
 	position: fixed;
-	right: 0;
+	left: 0;
 	top: 0;
 	padding: 1.5%;
 	overflow-y: scroll;
@@ -83,8 +82,6 @@ html, body, #html, #body {
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
-} .navagation:hover {
-  opacity: 1;
 }
 
 .navagation .nav-select, .navagation .select {
@@ -146,10 +143,10 @@ div.body.container {
 }
 
 div#togetherjs-dock {
-  bottom: 15% !important;
+  bottom: 100px !important;
   height: auto !important;
   right: 6px !important;
-  top: 15%;
+  top: 40%;
   overflow-x: scroll;
 }
 
