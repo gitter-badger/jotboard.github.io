@@ -39,6 +39,9 @@ var startUp = function() {
         console.log("Prefixfree");
         head.load("//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css", function() {
           console.log("Font Awesome");
+          $(".jb-toggle").click(function() {
+            $(".navigation").toggleClass("soft-block");
+          });
         });
         head.load(["//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/bootstrap.min.js", "//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap.min.css"], function() {
           console.log("Bootstrap JS, Bootstrap CSS");
@@ -121,7 +124,7 @@ var startUp = function() {
                   amount: 20
                 },
                 align: "left",
-                width: "282px",
+                width: "auto",
                 delay: 3500,
                 allow_dismiss: true
               });
@@ -146,7 +149,7 @@ var startUp = function() {
                 amount: 20
               },
               align: "left",
-              width: "282px",
+              width: "auto",
               delay: 2200,
               allow_dismiss: true
             });
