@@ -96,7 +96,7 @@ var jotboard = function(main, _1, _2, _3, _4) {
             amount: 20
           },
           align: "left",
-          width: 290,
+          width: "282px",
           delay: 3100,
           allow_dismiss: true,
           stackup_spacing: 10

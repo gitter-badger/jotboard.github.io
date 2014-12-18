@@ -121,7 +121,7 @@ var startUp = function() {
                   amount: 20
                 },
                 align: "left",
-                width: "auto",
+                width: "282px",
                 delay: 3500,
                 allow_dismiss: true
               });
@@ -146,7 +146,7 @@ var startUp = function() {
                 amount: 20
               },
               align: "left",
-              width: "auto",
+              width: "282px",
               delay: 2200,
               allow_dismiss: true
             });
