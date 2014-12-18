@@ -62,7 +62,7 @@ html, body, #html, #body {
 	-webkit-font-smoothing: antialiased !important;
 }
 
-.navagation {
+.navigation {
 	background: rgba(31, 47, 58, .9);
 	transition: opacity .130s ease;
 	width: 282px;
@@ -84,14 +84,11 @@ html, body, #html, #body {
 	user-select: none;
 }
 
-.navagation .nav-select, .navagation .select {
+.navigation .nav-select {
 	text-align: center;
 	width: 100%;
 	margin: 8px .5% 8px calc(.5% - 1px);
 	cursor: pointer;
-}
-
-.navagation .nav-select {
   font-size: 25px;
   color: #E0E0E0;
   background-color: #2B2B2B;
@@ -100,7 +97,7 @@ html, body, #html, #body {
   border-radius: 4px;
 }
 
-.navagation .container {
+.navigation .container {
 	width: 98%;
 	padding-left: 0;
 	padding-right: 0;
