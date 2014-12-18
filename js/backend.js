@@ -41,6 +41,7 @@ var startUp = function() {
           console.log("Font Awesome");
           $(".jb-toggle").click(function() {
             $(".navigation").toggleClass("soft-block");
+            $("#form").toggleClass("full-width");
           });
         });
         head.load(["//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/bootstrap.min.js", "//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap.min.css"], function() {
