@@ -108,7 +108,7 @@ html, body, #html, #body {
   position: fixed;
   right: 0;
   bottom: 0;
-  font-size: 50px;
+  font-size: 50px !important;
   margin: 0 10px 7px 0;
   color: #C9C9C9;
   text-shadow: 0 0 2px #101010;
