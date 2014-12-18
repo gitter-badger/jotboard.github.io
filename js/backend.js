@@ -12,13 +12,16 @@ var startUp = function() {
         console.log('Mousetrap');
       });
       $(function() {
-        $("iframe").attr({
-          "frameborder": "0",
-          "allowtransparency": "true"
-        }).addClass("iframe");
-        if (window.location.hash) document.title = jotboard("hashmod");
-        if (!window.location.hash) document.title = jotboard("sitename");
-        if (DevMode === false) $("body").css("display", "block");
+        document.body.addEventListener('touchmove', function(BodNod) {
+          BodNod.preventDefault();
+        });
+        $('iframe').attr({
+          'frameborder': '0',
+          'allowtransparency': 'true'
+        }).addClass('iframe');
+        if (window.location.hash) document.title = jotboard('hashmod');
+        if (!window.location.hash) document.title = jotboard('sitename');
+        if (DevMode === false) $('body').css('display', 'block');
         if (IDLCamp === true) {
           head.load([('https:' == document.location.protocol ? 'https://' : 'http://') + 'members.internetdefenseleague.org/include/?url=' + _idl.url + '&campaign=' + _idl.campaign + '&variant=modal'], function() {
             console.log('Internet Defence League');

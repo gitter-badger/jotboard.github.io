@@ -108,13 +108,14 @@ html, body, #html, #body {
   position: fixed;
   right: 0;
   bottom: 0;
-  font-size: 50px !important;
-  margin: 0 10px 7px 0;
+  font-size: 58px !important;
+  margin: 0 8px 7px 0;
   color: #C9C9C9;
   text-shadow: 0 0 2px #101010;
   background-color: rgba(40, 38, 38, 0.58);
-  padding: 5px 5px 0px 5px;
+  padding: 8px 10px 0 10px;
   border-radius: 3px;
+  overflow: hidden;
 }
 
 #namespace {
