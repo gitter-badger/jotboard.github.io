@@ -12,9 +12,9 @@ var startUp = function() {
         console.log('Mousetrap');
       });
       $(function() {
-        // document.body.addEventListener('touchmove', function(BodNod) {
-        //   BodNod.preventDefault();
-        // });
+        document.body.addEventListener('touchstart', function(e) {
+          e.preventDefault();
+        });
         $('iframe').attr({
           'frameborder': '0',
           'allowtransparency': 'true'
@@ -49,15 +49,13 @@ var startUp = function() {
         });
         head.load("//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css", function() {
           console.log("Font Awesome");
-          $(".jb-toggle").click(function() {
-            $(this).toggleClass("fa-bars").toggleClass("fa-close");
-            $(".navigation").toggleClass("soft-block");
-            $("#form").toggleClass("full-width");
-          });
-          if (jotboard("hash", "nonav")) {
-            $(".jb-toggle").toggleClass("fa-bars").toggleClass("fa-close");
-            $(".navigation").toggleClass("soft-block");
-            $("#form").toggleClass("full-width");
+          if (head.mobile) {
+            $(".body.container").append("<div class='jb-toggle fa fa-close'>&nbsp;</div>");
+            $(".jb-toggle").click(function() {
+              $(this).toggleClass("fa-bars").toggleClass("fa-close");
+              $(".navigation").toggleClass("soft-block");
+              $("#form").toggleClass("full-width");
+            });
           }
         });
         head.load([
