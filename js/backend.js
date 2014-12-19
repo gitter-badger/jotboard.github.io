@@ -40,9 +40,19 @@ var startUp = function() {
       });
       head.load("//cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js", function() {
         console.log("Prefixfree");
+        $(function() {
+          if (head.mobile) $(function() {
+            $(".navigation").css({
+              "width": "100%"
+            });
+          }); if (!head.mobile) {
+            console.log("You're not on a mobile device.");
+          }
+        });
         head.load("//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css", function() {
           console.log("Font Awesome");
           $(".jb-toggle").click(function() {
+            $(this).classToggle("fa-bars").classToggle("fa-close");
             $(".navigation").toggleClass("soft-block");
             $("#form").toggleClass("full-width");
           });
@@ -128,7 +138,7 @@ var startUp = function() {
                   amount: 20
                 },
                 align: "left",
-                width: "auto",
+                width: "270px",
                 delay: 3500,
                 allow_dismiss: true
               });
@@ -153,7 +163,7 @@ var startUp = function() {
                 amount: 20
               },
               align: "left",
-              width: "auto",
+              width: "270px",
               delay: 2200,
               allow_dismiss: true
             });
