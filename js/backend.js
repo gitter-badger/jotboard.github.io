@@ -52,7 +52,7 @@ var startUp = function() {
         head.load("//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css", function() {
           console.log("Font Awesome");
           $(".jb-toggle").click(function() {
-            $(this).classToggle("fa-bars").classToggle("fa-close");
+            $(this).toggleClass("fa-bars").toggleClass("fa-close");
             $(".navigation").toggleClass("soft-block");
             $("#form").toggleClass("full-width");
           });
