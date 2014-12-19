@@ -12,9 +12,9 @@ var startUp = function() {
         console.log('Mousetrap');
       });
       $(function() {
-        document.body.addEventListener('touchmove', function(BodNod) {
-          BodNod.preventDefault();
-        });
+        // document.body.addEventListener('touchmove', function(BodNod) {
+        //   BodNod.preventDefault();
+        // });
         $('iframe').attr({
           'frameborder': '0',
           'allowtransparency': 'true'
@@ -57,7 +57,10 @@ var startUp = function() {
             $("#form").toggleClass("full-width");
           });
         });
-        head.load(["//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/bootstrap.min.js", "//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap.min.css"], function() {
+        head.load([
+          "//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js",
+          "//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/css/bootstrap.min.css"
+        ], function() {
           console.log("Bootstrap JS, Bootstrap CSS");
           head.load("//cdnjs.cloudflare.com/ajax/libs/bootstrap-growl/1.0.0/jquery.bootstrap-growl.min.js", function() {
             console.log("Bootstrap Growl");
@@ -138,7 +141,7 @@ var startUp = function() {
                   amount: 20
                 },
                 align: "left",
-                width: "270px",
+                width: "auto",
                 delay: 3500,
                 allow_dismiss: true
               });
@@ -163,7 +166,7 @@ var startUp = function() {
                 amount: 20
               },
               align: "left",
-              width: "270px",
+              width: "auto",
               delay: 2200,
               allow_dismiss: true
             });

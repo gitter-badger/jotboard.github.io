@@ -108,13 +108,13 @@ html, body, #html, #body {
   position: fixed;
   right: 0;
   bottom: 0;
-  font-size: 58px !important;
+  font-size: 55px !important;
   margin: 0 8px 7px 0;
   color: #C9C9C9;
   text-shadow: 0 0 2px #101010;
   background-color: rgba(40, 38, 38, 0.58);
-  padding: 8px 10px 0 10px;
-  border-radius: 3px;
+  padding: 8px 10px 1px 10px;
+  border-radius: 5px;
   overflow: hidden;
 }
 
