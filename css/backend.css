@@ -109,11 +109,11 @@ html, body, #html, #body {
   right: 0;
   bottom: 0;
   font-size: 55px !important;
-  margin: 0 8px 7px 0;
+  margin: 0 10px 10px 0;
   color: #C9C9C9;
   text-shadow: 0 0 2px #101010;
   background-color: rgba(40, 38, 38, 0.58);
-  padding: 8px 10px 1px 10px;
+  padding: 7px 0 5px 12px;
   border-radius: 5px;
   overflow: hidden;
 }
