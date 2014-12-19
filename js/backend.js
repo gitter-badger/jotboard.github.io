@@ -41,12 +41,10 @@ var startUp = function() {
       head.load("//cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js", function() {
         console.log("Prefixfree");
         $(function() {
-          if (head.mobile) $(function() {
+          if (head.mobile) {
             $(".navigation").css({
               "width": "100%"
             });
-          }); if (!head.mobile) {
-            console.log("You're not on a mobile device.");
           }
         });
         head.load("//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css", function() {
@@ -56,6 +54,11 @@ var startUp = function() {
             $(".navigation").toggleClass("soft-block");
             $("#form").toggleClass("full-width");
           });
+          if (jotboard("hash", "nonav")) {
+            $(".jb-toggle").toggleClass("fa-bars").toggleClass("fa-close");
+            $(".navigation").toggleClass("soft-block");
+            $("#form").toggleClass("full-width");
+          }
         });
         head.load([
           "//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js",

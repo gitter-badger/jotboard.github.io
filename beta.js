@@ -1,3 +1,18 @@
+var styleStr = "";
+for (var i in cssjson) {
+  styleStr += i + " {\n";
+  for (var j in cssjson[i]) {
+    if (j == "CSSJSON-INHERIT-SELECTOR") {
+      for (var k in cssjson[cssjson[i][j]]) {
+        styleStr += "\t" + k + ":" + cssjson[cssjson[i][j]][k] + ";\n";
+      }
+    } else {
+      styleStr += "\t" + j + ":" + cssjson[i][j] + ";\n";
+    }
+  }
+  styleStr += "\n}";
+}
+
 var load = function(syntax, assets, callback) {
   //  load("js", ["https://test.com/api.js"], function() {
   //    alert("Test API Loaded.");
