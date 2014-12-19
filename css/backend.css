@@ -109,7 +109,7 @@ html, body, #html, #body {
   right: 0;
   bottom: 0;
   font-size: 55px !important;
-  margin: 0 10px 10px 0;
+  margin: 0 18px 20px 0;
   color: #C9C9C9;
   text-shadow: 0 0 2px #101010;
   background-color: rgba(40, 38, 38, 0.58);
@@ -155,10 +155,9 @@ div.body.container {
 }
 
 div#togetherjs-dock {
-  bottom: 100px !important;
-  height: auto !important;
-  right: 6px !important;
-  top: 40%;
+  bottom: 140px !important;
+  height: 195px !important;
+  right: 22px !important;
   overflow-x: scroll;
 }
 
