@@ -40,23 +40,14 @@ var startUp = function() {
       });
       head.load("//cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js", function() {
         console.log("Prefixfree");
-        $(function() {
-          if (head.screen.mobile) {
-            $(".navigation").css({
-              "width": "100%"
-            });
-          }
-        });
         head.load("//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css", function() {
           console.log("Font Awesome");
-          if (head.screen.mobile) {
-            $(".body.container").append("<div class='jb-toggle fa fa-close'>&nbsp;</div>");
-            $(".jb-toggle").click(function() {
-              $(this).toggleClass("fa-bars").toggleClass("fa-close");
-              $(".navigation").toggleClass("soft-block");
-              $("#form").toggleClass("full-width");
-            });
-          }
+          $(".body.container").append("<div class='jb-toggle fa fa-close'>&nbsp;</div>");
+          $(".jb-toggle").click(function() {
+            $(this).toggleClass("fa-bars").toggleClass("fa-close");
+            $(".navigation").toggleClass("soft-block");
+            $("#form").toggleClass("full-width");
+          });
         });
         head.load([
           "//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js",
