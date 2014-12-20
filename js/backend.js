@@ -83,7 +83,8 @@ var startUp = function() {
               });
               if (pattern == "youtube") bootbox.dialog({
                 title: "YouTube",
-                message: "<form role='search' action='http://www.youtube.com/embed/' target='_youtube' method='get'>" +
+                message: "<iframe name='_youtube' id='_youtube' src='//goo.gl/Guhk4P'></iframe>" +
+                "<form role='search' action='http://www.youtube.com/embed/' target='_youtube' method='get'>" +
                   "<div class='form-group'>" +
                     "<input type='text' name='list' class='form-control' placeholder='[youtube query]' />" +
                   "</div>" +
@@ -92,8 +93,7 @@ var startUp = function() {
                   "<input type='hidden' name='rel' value='0' />" +
                   "<input type='hidden' name='autohide' value='1' />" +
                   "<input type='hidden' name='theme' value='light' />" +
-                "</form>" +
-                "<iframe name='_youtube' id='_youtube' src='//goo.gl/Guhk4P'></iframe>",
+                "</form>",
                 buttons: {
                   enter: {
                     label: "Open",
