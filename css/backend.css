@@ -161,6 +161,17 @@ div#togetherjs-dock {
   overflow-x: scroll;
 }
 
+div.bootbox div.modal-body {
+  padding: 8px;
+} div.yt-search input {
+  margin: 35px 0 0 0;
+}
+
+iframe#_youtube {
+  width: 100%;
+  height: 340px;
+}
+
 div#togetherjs-dock-anchor,
 div#togetherjs-window-pointer-right,
 div#togetherjs-window-pointer-left {
