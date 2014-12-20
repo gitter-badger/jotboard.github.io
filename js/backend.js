@@ -84,7 +84,7 @@ var startUp = function() {
               if (pattern == "youtube") bootbox.dialog({
                 title: "YouTube",
                 message: "<iframe name='_youtube' id='_youtube' src='//goo.gl/Guhk4P'></iframe>" +
-                "<form role='search' action='http://www.youtube.com/embed/' target='_youtube' method='get'>" +
+                "<form role='search' action='//www.youtube.com/embed/' target='_youtube' method='get'>" +
                   "<div class='yt-search form-group'>" +
                     "<input type='text' name='list' class='form-control' placeholder='Enter YouTube Query' />" +
                   "</div>" +
