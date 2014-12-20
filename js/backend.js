@@ -86,7 +86,7 @@ var startUp = function() {
                 message: "<iframe name='_youtube' id='_youtube' src='//goo.gl/Guhk4P'></iframe>" +
                 "<form role='search' action='http://www.youtube.com/embed/' target='_youtube' method='get'>" +
                   "<div class='form-group'>" +
-                    "<input type='text' name='list' class='form-control' placeholder='[youtube query]' />" +
+                    "<input type='text' name='list' class='form-control' placeholder='Enter YouTube Query' />" +
                   "</div>" +
                   "<input type='hidden' name='listType' value='search' />" +
                   "<input type='hidden' name='modestbranding' value='1' />" +
