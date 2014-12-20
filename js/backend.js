@@ -107,8 +107,15 @@ var startUp = function() {
                 }
               });
             };
-            if (jotboard("hash", "campaign")) window[bootboxOpen("campaign")];
-            if (jotboard("hash", "youtube") || jotboard("hash", "yt")) window[bootboxOpen("youtube")];
+            $(".jb-campaign").click(function() {
+              bootboxOpen("campaign");
+            }); if (jotboard("hash", "campaign")) {
+              bootboxOpen("campaign");
+            } $(".jb-youtube").click(function() {
+              bootboxOpen("youtube");
+            }); if (jotboard("hash", "youtube") || jotboard("hash", "yt")) {
+              bootboxOpen("youtube");
+            }
           });
         });
       });
