@@ -194,20 +194,27 @@ div#togetherjs-window-pointer-left {
 }
 
 div.bootbox.modal {
+	transition: right 0.55s ease;
+	transition: left 0.55s ease;
+	transition: top 0.55s ease;
+	transition: width 0.55s ease;
   position: fixed;
-  left: 25%;
-  right: 25%;
-  top: 75%;
-  width: 50%;
-  border: 7px solid rgba(0, 0, 0, .5);
+  left: 25%; right: 25%;
+  top: 75%; width: 50%;
+  padding: 7px;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 }
 
 div.bootbox.modal:hover {
+	transition: right 0.25s ease;
+	transition: left 0.25s ease;
+	transition: top 0.25s ease;
+	transition: width 0.25s ease;
+  position: fixed;
   left: 0; right: 0;
   top: 0; width: 100%;
-  border: 0;
+  padding: 0;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
