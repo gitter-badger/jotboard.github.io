@@ -193,8 +193,8 @@ div#togetherjs-window-pointer-left {
   display: none !important;
 }
 
-div.bootbox.modal {
-	transition: right 0.55s ease;
+/* div.bootbox.modal {
+	// transition: right 0.55s ease;
 	transition: left 0.55s ease;
 	transition: top 0.55s ease;
 	transition: width 0.55s ease;
@@ -204,9 +204,9 @@ div.bootbox.modal {
   padding: 7px;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
-}
+} */
 
-div.bootbox.modal:hover {
+/* div.bootbox.modal:hover {
 	transition: right 0.25s ease;
 	transition: left 0.25s ease;
 	transition: top 0.25s ease;
@@ -217,7 +217,7 @@ div.bootbox.modal:hover {
   padding: 0;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
-}
+} */
 
 div.bootbox.modal, div.bootbox.modal * {
 	outline: none;
