@@ -14,16 +14,16 @@ body#body {
 	padding: 0;
 }
 
-.notes-container {
+.notes {
   width: 100%;
   height: auto;
-  padding: 1% !important;
+  padding: .4% !important;
   margin: 0;
-} textarea#notes {
-  font: 22px 'Lato', sans-serif !important;
+} #notes {
+  font: 23px 'Lato', sans-serif !important;
   color: #E0E0E0 !important;
   width: 100%;
-  height: 50px;
+  height: 31px;
   text-align: center;
   background: none;
 }
@@ -99,7 +99,7 @@ html, body, #html, #body {
 }
 
 .navigation .alt .nav-select {
-  font: 15px 'Roboto', san-serif;
+  font: 17px 'Roboto', san-serif;
 	text-align: center;
 	width: 100%;
 	margin: 8px .5% 8px calc(.5% - 1px);
@@ -107,8 +107,8 @@ html, body, #html, #body {
   color: #2B2B2B;
   background-color: #E0E0E0;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, .08);
-  padding: 3px;
-  border-radius: 3px;
+  padding: 4px;
+  border-radius: 4px;
 }
 
 .navigation .container {
