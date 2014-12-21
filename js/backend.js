@@ -42,14 +42,12 @@ var startUp = function() {
         console.log("Prefixfree");
         head.load("//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css", function() {
           console.log("Font Awesome");
-          var navigation = function() {
-            $(".jb-toggle").toggleClass("fa-bars").toggleClass("fa-close");
-            $(".navigation").toggleClass("soft-block");
-            $("#form").toggleClass("full-width");
-          };
           $(".body.container").append("<div class='jb-toggle fa fa-close'>&nbsp;</div>");
-          $(".jb-toggle").click(function() { navigation(); });
-          if (jotboard("hash", "nonav")) navigation();
+          $(jotboard("nav-toggle-btn")).click(function() {
+            jotboard("toggle-nav");
+          }); if (jotboard("hash", "fullscreen")) {
+            jotboard("toggle-nav");
+          }
         });
         head.load([
           "//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js",

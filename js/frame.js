@@ -1,4 +1,11 @@
 var jotboard = function(main, _1, _2, _3, _4) {
+  if (main == "nav") return ".navigation";
+  if (main == "nav-toggle-btn") return ".jb-toggle";
+  if (main == "toggle-nav") return $(function() {
+    $(jotboard("nav-toggle-btn")).toggleClass("fa-bars").toggleClass("fa-close");
+    $(jotboard("nav")).toggleClass("soft-block");
+    $("#form").toggleClass("full-width");
+  });
   if (main == "sitename") return "Jotboard";
   if (main == "hashmod") return "# Jotboard";
   if (main == "collab") return "Groupies";
@@ -10,12 +17,8 @@ var jotboard = function(main, _1, _2, _3, _4) {
   if (main == "prefix") return "JB_-";
   if (main == "MainNamespace") return "Main";
   if (main == "toggleBody") {
-    if ($("body").css("display", "none")) $("body").css({
-      "display": "visible"
-    });
-    if ($("body").css("display", "visible")) $("body").css({
-      "display": "none"
-    });
+    if ($("body").css("display", "none")) $("body").css("display", "visible");
+    if ($("body").css("display", "visible")) $("body").css("display", "none");
   }
   if (main == "NamespaceValue") /* Returns Value of Hero Box */ return $("#namespace").val();
   if (main == "FormValue") /* Return Form Value */ return $("#form").val();
@@ -45,9 +48,9 @@ var jotboard = function(main, _1, _2, _3, _4) {
             amount: 20
           },
           align: "left",
-          width: 300,
+          width: 247,
           delay: 3100,
-          allow_dismiss: true,
+          allow_dismiss: false,
           stackup_spacing: 10
         });
       } else {
@@ -61,9 +64,9 @@ var jotboard = function(main, _1, _2, _3, _4) {
             amount: 20
           },
           align: "left",
-          width: 300,
+          width: 247,
           delay: 3100,
-          allow_dismiss: true,
+          allow_dismiss: false,
           stackup_spacing: 10
         });
       }
@@ -80,9 +83,9 @@ var jotboard = function(main, _1, _2, _3, _4) {
             amount: 20
           },
           align: "left",
-          width: "auto",
+          width: 247,
           delay: 1350,
-          allow_dismiss: true,
+          allow_dismiss: false,
           stackup_spacing: 10
         });
       } else {
@@ -96,9 +99,9 @@ var jotboard = function(main, _1, _2, _3, _4) {
             amount: 20
           },
           align: "left",
-          width: "282px",
+          width: 247,
           delay: 3100,
-          allow_dismiss: true,
+          allow_dismiss: false,
           stackup_spacing: 10
         });
       }
