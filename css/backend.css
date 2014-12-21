@@ -99,16 +99,16 @@ html, body, #html, #body {
 }
 
 .navigation .alt .nav-select {
-  font: 20px 'Roboto', san-serif;
+  font: 15px 'Roboto', san-serif;
 	text-align: center;
 	width: 100%;
 	margin: 8px .5% 8px calc(.5% - 1px);
 	cursor: pointer;
-  color: #E8E8E8;
-  background-color: #2A2A2A;
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .070);
-  padding: 1px;
-  border-radius: 4px;
+  color: #2B2B2B;
+  background-color: #E0E0E0;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .08);
+  padding: 3px;
+  border-radius: 3px;
 }
 
 .navigation .container {
