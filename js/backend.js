@@ -12,7 +12,7 @@ var startUp = function() {
         console.log('Mousetrap');
       });
       $(function() {
-        document.body.addEventListener('touchstart', function(e) {
+        document.body.addEventListener('touchmove, touchend', function(e) {
           e.preventDefault();
         });
         $('iframe').attr({
@@ -119,29 +119,28 @@ var startUp = function() {
       });
       head.load("//cdnjs.cloudflare.com/ajax/libs/store.js/1.3.14/store.min.js", function() {
         console.log("Store.JS");
-          $(function() {
-            if (store.get("FirstTime", "yes")) {
-              store.set("FirstTime", "no");
-              bootbox.prompt({
-                title: "What's your name?",
-                placeholder: "We won't share it or anything, promise.",
-                callback: function(result) {
-                  if (result === null) {
-                    $.bootstrapGrowl("Hello...", {
-                      ele: "body",
-                      type: "info",
-                      offset: {
-                        from: "bottom",
-                        amount: 20
-                      },
-                      align: "left",
-                      width: "auto",
-                      delay: 1900,
-                      allow_dismiss: false
-                    });
-                  } else {
+        $(function() {
+          if (store.get("FirstTime") === "yes") {
+            bootbox.prompt({
+              title: "What's your name?",
+              placeholder: "We won't share it or anything, promise.",
+              callback: function(result) {
+                if (result === null) {
+                  $.bootstrapGrowl("Hello...?", {
+                    ele: "body",
+                    type: "info",
+                    offset: {
+                      from: "bottom",
+                      amount: 20
+                    },
+                    align: "left",
+                    width: "auto",
+                    delay: 1900,
+                    allow_dismiss: false
+                  });
+                } else {
+                  store.set("FirstTime", "no");
                   store.set("Username", result);
-                  $("a.username").html("Hello, " + store.get("Username") + ".");
                   $.bootstrapGrowl("Hello, " + result, {
                     ele: "body",
                     type: "info",
@@ -158,21 +157,7 @@ var startUp = function() {
               }
             });
           }
-          if (store.get("FirstTime", "no")) {
-            $("a.username").html("Welcome back, " + store.get("Username") + ".");
-            $.bootstrapGrowl("Hello, " + store.get("Username") + ".", {
-              ele: "body",
-              type: "info",
-              offset: {
-                from: "bottom",
-                amount: 20
-              },
-              align: "left",
-              width: "auto",
-              delay: 1600,
-              allow_dismiss: true
-            });
-          }
+          if (store.get("FirstTime", "no")) $("a.username").html("Welcome back, " + store.get("Username") + ".");
           if (store.get("JBNotes")) $("textarea#notes").val(store.get("JBNotes"));
           $("textarea#notes").attr({
             "placeholder": "Notes go here"
