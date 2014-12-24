@@ -60,6 +60,7 @@ var startUp = function() {
           head.load("//cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.3.0/bootbox.js", function() {
             console.log("Bootbox");
             bootbox.setDefaults({
+              onEscape: function() { dialog.modal('hide'); },
               locale: "en",
               backdrop: true,
               animate: true
