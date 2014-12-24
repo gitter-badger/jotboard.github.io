@@ -54,6 +54,9 @@ var startUp = function() {
           "//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/css/bootstrap.min.css"
         ], function() {
           console.log("Bootstrap JS, Bootstrap CSS");
+          head.load("js/news.js", function() {
+            console.log("News");
+          });
           head.load("//cdnjs.cloudflare.com/ajax/libs/bootstrap-growl/1.0.0/jquery.bootstrap-growl.min.js", function() {
             console.log("Bootstrap Growl");
           });
