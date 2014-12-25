@@ -195,7 +195,7 @@ div#togetherjs-window-pointer-left {
 }
 
 /* div.bootbox.modal {
-	// transition: right 0.55s ease;
+  transition: right 0.55s ease;
 	transition: left 0.55s ease;
 	transition: top 0.55s ease;
 	transition: width 0.55s ease;
