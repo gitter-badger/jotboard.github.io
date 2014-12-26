@@ -179,13 +179,14 @@ div#togetherjs-dock {
 }
 
 div#news div .news div.panel-heading {
-    padding: 8px;
-    text-align: center;
-    background-color: #333;
+  border: none;
+  padding: 8px;
+  text-align: center;
+  background-color: #333;
 } div#news {
-    margin-top: 6px;
+  margin-top: 6px;
 } div#news div .news {
-    border: 1px solid #FFF;
+  border: 1px solid #FFF;
 }
 
 div.bootbox div.modal-body {
