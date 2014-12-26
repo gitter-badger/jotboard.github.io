@@ -1,4 +1,4 @@
-var news; news = {
+var news = {
   one: {
     title: "Police shoot unarmed black man, at Missuri Gas Station",
     href: "//www.theage.com.au/world/police-shoot-black-teenager-named-as-antonio-martin-at-missouri-gas-station-20141224-12dk5s.html",
