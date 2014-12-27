@@ -56,9 +56,9 @@ var startUp = function() {
           console.log("Bootstrap JS, Bootstrap CSS");
           head.load("js/news.js", function() {
             console.log("News");
-            if (jotboard("", ""))
+            if (jotboard("", "")){}
             $('#news .one').append(
-              "<div class='news panel panel-primary'>" +
+              "<div class='news panel'>" +
                 "<div class='panel-heading'>" +
                   "<h4 class='panel-title'>" +
                     "<a href='" + news.one.href + "'>" + news.one.title + "</a>" +
@@ -67,7 +67,7 @@ var startUp = function() {
                 "<div class='panel-body'>" + news.one.body + "</div>" +
               "</div>"
             ); $('#news .two').append(
-                "<div class='news panel panel-primary'>" +
+                "<div class='news panel'>" +
                   "<div class='panel-heading'>" +
                     "<h4 class='panel-title'>" +
                       "<a href='" + news.two.href + "'>" + news.two.title + "</a>" +
@@ -76,7 +76,7 @@ var startUp = function() {
                 "<div class='panel-body'>" + news.two.body + "</div>" +
               "</div>"
             ); $('#news .three').append(
-              "<div class='news panel panel-primary'>" +
+              "<div class='news panel'>" +
                 "<div class='panel-heading'>" +
                   "<h4 class='panel-title'>" +
                     "<a href='" + news.three.href + "'>" + news.three.title + "</a>" +
