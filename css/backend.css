@@ -163,6 +163,20 @@ html, body, #html, #body {
 	color: #E0E0E0;
 }
 
+#news div .news .panel-heading {
+  color: #E9E9E9;
+  border: none;
+  padding: 8px;
+  text-align: center;
+  background-color: #2B2B2B;
+} #news div .news .panel-body {
+  color: #2B2B2B;
+  background-color: #E9E9E9;
+  padding: 8px;
+} #news div .news {
+  border: 1px solid #FFF;
+}
+
 div.body.container {
 	overflow: hidden;
 	width: 100%;
@@ -180,24 +194,6 @@ div#togetherjs-dock {
   height: 195px !important;
   right: 22px !important;
   overflow-x: scroll;
-}
-
-#news div .news.panel div.panel-heading {
-  color: #E9E9E9;
-  border: none;
-  padding: 8px;
-  text-align: center;
-  background-color: #2B2B2B;
-}
-
-#news div .news.panel div.panel-body {
-  color: #2B2B2B;
-  background-color: #E9E9E9;
-  padding: 8px;
-}
-
-#news div .news.panel {
-  border: 1px solid #FFF;
 }
 
 div.yt-search input {
