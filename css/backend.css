@@ -182,18 +182,22 @@ div#togetherjs-dock {
   overflow-x: scroll;
 }
 
-#news div .news .panel-heading {
-  color: #F0F0F0;
+#news div .news.panel div.panel-heading {
+  color: #E9E9E9;
   border: none;
   padding: 8px;
   text-align: center;
-  background-color: #333;
-} #news {
-  margin-top: 6px;
-} #news div .news {
+  background-color: #2B2B2B;
+}
+
+#news div .news.panel div.panel-body {
+  color: #2B2B2B;
+  background-color: #E9E9E9;
+  padding: 8px;
+}
+
+#news div .news.panel {
   border: 1px solid #FFF;
-} #news .panel-body {
-    padding: 8px;
 }
 
 div.bootbox div.modal-body {
@@ -260,6 +264,7 @@ iframe, textarea, input {
   overflow: hidden;
 }
 
+#news { margin-top: 6px; }
 #form.full-width { width: 100%; }
 #main, #form { background: none; }
 div.bootbox.modal, div.bootbox.modal * { font-family: 'Roboto', san-serif !important; }
