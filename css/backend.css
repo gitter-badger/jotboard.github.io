@@ -178,15 +178,17 @@ div#togetherjs-dock {
   overflow-x: scroll;
 }
 
-div#news div .news div.panel-heading {
+#news .news .panel-heading {
   border: none;
   padding: 8px;
   text-align: center;
   background-color: #333;
-} div#news {
+} #news {
   margin-top: 6px;
-} div#news div .news {
+} #news div .news {
   border: 1px solid #FFF;
+} #news .panel-body {
+    padding: 8px;
 }
 
 div.bootbox div.modal-body {

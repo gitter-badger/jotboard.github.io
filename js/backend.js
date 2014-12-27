@@ -56,6 +56,7 @@ var startUp = function() {
           console.log("Bootstrap JS, Bootstrap CSS");
           head.load("js/news.js", function() {
             console.log("News");
+            if (jotboard("", ""))
             $('#news .one').append(
               "<div class='news panel panel-primary'>" +
                 "<div class='panel-heading'>" +
