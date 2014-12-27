@@ -93,14 +93,13 @@ var startUp = function() {
           head.load("//cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.3.0/bootbox.js", function() {
             console.log("Bootbox");
             bootbox.setDefaults({
-              onEscape: function() { dialog.modal('hide'); },
               locale: "en",
               backdrop: true,
-              animate: true
+              animate: false
             });
             var bootboxOpen = function(pattern) {
               if (pattern == "campaign") bootbox.dialog({
-                title: "Jotboard's Open Letter",
+                title: "Jotboard's Open Letter (Campaign)",
                 message: "The Internet really has become something to be proud of, especially for early Internet Adopters, it went from an idea trying to create an internationalized network of amazing communities, to a lifestyle that has changed the way we live and work.<br /><br />" +
                 "This message is to point out the current, past and future actions that have been taken to damage the Internet's Integrity, whether it be Mass Censorship, Illegal Spying or the way Net Neutrality presents itself as a money-related threat towards Cable Companies like Comcast, Verizon and Time Warner Cable and that it should never come to this again.<br /><br />" +
                 "The way the Internet is is perfect, we wouldn't have it any other way, and regardless of what the implications are to the corporate side of things, we need to make sure these sort of things never happen again, by making how much of a positive impact the Internet has made on us and our world as clear as possible to make sure the corporate businesses of the modern world know what will happen if such things are to be passed through Congress or Governments sanctions.<br /><br />" +
