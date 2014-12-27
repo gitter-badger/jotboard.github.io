@@ -182,7 +182,8 @@ div#togetherjs-dock {
   overflow-x: scroll;
 }
 
-#news .news .panel-heading {
+#news div .news .panel-heading {
+  color: #F0F0F0;
   border: none;
   padding: 8px;
   text-align: center;
