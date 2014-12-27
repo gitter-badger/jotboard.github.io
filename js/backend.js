@@ -56,9 +56,9 @@ var startUp = function() {
           console.log("Bootstrap JS, Bootstrap CSS");
           head.load("js/news.js", function() {
             console.log("News");
-            if (jotboard("hash", "news") || jotboard("hash", "1")) window.location = news.one.href;
-            if (jotboard("hash", "news") || jotboard("hash", "2")) window.location = news.two.href;
-            if (jotboard("hash", "news") || jotboard("hash", "3")) window.location = news.three.href;
+            if (jotboard("hash", "n") || jotboard("hash", "1")) window.location = news.one.href;
+            if (jotboard("hash", "n") || jotboard("hash", "2")) window.location = news.two.href;
+            if (jotboard("hash", "n") || jotboard("hash", "3")) window.location = news.three.href;
             $('#news .one').append(
               "<div class='news panel'>" +
                 "<div class='panel-heading'>" +
