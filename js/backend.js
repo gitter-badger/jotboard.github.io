@@ -60,7 +60,7 @@ var startUp = function() {
             if (jotboard("hash", "n") && jotboard("hash", "2")) window.location = news.two.href;
             if (jotboard("hash", "n") && jotboard("hash", "3")) window.location = news.three.href;
             if (jotboard("hash", "n")) {
-              $('#news .one').append(
+              $('#news .one').html(
                 "<div class='news panel'>" +
                   "<div class='panel-heading'>" +
                     "<h4 class='panel-title'>" +
@@ -69,7 +69,7 @@ var startUp = function() {
                   "</div>" +
                   "<div class='panel-body'>" + news.one.body + "</div>" +
                 "</div>");
-                $('#news .two').append(
+                $('#news .two').html(
                   "<div class='news panel'>" +
                     "<div class='panel-heading'>" +
                       "<h4 class='panel-title'>" +
@@ -77,8 +77,8 @@ var startUp = function() {
                       "</h4>" +
                     "</div>" +
                     "<div class='panel-body'>" + news.two.body + "</div>" +
-                  "</div>"
-                ); $('#news .three').append(
+                  "</div>");
+                $('#news .three').html(
                   "<div class='news panel'>" +
                     "<div class='panel-heading'>" +
                       "<h4 class='panel-title'>" +
@@ -87,7 +87,7 @@ var startUp = function() {
                     "</div>" +
                   "<div class='panel-body'>" + news.three.body + "</div>" +
                 "</div>");
-              });
+              };
             }
           head.load("//cdnjs.cloudflare.com/ajax/libs/bootstrap-growl/1.0.0/jquery.bootstrap-growl.min.js", function() {
             console.log("Bootstrap Growl");
