@@ -59,36 +59,35 @@ var startUp = function() {
             if (jotboard("hash", "n") && jotboard("hash", "1")) window.location = news.one.href;
             if (jotboard("hash", "n") && jotboard("hash", "2")) window.location = news.two.href;
             if (jotboard("hash", "n") && jotboard("hash", "3")) window.location = news.three.href;
-            if (jotboard("hash", "n")) {
-              $('#news .one').html(
-                "<div class='news panel'>" +
-                  "<div class='panel-heading'>" +
-                    "<h4 class='panel-title'>" +
-                      "<a href='" + news.one.href + "'>" + news.one.title + "</a>" +
-                    "</h4>" +
-                  "</div>" +
-                  "<div class='panel-body'>" + news.one.body + "</div>" +
-                "</div>");
-                $('#news .two').html(
-                  "<div class='news panel'>" +
-                    "<div class='panel-heading'>" +
-                      "<h4 class='panel-title'>" +
-                        "<a href='" + news.two.href + "'>" + news.two.title + "</a>" +
-                      "</h4>" +
-                    "</div>" +
-                    "<div class='panel-body'>" + news.two.body + "</div>" +
-                  "</div>");
-                $('#news .three').html(
-                  "<div class='news panel'>" +
-                    "<div class='panel-heading'>" +
-                      "<h4 class='panel-title'>" +
-                        "<a href='" + news.three.href + "'>" + news.three.title + "</a>" +
-                      "</h4>" +
-                    "</div>" +
-                  "<div class='panel-body'>" + news.three.body + "</div>" +
-                "</div>");
-              };
-            }
+            $('#news .one').html(
+              "<div class='news panel'>" +
+                "<div class='panel-heading'>" +
+                  "<h4 class='panel-title'>" +
+                    "<a href='" + news.one.href + "'>" + news.one.title + "</a>" +
+                  "</h4>" +
+                "</div>" +
+                "<div class='panel-body'>" + news.one.body + "</div>" +
+              "</div>");
+            $('#news .two').html(
+              "<div class='news panel'>" +
+                "<div class='panel-heading'>" +
+                  "<h4 class='panel-title'>" +
+                    "<a href='" + news.two.href + "'>" + news.two.title + "</a>" +
+                  "</h4>" +
+                "</div>" +
+                "<div class='panel-body'>" + news.two.body + "</div>" +
+              "</div>"
+            );
+            $('#news .three').html(
+              "<div class='news panel'>" +
+                "<div class='panel-heading'>" +
+                  "<h4 class='panel-title'>" +
+                    "<a href='" + news.three.href + "'>" + news.three.title + "</a>" +
+                  "</h4>" +
+                "</div>" +
+              "<div class='panel-body'>" + news.three.body + "</div>" +
+            "</div>");
+          });
           head.load("//cdnjs.cloudflare.com/ajax/libs/bootstrap-growl/1.0.0/jquery.bootstrap-growl.min.js", function() {
             console.log("Bootstrap Growl");
           });
