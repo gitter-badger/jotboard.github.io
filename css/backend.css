@@ -22,7 +22,7 @@ body#body {
 #form {
 	font: 16px 'Source Code Pro', sans-serif;
 	color: #F0F0F0;
-	width: calc(100% - 282px);
+	width: calc(100% - 330px);
 	border-radius: 0;
 	height: 100%;
 	float: right;
@@ -81,7 +81,7 @@ html, body, #html, #body {
 .navigation {
 	background: rgba(31, 47, 58, .9);
 	transition: opacity .130s ease;
-	width: 282px;
+	width: 330px;
 	font-family: 'Lato', san-serif;
 	height: 100%;
 	max-height: 100%;
@@ -264,6 +264,14 @@ iframe, textarea, input {
 	border: none;
 } iframe {
   overflow: hidden;
+}
+
+.jb-toggle {
+  z-index: 3;
+} .navigation {
+  z-index: 2;
+} .main#main {
+  z-index: 1;
 }
 
 #news { margin-top: 6px; }
