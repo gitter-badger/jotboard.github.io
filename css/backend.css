@@ -8,6 +8,13 @@ body#body {
   */
 }
 
+.radio iframe {
+  outline: none;
+  border: none;
+  width: 282px;
+  height: 362px;
+}
+
 .navigation .nowrap {
 	white-space: nowrap;
 }
