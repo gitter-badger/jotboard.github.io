@@ -1,17 +1,17 @@
 var news = {
   one: {
-    title: "2004 Thailand Tsunamis, 10 years on",
-    href: "http://www.smh.com.au/world/tranquil-and-isolated-for-centuries-until-the-big-waves-came-20141225-12ddxp.html",
-    body: "2004 Thailand tsunami survivor Alexa Moses, looks back on her lucky escape."
+    title: "'Unique weather' may have caused plane Flight QZ8501 crash, says AirAsia CEO",
+    href: "http://www.smh.com.au/world/airasia-flight-qz8501-unique-weather-may-have-caused-plane-crash-says-ceo-20141230-12fs40.html",
+    body: ""
   },
   two: {
-    title: "US drone strikes kill seven suspected Taliban militants in Pakistan",
-    href: "http://www.independent.co.uk/news/world/middle-east/us-drone-strikes-kill-seven-suspected-taliban-militants-in-pakistan-9945403.html",
-    body: "Separate operation sees alleged mastermind of Peshawar school attack killed."
+    title: "Putin Rival Navalny Gets Suspended Sentence",
+    href: "http://www.businessweek.com/news/2014-12-30/putin-rival-navalny-given-suspended-sentence-as-protest-planned",
+    body: "Opposition leader Alexey Navalny has been given a suspended sentence for fraud and money laundering, charges for which his brother faces 3 1/2 years in prison, as thousands plan to rally by the Kremlin."
   },
   three: {
-    title: "US, Japan and So. Korea to share intelligence on No. Korea",
-    href: "http://www.ft.com/cms/s/0/a6227344-8cdf-11e4-8f3d-00144feabdc0.html",
-    body: "South Korea, the US and Japan will sign a trilateral intelligence-sharing agreement on Monday to better cope with North Korea’s increasing military threats, Seoul’s defence ministry said on Friday."
+    title: "Migrant boat stranded off coast of Corfu after engine failure",
+    href: "http://www.news.com.au/travel/travel-updates/migrant-boat-stranded-off-coast-of-corfu-after-engine-failure/story-fnizu68q-1227170696593",
+    body: "A freighter with hundreds of migrants on board has issued a distress signal while sailing northwest of the Greek island of Corfu, the Greek coastguard says."
   }
 };
