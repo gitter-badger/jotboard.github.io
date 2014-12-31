@@ -163,8 +163,8 @@ html, body, #html, #body {
 }
 
 #news div .news .panel-heading {
+  overflow: hidden;
   color: #E9E9E9;
-  border: none;
   border: 1px solid #101010;
   padding: 8px;
   border-radius: 3px;
