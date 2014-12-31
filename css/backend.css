@@ -166,6 +166,7 @@ html, body, #html, #body {
   color: #E9E9E9;
   border: none;
   padding: 8px;
+  border-radius: 3px;
   text-align: center;
   background-color: #2B2B2B;
 } #news div .news .panel-body {
