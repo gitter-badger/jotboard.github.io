@@ -5,9 +5,9 @@ var news = {
     body: ""
   },
   two: {
-    title: "Putin Rival Navalny Gets Suspended Sentence",
-    href: "http://www.businessweek.com/news/2014-12-30/putin-rival-navalny-given-suspended-sentence-as-protest-planned",
-    body: "Opposition leader Alexey Navalny has been given a suspended sentence for fraud and money laundering, charges for which his brother faces 3 1/2 years in prison, as thousands plan to rally by the Kremlin."
+    title: "2014: The Year of The Booty",
+    href: "http://www.thedailybeast.com/articles/2014/12/30/year-of-the-butt-how-the-booty-changed-the-world-in-2014.html",
+    body: "From Kim K. breaking the Internet to buttsex on TV, a look back at the most *important* booty moments from 2014, which will hitherto be known as the Year of the Butt."
   },
   three: {
     title: "Migrant boat stranded off coast of Corfu after engine failure",
