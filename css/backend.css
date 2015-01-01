@@ -277,7 +277,6 @@ iframe, textarea, input {
 #news { margin-top: 6px; }
 #form.full-width { width: 100%; }
 #main, #form { background: none; }
-#news div .news .panel-body:empty { display: none; }
 div.bootbox.modal, div.bootbox.modal * { font-family: 'Roboto', san-serif !important; }
 div.bootbox.modal .modal-header { border-bottom: 0; }
 div.bootbox.modal .modal-footer { border-top: 0; }
