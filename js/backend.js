@@ -71,6 +71,10 @@ var startUp = function() {
             if (jotboard("hash", "n") && jotboard("hash", "1")) window.location = news.one.href;
             if (jotboard("hash", "n") && jotboard("hash", "2")) window.location = news.two.href;
             if (jotboard("hash", "n") && jotboard("hash", "3")) window.location = news.three.href;
+            // Headline #1
+            if (news.one.title("")) $("#news div.one div.news div.panel-heading").remove();
+            if (news.one.body("")) $("#news div.one div.news div.panel-body").remove();
+            if (news.one.title("") && news.one.body("")) $("#news div.one").remove();
             $('#news .one').html(
               "<div class='news panel'>" +
                 "<div class='panel-heading'>" +
@@ -80,6 +84,10 @@ var startUp = function() {
                 "</div>" +
                 "<div class='panel-body'>" + news.one.body + "</div>" +
               "</div>");
+            // Headline #2
+            if (news.two.title("")) $("#news div.two div.news div.panel-heading").remove();
+            if (news.two.body("")) $("#news div.two div.news div.panel-body").remove();
+            if (news.two.title("") && news.two.body("")) $("#news div.two").remove();
             $('#news .two').html(
               "<div class='news panel'>" +
                 "<div class='panel-heading'>" +
@@ -88,8 +96,11 @@ var startUp = function() {
                   "</h4>" +
                 "</div>" +
                 "<div class='panel-body'>" + news.two.body + "</div>" +
-              "</div>"
-            );
+              "</div>");
+            // Headline #3
+            if (news.three.title("")) $("#news div.three div.news div.panel-heading").remove();
+            if (news.three.body("")) $("#news div.three div.news div.panel-body").remove();
+            if (news.three.title("") && news.three.body("")) $("#news div.three").remove();
             $('#news .three').html(
               "<div class='news panel'>" +
                 "<div class='panel-heading'>" +
@@ -99,6 +110,8 @@ var startUp = function() {
                 "</div>" +
               "<div class='panel-body'>" + news.three.body + "</div>" +
             "</div>");
+            // Not likely but whatever
+            if (news.one.title("") && news.one.href("") && news.one.body("") && news.two.title("") && news.two.href("") && news.two.body("") && news.three.title("") && news.three.href("") && news.three.body("")) $("#news").remove();
           });
           head.load("//cdnjs.cloudflare.com/ajax/libs/bootstrap-growl/1.0.0/jquery.bootstrap-growl.min.js", function() {
             console.log("Bootstrap Growl");
@@ -166,44 +179,6 @@ var startUp = function() {
       head.load("//cdnjs.cloudflare.com/ajax/libs/store.js/1.3.14/store.min.js", function() {
         console.log("Store.JS");
         $(function() {
-          if (store.get("FirstTime") === "yes") {
-            bootbox.prompt({
-              title: "What's your name?",
-              placeholder: "We won't share it or anything, promise.",
-              callback: function(result) {
-                if (result === null) {
-                  $.bootstrapGrowl("Hello...?", {
-                    ele: "body",
-                    type: "info",
-                    offset: {
-                      from: "bottom",
-                      amount: 20
-                    },
-                    align: "left",
-                    width: "auto",
-                    delay: 1900,
-                    allow_dismiss: false
-                  });
-                } else {
-                  store.set("FirstTime", "no");
-                  store.set("Username", result);
-                  $.bootstrapGrowl("Hello, " + result, {
-                    ele: "body",
-                    type: "info",
-                    offset: {
-                      from: "bottom",
-                      amount: 20
-                    },
-                    align: "left",
-                    width: "auto",
-                    delay: 1600,
-                    allow_dismiss: true
-                  });
-                }
-              }
-            });
-          }
-          if (store.get("FirstTime", "no")) $("a.username").html("Welcome back, " + store.get("Username") + ".");
           if (store.get("JBNotes")) $("textarea#notes").val(store.get("JBNotes"));
           $("textarea#notes").attr({
             "placeholder": "Notes go here"
@@ -264,7 +239,7 @@ var startUp = function() {
               jotboard("change", "load");
             });
             $("#form").unbind("keyup").unbind("keydown").val(store.get(jotboard("prefix") + jotboard("MainNamespace")));
-            $.bootstrapGrowl("Thank You for using Groupies!", {
+            $.bootstrapGrowl("Thank's for using Groupies!", {
               ele: "body",
               type: "info",
               offset: {
@@ -289,4 +264,3 @@ var startUp = function() {
     });
   }
 }; startUp();
-
