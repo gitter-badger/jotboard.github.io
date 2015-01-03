@@ -72,9 +72,9 @@ var startUp = function() {
             if (jotboard("hash", "n") && jotboard("hash", "2")) window.location = news.two.href;
             if (jotboard("hash", "n") && jotboard("hash", "3")) window.location = news.three.href;
             // Headline #1
-            if (news.one.title("")) $("#news div.one div.news div.panel-heading").remove();
-            if (news.one.body("")) $("#news div.one div.news div.panel-body").remove();
-            if (news.one.title("") && news.one.body("")) $("#news div.one").remove();
+            if (news.one.title === "") $("#news div.one div.news div.panel-heading").remove();
+            if (news.one.body === "") $("#news div.one div.news div.panel-body").remove();
+            if (news.one.title === "" && news.one.body === "") $("#news div.one").remove();
             $('#news .one').html(
               "<div class='news panel'>" +
                 "<div class='panel-heading'>" +
@@ -85,9 +85,9 @@ var startUp = function() {
                 "<div class='panel-body'>" + news.one.body + "</div>" +
               "</div>");
             // Headline #2
-            if (news.two.title("")) $("#news div.two div.news div.panel-heading").remove();
-            if (news.two.body("")) $("#news div.two div.news div.panel-body").remove();
-            if (news.two.title("") && news.two.body("")) $("#news div.two").remove();
+            if (news.two.title === "") $("#news div.two div.news div.panel-heading").remove();
+            if (news.two.body === "") $("#news div.two div.news div.panel-body").remove();
+            if (news.two.title === "" && news.two.body === "") $("#news div.two").remove();
             $('#news .two').html(
               "<div class='news panel'>" +
                 "<div class='panel-heading'>" +
@@ -98,9 +98,9 @@ var startUp = function() {
                 "<div class='panel-body'>" + news.two.body + "</div>" +
               "</div>");
             // Headline #3
-            if (news.three.title("")) $("#news div.three div.news div.panel-heading").remove();
-            if (news.three.body("")) $("#news div.three div.news div.panel-body").remove();
-            if (news.three.title("") && news.three.body("")) $("#news div.three").remove();
+            if (news.three.title === "") $("#news div.three div.news div.panel-heading").remove();
+            if (news.three.body === "") $("#news div.three div.news div.panel-body").remove();
+            if (news.three.title === "" && news.three.body === "") $("#news div.three").remove();
             $('#news .three').html(
               "<div class='news panel'>" +
                 "<div class='panel-heading'>" +
@@ -111,7 +111,7 @@ var startUp = function() {
               "<div class='panel-body'>" + news.three.body + "</div>" +
             "</div>");
             // Not likely but whatever
-            if (news.one.title("") && news.one.href("") && news.one.body("") && news.two.title("") && news.two.href("") && news.two.body("") && news.three.title("") && news.three.href("") && news.three.body("")) $("#news").remove();
+            if (news.one.title === "" && news.one.href === "" && news.one.body === "" && news.two.title === "" && news.two.href === "" && news.two.body === "" && news.three.title === "" && news.three.href === "" && news.three.body === "") $("#news").remove();
           });
           head.load("//cdnjs.cloudflare.com/ajax/libs/bootstrap-growl/1.0.0/jquery.bootstrap-growl.min.js", function() {
             console.log("Bootstrap Growl");
