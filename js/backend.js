@@ -113,8 +113,7 @@ var startUp = function() {
             if (news.three.title == "" && news.three.body == "") $("#news div.three").remove();
             if (news.one.title == "" && news.one.href == "" && news.one.body == "" && news.two.title == "" && news.two.href == "" && news.two.body == "" && news.three.title == "" && news.three.href == "" && news.three.body == "") $("#news").remove();
           });
-          head.load("js/growl.js", function() { console.log("Growl"); });
-          head.load("//cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.3.0/bootbox.js", function() {
+          head.load("js/bootbox.js", function() {
             console.log("Bootbox");
             bootbox.setDefaults({
               locale: "en",
@@ -196,21 +195,45 @@ var startUp = function() {
         form.value = localStorage.getItem(jotboard("prefix") + jotboard("MainNamespace"));
         console.info("The " + jotboard("MainNamespace") + " board is avalible.");
       }
-      head.load("//togetherjs.com/togetherjs-min.js", function() {
-        console.log("TogetherJS");
-        $(".jb-groupies").click(function() {
-          jotboard("groupies");
-        });
-        TogetherJS.on("ready", function() {
-        if (localStorage.getItem("JBGroupies")) $("#form").val(localStorage.getItem("JBGroupies"));
-          $("#form").val(localStorage.getItem("JBGroupies")).bind("keydown", function() {
-            localStorage.setItem("JBGroupies", $(this).val());
-          }).bind("keyup", function() {
-            localStorage.setItem("JBGroupies", $(this).val());
+      head.load("js/growl.js", function() {
+        head.load("//togetherjs.com/togetherjs-min.js", function() {
+          console.log("TogetherJS");
+          $(".jb-groupies").click(function() { jotboard("groupies"); });
+          TogetherJS.on("ready", function() {
+            if (localStorage.getItem("JBGroupies")) $("#form").val(localStorage.getItem("JBGroupies"));
+            $("#form").val(localStorage.getItem("JBGroupies")).bind("keydown", function() {
+              localStorage.setItem("JBGroupies", $(this).val());
+            }).bind("keyup", function() {
+              localStorage.setItem("JBGroupies", $(this).val());
+            });
+            $(function() {
+              $("jb-give .jb-save, jb-give .jb-load").remove();
+              $.jbGrowl("Do not give personal information unless official and/or legitimate consent is given.", {
+                ele: "body",
+                type: "info",
+                offset: {
+                  from: "bottom",
+                  amount: 20
+                },
+                align: "left",
+                width: "auto",
+                delay: 3500,
+                allow_dismiss: true
+              });
+            });
           });
-          $(function() {
-            $("jb-give .jb-save, jb-give .jb-load").remove();
-            $.jbGrowl("Do not give personal information unless official and/or legitimate consent is given.", {
+          TogetherJS.on("close", function() {
+            $("jb-give").prepend(
+              '<div class="jb-load nav-select" title="Load Board">Load</div>'
+            ).prepend(
+              '<div class="jb-save nav-select" title="Save Board">Save</div>'
+            ); $("jb-give .jb-save").click(function() {
+              jotboard("change", "save");
+            }); $("jb-give .jb-load").click(function() {
+              jotboard("change", "load");
+            });
+            $("#form").unbind("keyup").unbind("keydown").val(store.get(jotboard("prefix") + jotboard("MainNamespace")));
+            $.jbGrowl("Thank's for using Groupies!", {
               ele: "body",
               type: "info",
               offset: {
@@ -219,41 +242,17 @@ var startUp = function() {
               },
               align: "left",
               width: "auto",
-              delay: 3500,
+              delay: 2200,
               allow_dismiss: true
             });
+            TogetherJSConfig_siteName = jotboard("sitename");
+            TogetherJSConfig_toolName = jotboard("collab");
+            TogetherJSConfig_dontShowClicks = true;
+            TogetherJSConfig_useMinimizedCode = true;
+            TogetherJSConfig_suppressInvite = true;
+            TogetherJSConfig_ignoreMessages = true;
+            TogetherJSConfig_suppressJoinConfirmation = true;
           });
-        });
-        TogetherJS.on("close", function() {
-          $("jb-give").prepend(
-            '<div class="jb-load nav-select" title="Load Board">Load</div>'
-          ).prepend(
-            '<div class="jb-save nav-select" title="Save Board">Save</div>'
-          ); $("jb-give .jb-save").click(function() {
-            jotboard("change", "save");
-          }); $("jb-give .jb-load").click(function() {
-            jotboard("change", "load");
-          });
-          $("#form").unbind("keyup").unbind("keydown").val(store.get(jotboard("prefix") + jotboard("MainNamespace")));
-          $.jbGrowl("Thank's for using Groupies!", {
-            ele: "body",
-            type: "info",
-            offset: {
-              from: "bottom",
-              amount: 20
-            },
-            align: "left",
-            width: "auto",
-            delay: 2200,
-            allow_dismiss: true
-          });
-          TogetherJSConfig_siteName = jotboard("sitename");
-          TogetherJSConfig_toolName = jotboard("collab");
-          TogetherJSConfig_dontShowClicks = true;
-          TogetherJSConfig_useMinimizedCode = true;
-          TogetherJSConfig_suppressInvite = true;
-          TogetherJSConfig_ignoreMessages = true;
-          TogetherJSConfig_suppressJoinConfirmation = true;
         });
       });
     });

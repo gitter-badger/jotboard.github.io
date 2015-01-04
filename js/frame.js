@@ -30,7 +30,7 @@ var jotboard = function(main, _1, _2, _3, _4) {
         if (!jotboard("NamespaceValue")) {
           localStorage.setItem(jotboard("prefix") + jotboard("MainNamespace"), jotboard("FormValue"));
           console.info(jotboard("MainNamespace") + " > saved");
-          $.bootstrapGrowl("The " + jotboard("MainNamespace") + " board has been saved.", {
+          $.jbGrowl("The " + jotboard("MainNamespace") + " board has been saved.", {
             ele: "body",
             type: "success",
             offset: {
@@ -46,7 +46,7 @@ var jotboard = function(main, _1, _2, _3, _4) {
         } else {
           localStorage.setItem(jotboard("prefix") + jotboard("NamespaceValue"), jotboard("FormValue"));
           console.info(jotboard("NamespaceValue") + " > saved");
-          $.bootstrapGrowl(jotboard("NamespaceValue") + " has been saved.", {
+          $.jbGrowl(jotboard("NamespaceValue") + " has been saved.", {
             ele: "body",
             type: "info",
             offset: {
@@ -65,7 +65,7 @@ var jotboard = function(main, _1, _2, _3, _4) {
         if (!jotboard("NamespaceValue")) {
           form.value = localStorage.getItem(jotboard("prefix") + jotboard("MainNamespace"));
           console.info(jotboard("MainNamespace") + " > loaded");
-          $.bootstrapGrowl("The " + jotboard("MainNamespace") + " board has been loaded.", {
+          $.jbGrowl("The " + jotboard("MainNamespace") + " board has been loaded.", {
             ele: "body",
             type: "info",
             offset: {
@@ -81,7 +81,7 @@ var jotboard = function(main, _1, _2, _3, _4) {
         } else {
           form.value = localStorage.getItem(jotboard("prefix") + jotboard("NamespaceValue"));
           console.info(jotboard("NamespaceValue") + " > loaded");
-          $.bootstrapGrowl(jotboard("NamespaceValue") + " has been loaded.", {
+          $.jbGrowl(jotboard("NamespaceValue") + " has been loaded.", {
             ele: "body",
             type: "info",
             offset: {
@@ -97,7 +97,7 @@ var jotboard = function(main, _1, _2, _3, _4) {
         }
       }
     } else {
-      $.bootstrapGrowl("System Requirements not met, cannot save or load due to there not being a place to such things, upgrade to a more modern web browser (preferably Chrome) and resolve this issue.", {
+      $.jbGrowl("System Requirements were not met, and therefore cannot save or load, upgrade to a more modern web browser (preferably Chrome) to be able to resolve this issue.", {
         ele: "body",
         type: "danger",
         offset: {
