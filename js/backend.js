@@ -24,7 +24,7 @@ var startUp = function() {
         })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
         ga('create', 'UA-37813397-5', 'auto');
         ga('send', 'pageview');
-        document.body.addEventListener('touchmove, touchend', function(e) {
+        document.querySelectorAll("body *:not(.body.container, .body.container *)").addEventListener('touchmove, touchend', function(e) {
           e.preventDefault();
         });
         $('iframe').attr({
