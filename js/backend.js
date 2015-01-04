@@ -42,13 +42,15 @@ var startUp = function() {
       });
       head.load("js/moment.js", function() {
         console.log("MomentJS");
-        // TimeShift is used to simulate real-time activity, not actually
+        // TimeShift is used to simulate real-time activity and change
+        // attributes in what seems to be real-time, its not actually
         // real-time, but its per 1 millisecond so its close enough.
         var TimeShift = function() {
           if (0 <= new Date().getHours() && new Date().getHours() < 13) $("#form").attr({
-            "placeholder": moment(new Date()).format("[Hello, Welcome to Jotboard! it's currently ]dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, have an awesome day!]")
-          }); else $("#form").attr({
-            "placeholder": moment(new Date()).format("[Hows it going? it's ]dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, CYA!]")
+            "placeholder": moment(new Date()).format("[Hello, it's currently ]dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, have an awesome day!]")
+          });
+          else $("#form").attr({
+            "placeholder": moment(new Date()).format("[Hows it going? it's ]dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, see ya!]")
           });
         }; TimeShift();
         setInterval(TimeShift, 1);
@@ -174,14 +176,11 @@ var startUp = function() {
         });
       });
       $(function() {
-        if (localStorage.getItem("JBNotes")) {
-          $("textarea#notes").val(localStorage.getItem("JBNotes"));
-        } $("textarea#notes").attr({
+        if (store.get("JBNotes")) $("#notes").val(store.get("JBNotes"));
+        $("#notes").attr({
           "placeholder": "Notes go here"
-        }).bind("keyup", function() {
-          localStorage.setItem("JBNotes", $(this).val());
-        }).bind("keydown", function() {
-          localStorage.setItem("JBNotes", $(this).val());
+        }).on("keydown, keyup", function() {
+          store.set("JBNotes", $(this).val());
         });
       });
       var form = document.getElementById("form");
@@ -200,11 +199,11 @@ var startUp = function() {
           console.log("TogetherJS");
           $(".jb-groupies").click(function() { jotboard("groupies"); });
           TogetherJS.on("ready", function() {
-            if (localStorage.getItem("JBGroupies")) $("#form").val(localStorage.getItem("JBGroupies"));
-            $("#form").val(localStorage.getItem("JBGroupies")).bind("keydown", function() {
-              localStorage.setItem("JBGroupies", $(this).val());
+            if (store.get("JBGroupies")) $("#form").val(store.get("JBGroupies"));
+            $("#form").val(store.get("JBGroupies")).bind("keydown", function() {
+              store.set("JBGroupies", $(this).val());
             }).bind("keyup", function() {
-              localStorage.setItem("JBGroupies", $(this).val());
+              store.set("JBGroupies", $(this).val());
             });
             $(function() {
               $("jb-give .jb-save, jb-give .jb-load").remove();
