@@ -24,8 +24,8 @@ var startUp = function() {
         })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
         ga('create', 'UA-37813397-5', 'auto');
         ga('send', 'pageview');
-        document.querySelectorAll("body *:not(.body.container, .body.container *)").addEventListener('touchmove, touchend', function(node) {
-          node.preventDefault();
+        document.querySelector(":not(.body.container, .body.container *)").addEventListener('touchmove, touchend', function(nodeAB) {
+          nodeAB.preventDefault();
         });
         $('iframe').attr({
           'frameborder': '0',
