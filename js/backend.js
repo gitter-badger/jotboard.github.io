@@ -6,7 +6,7 @@ var DevMode = false, IDLCamp = false, head_conf = {
 var startUp = function() {
   if (window.location.protocol == "http:") window.location.protocol = "https:";
   if (window.location.protocol == "https:") {
-    head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "js/frame.js"], function() {
+    head.load(["js/jquery.js", "js/frame.js"], function() {
       console.log("jQuery, Frame");
       head.load(['js/mousetrap.js'], function() {
         console.log('Mousetrap');
