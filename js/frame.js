@@ -9,11 +9,6 @@ var jotboard = function(main, _1, _2, _3, _4) {
   if (main == "sitename") return "Jotboard";
   if (main == "hashmod") return "# Jotboard";
   if (main == "collab") return "Groupies";
-  if (main == "FormInfoDay") return {
-    "placeholder": moment(new Date()).format("[Hello, Welcome to Jotboard! it's currently ]dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, have an awesome day!]"),
-  }; if (main == "FormInfoNight") return {
-    "placeholder": moment(new Date()).format("[Hows it going? it's ]dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, CYA!]"),
-  };
   if (main == "prefix") return "JB_-";
   if (main == "MainNamespace") return "Main";
   if (main == "toggleBody") {
@@ -22,13 +17,7 @@ var jotboard = function(main, _1, _2, _3, _4) {
   }
   if (main == "NamespaceValue") /* Returns Value of Hero Box */ return $("#namespace").val();
   if (main == "FormValue") /* Return Form Value */ return $("#form").val();
-  if (main == "window") return window;
-  if (main == "this") return this;
   if (main == "hash") /* Used for Hashmods */ return window.location.href.indexOf("#" + _1) != -1;
-  if (main == "threshold") {
-    // Returns current hour threshold (used for marquee)
-    return _1 <= new Date().getHours() && new Date().getHours() < _2;
-  }
   if (main == "groupies") {
     // Groupies: Collaborative text editing.
     TogetherJS(this);

@@ -8,7 +8,7 @@ var startUp = function() {
   if (window.location.protocol == "https:") {
     head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "js/frame.js"], function() {
       console.log("jQuery, Frame");
-      head.load(['js/mousetrap.min.js'], function() {
+      head.load(['js/mousetrap.js'], function() {
         console.log('Mousetrap');
       });
       $(function() {
@@ -45,8 +45,11 @@ var startUp = function() {
         // TimeShift is used to simulate real-time activity, not actually
         // real-time, but its per 1 millisecond so its close enough.
         var TimeShift = function() {
-          if (jotboard("threshold", 0, 13)) $("#form").attr(jotboard('FormInfoDay'));
-          else $("#form").attr(jotboard('FormInfoNight'));
+          if (0 <= new Date().getHours() && new Date().getHours() < 13) $("#form").attr({
+            "placeholder": moment(new Date()).format("[Hello, Welcome to Jotboard! it's currently ]dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, have an awesome day!]")
+          }); else $("#form").attr({
+            "placeholder": moment(new Date()).format("[Hows it going? it's ]dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, CYA!]")
+          });
         }; TimeShift();
         setInterval(TimeShift, 1);
       });
@@ -61,7 +64,7 @@ var startUp = function() {
             jotboard("toggle-nav");
           }
         });
-        head.load(["js/bootstrap.js", "js/bootstrap.css"], function() {
+        head.load(["js/bootstrap.js", "css/bootstrap.css"], function() {
           console.log("Bootstrap JS, Bootstrap CSS");
           head.load("js/news.js", function() {
             console.log("News");
@@ -189,7 +192,7 @@ var startUp = function() {
       }); $("jb-give .jb-load").click(function() {
         jotboard("change", "load");
       });
-      if (store.get(jotboard("prefix") + jotboard("MainNamespace"))) {
+      if (localStorage.getItem(jotboard("prefix") + jotboard("MainNamespace"))) {
         form.value = localStorage.getItem(jotboard("prefix") + jotboard("MainNamespace"));
         console.info("The " + jotboard("MainNamespace") + " board is avalible.");
       }
@@ -199,11 +202,11 @@ var startUp = function() {
           jotboard("groupies");
         });
         TogetherJS.on("ready", function() {
-        if (store.get("JBGroupies")) $("#form").val(store.get("JBGroupies"));
-          $("#form").val(store.get("JBGroupies")).bind("keydown", function() {
-            store.set("JBGroupies", $(this).val());
+        if (localStorage.getItem("JBGroupies")) $("#form").val(localStorage.getItem("JBGroupies"));
+          $("#form").val(localStorage.getItem("JBGroupies")).bind("keydown", function() {
+            localStorage.setItem("JBGroupies", $(this).val());
           }).bind("keyup", function() {
-            store.set("JBGroupies", $(this).val());
+            localStorage.setItem("JBGroupies", $(this).val());
           });
           $(function() {
             $("jb-give .jb-save, jb-give .jb-load").remove();
