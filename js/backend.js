@@ -158,7 +158,7 @@ var startUp = function() {
                     label: "Open",
                     className: "btn-primary",
                     callback: function() {
-                      window.open("https://youtube.com/", "_blank");
+                      window.open("https://www.youtube.com/", "_blank");
                     }
                   }
                 }
@@ -178,6 +178,7 @@ var startUp = function() {
       });
       head.load("//cdnjs.cloudflare.com/ajax/libs/store.js/1.3.14/store.min.js", function() {
         console.log("Store.JS");
+        var typingTimer;
         $(function() {
           if (store.get("JBNotes")) $("textarea#notes").val(store.get("JBNotes"));
           $("textarea#notes").attr({
@@ -187,6 +188,22 @@ var startUp = function() {
           }).bind("keydown", function() {
             store.set("JBNotes", $(this).val());
           });
+          var doneTypingSpace = 2400;
+          $('#form').keyup(function() {
+            clearTimeout(typingTimer);
+            typingTimer = setTimeout(doneTyping, doneTypingSpace);
+          }); $('#form').keydown(function() {
+            clearTimeout(typingTimer);
+          });
+          // user has "finished typing", do something.
+          function doneTyping() {
+            if ($(".navigation jb-give .jb-save.nav-select.ready").hasClass("ready")) {
+              $(this).click(function() {
+                $(this).removeClass("ready");
+              });
+            }
+            if (!$(".navigation jb-give .jb-save.nav-select.ready").hasClass("ready")) $(this).addClass("ready");
+          }
         });
         var form = document.getElementById("form");
         var namespace = document.getElementById("namespace");

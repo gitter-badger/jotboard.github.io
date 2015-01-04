@@ -44,12 +44,12 @@ var jotboard = function(main, _1, _2, _3, _4) {
           ele: "body",
           type: "success",
           offset: {
-            from: "bottom",
+            from: "top",
             amount: 20
           },
-          align: "left",
+          align: "right",
           width: 247,
-          delay: 3100,
+          delay: 1900,
           allow_dismiss: false,
           stackup_spacing: 10
         });
@@ -60,12 +60,12 @@ var jotboard = function(main, _1, _2, _3, _4) {
           ele: "body",
           type: "info",
           offset: {
-          from: "bottom",
+          from: "top",
             amount: 20
           },
-          align: "left",
+          align: "right",
           width: 247,
-          delay: 3100,
+          delay: 2800,
           allow_dismiss: false,
           stackup_spacing: 10
         });
@@ -79,10 +79,10 @@ var jotboard = function(main, _1, _2, _3, _4) {
           ele: "body",
           type: "info",
           offset: {
-            from: "bottom",
+            from: "top",
             amount: 20
           },
-          align: "left",
+          align: "right",
           width: 247,
           delay: 1350,
           allow_dismiss: false,
@@ -98,9 +98,9 @@ var jotboard = function(main, _1, _2, _3, _4) {
             from: "bottom",
             amount: 20
           },
-          align: "left",
+          align: "right",
           width: 247,
-          delay: 3100,
+          delay: 2850,
           allow_dismiss: false,
           stackup_spacing: 10
         });
