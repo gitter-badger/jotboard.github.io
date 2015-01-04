@@ -8,7 +8,7 @@ var startUp = function() {
   if (window.location.protocol == "https:") {
     head.load(["//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js", "js/frame.js"], function() {
       console.log("jQuery, Frame");
-      head.load(['//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js'], function() {
+      head.load(['js/mousetrap.min.js'], function() {
         console.log('Mousetrap');
       });
       $(function() {
@@ -40,7 +40,7 @@ var startUp = function() {
           });
         }
       });
-      head.load("//cdn.jsdelivr.net/momentjs/2.8.4/moment.min.js", function() {
+      head.load("js/moment.js", function() {
         console.log("MomentJS");
         // TimeShift is used to simulate real-time activity, not actually
         // real-time, but its per 1 millisecond so its close enough.
@@ -50,7 +50,7 @@ var startUp = function() {
         }; TimeShift();
         setInterval(TimeShift, 1);
       });
-      head.load("//cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js", function() {
+      head.load("js/prefixfree.js", function() {
         console.log("Prefixfree");
         head.load("//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css", function() {
           console.log("Font Awesome");
@@ -61,10 +61,7 @@ var startUp = function() {
             jotboard("toggle-nav");
           }
         });
-        head.load([
-          "//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js",
-          "//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/css/bootstrap.min.css"
-        ], function() {
+        head.load(["js/bootstrap.js", "js/bootstrap.css"], function() {
           console.log("Bootstrap JS, Bootstrap CSS");
           head.load("js/news.js", function() {
             console.log("News");
@@ -113,9 +110,7 @@ var startUp = function() {
             if (news.three.title == "" && news.three.body == "") $("#news div.three").remove();
             if (news.one.title == "" && news.one.href == "" && news.one.body == "" && news.two.title == "" && news.two.href == "" && news.two.body == "" && news.three.title == "" && news.three.href == "" && news.three.body == "") $("#news").remove();
           });
-          head.load("//cdnjs.cloudflare.com/ajax/libs/bootstrap-growl/1.0.0/jquery.bootstrap-growl.min.js", function() {
-            console.log("Bootstrap Growl");
-          });
+          head.load("js/growl.js", function() { console.log("Growl"); });
           head.load("//cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.3.0/bootbox.js", function() {
             console.log("Bootbox");
             bootbox.setDefaults({
@@ -176,87 +171,43 @@ var startUp = function() {
           });
         });
       });
-      head.load("//cdnjs.cloudflare.com/ajax/libs/store.js/1.3.14/store.min.js", function() {
-        console.log("Store.JS");
-        var typingTimer;
-        $(function() {
-          if (store.get("JBNotes")) $("textarea#notes").val(store.get("JBNotes"));
-          $("textarea#notes").attr({
-            "placeholder": "Notes go here"
+      $(function() {
+        if (localStorage.getItem("JBNotes")) {
+          $("textarea#notes").val(localStorage.getItem("JBNotes"));
+        } $("textarea#notes").attr({
+          "placeholder": "Notes go here"
+        }).bind("keyup", function() {
+          localStorage.setItem("JBNotes", $(this).val());
+        }).bind("keydown", function() {
+          localStorage.setItem("JBNotes", $(this).val());
+        });
+      });
+      var form = document.getElementById("form");
+      var namespace = document.getElementById("namespace");
+      $("jb-give .jb-save").click(function() {
+        jotboard("change", "save");
+      }); $("jb-give .jb-load").click(function() {
+        jotboard("change", "load");
+      });
+      if (store.get(jotboard("prefix") + jotboard("MainNamespace"))) {
+        form.value = localStorage.getItem(jotboard("prefix") + jotboard("MainNamespace"));
+        console.info("The " + jotboard("MainNamespace") + " board is avalible.");
+      }
+      head.load("//togetherjs.com/togetherjs-min.js", function() {
+        console.log("TogetherJS");
+        $(".jb-groupies").click(function() {
+          jotboard("groupies");
+        });
+        TogetherJS.on("ready", function() {
+        if (store.get("JBGroupies")) $("#form").val(store.get("JBGroupies"));
+          $("#form").val(store.get("JBGroupies")).bind("keydown", function() {
+            store.set("JBGroupies", $(this).val());
           }).bind("keyup", function() {
-            store.set("JBNotes", $(this).val());
-          }).bind("keydown", function() {
-            store.set("JBNotes", $(this).val());
+            store.set("JBGroupies", $(this).val());
           });
-          var doneTypingSpace = 2400;
-          $('#form').keyup(function() {
-            clearTimeout(typingTimer);
-            typingTimer = setTimeout(doneTyping, doneTypingSpace);
-          }); $('#form').keydown(function() {
-            clearTimeout(typingTimer);
-          });
-          // user has "finished typing", do something.
-          function doneTyping() {
-            if ($(".navigation jb-give .jb-save.nav-select.ready").hasClass("ready")) {
-              $(this).click(function() {
-                $(this).removeClass("ready");
-              });
-            }
-            if (!$(".navigation jb-give .jb-save.nav-select.ready").hasClass("ready")) $(this).addClass("ready");
-          }
-        });
-        var form = document.getElementById("form");
-        var namespace = document.getElementById("namespace");
-        $("jb-give .jb-save").click(function() {
-          jotboard("change", "save");
-        });
-        $("jb-give .jb-load").click(function() {
-          jotboard("change", "load");
-        });
-        if (store.get(jotboard("prefix") + jotboard("MainNamespace"))) {
-          form.value = store.get(jotboard("prefix") + jotboard("MainNamespace"));
-          console.info("The " + jotboard("MainNamespace") + " board is avalible.");
-        }
-        head.load("//togetherjs.com/togetherjs-min.js", function() {
-          console.log("TogetherJS");
-          $(".jb-groupies").click(function() {
-            jotboard("groupies");
-          });
-          TogetherJS.on("ready", function() {
-            if (store.get("JBGroupies")) $("#form").val(store.get("JBGroupies"));
-            $("#form").val(store.get("JBGroupies")).bind("keydown", function() {
-              store.set("JBGroupies", $(this).val());
-            }).bind("keyup", function() {
-              store.set("JBGroupies", $(this).val());
-            });
-            $(function() {
-              $("jb-give .jb-save, jb-give .jb-load").remove();
-              $.bootstrapGrowl("Do not give personal information unless official and/or legitimate consent is given.", {
-                ele: "body",
-                type: "info",
-                offset: {
-                  from: "bottom",
-                  amount: 20
-                },
-                align: "left",
-                width: "auto",
-                delay: 3500,
-                allow_dismiss: true
-              });
-            });
-          });
-          TogetherJS.on("close", function() {
-            $("jb-give").prepend(
-              '<div class="jb-load nav-select" title="Load Board">Load</div>'
-            ).prepend(
-              '<div class="jb-save nav-select" title="Save Board">Save</div>'
-            ); $("jb-give .jb-save").click(function() {
-              jotboard("change", "save");
-            }); $("jb-give .jb-load").click(function() {
-              jotboard("change", "load");
-            });
-            $("#form").unbind("keyup").unbind("keydown").val(store.get(jotboard("prefix") + jotboard("MainNamespace")));
-            $.bootstrapGrowl("Thank's for using Groupies!", {
+          $(function() {
+            $("jb-give .jb-save, jb-give .jb-load").remove();
+            $.jbGrowl("Do not give personal information unless official and/or legitimate consent is given.", {
               ele: "body",
               type: "info",
               offset: {
@@ -265,9 +216,33 @@ var startUp = function() {
               },
               align: "left",
               width: "auto",
-              delay: 2200,
+              delay: 3500,
               allow_dismiss: true
             });
+          });
+        });
+        TogetherJS.on("close", function() {
+          $("jb-give").prepend(
+            '<div class="jb-load nav-select" title="Load Board">Load</div>'
+          ).prepend(
+            '<div class="jb-save nav-select" title="Save Board">Save</div>'
+          ); $("jb-give .jb-save").click(function() {
+            jotboard("change", "save");
+          }); $("jb-give .jb-load").click(function() {
+            jotboard("change", "load");
+          });
+          $("#form").unbind("keyup").unbind("keydown").val(store.get(jotboard("prefix") + jotboard("MainNamespace")));
+          $.jbGrowl("Thank's for using Groupies!", {
+            ele: "body",
+            type: "info",
+            offset: {
+              from: "bottom",
+              amount: 20
+            },
+            align: "left",
+            width: "auto",
+            delay: 2200,
+            allow_dismiss: true
           });
           TogetherJSConfig_siteName = jotboard("sitename");
           TogetherJSConfig_toolName = jotboard("collab");
