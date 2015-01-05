@@ -86,6 +86,12 @@ var startUp = function() {
         });
         head.load(["js/bootstrap.js", "css/bootstrap.css"], function() {
           console.log("Bootstrap JS, Bootstrap CSS");
+          if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            // I'm on mobile hurrdurr
+            $(".navigation").css({
+              "width": "100%"
+            });
+          } else console.log("Not on mobile, I see.");
           head.load("js/news.js", function() {
             console.log("News");
             if (jotboard("hash", "n") && jotboard("hash", "1")) window.location = news.one.href;
