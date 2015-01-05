@@ -44,6 +44,7 @@ var startUp = function() {
         $("body *:not(.body.container, .body.container *)").on('touchmove, touchend', function(nodeAB) {
           nodeAB.preventDefault();
         });
+        $(".radio").attr("align", "center");
         $('iframe').attr({
           'frameborder': '0',
           'allowtransparency': 'true'
@@ -193,6 +194,7 @@ var startUp = function() {
         });
       });
       head.load("js/growl.js", function() {
+        console.log("Jotboard Growl");
         head.load("//togetherjs.com/togetherjs-min.js", function() {
           console.log("TogetherJS");
           $(".jb-groupies").click(function() { jotboard("groupies"); });
