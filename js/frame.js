@@ -28,7 +28,7 @@ var jotboard = function(main, _1, _2, _3, _4) {
     if (typeof(Storage) !== "undefined") {
       if (_1 == "save") {
         if (!jotboard("NamespaceValue")) {
-          store.set(jotboard("prefix") + jotboard("MainNamespace"), jotboard("FormValue"));
+          db.set(jotboard("prefix") + jotboard("MainNamespace"), jotboard("FormValue"));
           console.info(jotboard("MainNamespace") + " > saved");
           $.jbGrowl("The " + jotboard("MainNamespace") + " board has been saved.", {
             ele: "body",
@@ -44,7 +44,7 @@ var jotboard = function(main, _1, _2, _3, _4) {
             stackup_spacing: 10
           });
         } else {
-          store.set(jotboard("prefix") + jotboard("NamespaceValue"), jotboard("FormValue"));
+          db.set(jotboard("prefix") + jotboard("NamespaceValue"), jotboard("FormValue"));
           console.info(jotboard("NamespaceValue") + " > saved");
           $.jbGrowl(jotboard("NamespaceValue") + " has been saved.", {
             ele: "body",
@@ -63,7 +63,7 @@ var jotboard = function(main, _1, _2, _3, _4) {
       }
       if (_1 == "load") {
         if (!jotboard("NamespaceValue")) {
-          form.value = store.get(jotboard("prefix") + jotboard("MainNamespace"));
+          form.value = db.get(jotboard("prefix") + jotboard("MainNamespace"));
           console.info(jotboard("MainNamespace") + " > loaded");
           $.jbGrowl("The " + jotboard("MainNamespace") + " board has been loaded.", {
             ele: "body",
@@ -79,7 +79,7 @@ var jotboard = function(main, _1, _2, _3, _4) {
             stackup_spacing: 10
           });
         } else {
-          form.value = store.get(jotboard("prefix") + jotboard("NamespaceValue"));
+          form.value = db.get(jotboard("prefix") + jotboard("NamespaceValue"));
           console.info(jotboard("NamespaceValue") + " > loaded");
           $.jbGrowl(jotboard("NamespaceValue") + " has been loaded.", {
             ele: "body",

@@ -6,8 +6,25 @@ var DevMode = false, IDLCamp = false, head_conf = {
 var startUp = function() {
   if (window.location.protocol == "http:") window.location.protocol = "https:";
   if (window.location.protocol == "https:") {
-    head.load(["js/jquery.js", "js/frame.js"], function() {
-      console.log("jQuery, Frame");
+    head.load(["js/db.js", "js/jquery.js", "js/frame.js"], function() {
+      console.log("Database, jQuery, Frame");
+      if (db.get("JBNotes")) $("#notes").val(db.get("JBNotes"));
+      $("#notes").attr({
+        "placeholder": "Notes go here"
+      }).on("keydown, keyup", function() {
+        db.set("JBNotes", $(this).val());
+      });
+      var form = document.getElementById("form");
+      var namespace = document.getElementById("namespace");
+      $("jb-give .jb-save").click(function() {
+        jotboard("change", "save");
+      }); $("jb-give .jb-load").click(function() {
+        jotboard("change", "load");
+      });
+      if (db.get(jotboard("prefix") + jotboard("MainNamespace"))) {
+        form.value = db.get(jotboard("prefix") + jotboard("MainNamespace"));
+        console.info("The " + jotboard("MainNamespace") + " board is avalible.");
+      }
       head.load(['js/mousetrap.js'], function() {
         console.log('Mousetrap');
       });
@@ -175,35 +192,16 @@ var startUp = function() {
           });
         });
       });
-      $(function() {
-        if (store.get("JBNotes")) $("#notes").val(store.get("JBNotes"));
-        $("#notes").attr({
-          "placeholder": "Notes go here"
-        }).on("keydown, keyup", function() {
-          store.set("JBNotes", $(this).val());
-        });
-      });
-      var form = document.getElementById("form");
-      var namespace = document.getElementById("namespace");
-      $("jb-give .jb-save").click(function() {
-        jotboard("change", "save");
-      }); $("jb-give .jb-load").click(function() {
-        jotboard("change", "load");
-      });
-      if (localStorage.getItem(jotboard("prefix") + jotboard("MainNamespace"))) {
-        form.value = localStorage.getItem(jotboard("prefix") + jotboard("MainNamespace"));
-        console.info("The " + jotboard("MainNamespace") + " board is avalible.");
-      }
       head.load("js/growl.js", function() {
         head.load("//togetherjs.com/togetherjs-min.js", function() {
           console.log("TogetherJS");
           $(".jb-groupies").click(function() { jotboard("groupies"); });
           TogetherJS.on("ready", function() {
-            if (store.get("JBGroupies")) $("#form").val(store.get("JBGroupies"));
-            $("#form").val(store.get("JBGroupies")).bind("keydown", function() {
-              store.set("JBGroupies", $(this).val());
+            if (db.get("JBGroupies")) $("#form").val(sb.get("JBGroupies"));
+            $("#form").val(db.get("JBGroupies")).bind("keydown", function() {
+              db.set("JBGroupies", $(this).val());
             }).bind("keyup", function() {
-              store.set("JBGroupies", $(this).val());
+              db.set("JBGroupies", $(this).val());
             });
             $(function() {
               $("jb-give .jb-save, jb-give .jb-load").remove();
@@ -231,7 +229,7 @@ var startUp = function() {
             }); $("jb-give .jb-load").click(function() {
               jotboard("change", "load");
             });
-            $("#form").unbind("keyup").unbind("keydown").val(store.get(jotboard("prefix") + jotboard("MainNamespace")));
+            $("#form").unbind("keyup").unbind("keydown").val(db.get(jotboard("prefix") + jotboard("MainNamespace")));
             $.jbGrowl("Thank's for using Groupies!", {
               ele: "body",
               type: "info",
