@@ -32,5 +32,6 @@ head.load(['js/jquery.js'], function() {
     m.parentNode.insertBefore(a, m);
   })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
   ga('create', 'UA-37813397-6', 'auto');
+  ga('require', 'linkid', 'linkid.js');
   ga('send', 'pageview');
 });
