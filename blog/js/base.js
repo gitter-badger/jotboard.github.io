@@ -31,6 +31,6 @@ head.load(['js/jquery.js'], function() {
     a.src = g;
     m.parentNode.insertBefore(a, m);
   })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-  ga('create', 'UA-37813397-4', 'auto');
+  ga('create', 'UA-37813397-6', 'auto');
   ga('send', 'pageview');
 });
