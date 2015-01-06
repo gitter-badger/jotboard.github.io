@@ -1,0 +1,62 @@
+.container-fluid.two {
+  float: left;
+  padding: calc(1% + 50px) 1% 1% 1%;
+  width: calc(100%);
+}
+
+iframe#tumblr_controls, .remove {
+  display: none !important;
+  opacity: 0 !important;
+}
+
+.nav-search-lzrt {
+  border: none;
+  background-color: transparent;
+  margin: 8px 0 0 0;
+  box-shadow: none;
+}
+
+div.post iframe {
+  width: 100% !important;
+} div.post.video iframe {
+  height: 360px;
+} div.post.audio iframe {
+  height: 140px;
+}
+
+div.social-buttons div div span.btn {
+  border: 1px solid #C7C7C7;
+  background-color: #E9E9E9;
+  margin: -2px 0 0 0;
+} div.social-buttons div div span.btn:hover {
+  border: 1px solid #C0C0C0;
+  background-color: #E0E0E0;
+} div.social-buttons div div span.btn a {
+  color: #2D2D2D;
+  text-decoration: none;
+  text-shadow: 0 0 1px #BCBCBC;
+}
+
+div.post.photoset div img {
+  width: 49%;
+}
+
+div.post.photo div div img {
+  width: 100%;
+}
+
+div.post div.panel.panel-default div.panel-heading h3 {
+  margin: 6px 4px 5px 4px;
+} div.post div.panel.panel-default div.panel-heading p {
+  margin: 0;
+}
+
+div.post, div.posts, div.details,
+div.social-buttons, div.comments, div.notes {
+  width: 100%;
+}
+
+nav.navbar div.container .btn-group span a {
+  color: #2B2B2B;
+  text-decoration: none;
+}
