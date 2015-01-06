@@ -1,16 +1,13 @@
-head.load(['//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js'], function() {
-  head.load([
-    '//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/css/bootstrap.min.css',
-    '//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js'
-  ], function() {
-    head.load('//lazzerat.github.io/css/system.css', function() {
+head.load(['js/jquery.js'], function() {
+  head.load(['/css/bootstrap.css', '/js/bootstrap.js'], function() {
+    head.load('/css/base.css', function() {
       console.log('System CSS');
       $('iframe#tumblr_controls').remove();
       $('iframe').attr('allowfullscreen', 'true');
       $('.pull-right').css('float', 'right');
       $('.pull-left').css('float', 'left');
-      if (window.location.href == '//lazzerat.tumblr.com/submit') $('div.details').remove();
-      head.load('//cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.3.0/bootbox.js', function() {
+      if (window.location.href == '//jotboard.tumblr.com/submit') $('div.details').remove();
+      head.load('/js/bootbox.js', function() {
         console.log('Bootbox');
       });
     });
