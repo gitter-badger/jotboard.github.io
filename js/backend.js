@@ -90,6 +90,8 @@ var startUp = function() {
             // I'm on mobile hurrdurr
             $(".navigation").css({
               "width": "100%"
+            }); $("#form").css({
+              "margin-top": "10px"
             });
           } else console.log("Not on mobile, I see.");
           head.load("js/news.js", function() {
