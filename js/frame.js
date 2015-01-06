@@ -50,7 +50,7 @@ var jotboard = function(main, _1, _2, _3, _4) {
             ele: "body",
             type: "info",
             offset: {
-            from: "top",
+              from: "top",
               amount: 20
             },
             align: "right",
@@ -85,7 +85,7 @@ var jotboard = function(main, _1, _2, _3, _4) {
             ele: "body",
             type: "info",
             offset: {
-              from: "bottom",
+              from: "top",
               amount: 20
             },
             align: "right",
@@ -101,7 +101,7 @@ var jotboard = function(main, _1, _2, _3, _4) {
         ele: "body",
         type: "danger",
         offset: {
-          from: "bottom",
+          from: "top",
           amount: 20
         },
         align: "right",
