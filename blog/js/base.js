@@ -1,13 +1,16 @@
-head.load(['js/jquery.js'], function() {
-  head.load(['/css/bootstrap.css', '/js/bootstrap.js'], function() {
-    head.load('/css/base.css', function() {
+head.load(['//jotboard.github.io/js/jquery.js'], function() {
+  head.load([
+    '//jotboard.github.io/css/bootstrap.css',
+    '//jotboard.github.io/js/bootstrap.js'
+  ], function() {
+    head.load('//jotboard.github.io/css/base.css', function() {
       console.log('System CSS');
       $('iframe#tumblr_controls').remove();
       $('iframe').attr('allowfullscreen', 'true');
       $('.pull-right').css('float', 'right');
       $('.pull-left').css('float', 'left');
       if (window.location.href == '//jotboard.tumblr.com/submit') $('div.details').remove();
-      head.load('/js/bootbox.js', function() {
+      head.load('//jotboard.github.io/js/bootbox.js', function() {
         console.log('Bootbox');
       });
     });
