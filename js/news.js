@@ -1,8 +1,8 @@
 var news = {
   one: {
-    title: "Welcome to the New Year!",
-    href: "#",
-    body: "New Year means a whole new slew of goals, for the editors, the contributors and the community!<p></p>Get excited everybody, this is where things get interesting."
+    title: "The Jotboard Blog!",
+    href: "http://jotboard.tumblr.com/",
+    body: "This is where you'll get minor site update posts as well as general news, have fun!!"
   },
   two: {
     title: "",
