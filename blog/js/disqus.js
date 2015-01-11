@@ -1,4 +1,4 @@
-var disqus_shortname = 'jotboard';
+var disqus_shortname = 'jotboard-blog';
 var disqus_url = window.location.href;
 (function() {
   var dsq = document.createElement('script');
