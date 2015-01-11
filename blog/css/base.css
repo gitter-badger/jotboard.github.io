@@ -58,6 +58,12 @@ div.social-buttons, div.comments, div.notes {
   width: 100%;
 }
 
+iframe#comments {
+  width: 100%;
+  min-width: 900px;
+  height: 700px;
+}
+
 nav.navbar div.container .btn-group span a {
   color: #2B2B2B;
   text-decoration: none;
