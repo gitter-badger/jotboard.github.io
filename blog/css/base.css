@@ -68,3 +68,28 @@ nav.navbar div.container .btn-group span a {
   color: #2B2B2B;
   text-decoration: none;
 }
+
+ol.notes li.note blockquote {
+  margin: 10px;
+  margin-left: 5px;
+}
+
+ol.notes li.note {
+  list-style: none;
+  border-bottom: 1px dashed #E0E0E0;
+  padding-bottom: 5px;
+  padding-top: 4px;
+}
+
+ol.notes {
+  padding: 0;
+}
+
+ol.notes li.note a.avatar_frame {
+  margin-right: 8px;
+}
+
+ol.notes li.note a.avatar_frame img {
+  width: 19px;
+  height: 19px;
+}
