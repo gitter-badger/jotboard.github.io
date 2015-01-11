@@ -3,7 +3,7 @@ head.load(['//jotboard.github.io/js/jquery.js'], function() {
     '//jotboard.github.io/css/bootstrap.css',
     '//jotboard.github.io/js/bootstrap.js'
   ], function() {
-    head.load('//jotboard.github.io/css/base.css', function() {
+    head.load('//jotboard.github.io/blog/css/base.css', function() {
       console.log('System CSS');
       $('iframe#tumblr_controls').remove();
       $('iframe').attr('allowfullscreen', 'true');
