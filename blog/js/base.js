@@ -6,9 +6,12 @@ head.load(['//jotboard.github.io/js/jquery.js'], function() {
     head.load('//jotboard.github.io/blog/css/base.css', function() {
       console.log('System CSS');
       $('iframe#tumblr_controls').remove();
-      $('iframe').attr('allowfullscreen', 'true');
       $('.pull-right').css('float', 'right');
       $('.pull-left').css('float', 'left');
+      $('iframe').attr({
+        'allowfullscreen': 'true',
+        'frameborder': '0'
+      });
       if (window.location.href == '//jotboard.tumblr.com/submit') $('div.details').remove();
       head.load('//jotboard.github.io/js/bootbox.js', function() {
         console.log('Bootbox');
