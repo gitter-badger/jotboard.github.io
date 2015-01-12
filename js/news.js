@@ -2,7 +2,7 @@ var news = {
   one: {
     title: "Marilyn Manson: The Pale Emperor",
     href: "http://www.marilynmanson.com/",
-    body: "The King of modern Shock Rock is back with his 9th studio outing: The Pale Emperor, details soon."
+    body: "The King of modern Shock Rock is back with his 9th studio outing: The Pale Emperor, details avalible on official website."
   },
   two: {
     title: "The Blog is Heeeaaaa!!",
