@@ -5,7 +5,6 @@ head.load(['//jotboard.github.io/js/jquery.js'], function() {
   ], function() {
     head.load('//jotboard.github.io/blog/css/base.css', function() {
       console.log('System CSS');
-      $('iframe#tumblr_controls').remove();
       $('.pull-right').css('float', 'right');
       $('.pull-left').css('float', 'left');
       $('iframe').attr({
