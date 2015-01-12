@@ -16,7 +16,7 @@ body#body {
 }
 
 .navigation .nowrap {
-	white-space: nowrap;
+  white-space: nowrap;
 }
 
 #form {
@@ -51,15 +51,15 @@ body#body {
 	color: #292929;
 } #form::-moz-input-placeholder {
 	font-family: 'Lato', san-serif;
-	font-size: 67px;
+	font-size: 32.5px;
 	color: #292929;
 } #form::-o-input-placeholder {
 	font-family: 'Lato', san-serif;
-	font-size: 67px;
+	font-size: 32.5px;
 	color: #292929;
 } #form::-ms-input-placeholder {
 	font-family: 'Lato', san-serif;
-	font-size: 67px;
+	font-size: 32.5px;
 	color: #292929;
 }
 
