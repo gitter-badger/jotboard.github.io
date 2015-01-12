@@ -1,6 +1,6 @@
 .container-fluid.two {
   float: left;
-  padding: calc(1% + 50px) 1% 1% 1%;
+  padding: 1% 1% 1% calc(1% + 330px);
   width: 100%;
 }
 
@@ -53,7 +53,6 @@ div.social-buttons, div.comments, div.notes {
 
 iframe#comments {
   width: 100%;
-  min-width: 900px;
   height: 700px;
 }
 
@@ -82,23 +81,6 @@ ol.notes li.note a.avatar_frame img {
   height: 19px;
 }
 
-.jtb-radio iframe {
-  outline: none;
-  border: none;
-  width: 268px;
-  height: 348px;
-}
-
-#form {
-	font: 16px 'Source Code Pro', sans-serif;
-	color: #F0F0F0;
-	width: calc(100% - 330px);
-	border-radius: 0;
-	height: 100%;
-	float: right;
-	padding: 0;
-}
-
 .navigation {
 	background: rgba(31, 47, 58, .9);
 	transition: opacity .130s ease;
@@ -109,9 +91,8 @@ ol.notes li.note a.avatar_frame img {
 	position: fixed;
 	left: 0;
 	top: 0;
-	padding: 27px;
+	padding: 17px;
 	overflow-y: scroll;
-	overflow-x: scroll;
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
 	-khtml-user-select: none;
@@ -126,11 +107,15 @@ ol.notes li.note a.avatar_frame img {
   width: calc(100% - 1px);
   margin: 8px .5% 8px calc(.5% - 1px);
   cursor: pointer;
-  color: #E0E0E0;
   background-color: #2B2B2B;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, .060);
   padding: 3px;
   border-radius: 4px;
+} .navigation .nav-select a,
+.navigation .nav-select a:link {
+  color: #E0E0E0;
+} .navigation .nav-select:first-child {
+  margin-top: 6px;
 }
 
 #search-box {
@@ -156,6 +141,3 @@ ol.notes li.note a.avatar_frame img {
 } #search-box::-ms-input-placeholder {
 	color: #E0E0E0;
 }
-
-.navigation .nav-select:last-child { margin-bottom: 0; }
-.navigation .nav-select:first-child { margin-top: 6px; }
