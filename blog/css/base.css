@@ -128,11 +128,17 @@ ol.notes li.note a.avatar_frame img {
   border-radius: 3px;
 }
 
+.navigation .nav-select-bubble .nav-select:first-child {
+  padding-top: 9px;
+} .navigation .nav-select-bubble .nav-select:last-child {
+  padding-bottom: 9px;
+}
+
 .navigation .nav-select {
   font: 18px 'Lato', san-serif;
   text-align: center;
   width: calc(100% - 1px);
-  margin: 8px .5% 8px calc(.5% - 1px);
+  margin: 0 .5% 10px calc(.5% - 1px);
   cursor: pointer;
   background-color: #2F2F2F;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, .06);
@@ -197,7 +203,8 @@ ol.notes li.note a.avatar_frame img {
 }
 
 #news div .news {
-  border: 1px solid #FFF;
+  margin: 0 0 13px 0;
+  border: 2px solid #FFF;
 }
 
 *::-webkit-scrollbar { background: none; width: 0; }
