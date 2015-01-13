@@ -111,8 +111,18 @@ ol.notes li.note a.avatar_frame img {
   -ms-user-select: none;
 }
 
+.navigation .nav-select-bubble .nav-select {
+  font: 18px 'Lato', san-serif;
+  text-align: center;
+  width: calc(100% - 1px);
+  margin: 8px .5% 8px calc(.5% - 1px);
+  cursor: pointer;
+  padding: 2px;
+  border-radius: 3px;
+}
+
 .navigation .nav-select {
-  font: 20px 'Lato', san-serif;
+  font: 18px 'Lato', san-serif;
   text-align: center;
   width: calc(100% - 1px);
   margin: 8px .5% 8px calc(.5% - 1px);
