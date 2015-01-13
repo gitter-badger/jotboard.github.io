@@ -13,8 +13,6 @@ body, html {
   z-index: 1;
 } .navigation {
   z-index: 2;
-} .container-fluid.two {
-  z-index: 1;
 }
 
 .remove {
@@ -132,6 +130,13 @@ ol.notes li.note a.avatar_frame img {
   margin-top: 6px;
 } .navigation .container {
   width: 100%;
+}
+
+.jtb-radio iframe {
+  outline: none;
+  border: none;
+  width: 268px;
+  height: 348px;
 }
 
 #search-box {
