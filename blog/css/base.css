@@ -135,8 +135,8 @@ ol.notes li.note a.avatar_frame img {
 .jtb-radio iframe {
   outline: none;
   border: none;
-  width: 268px;
-  height: 348px;
+  width: 100%;
+  height: 342px;
 }
 
 #search-box {
