@@ -11,8 +11,8 @@ body#body {
 .jtb-radio iframe {
   outline: none;
   border: none;
-  width: 268px;
-  height: 348px;
+  width: 100%;
+  height: 356px;
 }
 
 .navigation .nowrap {
@@ -126,7 +126,7 @@ html, body, #html, #body {
 }
 
 .navigation .container {
-	width: 98%;
+	width: 100%;
 	padding-left: 0;
 	padding-right: 0;
 }
@@ -187,7 +187,8 @@ html, body, #html, #body {
   background-color: #E9E9E9;
   padding: 8px;
 } #news div .news {
-  border: 1px solid #FFF;
+  margin-bottom: 15px;
+  border: 2px solid #FFF;
 }
 
 div.body.container {
@@ -279,9 +280,13 @@ iframe, textarea, input {
   z-index: 1;
 }
 
-.navigation .alt .nav-select:last-child { margin-bottom: 0; }
-.navigation .alt .nav-select:first-child { margin-top: 6px; }
-#news { margin-top: 6px; }
+#news div .news .panel-heading .panel-title {
+  overflow: hidden;
+}
+
+.navigation .alt .nav-select:last-child { margin-bottom: 6px; }
+.navigation .alt .nav-select:first-child { margin-top: 5px; }
+#news { margin-top: 6px; margin-bottom: 6px;}
 #form.full-width { width: 100%; }
 #main, #form { background: none; }
 div.bootbox.modal, div.bootbox.modal * { font-family: 'Roboto', san-serif !important; }
