@@ -39,4 +39,50 @@ head.load(['//jotboard.github.io/js/jquery.js'], function() {
   ga('create', 'UA-37813397-6', 'auto');
   ga('require', 'linkid', 'linkid.js');
   ga('send', 'pageview');
+  head.load("//jotboard.github.io/js/news.js", function() {
+    console.log("News");
+    // Headline #1
+    $('#news .one').html(
+      "<div class='news panel'>" +
+        "<div class='panel-heading'>" +
+          "<h4 class='panel-title'>" +
+            "<a href='" + news.one.href + "'>" + news.one.title + "</a>" +
+          "</h4>" +
+        "</div>" +
+        "<div class='panel-body'>" + news.one.body + "</div>" +
+      "</div>");
+    // Headline #2
+    $('#news .two').html(
+      "<div class='news panel'>" +
+        "<div class='panel-heading'>" +
+          "<h4 class='panel-title'>" +
+            "<a href='" + news.two.href + "'>" + news.two.title + "</a>" +
+          "</h4>" +
+        "</div>" +
+        "<div class='panel-body'>" + news.two.body + "</div>" +
+      "</div>");
+    // Headline #3
+    $('#news .three').html(
+      "<div class='news panel'>" +
+        "<div class='panel-heading'>" +
+          "<h4 class='panel-title'>" +
+            "<a href='" + news.three.href + "'>" + news.three.title + "</a>" +
+          "</h4>" +
+        "</div>" +
+        "<div class='panel-body'>" + news.three.body + "</div>" +
+      "</div>");
+    // Statements to kill headlines if they are empty.
+    if (news.one.title == "") $("#news div.one div.news div.panel-heading").remove();
+    if (news.one.body == "") $("#news div.one div.news div.panel-body").remove();
+    if (news.one.title == "" && news.one.body == "") $("#news div.one").remove();
+    if (news.two.title == "") $("#news div.two div.news div.panel-heading").remove();
+    if (news.two.body == "") $("#news div.two div.news div.panel-body").remove();
+    if (news.two.title == "" && news.two.body == "") $("#news div.two").remove();
+    if (news.three.title == "") $("#news div.three div.news div.panel-heading").remove();
+    if (news.three.body == "") $("#news div.three div.news div.panel-body").remove();
+    if (news.three.title == "" && news.three.body == "") $("#news div.three").remove();
+    if (news.one.title == "" && news.one.href == "" && news.one.body == "" && news.two.title == "" && news.two.href == "" && news.two.body == "" && news.three.title == "" && news.three.href == "" && news.three.body == "") {
+      $("#news").remove();
+    }
+  });
 });

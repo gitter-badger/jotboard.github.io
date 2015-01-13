@@ -180,6 +180,26 @@ ol.notes li.note a.avatar_frame img {
 	color: #E0E0E0;
 }
 
+#news div .news .panel-heading {
+  overflow: hidden;
+  color: #E9E9E9;
+  border: 1px solid #101010;
+  padding: 8px;
+  border-radius: 3px;
+  text-align: center;
+  background-color: #2B2B2B;
+}
+
+#news div .news .panel-body {
+  color: #2B2B2B;
+  background-color: #E9E9E9;
+  padding: 8px;
+}
+
+#news div .news {
+  border: 1px solid #FFF;
+}
+
 *::-webkit-scrollbar { background: none; width: 0; }
 *::-webkit-scrollbar-thumb { background: none; }
 *::-webkit-scrollbar-thumb:hover { background: none; }
