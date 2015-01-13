@@ -117,12 +117,14 @@ ol.notes li.note a.avatar_frame img {
 }
 
 .navigation .nav-select-bubble .nav-select {
-  font: 16px 'Lato', san-serif;
+  font: 15px 'Lato', san-serif;
   text-align: center;
   width: calc(100% - 1px);
   margin: 8px .5% 8px calc(.5% - 1px);
   cursor: pointer;
-  padding: 2px;
+  background-color: none;
+  box-shadow: none;
+  padding: 3px;
   border-radius: 3px;
 }
 
