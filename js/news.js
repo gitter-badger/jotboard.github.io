@@ -1,13 +1,13 @@
 var news = {
   one: {
-    title: "Marilyn Manson: The Pale Emperor",
-    href: "http://www.marilynmanson.com/",
-    body: "The King of modern Shock Rock is back with his 9th studio outing: The Pale Emperor, details avalible on official website."
+    title: "The Faceboooook!!",
+    href: "https://www.facebook.com/Jotboard",
+    body: "Since there is no limit, we can get alot more detailed and stuff :)"
   },
   two: {
-    title: "The Blog is Heeeaaaa!!",
-    href: "http://jotboard.tumblr.com/",
-    body: "This is where you'll get minor site update posts as well as general news from around the world."
+    title: "We have a Twitter YO!!",
+    href: "https://twitter.com/Jotboard",
+    body: "The Official Twitter for Jotboard, usually contains the same content found on the blog but in 140 characters or less."
   },
   three: {
     title: "",
