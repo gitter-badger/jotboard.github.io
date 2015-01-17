@@ -10,13 +10,17 @@ var jotboard = {
       });
       var form = document.getElementById("form");
       var namespace = document.getElementById("namespace");
-      $("jb-give .jb-save").click(function() { jotboard.data("save"); });
-      $("jb-give .jb-load").click(function() { jotboard.data("load"); });
+      $("jb-give .jb-save").click(function() {
+        jotboard.data("save");
+      });
+      $("jb-give .jb-load").click(function() {
+        jotboard.data("load");
+      });
       if (db.get(jotboard._prefix() + jotboard.mainNSP())) {
         form.value = db.get(jotboard._prefix() + jotboard.mainNSP());
         console.info("The " + jotboard.mainNSP() + " board is avalible.");
       }
-    },
+    }
     other: function() {
       $("body *:not(.body.container, .body.container *)").on('touchmove, touchend', function(nodeAB) {
         nodeAB.preventDefault();
@@ -51,8 +55,8 @@ var jotboard = {
           "</div>" +
           "<div class='panel-body'>" + jotboard.news.two.body + "</div>" +
         "</div>");
-        // Headline #3
-        $('#news .three').html(
+      // Headline #3
+      $('#news .three').html(
           "<div class='news panel'>" +
             "<div class='panel-heading'>" +
               "<h4 class='panel-title'>" +
@@ -60,19 +64,18 @@ var jotboard = {
               "</h4>" +
             "</div>" +
           "<div class='panel-body'>" + jotboard.news.three.body + "</div>" +
-        "</div>");
-        // Statements to kill headlines entirely if they're ALL empty.
-        if (jotboard.news.one.title == "") $("#news div.one div.news div.panel-heading").remove();
-        if (jotboard.news.one.body == "") $("#news div.one div.news div.panel-body").remove();
-        if (jotboard.news.one.title == "" && jotboard.news.one.body == "") $("#news div.one").remove();
-        if (jotboard.news.two.title == "") $("#news div.two div.news div.panel-heading").remove();
-        if (jotboard.news.two.body == "") $("#news div.two div.news div.panel-body").remove();
-        if (jotboard.news.two.title == "" && jotboard.news.two.body == "") $("#news div.two").remove();
-        if (jotboard.news.three.title == "") $("#news div.three div.news div.panel-heading").remove();
-        if (jotboard.news.three.body == "") $("#news div.three div.news div.panel-body").remove();
-        if (jotboard.news.three.title == "" && jotboard.news.three.body == "") $("#news div.three").remove();
-        if (jotboard.news.one.title == "" && jotboard.news.one.href == "" && jotboard.news.one.body == "" && jotboard.news.two.title == "" && jotboard.news.two.href == "" && jotboard.news.two.body == "" && jotboard.news.three.title == "" && jotboard.news.three.href == "" && jotboard.news.three.body == "") $("#news").remove();
-      });
+      "</div>");
+      // Statements to kill headlines entirely if they're ALL empty.
+      if (jotboard.news.one.title == "") $("#news div.one div.news div.panel-heading").remove();
+      if (jotboard.news.one.body == "") $("#news div.one div.news div.panel-body").remove();
+      if (jotboard.news.one.title == "" && jotboard.news.one.body == "") $("#news div.one").remove();
+      if (jotboard.news.two.title == "") $("#news div.two div.news div.panel-heading").remove();
+      if (jotboard.news.two.body == "") $("#news div.two div.news div.panel-body").remove();
+      if (jotboard.news.two.title == "" && jotboard.news.two.body == "") $("#news div.two").remove();
+      if (jotboard.news.three.title == "") $("#news div.three div.news div.panel-heading").remove();
+      if (jotboard.news.three.body == "") $("#news div.three div.news div.panel-body").remove();
+      if (jotboard.news.three.title == "" && jotboard.news.three.body == "") $("#news div.three").remove();
+      if (jotboard.news.one.title == "" && jotboard.news.one.href == "" && jotboard.news.one.body == "" && jotboard.news.two.title == "" && jotboard.news.two.href == "" && jotboard.news.two.body == "" && jotboard.news.three.title == "" && jotboard.news.three.href == "" && jotboard.news.three.body == "") $("#news").remove();
     }
   },
   classes: {
