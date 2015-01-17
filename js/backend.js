@@ -6,8 +6,8 @@ var DevMode = false, IDLCamp = false, head_conf = {
 var startUp = function() {
   if (window.location.protocol == "http:") window.location.protocol = "https:";
   if (window.location.protocol == "https:") {
-    head.load(["js/db.js", "js/jquery.js", "js/frame.js"], function() {
-      console.log("Database, jQuery, Frame");
+    head.load(["js/jquery.js", "js/db.js", "js/frame.js"], function() {
+      console.log("jQuery, DB, Frame");
       jotboard.init.openDB();
       head.load(['js/mousetrap.js'], function() {
         console.log('Mousetrap');
