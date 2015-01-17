@@ -4,8 +4,6 @@
  * http://bootboxjs.com/license.txt
 */
 
-// @see https://github.com/makeusabrew/bootbox/issues/180
-// @see https://github.com/makeusabrew/bootbox/issues/186
 (function (root, factory) {
   "use strict";
   if (typeof define === "function" && define.amd) {
@@ -81,9 +79,9 @@
   };
   // our public object; augmented after our private API
   var exports = {};
-  /**
-   * @private
-   */
+  /*
+   @private
+  */
   function _t(key) {
     var locale = locales[defaults.locale];
     return locale ? locale[key] : locales.en[key];
@@ -122,7 +120,7 @@
       throw new Error("Please supply an object of options");
     }
     if (!options.message) {
-      throw new Error("Please specify a message");
+      throw new Error("Please specify a message, otherwise don't bother using Bootbox");
     }
     // make sure any supplied options take precedence over defaults
     options = $.extend({}, defaults, options);
@@ -162,7 +160,7 @@
     });
     return options;
   }
-  /**
+  /*
    * map a flexible set of arguments into a single returned object
    * if args.length is already one just return it, otherwise
    * use the properties argument to map the unnamed args to
@@ -170,7 +168,7 @@
    * so in the latter case:
    * mapArguments(["foo", $.noop], ["message", "callback"])
    * -> { message: "foo", callback: $.noop }
-   */
+  */
   function mapArguments(args, properties) {
     var argn = args.length;
     var options = {};
@@ -185,9 +183,9 @@
     }
     return options;
   }
-  /**
+  /*
    * merge a set of default dialog options with user supplied arguments
-   */
+  */
   function mergeArguments(defaults, args, properties) {
     return $.extend(
       // deep merge
@@ -204,10 +202,10 @@
       )
     );
   }
-  /**
+  /*
    * this entry-level method makes heavy use of composition to take a simple
    * range of inputs and return valid options suitable for passing to bootbox.dialog
-   */
+  */
   function mergeDialogOptions(className, labels, properties, args) {
     //  build up a base set of dialog properties
     var baseOptions = {
