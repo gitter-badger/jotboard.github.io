@@ -145,6 +145,19 @@ html, body, #html, #body {
   overflow: hidden;
 }
 
+.jtb-radio.docked {
+  position: fixed;
+  right: 105px;
+  bottom: 8px;
+  margin: 0;
+  padding: 0;
+}
+
+.jtb-radio.docked iframe.iframe {
+  widtH: 330px;
+  height: 80px;
+}
+
 .navigation jb-give .jb-save.nav-select.ready {
   padding: 1px !important;
   border: 2px solid #00AAFF;
@@ -208,15 +221,6 @@ div#togetherjs-dock {
   height: 195px !important;
   right: 22px !important;
   overflow-x: scroll;
-}
-
-div.yt-search input {
-  margin: 20px 0 0 0;
-} div.yt-search {
-  margin: 0;
-} iframe#_youtube {
-  width: 100%;
-  height: 340px;
 }
 
 div#togetherjs-dock-anchor,
