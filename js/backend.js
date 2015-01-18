@@ -45,6 +45,7 @@ var startUp = function() {
         $("body *:not(.body.container, .body.container *)").on('touchmove, touchend', function(nodeAB) {
           nodeAB.preventDefault();
         });
+        $(".jb-blog").click(function() { window.open("/blog/", "_blank"); });
         $(".radio").attr("align", "center");
         $('iframe').attr({
           'frameborder': '0',
@@ -159,34 +160,9 @@ var startUp = function() {
                   }
                 }
               });
-              if (pattern == "youtube") bootbox.dialog({
-                title: "YouTube",
-                message: "<iframe name='_youtube' id='_youtube' src='//goo.gl/Guhk4P'></iframe>" +
-                "<form role='search' action='//www.youtube.com/embed/' target='_youtube' method='get'>" +
-                  "<div class='yt-search form-group'>" +
-                    "<input type='text' name='list' class='form-control' placeholder='Enter YouTube Query' />" +
-                  "</div>" +
-                  "<input type='hidden' name='listType' value='search' />" +
-                  "<input type='hidden' name='modestbranding' value='1' />" +
-                  "<input type='hidden' name='rel' value='0' />" +
-                  "<input type='hidden' name='autohide' value='1' />" +
-                  "<input type='hidden' name='theme' value='light' />" +
-                "</form>",
-                buttons: {
-                  enter: {
-                    label: "Open",
-                    className: "btn-primary",
-                    callback: function() {
-                      window.open("https://www.youtube.com/", "_blank");
-                    }
-                  }
-                }
-              });
             };
             $(".jb-campaign").click(function() { bootboxOpen("campaign"); });
             if (jotboard("hash", "campaign")) bootboxOpen("campaign");
-            $(".jb-youtube").click(function() { bootboxOpen("youtube"); });
-            if (jotboard("hash", "youtube")) bootboxOpen("youtube");
           });
         });
       });
