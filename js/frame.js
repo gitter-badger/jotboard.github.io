@@ -10,13 +10,14 @@ var jotboard = function(main, _1, _2, _3, _4) {
   if (main == "hashmod") return "# Jotboard";
   if (main == "collab") return "Groupies";
   if (main == "prefix") return "JB_-";
-  if (main == "MainNamespace") return "Main";
+  if (main == "namespace/main") return "Main";
   if (main == "toggleBody") {
     if ($("body").css("display", "none")) $("body").css("display", "visible");
     if ($("body").css("display", "visible")) $("body").css("display", "none");
   }
   if (main == "NamespaceValue") /* Returns Value of Hero Box */ return $("#namespace").val();
   if (main == "FormValue") /* Return Form Value */ return $("#form").val();
+  if (main == "threshold") return _1 <= new Date().getHours() && new Date().getHours() < _2;
   if (main == "hash") /* Used for Hashmods */ return window.location.href.indexOf("#" + _1) != -1;
   if (main == "groupies") {
     // Groupies: Collaborative text editing.

@@ -18,16 +18,17 @@ var startUp = function() {
       var namespace = document.getElementById("namespace");
       $("jb-give .jb-save").click(function() {
         jotboard("change", "save");
-      }); $("jb-give .jb-load").click(function() {
+      });
+      $("jb-give .jb-load").click(function() {
         jotboard("change", "load");
       });
-      if (db.get(jotboard("prefix") + jotboard("MainNamespace"))) {
-        form.value = db.get(jotboard("prefix") + jotboard("MainNamespace"));
-        console.info("The " + jotboard("MainNamespace") + " board is avalible.");
+      if (db.get(jotboard("prefix") + jotboard("namespace/main"))) {
+        form.value = db.get(jotboard("prefix") + jotboard("namespace/main"));
+        console.info("The " + jotboard("namespace/main") + " board is avalible.");
       }
-      head.load(['js/mousetrap.js'], function() {
-        console.log('Mousetrap');
-      });
+      // head.load(['js/mousetrap.js'], function() {
+      //   console.log('Mousetrap');
+      // });
       $(function() {
         (function(i, s, o, g, r, a, m) {
           i['GoogleAnalyticsObject'] = r;
@@ -64,10 +65,9 @@ var startUp = function() {
         // attributes in what seems to be real-time, its not actually
         // real-time, but its per 1 millisecond so its close enough.
         var TimeShift = function() {
-          if (0 <= new Date().getHours() && new Date().getHours() < 13) $("#form").attr({
+          if (jotboard("threshold", 0, 13)) $("#form").attr({
             "placeholder": moment(new Date()).format("[Hello, it's currently ]dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, have an awesome day!]")
-          });
-          else $("#form").attr({
+          }); else $("#form").attr({
             "placeholder": moment(new Date()).format("[Hows it going? it's ]dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, see ya!]")
           });
         }; TimeShift();
@@ -123,7 +123,7 @@ var startUp = function() {
                 "</div>" +
               "<div class='panel-body'>" + news.three.body + "</div>" +
             "</div>");
-            // Statements to kill headlines if they are empty.
+            // Statements to kill headlines entirely if they are ALL empty.
             if (news.one.title == "") $("#news div.one div.news div.panel-heading").remove();
             if (news.one.body == "") $("#news div.one div.news div.panel-body").remove();
             if (news.one.title == "" && news.one.body == "") $("#news div.one").remove();
@@ -183,15 +183,10 @@ var startUp = function() {
                 }
               });
             };
-            $(".jb-campaign").click(function() {
-              bootboxOpen("campaign");
-            }); if (jotboard("hash", "campaign")) {
-              bootboxOpen("campaign");
-            } $(".jb-youtube").click(function() {
-              bootboxOpen("youtube");
-            }); if (jotboard("hash", "youtube") || jotboard("hash", "yt")) {
-              bootboxOpen("youtube");
-            }
+            $(".jb-campaign").click(function() { bootboxOpen("campaign"); });
+            if (jotboard("hash", "campaign")) bootboxOpen("campaign");
+            $(".jb-youtube").click(function() { bootboxOpen("youtube"); });
+            if (jotboard("hash", "youtube")) bootboxOpen("youtube");
           });
         });
       });
