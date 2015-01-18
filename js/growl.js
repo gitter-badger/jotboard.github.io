@@ -49,7 +49,7 @@
     $alert.fadeIn();
     // Only remove after delay if delay is more than 0
     if (options.delay >= 0) {
-      $alert.delay(options.delay).fadeOut('slow', function() {
+      $alert.delay(options.delay).fadeOut('fast', function() {
         $(this).remove();
       });
     }
@@ -57,7 +57,10 @@
   $.jbGrowl.default_options = {
     ele: 'body',
     type: null,
-    offset: {from: 'top', amount: 20},
+    offset: {
+      from: 'top',
+      amount: 20
+    },
     align: 'right', // (left, right, or center)
     width: 250,
     delay: 4000,

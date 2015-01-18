@@ -1,3 +1,6 @@
+// We were working on JSONify-ing the framework,
+// and we were soooo close, but we didn't make it, sry.
+
 var jotboard = function(main, _1, _2, _3, _4) {
   if (main == "nav") return ".navigation";
   if (main == "nav-toggle-btn") return ".jb-toggle";
@@ -29,9 +32,9 @@ var jotboard = function(main, _1, _2, _3, _4) {
     if (typeof(Storage) !== "undefined") {
       if (_1 == "save") {
         if (!jotboard("NamespaceValue")) {
-          db.set(jotboard("prefix") + jotboard("MainNamespace"), jotboard("FormValue"));
-          console.info(jotboard("MainNamespace") + " > saved");
-          $.jbGrowl("The " + jotboard("MainNamespace") + " board has been saved.", {
+          db.set(jotboard("prefix") + jotboard("namespace/main"), jotboard("FormValue"));
+          console.info(jotboard("namespace/main") + " > saved");
+          $.jbGrowl("The " + jotboard("namespace/main") + " board has been saved.", {
             ele: "body",
             type: "success",
             offset: {
