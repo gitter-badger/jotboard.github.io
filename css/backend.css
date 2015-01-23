@@ -8,6 +8,10 @@ body#body {
   */
 }
 
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
 .jtb-radio iframe {
   outline: none;
   border: none;
