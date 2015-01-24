@@ -76,7 +76,7 @@ var startUp = function() {
       });
       head.load("js/prefixfree.js", function() {
         console.log("Prefixfree");
-        head.load("//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css", function() {
+        head.load("//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css", function() {
           console.log("Font Awesome");
           $(jotboard("nav-toggle-btn")).click(function() {
             jotboard("toggle-nav");
