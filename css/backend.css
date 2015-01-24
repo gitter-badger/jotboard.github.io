@@ -27,9 +27,9 @@ html {
 #form {
 	font: 16px 'Source Code Pro', sans-serif;
 	color: #F0F0F0;
-	width: calc(100% - 330px);
+	width: 100%;
 	border-radius: 0;
-	height: 100%;
+	height: calc(100% - 150px);
 	float: right;
 	padding: 0;
 }
@@ -73,7 +73,8 @@ html {
   width: 100%; height: 100%;
   min-width: 100%; min-height: 100%;
   max-width: 100%; max-height: 100%;
-  padding: 0; margin: 0;
+  padding: 0;
+  margin: 140px 0 0 0;
 }
 
 html, body, #html, #body {
@@ -86,35 +87,31 @@ html, body, #html, #body {
 .navigation {
 	background: rgba(31, 47, 58, .9);
 	transition: opacity .130s ease;
-	width: 330px;
+	width: 100%;
 	font-family: 'Lato', san-serif;
-	height: 100%;
-	max-height: 100%;
+	height: 111px;
+	max-height: 111px;
 	position: fixed;
 	left: 0;
 	top: 0;
-	padding: 27px;
+	padding: 20px 7% 0 7%;
 	overflow-y: scroll;
 	overflow-x: scroll;
-	-webkit-touch-callout: none;
 	-webkit-user-select: none;
-	-khtml-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
 }
 
-.navigation jb-give .nav-select {
+.navigation .nav-select {
   font: 25px 'Lato', san-serif;
   text-align: center;
-  width: calc(100% - 1px);
-  margin: 8px .5% 8px calc(.5% - 1px);
+  width: 48%;
+  margin: 0 0 0 2%;
   cursor: pointer;
   color: #E0E0E0;
   background-color: #2B2B2B;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, .060);
-  padding: 3px;
+  padding: 21px 0 18px 0;
   border-radius: 4px;
+  float: right;
 }
 
 .navigation .alt .nav-select {
@@ -169,10 +166,10 @@ html, body, #html, #body {
 }
 
 #namespace {
-  text-align: center;
+  text-align: left;
   width: 100%;
   height: auto !important;
-  padding: 10px 0 10px 0;
+  padding: 10px 0 10px 35px;
   font-size: 21px;
   line-height: 1.42857143;
   background-color: #2B2B2B;
@@ -207,6 +204,16 @@ html, body, #html, #body {
 } #news div .news {
   margin-bottom: 15px;
   border: 2px solid #FFF;
+}
+
+div.container form {
+  width: 35%;
+  float: left;
+}
+
+jb-give {
+  width: 65%;
+  float: right;
 }
 
 div.body.container {
