@@ -120,8 +120,8 @@ html, body, #html, #body {
 
 .navigation jb-give .jb-toggle.nav-select {
   width: 18%;
-  padding-bottom: 20px;
-  padding-top: 24px;
+  padding-bottom: 22px;
+  padding-top: 22px;
 }
 
 .navigation .alt .nav-select {
@@ -185,7 +185,7 @@ html, body, #html, #body {
 }
 
 div.container form {
-  width: 35%;
+  width: 65%;
   float: left;
 }
 
@@ -194,7 +194,7 @@ div.container form {
 }
 
 jb-give {
-  width: 65%;
+  width: 35%;
   float: right;
 }
 
