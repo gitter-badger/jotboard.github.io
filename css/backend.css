@@ -104,10 +104,6 @@ html, body, #html, #body {
 	-webkit-user-select: none;
 }
 
-.navigation .nav-select.nav-open {
-	width: 18%;
-}
-
 .navigation .nav-select {
   font: 25px 'Lato', san-serif;
   text-align: center;
@@ -120,6 +116,12 @@ html, body, #html, #body {
   padding: 21px 0 18px 0;
   border-radius: 4px;
   float: right;
+}
+
+.navigation jb-give .jb-toggle.nav-select {
+  width: 18%;
+  padding-bottom: 20px;
+  padding-top: 24px;
 }
 
 .navigation .alt .nav-select {
@@ -139,14 +141,6 @@ html, body, #html, #body {
 	width: 100%;
 	padding-left: 0;
 	padding-right: 0;
-}
-
-.jtb-radio.docked {
-  position: fixed;
-  right: 105px;
-  bottom: 8px;
-  margin: 0;
-  padding: 0;
 }
 
 #namespace {
@@ -195,6 +189,10 @@ div.container form {
   float: left;
 }
 
+.fa-important {
+  font-family: FontAwesome !important;
+}
+
 jb-give {
   width: 65%;
   float: right;
@@ -224,32 +222,6 @@ div#togetherjs-window-pointer-right,
 div#togetherjs-window-pointer-left {
   display: none !important;
 }
-
-/* div.bootbox.modal {
-  transition: right 0.55s ease;
-	transition: left 0.55s ease;
-	transition: top 0.55s ease;
-	transition: width 0.55s ease;
-  position: fixed;
-  left: 25%; right: 25%;
-  top: 75%; width: 50%;
-  padding: 7px;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-}
-
-div.bootbox.modal:hover {
-	transition: right 0.25s ease;
-	transition: left 0.25s ease;
-	transition: top 0.25s ease;
-	transition: width 0.25s ease;
-  position: fixed;
-  left: 0; right: 0;
-  top: 0; width: 100%;
-  padding: 0;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-} */
 
 div.bootbox.modal, div.bootbox.modal * {
 	outline: none;
@@ -281,7 +253,6 @@ iframe, textarea, input {
 .navigation .alt .nav-select:last-child { margin-bottom: 6px; }
 .navigation .alt .nav-select:first-child { margin-top: 5px; }
 #news { margin-top: 6px; margin-bottom: 6px;}
-#form.full-width { width: 100%; }
 #main, #form { background: none; }
 div.bootbox.modal, div.bootbox.modal * { font-family: 'Roboto', san-serif !important; }
 div.bootbox.modal .modal-header { border-bottom: 0; }
