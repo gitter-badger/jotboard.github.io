@@ -2,15 +2,24 @@
   float: left;
   padding: 1% 1% 1% calc(1% + 330px);
   width: 100%;
-}
-
-.container-fluid.two {
   z-index: 1;
 }
 
 .remove {
   display: none !important;
   opacity: 0 !important;
+}
+
+div[nav] a {
+  font-size: 25px;
+} div[nav] form input {
+  font-size: 15.5px;
+} div[nav] form {
+  width: 102px;
+  float: left;
+  margin: 4px;
+} div[nav] {
+  background-color: transparent;
 }
 
 div.post iframe {
@@ -32,18 +41,6 @@ div.social-buttons div div span.btn {
   color: #2D2D2D;
   text-decoration: none;
   text-shadow: 0 0 1px #BCBCBC;
-}
-
-div[nav] a {
-  font-size: 25px;
-} div[nav] form input {
-  font-size: 15.5px;
-} div[nav] form {
-  width: 185px;
-  float: left;
-  margin: 5px;
-} div[nav] {
-  background-color: transparent;
 }
 
 #search-box {
