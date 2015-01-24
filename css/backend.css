@@ -17,7 +17,7 @@ html {
   outline: none;
   border: none;
   width: 100%;
-  height: 356px;
+  height: 80px;
 }
 
 .navigation .nowrap {
@@ -74,7 +74,7 @@ html {
   min-width: 100%; min-height: 100%;
   max-width: 100%; max-height: 100%;
   padding: 0;
-  margin: 140px 0 0 0;
+  margin: 111px 0 0 0;
 }
 
 html, body, #html, #body {
@@ -100,10 +100,14 @@ html, body, #html, #body {
 	-webkit-user-select: none;
 }
 
+.navigation .nav-select.nav-open {
+	width: 18%;
+}
+
 .navigation .nav-select {
   font: 25px 'Lato', san-serif;
   text-align: center;
-  width: 48%;
+  width: 38%;
   margin: 0 0 0 2%;
   cursor: pointer;
   color: #E0E0E0;
@@ -133,36 +137,12 @@ html, body, #html, #body {
 	padding-right: 0;
 }
 
-.jb-toggle {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  font-size: 55px !important;
-  margin: 0 18px 20px 0;
-  color: #C9C9C9;
-  text-shadow: 0 0 2px #101010;
-  background-color: rgba(40, 38, 38, 0.58);
-  padding: 7px 0 5px 12px;
-  border-radius: 5px;
-  overflow: hidden;
-}
-
 .jtb-radio.docked {
   position: fixed;
   right: 105px;
   bottom: 8px;
   margin: 0;
   padding: 0;
-}
-
-.jtb-radio.docked iframe.iframe {
-  widtH: 280px;
-  height: 80px;
-}
-
-.navigation jb-give .jb-save.nav-select.ready {
-  padding: 1px !important;
-  border: 2px solid #00AAFF;
 }
 
 #namespace {
@@ -288,16 +268,10 @@ iframe, textarea, input {
   overflow: hidden;
 }
 
-.jb-toggle {
-  z-index: 3;
-} .navigation {
+.navigation {
   z-index: 2;
 } .main#main {
   z-index: 1;
-}
-
-#news div .news .panel-heading .panel-title {
-  overflow: hidden;
 }
 
 .navigation .alt .nav-select:last-child { margin-bottom: 6px; }

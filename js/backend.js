@@ -76,14 +76,11 @@ var startUp = function() {
       });
       head.load("js/prefixfree.js", function() {
         console.log("Prefixfree");
-        head.load("//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css", function() {
+        head.load("//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css", function() {
           console.log("Font Awesome");
-          $(".body.container").append("<div class='jb-toggle fa fa-close'>&nbsp;</div>");
           $(jotboard("nav-toggle-btn")).click(function() {
             jotboard("toggle-nav");
-          }); if (jotboard("hash", "fullscreen")) {
-            jotboard("toggle-nav");
-          }
+          });
         });
         head.load(["js/bootstrap.js", "css/bootstrap.css"], function() {
           console.log("Bootstrap JS, Bootstrap CSS");
