@@ -6,7 +6,7 @@ var jotboard = function(main, _1, _2, _3, _4) {
   if (main == "nav-toggle-btn") return ".jb-toggle";
   if (main == "toggle-nav") return $(function() {
     $(".navigation").toggleClass("full-height");
-    $("#form").toggleClass("block").toggleClass("remove");
+    $("#form").toggleClass("block");
   });
   if (main == "sitename") return "Jotboard";
   if (main == "hashmod") return "# Jotboard";
