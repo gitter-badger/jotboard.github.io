@@ -118,7 +118,7 @@ var jotboard = function(main, _1, _2, _3, _4) {
         align: "left",
         width: 320,
         delay: 3300,
-        allow_dismiss: true,
+        allow_dismiss: false,
         stackup_spacing: 10
       });
     }
