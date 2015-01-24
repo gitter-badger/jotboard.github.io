@@ -88,13 +88,6 @@ html, body, #html, #body {
 	-webkit-font-smoothing: antialiased !important;
 }
 
-div.container form.full-width { width: 100%; }
-
-.navigation.fullscreen {
-  overflow-y: scroll !important;
-  max-height: 100%;
-}
-
 .navigation {
 	background: rgba(31, 47, 58, .9);
 	transition: opacity .130s ease;
@@ -105,8 +98,9 @@ div.container form.full-width { width: 100%; }
 	position: fixed;
 	left: 0;
 	top: 0;
-	overflow-y: hidden;
 	padding: 20px 7% 0 7%;
+	overflow-y: scroll;
+	overflow-x: scroll;
 	-webkit-user-select: none;
 }
 
@@ -124,10 +118,16 @@ div.container form.full-width { width: 100%; }
   float: right;
 }
 
-.navigation jb-give .jb-toggle.nav-select {
+.navigation jb-give .jb-toggle {
   width: 18%;
   padding-bottom: 22px;
   padding-top: 22px;
+}
+
+div.below-top {
+  width: 100%;
+  padding: 10px 0 0 0;
+  margin: 0;
 }
 
 .navigation .below-top .alt .nav-select {
@@ -141,12 +141,6 @@ div.container form.full-width { width: 100%; }
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, .08);
   padding: 5px;
   border-radius: 4px;
-}
-
-.navigation .below-top .alt .nav-select:last-child {
-  margin-bottom: 7px;
-} .navigation .below-top .alt .nav-select:first-child {
-  margin-top: 0;
 }
 
 .navigation .container {
@@ -179,22 +173,12 @@ div.container form.full-width { width: 100%; }
 	color: #E0E0E0;
 }
 
-div.container form {
-  width: 65%;
-  float: left;
-}
-
-.fa-important {
-  font-family: FontAwesome !important;
-}
-
-jb-give {
-  width: 35%;
-  float: right;
+.navigation.fullscreen {
+	overflow-y: scroll !important;
+	max-height: 100%;
 }
 
 #news {
-  width: 100%;
   margin-top: 6px;
   margin-bottom: 6px;
 } #news div .news .panel-heading {
@@ -207,11 +191,29 @@ jb-give {
   background-color: #2B2B2B;
 } #news div .news .panel-body {
   color: #2B2B2B;
-  background-color: #E9E9E9;
-  padding: 8px;
+  background-color: #FFF;
+  padding: 5.5px;
 } #news div .news {
   margin-bottom: 14px;
   border: 3px solid #FFF;
+} #news div:nth-child(odd) {
+  float: left;
+} #news div:nth-child(even) {
+  float: right;
+}
+
+div.container form {
+  width: 65%;
+  float: left;
+}
+
+.fa-important {
+  font-family: FontAwesome !important;
+}
+
+jb-give {
+  width: 35%;
+  float: right;
 }
 
 div.body.container {
@@ -227,7 +229,7 @@ div.body.container {
 }
 
 div#togetherjs-dock {
-  bottom: 22px !important;
+  bottom: 140px !important;
   height: 195px !important;
   right: 22px !important;
   overflow-x: scroll;
@@ -267,14 +269,17 @@ iframe, textarea, input {
   z-index: 1;
 }
 
-div.below-top {
-  width: 100%;
-  padding: 10px 0 0 0;
-  margin: 0;
+.navigation .below-top .alt .nav-select:last-child {
+  margin-bottom: 7px;
+} .navigation .below-top .alt .nav-select:first-child {
+  margin-top: 0;
+} .navigation .below-top .alt .nav-select:nth-child(odd) {
+  float: left;
+} .navigation .below-top .alt .nav-select:nth-child(even) {
+  float: right;
 }
 
 #main, #form { background: none; }
-
 div.bootbox.modal, div.bootbox.modal * { font-family: 'Roboto', san-serif !important; }
 div.bootbox.modal .modal-header { border-bottom: 0; }
 div.bootbox.modal .modal-footer { border-top: 0; }
