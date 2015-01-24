@@ -39,6 +39,20 @@ div.social-buttons div div span.btn {
   text-shadow: 0 0 1px #BCBCBC;
 }
 
+div[nav] form {
+  width: 185px;
+  float: left;
+  margin: 5px;
+}
+
+#search-box {
+  width: 100%;
+}
+
+div[nav] {
+  background-color: transparent;
+}
+
 div.post.photoset div img {
   width: 98%;
   margin: 1%;
