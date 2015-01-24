@@ -14,15 +14,6 @@ head.load('//connect.facebook.net/es_US/sdk.js', function(response) {
   });
 });
 
-head.load('//connect.facebook.net/es_US/sdk.js', function(response) {
-  FB.init({
-    appId: '196947013668110',
-    version: 'v2.1',
-    status: true,
-    xfbml: true
-  });
-});
-
 !function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (!d.getElementById(id)) {

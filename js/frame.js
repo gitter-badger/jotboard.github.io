@@ -2,33 +2,39 @@
 // and we were soooo close, but we didn't make it, sry.
 
 var jotboard = function(main, _1, _2, _3, _4) {
-  if (main == "nav") return ".navigation";
-  if (main == "nav-toggle-btn") return ".jb-toggle";
-  if (main == "toggle-nav") return $(function() {
-    $(".navigation").toggleClass("fullscreen");
-    $("#form").toggleClass("block");
-  });
+  // Meta
   if (main == "sitename") return "Jotboard";
+  // TreshHold & Hashmods
   if (main == "hashmod") return "# Jotboard";
-  if (main == "collab") return "Groupies";
-  if (main == "prefix") return "JB_-";
-  if (main == "namespace/main") return "Main";
-  if (main == "toggleBody") {
-    if ($("body").css("display", "none")) $("body").css("display", "visible");
-    if ($("body").css("display", "visible")) $("body").css("display", "none");
-  }
-  if (main == "value") {
-    if (main == "namespace") /* Return Form Value */ return $("#namespace").val();
-    if (main == "form") /* Return Form Value */ return $("#form").val();
-  }
   if (main == "threshold") return _1 <= new Date().getHours() && new Date().getHours() < _2;
   if (main == "hash") /* Used for Hashmods */ return window.location.href.indexOf("#" + _1) != -1;
-  if (main == "groupies") {
-    // Groupies: Collaborative text editing.
-    TogetherJS(this);
-    return false;
+  // Data
+  if (main == "prefix") return "JB_-";
+  if (main == "namespace/main") return "Main";
+  // Toggling
+  if (main == "toggle") {
+    if (_1 == "body") {
+      if ($("body").css("display", "none")) $("body").css("display", "visible");
+      if ($("body").css("display", "visible")) $("body").css("display", "none");
+    } if (_1 == "navigation") {
+      $(".navigation").toggleClass("fullscreen");
+      $("#form").toggleClass("block");
+    }
   }
-  if (main == "change") {
+  // Values
+  if (main == "value") {
+    if (_1 == "namespace") /* Return Form Value */ return $("#namespace").val();
+    if (_1 == "form") /* Return Form Value */ return $("#form").val();
+  }
+  if (main == "groupies") {
+    if (_1 == "run") {
+      // Groupies: Collaborative text editing.
+      TogetherJS(this);
+      return false;
+    }
+    if (_1 == "name") return "Groupies";
+  }
+  if (main == "data") {
     // jotboard("change", "save/load"): Used to get and set the values of Jotboard Data.
     if (typeof(Storage) !== "undefined") {
       if (_1 == "save") {
@@ -42,7 +48,7 @@ var jotboard = function(main, _1, _2, _3, _4) {
               from: "bottom",
               amount: 20
             },
-            align: "center",
+            align: "left",
             width: 247,
             delay: 1900,
             allow_dismiss: false,
@@ -58,7 +64,7 @@ var jotboard = function(main, _1, _2, _3, _4) {
               from: "bottom",
               amount: 20
             },
-            align: "center",
+            align: "left",
             width: 247,
             delay: 2800,
             allow_dismiss: false,
@@ -77,7 +83,7 @@ var jotboard = function(main, _1, _2, _3, _4) {
               from: "bottom",
               amount: 20
             },
-            align: "center",
+            align: "left",
             width: 247,
             delay: 1350,
             allow_dismiss: false,
@@ -93,7 +99,7 @@ var jotboard = function(main, _1, _2, _3, _4) {
               from: "bottom",
               amount: 20
             },
-            align: "center",
+            align: "left",
             width: 247,
             delay: 2850,
             allow_dismiss: false,
@@ -102,14 +108,14 @@ var jotboard = function(main, _1, _2, _3, _4) {
         }
       }
     } else {
-      $.jbGrowl("System Requirements were not met, and therefore cannot save or load, upgrade to a more modern web browser (preferably Chrome) to be able to resolve this issue.", {
+      $.jbGrowl("System Requirements were not met, and therefore cannot save or load, upgrade to a more modern web browser (preferably <a href='/chrome/'>Chrome</a>) to be able to resolve this issue.", {
         ele: "body",
         type: "danger",
         offset: {
           from: "bottom",
           amount: 20
         },
-        align: "center",
+        align: "left",
         width: 320,
         delay: 3300,
         allow_dismiss: true,

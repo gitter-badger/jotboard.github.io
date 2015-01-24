@@ -1,15 +1,20 @@
 var news = {
   one: {
-    title: "The Faceboooook!!",
-    href: "https://www.facebook.com/Jotboard",
-    body: "Since there is no limit, we can get alot more detailed and stuff :)"
+    title: "",
+    href: "",
+    body: ""
   },
   two: {
-    title: "We have a Twitter YO!!",
-    href: "https://twitter.com/Jotboard",
-    body: "The Official Twitter for Jotboard, usually contains the same content found on the blog but in 140 characters or less."
+    title: "",
+    href: "",
+    body: ""
   },
   three: {
+    title: "",
+    href: "",
+    body: ""
+  },
+  four: {
     title: "",
     href: "",
     body: ""

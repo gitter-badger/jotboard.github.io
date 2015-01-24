@@ -88,6 +88,10 @@ div.navigation div.container form .form-group {
   margin: 111px 0 0 0;
 }
 
+form.full-width {
+  width: 100% !important;
+}
+
 html, body, #html, #body {
 	transition: background 0.600s ease;
 	transition: background-color 0.600s ease;

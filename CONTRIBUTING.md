@@ -1,36 +1,31 @@
-## Contributing to Jotboard
-<div style="height: 12px;"></div>
+# Contributing to Jotboard
 
-> As we welcome Feedback on every aspect of Jotboard, please read these guidelines before submitting any, just to be sure.
+_As we welcome Feedback on every aspect of Jotboard, please read these guidelines before submitting any, just to be sure._
 
-> Words that begin with the @ sign must be wrapped in backticks, this is to avoid unnessesary notifications to users of the same name.
+_Words that begin with the @ sign must be wrapped in backticks, this is to avoid unnessesary notifications to users of the same name._
 
-### Reporting an Issue
-<div style="height: 10px;"></div>
+## Reporting an Issue
 
-We only accept issues that are inline with the avalible categories and labels. Bugs must be isolated and reproducible problems that we can fix within the core, if the following isnt possible, it'll make it a little harder for us to figure out the issue. Please read the following guidelines before opening any kind of issue.
+Issues that are inline with the avalible categories and labels, must be posted initally under the labels, anything out of the norm must be put under _Other_. Make sure the bugs are isolateable and reproducible problems that we can fix within the core, if the following isn't possible, it'll make it a little harder for us to figure out the issue. Please read the following guidelines before opening any kind of issue.
 
-1. **Search for existing issues.** Since this is the one and only place to submit bug reports, its likely that we could get a lot of duplicates, and you'd help us out a lot by first checking if someone else has reported the same issue. Moreover, the issue may have already been resolved with a fix being in development.
-2. **Create an isolated and reproducible test case.** Be sure the problem exists in Jotboard's code with [reduced test cases](http://jotboard.github.io/#bugreport) that should be included in each bug report.
-3. **Share as much information as possible.** Include operating system and browser. Describe how you use Jotboard, and try to include steps to reproduce the bug.
-4. **If you have a solution or suggestion for how to fix the bug you're reporting, please include it, or make a pull request** - don't assume the maintainers know how to fix it just because you do.
+1. **Search for existing issues.** Since this is the one and only place to submit bug reports/feature requests, its likely that we could get a lot of duplicates, and you'd help us out a lot by first checking if someone else has reported the same issue. Moreover, the issue may have already been resolved with a fix or new feature in the works.
+2. **Share as much information as possible.** Include operating system and browser. Describe how you use Jotboard, and try to include steps to reproduce the bug.
+3. **If you have a solution or suggestion for how to fix the bug you're reporting, please include it, or make a pull request** - don't assume the maintainers know how to fix it just because you do.
 
-### Feature Requests
-<div style="height: 10px;"></div>
+## Feature Requests
 
-<sup>Side-note: Feature Requests are almost always accepted (depending on whether its safe for work or not) and will be nested into the <a href="https://jotboard.github.io/#submenu">submenu</a> if they get suggested.</sup>
+<sup>Side-note: Feature Requests are almost always accepted (depending on whether its safe for work or not) and will be nested into the <a href="https://jotboard.github.io/#rest">Rest Menu</a> if they get suggested.</sup>
 
 1. Please search for existing Feature Requests first to see if something similar already exists and if it exists in the submenu.
 2. Include a clear and specific use-case. We love new ideas, but we don't add features without a good reason.
-3. Consider whether or not your feature would be better as an optional function (HashMod) or implemented as a default interaction like Groupies.
+3. Consider whether or not your feature would be better as an optional function (Hashmod) or implemented as a default interaction like Groupies.
 
-### Pull Requests
-<div style="height: 10px;"></div>
+## Pull Requests
 
-_Pull requests are encouraged!_
+_Pull Requests are encouraged!_
 
 1. Start by forking the Jotboard Repository.
 2. Then attempt to modify parts that seem to be in need for a change.
-3. If your pull request solves an existing issue, but is very different in terms of its appeal to users, _please create a new issue_, make sure to discuss it with the Repo's Maintainers. Otherwise you risk your hard work being rejected
+3. If your pull request solves an existing issue, but is very different in terms of its appeal to users, _please create a new issue_, make sure to discuss it with the Repo's Maintainers. Otherwise you risk your hard work being rejected.
 
-<sup>Side-note: You can also keep your version of the Repo and have it as your own, just keep your modified version of Jotboard and have some fun.</sup>
+<sup>Side-note: You can also keep your version of the Repo and have it as your own, just keep your modified version of Jotboard and have some fun with it (side effects include, incoherent name changes that must be applied after forking, framework switchovers and API Details (some information on Jotboard is specified for the main website only, changeovers like TJS Namespaces and etc)).</sup>

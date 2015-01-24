@@ -8,27 +8,19 @@ var startUp = function() {
   if (window.location.protocol == "https:") {
     head.load(["js/db.js", "js/jquery.js", "js/frame.js"], function() {
       console.log("Database, jQuery, Frame");
-      if (db.get("JBNotes")) $("#notes").val(db.get("JBNotes"));
-      $("#notes").attr({
-        "placeholder": "Notes go here"
-      }).on("keydown, keyup", function() {
-        db.set("JBNotes", $(this).val());
-      });
       var form = document.getElementById("form");
       var namespace = document.getElementById("namespace");
-      $("jb-give .jb-save").click(function() {
-        jotboard("change", "save");
-      });
-      $("jb-give .jb-load").click(function() {
-        jotboard("change", "load");
-      });
       if (db.get(jotboard("prefix") + jotboard("namespace/main"))) {
         form.value = db.get(jotboard("prefix") + jotboard("namespace/main"));
         console.info("The " + jotboard("namespace/main") + " board is avalible.");
-      }
-      // head.load(['js/mousetrap.js'], function() {
-      //   console.log('Mousetrap');
-      // });
+      } $("jb-give .jb-save").click(function() {
+        jotboard("data", "save");
+      }); $("jb-give .jb-load").click(function() {
+        jotboard("data", "load");
+      });
+      head.load(['js/mousetrap.js'], function() {
+        console.log('Mousetrap');
+      });
       $(function() {
         (function(i, s, o, g, r, a, m) {
           i['GoogleAnalyticsObject'] = r;
@@ -42,9 +34,9 @@ var startUp = function() {
         })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
         ga('create', 'UA-37813397-5', 'auto');
         ga('send', 'pageview');
-        // $("body *:not(.body.container, .body.container *)").on('tap', function(nodeAB) {
-        //   nodeAB.preventDefault();
-        // });
+        $('body').on('touchmove', function(nodeAB) {
+          nodeAB.preventDefault();
+        });
         $(".jb-blog").click(function() {
           window.open("/blog/", "_blank");
         });
@@ -69,7 +61,7 @@ var startUp = function() {
         // real-time, but its per 1 millisecond so its close enough.
         var TimeShift = function() {
           if (jotboard("threshold", 0, 13)) $("#form").attr({
-            "placeholder": moment(new Date()).format("[Hello, it's currently ]dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, have an awesome day!]")
+            "placeholder": moment(new Date()).format("[Hello, it's currently] dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, have an awesome day!]")
           }); else $("#form").attr({
             "placeholder": moment(new Date()).format("[Hows it going? it's ]dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, see ya!]")
           });
@@ -80,8 +72,8 @@ var startUp = function() {
         console.log("Prefixfree");
         head.load("//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css", function() {
           console.log("Font Awesome");
-          $(jotboard("nav-toggle-btn")).click(function() {
-            jotboard("toggle-nav");
+          $(".jb-toggle").click(function() {
+            jotboard("toggle", "navigation");
           });
         });
         head.load(["js/bootstrap.js", "css/bootstrap.css"], function() {
@@ -123,6 +115,16 @@ var startUp = function() {
                 "</div>" +
               "<div class='panel-body'>" + news.three.body + "</div>" +
             "</div>");
+            // Headline #3
+            $('#news .four').html(
+              "<div class='news panel'>" +
+                "<div class='panel-heading'>" +
+                  "<h4 class='panel-title'>" +
+                    "<a href='" + news.four.href + "'>" + news.four.title + "</a>" +
+                  "</h4>" +
+                "</div>" +
+              "<div class='panel-body'>" + news.four.body + "</div>" +
+            "</div>");
             // Statements to kill headlines entirely if they are ALL empty.
             if (news.one.title == "") $("#news div.one div.news div.panel-heading").remove();
             if (news.one.body == "") $("#news div.one div.news div.panel-body").remove();
@@ -133,7 +135,10 @@ var startUp = function() {
             if (news.three.title == "") $("#news div.three div.news div.panel-heading").remove();
             if (news.three.body == "") $("#news div.three div.news div.panel-body").remove();
             if (news.three.title == "" && news.three.body == "") $("#news div.three").remove();
-            if (news.one.title == "" && news.one.href == "" && news.one.body == "" && news.two.title == "" && news.two.href == "" && news.two.body == "" && news.three.title == "" && news.three.href == "" && news.three.body == "") $("#news").remove();
+            if (news.four.title == "") $("#news div.four div.news div.panel-heading").remove();
+            if (news.four.body == "") $("#news div.four div.news div.panel-body").remove();
+            if (news.four.title == "" && news.four.body == "") $("#news div.four").remove();
+            if (news.one.title == "" && news.one.href == "" && news.one.body == "" && news.two.title == "" && news.two.href == "" && news.two.body == "" && news.three.title == "" && news.three.href == "" && news.three.body == ""&& news.four.title == "" && news.four.href == "" && news.four.body == "") $("#news").remove();
           });
           head.load("js/bootbox.js", function() {
             console.log("Bootbox");
@@ -160,8 +165,9 @@ var startUp = function() {
                 }
               });
             };
-            $(".jb-campaign").click(function() { bootboxOpen("campaign"); });
-            if (jotboard("hash", "campaign")) bootboxOpen("campaign");
+            $(".jb-campaign").click(function() {
+              bootboxOpen("campaign");
+            }); if (jotboard("hash", "campaign")) bootboxOpen("campaign");
           });
         });
       });
@@ -169,9 +175,7 @@ var startUp = function() {
         console.log("Jotboard Growl");
         head.load("//togetherjs.com/togetherjs-min.js", function() {
           console.log("TogetherJS");
-          $(".jb-groupies").click(function() {
-            jotboard("groupies");
-          });
+          $(".jb-groupies").click(function() { jotboard("groupies", "run"); });
           TogetherJS.on("ready", function() {
             if (db.get("JBGroupies")) $("#form").val(sb.get("JBGroupies"));
             $("#form").val(db.get("JBGroupies")).bind("keydown", function() {
@@ -181,8 +185,8 @@ var startUp = function() {
             });
             $(function() {
               $("jb-give .jb-save, jb-give .jb-load, jb-give .jb-toggle").remove();
-              $("div.container form").toggleClass("full-width");
-              $.jbGrowl("Do not give personal information unless official and/or legitimate consent is given.", {
+              $("div.container form").addClass("full-width");
+              $.jbGrowl("Do not give out personal information unless official and/or legitimate consent is passed.", {
                 ele: "body",
                 type: "info",
                 offset: {
@@ -197,20 +201,8 @@ var startUp = function() {
             });
           });
           TogetherJS.on("close", function() {
-            $("jb-give").prepend(
-              '<div class="jb-load nav-select" title="Load Board">Load</div>'
-            ).prepend(
-              '<div class="jb-save nav-select" title="Save Board">Save</div>'
-            ).prepend(
-              '<div class="jb-toggle fa-important fa-bolt nav-select" title="See the rest."></div>'
-            );
-            $("jb-give .jb-toggle").click(function() {
-              jotboard("change", "save");
-            }); $("jb-give .jb-save").click(function() {
-              jotboard("change", "save");
-            }); $("jb-give .jb-load").click(function() {
-              jotboard("change", "load");
-            });
+            $("jb-give").prepend('<div class="jb-load nav-select" title="Load Board">Load</div>').prepend('<div class="jb-save nav-select" title="Save Board">Save</div>').prepend('<div class="jb-toggle fa-important fa-bolt nav-select" title="See the rest."></div>');
+            $("div.container form").removeClass("full-width");
             $("#form").unbind("keyup").unbind("keydown").val(db.get(jotboard("prefix") + jotboard("MainNamespace")));
             $.jbGrowl("Thank's for using Groupies!", {
               ele: "body",
@@ -219,8 +211,8 @@ var startUp = function() {
                 from: "bottom",
                 amount: 20
               },
-              align: "left",
-              width: "auto",
+              align: "center",
+              width: 225,
               delay: 2200,
               allow_dismiss: true
             });
