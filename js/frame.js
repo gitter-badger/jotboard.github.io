@@ -5,7 +5,7 @@ var jotboard = function(main, _1, _2, _3, _4) {
   if (main == "nav") return ".navigation";
   if (main == "nav-toggle-btn") return ".jb-toggle";
   if (main == "toggle-nav") return $(function() {
-    $(".navigation").toggleClass("full-height");
+    $(".navigation").toggleClass("fullscreen");
     $("#form").toggleClass("block");
   });
   if (main == "sitename") return "Jotboard";
