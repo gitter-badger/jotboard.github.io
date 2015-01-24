@@ -17,8 +17,10 @@ var jotboard = function(main, _1, _2, _3, _4) {
     if ($("body").css("display", "none")) $("body").css("display", "visible");
     if ($("body").css("display", "visible")) $("body").css("display", "none");
   }
-  if (main == "NamespaceValue") /* Returns Value of Hero Box */ return $("#namespace").val();
-  if (main == "FormValue") /* Return Form Value */ return $("#form").val();
+  if (main == "value") {
+    if (main == "namespace") /* Return Form Value */ return $("#namespace").val();
+    if (main == "form") /* Return Form Value */ return $("#form").val();
+  }
   if (main == "threshold") return _1 <= new Date().getHours() && new Date().getHours() < _2;
   if (main == "hash") /* Used for Hashmods */ return window.location.href.indexOf("#" + _1) != -1;
   if (main == "groupies") {
@@ -30,33 +32,33 @@ var jotboard = function(main, _1, _2, _3, _4) {
     // jotboard("change", "save/load"): Used to get and set the values of Jotboard Data.
     if (typeof(Storage) !== "undefined") {
       if (_1 == "save") {
-        if (!jotboard("NamespaceValue")) {
-          db.set(jotboard("prefix") + jotboard("namespace/main"), jotboard("FormValue"));
+        if (!jotboard("value", "namespace")) {
+          db.set(jotboard("prefix") + jotboard("namespace/main"), jotboard("value", "form"));
           console.info(jotboard("namespace/main") + " > saved");
           $.jbGrowl("The " + jotboard("namespace/main") + " board has been saved.", {
             ele: "body",
             type: "success",
             offset: {
-              from: "top",
+              from: "bottom",
               amount: 20
             },
-            align: "right",
+            align: "center",
             width: 247,
             delay: 1900,
             allow_dismiss: false,
             stackup_spacing: 10
           });
         } else {
-          db.set(jotboard("prefix") + jotboard("NamespaceValue"), jotboard("FormValue"));
-          console.info(jotboard("NamespaceValue") + " > saved");
-          $.jbGrowl(jotboard("NamespaceValue") + " has been saved.", {
+          db.set(jotboard("prefix") + jotboard("value", "namespace"), jotboard("value", "form"));
+          console.info(jotboard("value", "namespace") + " > saved");
+          $.jbGrowl(jotboard("value", "namespace") + " has been saved.", {
             ele: "body",
             type: "info",
             offset: {
-              from: "top",
+              from: "bottom",
               amount: 20
             },
-            align: "right",
+            align: "center",
             width: 247,
             delay: 2800,
             allow_dismiss: false,
@@ -65,33 +67,33 @@ var jotboard = function(main, _1, _2, _3, _4) {
         }
       }
       if (_1 == "load") {
-        if (!jotboard("NamespaceValue")) {
-          form.value = db.get(jotboard("prefix") + jotboard("MainNamespace"));
-          console.info(jotboard("MainNamespace") + " > loaded");
-          $.jbGrowl("The " + jotboard("MainNamespace") + " board has been loaded.", {
+        if (!jotboard("value", "namespace")) {
+          form.value = db.get(jotboard("prefix") + jotboard("namespace/main"));
+          console.info(jotboard("namespace/main") + " > loaded");
+          $.jbGrowl("The " + jotboard("namespace/main") + " board has been loaded.", {
             ele: "body",
             type: "info",
             offset: {
-              from: "top",
+              from: "bottom",
               amount: 20
             },
-            align: "right",
+            align: "center",
             width: 247,
             delay: 1350,
             allow_dismiss: false,
             stackup_spacing: 10
           });
         } else {
-          form.value = db.get(jotboard("prefix") + jotboard("NamespaceValue"));
-          console.info(jotboard("NamespaceValue") + " > loaded");
-          $.jbGrowl(jotboard("NamespaceValue") + " has been loaded.", {
+          form.value = db.get(jotboard("prefix") + jotboard("value", "namespace"));
+          console.info(jotboard("value", "namespace") + " > loaded");
+          $.jbGrowl(jotboard("value", "namespace") + " has been loaded.", {
             ele: "body",
             type: "info",
             offset: {
-              from: "top",
+              from: "bottom",
               amount: 20
             },
-            align: "right",
+            align: "center",
             width: 247,
             delay: 2850,
             allow_dismiss: false,
@@ -104,11 +106,11 @@ var jotboard = function(main, _1, _2, _3, _4) {
         ele: "body",
         type: "danger",
         offset: {
-          from: "top",
+          from: "bottom",
           amount: 20
         },
-        align: "right",
-        width: 247,
+        align: "center",
+        width: 320,
         delay: 3300,
         allow_dismiss: true,
         stackup_spacing: 10
