@@ -9,7 +9,7 @@ body#body {
 }
 
 #news .point {
-    width: 49.7%;
+  width: 49.7%;
 }
 
 html {
@@ -268,13 +268,6 @@ iframe, textarea, input {
 	border: none;
 } iframe {
   overflow: hidden;
-}
-
-.navigation {
-  height: 100% !important;
-  z-index: 2;
-} .main#main {
-  z-index: 1;
 }
 
 .navigation .below-top .alt .nav-select:last-child {
