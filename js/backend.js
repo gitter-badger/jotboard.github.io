@@ -17,6 +17,10 @@ var startUp = function() {
         jotboard("data", "save");
       }); $("jb-give .jb-load").click(function() {
         jotboard("data", "load");
+      }); $("jb-give .jb-toggle").click(function() {
+        jotboard("toggle", "navigation");
+      }); $(".jb-blog").click(function() {
+        window.open("/blog/", "_blank");
       });
       head.load(['js/mousetrap.js'], function() {
         console.log('Mousetrap');
@@ -34,12 +38,9 @@ var startUp = function() {
         })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
         ga('create', 'UA-37813397-5', 'auto');
         ga('send', 'pageview');
-        $('body').on('touchmove', function(nodeAB) {
-          nodeAB.preventDefault();
-        });
-        $(".jb-blog").click(function() {
-          window.open("/blog/", "_blank");
-        });
+        // $('body').on('touchmove', function(nodeAB) {
+        //   nodeAB.preventDefault();
+        // });
         $(".radio").attr("align", "center");
         $('iframe').attr({
           'frameborder': '0',
@@ -72,13 +73,11 @@ var startUp = function() {
         console.log("Prefixfree");
         head.load("//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css", function() {
           console.log("Font Awesome");
-          $(".jb-toggle").click(function() {
-            jotboard("toggle", "navigation");
-          });
+          $(".jb-toggle").addClass("fa-important").addClass("fa-bolt");
         });
         head.load(["js/bootstrap.js", "css/bootstrap.css"], function() {
           console.log("Bootstrap JS, Bootstrap CSS");
-          if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) $("body").addClass("mobile");
+          // if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) $("body").addClass("mobile");
           else console.log("Not on mobile, I see.");
           head.load("js/news.js", function() {
             console.log("News");
@@ -113,9 +112,9 @@ var startUp = function() {
                     "<a href='" + news.three.href + "'>" + news.three.title + "</a>" +
                   "</h4>" +
                 "</div>" +
-              "<div class='panel-body'>" + news.three.body + "</div>" +
-            "</div>");
-            // Headline #3
+                "<div class='panel-body'>" + news.three.body + "</div>" +
+              "</div>");
+            // Headline #4
             $('#news .four').html(
               "<div class='news panel'>" +
                 "<div class='panel-heading'>" +
@@ -123,8 +122,8 @@ var startUp = function() {
                     "<a href='" + news.four.href + "'>" + news.four.title + "</a>" +
                   "</h4>" +
                 "</div>" +
-              "<div class='panel-body'>" + news.four.body + "</div>" +
-            "</div>");
+                "<div class='panel-body'>" + news.four.body + "</div>" +
+              "</div>");
             // Statements to kill headlines entirely if they are ALL empty.
             if (news.one.title == "") $("#news div.one div.news div.panel-heading").remove();
             if (news.one.body == "") $("#news div.one div.news div.panel-body").remove();
@@ -177,47 +176,41 @@ var startUp = function() {
           console.log("TogetherJS");
           $(".jb-groupies").click(function() { jotboard("groupies", "run"); });
           TogetherJS.on("ready", function() {
-            if (db.get("JBGroupies")) $("#form").val(sb.get("JBGroupies"));
-            $("#form").val(db.get("JBGroupies")).bind("keydown", function() {
-              db.set("JBGroupies", $(this).val());
-            }).bind("keyup", function() {
-              db.set("JBGroupies", $(this).val());
-            });
-            $(function() {
-              $("jb-give .jb-save, jb-give .jb-load, jb-give .jb-toggle").remove();
-              $("div.container form").addClass("full-width");
-              $.jbGrowl("Do not give out personal information unless official and/or legitimate consent is passed.", {
-                ele: "body",
-                type: "info",
-                offset: {
-                  from: "bottom",
-                  amount: 20
-                },
-                align: "center",
-                width: "auto",
-                delay: 3500,
-                allow_dismiss: true
-              });
-            });
-          });
-          TogetherJS.on("close", function() {
-            $("jb-give").prepend('<div class="jb-load nav-select" title="Load Board">Load</div>').prepend('<div class="jb-save nav-select" title="Save Board">Save</div>').prepend('<div class="jb-toggle fa-important fa-bolt nav-select" title="See the rest."></div>');
-            $("div.container form").removeClass("full-width");
-            $("#form").unbind("keyup").unbind("keydown").val(db.get(jotboard("prefix") + jotboard("MainNamespace")));
-            $.jbGrowl("Thank's for using Groupies!", {
+            $("#form").val("");
+            $("jb-give .jb-save, jb-give .jb-load, jb-give .jb-toggle").addClass("remove");
+            $("div.container form").addClass("full-width");
+            jotboard("toggle", "navigation");
+            $.jbGrowl("Do not give out personal information unless official and/or legitimate consent is passed.", {
               ele: "body",
               type: "info",
               offset: {
                 from: "bottom",
                 amount: 20
               },
-              align: "center",
+              align: "left",
+              width: "auto",
+              delay: 3500,
+              allow_dismiss: true
+            });
+          });
+          TogetherJS.on("close", function() {
+            $("jb-give .jb-save, jb-give .jb-load, jb-give .jb-toggle").removeClass('remove');
+            $("div.container form").removeClass("full-width");
+            $("#form").val(db.get(jotboard("prefix") + jotboard("value", "form")));
+            $.jbGrowl("Thank's for using " + jotboard("groupies", "name") + "!", {
+              ele: "body",
+              type: "info",
+              offset: {
+                from: "bottom",
+                amount: 20
+              },
+              align: "left",
               width: 225,
               delay: 2200,
               allow_dismiss: true
             });
             TogetherJSConfig_siteName = jotboard("sitename");
-            TogetherJSConfig_toolName = jotboard("collab");
+            TogetherJSConfig_toolName = jotboard("groupies", "name");
             TogetherJSConfig_dontShowClicks = true;
             TogetherJSConfig_useMinimizedCode = true;
             TogetherJSConfig_suppressInvite = true;
