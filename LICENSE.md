@@ -1,6 +1,6 @@
 # The MIT License (MIT)**
 
-_Original rights to (C) 2014 [Chris Lowles](https://github.com/Lowles98)_
+_Original rights to (C) 2014 [Chris Lowles](https://github.com/ChrisHazFun)_
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of the project's base code and associated documentation files (the "Core", the "Project Code", service "Jotboard"), to deal with the project code without restriction, including without limitation the rights to use, copy, modify, publish, distribute, sublicense, and/or sell copies of a modified version of this product, and to permit persons to whom the product is furnished to do so, subject to the following conditions:
 
