@@ -1,10 +1,6 @@
-// We were working on JSONify-ing the framework,
-// and we were soooo close, but we didn't make it, sry.
-
 var jotboard = function(main, _1, _2, _3, _4) {
   // Meta
   if (main == "sitename") return "Jotboard";
-  // TreshHold & Hashmods
   if (main == "hashmod") return "# Jotboard";
   if (main == "threshold") return _1 <= new Date().getHours() && new Date().getHours() < _2;
   if (main == "hash") /* Used for Hashmods */ return window.location.href.indexOf("#" + _1) != -1;
