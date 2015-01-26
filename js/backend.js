@@ -177,8 +177,8 @@ var startUp = function() {
           $(".jb-groupies").click(function() { jotboard("groupies", "run"); });
           TogetherJS.on("ready", function() {
             $("#form").val("");
-            $("jb-give .jb-save, jb-give .jb-load, jb-give .jb-toggle").addClass("remove");
-            $("div.container form").addClass("full-width");
+            $("jb-give .jb-save, jb-give .jb-load, jb-give .jb-toggle").toggleClass("remove");
+            $("div.container form").toggleClass("full-width");
             jotboard("toggle", "navigation");
             $.jbGrowl("Do not give out personal information unless official and/or legitimate consent is passed.", {
               ele: "body",
@@ -194,8 +194,8 @@ var startUp = function() {
             });
           });
           TogetherJS.on("close", function() {
-            $("jb-give .jb-save, jb-give .jb-load, jb-give .jb-toggle").removeClass('remove');
-            $("div.container form").removeClass("full-width");
+            $("jb-give .jb-save, jb-give .jb-load, jb-give .jb-toggle").toggleClass('remove');
+            $("div.container form").toggleClass("full-width");
             $("#form").val(db.get(jotboard("prefix") + jotboard("value", "form")));
             $.jbGrowl("Thank's for using " + jotboard("groupies", "name") + "!", {
               ele: "body",
