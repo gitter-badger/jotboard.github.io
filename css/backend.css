@@ -1,10 +1,11 @@
 body#body {
-  transition: background 0.550s ease;
-	background: rgba();
+  transition: background 0.250s ease;
+	background: rgb(43, 140, 200);
 }
 
-#news .point {
-  width: 49.7%;
+* {
+  text-rendering: optimizeLegibility !important;
+	-webkit-font-smoothing: antialiased !important;
 }
 
 .jtb-radio iframe {
@@ -12,14 +13,6 @@ body#body {
   border: none;
   width: 100%;
   height: 80px;
-}
-
-div.navigation div.container form .form-group {
-  margin-bottom: 0;
-}
-
-.navigation .nowrap {
-  white-space: nowrap;
 }
 
 #form {
@@ -78,15 +71,22 @@ div.navigation div.container form .form-group {
   margin: 0;
 }
 
-form.full-width {
-  width: 100% !important;
+html {
+  padding: 0;
+  margin: 0;
+} body {
+  padding: .5%;
+  margin: 0;
+  width: 99.5%;
+  height: 99.5%;
 }
 
-html, body, #html, #body {
-	transition: background 0.600s ease;
-	transition: background-color 0.600s ease;
-	text-rendering: optimizeLegibility !important;
-	-webkit-font-smoothing: antialiased !important;
+html {
+	overflow: hidden;
+	width: 100%;
+} body {
+	overflow: hidden;
+	width: 100%;
 }
 
 .navigation {
@@ -173,6 +173,7 @@ div.below-top {
 
 .navigation.fullscreen {
 	overflow-y: scroll !important;
+	height: 100%;
 	max-height: 100%;
 }
 
@@ -180,6 +181,9 @@ div.below-top {
   width: 100%;
   margin-top: 6px;
   margin-bottom: 6px;
+} #news div .news {
+  margin-bottom: 14px;
+  border: 3px solid #FFF;
 } #news div .news .panel-heading {
   overflow: hidden;
   color: #E9E9E9;
@@ -192,9 +196,8 @@ div.below-top {
   color: #2B2B2B;
   background-color: #FFF;
   padding: 5.5px;
-} #news div .news {
-  margin-bottom: 14px;
-  border: 3px solid #FFF;
+} #news .point {
+  width: 49.7%;
 } #news .point:nth-child(odd) {
   float: left;
 } #news .point:nth-child(even) {
@@ -204,10 +207,6 @@ div.below-top {
 div.container form {
   width: 49.7%;
   float: left;
-}
-
-.fa-important {
-  font-family: FontAwesome !important;
 }
 
 jb-give {
@@ -227,42 +226,19 @@ div.body.container {
 	padding: 0;
 }
 
-div#togetherjs-dock {
-  bottom: 140px !important;
-  height: 195px !important;
-  right: 22px !important;
-  overflow-x: scroll;
-}
-
-div#togetherjs-dock-anchor,
-div#togetherjs-window-pointer-right,
-div#togetherjs-window-pointer-left {
-  display: none !important;
-}
-
 div.bootbox.modal, div.bootbox.modal * {
 	outline: none;
 	user-select: none;
 }
 
-html {
-  padding: 0;
-  margin: 0;
-} body {
-  padding: .5%;
-  margin: 0;
-  height: 99.5%;
-} html, body {
-	overflow: hidden;
-	width: 100%;
-}
-
-iframe, textarea, input {
+iframe {
+  overflow: hidden;
+	outline: none;
+	border: none;
+} textarea, input {
 	resize: none;
 	outline: none;
 	border: none;
-} iframe {
-  overflow: hidden;
 }
 
 .navigation .below-top .alt .nav-select:last-child {
@@ -275,7 +251,9 @@ iframe, textarea, input {
   float: right;
 }
 
+form.full-width { width: 100% !important; }
 #main, #form { background: none; }
+.fa-important { font-family: FontAwesome !important; }
 div.bootbox.modal, div.bootbox.modal * { font-family: 'Roboto', san-serif !important; }
 div.bootbox.modal .modal-header { border-bottom: 0; }
 div.bootbox.modal .modal-footer { border-top: 0; }
