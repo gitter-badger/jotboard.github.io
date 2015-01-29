@@ -14,7 +14,7 @@ var jotboard = function(main, _1, _2, _3, _4) {
       if ($("body").css("display", "visible")) $("body").css("display", "none");
     } if (_1 == "navigation") {
       $(".navigation").toggleClass("fullscreen");
-      $("#form").toggleClass("remove");
+      $("#form").toggleClass("block");
     }
   }
   // Values
