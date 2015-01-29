@@ -1,1 +1,106 @@
+.navigation {
+    width: 100%;
+    height: 110px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding: 3% 3% 0 3%;
+    overflow-y: scroll;
+    background: rgb(37, 64, 87);
+}
 
+.navigation .container {
+    width: 100% !important;
+}
+
+.navigation .container form {
+    width: 60%;
+    float: left;
+}
+
+div.form-group #namespace {
+    text-align: left;
+    display: block;
+    width: 100%;
+    height: auto;
+    padding: 0;
+    margin: 0;
+    font-size: 21px;
+    line-height: 1;
+    color: #E0E0E0;
+    background-color: transparent;
+    background-image: none;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+jb-give {
+    width: 30%;
+    float: right;
+}
+
+.below-top {
+    width: 100%;
+    float: left;
+}
+
+.navigation .below-top .alt .nav-select {
+    float: none;
+}
+
+.below-top .alt {
+    width: 100%;
+    float: left;
+}
+
+.jtb-radio {
+    width: 100%;
+}
+
+.jtb-radio .iframe {
+    width: 100%;
+    height: 80px;
+}
+
+.container form div {
+    margin: 0;
+}
+
+jb-give .nav-select {
+    color: #E0E0E0;
+    text-align: center;
+    width: 33.3%;
+    float: right;
+}
+
+.fa-important {
+    font-family: FontAwesome !important;
+}
+
+.body.container {
+    width: 100%;
+    height: 100%;
+}
+
+html, body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+}
+
+.body.container {
+    padding: .5%;
+    margin: 0;
+}
+
+.navigation * {
+    font-family: 'Lato', sans-serif;
+}
+
+.remove { display: none; }
+
+.navigation .container form, jb-give {
+    margin-bottom: 40px;
+}
