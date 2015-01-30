@@ -16,10 +16,9 @@
 .navigation {
   width: 100%;
   min-height: 82px;
-  max-height: 95%;
+  max-height: 100%;
   position: fixed;
-  left: 0;
-  top: 0;
+  left: 0; top: 0;
   padding: 2% 2% 1% 2%;
   overflow-y: scroll;
   background: rgb(37, 64, 87);
@@ -50,6 +49,7 @@
   background-color: #E0E0E0;
   margin: 0 0 1% 0;
   color: #2B2B2B;
+  border-radius: 2px;
 } .navigation .below-top .alt .nav-select:nth-child(odd) {
   float: left;
 } .navigation .below-top .alt .nav-select:nth-child(even) {
@@ -103,7 +103,9 @@ html, body {
   float: left;
 }
 
-.container form div {
+.nav-select {
+  cursor: pointer;
+} .container form div {
   margin: 0;
 } .navigation .container {
   padding: 0;
@@ -111,8 +113,7 @@ html, body {
 } .remove {
   display: none;
 } .navigation .container form, jb-give {
-  margin-top: 0;
-  margin-bottom: 1%;
+    margin: 1% 0 2.5% 0;
 } .body.container {
   padding: .5%;
   margin: 0;
