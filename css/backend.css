@@ -54,8 +54,6 @@
   border: 0;
   border-radius: 0;
   box-shadow: none;
-} #namespace:-webkit-autofill {
-  background-color: transparent;
 } #namespace::-webkit-input-placeholder {
   color: #E0E0E0;
 } #namespace:-moz-placeholder { /* Firefox 18- */
