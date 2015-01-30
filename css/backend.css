@@ -11,6 +11,18 @@
   height: 100%;
   border: none;
   padding: .2%;
+} #form::-webkit-input-placeholder {
+  font: 20px 'Lato', san-serif;
+  color: #2B2B2B;
+} #form:-moz-placeholder { /* Firefox 18- */
+  font: 20px 'Lato', san-serif;
+  color: #2B2B2B;
+} #form::-moz-placeholder {  /* Firefox 19+ */
+  font: 20px 'Lato', san-serif;
+  color: #2B2B2B;
+} #form::-ms-input-placeholder {
+  font: 20px 'Lato', san-serif;
+  color: #2B2B2B;
 }
 
 .navigation {
@@ -27,7 +39,7 @@
 .navigation .container form {
   width: 70%;
   float: left;
-} .navigation .container div #namespace {
+} #namespace {
   text-align: left;
   display: block;
   width: 100%;
@@ -42,6 +54,14 @@
   border: 0;
   border-radius: 0;
   box-shadow: none;
+} #namespace::-webkit-input-placeholder {
+  color: #E0E0E0;
+} #namespace:-moz-placeholder { /* Firefox 18- */
+  color: #E0E0E0;
+} #namespace::-moz-placeholder {  /* Firefox 19+ */
+  color: #E0E0E0;
+} #namespace::-ms-input-placeholder {
+  color: #E0E0E0;
 } .navigation .below-top .alt .nav-select {
   width: 49.5%;
   padding: .5%;
