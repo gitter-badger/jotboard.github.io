@@ -54,6 +54,8 @@
   border: 0;
   border-radius: 0;
   box-shadow: none;
+} #namespace:-webkit-autofill {
+  background-color: transparent;
 } #namespace::-webkit-input-placeholder {
   color: #E0E0E0;
 } #namespace:-moz-placeholder { /* Firefox 18- */
@@ -83,6 +85,7 @@ jb-give {
   color: #E0E0E0;
   text-align: center;
   width: 33.33%;
+  padding: calc(1% - 1px) 0 1% 0;
   float: right;
 }
 
@@ -128,7 +131,7 @@ html, body {
   padding: 0;
   width: 100% !important;
 } .navigation .container form, jb-give {
-  margin: 8.4px 0 8.4px 0;
+  margin: 8px 0 8px 0;
 } .body.container {
   padding: .5%;
   margin: 0;
