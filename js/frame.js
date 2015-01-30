@@ -12,10 +12,7 @@ var jotboard = function(main, _1, _2, _3, _4) {
     if (_1 == "body") {
       if ($("body").css("display", "none")) $("body").css("display", "visible");
       if ($("body").css("display", "visible")) $("body").css("display", "none");
-    } if (_1 == "navigation") {
-      $(".navigation").toggleClass("fullscreen");
-      $("#form").toggleClass("block");
-    }
+    } if (_1 == "navigation") $(".below-top").toggleClass("remove");
   }
   // Values
   if (main == "value") {

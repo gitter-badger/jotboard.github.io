@@ -1,106 +1,119 @@
-.navigation {
-    width: 100%;
-    height: 110px;
-    position: fixed;
-    left: 0;
-    top: 0;
-    padding: 3% 3% 0 3%;
-    overflow-y: scroll;
-    background: rgb(37, 64, 87);
+#main {
+  margin-top: 82px;
+  height: calc(100% - 82px);
 }
 
-.navigation .container {
-    width: 100% !important;
+#form {
+  resize: none;
+  outline: none;
+  background: transparent;
+  width: 100%;
+  height: 100%;
+  border: none;
+  padding: .2%;
+}
+
+.navigation {
+  width: 100%;
+  min-height: 82px;
+  max-height: 95%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  padding: 2% 2% 1% 2%;
+  overflow-y: scroll;
+  background: rgb(37, 64, 87);
 }
 
 .navigation .container form {
-    width: 60%;
-    float: left;
-}
-
-div.form-group #namespace {
-    text-align: left;
-    display: block;
-    width: 100%;
-    height: auto;
-    padding: 0;
-    margin: 0;
-    font-size: 21px;
-    line-height: 1;
-    color: #E0E0E0;
-    background-color: transparent;
-    background-image: none;
-    border: 0;
-    border-radius: 0;
-    box-shadow: none;
+  width: 70%;
+  float: left;
+} .navigation .container div #namespace {
+  text-align: left;
+  display: block;
+  width: 100%;
+  height: auto;
+  padding: 0;
+  margin: 0;
+  font-size: 21px;
+  line-height: 1;
+  color: #E0E0E0;
+  background-color: transparent;
+  background-image: none;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+} .navigation .below-top .alt .nav-select {
+  width: 49.5%;
+  padding: .5%;
+  text-align: center;
+  background-color: #E0E0E0;
+  margin: 0 0 1% 0;
+  color: #2B2B2B;
+} .navigation .below-top .alt .nav-select:nth-child(odd) {
+  float: left;
+} .navigation .below-top .alt .nav-select:nth-child(even) {
+  float: right;
 }
 
 jb-give {
-    width: 30%;
-    float: right;
-}
-
-.below-top {
-    width: 100%;
-    float: left;
-}
-
-.navigation .below-top .alt .nav-select {
-    float: none;
-}
-
-.below-top .alt {
-    width: 100%;
-    float: left;
+  width: 30%;
+  float: right;
+} jb-give .nav-select {
+  color: #E0E0E0;
+  text-align: center;
+  width: 33.33%;
+  float: right;
 }
 
 .jtb-radio {
-    width: 100%;
-}
-
-.jtb-radio .iframe {
-    width: 100%;
-    height: 80px;
-}
-
-.container form div {
-    margin: 0;
-}
-
-jb-give .nav-select {
-    color: #E0E0E0;
-    text-align: center;
-    width: 33.3%;
-    float: right;
-}
-
-.fa-important {
-    font-family: FontAwesome !important;
+  width: 100%;
+} .jtb-radio .iframe {
+  width: 100%;
+  height: 80px;
 }
 
 .body.container {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 html, body {
-    margin: 0;
-    width: 100%;
-    height: 100%;
-    padding: 0;
-}
-
-.body.container {
-    padding: .5%;
-    margin: 0;
+  background-color: #E0E0E0;
+} /* But... */ html, body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
 }
 
 .navigation * {
-    font-family: 'Lato', sans-serif;
+  font-family: 'Lato', sans-serif;
+} #main * {
+  font-family: 'Source Code Pro', sans-serif;
+} .fa-important {
+  font-family: FontAwesome !important;
 }
 
-.remove { display: none; }
+.below-top {
+  width: 100%;
+  float: left;
+} .below-top .alt {
+  width: 100%;
+  float: left;
+}
 
-.navigation .container form, jb-give {
-    margin-bottom: 40px;
+.container form div {
+  margin: 0;
+} .navigation .container {
+  padding: 0;
+  width: 100% !important;
+} .remove {
+  display: none;
+} .navigation .container form, jb-give {
+  margin-top: 0;
+  margin-bottom: 1%;
+} .body.container {
+  padding: .5%;
+  margin: 0;
 }
