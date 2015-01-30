@@ -140,3 +140,5 @@ html, body {
 .remove { display: none; }
 .nav-select { cursor: pointer; }
 .container form div { margin: 0; }
+
+*{}
