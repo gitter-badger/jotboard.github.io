@@ -100,8 +100,7 @@ jb-give {
 }
 
 html, body {
-  background-color: #E0E0E0;
-} /* But... */ html, body {
+  background-color: #E9E9E9;
   margin: 0;
   width: 100%;
   height: 100%;
