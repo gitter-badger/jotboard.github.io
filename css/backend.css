@@ -125,6 +125,8 @@ html, body {
   float: left;
 } #news .point:nth-child(even) {
   float: right;
+} #news .point .panel {
+  margin: 0 0 2% 0;
 } #news .point .panel .panel-heading .panel-title {
   text-align: center;
 }
