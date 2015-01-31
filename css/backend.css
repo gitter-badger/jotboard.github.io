@@ -1,6 +1,6 @@
 #main {
-  margin-top: 59px;
-  height: calc(100% - 59px);
+  margin-top: 57px;
+  height: calc(100% - 57px);
 }
 
 #form {
@@ -167,7 +167,7 @@ html, body {
   padding: 0;
   width: 100% !important;
 } .navigation .container form, jb-give {
-  margin: 8px 0 1px 0;
+  margin: 7px 0 3px 0;
 } .body.container {
   padding: .5%;
   margin: 0;
