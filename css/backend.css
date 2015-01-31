@@ -115,6 +115,20 @@ html, body {
   font-family: FontAwesome !important;
 }
 
+#news {
+  float: left;
+  width: 100%;
+} #news .point {
+  width: 49.5%;
+  margin: .5% 0 0 0;
+} #news .point:nth-child(odd) {
+  float: left;
+} #news .point:nth-child(even) {
+  float: right;
+} #news .point .panel .panel-heading .panel-title {
+  text-align: center;
+}
+
 .below-top {
   width: 100%;
   margin: 1% 0 0 0;
