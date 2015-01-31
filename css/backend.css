@@ -172,12 +172,18 @@ html, body {
   margin: 0;
 }
 
+/* Scrollbar START */
+#form::-webkit-scrollbar { width: 0; }
+#form::-webkit-scrollbar-track { width: 0; }
+#form::-webkit-scrollbar-thumb { width: 0; }
 #news .point .panel::-webkit-scrollbar { width: 0; }
 #news .point .panel::-webkit-scrollbar-track { width: 0; }
 #news .point .panel::-webkit-scrollbar-thumb { width: 0; }
 .navigation::-webkit-scrollbar { width: 0; }
 .navigation::-webkit-scrollbar-track { width: 0; }
 .navigation::-webkit-scrollbar-thumb { width: 0; }
+/* Scrollbar END */
+
 .remove { display: none; }
 *:focus { outline: none; }
 .nav-select { cursor: pointer; }
