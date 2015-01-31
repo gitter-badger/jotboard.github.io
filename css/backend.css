@@ -39,7 +39,21 @@
 .navigation .container form {
   width: 70%;
   float: left;
-} #namespace {
+} .navigation .below-top .alt .nav-select {
+  width: 49.5%;
+  padding: .5%;
+  text-align: center;
+  background-color: #E0E0E0;
+  margin: 0 0 1% 0;
+  color: #2B2B2B;
+  border-radius: 2px;
+} .navigation .below-top .alt .nav-select:nth-child(odd) {
+  float: left;
+} .navigation .below-top .alt .nav-select:nth-child(even) {
+  float: right;
+}
+
+#namespace {
   text-align: left;
   display: block;
   width: 100%;
@@ -56,24 +70,12 @@
   box-shadow: none;
 } #namespace::-webkit-input-placeholder {
   color: #E0E0E0;
-} #namespace:-moz-placeholder { /* Firefox 18- */
+} #namespace:-moz-placeholder {
   color: #E0E0E0;
-} #namespace::-moz-placeholder {  /* Firefox 19+ */
+} #namespace::-moz-placeholder {
   color: #E0E0E0;
 } #namespace::-ms-input-placeholder {
   color: #E0E0E0;
-} .navigation .below-top .alt .nav-select {
-  width: 49.5%;
-  padding: .5%;
-  text-align: center;
-  background-color: #E0E0E0;
-  margin: 0 0 1% 0;
-  color: #2B2B2B;
-  border-radius: 2px;
-} .navigation .below-top .alt .nav-select:nth-child(odd) {
-  float: left;
-} .navigation .below-top .alt .nav-select:nth-child(even) {
-  float: right;
 }
 
 jb-give {
@@ -129,6 +131,23 @@ html, body {
   margin: 0 0 2% 0;
 } #news .point .panel .panel-heading .panel-title {
   text-align: center;
+}
+
+.bootbox .modal-dialog .modal-content {
+  background-color: #E9E9E9;
+  border: 0 !important;
+  border-radius: 3px;
+  outline: 0;
+} .bootbox .modal-dialog .modal-content .modal-header {
+  min-height: 16.43px;
+  padding: 15px 16px 2px 16px;
+  border-bottom: 0;
+} .bootbox .modal-dialog .modal-content .modal-body {
+  padding: 12px;
+} .bootbox .modal-dialog .modal-content .modal-footer {
+  padding: 10px;
+  text-align: right;
+  border-top: 3px solid #2B2B2B;
 }
 
 .below-top {
