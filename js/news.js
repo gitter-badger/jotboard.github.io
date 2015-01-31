@@ -1,22 +1,22 @@
 var news = {
   one: {
-    title: "",
-    href: "",
+    title: "Test",
+    href: "http://test.com/",
     body: ""
   },
   two: {
-    title: "",
-    href: "",
+    title: "Test",
+    href: "http://test.com/",
     body: ""
   },
   three: {
-    title: "",
-    href: "",
+    title: "Test",
+    href: "http://test.com/",
     body: ""
   },
   four: {
-    title: "",
-    href: "",
+    title: "Test",
+    href: "http://test.com/",
     body: ""
   }
 };
