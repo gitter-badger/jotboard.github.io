@@ -179,5 +179,6 @@ html, body {
 .navigation::-webkit-scrollbar-track { width: 0; }
 .navigation::-webkit-scrollbar-thumb { width: 0; }
 .remove { display: none; }
+*:focus { outline: none; }
 .nav-select { cursor: pointer; }
 .container form div { margin: 0; }
