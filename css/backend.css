@@ -31,7 +31,7 @@
   max-height: 100%;
   position: fixed;
   left: 0; top: 0;
-  padding: 8.7px 2% 8.7px 2%;
+  padding: 8.7px 1.5% 8.7px 1.5%;
   overflow-y: scroll;
   background: rgb(37, 64, 87);
 }
@@ -120,21 +120,26 @@ html, body {
 
 #news {
   float: left;
-  width: 100%;
+  width: 810px;
 } #news .point {
-  width: 49.5%;
-  margin: 0px 0 0 0;
+  width: 400px;
+  margin: 0;
 } #news .point:nth-child(odd) {
   float: left;
 } #news .point:nth-child(even) {
   float: right;
 } #news .point .panel {
-  margin: 0 0 2% 0;
+  margin: 0% 0% 2% 0%;
   max-height: 120px;
   overflow-x: hidden;
   overflow-y: scroll;
 } #news .point .panel .panel-heading .panel-title {
   text-align: center;
+} #news .point .panel {
+  border-radius: 0;
+  border: none;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
 }
 
 .bootbox .modal-dialog .modal-content {
