@@ -44,7 +44,7 @@
   padding: .5%;
   text-align: center;
   background-color: #E0E0E0;
-  margin: 0 0 1% 0;
+  margin: 0 0 8px 0;
   color: #2B2B2B;
   border-radius: 2px;
 } .navigation .below-top .alt .nav-select:nth-child(odd) {
@@ -120,23 +120,24 @@ html, body {
 
 #news {
   float: left;
-  width: 810px;
+  width: 100%;
+  margin: 0 0 8px 0;
 } #news .point {
-  width: 400px;
-  margin: 0;
+  width: 49.15%;
+  margin: 5px 3px 5px 3px;
 } #news .point:nth-child(odd) {
   float: left;
 } #news .point:nth-child(even) {
   float: right;
 } #news .point .panel {
-  margin: 0% 0% 2% 0%;
+  margin: 0;
   max-height: 120px;
   overflow-x: hidden;
   overflow-y: scroll;
 } #news .point .panel .panel-heading .panel-title {
   text-align: center;
 } #news .point .panel {
-  border-radius: 0;
+  border-radius: 2px;
   border: none;
   -webkit-box-shadow: none !important;
   box-shadow: none !important;
@@ -161,7 +162,7 @@ html, body {
 
 .below-top {
   width: 100%;
-  margin: 1% 0 0 0;
+  margin: 11px 0 0 0;
   float: left;
 } .below-top .alt {
   width: 100%;
