@@ -123,15 +123,18 @@ html, body {
   width: 100%;
   margin: 0 0 8px 0;
 } #news .point {
-  width: 49.15%;
-  margin: 5px 3px 5px 3px;
+  width: 100%;
+  margin: 0 0 10px 0;
 } #news .point:nth-child(odd) {
   float: left;
 } #news .point:nth-child(even) {
   float: right;
+} #news .point:last-child {
+  margin-bottom: 0;
+} #news .point:first-child {
+  margin-top: 0;
 } #news .point .panel {
   margin: 0;
-  max-height: 120px;
   overflow-x: hidden;
   overflow-y: scroll;
 } #news .point .panel .panel-heading .panel-title {

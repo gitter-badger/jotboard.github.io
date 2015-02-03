@@ -84,9 +84,10 @@ var startUp = function() {
           });
           head.load("js/news.js", function() {
             console.log("News");
-            if (jotboard("hash", "n") && jotboard("hash", "1")) window.location = news.one.href;
-            if (jotboard("hash", "n") && jotboard("hash", "2")) window.location = news.two.href;
-            if (jotboard("hash", "n") && jotboard("hash", "3")) window.location = news.three.href;
+            if (jotboard("hash", "news") && jotboard("hash", "one")) window.location = news.one.href;
+            if (jotboard("hash", "news") && jotboard("hash", "two")) window.location = news.two.href;
+            if (jotboard("hash", "news") && jotboard("hash", "three")) window.location = news.three.href;
+            if (jotboard("hash", "news") && jotboard("hash", "four")) window.location = news.three.href;
             // Headline #1
             $('#news .one').html(
               "<div class='news panel'>" +
@@ -105,7 +106,6 @@ var startUp = function() {
                     "<a href='" + news.two.href + "'>" + news.two.title + "</a>" +
                   "</h4>" +
                 "</div>" +
-                "<div class='panel-body'>" + news.two.body + "</div>" +
               "</div>");
             // Headline #3
             $('#news .three').html(
@@ -115,7 +115,6 @@ var startUp = function() {
                     "<a href='" + news.three.href + "'>" + news.three.title + "</a>" +
                   "</h4>" +
                 "</div>" +
-                "<div class='panel-body'>" + news.three.body + "</div>" +
               "</div>");
             // Headline #4
             $('#news .four').html(
@@ -125,22 +124,15 @@ var startUp = function() {
                     "<a href='" + news.four.href + "'>" + news.four.title + "</a>" +
                   "</h4>" +
                 "</div>" +
-                "<div class='panel-body'>" + news.four.body + "</div>" +
               "</div>");
             // Statements to kill headlines entirely if they are ALL empty.
             if (news.one.title == "") $("#news div.one div.news div.panel-heading").remove();
-            if (news.one.body == "") $("#news div.one div.news div.panel-body").remove();
-            if (news.one.title == "" && news.one.body == "") $("#news div.one").remove();
             if (news.two.title == "") $("#news div.two div.news div.panel-heading").remove();
-            if (news.two.body == "") $("#news div.two div.news div.panel-body").remove();
-            if (news.two.title == "" && news.two.body == "") $("#news div.two").remove();
             if (news.three.title == "") $("#news div.three div.news div.panel-heading").remove();
-            if (news.three.body == "") $("#news div.three div.news div.panel-body").remove();
-            if (news.three.title == "" && news.three.body == "") $("#news div.three").remove();
             if (news.four.title == "") $("#news div.four div.news div.panel-heading").remove();
-            if (news.four.body == "") $("#news div.four div.news div.panel-body").remove();
-            if (news.four.title == "" && news.four.body == "") $("#news div.four").remove();
-            if (news.one.title == "" && news.one.href == "" && news.one.body == "" && news.two.title == "" && news.two.href == "" && news.two.body == "" && news.three.title == "" && news.three.href == "" && news.three.body == ""&& news.four.title == "" && news.four.href == "" && news.four.body == "") $("#news").remove();
+            if (news.one.title == "" && news.one.href == "" && news.two.title == "" && news.two.href == "" && news.three.title == "" && news.three.href == "" && news.four.title == "" && news.four.href == "") {
+              $("#news").remove();
+            }
           });
           head.load("js/bootbox.js", function() {
             console.log("Bootbox");
