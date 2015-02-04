@@ -1,4 +1,4 @@
 # _Jotboard_
-This Project was created out of shear anger of the want to have a entertainment-enriched Note-keeping service, want to make notes while having some damn fun? We sure do as well.
+Jotboard is an Open-Source Segmental Social Network that plays out as a digital notebook, you can also open up collaboration rooms for friends and collegues.
 
 > [Website](https://jotboard.github.io/) / [Facebook](https://fb.me/Jotboard) / [Twitter](https://twitter.com/Jotboard)

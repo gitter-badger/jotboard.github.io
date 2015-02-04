@@ -1,5 +1,5 @@
 window._idl = {};
-var DevMode = false, IDLCamp = false, head_conf = {
+var _DevState = false, _IDL = false, head_conf = {
   html5: true
 };
 
@@ -13,13 +13,17 @@ var startUp = function() {
       if (db.get(jotboard("prefix") + jotboard("namespace/main"))) {
         form.value = db.get(jotboard("prefix") + jotboard("namespace/main"));
         console.info("The " + jotboard("namespace/main") + " board is avalible.");
-      } $("jb-give .jb-save").click(function() {
+      }
+      $("jb-give .jb-save").on("click", function() {
         jotboard("data", "save");
-      }); $("jb-give .jb-load").click(function() {
+      });
+      $("jb-give .jb-load").on("click", function() {
         jotboard("data", "load");
-      }); $("jb-give .jb-toggle").click(function() {
+      });
+      $("jb-give .jb-toggle").on("click", function() {
         jotboard("toggle", "navigation");
-      }); $(".jb-blog").click(function() {
+      });
+      $(".jb-blog").on("click", function() {
         window.open("/blog/", "_blank");
       });
       head.load(['js/mousetrap.js'], function() {
@@ -38,9 +42,6 @@ var startUp = function() {
         })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
         ga('create', 'UA-37813397-5', 'auto');
         ga('send', 'pageview');
-        // $('body').on('touchmove', function(nodeAB) {
-        //   nodeAB.preventDefault();
-        // });
         $(".radio").attr("align", "center");
         $('iframe').attr({
           'frameborder': '0',
@@ -48,8 +49,8 @@ var startUp = function() {
         }).addClass('iframe');
         if (window.location.hash) document.title = jotboard('hashmod');
         if (!window.location.hash) document.title = jotboard('sitename');
-        if (DevMode === false) $('body').css('display', 'block');
-        if (IDLCamp === true) {
+        if (_DevState === false) $('body').css('display', 'block');
+        if (_IDL === true) {
           head.load([('https:' == document.location.protocol ? 'https://' : 'http://') + 'members.internetdefenseleague.org/include/?url=' + _idl.url + '&campaign=' + _idl.campaign + '&variant=modal'], function() {
             console.log('Internet Defence League');
           });
@@ -63,7 +64,8 @@ var startUp = function() {
         var TimeShift = function() {
           if (jotboard("threshold", 0, 13)) $("#form").attr({
             "placeholder": moment(new Date()).format("[Hello, it's currently] dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, have an awesome day!]")
-          }); else $("#form").attr({
+          });
+          else $("#form").attr({
             "placeholder": moment(new Date()).format("[Hows it going? it's ]dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, see ya!]")
           });
         }; TimeShift();
@@ -87,50 +89,33 @@ var startUp = function() {
             if (jotboard("hash", "news") && jotboard("hash", "one")) window.location = news.one.href;
             if (jotboard("hash", "news") && jotboard("hash", "two")) window.location = news.two.href;
             if (jotboard("hash", "news") && jotboard("hash", "three")) window.location = news.three.href;
-            if (jotboard("hash", "news") && jotboard("hash", "four")) window.location = news.three.href;
+            if (jotboard("hash", "news") && jotboard("hash", "four")) window.location = news.four.href;
             // Headline #1
             $('#news .one').html(
-              "<div class='news panel'>" +
-                "<div class='panel-heading'>" +
-                  "<h4 class='panel-title'>" +
-                    "<a href='" + news.one.href + "'>" + news.one.title + "</a>" +
-                  "</h4>" +
-                "</div>" +
-                "<div class='panel-body'>" + news.one.body + "</div>" +
-              "</div>");
+              "<h4 class='title'>" +
+                "<a href='" + news.one.href + "'>" + news.one.title + "</a>" +
+              "</h4>");
             // Headline #2
             $('#news .two').html(
-              "<div class='news panel'>" +
-                "<div class='panel-heading'>" +
-                  "<h4 class='panel-title'>" +
-                    "<a href='" + news.two.href + "'>" + news.two.title + "</a>" +
-                  "</h4>" +
-                "</div>" +
-              "</div>");
+              "<h4 class='title'>" +
+                "<a href='" + news.two.href + "'>" + news.two.title + "</a>" +
+              "</h4>");
             // Headline #3
             $('#news .three').html(
-              "<div class='news panel'>" +
-                "<div class='panel-heading'>" +
-                  "<h4 class='panel-title'>" +
-                    "<a href='" + news.three.href + "'>" + news.three.title + "</a>" +
-                  "</h4>" +
-                "</div>" +
-              "</div>");
+              "<h4 class='title'>" +
+                "<a href='" + news.three.href + "'>" + news.three.title + "</a>" +
+              "</h4>");
             // Headline #4
             $('#news .four').html(
-              "<div class='news panel'>" +
-                "<div class='panel-heading'>" +
-                  "<h4 class='panel-title'>" +
-                    "<a href='" + news.four.href + "'>" + news.four.title + "</a>" +
-                  "</h4>" +
-                "</div>" +
-              "</div>");
+              "<h4 class='title'>" +
+                "<a href='" + news.four.href + "'>" + news.four.title + "</a>" +
+              "</h4>");
             // Statements to kill headlines entirely if they are ALL empty.
-            if (news.one.title == "") $("#news div.one div.news div.panel-heading").remove();
-            if (news.two.title == "") $("#news div.two div.news div.panel-heading").remove();
-            if (news.three.title == "") $("#news div.three div.news div.panel-heading").remove();
-            if (news.four.title == "") $("#news div.four div.news div.panel-heading").remove();
-            if (news.one.title == "" && news.one.href == "" && news.two.title == "" && news.two.href == "" && news.three.title == "" && news.three.href == "" && news.four.title == "" && news.four.href == "") {
+            if (news.one.title == "") $("#news div.one h4.title").remove();
+            if (news.two.title == "") $("#news div.two h4.title").remove();
+            if (news.three.title == "") $("#news div.three h4.title").remove();
+            if (news.four.title == "") $("#news div.four h4.title").remove();
+            if (news.one.title == "" && news.two.title == "" && news.three.title == "" && news.four.title == "") {
               $("#news").remove();
             }
           });
@@ -175,7 +160,7 @@ var startUp = function() {
             $("jb-give .jb-save, jb-give .jb-load, jb-give .jb-toggle").toggleClass("remove");
             $("div.container form").toggleClass("full-width");
             jotboard("toggle", "navigation");
-            $.jbGrowl("Do not give out personal information unless official and/or legitimate consent is passed.", {
+            $.jbGrowl("Do not give out personal information unless official and/or legitimate consent is given.", {
               ele: "body",
               type: "info",
               offset: {

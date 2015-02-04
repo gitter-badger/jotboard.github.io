@@ -1,15 +1,15 @@
 # Contributing to Jotboard
 
-_As we welcome Feedback on every aspect of Jotboard, please read these guidelines before submitting any, just to be sure._
+_As we welcome Feedback on every and any aspect of Jotboard, please read these guidelines before submitting any, just to be sure._
 
 _Words that begin with the @ sign must be wrapped in backticks, this is to avoid unnessesary notifications to users of the same name._
 
 ## Reporting an Issue
 
-Issues that are inline with the avalible categories and labels, must be posted initally under the labels, anything out of the norm must be put under _Other_. Make sure the bugs are isolateable and reproducible problems that we can fix within the core, if the following isn't possible, it'll make it a little harder for us to figure out the issue. Please read the following guidelines before opening any kind of issue.
+Issues that are inline with the avalible categories and labels, must be posted initally under the labels, anything out of the norm must be put under _Other_. Make sure the bugs are isolateable and reproducible problems that we can fix within the core, if the following isn't possible, specify more so so that it make it a little less hard for us to figure out the issue. Please read the following guidelines before opening any kind of issue.
 
-1. **Search for existing issues.** Since this is the one and only place to submit bug reports/feature requests, its likely that we could get a lot of duplicates, and you'd help us out a lot by first checking if someone else has reported the same issue. Moreover, the issue may have already been resolved with a fix or new feature in the works.
-2. **Share as much information as possible.** Include operating system and browser. Describe how you use Jotboard, and try to include steps to reproduce the bug.
+1. **Search for existing issues.** Since this is the one and only place to submit bug reports and feature requests, its likely that we could get a lot of duplicate submissions, and you'd help us out a lot by first checking if someone else has reported the same issue. Moreover, the issue may have already been resolved with a fix or new feature in the works.
+2. **Share as much information as possible.** Include operating system and browser. Describe how you use Jotboard, and try to include steps to reproduce the bug, if the following isn't possible (un-reproducable bug) consult tech professonials.
 3. **If you have a solution or suggestion for how to fix the bug you're reporting, please include it, or make a pull request** - don't assume the maintainers know how to fix it just because you do.
 
 ## Feature Requests
@@ -18,7 +18,7 @@ Issues that are inline with the avalible categories and labels, must be posted i
 
 1. Please search for existing Feature Requests first to see if something similar already exists and if it exists in the submenu.
 2. Include a clear and specific use-case. We love new ideas, but we don't add features without a good reason.
-3. Consider whether or not your feature would be better as an optional function (Hashmod) or implemented as a default interaction like Groupies.
+3. Consider whether or not your feature would be better as an optional function (implemented as a Hashmod) or implemented as a default interaction like Groupies.
 
 ## Pull Requests
 
