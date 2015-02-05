@@ -31,7 +31,7 @@
   max-height: 100%;
   position: fixed;
   left: 0; top: 0;
-  padding: 8.7px 1.5% 8.7px 1.5%;
+  padding: 8.5px 1.5% 9px 1.5%;
   overflow-y: scroll;
   background: rgb(37, 64, 87);
 }
@@ -82,11 +82,13 @@ jb-give {
   width: 30%;
   float: right;
 } jb-give .nav-select {
-  color: #E0E0E0;
+  color: #2B2B2B;
   text-align: center;
-  width: 33.33%;
+  width: calc(32% + 0px);
   font-size: 16px;
-  padding: calc(1% - 1px) 0 1% 0;
+  margin: 0 0 0 3px;
+  padding: 3px 0 3px 0;
+  background: #E9E9E9;
   float: right;
 }
 
