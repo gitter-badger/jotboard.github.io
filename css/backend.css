@@ -37,13 +37,15 @@
 }
 
 .navigation .container form {
-  width: 70%;
+  width: calc(100% - 300px);
   float: left;
 } .navigation .below-top .alt .nav-select {
   width: 49.5%;
-  padding: .5%;
+  padding: .5% 0 .5% 0;
   text-align: center;
-  background-color: #E0E0E0;
+  border: 2px solid #00A4F5;
+  box-shadow: inset 0 0 1px #2B2B2B;
+  background-color: #E9E9E9;
   margin: 0 0 8px 0;
   color: #2B2B2B;
   border-radius: 2px;
@@ -58,15 +60,15 @@
   display: block;
   width: 100%;
   height: auto;
-  padding: 1px 0 1px 0;
+  padding: 0 0 0 2px;
   margin: 0;
   font-size: 22px;
-  line-height: 1;
-  color: #E0E0E0;
-  background-color: transparent;
-  background-image: none;
+  line-height: 1.24;
+  color: #E0E0E0 !important;
+  background-color: transparent !important;
+  background-image: none !important;
   border: 0;
-  border-radius: 0;
+  border-radius: 2px;
   box-shadow: none;
 } #namespace::-webkit-input-placeholder {
   color: #E0E0E0;
@@ -79,17 +81,18 @@
 }
 
 jb-give {
-  width: 30%;
+  width: 300px;
   float: right;
 } jb-give .nav-select {
   color: #2B2B2B;
   text-align: center;
-  width: calc(32% + 0px);
+  width: 32%;
   font-size: 16px;
-  margin: 0 0 0 3px;
-  padding: 3px 0 3px 0;
-  background: #E9E9E9;
+  margin: 0 0 0 4px;
+  padding: 2px 0 3px 0;
+  background-color: #E9E9E9;
   float: right;
+  border-radius: 2px;
 }
 
 .jtb-radio {
@@ -121,14 +124,14 @@ html, body {
 }
 
 #news {
-  float: left;
+  float: right;
   width: 100%;
   margin: 0 0 8px 0;
 } #news .point {
   width: 49.5%;
-  margin: .2% 0 .5% 0;
+  margin: 0 0 7px 0;
   text-align: center;
-  border: 2px solid #00AAFF;
+  border: 2px solid #00A4F5;
   box-shadow: inset 0 0 1px #2B2B2B;
   background-color: #E9E9E9;
   border-radius: 2px;
@@ -139,7 +142,7 @@ html, body {
 } #news .point h4 a {
   color: #2B2B2B;
 } #news .point h4 {
-  font-size: 18px;
+  font-size: 19px;
 }
 
 .bootbox .modal-dialog .modal-content {
@@ -171,7 +174,7 @@ html, body {
   padding: 0;
   width: 100% !important;
 } .navigation .container form, jb-give {
-  margin: 7px 0 4px 0;
+  margin: 7px 0 5px 0;
 } .body.container {
   padding: .5%;
   margin: 0;
