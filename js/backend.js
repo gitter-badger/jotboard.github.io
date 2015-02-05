@@ -111,10 +111,10 @@ var startUp = function() {
                 "<a href='" + news.four.href + "'>" + news.four.title + "</a>" +
               "</h4>");
             // Statements to kill headlines entirely if they are ALL empty.
-            if (news.one.title == "") $("#news div.one h4.title").remove();
-            if (news.two.title == "") $("#news div.two h4.title").remove();
-            if (news.three.title == "") $("#news div.three h4.title").remove();
-            if (news.four.title == "") $("#news div.four h4.title").remove();
+            if (news.one.title == "") $("#news div.one").remove();
+            if (news.two.title == "") $("#news div.two").remove();
+            if (news.three.title == "") $("#news div.three").remove();
+            if (news.four.title == "") $("#news div.four").remove();
             if (news.one.title == "" && news.two.title == "" && news.three.title == "" && news.four.title == "") {
               $("#news").remove();
             }
