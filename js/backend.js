@@ -6,7 +6,7 @@ var _DevState = false, _IDL = false, head_conf = {
 var startUp = function() {
   if (window.location.protocol == "http:") window.location.protocol = "https:";
   if (window.location.protocol == "https:") {
-    $load(["js/db.js", "js/frame.js", "js/jquery.js"], function() {
+    head.load(["js/db.js", "js/frame.js", "js/jquery.js"], function() {
       var form = document.getElementById("form");
       var namespace = document.getElementById("namespace");
       if (db.get(jotboard("prefix") + jotboard("namespace/main"))) {
@@ -37,14 +37,14 @@ var startUp = function() {
       if (_DevState === false) $('body').css('display', 'block');
       if (_IDL === true) toast(('https:' == document.location.protocol ? 'https://' : 'http://') + 'members.internetdefenseleague.org/include/?url=' + _idl.url + '&campaign=' + _idl.campaign + '&variant=modal');
     });
-    $load("js/moment.js", function() {
+    head.load("js/moment.js", function() {
       console.log("Moment.JS");
       var TimePulse = function() {
         if (jotboard("threshold", 0, 12)) form.setAttribute("placeholder", moment(new Date()).format("[Hello, it's currently] dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, have an awesome day!]"));
         else form.setAttribute("placeholder", moment(new Date()).format("[Hows it going? it's ]dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, see ya!]"));
       }; TimePulse();
       setInterval(TimePulse, 5);
-      $load("js/news.js", function() {
+      head.load("js/news.js", function() {
         console.log("News");
         if (jotboard("hash", "news") && jotboard("hash", "one")) window.location = news.one.href;
         if (jotboard("hash", "news") && jotboard("hash", "two")) window.location = news.two.href;
@@ -80,18 +80,18 @@ var startUp = function() {
         }
       });
     });
-    $load("js/prefixfree.js", function() {
+    head.load("js/prefixfree.js", function() {
       console.log("Prefixfree");
-      $load("//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css", function() {
+      head.load("//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css", function() {
         console.log("Font Awesome");
         $(".jb-toggle").addClass("fa-important").addClass("fa-bolt");
       });
-      $load(["js/bootstrap.js", "css/bootstrap.css"], function() {
+      head.load(["js/bootstrap.js", "css/bootstrap.css"], function() {
         console.log("Bootstrap JS, Bootstrap CSS");
         if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
           $("body").addClass("mobile");
         } else console.log("Not on mobile.");
-        $load("js/bootbox.js", function() {
+        head.load("js/bootbox.js", function() {
           console.log("Bootbox");
           bootbox.setDefaults({
             locale: "en",
@@ -129,9 +129,9 @@ var startUp = function() {
         });
       });
     });
-    $load("js/growl.js", function() {
+    head.load("js/growl.js", function() {
       console.log("Jotboard Growl");
-      $load("//togetherjs.com/togetherjs-min.js", function() {
+      head.load("//togetherjs.com/togetherjs-min.js", function() {
         console.log("TogetherJS");
         $(".jb-groupies").on("click", function() {
           jotboard("groupies", "run");
