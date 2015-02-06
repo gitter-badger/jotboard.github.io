@@ -11,7 +11,7 @@ var grab = {
         if (typeof success === 'function') success();
       }
     };
-    document.querySelector(".grab-javascript").appendChild(javascript);
+    document.querySelector(".grab-javascript")[0].appendChild(javascript);
   },
   css: function(url_index, success) {
     var css = document.createElement("link"), done = false;
