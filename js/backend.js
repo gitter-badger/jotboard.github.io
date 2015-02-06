@@ -6,101 +6,77 @@ var _DevState = false, _IDL = false, head_conf = {
 var startUp = function() {
   if (window.location.protocol == "http:") window.location.protocol = "https:";
   if (window.location.protocol == "https:") {
-    head.load("js/db.js", function() {
+    head.load([
+      "js/db.js",
+      "js/frame.js",
+      "js/jquery.js"
+    ], function() {
       var form = document.getElementById("form");
       var namespace = document.getElementById("namespace");
       if (db.get(jotboard("prefix") + jotboard("namespace/main"))) {
         form.value = db.get(jotboard("prefix") + jotboard("namespace/main"));
         console.info("The " + jotboard("namespace/main") + " board is avalible.");
-      }
-      head("js/jquery.js", function() {
-        $(".radio").attr("align", "center");
-        $('iframe').attr({
-          'frameborder': '0',
-          'allowtransparency': 'true'
-        }).addClass('iframe');
-      });
-      $("jb-give .jb-save").on("click", function() {
+      } $(".radio").attr({
+        "align": "center"
+      }); $('iframe').attr({
+        'frameborder': '0',
+        'allowtransparency': 'true'
+      }); $("jb-give .jb-save").on("click", function() {
         jotboard("data", "save");
-      });
-      $("jb-give .jb-load").on("click", function() {
+      }); $("jb-give .jb-load").on("click", function() {
         jotboard("data", "load");
-      });
-      $("jb-give .jb-toggle").on("click", function() {
+      }); $("jb-give .jb-toggle").on("click", function() {
         jotboard("toggle", "navigation");
-      });
-      $(".jb-blog").on("click", function() {
+      }); $(".jb-blog").on("click", function() {
         window.open("/blog/", "_blank");
       });
-      head.load("js/frame.js", function() {
-        console.log("Frame");
-        (function(i, s, o, g, r, a, m) {
-          i['GoogleAnalyticsObject'] = r;
-          i[r] = i[r] || function() {
-            (i[r].q = i[r].q || []).push(arguments)}, i[r].l = 1*new Date();
-            a = s.createElement(o),
-            m = s.getElementsByTagName(o)[0];
-            a.async = 1;
-            a.src = g;
-            m.parentNode.insertBefore(a, m);
-          })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-        ga('create', 'UA-37813397-5', 'auto');
-        ga('send', 'pageview');
-        if (window.location.hash) document.title = jotboard('hashmod');
-        if (!window.location.hash) document.title = jotboard('sitename');
-        if (_DevState === false) $('body').css('display', 'block');
-        if (_IDL === true) toast(('https:' == document.location.protocol ? 'https://' : 'http://') + 'members.internetdefenseleague.org/include/?url=' + _idl.url + '&campaign=' + _idl.campaign + '&variant=modal');
-      });
+      if (window.location.hash) document.title = jotboard('hashmod');
+      if (!window.location.hash) document.title = jotboard('sitename');
+      if (_DevState === false) $('body').css('display', 'block');
+      if (_IDL === true) toast(('https:' == document.location.protocol ? 'https://' : 'http://') + 'members.internetdefenseleague.org/include/?url=' + _idl.url + '&campaign=' + _idl.campaign + '&variant=modal');
     });
     head.load("js/moment.js", function() {
-      console.log("MomentJS");
-      // TimeShift is used to simulate real-time activity and change
-      // attributes in what seems to be real-time, its not actually
-      // real-time, but its per 1 millisecond so its close enough.
-      var TimeShift = function() {
-        if (jotboard("threshold", 0, 13)) $("#form").attr({
-          "placeholder": moment(new Date()).format("[Hello, it's currently] dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, have an awesome day!]")
-        });
-        else $("#form").attr({
-          "placeholder": moment(new Date()).format("[Hows it going? it's ]dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, see ya!]")
-        });
-      }; TimeShift();
-      setInterval(TimeShift, 1);
-    });
-    head.load("js/news.js", function() {
-      console.log("News");
-      if (jotboard("hash", "news") && jotboard("hash", "one")) window.location = news.one.href;
-      if (jotboard("hash", "news") && jotboard("hash", "two")) window.location = news.two.href;
-      if (jotboard("hash", "news") && jotboard("hash", "three")) window.location = news.three.href;
-      if (jotboard("hash", "news") && jotboard("hash", "four")) window.location = news.four.href;
-      // Headline #1
-      $('#news .one').html(
-        "<h4 class='title'>" +
-          "<a href='" + news.one.href + "'>" + news.one.title + "</a>" +
-        "</h4>");
-      // Headline #2
-      $('#news .two').html(
-        "<h4 class='title'>" +
-          "<a href='" + news.two.href + "'>" + news.two.title + "</a>" +
-        "</h4>");
-      // Headline #3
-      $('#news .three').html(
-        "<h4 class='title'>" +
-          "<a href='" + news.three.href + "'>" + news.three.title + "</a>" +
-        "</h4>");
-      // Headline #4
-      $('#news .four').html(
-        "<h4 class='title'>" +
-          "<a href='" + news.four.href + "'>" + news.four.title + "</a>" +
-        "</h4>");
-      // Statements to kill headlines entirely if they are ALL empty.
-      if (news.one.title == "") $("#news div.one").remove();
-      if (news.two.title == "") $("#news div.two").remove();
-      if (news.three.title == "") $("#news div.three").remove();
-      if (news.four.title == "") $("#news div.four").remove();
-      if (news.one.title == "" && news.two.title == "" && news.three.title == "" && news.four.title == "") {
-        $("#news").remove();
-      }
+      console.log("Moment.JS");
+      var TimePulse = function() {
+        if (jotboard("threshold", 0, 12)) form.setAttribute("placeholder", moment(new Date()).format("[Hello, it's currently] dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, have an awesome day!]"));
+        else form.setAttribute("placeholder", moment(new Date()).format("[Hows it going? it's ]dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, see ya!]"));
+      }; TimePulse();
+      setInterval(TimePulse, 5);
+      head.load("js/news.js", function() {
+        console.log("News");
+        if (jotboard("hash", "news") && jotboard("hash", "one")) window.location = news.one.href;
+        if (jotboard("hash", "news") && jotboard("hash", "two")) window.location = news.two.href;
+        if (jotboard("hash", "news") && jotboard("hash", "three")) window.location = news.three.href;
+        if (jotboard("hash", "news") && jotboard("hash", "four")) window.location = news.four.href;
+        // Headline #1
+        $('#news .one').html(
+          "<h4 class='title'>" +
+            "<a href='" + news.one.href + "'>" + news.one.title + "</a>" +
+          "</h4>");
+        // Headline #2
+        $('#news .two').html(
+          "<h4 class='title'>" +
+            "<a href='" + news.two.href + "'>" + news.two.title + "</a>" +
+          "</h4>");
+        // Headline #3
+        $('#news .three').html(
+          "<h4 class='title'>" +
+            "<a href='" + news.three.href + "'>" + news.three.title + "</a>" +
+          "</h4>");
+        // Headline #4
+        $('#news .four').html(
+          "<h4 class='title'>" +
+            "<a href='" + news.four.href + "'>" + news.four.title + "</a>" +
+          "</h4>");
+        // Statements to kill headlines entirely if they are ALL empty.
+        if (news.one.title == "") $("#news div.one").remove();
+        if (news.two.title == "") $("#news div.two").remove();
+        if (news.three.title == "") $("#news div.three").remove();
+        if (news.four.title == "") $("#news div.four").remove();
+        if (news.one.title == "" && news.two.title == "" && news.three.title == "" && news.four.title == "") {
+          $("#news").remove();
+        }
+      });
     });
     head.load("js/prefixfree.js", function() {
       console.log("Prefixfree");
@@ -111,7 +87,7 @@ var startUp = function() {
       head.load(["js/bootstrap.js", "css/bootstrap.css"], function() {
         console.log("Bootstrap JS, Bootstrap CSS");
         if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-          $("*").addClass("mobile");
+          $("body").addClass("mobile");
         } else console.log("Not on mobile.");
         head.load("js/bootbox.js", function() {
           console.log("Bootbox");
@@ -129,7 +105,7 @@ var startUp = function() {
               "This message is aimed at Politicians, Families, Frequent Internet Users, and the odd Selfie Takers, please share this message to as many people as you possibly can so we all know what were up against!",
               buttons: {
                 one: {
-                  label: "Net Defense League",
+                  label: "Internet Defense League",
                   className: "btn-primary",
                   callback: function() {
                     window.open("https://internetdefenseleague.org/", "_blank");
@@ -155,7 +131,7 @@ var startUp = function() {
       console.log("Jotboard Growl");
       head.load("//togetherjs.com/togetherjs-min.js", function() {
         console.log("TogetherJS");
-        $(".jb-groupies").click(function() {
+        $(".jb-groupies").on("click", function() {
           jotboard("groupies", "run");
         });
         TogetherJS.on("ready", function() {
