@@ -6,28 +6,30 @@ var _DevState = false, _IDL = false, head_conf = {
 var startUp = function() {
   if (window.location.protocol == "http:") window.location.protocol = "https:";
   if (window.location.protocol == "https:") {
-    head.load([
-      "js/db.js",
-      "js/frame.js",
-      "js/jquery.js"
-    ], function() {
+    $load(["js/db.js", "js/frame.js", "js/jquery.js"], function() {
       var form = document.getElementById("form");
       var namespace = document.getElementById("namespace");
       if (db.get(jotboard("prefix") + jotboard("namespace/main"))) {
         form.value = db.get(jotboard("prefix") + jotboard("namespace/main"));
         console.info("The " + jotboard("namespace/main") + " board is avalible.");
-      } $(".radio").attr({
+      }
+      $(".radio").attr({
         "align": "center"
-      }); $('iframe').attr({
+      });
+      $('iframe').attr({
         'frameborder': '0',
         'allowtransparency': 'true'
-      }); $("jb-give .jb-save").on("click", function() {
+      });
+      $("jb-give .jb-save").on("click", function() {
         jotboard("data", "save");
-      }); $("jb-give .jb-load").on("click", function() {
+      });
+      $("jb-give .jb-load").on("click", function() {
         jotboard("data", "load");
-      }); $("jb-give .jb-toggle").on("click", function() {
+      });
+      $("jb-give .jb-toggle").on("click", function() {
         jotboard("toggle", "navigation");
-      }); $(".jb-blog").on("click", function() {
+      });
+      $(".jb-blog").on("click", function() {
         window.open("/blog/", "_blank");
       });
       if (window.location.hash) document.title = jotboard('hashmod');
@@ -35,14 +37,14 @@ var startUp = function() {
       if (_DevState === false) $('body').css('display', 'block');
       if (_IDL === true) toast(('https:' == document.location.protocol ? 'https://' : 'http://') + 'members.internetdefenseleague.org/include/?url=' + _idl.url + '&campaign=' + _idl.campaign + '&variant=modal');
     });
-    head.load("js/moment.js", function() {
+    $load("js/moment.js", function() {
       console.log("Moment.JS");
       var TimePulse = function() {
         if (jotboard("threshold", 0, 12)) form.setAttribute("placeholder", moment(new Date()).format("[Hello, it's currently] dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, have an awesome day!]"));
         else form.setAttribute("placeholder", moment(new Date()).format("[Hows it going? it's ]dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, see ya!]"));
       }; TimePulse();
       setInterval(TimePulse, 5);
-      head.load("js/news.js", function() {
+      $load("js/news.js", function() {
         console.log("News");
         if (jotboard("hash", "news") && jotboard("hash", "one")) window.location = news.one.href;
         if (jotboard("hash", "news") && jotboard("hash", "two")) window.location = news.two.href;
@@ -78,18 +80,18 @@ var startUp = function() {
         }
       });
     });
-    head.load("js/prefixfree.js", function() {
+    $load("js/prefixfree.js", function() {
       console.log("Prefixfree");
-      head.load("//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css", function() {
+      $load("//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css", function() {
         console.log("Font Awesome");
         $(".jb-toggle").addClass("fa-important").addClass("fa-bolt");
       });
-      head.load(["js/bootstrap.js", "css/bootstrap.css"], function() {
+      $load(["js/bootstrap.js", "css/bootstrap.css"], function() {
         console.log("Bootstrap JS, Bootstrap CSS");
         if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
           $("body").addClass("mobile");
         } else console.log("Not on mobile.");
-        head.load("js/bootbox.js", function() {
+        $load("js/bootbox.js", function() {
           console.log("Bootbox");
           bootbox.setDefaults({
             locale: "en",
@@ -127,9 +129,9 @@ var startUp = function() {
         });
       });
     });
-    head.load("js/growl.js", function() {
+    $load("js/growl.js", function() {
       console.log("Jotboard Growl");
-      head.load("//togetherjs.com/togetherjs-min.js", function() {
+      $load("//togetherjs.com/togetherjs-min.js", function() {
         console.log("TogetherJS");
         $(".jb-groupies").on("click", function() {
           jotboard("groupies", "run");
