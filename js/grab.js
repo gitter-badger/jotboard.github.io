@@ -11,7 +11,7 @@ var grab = {
         if (typeof success === 'function') success();
       }
     };
-    document.querySelector(".grab-javascript")[0].appendChild(javascript);
+    document.getElementsByTagName("grab-javascript")[0].appendChild(javascript);
   },
   css: function(url_index, success) {
     var css = document.createElement("link"), done = false;
@@ -24,6 +24,6 @@ var grab = {
         if (typeof success === 'function') success();
       }
     };
-    document.getElementsByTagName("head")[0].appendChild(css);
+    document.getElementsByTagName("grab-css")[0].appendChild(css);
   }
 };
