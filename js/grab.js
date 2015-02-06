@@ -3,6 +3,7 @@
 
 var grab = {
   js: function(url_index, success) {
+    var grab_javascript = document.getElementsByTagName("grab-javascript")[0];
     var javascript = document.createElement("script"), done = false;
     javascript.src = url_index;
     javascript.onload = javascript.onreadystatechange = function() {
@@ -11,9 +12,10 @@ var grab = {
         if (typeof success === 'function') success();
       }
     };
-    document.getElementsByTagName("grab-javascript")[0].appendChild(javascript);
+    grab_javascript.appendChild(javascript);
   },
   css: function(url_index, success) {
+    var grab_css = document.getElementsByTagName("grab-css")[0];
     var css = document.createElement("link"), done = false;
     css.type = "text/css";
     css.rel = "stylesheet";
@@ -24,6 +26,6 @@ var grab = {
         if (typeof success === 'function') success();
       }
     };
-    document.getElementsByTagName("grab-css")[0].appendChild(css);
+    grab_css.appendChild(css);
   }
 };
