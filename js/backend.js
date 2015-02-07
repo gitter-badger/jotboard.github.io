@@ -105,27 +105,30 @@ var startUp = function() {
               "This message is to point out the current, past and future actions that have been taken to damage the Internet's Integrity, whether it be Mass Censorship, Illegal Spying or the way Net Neutrality presents itself as a money-related threat towards Cable Companies like Comcast, Verizon and Time Warner Cable and that it should never come to this again.<br /><br />" +
               "The way the Internet is is perfect, we wouldn't have it any other way, and regardless of what the implications are to the corporate side of things, we need to make sure these sort of things never happen again, by making how much of a positive impact the Internet has made on us and our world as clear as possible to make sure the corporate businesses of the modern world know what will happen if such things are to be passed through Congress or Governments sanctions.<br /><br />" +
               "This message is aimed at Politicians, Families, Frequent Internet Users, and the odd Selfie Takers, please share this message to as many people as you possibly can so we all know what were up against!",
-              buttons: {
-                one: {
-                  label: "Internet Defense League",
-                  className: "btn-primary",
-                  callback: function() {
-                    window.open("https://internetdefenseleague.org/", "_blank");
-                  }
-                },
-                two: {
-                  label: "BattleForThe.Net",
-                  className: "btn-primary",
-                  callback: function() {
-                    window.open("https://battleforthe.net/", "_blank");
-                  }
-                }
-              }
+            });
+            if (pattern == "tv") bootbox.dialog({
+              title: '"TV"',
+              message: "<iframe class='tv-yt' src='tv' frameborder='0' allowfullscreen></iframe>" +
+              "<form role='search' class='tv-yt' action='//www.youtube.com/embed/' target='_blank' method='get'>" +
+                "<div class='form-group'>" +
+                  "<input type='text' name='list' value='' class='form-control query' />" +
+                  "<input type='hidden' name='listType' value='search' />" +
+                  "<input type='hidden' name='autoplay' value='1' />" +
+                  "<input type='hidden' name='fs' value='0' />" +
+                  "<input type='hidden' name='loop' value='1' />" +
+                  "<input type='hidden' name='modestbranding' value='1' />" +
+                  "<input type='hidden' name='showinfo' value='0' />" +
+                  "<input type='hidden' name='autohide' value='0' />" +
+                "</div>" +
+              "</form>"
             });
           };
-          $(".jb-campaign").click(function() {
+          $(".jb-campaign").on("click", function() {
             bootboxOpen("campaign");
           }); if (jotboard("hash", "campaign")) bootboxOpen("campaign");
+          $(".jb-tv").on("click", function() {
+            bootboxOpen("tv");
+          }); if (jotboard("hash", "tv")) bootboxOpen("tv");
         });
       });
     });
