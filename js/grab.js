@@ -11,7 +11,7 @@ var grab = {
         if (typeof success === 'function') success();
       }
     };
-    var grab_javascript = document.getElementsByClassName("head")[0];
+    var grab_javascript = document.getElementsByClassName("grab-javascript")[0];
     grab_javascript.appendChild(javascript);
   },
   css: function(url_index, success) {
