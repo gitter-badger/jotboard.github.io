@@ -3,29 +3,29 @@
 
 var grab = {
   js: function(url_index, success) {
-    var grab_javascript = document.getElementsByTagName("grab-javascript")[0];
     var javascript = document.createElement("script"), done = false;
     javascript.src = url_index;
     javascript.onload = javascript.onreadystatechange = function() {
-      if (!done && (!this.readyState || this.readyState === "loaded" || this.readyState === "complete") ) {
+      if (!done && (!this.readyState || this.readyState === "loaded" || this.readyState === "complete")) {
         done = true;
         if (typeof success === 'function') success();
       }
     };
+    var grab_javascript = document.getElementsByClassName("head")[0];
     grab_javascript.appendChild(javascript);
   },
   css: function(url_index, success) {
-    var grab_css = document.getElementsByTagName("grab-css")[0];
     var css = document.createElement("link"), done = false;
     css.type = "text/css";
     css.rel = "stylesheet";
     css.href = url_index;
     css.onload = css.onreadystatechange = function() {
-      if (!done && (!this.readyState || this.readyState === "loaded" || this.readyState === "complete") ) {
+      if (!done && (!this.readyState || this.readyState === "loaded" || this.readyState === "complete")) {
         done = true;
         if (typeof success === 'function') success();
       }
     };
+    var grab_css = document.getElementsByClassName("grab-css")[0];
     grab_css.appendChild(css);
   }
 };
