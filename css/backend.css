@@ -116,10 +116,10 @@ html, body {
 }
 
 iframe.tv-yt {
-  width: 100% !important;
-  height: 320px;
+    width: 100% !important;
+    height: 320px;
 } form.tv-yt {
-  margin-top: 15px;
+    margin-top: 15px;
 }
 
 body.mobile .navigation {
@@ -157,6 +157,7 @@ body.mobile .navigation {
   color: #2B2B2B;
 } #news .point h4 {
   font-size: 19px;
+  margin: 10px 5px 10px 5px;
 }
 
 .bootbox .modal-dialog .modal-content {
