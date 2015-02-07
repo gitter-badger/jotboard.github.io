@@ -115,6 +115,13 @@ html, body {
   padding: 0;
 }
 
+iframe.tv-yt {
+  width: 100% !important;
+  height: 320px;
+} form.tv-yt {
+  margin-top: 15px;
+}
+
 body.mobile .navigation {
   border-top: 10px solid rgb(37, 64, 87);
 } body.mobile #main {
