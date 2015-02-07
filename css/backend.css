@@ -119,7 +119,7 @@ body.mobile .navigation {
   border-top: 10px solid rgb(37, 64, 87);
 } body.mobile #main {
   margin-top: calc(59px + 10px);
-  height: calc(100% - 59px);
+  height: calc(100% - 59px - 10px);
 }
 
 .navigation * {
