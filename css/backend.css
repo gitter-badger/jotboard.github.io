@@ -37,7 +37,7 @@
 }
 
 .navigation .container form {
-  width: calc(100% - 230px);
+  width: calc(100% - 215px);
   float: left;
 } .navigation .below-top .alt .nav-select {
   width: 49.5%;
@@ -81,7 +81,7 @@
 }
 
 jb-give {
-  width: 230px;
+  width: 215px;
   float: right;
 } jb-give .nav-select {
   color: #2B2B2B;
@@ -97,7 +97,7 @@ jb-give {
 
 .jtb-radio {
   width: 100%;
-} .jtb-radio .iframe {
+} .jtb-radio iframe {
   width: 100%;
   height: 80px;
 }
