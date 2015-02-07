@@ -108,8 +108,8 @@ var startUp = function() {
             });
             if (pattern == "tv") bootbox.dialog({
               title: '"TV"',
-              message: "<iframe class='tv-yt' src='tv' frameborder='0' allowfullscreen></iframe>" +
-              "<form role='search' class='tv-yt' action='//www.youtube.com/embed/' target='_blank' method='get'>" +
+              message: "<iframe class='tv-yt' src='tv/' name='_tv' frameborder='0' allowfullscreen></iframe>" +
+              "<form role='search' class='tv-yt' action='//www.youtube.com/embed/' target='_tv' method='get'>" +
                 "<div class='form-group'>" +
                   "<input type='text' name='list' value='' class='form-control query' />" +
                   "<input type='hidden' name='listType' value='search' />" +
