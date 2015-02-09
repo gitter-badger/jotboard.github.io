@@ -10,3 +10,28 @@
 
 .qury-jtb { width: 100%; }
 .qury-jtb * { box-sizing: border-box; }
+
+.gsc-control-cse {
+  font-family: 'Noto Sans', sans-serif;
+}
+
+.gsc-tabHeader.gsc-tabhActive {
+  border: none;
+  background-color: transparent;
+}
+
+.gsc-tabHeader.gsc-tabhInactive {
+  background: transparent;
+  color: #2B2B2B;
+  border: none;
+}
+
+.gsc-orderby-label {
+  display: none !important;
+}
+
+.gsc-option-menu-container {
+  color: #2B2B2B;
+  font-size: 80%;
+  position: relative;
+}
