@@ -29,8 +29,8 @@ var startUp = function() {
       $("jb-give .jb-toggle").on("click", function() {
         jotboard("toggle", "navigation");
       });
-      $(".jb-blog").on("click", function() {
-        window.open("/blog/", "_blank");
+      $(".jb-social").on("click", function() {
+        window.open("/social/", "_blank");
       });
       if (window.location.hash) document.title = jotboard('hashmod');
       if (!window.location.hash) document.title = jotboard('sitename');
