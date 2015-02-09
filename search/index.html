@@ -10,36 +10,21 @@
     <link rel="shortcut icon" href="img/spacer.png" />
     <link data-noprefix href="css/baseline.css" rel="stylesheet" type="text/css" />
   </head>
-  <body>
-    <script src="js/baseline.js"></script>
-    <div class="qury-jtb">
+  <body style="display: none;">
+    <div class="query-input google">
       <form method="get" action="/search/?" target="_top">
-        <input id="search" name="q" type="text" placeholder="Enter Query" autocomplete="on" />
+        <input id="search" name="q" type="text" placeholder="Google" autocomplete="off" />
       </form>
     </div>
-  </body>
-</html>
-
-
-<html>
-  <head>
-    <script src="http://code.jquery.com/jquery-latest.js"></script>
-    <title>Comperio Super Simple Instant Search</title>
-  </head>
-  <body>
-	<h1>Search Wikipedia!</h1>
-	<br />
-    <div class="qury-jtb">
+    <div class="query-input youtube">
       <form method="get" action="/search/?" target="_top">
-        <input id="search" name="q" type="text" placeholder="Enter Query" autocomplete="on" />
+        <input id="search" name="q" type="text" placeholder="YouTube" autocomplete="off" />
       </form>
     </div>
-    <button id="search">search</button>
-    <div id="results"></div>
-
-    <div style="position:absolute;bottom:0;right:0;text-align:right">
-      <a href="http://blog.comperiosearch.com/author/fmcdowall/">Fergus McDowall</a> 2012<br>
-      <br>
+    <div class="query-input twitter">
+      <form method="get" action="/search/?" target="_top">
+        <input id="search" name="q" type="text" placeholder="Google" autocomplete="off" />
+      </form>
     </div>
   </body>
 </html>
