@@ -1,0 +1,12 @@
+.qury-jtb form input {
+  width: 100%;
+  outline: none;
+  border: 2px solid #00AAFF;
+  border-radius: 2px;
+  padding: .5%;
+  background-color: #2B2B2B !important;
+  font: 20px 'Noto Sans', sans-serif;
+}
+
+.qury-jtb { width: 100%; }
+.qury-jtb * { box-sizing: border-box; }
