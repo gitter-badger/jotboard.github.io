@@ -51,13 +51,6 @@ var startUp = function() {
           "</h4>"); if (meta.news.headline == "") {
           $("#news .headline").remove();
         }
-        $(function() {
-          var append_1 = $('.reddit-jotboard'),
-          script = document.createElement('script');
-          script.type = "text/javascript";
-          script.src = "//www.reddit.com/r/jotboard/new/.embed?limit=5&t=week&sort=new&style=off";
-          append_1.prependChild(script);
-        });
       });
     });
     head.load("js/depend/prefixfree.js", function() {
