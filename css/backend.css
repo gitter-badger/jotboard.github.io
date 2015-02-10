@@ -55,7 +55,9 @@
   float: right;
 }
 
-.rembeddit {
+#reddit {
+  margin: 0 0 8px 0;
+} .rembeddit {
   width: 100%;
 } .reddit-header, a.reddit-voting-arrows, .rembeddit .rembeddit-content div div .reddit-entry small {
   display: none;
@@ -153,26 +155,6 @@ body.mobile .navigation {
   font-family: 'Source Code Pro', sans-serif;
 } .fa-important {
   font-family: FontAwesome !important;
-}
-
-#news {
-  float: right;
-  width: 100%;
-  margin: 0 0 8px 0;
-} #news .headline {
-  float: left;
-  width: 49.5%;
-  margin: 0 0 7px 0;
-  text-align: center;
-  border: 2px solid #00A4F5;
-  box-shadow: inset 0 0 1px #2B2B2B;
-  background-color: #E9E9E9;
-  border-radius: 2px;
-} #news .headline h4 a {
-  color: #2B2B2B;
-} #news .headline h4 {
-  font-size: 19px;
-  margin: 10px 5px 10px 5px;
 }
 
 .bootbox .modal-dialog .modal-content {
