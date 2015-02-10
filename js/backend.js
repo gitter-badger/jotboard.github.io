@@ -13,9 +13,7 @@ var startUp = function() {
         form.value = db.get(jotboard("prefix") + jotboard("namespace/main"));
         console.info("The " + jotboard("namespace/main") + " board is avalible.");
       }
-      $(".radio").attr({
-        "align": "center"
-      });
+      $(".radio").attr("align", "center");
       $('iframe').attr({
         'frameborder': '0',
         'allowtransparency': 'true'
@@ -44,40 +42,23 @@ var startUp = function() {
         else form.setAttribute("placeholder", moment(new Date()).format("[Hows it going? it's ]dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, see ya!]"));
       }; TimePulse();
       setInterval(TimePulse, 5);
-      head.load("js/news.js", function() {
-        console.log("News");
-        if (jotboard("hash", "news") && jotboard("hash", "one")) window.location = news.one.href;
-        if (jotboard("hash", "news") && jotboard("hash", "two")) window.location = news.two.href;
-        if (jotboard("hash", "news") && jotboard("hash", "three")) window.location = news.three.href;
-        if (jotboard("hash", "news") && jotboard("hash", "four")) window.location = news.four.href;
-        // Headline #1
-        $('#news .one').html(
+      head.load("js/meta.js", function() {
+        console.log("Meta");
+        // Main Headline
+        $('#news .headline').html(
           "<h4 class='title'>" +
-            "<a href='" + news.one.href + "'>" + news.one.title + "</a>" +
-          "</h4>");
-        // Headline #2
-        $('#news .two').html(
-          "<h4 class='title'>" +
-            "<a href='" + news.two.href + "'>" + news.two.title + "</a>" +
-          "</h4>");
-        // Headline #3
-        $('#news .three').html(
-          "<h4 class='title'>" +
-            "<a href='" + news.three.href + "'>" + news.three.title + "</a>" +
-          "</h4>");
-        // Headline #4
-        $('#news .four').html(
-          "<h4 class='title'>" +
-            "<a href='" + news.four.href + "'>" + news.four.title + "</a>" +
-          "</h4>");
-        // Statements to kill headlines entirely if they are ALL empty.
-        if (news.one.title == "") $("#news div.one").remove();
-        if (news.two.title == "") $("#news div.two").remove();
-        if (news.three.title == "") $("#news div.three").remove();
-        if (news.four.title == "") $("#news div.four").remove();
-        if (news.one.title == "" && news.two.title == "" && news.three.title == "" && news.four.title == "") {
-          $("#news").remove();
+            "<a href='" + meta.news.headline + "'>" + meta.news.link + "</a>" +
+          "</h4>"); if (meta.news.headline == "") {
+          $("#news .headline").remove();
         }
+        $(function() {
+          var append_1 = $('.reddit-jotboard'),
+          script = document.createElement('script');
+          script.type = "text/javascript";
+          script.src = "//www.reddit.com/r/jotboard/new/.embed?limit=5&t=week&sort=new&style=off";
+          script.async = true;
+          append_1.prependChild(script);
+        });
       });
     });
     head.load("js/prefixfree.js", function() {
