@@ -141,7 +141,8 @@ body.mobile .navigation {
   float: right;
   width: 100%;
   margin: 0 0 8px 0;
-} #news .point {
+} #news .headline {
+  float: left;
   width: 49.5%;
   margin: 0 0 7px 0;
   text-align: center;
@@ -149,13 +150,9 @@ body.mobile .navigation {
   box-shadow: inset 0 0 1px #2B2B2B;
   background-color: #E9E9E9;
   border-radius: 2px;
-} #news .point:nth-child(odd) {
-  float: left;
-} #news .point:nth-child(even) {
-  float: right;
-} #news .point h4 a {
+} #news .headline h4 a {
   color: #2B2B2B;
-} #news .point h4 {
+} #news .headline h4 {
   font-size: 19px;
   margin: 10px 5px 10px 5px;
 }
@@ -199,9 +196,6 @@ body.mobile .navigation {
 #form::-webkit-scrollbar { width: 0; }
 #form::-webkit-scrollbar-track { width: 0; }
 #form::-webkit-scrollbar-thumb { width: 0; }
-#news .point .panel::-webkit-scrollbar { width: 0; }
-#news .point .panel::-webkit-scrollbar-track { width: 0; }
-#news .point .panel::-webkit-scrollbar-thumb { width: 0; }
 .navigation::-webkit-scrollbar { width: 0; }
 .navigation::-webkit-scrollbar-track { width: 0; }
 .navigation::-webkit-scrollbar-thumb { width: 0; }
