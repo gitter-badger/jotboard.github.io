@@ -55,6 +55,24 @@
   float: right;
 }
 
+.rembeddit {
+  width: 100%;
+} .reddit-header, a.reddit-voting-arrows, .rembeddit .rembeddit-content div div .reddit-entry small {
+  display: none;
+} .rembeddit .rembeddit-content div div.thing.odd {
+  float: left;
+} .rembeddit .rembeddit-content div div.thing.even {
+  float: left;
+} .rembeddit .rembeddit-content div div.thing {
+  width: 50%;
+} .rembeddit .rembeddit-content div div.thing div.entry {
+  text-align: center;
+} .rembeddit .rembeddit-content div div.thing div.entry a {
+  font-size: 19px;
+  color: #E9E9E9;
+  text-decoration: none;
+}
+
 #namespace {
   text-align: left;
   display: block;

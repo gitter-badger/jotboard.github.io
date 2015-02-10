@@ -13,22 +13,19 @@ var startUp = function() {
         form.value = db.get(jotboard("prefix") + jotboard("namespace/main"));
         console.info("The " + jotboard("namespace/main") + " board is avalible.");
       }
-      $(".radio").attr("align", "center");
-      $('iframe').attr({
-        'frameborder': '0',
-        'allowtransparency': 'true'
-      });
-      $("jb-give .jb-save").on("click", function() {
-        jotboard("data", "save");
-      });
-      $("jb-give .jb-load").on("click", function() {
-        jotboard("data", "load");
-      });
-      $("jb-give .jb-toggle").on("click", function() {
-        jotboard("toggle", "navigation");
-      });
       $("jb-give .jb-social").on("click", function() {
         window.open("/social/", "_blank");
+      }); $(".radio").attr({
+        "align": "center"
+      }); $('iframe').attr({
+        'frameborder': '0',
+        'allowtransparency': 'true'
+      }); $("jb-give .jb-save").on("click", function() {
+        jotboard("data", "save");
+      }); $("jb-give .jb-load").on("click", function() {
+        jotboard("data", "load");
+      }); $("jb-give .jb-toggle").on("click", function() {
+        jotboard("toggle", "navigation");
       });
       if (window.location.hash) document.title = jotboard('hashmod');
       if (!window.location.hash) document.title = jotboard('sitename');
@@ -45,16 +42,6 @@ var startUp = function() {
         }
       }; TimePulse();
       setInterval(TimePulse, 5);
-      head.load("js/meta.js", function() {
-        console.log("Meta");
-        // Main Headline
-        $('#news .headline').html(
-          "<h4 class='title'>" +
-            "<a href='" + meta.news.headline + "'>" + meta.news.link + "</a>" +
-          "</h4>"); if (meta.news.headline == "") {
-          $("#news .headline").remove();
-        }
-      });
     });
     head.load("js/depend/prefixfree.js", function() {
       console.log("Prefixfree");
