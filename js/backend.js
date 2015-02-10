@@ -56,7 +56,6 @@ var startUp = function() {
           script = document.createElement('script');
           script.type = "text/javascript";
           script.src = "//www.reddit.com/r/jotboard/new/.embed?limit=5&t=week&sort=new&style=off";
-          script.async = true;
           append_1.prependChild(script);
         });
       });
