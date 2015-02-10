@@ -6,7 +6,7 @@ var _DevState = false, _IDL = false, head_conf = {
 var startUp = function() {
   if (window.location.protocol == "http:") window.location.protocol = "https:";
   if (window.location.protocol == "https:") {
-    head.load(["js/db.js", "js/frame.js", "js/jquery.js"], function() {
+    head.load(["js/db.js", "js/frame.js", "js/depend/jquery.js"], function() {
       var form = document.getElementById("form");
       var namespace = document.getElementById("namespace");
       if (db.get(jotboard("prefix") + jotboard("namespace/main"))) {
@@ -35,7 +35,7 @@ var startUp = function() {
       if (_DevState === false) $('body').css('display', 'block');
       if (_IDL === true) toast(('https:' == document.location.protocol ? 'https://' : 'http://') + 'members.internetdefenseleague.org/include/?url=' + _idl.url + '&campaign=' + _idl.campaign + '&variant=modal');
     });
-    head.load("js/moment.js", function() {
+    head.load("js/depend/moment.js", function() {
       console.log("Moment.JS");
       var TimePulse = function() {
         if (jotboard("threshold", 0, 12)) form.setAttribute("placeholder", moment(new Date()).format("[Hello, it's currently] dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, have an awesome day!]"));
@@ -61,18 +61,18 @@ var startUp = function() {
         });
       });
     });
-    head.load("js/prefixfree.js", function() {
+    head.load("js/depend/prefixfree.js", function() {
       console.log("Prefixfree");
       head.load("//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css", function() {
         console.log("Font Awesome");
         $(".jb-toggle").addClass("fa-important").addClass("fa-bolt");
       });
-      head.load(["js/bootstrap.js", "css/bootstrap.css"], function() {
+      head.load(["js/depend/bootstrap.js", "css/depend/bootstrap.css"], function() {
         console.log("Bootstrap CSS");
         if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
           $("body").addClass("mobile");
         } else console.log("Not on mobile.");
-        head.load(["js/bootbox.js"], function() {
+        head.load(["js/depend/bootbox.js"], function() {
           console.log("Bootbox");
           bootbox.setDefaults({
             locale: "en",
@@ -113,7 +113,7 @@ var startUp = function() {
         });
       });
     });
-    head.load(["js/growl.js"], function() {
+    head.load(["js/depend/growl.js"], function() {
       console.log("Jotboard Growl");
       head.load(["//togetherjs.com/togetherjs-min.js"], function() {
         console.log("TogetherJS");
