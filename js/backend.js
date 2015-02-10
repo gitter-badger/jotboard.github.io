@@ -38,8 +38,11 @@ var startUp = function() {
     head.load("js/depend/moment.js", function() {
       console.log("Moment.JS");
       var TimePulse = function() {
-        if (jotboard("threshold", 0, 12)) form.setAttribute("placeholder", moment(new Date()).format("[Hello, it's currently] dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, have an awesome day!]"));
-        else form.setAttribute("placeholder", moment(new Date()).format("[Hows it going? it's ]dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, see ya!]"));
+        if (jotboard("threshold", 0, 12)) {
+          $("#form").attr("placeholder", moment(new Date()).format("[Hello, it's currently] dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, have an awesome day!]"));
+        } else {
+          $("form").attr("placeholder", moment(new Date()).format("[Hows it going? it's ]dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, see ya!]"));
+        }
       }; TimePulse();
       setInterval(TimePulse, 5);
       head.load("js/meta.js", function() {
