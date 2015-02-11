@@ -13,18 +13,20 @@ var startUp = function() {
         form.value = db.get(jotboard("prefix") + jotboard("namespace/main"));
         console.info("The " + jotboard("namespace/main") + " board is avalible.");
       }
-      $("jb-give .jb-social").on("click", function() {
-        window.open("/social/", "_blank");
-      }); $(".radio").attr({
+      $(".radio").attr({
         "align": "center"
-      }); $('iframe').attr({
+      });
+      $('iframe').attr({
         'frameborder': '0',
         'allowtransparency': 'true'
-      }); $("jb-give .jb-save").on("click", function() {
+      });
+      $("jb-give .jb-save").on("click", function() {
         jotboard("data", "save");
-      }); $("jb-give .jb-load").on("click", function() {
+      });
+      $("jb-give .jb-load").on("click", function() {
         jotboard("data", "load");
-      }); $("jb-give .jb-toggle").on("click", function() {
+      });
+      $("jb-give .jb-toggle").on("click", function() {
         jotboard("toggle", "navigation");
       });
       if (window.location.hash) document.title = jotboard('hashmod');
@@ -43,7 +45,9 @@ var startUp = function() {
       }; TimePulse();
       setInterval(TimePulse, 5);
       $.getJSON("//www.reddit.com/r/jotboard/new.json?jsonp=?", function(data) {
-        $.each(data.data.children, function(i, item) {
+        $("jb-give .jb-social").click(function() {
+          window.open("/social/", "_blank");
+        }); $.each(data.data.children, function(i, item) {
           $("#reddit").append('<div class="article">' +
             '<a href="' + item.data.url + '">' + item.data.title + '</a>' +
           '</div>');
