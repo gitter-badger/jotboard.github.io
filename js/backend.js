@@ -42,6 +42,13 @@ var startUp = function() {
         }
       }; TimePulse();
       setInterval(TimePulse, 5);
+      $.getJSON("//www.reddit.com/r/jotboard/new.json?jsonp=?", function(data) {
+        $.each(data.data.children, function(i, item) {
+          $("#reddit").append('<div class="article">' +
+            '<a href="' + item.data.url + '">' + item.data.title + '</a>' +
+          '</div>');
+        });
+      });
     });
     head.load("js/depend/prefixfree.js", function() {
       console.log("Prefixfree");

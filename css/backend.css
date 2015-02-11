@@ -55,24 +55,21 @@
   float: right;
 }
 
-#reddit {
-  margin: 0 0 8px 0;
-} .rembeddit {
-  width: 100%;
-} .reddit-header, a.reddit-voting-arrows, .rembeddit .rembeddit-content div div .reddit-entry small {
-  display: none;
-} .rembeddit .rembeddit-content div div.thing.odd {
-  float: left;
-} .rembeddit .rembeddit-content div div.thing.even {
-  float: left;
-} .rembeddit .rembeddit-content div div.thing {
-  width: 50%;
-} .rembeddit .rembeddit-content div div.thing div.entry {
+#reddit .article {
+  width: 49.3%;
+  background-color: #E9E9E9;
+  border: 2px solid #00AAFF;
+  border-radius: 2px;
+  padding: .5%;
+  margin: 0 0 1.4% 0;
   text-align: center;
-} .rembeddit .rembeddit-content div div.thing div.entry a {
+} #reddit .article:nth-child(odd) {
+  float: left;
+} #reddit .article:nth-child(even) {
+  float: right;
+} #reddit .article a {
+  color: #2B2B2B;
   font-size: 19px;
-  color: #E9E9E9;
-  text-decoration: none;
 }
 
 #namespace {
