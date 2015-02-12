@@ -28,7 +28,7 @@ var jotboard = function(main, _1, _2, _3, _4) {
     if (_1 == "name") return "Groupies";
   }
   if (main == "data") {
-    // jotboard("change", "save/load"): Used to get and set the values of Jotboard Data.
+    // jotboard("data", "save/load"): Used to get and set the values of Jotboard Data Files.
     if (typeof(Storage) !== "undefined") {
       if (_1 == "save") {
         if (!jotboard("value", "namespace")) {
