@@ -37,7 +37,7 @@ var startUp = function() {
       var TimePulse = function() {
         if (jotboard("threshold", 0, 12)) {
           $("#main.main #form").attr({
-            "placeholder": moment(new Date()).format("[Hello, it's currently] dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, have an awesome day!]")}
+            "placeholder": moment(new Date()).format("[Hello, it's currently] dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, have an awesome day!]")
           });
         } else {
           $("#main.main #form").attr({
