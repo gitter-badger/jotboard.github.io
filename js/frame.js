@@ -67,7 +67,7 @@ var jotboard = function(main, _1, _2, _3, _4) {
       }
       if (_1 == "load") {
         if (!jotboard("value", "namespace")) {
-          form.value = db.get(jotboard("prefix") + jotboard("namespace/main"));
+          form.val(db.get(jotboard("prefix") + jotboard("namespace/main")));
           console.info(jotboard("namespace/main") + " > loaded");
           $.jbGrowl("The " + jotboard("namespace/main") + " board has been loaded.", {
             ele: "body",
@@ -83,7 +83,7 @@ var jotboard = function(main, _1, _2, _3, _4) {
             stackup_spacing: 10
           });
         } else {
-          form.value = db.get(jotboard("prefix") + jotboard("value", "namespace"));
+          form.val(db.get(jotboard("prefix") + jotboard("value", "namespace")));
           console.info(jotboard("value", "namespace") + " > loaded");
           $.jbGrowl(jotboard("value", "namespace") + " has been loaded.", {
             ele: "body",
