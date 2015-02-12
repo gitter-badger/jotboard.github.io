@@ -9,9 +9,9 @@ var startUp = function() {
     head.load(["js/db.js", "js/frame.js", "js/depend/jquery.js"], function() {
       var form = $("#main.main #form");
       var namespace = $("#namespace");
-      if (db.get(jotboard("prefix") + jotboard("namespace/main"))) {
-        form.val(db.get(jotboard("prefix") + jotboard("namespace/main")));
-        console.info("The " + jotboard("namespace/main") + " board is avalible.");
+      if (db.get(jotboard("prefix") + "Main")) {
+        $("#main.main #form").val(db.get(jotboard("prefix") + "Main"));
+        console.info("The main board is avalible.");
       }
       $(".radio").attr({
         "align": "center"
@@ -36,12 +36,16 @@ var startUp = function() {
       console.log("Moment.JS");
       var TimePulse = function() {
         if (jotboard("threshold", 0, 12)) {
-          form.attr("placeholder", moment(new Date()).format("[Hello, it's currently] dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, have an awesome day!]"));
+          $("#main.main #form").attr({
+            "placeholder": moment(new Date()).format("[Hello, it's currently] dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, have an awesome day!]")}
+          });
         } else {
-          form.attr("placeholder", moment(new Date()).format("[Hows it going? it's ]dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, see ya!]"));
+          $("#main.main #form").attr({
+            "placeholder": moment(new Date()).format("[Hows it going? it's ]dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, see ya!]")
+          });
         }
       }; TimePulse();
-      setInterval(TimePulse, 1000);
+      setInterval(TimePulse, 500);
       $.getJSON("//www.reddit.com/r/jotboard/new.json", function(data) {
         $.each(data.data.children, function(i, item) {
           $("#reddit").append('<div class="article">' +
@@ -81,7 +85,7 @@ var startUp = function() {
               message: "<iframe class='tv-yt' src='tv/' name='_tv' frameborder='0' allowfullscreen></iframe>" +
               "<form role='search' class='tv-yt' action='//www.youtube.com/embed/' target='_tv' method='get'>" +
                 "<div class='form-group'>" +
-                  "<input type='text' name='list' value='' class='form-control query' />" +
+                  "<input type='text' name='list' placeholder='Search Me!!' value='' class='form-control query' />" +
                   "<input type='hidden' name='listType' value='search' />" +
                   "<input type='hidden' name='autoplay' value='1' />" +
                   "<input type='hidden' name='fs' value='0' />" +
@@ -110,7 +114,7 @@ var startUp = function() {
           jotboard("groupies", "run");
         });
         TogetherJS.on("ready", function() {
-          form.val("");
+          $("#main.main #form").val("");
           $("jb-give .jb-save, jb-give .jb-load, jb-give .jb-toggle").toggleClass("remove");
           $("div.container form").toggleClass("full-width");
           jotboard("toggle", "navigation");
