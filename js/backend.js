@@ -24,8 +24,6 @@ var startUp = function() {
         jotboard("data", "load");
       }); $("jb-give .jb-toggle").on("click", function() {
         jotboard("toggle", "navigation");
-      }); $("jb-give .jb-social").on("click", function() {
-        window.open("/social/", "_blank");
       });
       if (window.location.hash) document.title = jotboard('hashmod');
       if (!window.location.hash) document.title = jotboard('sitename');
@@ -47,6 +45,9 @@ var startUp = function() {
       }; TimePulse();
       setInterval(TimePulse, 500);
       $.getJSON("//www.reddit.com/r/jotboard/new.json", function(data) {
+        $("#reddit:after").html('<div style="width: 100%;" class="article">' +
+          '<a href="//www.reddit.com">Continue to ' + jotboard("sitename") + ' Social Realm</a>' +
+        '</div>');
         $.each(data.data.children, function(i, item) {
           $("#reddit").append('<div class="article">' +
             '<a href="//www.reddit.com' + item.data.permalink + '">' + item.data.title + '</a>' +
