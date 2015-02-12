@@ -1,5 +1,5 @@
 window._idl = {};
-var _DevState = false, _IDL = false, head_conf = {
+var _DevState = false, _IDL = true, head_conf = {
   html5: true
 };
 
@@ -28,7 +28,7 @@ var startUp = function() {
       if (window.location.hash) document.title = jotboard('hashmod');
       if (!window.location.hash) document.title = jotboard('sitename');
       if (_DevState === false) $('body').css('display', 'block');
-      if (_IDL === true) toast(('https:' == document.location.protocol ? 'https://' : 'http://') + 'members.internetdefenseleague.org/include/?url=' + _idl.url + '&campaign=' + _idl.campaign + '&variant=modal');
+      if (_IDL === true) head.load(('https:' == document.location.protocol ? 'https://' : 'http://') + 'members.internetdefenseleague.org/include/?url=' + _idl.url + '&campaign=' + _idl.campaign + '&variant=modal');
     });
     head.load("js/depend/moment.js", function() {
       console.log("Moment.JS");
