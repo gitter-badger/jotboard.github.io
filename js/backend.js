@@ -7,27 +7,25 @@ var startUp = function() {
   if (window.location.protocol == "http:") window.location.protocol = "https:";
   if (window.location.protocol == "https:") {
     head.load(["js/db.js", "js/frame.js", "js/depend/jquery.js"], function() {
-      var form = document.getElementById("form");
-      var namespace = document.getElementById("namespace");
+      var form = $("#main.main #form");
+      var namespace = $("#namespace");
       if (db.get(jotboard("prefix") + jotboard("namespace/main"))) {
-        form.value = db.get(jotboard("prefix") + jotboard("namespace/main"));
+        form.val(db.get(jotboard("prefix") + jotboard("namespace/main")));
         console.info("The " + jotboard("namespace/main") + " board is avalible.");
       }
       $(".radio").attr({
         "align": "center"
-      });
-      $('iframe').attr({
+      }); $('iframe').attr({
         'frameborder': '0',
         'allowtransparency': 'true'
-      });
-      $("jb-give .jb-save").on("click", function() {
+      }); $("jb-give .jb-save").on("click", function() {
         jotboard("data", "save");
-      });
-      $("jb-give .jb-load").on("click", function() {
+      }); $("jb-give .jb-load").on("click", function() {
         jotboard("data", "load");
-      });
-      $("jb-give .jb-toggle").on("click", function() {
+      }); $("jb-give .jb-toggle").on("click", function() {
         jotboard("toggle", "navigation");
+      }); $("jb-give .jb-social").on("click", function() {
+        window.open("/social/", "_blank");
       });
       if (window.location.hash) document.title = jotboard('hashmod');
       if (!window.location.hash) document.title = jotboard('sitename');
@@ -38,18 +36,16 @@ var startUp = function() {
       console.log("Moment.JS");
       var TimePulse = function() {
         if (jotboard("threshold", 0, 12)) {
-          $("#form").attr("placeholder", moment(new Date()).format("[Hello, it's currently] dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, have an awesome day!]"));
+          form.attr("placeholder", moment(new Date()).format("[Hello, it's currently] dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, have an awesome day!]"));
         } else {
-          $("form").attr("placeholder", moment(new Date()).format("[Hows it going? it's ]dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, see ya!]"));
+          form.attr("placeholder", moment(new Date()).format("[Hows it going? it's ]dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, see ya!]"));
         }
       }; TimePulse();
-      setInterval(TimePulse, 5);
-      $.getJSON("//www.reddit.com/r/jotboard/new.json?jsonp=?", function(data) {
-        $("jb-give .jb-social").click(function() {
-          window.open("/social/", "_blank");
-        }); $.each(data.data.children, function(i, item) {
+      setInterval(TimePulse, 1000);
+      $.getJSON("//www.reddit.com/r/jotboard/new.json", function(data) {
+        $.each(data.data.children, function(i, item) {
           $("#reddit").append('<div class="article">' +
-            '<a href="' + item.data.url + '">' + item.data.title + '</a>' +
+            '<a href="//www.reddit.com' + item.data.permalink + '">' + item.data.title + '</a>' +
           '</div>');
         });
       });
@@ -114,7 +110,7 @@ var startUp = function() {
           jotboard("groupies", "run");
         });
         TogetherJS.on("ready", function() {
-          form.value = "";
+          form.val("");
           $("jb-give .jb-save, jb-give .jb-load, jb-give .jb-toggle").toggleClass("remove");
           $("div.container form").toggleClass("full-width");
           jotboard("toggle", "navigation");
