@@ -4,13 +4,8 @@
 }
 
 #tv {
+  margin: 1%;
   width: 40%;
-  float: right;
-}
-
-#tv iframe {
-  margin: 0%;
-  width: 100%;
   height: 320px;
 }
 
