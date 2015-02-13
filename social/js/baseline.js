@@ -1,7 +1,13 @@
-head.load(["js/depend/jquery.js", "js/baseline.js"], function() {
-  if ($("*").hasAttr("remove")) $(this).remove();
+head.load([
+    "js/depend/jquery.js",
+    "js/baseline.js",
+    "js/depend/bootstrap.js"
+  ], function() {
   console.log("jQuery, Baseline JS");
-  head.load("css/baseline.css", function() {
+  head.load([
+    "css/baseline.css",
+    "css/depend/bootstrap.css"
+  ], function() {
     console.log("Baseline CSS");
   });
   if (window.location.href.indexOf("#push") != -1) {
