@@ -7,10 +7,9 @@ head.load(["js/depend/jquery.js", "js/depend/bootstrap.js"], function() {
     "frameborder": "0"
   }).attr("allowfullscreen");
   if (window.location.href.indexOf("#push") != -1) window.replace("//www.reddit.com/r/jotboard/");
-  var gut = $("#reddit").append();
   $.getJSON("//www.reddit.com/r/jotboard/new.json", function(data) {
     $.each(data.data.children, function(i, item) {
-      gut(
+      $("#reddit").append(
         '<div class="article">' +
           '<a class="headline" href="' + item.data.url + '">' + item.data.title + '</a><br />' +
           '<a class="thread" href="//www.reddit.com' + item.data.permalink + '">Realm Thread</a>' +
