@@ -7,7 +7,7 @@ head.load(["js/depend/jquery.js", "js/baseline.js", "js/depend/bootstrap.js"], f
     "frameborder": "0"
   }).attr("allowfullscreen");
   if (window.location.href.indexOf("#push") != -1) window.replace("//www.reddit.com/r/jotboard/");
-  var gut = $("#reddit").append;
+  var gut = $("#reddit").append();
   $.getJSON("//www.reddit.com/r/jotboard/new.json", function(data) {
     $.each(data.data.children, function(i, item) {
       gut(
