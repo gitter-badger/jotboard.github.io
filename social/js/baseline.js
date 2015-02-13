@@ -6,6 +6,14 @@ head.load(["js/depend/jquery.js", "js/baseline.js"], function() {
   if (window.location.href.indexOf("#push") != -1) {
     window.replace("//www.reddit.com/r/jotboard/");
   }
+  $.getJSON("//www.reddit.com/r/pics/new.json", function(data) {
+    $.each(data.data.children, function(i, item) {
+      $("<img/>").attr({
+        "class": "image",
+        "src": item.data.url
+      }).appendTo("#images");
+    });
+  });
   $.getJSON("//www.reddit.com/r/jotboard/new.json", function(data) {
     $.each(data.data.children, function(i, item) {
       $("#reddit").append('<div class="article">' +
