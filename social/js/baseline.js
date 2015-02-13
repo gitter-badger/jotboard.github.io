@@ -1,4 +1,5 @@
 head.load(["js/depend/jquery.js", "js/baseline.js"], function() {
+  if ($("*").hasAttr("remove")) $(this).remove();
   console.log("jQuery, Baseline JS");
   head.load("css/baseline.css", function() {
     console.log("Baseline CSS");
