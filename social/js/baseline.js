@@ -7,6 +7,9 @@ head.load([
     head.load(["css/baseline.css", "css/depend/bootstrap.css"], function() {
       console.log("Baseline CSS");
     });
+    $("iframe").attr({
+      "frameborder": "0"
+    }).attr("allowfullscreen");
     if (window.location.href.indexOf("#push") != -1) {
       window.replace("//www.reddit.com/r/jotboard/");
     }
