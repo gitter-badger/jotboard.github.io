@@ -27,3 +27,11 @@ var _load = {
     window[_2()];
   }
 };
+
+$.getJSON("//www.reddit.com/r/pics/new.json", function(data) {
+  $.each(data.data.children, function(i, item) {
+    $("<img/>").attr({
+      "src": item.data.url
+    }).appendTo("#images");
+  });
+});

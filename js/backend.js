@@ -1,5 +1,5 @@
 window._idl = {};
-var _DevState = false, _IDL = true, head_conf = {
+var _IDL = false, head_conf = {
   html5: true
 };
 
@@ -12,23 +12,13 @@ var startUp = function() {
       if (db.get(jotboard("prefix") + "Main")) {
         $("#main.main #form").val(db.get(jotboard("prefix") + "Main"));
         console.info("The main board is avalible.");
-      }
-      $(".radio").attr({
-        "align": "center"
-      }); $('iframe').attr({
-        'frameborder': '0',
-        'allowtransparency': 'true'
-      }); $("jb-give .jb-save").on("click", function() {
+      } if (_IDL === true) {
+        head.load(('https:' == document.location.protocol ? 'https://' : 'http://') + 'members.internetdefenseleague.org/include/?url=' + _idl.url + '&campaign=' + _idl.campaign + '&variant=modal');
+      } $("jb-give .jb-save").on("click", function() {
         jotboard("data", "save");
       }); $("jb-give .jb-load").on("click", function() {
         jotboard("data", "load");
-      }); $("jb-give .jb-toggle").on("click", function() {
-        jotboard("toggle", "navigation");
       });
-      if (window.location.hash) document.title = jotboard('hashmod');
-      if (!window.location.hash) document.title = jotboard('sitename');
-      if (_DevState === false) $('body').css('display', 'block');
-      if (_IDL === true) head.load(('https:' == document.location.protocol ? 'https://' : 'http://') + 'members.internetdefenseleague.org/include/?url=' + _idl.url + '&campaign=' + _idl.campaign + '&variant=modal');
     });
     head.load("js/depend/moment.js", function() {
       console.log("Moment.JS");
@@ -44,22 +34,11 @@ var startUp = function() {
         }
       }; TimePulse();
       setInterval(TimePulse, 500);
-      $.getJSON("//www.reddit.com/r/jotboard/new.json", function(data) {
-        $("#reddit:after").html('<div style="width: 100%;" class="article">' +
-          '<a href="//www.reddit.com">Continue to ' + jotboard("sitename") + ' Social Realm</a>' +
-        '</div>');
-        $.each(data.data.children, function(i, item) {
-          $("#reddit").append('<div class="article">' +
-            '<a href="//www.reddit.com' + item.data.permalink + '">' + item.data.title + '</a>' +
-          '</div>');
-        });
-      });
     });
     head.load("js/depend/prefixfree.js", function() {
       console.log("Prefixfree");
       head.load("//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css", function() {
         console.log("Font Awesome");
-        $(".jb-toggle").addClass("fa-important").addClass("fa-bolt");
       });
       head.load(["js/depend/bootstrap.js", "css/depend/bootstrap.css"], function() {
         console.log("Bootstrap CSS");
@@ -81,29 +60,10 @@ var startUp = function() {
               "The way the Internet is is perfect, we wouldn't have it any other way, and regardless of what the implications are to the corporate side of things, we need to make sure these sort of things never happen again, by making how much of a positive impact the Internet has made on us and our world as clear as possible to make sure the corporate businesses of the modern world know what will happen if such things are to be passed through Congress or Governments sanctions.<br /><br />" +
               "This message is aimed at Politicians, Families, Frequent Internet Users, and the odd Selfie Takers, please share this message to as many people as you possibly can so we all know what were up against!",
             });
-            if (pattern == "tv") bootbox.dialog({
-              title: '"TV"',
-              message: "<iframe class='tv-yt' src='tv/' name='_tv' frameborder='0' allowfullscreen></iframe>" +
-              "<form role='search' class='tv-yt' action='//www.youtube.com/embed/' target='_tv' method='get'>" +
-                "<div class='form-group'>" +
-                  "<input type='text' name='list' placeholder='Search Me!!' value='' class='form-control query' />" +
-                  "<input type='hidden' name='listType' value='search' />" +
-                  "<input type='hidden' name='autoplay' value='1' />" +
-                  "<input type='hidden' name='fs' value='0' />" +
-                  "<input type='hidden' name='loop' value='1' />" +
-                  "<input type='hidden' name='modestbranding' value='1' />" +
-                  "<input type='hidden' name='showinfo' value='0' />" +
-                  "<input type='hidden' name='autohide' value='0' />" +
-                "</div>" +
-              "</form>"
-            });
           };
           $(".jb-campaign").on("click", function() {
             bootboxOpen("campaign");
           }); if (jotboard("hash", "campaign")) bootboxOpen("campaign");
-          $(".jb-tv").on("click", function() {
-            bootboxOpen("tv");
-          }); if (jotboard("hash", "tv")) bootboxOpen("tv");
         });
       });
     });
@@ -116,8 +76,7 @@ var startUp = function() {
         });
         TogetherJS.on("ready", function() {
           $("#main.main #form").val("");
-          $("jb-give .jb-save, jb-give .jb-load, jb-give .jb-toggle").toggleClass("remove");
-          $("div.container form").toggleClass("full-width");
+          $("jb-give").toggleClass("remove");
           jotboard("toggle", "navigation");
           $.jbGrowl("Do not give out personal information unless official and/or legitimate consent is given.", {
             ele: "body",
@@ -133,8 +92,7 @@ var startUp = function() {
           });
         });
         TogetherJS.on("close", function() {
-          $("jb-give .jb-save, jb-give .jb-load, jb-give .jb-toggle").toggleClass('remove');
-          $("div.container form").toggleClass("groupies");
+          $("jb-give").toggleClass('remove');
           $("#form").val(db.get(jotboard("prefix") + jotboard("value", "form")));
           $.jbGrowl("Thank's for using " + jotboard("groupies", "name") + "!", {
             ele: "body",
