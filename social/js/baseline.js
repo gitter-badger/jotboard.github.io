@@ -1,4 +1,4 @@
-head.load(["js/depend/jquery.js", "js/baseline.js", "js/depend/bootstrap.js"], function() {
+head.load(["js/depend/jquery.js", "js/depend/bootstrap.js"], function() {
   console.log("jQuery, Baseline JS");
   head.load(["css/baseline.css", "css/depend/bootstrap.css"], function() {
     console.log("Baseline CSS");
