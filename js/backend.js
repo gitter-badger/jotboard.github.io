@@ -18,9 +18,11 @@ var startUp = function() {
         head.load(('https:' == document.location.protocol ? 'https://' : 'http://') +
           'members.internetdefenseleague.org/include/?url=' + _idl.url + '&campaign=' +
           _idl.campaign + '&variant=modal');
-      } $("jb-give .jb-save").on("click", function() {
+      }
+      $("jb-give .jb-save").on("click", function() {
         jotboard("data", "save");
-      }); $("jb-give .jb-load").on("click", function() {
+      });
+      $("jb-give .jb-load").on("click", function() {
         jotboard("data", "load");
       });
     });
@@ -37,7 +39,7 @@ var startUp = function() {
           });
         }
       }; TimePulse();
-      setInterval(TimePulse, 500);
+      setInterval(TimePulse, 200);
     });
     head.load("js/depend/prefixfree.js", function() {
       console.log("Prefixfree");
