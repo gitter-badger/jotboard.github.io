@@ -7,8 +7,8 @@ var startUp = function() {
   if (window.location.protocol == "http:") window.location.protocol = "https:";
   if (window.location.protocol == "https:") {
     head.load(["js/db.js", "js/frame.js", "js/depend/jquery.js"], function() {
-      var form = $("#main.main #form");
-      var namespace = $("#namespace");
+      // Form is $("#main.main #form");
+      // Namespace is $("#namespace");
       if ($("body").css("display", "block")) $("body").css("display", "none");
       if ($("body").css("display", "none")) $("body").css("display", "block");
       if (db.get(jotboard("prefix") + "Main")) {
