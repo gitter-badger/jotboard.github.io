@@ -9,21 +9,21 @@ body {
 
 #tv {
   float: right;
-  padding: 1%;
-  width: 38%;
-  background: #333;
-  height: 320px;
-  max-width: 433px;
-  margin: 1%;
-  border-radius: 3px;
+  padding: 7px;
+  width: calc(38% - 7px);
+  background: #0D7ECF;
+  height: 293px;
+  max-width: 500px;
+  margin: 7px;
+  border-radius: 4px;
 }
 
 #reddit .article {
-  border: 2px solid #2D2D2D;
-  background-color: #2A2A2A;
-  padding: 1%;
-  margin: 5px;
-  border-radius: 3px;
+  border: 2px solid #000000;
+  background-color: #4F4F4F;
+  padding: 7px;
+  margin: 7px;
+  border-radius: 4px;
 }
 
 #reddit .article .headline {
