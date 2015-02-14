@@ -13,7 +13,9 @@ var startUp = function() {
         $("#main.main #form").val(db.get(jotboard("prefix") + "Main"));
         console.info("The main board is avalible.");
       } if (_IDL === true) {
-        head.load(('https:' == document.location.protocol ? 'https://' : 'http://') + 'members.internetdefenseleague.org/include/?url=' + _idl.url + '&campaign=' + _idl.campaign + '&variant=modal');
+        head.load(('https:' == document.location.protocol ? 'https://' : 'http://') +
+          'members.internetdefenseleague.org/include/?url=' + _idl.url + '&campaign=' +
+          _idl.campaign + '&variant=modal');
       } $("jb-give .jb-save").on("click", function() {
         jotboard("data", "save");
       }); $("jb-give .jb-load").on("click", function() {
@@ -24,11 +26,11 @@ var startUp = function() {
       console.log("Moment.JS");
       var TimePulse = function() {
         if (jotboard("threshold", 0, 12)) {
-          $("#main.main #form").attr({
+          form.attr({
             "placeholder": moment(new Date()).format("[Hello, it's currently] dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, have an awesome day!]")
           });
         } else {
-          $("#main.main #form").attr({
+          form.attr({
             "placeholder": moment(new Date()).format("[Hows it going? it's ]dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, see ya!]")
           });
         }

@@ -5,13 +5,12 @@ head.load(["js/depend/jquery.js"], function() {
     head.load("css/depend/bootstrap.css", function() {
       head.load("css/baseline.css", function() {
         console.log("Baseline CSS");
+        $("iframe").attr({
+          "frameborder": "0"
+        }).attr("allowfullscreen");
         $.getJSON("//www.reddit.com/r/jotboard/new.json", function(data) {
-          $(".read-more").html('<a href="//www.reddit.com/r/jotboard/">Read More</a>');
-          $("iframe").attr({
-            "frameborder": "0"
-          }).attr("allowfullscreen");
           $.each(data.data.children, function(i, item) {
-            if (!item.data.subreddit("jotboard")) {
+            if (!data.data.subreddit("jotboard")) {
               $("#reddit").append(
                 '<div class="article">' +
                   '<a class="headline" href="' + item.data.url + '">' + item.data.title + '</a><br />' +
