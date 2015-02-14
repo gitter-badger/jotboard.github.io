@@ -8,6 +8,7 @@ head.load(["js/depend/jquery.js"], function() {
       head.load("css/baseline.css", function() {
         console.log("Baseline CSS");
         $.getJSON("//www.reddit.com/r/jotboard/new.json", function(data) {
+          $(".read-more").html('<a href="//www.reddit.com/r/' + data.data.subreddit + '/">Read More</a>');
           $("iframe").attr({
             "frameborder": "0"
           }).attr("allowfullscreen");
