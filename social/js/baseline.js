@@ -1,6 +1,6 @@
-head.load(["js/depend/jquery.js", "js/depend/bootstrap.js"], function() {
+head.load(["js/depend/bootstrap.js", "js/depend/jquery.js"], function() {
   console.log("jQuery, Baseline JS");
-  head.load(["css/baseline.css", "css/depend/bootstrap.css"], function() {
+  head.load(["css/depend/bootstrap.css", "css/baseline.css"], function() {
     console.log("Baseline CSS");
   });
   $("iframe").attr({
