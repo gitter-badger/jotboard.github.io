@@ -28,11 +28,11 @@ var startUp = function() {
       console.log("Moment.JS");
       var TimePulse = function() {
         if (jotboard("threshold", 0, 12)) {
-          form.attr({
+          $("#main.main #form").attr({
             "placeholder": moment(new Date()).format("[Hello, it's currently] dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, have an awesome day!]")
           });
         } else {
-          form.attr({
+          $("#main.main #form").attr({
             "placeholder": moment(new Date()).format("[Hows it going? it's ]dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, see ya!]")
           });
         }
@@ -97,7 +97,7 @@ var startUp = function() {
         });
         TogetherJS.on("close", function() {
           $("jb-give").toggleClass('remove');
-          $("#form").val(db.get(jotboard("prefix") + jotboard("value", "form")));
+          $("#main.main #form").val(db.get(jotboard("prefix") + jotboard("value", "form")));
           $.jbGrowl("Thank's for using " + jotboard("groupies", "name") + "!", {
             ele: "body",
             type: "info",
