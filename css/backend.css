@@ -41,7 +41,7 @@
 }
 
 .navigation .container form {
-  width: calc(100% - 350px);
+  width: calc(100% - 315px);
   float: left;
 } .navigation .below-top .alt .nav-select {
   float: left;
@@ -103,7 +103,7 @@
 }
 
 jb-give {
-  width: 350px;
+  width: 315px;
   float: right;
 } jb-give .nav-select {
   color: #2B2B2B;
