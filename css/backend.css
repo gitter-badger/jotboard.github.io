@@ -32,8 +32,10 @@
   position: fixed;
   left: 0; top: 0;
   padding: 8.5px 1% 10px 1%;
-  overflow-y: scroll;
   background: rgb(37, 64, 87);
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
 }
 
 .navigation .container form {
@@ -196,9 +198,15 @@ body.mobile .navigation {
 #form::-webkit-scrollbar { width: 0; }
 #form::-webkit-scrollbar-track { width: 0; }
 #form::-webkit-scrollbar-thumb { width: 0; }
+#form::-moz-scrollbar { width: 0; }
+#form::-moz-scrollbar-track { width: 0; }
+#form::-moz-scrollbar-thumb { width: 0; }
 .navigation::-webkit-scrollbar { width: 0; }
 .navigation::-webkit-scrollbar-track { width: 0; }
 .navigation::-webkit-scrollbar-thumb { width: 0; }
+.navigation::-moz-scrollbar { width: 0; }
+.navigation::-moz-scrollbar-track { width: 0; }
+.navigation::-moz-scrollbar-thumb { width: 0; }
 /* Scrollbar END */
 
 .remove { display: none; }
