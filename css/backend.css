@@ -30,12 +30,14 @@
   height: auto;
   max-height: 100%;
   position: fixed;
-  left: 0; top: 0;
-  padding: 8.5px 1% 10px 1%;
-  background: rgb(37, 64, 87);
+  left: 0px;
+  top: 0px;
+  padding: 8.5px 1% 10px;
+  background: none repeat scroll 0% 0% #254057;
   overflow-x: scroll;
-  overflow-y: hidden;
+  overflow: auto;
   white-space: nowrap;
+  min-width: 450px;
 }
 
 .navigation .container form {
