@@ -84,37 +84,26 @@
   </head>
   <body style="display: none;" id="body">
     <div id="fb-root"></div>
-    <!-- .body.container -->
     <div class="body container">
-      <!-- .navigation -->
       <div class="navigation">
-        <!-- .container -->
         <div class="container">
           <form role="search" action="//www.google.com/search" target="_blank" method="get">
             <div class="form-group">
               <input type="text" id="namespace" name="q" class="form-control" title="Make, Load, Overwrite a Board or Search the Web" placeholder="Jotboard" />
             </div>
           </form>
-          <!-- jb-give -->
           <jb-give>
             <div class="jb-campaign nav-select" title="Where theres turmoil, theres an opinion on Jotboard">Campaign</div>
             <div class="jb-groupies nav-select" title="Collaborative text editing on the fly!">Groupies</div>
-
             <div class="jb-load nav-select" title="Load's the text according to it name (Loads Main Board if empty)">Load</div>
             <div class="jb-save nav-select" title="Save's the current text in form with current text in hero bar (Saves to Main board if empty)">Save</div>
           </jb-give>
-          <!-- /jb-give -->
         </div>
-        <!-- /.container -->
       </div>
-      <!-- /.navigation -->
-      <!-- .main#main -->
       <div class="main" id="main">
         <textarea class="mousetrap" id="form"></textarea>
       </div>
-      <!-- /.main#main -->
     </div>
-    <!-- /.body.container -->
     <script>
       var _refresh = function(_) {
         if (_ == 'f') location.reload(false);

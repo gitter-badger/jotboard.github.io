@@ -18,13 +18,13 @@ var startUp = function() {
         head.load(('https:' == document.location.protocol ? 'https://' : 'http://') +
           'members.internetdefenseleague.org/include/?url=' + _idl.url + '&campaign=' +
           _idl.campaign + '&variant=modal');
-      }
-      $("jb-give .jb-save").on("click", function() {
+      } $("jb-give .jb-save").on("click", function() {
         jotboard("data", "save");
-      });
-      $("jb-give .jb-load").on("click", function() {
+      }); $("jb-give .jb-load").on("click", function() {
         jotboard("data", "load");
-      });
+      }); $(".jb-social").on("click", function() {
+        jotboard("social");
+      }); if (jotboard("hash", "social")) jotboard("social");
     });
     head.load("js/depend/moment.js", function() {
       console.log("Moment.JS");
@@ -51,26 +51,6 @@ var startUp = function() {
         if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
           $("body").addClass("mobile");
         } else console.log("Not on mobile.");
-        head.load(["js/depend/bootbox.js"], function() {
-          console.log("Bootbox");
-          bootbox.setDefaults({
-            locale: "en",
-            backdrop: true,
-            animate: false
-          });
-          var bootboxOpen = function(pattern) {
-            if (pattern == "campaign") bootbox.dialog({
-              title: "Jotboard's Open Letter (Campaign)",
-              message: "The Internet really has become something to be proud of, especially for early Internet Adopters, it went from an idea trying to create an internationalized network of amazing communities, to a lifestyle that has changed the way we live and work.<br /><br />" +
-              "This message is to point out the current, past and future actions that have been taken to damage the Internet's Integrity, whether it be Mass Censorship, Illegal Spying or the way Net Neutrality presents itself as a money-related threat towards Cable Companies like Comcast, Verizon and Time Warner Cable and that it should never come to this again.<br /><br />" +
-              "The way the Internet is is perfect, we wouldn't have it any other way, and regardless of what the implications are to the corporate side of things, we need to make sure these sort of things never happen again, by making how much of a positive impact the Internet has made on us and our world as clear as possible to make sure the corporate businesses of the modern world know what will happen if such things are to be passed through Congress or Governments sanctions.<br /><br />" +
-              "This message is aimed at Politicians, Families, Frequent Internet Users, and the odd Selfie Takers, please share this message to as many people as you possibly can so we all know what were up against!",
-            });
-          };
-          $(".jb-campaign").on("click", function() {
-            bootboxOpen("campaign");
-          }); if (jotboard("hash", "campaign")) bootboxOpen("campaign");
-        });
       });
     });
     head.load(["js/depend/growl.js"], function() {
