@@ -14,10 +14,10 @@
 } #form::-webkit-input-placeholder {
   font: 20px 'Lato', san-serif;
   color: #2B2B2B;
-} #form:-moz-placeholder { /* Firefox 18- */
+} #form:-o-placeholder {
   font: 20px 'Lato', san-serif;
   color: #2B2B2B;
-} #form::-moz-placeholder {  /* Firefox 19+ */
+} #form::-moz-placeholder {
   font: 20px 'Lato', san-serif;
   color: #2B2B2B;
 } #form::-ms-input-placeholder {
