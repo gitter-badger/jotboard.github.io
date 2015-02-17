@@ -9,8 +9,7 @@ var startUp = function() {
     head.load(["js/db.js", "js/frame.js", "js/depend/jquery.js"], function() {
       // Form is $("#main.main #form");
       // Namespace is $("#namespace");
-      if ($("body").css("display", "block")) $("body").css("display", "none");
-      if ($("body").css("display", "none")) $("body").css("display", "block");
+      jotboard("toggle", "body");
       if (db.get(jotboard("prefix") + "Main")) {
         $("#main.main #form").val(db.get(jotboard("prefix") + "Main"));
         console.info("The main board is avalible.");
