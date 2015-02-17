@@ -28,6 +28,16 @@ var startUp = function() {
     });
     head.load("js/depend/moment.js", function() {
       console.log("Moment.JS");
+      $.getJSON("//www.reddit.com/r/jotboard/.json", function(data) {
+        $.each(data.data.children, function(i, item) {
+          $("#realm").append(
+            '<div class="article">' +
+              '<a href="' + item.data.url + '" class="title">' + item.data.title + '</a>' +
+              '<a href="//www.reddit.com' + item.data.permalink + '" class="thread">Realm Thread</a>' +
+            '</div>'
+          );
+        });
+      });
       var TimePulse = function() {
         if (jotboard("threshold", 0, 12)) {
           $("#main.main #form").attr({

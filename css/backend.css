@@ -41,7 +41,7 @@
 }
 
 .navigation .container form {
-  width: calc(100% - 315px);
+  width: calc(100% - 350px);
   float: left;
 } .navigation .below-top .alt .nav-select {
   float: left;
@@ -58,23 +58,6 @@
   width: calc(33.3333333% - 5px);
 } .navigation .below-top .alt .nav-select:hover {
   background-color: #2D2D2D;
-}
-
-#reddit .article {
-  width: calc(49.5% + 3px);
-  background-color: #2B2B2B;
-  padding: .5%;
-  margin: .5% 0 calc(.5% + 2px) 0;
-  border-radius: 3px;
-  box-shadow: inset 0 0 4px #E0E0E0;
-  text-align: center;
-} #reddit .article:nth-child(odd) {
-  float: left;
-} #reddit .article:nth-child(even) {
-  float: right;
-} #reddit .article a {
-  color: #F0F0F0;
-  font-size: 18px;
 }
 
 #namespace {
@@ -103,12 +86,12 @@
 }
 
 jb-give {
-  width: 315px;
+  width: 350px;
   float: right;
 } jb-give .nav-select {
   color: #2B2B2B;
   text-align: center;
-  width: 23%;
+  width: 23.86%;
   font-size: 16px;
   margin: 0 0 0 4px;
   padding: 2px 0 3px 0;
@@ -185,6 +168,8 @@ body.mobile .navigation {
   float: left;
   margin: 0 0 .5% 0;
 }
+
+
 
 .navigation .container {
   padding: 0;
