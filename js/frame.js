@@ -3,16 +3,6 @@ var jotboard = function(main, _1, _2, _3, _4) {
   if (main == "threshold") return _1 <= new Date().getHours() && new Date().getHours() < _2;
   if (main == "hash") /* Used for Hashmods */ return window.location.href.indexOf("#" + _1) != -1;
   if (main == "prefix") return "JB_-";
-  // Toggling
-  if (main == "toggle") {
-    if (_1 == "body") {
-      if ($("body").css("display", "none")) $("body").css("display", "block");
-      if ($("body").css("display", "block")) $("body").css("display", "none");
-    } if (_1 == "social") {
-      if ($("#realm").css("display", "none")) $("body").css("display", "block");
-      if ($("#realm").css("display", "block")) $("body").css("display", "none");
-    }
-  }
   if (main == "groupies") {
     if (_1 == "run") {
       // Groupies: Collaborative text editing.
