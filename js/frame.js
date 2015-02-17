@@ -6,11 +6,11 @@ var jotboard = function(main, _1, _2, _3, _4) {
   // Toggling
   if (main == "toggle") {
     if (_1 == "body") {
-      if ($("body").css("display", "none")) $("body").css("display", "visible");
-      if ($("body").css("display", "visible")) $("body").css("display", "none");
+      if ($("body").css("display", "none")) $("body").css("display", "block");
+      if ($("body").css("display", "block")) $("body").css("display", "none");
     } if (_1 == "social") {
-      if ($("#realm").css("display", "none")) $("body").css("display", "visible");
-      if ($("#realm").css("display", "visible")) $("body").css("display", "none");
+      if ($("#realm").css("display", "none")) $("body").css("display", "block");
+      if ($("#realm").css("display", "block")) $("body").css("display", "none");
     }
   }
   if (main == "groupies") {
