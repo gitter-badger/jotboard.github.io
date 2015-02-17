@@ -1,6 +1,5 @@
 var jotboard = function(main, _1, _2, _3, _4) {
   // Meta
-  if (main == "social") return window.location.href = "//jotboard.github.io/social/";
   if (main == "threshold") return _1 <= new Date().getHours() && new Date().getHours() < _2;
   if (main == "hash") /* Used for Hashmods */ return window.location.href.indexOf("#" + _1) != -1;
   if (main == "prefix") return "JB_-";
@@ -9,8 +8,9 @@ var jotboard = function(main, _1, _2, _3, _4) {
     if (_1 == "body") {
       if ($("body").css("display", "none")) $("body").css("display", "visible");
       if ($("body").css("display", "visible")) $("body").css("display", "none");
-    } if (_1 == "navigation") {
-      $(".below-top").toggleClass("remove");
+    } if (_1 == "social") {
+      if ($("#realm").css("display", "none")) $("body").css("display", "visible");
+      if ($("#realm").css("display", "visible")) $("body").css("display", "none");
     }
   }
   if (main == "groupies") {

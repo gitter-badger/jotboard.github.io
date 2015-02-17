@@ -60,6 +60,28 @@
   background-color: #2D2D2D;
 }
 
+#realm {
+  padding: 1.5% 0 0% 0%;
+} #realm .article {
+  background-color: #E0E0E0;
+  margin: 1%;
+  width: 48%;
+  padding: .8%;
+  border: 2px solid rgb(30, 144, 255);
+  box-shadow: inset 0 0 2px #2B2B2B;
+  border-radius: 2px;
+} #realm .article:nth-child(odd) {
+  float: left;
+} #realm .article:nth-child(even) {
+  float: right;
+} #realm .article .title {
+  float: left;
+  font: 17px 'Lato', sans-serif;
+} #realm .article .thread {
+  float: right;
+  font: 11px 'Lato', sans-serif;
+}
+
 #namespace {
   text-align: left;
   display: block;

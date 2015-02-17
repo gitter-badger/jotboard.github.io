@@ -23,8 +23,8 @@ var startUp = function() {
       }); $("jb-give .jb-load").on("click", function() {
         jotboard("data", "load");
       }); $(".jb-social").on("click", function() {
-        jotboard("social");
-      }); if (jotboard("hash", "social")) jotboard("social");
+        jotboard("toggle", "social");
+      }); if (jotboard("hash", "social")) jotboard("toggle", "social");
     });
     head.load("js/depend/moment.js", function() {
       console.log("Moment.JS");
@@ -32,7 +32,7 @@ var startUp = function() {
         $.each(data.data.children, function(i, item) {
           $("#realm").append(
             '<div class="article">' +
-              '<a href="' + item.data.url + '" class="title">' + item.data.title + '</a>' +
+              '<a href="' + item.data.url + '" class="title">' + item.data.title + '</a></br>' +
               '<a href="//www.reddit.com' + item.data.permalink + '" class="thread">Realm Thread</a>' +
             '</div>'
           );
