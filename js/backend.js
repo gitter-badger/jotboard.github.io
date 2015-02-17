@@ -9,7 +9,8 @@ var startUp = function() {
     head.load(["js/db.js", "js/frame.js", "js/depend/jquery.js"], function() {
       // Form is $("#main.main #form");
       // Namespace is $("#namespace");
-      jotboard("toggle", "body");
+      if ($("body").css("display", "none")) $("body").css("display", "block");
+      if ($("body").css("display", "block")) $("body").css("display", "none");
       if (db.get(jotboard("prefix") + "Main")) {
         $("#main.main #form").val(db.get(jotboard("prefix") + "Main"));
         console.info("The main board is avalible.");
@@ -21,9 +22,7 @@ var startUp = function() {
         jotboard("data", "save");
       }); $("jb-give .jb-load").on("click", function() {
         jotboard("data", "load");
-      }); $(".jb-social").on("click", function() {
-        jotboard("toggle", "social");
-      }); if (jotboard("hash", "social")) jotboard("toggle", "social");
+      });
     });
     head.load("js/depend/moment.js", function() {
       console.log("Moment.JS");
@@ -31,7 +30,7 @@ var startUp = function() {
         $.each(data.data.children, function(i, item) {
           $("#realm").append(
             '<div class="article">' +
-              '<a href="' + item.data.url + '" class="title">' + item.data.title + '</a></br>' +
+              '<a href="' + item.data.url + '" class="title">' + item.data.title + '</a><br/>' +
               '<a href="//www.reddit.com' + item.data.permalink + '" class="thread">Realm Thread</a>' +
             '</div>'
           );
