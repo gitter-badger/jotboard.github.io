@@ -247,7 +247,7 @@ body.mobile .navigation {
   width: 4px;
 } #realm::-o-scrollbar-track {
   background-color: #FFF;
-}  #realm::-o-scrollbar-thumb {
+} #realm::-o-scrollbar-thumb {
   background-color: #000;
 } #realm::-ms-scrollbar {
   width: 4px;
