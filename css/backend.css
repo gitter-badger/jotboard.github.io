@@ -205,20 +205,32 @@ body.mobile .navigation {
   margin: 0;
 }
 
-/* Scrollbar START */
+/* Body Scrollbar */
+#body::-webkit-scrollbar { width: 0; }
+#body::-webkit-scrollbar-track { width: 0; }
+#body::-webkit-scrollbar-thumb { width: 0; }
+#body::-moz-scrollbar { width: 0; }
+#body::-moz-scrollbar-track { width: 0; }
+#body::-moz-scrollbar-thumb { width: 0; }
+/* Body Scrollbar */
+
+/* Form Scrollbar */
 #form::-webkit-scrollbar { width: 0; }
 #form::-webkit-scrollbar-track { width: 0; }
 #form::-webkit-scrollbar-thumb { width: 0; }
 #form::-moz-scrollbar { width: 0; }
 #form::-moz-scrollbar-track { width: 0; }
 #form::-moz-scrollbar-thumb { width: 0; }
+/* Form Scrollbar */
+
+/* Nav (if needed) Scrollbar */
 .navigation::-webkit-scrollbar { width: 0; }
 .navigation::-webkit-scrollbar-track { width: 0; }
 .navigation::-webkit-scrollbar-thumb { width: 0; }
 .navigation::-moz-scrollbar { width: 0; }
 .navigation::-moz-scrollbar-track { width: 0; }
 .navigation::-moz-scrollbar-thumb { width: 0; }
-/* Scrollbar END */
+/* Nav (if needed) Scrollbar */
 
 .remove { display: none; }
 *:focus { outline: none; }
