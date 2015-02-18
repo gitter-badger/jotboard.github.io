@@ -41,7 +41,7 @@
 }
 
 .navigation .container form {
-  width: calc(100% - 350px);
+  width: calc(100% - 130px);
   float: left;
 } .navigation .below-top .alt .nav-select {
   float: left;
@@ -115,12 +115,12 @@
 }
 
 jb-give {
-  width: 350px;
+  width: 130px;
   float: right;
 } jb-give .nav-select {
   color: #2B2B2B;
   text-align: center;
-  width: 23.86%;
+  width: 30%;
   font-size: 16px;
   margin: 0 0 0 4px;
   padding: 2px 0 3px 0;
@@ -192,8 +192,9 @@ body.mobile .navigation {
 }
 
 .navigation .container {
-  padding: 0;
-  width: 100% !important;
+  padding-right: 0;
+  padding-left: 0;
+  width: 100%;
 } .navigation .container form, jb-give {
   margin: 7px 0 6px 0;
 } .body.container {
