@@ -64,7 +64,7 @@
     padding: 0;
     margin: -.5%;
     height: 30%;
-    overflow-y: scroll;
+    overflow-x: scroll;
 } #realm .article {
   background-color: #E0E0E0;
   margin: .65%;
@@ -158,7 +158,7 @@ iframe.tv-yt {
 body.mobile .navigation {
   border-top: 10px solid rgb(37, 64, 87);
 } body.mobile #main {
-  margin-top: calc(59px + 10px);
+  margin-top: calc(60px + 10px);
   height: calc(100% - 59px - 10px);
 }
 
@@ -195,8 +195,6 @@ body.mobile .navigation {
   float: left;
   margin: 0 0 .5% 0;
 }
-
-
 
 .navigation .container {
   padding: 0;
