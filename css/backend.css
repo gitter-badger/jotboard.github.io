@@ -258,27 +258,17 @@ body.mobile .navigation {
 /* Realm Scrollbar */
 
 /* Form Scrollbar */
-#form::-webkit-scrollbar {
-  width: 0;
-} #form::-moz-scrollbar {
-  width: 0;
-} #form::-o-scrollbar {
-  width: 0;
-} #form::-ms-scrollbar {
-  width: 0;
-}
+#form::-webkit-scrollbar { width: 0; }
+#form::-moz-scrollbar { width: 0; }
+#form::-o-scrollbar { width: 0; }
+#form::-ms-scrollbar { width: 0; }
 /* Form Scrollbar */
 
 /* Nav (if needed) Scrollbar */
-.navigation::-webkit-scrollbar {
-  width: 0;
-} .navigation::-moz-scrollbar {
-  width: 0;
-} .navigation::-o-scrollbar {
-  width: 0;
-} .navigation::-ms-scrollbar {
-  width: 0;
-}
+.navigation::-webkit-scrollbar { width: 0; }
+.navigation::-moz-scrollbar { width: 0; }
+.navigation::-o-scrollbar { width: 0; }
+.navigation::-ms-scrollbar { width: 0; }
 /* Nav (if needed) Scrollbar */
 
 .remove { display: none; }
