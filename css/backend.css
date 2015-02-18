@@ -1,6 +1,6 @@
 #main {
   margin-top: 60px;
-  height: calc(100% - 50px);
+  height: calc(70% - 50px);
 }
 
 #form {
@@ -30,8 +30,8 @@
   height: auto;
   max-height: 100%;
   position: fixed;
-  left: 0px;
-  top: 0px;
+  left: 0;
+  top: 0;
   padding: 8.5px 1% 10px;
   background: none repeat scroll 0% 0% #254057;
   overflow-x: scroll;
@@ -61,7 +61,10 @@
 }
 
 #realm {
-    padding: .2% 0 0 0;
+    padding: 0;
+    margin: -.5%;
+    height: 30%;
+    overflow-y: scroll;
 } #realm .article {
   background-color: #E0E0E0;
   margin: .65%;
@@ -206,30 +209,73 @@ body.mobile .navigation {
 }
 
 /* Body Scrollbar */
-#body::-webkit-scrollbar { width: 0; }
-#body::-webkit-scrollbar-track { width: 0; }
-#body::-webkit-scrollbar-thumb { width: 0; }
-#body::-moz-scrollbar { width: 0; }
-#body::-moz-scrollbar-track { width: 0; }
-#body::-moz-scrollbar-thumb { width: 0; }
+#body::-webkit-scrollbar {
+  width: 4px;
+} #body::-webkit-scrollbar-track {
+  background-color: #FFF;
+}  #body::-webkit-scrollbar-thumb {
+  background-color: #000;
+} #body::-moz-scrollbar {
+  width: 4px;
+} #body::-moz-scrollbar-track {
+  background-color: #FFF;
+}  #body::-moz-scrollbar-thumb {
+  background-color: #000;
+} #body::-o-scrollbar {
+  width: 4px;
+} #body::-o-scrollbar-track {
+  background-color: #FFF;
+}  #body::-o-scrollbar-thumb {
+  background-color: #000;
+} #body::-ms-scrollbar {
+  width: 4px;
+} #body::-ms-scrollbar-track {
+  background-color: #FFF;
+}  #body::-ms-scrollbar-thumb {
+  background-color: #000;
+}
 /* Body Scrollbar */
+
+/* Realm Scrollbar */
+#realm::-webkit-scrollbar {
+  width: 4px;
+} #realm::-webkit-scrollbar-track {
+  background-color: #FFF;
+}  #realm::-webkit-scrollbar-thumb {
+  background-color: #000;
+} #realm::-moz-scrollbar {
+  width: 4px;
+} #realm::-moz-scrollbar-track {
+  background-color: #FFF;
+}  #realm::-moz-scrollbar-thumb {
+  background-color: #000;
+} #realm::-o-scrollbar {
+  width: 4px;
+} #realm::-o-scrollbar-track {
+  background-color: #FFF;
+}  #realm::-o-scrollbar-thumb {
+  background-color: #000;
+} #realm::-ms-scrollbar {
+  width: 4px;
+} #realm::-ms-scrollbar-track {
+  background-color: #FFF;
+}  #realm::-ms-scrollbar-thumb {
+  background-color: #000;
+}
+/* Realm Scrollbar */
 
 /* Form Scrollbar */
 #form::-webkit-scrollbar { width: 0; }
-#form::-webkit-scrollbar-track { width: 0; }
-#form::-webkit-scrollbar-thumb { width: 0; }
 #form::-moz-scrollbar { width: 0; }
-#form::-moz-scrollbar-track { width: 0; }
-#form::-moz-scrollbar-thumb { width: 0; }
+#form::-o-scrollbar { width: 0; }
+#form::-ms-scrollbar { width: 0; }
 /* Form Scrollbar */
 
 /* Nav (if needed) Scrollbar */
 .navigation::-webkit-scrollbar { width: 0; }
-.navigation::-webkit-scrollbar-track { width: 0; }
-.navigation::-webkit-scrollbar-thumb { width: 0; }
 .navigation::-moz-scrollbar { width: 0; }
-.navigation::-moz-scrollbar-track { width: 0; }
-.navigation::-moz-scrollbar-thumb { width: 0; }
+.navigation::-o-scrollbar { width: 0; }
+.navigation::-ms-scrollbar { width: 0; }
 /* Nav (if needed) Scrollbar */
 
 .remove { display: none; }
