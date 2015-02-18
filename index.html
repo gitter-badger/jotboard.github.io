@@ -82,7 +82,7 @@
     <meta name="application-name" content="Jotboard" />
     <meta name="msapplication-TileColor" content="#2B2B2B" />
   </head>
-  <body style="display: none;" id="body">
+  <body id="body">
     <div id="fb-root"></div>
     <div class="body container">
       <div class="navigation">
@@ -94,15 +94,20 @@
           </form>
           <jb-give>
             <div class="jb-groupies nav-select" title="Collaborative text editing on the fly!">Groupies</div>
-            <div class="jb-load nav-select" title="Load's the text according to it name (Loads Main Board if empty)">Load</div>
-            <div class="jb-save nav-select" title="Save's the current text in form with current text in hero bar (Saves to Main board if empty)">Save</div>
+            <div class="jb-load nav-select" title="Load's the text according to it name in Herobar (Loads Main if empty)">Load</div>
+            <div class="jb-save nav-select" title="Save's the current text in form with current text in Herobar (Saves to Main if empty)">Save</div>
           </jb-give>
         </div>
       </div>
       <div class="main" id="main">
         <textarea class="mousetrap" id="form"></textarea>
       </div>
-      <div id="realm"></div>
+      <div id="realm">
+        <div class="article">
+          <a href="/social/" class="title">Go to Realm</a>
+        </div>
+      </div>
+      <!-- Realm Section -->
     </div>
     <script>
       var _refresh = function(_) {
