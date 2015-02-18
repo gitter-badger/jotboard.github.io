@@ -29,7 +29,7 @@ var startUp = function() {
           $("#realm").append(
             '<div class="article">' +
               '<a href="' + item.data.url + '" class="title">' + item.data.title + '</a><br/>' +
-              '<a href="//www.reddit.com' + item.data.permalink + '" class="thread">Realm Thread</a>' +
+              '<a href="//www.reddit.com' + item.data.permalink + '" class="thread">Conversation</a>' +
             '</div>'
           );
         });
@@ -51,6 +51,9 @@ var startUp = function() {
       console.log("Prefixfree");
       head.load("//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css", function() {
         console.log("Font Awesome");
+        $(".jb-load").addClass("fa-important").addClass("fa-sign-out");
+        $(".jb-save").addClass("fa-important").addClass("fa-sign-in");
+        $(".jb-groupies").addClass("fa-important").addClass("fa-child");
       });
       head.load(["js/depend/bootstrap.js", "css/depend/bootstrap.css"], function() {
         console.log("Bootstrap CSS");
