@@ -1,6 +1,6 @@
 #main {
-  margin-top: 59px;
-  height: calc(100% - 59px);
+  margin-top: 60px;
+  height: calc(100% - 50px);
 }
 
 #form {
@@ -61,10 +61,10 @@
 }
 
 #realm {
-    padding: 1.5% 0 0 0;
+    padding: .2% 0 0 0;
 } #realm .article {
   background-color: #E0E0E0;
-  margin: 1%;
+  margin: .65%;
   width: 48%;
   padding: .8%;
   border: 2px solid rgb(30, 144, 255);
@@ -74,6 +74,8 @@
   float: left;
 } #realm .article:nth-child(even) {
   float: right;
+} #realm .article.header {
+    width: 99%;
 } #realm .article .title {
   float: left;
   font: 17px 'Lato', sans-serif;
