@@ -5,9 +5,7 @@
     <title>DROP HERE</title>
   </head>
   <body>
-    <div>
-      DROP HERE <button onclick="document.querySelector('input').click()">OR CLICK</button>
-    </div>
+    <div>DROP HERE</div>
     <input style="visibility: collapse; width: 0;" type="file" onchange="upload(this.files[0])" />
     <!-- JavaScript -->
     <script>
@@ -18,7 +16,7 @@
         e.preventDefault();
         upload(e.dataTransfer.files[0]);
       }
-      var upload = function(file) {
+      function upload(file) {
         // Is the file an image?
         if (!file || !file.type.match(/image.*/)) return;
         // It is!
@@ -41,6 +39,31 @@
     </script>
     <!-- CSS -->
     <style>
+      body {
+        text-align: center;
+        padding-top: 100px;
+      }
+      div {
+        border: 10px solid black;
+        text-align: center;
+        line-height: 100px;
+        width: 200px;
+        margin: auto;
+        font-size: 40px;
+        display: inline-block;
+      }
+      .uploading div, .uploaded div, #link, p, div {
+        display: none;
+      } div {
+        display: inline-block;
+      } .uploading p, .uploaded #link {
+        display: inline;
+      }
+      em {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+      }
     </style>
     <p style="display: none;" class="upload-txt">UPLOADING...</p>
     <a class="link">LINK</a>
