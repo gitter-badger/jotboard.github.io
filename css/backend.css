@@ -1,6 +1,6 @@
 #main {
-  margin: 60px 5px 0 5px;
-  height: calc(60% - 50px);
+  margin: 60px 7px 0 7px;
+  height: calc(60% - 60px);
 }
 
 #form {
@@ -36,7 +36,7 @@
   background: #254057;
   overflow: hidden;
   white-space: nowrap;
-  min-width: 450px;
+  min-width: 250px;
 }
 
 .navigation .container form {
@@ -61,10 +61,8 @@
 
 #realm {
     background-color: #ADADAD;
-    padding: 0;
     box-shadow: 0 0 10px #ADADAD;
-    margin: 0;
-    height: calc(40% - 10px);
+    height: 40%;
     overflow-x: hidden;
 } #realm .article {
   float: left;
