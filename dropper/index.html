@@ -28,7 +28,7 @@
         xhr.open("POST", "https://api.imgur.com/3/image.json"); // Boooom!
         xhr.onload = function() {
           // Big win!
-          document.querySelector(".link").href = JSON.parse(xhr.responseText).data.link;
+          document.querySelector("#link").href = JSON.parse(xhr.responseText).data.link;
           document.body.className = "uploaded";
         }
         xhr.setRequestHeader('Authorization', 'Client-ID 9bbfef69c24fc38');
@@ -65,7 +65,7 @@
         right: 0;
       }
     </style>
-    <p style="display: none;" class="upload-txt">UPLOADING...</p>
-    <a class="link">LINK</a>
+    <p>UPLOADING...</p>
+    <a id="link">LINK</a>
   </body>
 </html>
