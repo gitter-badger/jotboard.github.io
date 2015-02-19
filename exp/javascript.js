@@ -2,7 +2,7 @@
 
 _load.js(["//test.com/test.js"], function() {
   console.log('Test API Loaded');
-})
+});
 
 var _load = {
   js: function(_1, _2) {
@@ -28,10 +28,13 @@ var _load = {
   }
 };
 
-$.getJSON("//www.reddit.com/r/pics/new.json", function(data) {
-  $.each(data.data.children, function(i, item) {
-    $("<img/>").attr({
-      "src": item.data.url
-    }).appendTo("#images");
-  });
+// use alongside youtube-hackless (yt-html.js in this repo)
+YoutubeVideo("Q4-MnX5PfO8", function(video) {
+  var webm = video.getSource("video/webm", "medium");
+  var mp4 = video.getSource("video/mp4", "medium");
+  $("<video/>").attr({
+    "src": webm.url,
+    "autoplay": "autoplay",
+    "controls": "controls"
+  }).appendTo("#video-player");
 });
