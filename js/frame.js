@@ -50,7 +50,7 @@ var jotboard = function(main, _1, _2, _3, _4) {
         }
       }
       if (_1 == "load") {
-        if ($("#namespace").val()) {
+        if (!$("#namespace").val()) {
           $("#main.main #form").val(db.get(jotboard("prefix") + "Main"));
           console.info("Main > loaded");
           $.jbGrowl("The main board has been loaded.", {
