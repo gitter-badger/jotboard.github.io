@@ -6,11 +6,11 @@ var _IDL = false, head_conf = {
 var startUp = function() {
   if (window.location.protocol == "http:") window.location.protocol = "https:";
   if (window.location.protocol == "https:") {
-    head.load(["js/db.js", "js/frame.js", "js/depend/jquery.js"], function() {
+    head.load(["js/store.js", "js/frame.js", "js/depend/jquery.js"], function() {
       // Form is $("#main.main #form");
       // Namespace is $("#namespace");
-      if (db.get(jotboard("prefix") + "Main")) {
-        $("#main.main #form").val(db.get(jotboard("prefix") + "Main"));
+      if (store.get(jotboard("prefix") + "Main")) {
+        $("#main.main #form").val(store.get(jotboard("prefix") + "Main"));
         console.info("The main board is avalible.");
       } if (_IDL === true) {
         head.load(('https:' == document.location.protocol ? 'https://' : 'http://') +
@@ -88,7 +88,7 @@ var startUp = function() {
         });
         TogetherJS.on("close", function() {
           $("jb-give").toggleClass('remove');
-          $("#main.main #form").val(db.get(jotboard("prefix") + jotboard("value", "form")));
+          $("#main.main #form").val(store.get(jotboard("prefix") + jotboard("value", "form")));
           $.jbGrowl("Thank's for using " + jotboard("groupies", "name") + "!", {
             ele: "body",
             type: "info",

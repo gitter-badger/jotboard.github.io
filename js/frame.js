@@ -16,7 +16,7 @@ var jotboard = function(main, _1, _2, _3, _4) {
     if (typeof(Storage) !== "undefined") {
       if (_1 == "save") {
         if (!$("#namespace").val()) {
-          db.set(jotboard("prefix") + "Main", $("#main.main #form").val());
+          store.set(jotboard("prefix") + "Main", $("#main.main #form").val());
           console.info("Main > saved");
           $.jbGrowl("The main board has been saved.", {
             ele: "body",
@@ -32,7 +32,7 @@ var jotboard = function(main, _1, _2, _3, _4) {
             stackup_spacing: 10
           });
         } else {
-          db.set(jotboard("prefix") + $("#namespace").val(), $("#main.main #form").val());
+          store.set(jotboard("prefix") + $("#namespace").val(), $("#main.main #form").val());
           console.info($("#namespace").val() + " > saved");
           $.jbGrowl($("#namespace").val() + " has been saved.", {
             ele: "body",
@@ -51,7 +51,7 @@ var jotboard = function(main, _1, _2, _3, _4) {
       }
       if (_1 == "load") {
         if (!$("#namespace").val()) {
-          $("#main.main #form").val(db.get(jotboard("prefix") + "Main"));
+          $("#main.main #form").val(store.get(jotboard("prefix") + "Main"));
           console.info("Main > loaded");
           $.jbGrowl("The main board has been loaded.", {
             ele: "body",
@@ -67,7 +67,7 @@ var jotboard = function(main, _1, _2, _3, _4) {
             stackup_spacing: 10
           });
         } else {
-          $("#main.main #form").val(db.get(jotboard("prefix") + $("#namespace").val()));
+          $("#main.main #form").val(store.get(jotboard("prefix") + $("#namespace").val()));
           console.info($("#namespace").val() + " > loaded");
           $.jbGrowl($("#namespace").val() + " has been loaded.", {
             ele: "body",
@@ -85,7 +85,7 @@ var jotboard = function(main, _1, _2, _3, _4) {
         }
       }
     } else {
-      $.jbGrowl("System Requirements were not met, and therefore cannot save or load, upgrade to a more modern web browser (preferably <a href='/chrome/'>Chrome</a>) to be able to resolve this issue.", {
+      $.jbGrowl("System Requirements were not met, and therefore cannot save or load the content, upgrade to a more modern web browser (preferably <a href='/chrome/'>Chrome</a>) so you can then be able to save and/or load content.", {
         ele: "body",
         type: "danger",
         offset: {
