@@ -16,9 +16,9 @@ Issues that are inline with the avalible categories and labels, must be posted i
 
 <sup>Side-note: Feature Requests are almost always accepted (depending on whether its safe for work or not) and will be nested into the <a href="https://jotboard.github.io/#rest">Rest Menu</a> if they get suggested.</sup>
 
-1. Please search for existing Feature Requests first to see if something similar already exists and if it exists in the submenu.
+1. Please search for existing Feature Requests first to see if something similar already exists.
 2. Include a clear and specific use-case. We love new ideas, but we don't add features without a good reason.
-3. Consider whether or not your feature would be better as an optional function (implemented as a Hashmod) or implemented as a default interaction like Groupies.
+3. Consider whether or not your feature would be better as an optional function (implemented as a Hashmod) or implemented as a default interaction like Groupies or the Realm.
 
 ## Pull Requests
 
