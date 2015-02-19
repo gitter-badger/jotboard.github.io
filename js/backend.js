@@ -26,7 +26,7 @@ var startUp = function() {
       console.log("Moment.JS");
       $.getJSON("//www.reddit.com/r/jotboard/.json", function(data) {
         $.each(data.data.children, function(i, item) {
-          $("#realm").append(
+          $("#realm").prepend(
             '<div class="article">' +
               '<a href="' + item.data.url + '" class="title">' + item.data.title + '</a><br/>' +
               '<a href="//www.reddit.com' + item.data.permalink + '" class="thread">Conversation</a>' +
