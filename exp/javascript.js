@@ -28,7 +28,7 @@ var _load = {
   }
 };
 
-// use alongside youtube-hackless (yt-html.js in this repo)
+// use alongside yt-html.js in this repo
 YoutubeVideo("Q4-MnX5PfO8", function(video) {
   var webm = video.getSource("video/webm", "medium");
   var mp4 = video.getSource("video/mp4", "medium");
