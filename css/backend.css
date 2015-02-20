@@ -75,11 +75,14 @@
   color: #090909;
   text-shadow: 0 0 .3px #ACACAC;
   font: 21px 'Lato', sans-serif;
-} #realm .article .thread {
+} #realm .article .thread, #realm .article .author, #realm .article .points {
   float: right;
   color: #2B2B2B;
   text-shadow: 0 0 .2px #FFF;
   font: 11px 'Lato', sans-serif;
+  margin: 0 10px 0 0;
+} #realm .article .author {
+  margin: 0 4px 0 0;
 }
 
 #namespace {
