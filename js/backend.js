@@ -26,8 +26,7 @@ var startUp = function() {
       console.log("Moment.JS");
       $.getJSON("//www.reddit.com/r/jotboard/.json", function(data) {
         $.each(data.data.children, function(i, item) {
-          if (item.data.over_18 === true) return false;
-          else $("#realm").append(
+          $("#realm").append(
             '<div class="article">' +
               '<a class="title" href="' + item.data.url + '">' + item.data.title + '</a></br>' +
               '<a class="author" href="//www.reddit.com/user/' + item.data.author + '">' + item.data.author + '</a>' +
@@ -44,7 +43,7 @@ var startUp = function() {
           });
         } else {
           $("#main.main #form").attr({
-            "placeholder": moment(new Date()).format("[Hows it going? it's ]dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, see ya!]")
+            "placeholder": moment(new Date()).format("[Hows it going? it's ]dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, bye-bye!]")
           });
         }
       }; TimePulse();

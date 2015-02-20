@@ -74,7 +74,7 @@
   float: left;
   color: #090909;
   text-shadow: 0 0 .3px #ACACAC;
-  font: 21px 'Lato', sans-serif;
+  font: 20px 'Lato', sans-serif;
 } #realm .article .thread, #realm .article .author, #realm .article .points {
   float: right;
   color: #2B2B2B;
@@ -82,7 +82,33 @@
   font: 11px 'Lato', sans-serif;
   margin: 0 10px 0 0;
 } #realm .article .author {
-  margin: 0 4px 0 0;
+  margin: 0 11px 0 0;
+} #realm .article .points:hover {
+  cursor: default;
+  text-decoration: none;
+}
+
+.tv-plug {
+    background-color: #4A4A4A;
+    border: 1px solid #000;
+    font-size: 56px;
+    text-align: center;
+    float: right;
+    margin: 1% 1% 0 0;
+    width: 48%;
+    height: 80px;
+    border-radius: 3px;
+    cursor: pointer;
+} .tv-plug a {
+    color: #F0F0F0;
+    text-decoration: none;
+}
+
+.quote-radio {
+  float: left;
+  margin: 1% 0% 0 1%;
+  width: 48%;
+  height: 80px;
 }
 
 #namespace {
@@ -149,8 +175,7 @@ html, body {
 body.mobile .navigation {
   border-top: 10px solid rgb(37, 64, 87);
 } body.mobile #main {
-  margin-top: calc(60px + 10px);
-  height: calc(100% - 60px - 10px);
+  margin-top: 70px;
 }
 
 .navigation * {
