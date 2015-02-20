@@ -30,8 +30,8 @@ var startUp = function() {
           else $("#realm").append(
             '<div class="article">' +
               '<a class="title">' + item.data.title + '</a></br>' +
-              '<a class="author" href="//www.reddit.com/user/' + item.data.author + '">' + item.data.author + '</a></br>' +
-              '<a class="thread" href="//www.reddit.com' + item.data.permalink + '" class="thread">Conversation (' + item.data.score + ' Point/s)</a></br>' +
+              '<a class="author" href="//www.reddit.com/user/' + item.data.author + '">' + item.data.author + '</a>' +
+              '<a class="thread" href="//www.reddit.com' + item.data.permalink + '" class="thread">Conversation</a>' +
               '<a class="points">(' + item.data.score + ' Point/s)</a>' +
             '</div>'
           );
