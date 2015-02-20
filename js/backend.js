@@ -31,7 +31,7 @@ var startUp = function() {
             '<div class="article">' +
               '<a class="title" href="' + item.data.url + '">' + item.data.title + '</a></br>' +
               '<a class="author" href="//www.reddit.com/user/' + item.data.author + '">' + item.data.author + '</a>' +
-              '<a class="thread" href="//www.reddit.com' + item.data.permalink + '" class="thread">Conversation</a>' +
+              '<a class="thread" href="//www.reddit.com' + item.data.permalink + '" class="thread">Comments</a>' +
               '<a class="points">(' + item.data.score + ' Point/s)</a>' +
             '</div>'
           );
