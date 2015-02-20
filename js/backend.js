@@ -29,7 +29,7 @@ var startUp = function() {
           if (item.data.over_18 == true) return false;
           else $("#realm").append(
             '<div class="article">' +
-              '<a class="title">' + item.data.title + '</a></br>' +
+              '<a class="title" href="' + item.data.url + '">' + item.data.title + '</a></br>' +
               '<a class="author" href="//www.reddit.com/user/' + item.data.author + '">' + item.data.author + '</a>' +
               '<a class="thread" href="//www.reddit.com' + item.data.permalink + '" class="thread">Conversation</a>' +
               '<a class="points">(' + item.data.score + ' Point/s)</a>' +
