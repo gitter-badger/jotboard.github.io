@@ -26,7 +26,7 @@ var startUp = function() {
       console.log("Moment.JS");
       $.getJSON("//www.reddit.com/r/jotboard/.json", function(data) {
         $.each(data.data.children, function(i, item) {
-          if (item.data.over_18 == true) return false;
+          if (item.data.over_18 === true) return false;
           else $("#realm").append(
             '<div class="article">' +
               '<a class="title" href="' + item.data.url + '">' + item.data.title + '</a></br>' +
