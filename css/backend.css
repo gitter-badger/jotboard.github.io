@@ -88,26 +88,29 @@
   text-decoration: none;
 }
 
-.tv-plug {
+.plug {
     background-color: #4A4A4A;
     border: 1px solid #000;
-    font-size: 56px;
+    font: 60px 'Lato', sans-serif;
     text-align: center;
-    float: right;
     margin: 1% 1% 0 0;
-    width: 48%;
+    width: 31.3%;
     height: 80px;
+    float: right;
     border-radius: 3px;
     cursor: pointer;
-} .tv-plug a {
-    color: #F0F0F0;
+} .plug a, .plug a:hover {
     text-decoration: none;
+} .plug a {
+    color: #F0F0F0;
+} .plug a:hover {
+    color: #C4C4C4;
 }
 
 .quote-radio {
   float: left;
-  margin: 1% 0% 0 1%;
-  width: 48%;
+  margin: 1% 0 0 1%;
+  width: 33.3333333%;
   height: 80px;
 }
 
