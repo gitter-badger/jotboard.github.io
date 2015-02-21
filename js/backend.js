@@ -85,7 +85,7 @@ var startUp = function() {
               from: "bottom",
               amount: 20
             },
-            align: "left",
+            align: "center",
             width: "auto",
             delay: 3500,
             allow_dismiss: true
@@ -93,7 +93,7 @@ var startUp = function() {
         });
         TogetherJS.on("close", function() {
           $("jb-give").toggleClass('remove');
-          $("#main.main #form").val(store.get(jotboard("prefix") + jotboard("value", "form")));
+          $("#main.main #form").val(store.get(jotboard("prefix") + "Main"));
           $.jbGrowl("Thank's for using " + jotboard("groupies", "name") + "!", {
             ele: "body",
             type: "info",
@@ -101,8 +101,8 @@ var startUp = function() {
               from: "bottom",
               amount: 20
             },
-            align: "left",
-            width: 225,
+            align: "center",
+            width: "auto",
             delay: 2200,
             allow_dismiss: true
           });
