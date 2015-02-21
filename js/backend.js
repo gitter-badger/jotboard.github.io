@@ -57,6 +57,9 @@ var startUp = function() {
         $(".jb-save").addClass("fa-important").addClass("fa-sign-in");
         $(".jb-groupies").addClass("fa-important").addClass("fa-child");
       });
+      document.getElementById('body').addEventListener('touchmove', function(nodeAB) {
+      	nodeAB.preventDefault();
+      }, false);
       head.load(["js/depend/bootstrap.js", "css/depend/bootstrap.css"], function() {
         console.log("Bootstrap CSS");
         if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
