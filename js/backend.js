@@ -20,10 +20,10 @@ var startUp = function() {
       }
       $("jb-give .jb-save").on("click", function() {
         jotboard("data", "save");
-      });
+      }).addClass("fa-important").addClass("fa-sign-in");
       $("jb-give .jb-load").on("click", function() {
         jotboard("data", "load");
-      });
+      }).addClass("fa-important").addClass("fa-sign-out");
     });
     head.load("js/depend/moment.js", function() {
       console.log("Moment.JS");
@@ -56,8 +56,6 @@ var startUp = function() {
       console.log("Prefixfree");
       head.load("//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css", function() {
         console.log("Font Awesome");
-        $(".jb-load").addClass("fa-important").addClass("fa-sign-out");
-        $(".jb-save").addClass("fa-important").addClass("fa-sign-in");
       });
       head.load(["js/depend/bootstrap.js", "css/depend/bootstrap.css"], function() {
         console.log("Bootstrap CSS");
