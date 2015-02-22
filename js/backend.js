@@ -20,10 +20,10 @@ var startUp = function() {
       }
       $("jb-give .jb-save").on("click", function() {
         jotboard("data", "save");
-      }).addClass("fa-important").addClass("fa-sign-in");
+      }).addClass("fa-important").addClass("fa-cloud-upload");
       $("jb-give .jb-load").on("click", function() {
         jotboard("data", "load");
-      }).addClass("fa-important").addClass("fa-sign-out");
+      }).addClass("fa-important").addClass("fa-cloud-download");
     });
     head.load("js/depend/moment.js", function() {
       console.log("Moment.JS");
