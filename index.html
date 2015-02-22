@@ -55,19 +55,19 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <!-- Google -->
     <meta name="title" content="Jotboard" />
-    <meta name="description" content="Write notes and small jots or collaborate with friends and family, the choice is yours!" />
+    <meta name="description" content="Write something, submit it then watch the awesome-ness follow!" />
     <meta name="Keywords" content="jotboard, social, storage, collaborate" />
     <meta name="google-site-verification" content="VSFb8uoeCzKL6y65lPOMyjQjPtGUefKhlcClkOHjyT8" />
     <!-- Facebook -->
     <meta property="og:site_name" content="Jotboard" />
     <meta property="og:url" content="//jotboard.github.io/" />
-    <meta property="og:description" content="Write notes and small jots or collaborate with friends and family, the choice is yours!" />
+    <meta property="og:description" content="Write something, submit it then watch the awesome-ness follow!" />
     <meta property="fb:app_id" content="196947013668110" />
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@Jotboard" />
     <meta name="twitter:creator" content="@ChrisHazFun" />
-    <meta name="twitter:description" content="Write notes and small jots or collaborate with friends and family, the choice is yours!" />
+    <meta name="twitter:description" content="Write something, submit it then watch the awesome-ness follow!" />
     <meta name="twitter:title" content="Jotboard" />
     <meta name="twitter:image:src" content="img/430x300.png" />
     <meta name="twitter:image:width" content="430" />
@@ -87,26 +87,28 @@
     <div class="body container">
       <div class="navigation">
         <div class="container">
-          <form role="search" action="//www.google.com/search" target="_blank" method="get">
+          <form role="search">
             <div class="form-group">
-              <input type="text" id="namespace" name="q" class="form-control" title="Make, Load, Overwrite a Board or Search the Web" placeholder="Jotboard" />
+              <input type="text" id="namespace" class="form-control" title="Make, Load, Overwrite your Content" placeholder="Jotboard" />
             </div>
           </form>
           <jb-give>
-            <div class="jb-groupies nav-select" title="Collaborative text editing on the fly!"></div>
-            <div class="jb-load nav-select" title="Load's the text according to it name in Herobar (Loads Main if empty)"></div>
-            <div class="jb-save nav-select" title="Save's the current text in form with current text in Herobar (Saves to Main if empty)"></div>
+            <div class="jb-load nav-select" title="Load's the relevent text according to the name in Herobar (Loads Main if empty)"></div>
+            <div class="jb-save nav-select" title="Save's the current text in form with current namespace text in Herobar (Saves to Main if Herobar is empty)"></div>
           </jb-give>
         </div>
       </div>
       <div class="main" id="main">
         <textarea class="mousetrap" id="form"></textarea>
       </div>
-      <div id="realm">
-        <iframe src="https://embed.spotify.com/?uri=spotify:user:1249813849:playlist:7gMrshUGhhYAKThn2RT8eQ" frameborder="0" allowtransparency="true" class="quote-radio"></iframe>
+      <div id="community">
+        <iframe src="//embed.spotify.com/?uri=spotify:user:1249813849:playlist:7gMrshUGhhYAKThn2RT8eQ" frameborder="0" allowtransparency="true" class="quote-radio"></iframe>
         <div class="plug">
-          <a href="/tv/">"TV"</a></div>
-        <div class="plug"><a href="/realm/">Realm</a></div>
+          <a href="/tv/">"TV"</a>
+        </div>
+        <div class="plug">
+          <a href="/realm/">Realm</a>
+        </div>
       </div>
     </div>
     <script>

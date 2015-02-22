@@ -3,16 +3,8 @@ var jotboard = function(main, _1, _2, _3, _4) {
   if (main == "threshold") return _1 <= new Date().getHours() && new Date().getHours() < _2;
   if (main == "hash") /* Used for Hashmods */ return window.location.href.indexOf("#" + _1) != -1;
   if (main == "prefix") return "JB_-";
-  if (main == "groupies") {
-    if (_1 == "run") {
-      // Groupies: Collaborative text editing.
-      TogetherJS(this);
-      return false;
-    }
-    if (_1 == "name") return "Groupies";
-  }
   if (main == "data") {
-    // jotboard("data", "save/load"): Used to get and set the values of Jotboard Data Files.
+    // jotboard("data", "save/load"): Used to get and set the values of Jotboard Data.
     if (typeof(Storage) !== "undefined") {
       if (_1 == "save") {
         if (!$("#namespace").val()) {
