@@ -1,6 +1,6 @@
 #main {
   margin: 60px 6px 0 6px;
-  height: calc(60% - 60px);
+  height: calc(30% - 60px);
 }
 
 #form {
@@ -45,7 +45,7 @@
 #community {
   background-color: #ADADAD;
   box-shadow: 0 0 10px #ADADAD;
-  height: 40%;
+  height: 70%;
   overflow-x: hidden;
 } #community .article {
   float: left;
@@ -127,9 +127,9 @@ jb-give {
 } jb-give .nav-select {
   color: #2B2B2B;
   text-align: center;
-  width: 30%;
+  width: 46%;
   font-size: 16px;
-  margin: 0 0 0 4px;
+  margin: 0 0 0 5px;
   padding: 2px 0 3px 0;
   background-color: #E9E9E9;
   float: right;
