@@ -17,7 +17,7 @@ var jotboard = function(main, _1, _2, _3, _4) {
               from: "bottom",
               amount: 20
             },
-            align: "center",
+            align: "left",
             width: "auto",
             delay: 1900,
             allow_dismiss: false,
@@ -33,7 +33,7 @@ var jotboard = function(main, _1, _2, _3, _4) {
               from: "bottom",
               amount: 20
             },
-            align: "center",
+            align: "left",
             width: "auto",
             delay: 2800,
             allow_dismiss: false,
@@ -52,7 +52,7 @@ var jotboard = function(main, _1, _2, _3, _4) {
               from: "bottom",
               amount: 20
             },
-            align: "center",
+            align: "right",
             width: "auto",
             delay: 1350,
             allow_dismiss: false,
@@ -65,10 +65,10 @@ var jotboard = function(main, _1, _2, _3, _4) {
             ele: "body",
             type: "info",
             offset: {
-              from: "top",
+              from: "bottom",
               amount: 20
             },
-            align: "center",
+            align: "right",
             width: "auto",
             delay: 2850,
             allow_dismiss: false,
