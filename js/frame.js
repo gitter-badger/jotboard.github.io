@@ -52,7 +52,7 @@ var jotboard = function(main, _1, _2, _3, _4) {
               from: "bottom",
               amount: 20
             },
-            align: "right",
+            align: "left",
             width: "auto",
             delay: 1350,
             allow_dismiss: false,
@@ -68,7 +68,7 @@ var jotboard = function(main, _1, _2, _3, _4) {
               from: "bottom",
               amount: 20
             },
-            align: "right",
+            align: "left",
             width: "auto",
             delay: 2850,
             allow_dismiss: false,
@@ -84,7 +84,7 @@ var jotboard = function(main, _1, _2, _3, _4) {
           from: "bottom",
           amount: 20
         },
-        align: "center",
+        align: "left",
         width: "auto",
         delay: 3300,
         allow_dismiss: false,
