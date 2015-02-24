@@ -18,7 +18,7 @@ var jotboard = function(main, _1, _2, _3, _4) {
               amount: 20
             },
             align: "center",
-            width: 247,
+            width: "auto",
             delay: 1900,
             allow_dismiss: false,
             stackup_spacing: 10
@@ -34,7 +34,7 @@ var jotboard = function(main, _1, _2, _3, _4) {
               amount: 20
             },
             align: "center",
-            width: 247,
+            width: "auto",
             delay: 2800,
             allow_dismiss: false,
             stackup_spacing: 10
@@ -53,7 +53,7 @@ var jotboard = function(main, _1, _2, _3, _4) {
               amount: 20
             },
             align: "center",
-            width: 247,
+            width: "auto",
             delay: 1350,
             allow_dismiss: false,
             stackup_spacing: 10
@@ -69,7 +69,7 @@ var jotboard = function(main, _1, _2, _3, _4) {
               amount: 20
             },
             align: "center",
-            width: 247,
+            width: "auto",
             delay: 2850,
             allow_dismiss: false,
             stackup_spacing: 10
@@ -85,7 +85,7 @@ var jotboard = function(main, _1, _2, _3, _4) {
           amount: 20
         },
         align: "center",
-        width: 320,
+        width: "auto",
         delay: 3300,
         allow_dismiss: false,
         stackup_spacing: 10

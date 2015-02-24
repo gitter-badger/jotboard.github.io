@@ -15,8 +15,8 @@ var startUp = function() {
       }
       if (_IDL === true) {
         head.load(('https:' == document.location.protocol ? 'https://' : 'http://') +
-          'members.internetdefenseleague.org/include/?url=' + _idl.url + '&campaign=' +
-          _idl.campaign + '&variant=modal');
+        'members.internetdefenseleague.org/include/?url=' + _idl.url +
+        '&campaign=' + _idl.campaign + '&variant=modal');
       }
       $("jb-give .jb-save").on("click", function() {
         jotboard("data", "save");
