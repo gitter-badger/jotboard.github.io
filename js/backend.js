@@ -61,6 +61,23 @@ var startUp = function() {
         console.log("Normalize.CSS");
         head.load(["css/toastr.css", "js/depend/toastr.js"], function() {
           console.log("Toastr CSS and JS");
+          toastr.options = {
+            "closeButton": false,
+            "debug": true,
+            "newestOnTop": true,
+            "progressBar": false,
+            "positionClass": "toast-bottom-left",
+            "preventDuplicates": false,
+            "onclick": null,
+            "showDuration": "300",
+            "hideDuration": "1000",
+            "timeOut": "5000",
+            "extendedTimeOut": "1000",
+            "showEasing": "swing",
+            "hideEasing": "swing",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"
+          }
         });
         if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
           $("body").addClass("mobile");
