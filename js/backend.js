@@ -59,7 +59,7 @@ var startUp = function() {
       });
       head.load("css/depend/normalize.css", function() {
         console.log("Normalize.CSS");
-        head.load(["css/toastr.css", "js/depend/toastr.js"], function() {
+        head.load(["css/depend/toastr.css", "js/depend/toastr.js"], function() {
           console.log("Toastr CSS and JS");
           toastr.options = {
             "closeButton": false,
