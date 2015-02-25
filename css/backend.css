@@ -1,6 +1,6 @@
 #main {
-  margin: 60px 1px 0 5px;
-  height: calc(55% - 60px);
+  margin: 58px 1px 0 5px;
+  height: calc(58% - 58px);
 }
 
 #form {
@@ -10,7 +10,7 @@
   width: 100%;
   height: 100%;
   border: none;
-  padding: 4.25px 0 0 0;
+  padding: 5px 0 0 0;
 } #form::-webkit-input-placeholder {
   font: 19px 'Lato', san-serif;
   color: #2B2B2B;
@@ -32,20 +32,21 @@
   position: fixed;
   left: 0;
   top: 0;
-  padding: 8.5px 12px 11px 8px;
-  background: #254057;
+  padding: 8px 16px 12px 16px;
+  background: #1B72BE;
+  box-shadow: 0 0 5px #1B72BE;
   overflow: hidden;
   white-space: nowrap;
-  min-width: 250px;
+  min-width: 265px;
 } .navigation .container form {
-  width: calc(100% - 130px);
+  width: calc(99.5% - 130px);
   float: left;
 }
 
 #community {
   background-color: #ADADAD;
   box-shadow: 0 0 10px #ADADAD;
-  height: 45%;
+  height: 42%;
   overflow-x: hidden;
 } #community .article {
   float: left;
@@ -101,16 +102,18 @@
   display: block;
   width: 100%;
   height: auto;
-  padding: 0 0 0 2px;
+  padding: 1px 0 1px 5px;
   margin: 0;
-  font-size: 22px;
-  line-height: 1.24;
+  font-size: 21.5px;
+  line-height: 1.311;
   color: #E0E0E0 !important;
-  background-color: transparent !important;
+  background-color: rgb(76, 142, 250);
   background-image: none !important;
   border: 0;
   border-radius: 2px;
   box-shadow: none;
+} #namespace:hover {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .50);
 } #namespace::-webkit-input-placeholder {
   color: #E0E0E0;
 } #namespace:-moz-placeholder {
@@ -124,16 +127,21 @@
 jb-give {
   width: 130px;
   float: right;
-} jb-give .nav-select {
-  color: #2B2B2B;
-  text-align: center;
-  width: 46%;
-  font-size: 16px;
-  margin: 0 0 0 5px;
-  padding: 2px 0 3px 0;
-  background-color: #E9E9E9;
-  float: right;
+} jb-give button {
+  background: rgb(76, 142, 250);
+  border: 0;
+  width: calc(50% - 1% - 1px);
   border-radius: 2px;
+  color: #FFF;
+  font-size: 19px;
+  margin: 0 1px 0 0;
+  padding: 1% 0% 1% 0%;
+  transition: box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1);
+} jb-give button:hover {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .50);
+} jb-give button:active {
+  background: rgb(50, 102, 213);
+  outline: 0;
 }
 
 .jtb-radio {
@@ -205,8 +213,10 @@ body.mobile .body.container {
   padding-right: 0;
   padding-left: 0;
   width: 100%;
-} .navigation .container form, jb-give {
-  margin: 7px 0 6px 0;
+} .navigation .container form {
+  margin: 6px 0 0 0;
+} jb-give {
+  margin: 6px 0 3px 0;
 }
 
 /* Body Scrollbar */

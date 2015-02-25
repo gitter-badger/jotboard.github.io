@@ -57,15 +57,15 @@ var startUp = function() {
       head.load("//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css", function() {
         console.log("Font Awesome");
       });
-      head.load(["js/depend/bootstrap.js", "css/depend/bootstrap.css"], function() {
-        console.log("Bootstrap CSS");
+      head.load("css/depend/normalize.css", function() {
+        console.log("Normalize.CSS");
+        head.load(["css/toastr.css", "js/depend/toastr.js"], function() {
+          console.log("Toastr CSS and JS");
+        });
         if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
           $("body").addClass("mobile");
         } else console.log("Not on mobile.");
       });
-    });
-    head.load(["js/depend/growl.js"], function() {
-      console.log("Jotboard Growl");
     });
   }
 }; startUp();
