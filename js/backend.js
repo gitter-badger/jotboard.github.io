@@ -18,10 +18,10 @@ var startUp = function() {
         'members.internetdefenseleague.org/include/?url=' + _idl.url +
         '&campaign=' + _idl.campaign + '&variant=modal');
       }
-      $("jb-give .jb-save").on("click", function() {
+      $(".jb-give .jb-save").on("click", function() {
         jotboard("data", "save");
       }).addClass("fa-important").addClass("fa-cloud-upload");
-      $("jb-give .jb-load").on("click", function() {
+      $(".jb-give .jb-load").on("click", function() {
         jotboard("data", "load");
       }).addClass("fa-important").addClass("fa-cloud-download");
     });
