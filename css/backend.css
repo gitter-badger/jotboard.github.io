@@ -3,6 +3,11 @@
   height: calc(55% - 60px);
 }
 
+#body .container {
+    height: 100%;
+    width: 100%;
+}
+
 #form {
   resize: none;
   outline: none;
@@ -46,6 +51,7 @@
   background-color: #ADADAD;
   box-shadow: 0 0 10px #ADADAD;
   height: 45%;
+  width: 100%;
   overflow-x: hidden;
 } #community .article {
   float: left;
@@ -76,9 +82,9 @@
   border: 1px solid #000;
   font: 60px 'Lato', sans-serif;
   text-align: center;
-  margin: 1% 1% 0 0;
+  margin: 1% 0 0 0;
   overflow-x: hidden;
-  width: 31.3%;
+  width: 35%;
   height: 80px;
   float: right;
   border-radius: 3px;
@@ -91,8 +97,8 @@
   color: #C4C4C4;
 } #community .quote-radio {
   float: left;
-  margin: 1% 0 0 1%;
-  width: 33.3333333%;
+  margin: 1%;
+  width: 35%;
   height: 80px;
 }
 
@@ -153,7 +159,6 @@ jb-give {
 
 html, body {
   background-color: #E9E9E9;
-  margin: 0;
   width: 100%;
   height: 100%;
   padding: 0;
