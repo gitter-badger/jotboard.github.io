@@ -223,12 +223,8 @@ body.mobile .body.container {
 #form::-ms-scrollbar { width: 0; }
 /* Form Scrollbar */
 
-/* Nav (if needed) Scrollbar */
-.navigation::-webkit-scrollbar { width: 0; }
-.navigation::-moz-scrollbar { width: 0; }
-.navigation::-o-scrollbar { width: 0; }
-.navigation::-ms-scrollbar { width: 0; }
-/* Nav (if needed) Scrollbar */
-
-.remove { display: none; }
-*:focus { outline: none; }
+.remove {
+  display: none;
+} *:focus {
+  outline: none;
+}
