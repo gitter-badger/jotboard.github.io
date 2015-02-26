@@ -19,7 +19,7 @@
 ::-ms-scrollbar { width: 0; }
 /* Body Scrollbar */
 
-.remove {
+[remove], .remove {
   display: none;
 } *:focus {
   outline: none;
