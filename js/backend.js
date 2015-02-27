@@ -57,7 +57,7 @@ var startUp = function() {
       head.load("//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css", function() {
         console.log("Font Awesome");
       });
-      head.load("css/depend/normalize.css", function() {
+//      head.load("css/depend/normalize.css", function() {
         console.log("Normalize.CSS");
         head.load(["css/depend/toastr.css", "js/depend/toastr.js"], function() {
           console.log("Toastr CSS and JS");
@@ -82,7 +82,7 @@ var startUp = function() {
         if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
           $("body").addClass("mobile");
         } else console.log("Not on mobile.");
-      });
+//        });
     });
   }
 }; startUp();
