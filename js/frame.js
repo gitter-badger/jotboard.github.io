@@ -10,22 +10,22 @@ var jotboard = function(main, _1, _2, _3, _4) {
         if (!$("#namespace").val()) {
           store.set(jotboard("prefix") + "Main", $("#main.main #form").val());
           console.info("Main > saved");
-          toastr("The main board has been saved.");
+          toastr['success']("The main board has been saved.");
         } else {
           store.set(jotboard("prefix") + $("#namespace").val(), $("#main.main #form").val());
           console.info($("#namespace").val() + " > saved");
-          toastr($("#namespace").val() + " has been saved.");
+          toastr['success']($("#namespace").val() + " has been saved.");
         }
       }
       if (_1 == "load") {
         if (!$("#namespace").val()) {
           $("#main.main #form").val(store.get(jotboard("prefix") + "Main"));
           console.info("Main > loaded");
-          toastr("The main board has been loaded.");
+          toastr['success']("The main board has been loaded.");
         } else {
           $("#main.main #form").val(store.get(jotboard("prefix") + $("#namespace").val()));
           console.info($("#namespace").val() + " > loaded");
-          toastr($("#namespace").val() + " has been loaded.");
+          toastr['success']($("#namespace").val() + " has been loaded.");
         }
       }
     } else {

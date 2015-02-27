@@ -6,7 +6,7 @@ var _IDL = false, head_conf = {
 var startUp = function() {
   if (window.location.protocol == "http:") window.location.protocol = "https:";
   if (window.location.protocol == "https:") {
-    head.load(["js/store.js", "js/frame.js", "js/depend/jquery.js"], function() {
+    head.load(["js/depend/store.js", "js/frame.js", "js/depend/jquery.js"], function() {
       // Form is $("#main.main #form");
       // Namespace is $("#namespace");
       if (store.get(jotboard("prefix") + "Main")) {
