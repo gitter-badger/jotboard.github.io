@@ -78,8 +78,8 @@
   cursor: default;
   text-decoration: none;
 } #community .plug {
-  background-color: #000;
-  border: 2px solid #4A4A4A;
+  background-color: #313130;
+  border: 1px solid #000;
   font: 62px 'Lato', sans-serif;
   text-align: center;
   margin: 0 1% 0 0;
