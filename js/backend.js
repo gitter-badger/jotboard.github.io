@@ -83,7 +83,7 @@ var startUp = function() {
           "closeButton": false,
           "debug": true,
           "newestOnTop": true,
-          "progressBar": false,
+          "progressBar": true,
           "positionClass": "toast-bottom-left",
           "preventDuplicates": false,
           "onclick": null,
