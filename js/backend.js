@@ -25,22 +25,22 @@ var startUp = function() {
         if (!$("#namespace").val()) {
           store.set(mop("prefix") + "Main", $("#main.main #form").val());
           console.info("Main > saved");
-          toastr['success']("The main board has been saved.");
+          toastr['info']("The main board has been saved.");
         } else {
           store.set(mop("prefix") + $("#namespace").val(), $("#main.main #form").val());
           console.info($("#namespace").val() + " > saved");
-          toastr['success']($("#namespace").val() + " has been saved.");
+          toastr['info']($("#namespace").val() + " has been saved.");
         }
       }).addClass("fa-important").addClass("fa-cloud-upload");
       $(".jb-give .jb-load").on("click", function() {
         if (!$("#namespace").val()) {
           $("#main.main #form").val(store.get(mop("prefix") + "Main"));
           console.info("Main > loaded");
-          toastr['success']("The main board has been loaded.");
+          toastr['info']("The main board has been loaded.");
         } else {
           $("#main.main #form").val(store.get(mop("prefix") + $("#namespace").val()));
           console.info($("#namespace").val() + " > loaded");
-          toastr['success']($("#namespace").val() + " has been loaded.");
+          toastr['info']($("#namespace").val() + " has been loaded.");
         }
       }).addClass("fa-important").addClass("fa-cloud-download");
     });
@@ -83,7 +83,7 @@ var startUp = function() {
           "debug": false,
           "newestOnTop": true,
           "progressBar": true,
-          "positionClass": "toast-bottom-center",
+          "positionClass": "toast-bottom-left",
           "preventDuplicates": false,
           "onclick": null,
           "showDuration": "200",
