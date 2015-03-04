@@ -200,4 +200,6 @@
   outline: none;
 } * {
   box-sizing: border-box;
+} .toast {
+  font-family: 'Lato', san-serif;
 }

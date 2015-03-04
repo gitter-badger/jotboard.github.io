@@ -1,5 +1,4 @@
-window._idl = {};
-var _IDL = false, head_conf = {
+window._idl = {}, _IDL = true, head_conf = {
   html5: true
 };
 
@@ -18,9 +17,9 @@ var startUp = function() {
         console.info("The main board is avalible.");
       }
       if (_IDL === true) {
-        head.load(('https:' == document.location.protocol ? 'https://' : 'http://') +
-        'members.internetdefenseleague.org/include/?url=' + _idl.url +
-        '&campaign=' + _idl.campaign + '&variant=modal');
+        head.load(('https:' == document.location.protocol ? 'https://' : 'http://')
+        + 'members.internetdefenseleague.org/include/?url=' + _idl.url + '&campaign=' + _idl.campaign
+        + '&variant=modal');
       }
       $(".jb-give .jb-save").on("click", function() {
         if (!$("#namespace").val()) {
@@ -80,17 +79,17 @@ var startUp = function() {
       head.load(["css/depend/toastr.css", "js/depend/toastr.js"], function() {
         console.log("Toastr CSS and JS");
         toastr.options = {
-          "closeButton": false,
-          "debug": true,
+          "closeButton": true,
+          "debug": false,
           "newestOnTop": true,
           "progressBar": true,
-          "positionClass": "toast-bottom-left",
+          "positionClass": "toast-bottom-center",
           "preventDuplicates": false,
           "onclick": null,
-          "showDuration": "300",
-          "hideDuration": "1000",
-          "timeOut": "5000",
-          "extendedTimeOut": "1000",
+          "showDuration": "200",
+          "hideDuration": "500",
+          "timeOut": "2500",
+          "extendedTimeOut": "700",
           "showEasing": "swing",
           "hideEasing": "swing",
           "showMethod": "fadeIn",
