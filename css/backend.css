@@ -30,16 +30,16 @@ body.mobile #container #main {
   outline: none;
   border: none;
 } #form::-webkit-input-placeholder {
-  font: 19px 'Lato', san-serif;
+  font: 19px 'Roboto', san-serif;
   color: #2B2B2B;
 } #form:-o-placeholder {
-  font: 19px 'Lato', san-serif;
+  font: 19px 'Roboto', san-serif;
   color: #2B2B2B;
 } #form::-moz-placeholder {
-  font: 19px 'Lato', san-serif;
+  font: 19px 'Roboto', san-serif;
   color: #2B2B2B;
 } #form::-ms-input-placeholder {
-  font: 19px 'Lato', san-serif;
+  font: 19px 'Roboto', san-serif;
   color: #2B2B2B;
 }
 
@@ -52,7 +52,7 @@ body.mobile #container #main {
   min-height: 60px;
   padding: 8.5px 12px 11px 8px;
   background: #2970DF;
-  box-shadow: 0 0 3px #2970DF;
+  box-shadow: 0 0 2px #2970DF;
 }
 
 #community {
@@ -70,9 +70,9 @@ body.mobile #container #main {
 } #community .article .title {
   float: left;
   text-decoration: none;
-  color: #090909;
-  text-shadow: 0 0 .3px #ACACAC;
-  font: 20px 'Lato', sans-serif;
+  color: #2B2B2B;
+  text-shadow: 0 0 .3px #8B8989;
+  font: 17px 'Lato', sans-serif;
 } #community .article .thread,
 #community .article .author,
 #community .article .points {
@@ -119,7 +119,7 @@ body.mobile #container #main {
   float: left;
   width: 100%;
   padding: 1px 0 1px 2px;
-  font: 22px 'Lato', sans-serif;
+  font: 22px 'Roboto', sans-serif;
   line-height: 1.24;
   background-color: transparent;
   color: #E0E0E0 !important;
