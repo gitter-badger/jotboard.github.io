@@ -130,15 +130,17 @@
   float: right;
   margin: 7px 0 0 0;
 } .jb-give .nav-select {
-  color: #2B2B2B;
+  color: #FFF;
   text-align: center;
   width: 48%;
   font-size: 16px;
   margin: 0 1% 0 1%;
   padding: 5% 0 5% 0;
-  background-color: #E9E9E9;
+  background-color: rgb(76, 142, 250);
   float: right;
   border-radius: 2px;
+} .jb-give .nav-select:hover {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .50);
 }
 
 .fa-important {
