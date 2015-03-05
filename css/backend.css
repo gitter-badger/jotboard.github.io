@@ -5,10 +5,19 @@
   margin: 0;
 }
 
+body.mobile #container .navigation {
+  padding-top: calc(8.5px + 10px);
+  min-height: calc(60px + 10px);
+}
+
+body.mobile #container #main {
+  height: calc(50% - 60px - 10px);
+}
+
 #main {
   margin: 0 5px 0 5px;
   padding: 5px 0 5px 0;
-  height: calc(55% - 60px);
+  height: calc(50% - 60px);
 }
 
 #form {
@@ -42,13 +51,14 @@
   width: 100%;
   min-height: 60px;
   padding: 8.5px 12px 11px 8px;
-  background: #254057;
+  background: #2970DF;
+  box-shadow: 0 0 3px #2970DF;
 }
 
 #community {
   background-color: #ADADAD;
   box-shadow: 0 0 10px #ADADAD;
-  height: 45%;
+  height: 50%;
   padding: 1% 1% 1.5% 1%;
   overflow-x: hidden;
 } #community .article {
@@ -56,7 +66,7 @@
   width: 100%;
   padding: 10px 8px 0 8px;
 } #community .article:last-child {
-  padding-bottom: 8px;
+  padding: 10px 8px 8px 8px;
 } #community .article .title {
   float: left;
   text-decoration: none;
@@ -108,7 +118,7 @@
   text-align: left;
   float: left;
   width: 100%;
-  padding: 0 0 0 2px;
+  padding: 1px 0 1px 2px;
   font: 22px 'Lato', sans-serif;
   line-height: 1.24;
   background-color: transparent;
@@ -128,19 +138,19 @@
 .jb-give {
   width: 130px;
   float: right;
-  margin: 7px 0 0 0;
+  margin: 7px 0 6px 0;
 } .jb-give .nav-select {
   color: #FFF;
   text-align: center;
-  width: 48%;
+  width: 48.5%;
   font-size: 16px;
-  margin: 0 1% 0 1%;
+  margin: 0 1% 0 .5%;
   padding: 5% 0 5% 0;
   background-color: rgb(76, 142, 250);
   float: right;
   border-radius: 2px;
 } .jb-give .nav-select:hover {
-  box-shadow: 0 1px 3px rgba(0, 0, 0, .50);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .5);
 }
 
 .fa-important {
