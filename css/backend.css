@@ -108,7 +108,7 @@ body.mobile #container #main {
   color: #C4C4C4;
 } #community .plug.tv {
     margin: 0 /**/ 0 /**/ 0 0;
-} #community .hash-radio {
+} #community .hashtag-radio {
   float: left;
   margin: 0 0 0 0;
   width: 35%;
@@ -136,12 +136,12 @@ body.mobile #container #main {
   color: #E0E0E0;
 }
 
-.hash-tv {
+.hashtag-tv {
   height: 30%;
   width: 100%;
   background-color: rgb(41, 112, 223);
   box-shadow: 0 0 5px rgb(94, 94, 94);
-} .hash-tv iframe {
+} .hashtag-tv iframe {
   width: 100%;
   height: 100%;
 }
