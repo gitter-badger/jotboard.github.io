@@ -107,7 +107,7 @@ body.mobile #container #main {
 } #community .plug a:hover {
   color: #C4C4C4;
 } #community .plug.tv {
-    margin: 0 /**/ 0 /**/ 0 0;
+  margin: 0 /**/ 0 /**/ 0 0;
 } #community .hashtag-radio {
   float: left;
   margin: 0 0 0 0;
@@ -162,10 +162,6 @@ body.mobile #container #main {
   border-radius: 2px;
 } .jb-give .nav-select:hover {
   box-shadow: 0 1px 3px rgba(0, 0, 0, .5);
-}
-
-.fa-important {
-  font-family: FontAwesome !important;
 }
 
 /* Body Scrollbar */
@@ -225,4 +221,6 @@ body.mobile #container #main {
   box-sizing: border-box;
 } .toast {
   font-family: 'Lato', san-serif;
+} .fa-important {
+  font-family: FontAwesome !important;
 }
