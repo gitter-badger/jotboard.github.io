@@ -184,6 +184,27 @@
 }
 
 /* Themes ;3 */
-.markiplier .navigation {
-  background-image: /**/;
+/* Markiplier */
+.markiplier #container .navigation {
+  background-image: url('img/themes/MarkiplierNav.png');
+  background-repeat: no-repeat;
+  background-position: center -120px;
+  background-size: cover;
+} .markiplier #container #community {
+  background-image: url('img/themes/MarkiplierCommunity.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+/* /r/MontageParodies */
+.montageparodies #container .navigation {
+  background-image: url('img/themes/MontageParodiesNav.png');
+  background-repeat: no-repeat;
+  background-position: center -120px;
+  background-size: cover;
+} .montageparodies #container #community {
+  background-image: url('img/themes/MontageParodiesCommunity.png');
+  background-repeat: no-repeat;
+  background-position: center -120px;
+  background-size: cover;
 }
