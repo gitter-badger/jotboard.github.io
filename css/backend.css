@@ -6,19 +6,10 @@
   overflow-y: hidden;
 }
 
-body.mobile #container .navigation {
-  padding-top: calc(8.5px + 10px);
-  min-height: calc(60px + 10px);
-}
-
-body.mobile #container #main {
-  height: calc(50% - 60px - 10px);
-}
-
 #main {
-  margin: 0 6px 0 6px;
-  padding: 6px 0 6px 0;
-  height: calc(35% - 60px);
+  background: #F0F0F0;
+  padding: 15px 16px 0 16px;
+  height: calc(57% - 60px);
 }
 
 #form {
@@ -51,29 +42,25 @@ body.mobile #container #main {
 } .navigation {
   width: 100%;
   min-height: 60px;
-  padding: 8.5px 12px 11px 8px;
+  padding: 8.5px 12px 0 12px;
   background: rgb(41, 112, 223);
-  box-shadow: 0 0 2px rgb(41, 112, 223);
 }
 
 #community {
-  background-color: #ADADAD;
-  box-shadow: 0 0 10px #ADADAD;
-  height: 35%;
-  padding: 1% 1% 1.5% 1%;
+  background-color: #E0E0E0;
+  height: 43%;
+  padding: 1%;
   overflow-x: hidden;
 } #community .article {
   float: left;
   width: 100%;
-  padding: 10px 8px 0 8px;
-} #community .article:last-child {
-  padding: 10px 8px 8px 8px;
+  padding: 7px 7px 0 7px;
 } #community .article .title {
+  text-shadow: 0 0 .3px #8B8989;
+  font: 17px 'Lato', sans-serif;
   float: left;
   text-decoration: none;
   color: #2B2B2B;
-  text-shadow: 0 0 .3px #8B8989;
-  font: 17px 'Lato', sans-serif;
 } #community .article .thread,
 #community .article .author,
 #community .article .points {
@@ -81,38 +68,11 @@ body.mobile #container #main {
   color: #2B2B2B;
   text-shadow: 0 0 .2px #FFF;
   font: 11px 'Lato', sans-serif;
-  margin: 0 10px 0 0;
+  margin: 5px 10px 5px 0;
   text-decoration: none;
-} #community .article .author {
-  margin: 0 11px 0 0;
 } #community .article .points:hover {
   cursor: default;
   text-decoration: none;
-} #community .plug {
-  background-color: #313130;
-  border: 1px solid #000;
-  font: 62px 'Lato', sans-serif;
-  text-align: center;
-  margin: 0 1% 0 0;
-  overflow-x: hidden;
-  width: 31.5%;
-  height: 80px;
-  float: right;
-  border-radius: 3px;
-  cursor: pointer;
-} #community .plug a, .plug a:hover {
-  text-decoration: none;
-} #community .plug a {
-  color: #F0F0F0;
-} #community .plug a:hover {
-  color: #C4C4C4;
-} #community .plug.tv {
-  margin: 0 /**/ 0 /**/ 0 0;
-} #community .hashtag-radio {
-  float: left;
-  margin: 0 0 0 0;
-  width: 35%;
-  height: 80px;
 }
 
 #namespace {
@@ -123,7 +83,7 @@ body.mobile #container #main {
   font: 22px 'Roboto', sans-serif;
   line-height: 1.24;
   background-color: transparent;
-  color: #E0E0E0 !important;
+  color: #E0E0E0;
   border: 0;
   border-radius: 2px;
 } #namespace::-webkit-input-placeholder {
@@ -136,16 +96,6 @@ body.mobile #container #main {
   color: #E0E0E0;
 }
 
-.hashtag-tv {
-  height: 30%;
-  width: 100%;
-  background-color: rgb(41, 112, 223);
-  box-shadow: 0 0 5px rgb(94, 94, 94);
-} .hashtag-tv iframe {
-  width: 100%;
-  height: 100%;
-}
-
 .jb-give {
   width: 130px;
   float: right;
@@ -153,15 +103,15 @@ body.mobile #container #main {
 } .jb-give .nav-select {
   color: #FFF;
   text-align: center;
-  width: 48.5%;
+  width: 48%;
   font-size: 16px;
-  margin: 0 1% 0 .5%;
+  margin: 0 1% 0 1%;
   padding: 5% 0 5% 0;
   background-color: rgb(76, 142, 250);
   float: right;
   border-radius: 2px;
 } .jb-give .nav-select:hover {
-  box-shadow: 0 1px 3px rgba(0, 0, 0, .5);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .55);
 }
 
 /* Body Scrollbar */
@@ -173,27 +123,27 @@ body.mobile #container #main {
 
 /* Realm Scrollbar */
 #community::-webkit-scrollbar {
-  width: 3px;
+  width: 2px;
 } #community::-webkit-scrollbar-track {
-  background-color: #ADADAD;
+  background-color: #DADADA;
 } #community::-webkit-scrollbar-thumb {
   background-color: #2B2B2B;
 } #community::-moz-scrollbar {
-  width: 3px;
+  width: 2px;
 } #community::-moz-scrollbar-track {
-  background-color: #ADADAD;
+  background-color: #DADADA;
 } #community::-moz-scrollbar-thumb {
   background-color: #2B2B2B;
 } #community::-o-scrollbar {
-  width: 3px;
+  width: 2px;
 } #community::-o-scrollbar-track {
-  background-color: #ADADAD;
+  background-color: #DADADA;
 } #community::-o-scrollbar-thumb {
   background-color: #2B2B2B;
 } #community::-ms-scrollbar {
-  width: 3px;
+  width: 2px;
 } #community::-ms-scrollbar-track {
-  background-color: #ADADAD;
+  background-color: #DADADA;
 } #community::-ms-scrollbar-thumb {
   background-color: #2B2B2B;
 }
@@ -223,4 +173,12 @@ body.mobile #container #main {
   font-family: 'Lato', san-serif;
 } .fa-important {
   font-family: FontAwesome !important;
+}
+
+/* Mobile Situation */
+.mobile .navigation {
+  padding: calc(8.5px + 10px);
+  min-height: calc(60px + 10px);
+} .mobile #container #main {
+  height: calc(57% - 60px - 10px);
 }

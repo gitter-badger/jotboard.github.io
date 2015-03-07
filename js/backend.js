@@ -49,11 +49,11 @@ var startUp = function() {
       $.getJSON("//www.reddit.com/r/jotboard/.json", function(data) {
         $.each(data.data.children, function(i, item) {
           $("#community").append(
-            '<div class="article">' +
-              '<a class="title" href="' + item.data.url + '">' + item.data.title + '</a></br>' +
-              '<a class="author" href="//www.reddit.com/user/' + item.data.author + '">' + item.data.author + '</a>' +
-              '<a class="thread" href="//www.reddit.com' + item.data.permalink + '" class="thread">Comments</a>' +
-              '<a class="points">' + item.data.score + ' Point/s</a>' +
+            '<div class="article">\n' +
+              '<a class="title" href="' + item.data.url + '">' + item.data.title + '</a>\n<br>\n' +
+              '<a class="author" href="//www.reddit.com/user/' + item.data.author + '">' + item.data.author + '</a>\n' +
+              '<a class="thread" href="//www.reddit.com' + item.data.permalink + '" class="thread">Comments</a>\n' +
+              '<a class="points">' + item.data.score + ' Point/s</a>\n' +
             '</div>'
           );
         });
