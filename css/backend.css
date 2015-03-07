@@ -108,6 +108,7 @@
   margin: 0 1% 0 1%;
   padding: 5% 0 5% 0;
   background-color: rgb(76, 142, 250);
+  transition: box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1);
   float: right;
   border-radius: 2px;
 } .jb-give .nav-select:hover {
