@@ -103,15 +103,19 @@ var startUp = function() {
       if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
         $("body").addClass("mobile");
       } else console.log("Not on mobile.");
-      /* Themes JS ;3 */
-      if (mop("hashNoRe", "markiplier")) {
-        $("body").addClass("markiplier");
-        console.info("HELLO EVERYBODY! My Name is *not* Markiplier and welcome to Jotboard: Markiplier Edition");
-      } if (mop("hashNoRe", "montageparodies")) {
-        $("body").addClass("montageparodies");
-        console.info("Sup figit, preper to get hecked to deth by Jotboard: /r/MontageParodies Edition");
-      }
-      /* Themes JS ;3 */
+      $(function() {
+        /* Themes JS ;3 */
+        if (mop("hashNoRe", "markiplier")) {
+          $("body").addClass("markiplier");
+          console.info("HELLO EVERYBODY! My Name is *not* Markiplier and welcome to Jotboard: Markiplier Edition");
+        } if (mop("hashNoRe", "montageparodies")) {
+          $("body").addClass("montageparodies");
+          console.info("Sup figit, preper to get hecked to deth by Jotboard: /r/MontageParodies Edition");
+        } else {
+          console.error("No theme activated.");
+        }
+        /* Themes JS ;3 */
+      });
     });
   }
 }; startUp();
