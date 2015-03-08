@@ -1,4 +1,4 @@
-window._idl = {}, _IDL = true, head_conf = {
+window._idl = {}, _IDL = false, head_conf = {
   html5: true
 };
 
@@ -100,10 +100,10 @@ var startUp = function() {
         $("body").addClass("mobile");
       } else console.log("Not on mobile.");
       /* Themes JS ;3 */
-      if (mop("hash", "markiplier")) {
+      if (window.location.href.indexOf("#" + "markiplier") != -1) {
         $("body").addClass("markiplier");
         console.info("HELLO EVERYBODY! My Name is *not* Markiplier and welcome to Jotboard: Markiplier Edition");
-      } if (mop("hash", "montageparodies")) {
+      } if (window.location.href.indexOf("#" + "montageparodies") != -1) {
         $("body").addClass("montageparodies");
         console.info("Sup figit, preper to get hecked to deth by Jotboard: /r/MontageParodies Edition");
       }
