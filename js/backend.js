@@ -22,6 +22,9 @@ var startUp = function() {
         + 'members.internetdefenseleague.org/include/?url=' + _idl.url + '&campaign=' + _idl.campaign
         + '&variant=modal');
       }
+      $(".jb-give .jb-realm").on("click", function() {
+        window.open("/realm/", "_blank");
+      }).addClass("fa-important").addClass("fa-bolt");
       $(".jb-give .jb-save").on("click", function() {
         if (!$("#namespace").val()) {
           store.set(mop("prefix") + "Main", $("#main.main #form").val());

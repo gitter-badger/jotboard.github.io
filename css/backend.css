@@ -36,9 +36,8 @@
 }
 
 .navigation .container form {
-  width: calc(100% - 130px);
+  width: calc(100% - 120px);
   float: left;
-  margin: 7px 0 6px 0;
 } .navigation {
   width: 100%;
   min-height: 60px;
@@ -97,16 +96,15 @@
 }
 
 .jb-give {
-  width: 130px;
+  width: 120px;
   float: right;
-  margin: 7px 0 6px 0;
 } .jb-give .nav-select {
   color: #FFF;
   text-align: center;
-  width: 48%;
-  font-size: 16px;
-  margin: 0 1% 0 1%;
-  padding: 5% 0 5% 0;
+  width: 30.15%;
+  font-size: 19px;
+  margin: 0 3% 0 0;
+  padding: 5% 0 4.5% 0;
   background-color: rgb(76, 142, 250);
   transition: box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1);
   float: right;
@@ -164,7 +162,9 @@
 .navigation::-ms-scrollbar { width: 0; }
 /* Nav (if needed) Scrollbar */
 
-.remove {
+.navigation .container form, .jb-give {
+  margin:  7px 0 6px 0;
+} .remove {
   display: none;
 } *:focus {
   outline: none;
