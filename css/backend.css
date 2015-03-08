@@ -179,8 +179,8 @@
 
 /* Mobile Situation */
 .mobile #container {
-    height: calc(100% - 0px);
-    border-top: 10px solid #000;
+  height: calc(100% - 0px);
+  border-top: 10px solid #000;
 }
 
 /* Themes ;3 */
