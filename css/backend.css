@@ -36,12 +36,12 @@
 }
 
 .navigation .container form {
-  width: calc(100% - 150px - 1%);
+  width: calc(100% - 135px - 1%);
   float: left;
 } .navigation {
   width: 100%;
   min-height: 75px;
-  padding: 0 15px 0 15px;
+  padding: 0 12px 0 12px;
   background: rgb(41, 112, 223);
 }
 
@@ -96,19 +96,19 @@
 }
 
 .jb-give {
-  width: 150px;
+  width: 135px;
   float: right;
 } .jb-give .nav-select {
   color: #F9F9F9;
   text-align: center;
   width: 30.15%;
-  font-size: 29px;
+  font-size: 30px;
   margin: 0 3% 0 0;
   padding: calc(5% + .5px) 0 calc(5% + .5px) 0;
   background-color: rgb(41, 112, 223);
   transition: box-shadow 200ms cubic-bezier(.4, 0, .2, 1), background-color 210ms cubic-bezier(.4, 0, .2, 1);
   float: right;
-  border-radius: 50%;
+  border-radius: 2px;
 } .jb-give .nav-select:hover {
   box-shadow: 0 1px 3px rgba(0, 0, 0, .55);
   background-color: rgb(76, 142, 250);
@@ -179,8 +179,8 @@
 
 /* Mobile Situation */
 .mobile #container {
-  height: calc(100% - 0px);
-  border-top: 10px solid #000;
+  height: 100%;
+  border-top: 20px solid #000;
 }
 
 /* Themes ;3 */
