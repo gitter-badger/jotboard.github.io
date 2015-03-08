@@ -10,6 +10,7 @@ var startUp = function() {
       // Namespace is $("#namespace");
       var mop = function(_function, _1) {
         if (_function == "hash") /* #Mods */ return window.location.href.indexOf("#" + _1) != -1;
+        if (_function == "hashNoRe") /* #Mods With No Returning */ window.location.href.indexOf("#" + _1) != -1;
         if (_function == "prefix") return "JB_-";
       };
       if (store.get(mop("prefix") + "Main")) {
@@ -100,10 +101,10 @@ var startUp = function() {
         $("body").addClass("mobile");
       } else console.log("Not on mobile.");
       /* Themes JS ;3 */
-      if (window.location.href.indexOf("#" + "markiplier") != -1) {
+      if (mop("hashNoRe", "markiplier")) {
         $("body").addClass("markiplier");
         console.info("HELLO EVERYBODY! My Name is *not* Markiplier and welcome to Jotboard: Markiplier Edition");
-      } if (window.location.href.indexOf("#" + "montageparodies") != -1) {
+      } if (mop("hashNoRe", "montageparodies")) {
         $("body").addClass("montageparodies");
         console.info("Sup figit, preper to get hecked to deth by Jotboard: /r/MontageParodies Edition");
       }
