@@ -85,7 +85,7 @@ var startUp = function() {
         toastr.options = {
           "closeButton": true,
           "debug": false,
-          "newestOnTop": true,
+          "newestOnTop": false,
           "progressBar": true,
           "positionClass": "toast-bottom-left",
           "preventDuplicates": false,
