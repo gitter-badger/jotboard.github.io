@@ -8,9 +8,9 @@ var startUp = function() {
     head.load(["js/depend/store.js", "js/depend/jquery.js"], function() {
       // Form is $("#main.main #form");
       // Namespace is $("#namespace");
-      var mop = function(mop, _1) {
-        if (mop == "hash") /* #Mods */ return window.location.href.indexOf("#" + _1) != -1;
-        if (mop == "prefix") return "JB_-";
+      var mop = function(_function, _1) {
+        if (_function == "hash") /* #Mods */ return window.location.href.indexOf("#" + _1) != -1;
+        if (_function == "prefix") return "JB_-";
       };
       if (store.get(mop("prefix") + "Main")) {
         $("#main.main #form").val(store.get(mop("prefix") + "Main"));
