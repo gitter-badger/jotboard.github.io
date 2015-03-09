@@ -24,7 +24,7 @@ var startUp = function() {
       }
       $(".jb-give .jb-realm").on("click", function() {
         window.open("/realm/", "_blank");
-      }).addClass("fa-important").addClass("fa-bolt");
+      }).addClass("fa-important").addClass("fa-reddit");
       $(".jb-give .jb-save").on("click", function() {
         if (!$("#namespace").val()) {
           store.set(mop("prefix") + "Main", $("#main.main #form").val());
