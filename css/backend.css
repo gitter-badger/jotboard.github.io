@@ -8,8 +8,8 @@
 
 #main {
   background: #F0F0F0;
-  padding: 14px 13px 0 13px;
-  height: calc(57% - 75px);
+  padding: 9px 10px 0 10px;
+  height: calc(57% - 53px);
 }
 
 #form {
@@ -40,7 +40,7 @@
   float: left;
 } .navigation {
   width: 100%;
-  min-height: 75px;
+  min-height: 53px;
   padding: 0 12px 0 12px;
   background: rgb(41, 112, 223);
 }
@@ -75,11 +75,11 @@
 }
 
 #namespace {
-  text-align: left;
+  text-align: right;
   float: left;
   width: 100%;
-  padding: 0 0 0 .5%;
-  font: 37px 'Roboto', sans-serif;
+  padding: 0 2px 0 0;
+  font: 26px 'Roboto', sans-serif;
   line-height: 1.24;
   background-color: transparent;
   color: #E0E0E0;
@@ -102,9 +102,9 @@
   color: #F9F9F9;
   text-align: center;
   width: 32%;
-  font-size: 29px;
+  font-size: 20px;
   margin: 0 1% 0 0;
-  padding: calc(5% + .5px) 0 calc(5% + .5px) 0;
+  padding: calc(3% + .5px) 0 calc(4% + .5px) 0;
   background-color: rgb(41, 112, 223);
   transition: box-shadow 200ms cubic-bezier(.4, 0, .2, 1), background-color 210ms cubic-bezier(.4, 0, .2, 1);
   float: right;
@@ -164,7 +164,7 @@
 /* Nav (if needed) Scrollbar */
 
 .navigation .container form, .jb-give {
-  margin: 16px 0 0 0;
+  margin: 12px 0 0 0;
 } .remove {
   display: none;
 } *:focus {
@@ -180,30 +180,30 @@
 /* Mobile Situation */
 .mobile #container {
   height: 100%;
-  border-top: 0px solid #000;
+  border-top: 10px solid #000;
 }
 
 /* Themes ;3 */
 /* Markiplier */
 .markiplier #container .navigation {
-  background-image: url('https://jotboard.github.io/img/themes/MarkiplierNav.png');
+  background-image: url('//jotboard.github.io/img/themes/MarkiplierNav.png');
   background-repeat: no-repeat;
   background-position: center -120px;
   background-size: cover;
 } .markiplier #container #community {
-  background-image: url('https://jotboard.github.io/img/themes/MarkiplierCommunity.jpg');
+  background-image: url('//jotboard.github.io/img/themes/MarkiplierCommunity.jpg');
   background-repeat: no-repeat;
   background-position: center -120px;
   background-size: cover;
 }
 /* /r/MontageParodies */
 .montageparodies #container .navigation {
-  background-image: url('https://jotboard.github.io/img/themes/MontageParodiesNav.png');
+  background-image: url('//jotboard.github.io/img/themes/MontageParodiesNav.png');
   background-repeat: no-repeat;
   background-position: center 0;
   background-size: cover;
 } .montageparodies #container #community {
-  background-image: url('https://jotboard.github.io/img/themes/MontageParodiesCommunity.png');
+  background-image: url('//jotboard.github.io/img/themes/MontageParodiesCommunity.png');
   background-repeat: no-repeat;
   background-position: center 0;
   background-color: #FFF;
