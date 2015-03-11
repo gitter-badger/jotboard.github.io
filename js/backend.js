@@ -83,11 +83,11 @@ var startUp = function() {
       head.load(["css/depend/toastr.css", "js/depend/toastr.js"], function() {
         console.log("Toastr CSS and JS");
         toastr.options = {
-          "closeButton": true,
+          "closeButton": false,
           "debug": false,
           "newestOnTop": false,
-          "progressBar": true,
-          "positionClass": "toast-bottom-left",
+          "progressBar": false,
+          "positionClass": "toast-bottom-center",
           "preventDuplicates": false,
           "onclick": null,
           "showDuration": "200",
