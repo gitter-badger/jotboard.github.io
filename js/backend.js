@@ -105,10 +105,10 @@ var startUp = function() {
       } else console.log("Not on mobile.");
       $(function() {
         /* Themes JS ;3 */
-        if (mop("hashNoRe", "markiplier")) {
+        if (window.location.href.indexOf("#markiplier") != -1) {
           $("body").addClass("markiplier");
           console.info("HELLO EVERYBODY! My Name is *not* Markiplier and welcome to Jotboard: Markiplier Edition");
-        } if (mop("hashNoRe", "montageparodies")) {
+        } if (window.location.href.indexOf("#montageparodies") != -1) {
           $("body").addClass("montageparodies");
           console.info("Sup figit, preper to get hecked to deth by Jotboard: /r/MontageParodies Edition");
         } else {

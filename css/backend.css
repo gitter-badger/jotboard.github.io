@@ -8,8 +8,8 @@
 
 #main {
   background: #F0F0F0;
-  padding: 9px 10px 0 10px;
-  height: calc(57% - 53px);
+  padding: 7px 8px 0 8px;
+  height: calc(45% - 55px);
 }
 
 #form {
@@ -40,14 +40,14 @@
   float: left;
 } .navigation {
   width: 100%;
-  min-height: 53px;
+  min-height: 55px;
   padding: 0 12px 0 12px;
   background: rgb(41, 112, 223);
 }
 
 #community {
   background-color: #E0E0E0;
-  height: 43%;
+  height: 55%;
   padding: 1%;
   overflow-x: hidden;
 } #community .article {
@@ -79,7 +79,7 @@
   float: left;
   width: 100%;
   padding: 0 2px 0 0;
-  font: 26px 'Roboto', sans-serif;
+  font: 25px 'Roboto', sans-serif;
   line-height: 1.24;
   background-color: transparent;
   color: #E0E0E0;
@@ -125,26 +125,32 @@
 #community::-webkit-scrollbar {
   width: 2px;
 } #community::-webkit-scrollbar-track {
-  background-color: #DADADA;
+  background-color: #E0E0E0;
 } #community::-webkit-scrollbar-thumb {
   background-color: #2B2B2B;
 } #community::-moz-scrollbar {
   width: 2px;
 } #community::-moz-scrollbar-track {
-  background-color: #DADADA;
+  background-color: #E0E0E0;
 } #community::-moz-scrollbar-thumb {
   background-color: #2B2B2B;
 } #community::-o-scrollbar {
   width: 2px;
 } #community::-o-scrollbar-track {
-  background-color: #DADADA;
+  background-color: #E0E0E0;
 } #community::-o-scrollbar-thumb {
   background-color: #2B2B2B;
 } #community::-ms-scrollbar {
   width: 2px;
 } #community::-ms-scrollbar-track {
-  background-color: #DADADA;
+  background-color: #E0E0E0;
 } #community::-ms-scrollbar-thumb {
+  background-color: #2B2B2B;
+} #community::-scrollbar {
+  width: 2px;
+} #community::-scrollbar-track {
+  background-color: #E0E0E0;
+} #community::-scrollbar-thumb {
   background-color: #2B2B2B;
 }
 /* Realm Scrollbar */
@@ -164,7 +170,7 @@
 /* Nav (if needed) Scrollbar */
 
 .navigation .container form, .jb-give {
-  margin: 12px 0 0 0;
+  margin: 13px 0 0 0;
 } .remove {
   display: none;
 } *:focus {
@@ -179,8 +185,7 @@
 
 /* Mobile Situation */
 .mobile #container {
-  height: 100%;
-  border-top: 10px solid #000;
+  border-top: 18px solid #2B2B2B;
 }
 
 /* Themes ;3 */
