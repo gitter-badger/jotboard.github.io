@@ -73,7 +73,7 @@ var startUp = function() {
           });
         }
       }; TimePulse();
-      setInterval(TimePulse, 200);
+      setInterval(TimePulse, 1000);
     });
     head.load("js/depend/prefixfree.js", function() {
       console.log("Prefixfree");
