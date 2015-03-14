@@ -121,31 +121,31 @@
 #community::-webkit-scrollbar {
   width: 2px;
 } #community::-webkit-scrollbar-track {
-  background-color: #2B2B2B;
+  background-color: #191919;
 } #community::-webkit-scrollbar-thumb {
   background-color: #E0E0E0;
 } #community::-moz-scrollbar {
   width: 2px;
 } #community::-moz-scrollbar-track {
-  background-color: #2B2B2B;
+  background-color: #191919;
 } #community::-moz-scrollbar-thumb {
   background-color: #E0E0E0;
 } #community::-o-scrollbar {
   width: 2px;
 } #community::-o-scrollbar-track {
-  background-color: #2B2B2B;
+  background-color: #191919;
 } #community::-o-scrollbar-thumb {
   background-color: #E0E0E0;
 } #community::-ms-scrollbar {
   width: 2px;
 } #community::-ms-scrollbar-track {
-  background-color: #2B2B2B;
+  background-color: #191919;
 } #community::-ms-scrollbar-thumb {
   background-color: #E0E0E0;
 } #community::-scrollbar {
   width: 2px;
 } #community::-scrollbar-track {
-  background-color: #2B2B2B;
+  background-color: #191919;
 } #community::-scrollbar-thumb {
   background-color: #E0E0E0;
 }
@@ -167,9 +167,7 @@
 
 .navigation .container form, .jb-give {
   margin: 14px 0 0 0;
-}
-
-#form {
+} #form {
   background: transparent;
   padding: 0;
   width: 100%;
