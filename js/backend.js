@@ -102,7 +102,7 @@ var startUp = function() {
         }
       });
       if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-        $("body").addClass("mobile");
+        // Blank out webpage I dunno.
       } else console.log("Not on mobile.");
       $(function() {
         /* Themes JS ;3 */

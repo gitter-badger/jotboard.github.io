@@ -7,11 +7,10 @@
 }
 
 #main {
-  float: left;
-  background: #2D2D2D;
-  padding: 8px 8px 0 8px;
-  height: calc(100% - 57px);
-  width: 52%;
+  background: #585858;
+  padding: 1.5% 1.5% 0 1.5%;
+  height: calc(55% - 60px);
+  width: 100%;
 }
 
 #form {
@@ -36,18 +35,17 @@
   float: left;
 } .navigation {
   width: 100%;
-  min-height: 57px;
-  padding: 0 12px 0 12px;
+  min-height: 60px;
+  padding: 0 15px 0 15px;
   background: rgb(67, 109, 219);
 }
 
 #community {
-  float: right;
-  width: 48%;
-  background-color: #2A2A2A;
-  padding: 1%;
+  width: 100%;
+  background-color: #191919;
+  padding: 2% 2% 0 2%;
   overflow-x: hidden;
-  height: calc(100% - 57px);
+  height: 45%;
 } #community .article {
   float: left;
   width: 100%;
@@ -65,7 +63,7 @@
   color: #F0F0F0;
   text-shadow: 0 0 .2px #FFF;
   font: 12px 'Lato', sans-serif;
-  margin: 5px 10px 5px 0;
+  margin: 4px 7px 3px 0;
   text-decoration: none;
 } #community .article .points:hover {
   cursor: default;
@@ -184,11 +182,6 @@
 * { box-sizing: border-box; }
 .toast { font-family: 'Lato', san-serif; }
 .fa-important { font-family: FontAwesome !important; }
-
-/* Mobile Situation */
-.mobile #container {
-  border-top: 20px solid #2B2B2B;
-}
 
 /* Themes ;3 */
 /* Markiplier */
