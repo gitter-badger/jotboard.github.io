@@ -101,7 +101,7 @@
   font-size: 20px;
   margin: 0 1% 0 0;
   padding: calc(3% + .5px) 0 calc(4% + .5px) 0;
-  background-color: rgb(41, 112, 223);
+  background-color: rgb(67, 109, 219);
   transition: box-shadow 200ms cubic-bezier(.4, 0, .2, 1), background-color 210ms cubic-bezier(.4, 0, .2, 1);
   float: right;
   border-radius: 2px;
