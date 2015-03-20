@@ -84,17 +84,17 @@ var startUp = function() {
       head.load(["css/depend/toastr.css", "js/depend/toastr.js"], function() {
         console.log("Toastr CSS and JS");
         toastr.options = {
-          "closeButton": false,
+          "closeButton": true,
           "debug": false,
           "newestOnTop": false,
-          "progressBar": false,
+          "progressBar": true,
           "positionClass": "toast-bottom-center",
           "preventDuplicates": false,
           "onclick": null,
-          "showDuration": "200",
-          "hideDuration": "500",
-          "timeOut": "2500",
-          "extendedTimeOut": "700",
+          "showDuration": "250",
+          "hideDuration": "630",
+          "timeOut": "3000",
+          "extendedTimeOut": "1000",
           "showEasing": "swing",
           "hideEasing": "swing",
           "showMethod": "fadeIn",
@@ -102,7 +102,7 @@ var startUp = function() {
         }
       });
       if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-        // Blank out webpage I dunno.
+        // No mobile? window.location.href = "//jotboard.github.io/nomobile/";
       } else console.log("Not on mobile.");
       $(function() {
         /* Themes JS ;3 */

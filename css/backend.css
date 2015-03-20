@@ -3,11 +3,10 @@
   height: 100%;
   padding: 0;
   margin: 0;
-  overflow-y: hidden;
 }
 
 #main {
-  background: #585858;
+  background: #2A2A2A;
   padding: 1.5% 1.5% 0 1.5%;
   height: calc(55% - 60px);
   width: 100%;
@@ -42,28 +41,31 @@
 
 #community {
   width: 100%;
-  background-color: #191919;
-  padding: 2% 2% 0 2%;
+  background-color: rgb(67, 109, 219);
+  padding: 2% 2% calc(2% - 7px) 2%;
   overflow-x: hidden;
-  height: 45%;
 } #community .article {
   float: left;
   width: 100%;
-  padding: 8px 7px 0 7px;
+  min-height: 30px;
+  background-color: #225CCA;
+  border: 1px solid #E0E0E0;
+  border-bottom-style: dotted;
+  padding: 6px;
+  border-radius: 3px;
+  margin: 0 0 5px 0;
 } #community .article .title {
-  text-shadow: 0 0 .1px #F0F0F0;
-  font: 17px 'Lato', sans-serif;
+  font: 16px 'Lato', sans-serif;
   float: left;
   text-decoration: none;
-  color: #F9F9F9;
+  color: #FFF;
 } #community .article .thread,
 #community .article .author,
 #community .article .points {
   float: right;
   color: #F0F0F0;
-  text-shadow: 0 0 .2px #FFF;
   font: 12px 'Lato', sans-serif;
-  margin: 4px 7px 3px 0;
+  margin: 4px 7px 4px 0;
   text-decoration: none;
 } #community .article .points:hover {
   cursor: default;
@@ -101,7 +103,6 @@
   font-size: 20px;
   margin: 0 1% 0 0;
   padding: calc(3% + .5px) 0 calc(4% + .5px) 0;
-  background-color: rgb(67, 109, 219);
   transition: box-shadow 200ms cubic-bezier(.4, 0, .2, 1), background-color 210ms cubic-bezier(.4, 0, .2, 1);
   float: right;
   border-radius: 2px;
@@ -166,7 +167,7 @@
 /* Nav (if needed) Scrollbar */
 
 .navigation .container form, .jb-give {
-  margin: 14px 0 0 0;
+  margin: 15px 0 0 0;
 } #form {
   background: transparent;
   padding: 0;
