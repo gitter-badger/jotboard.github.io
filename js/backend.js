@@ -10,7 +10,6 @@ var startUp = function() {
       // Namespace is $("#namespace");
       var mop = function(_function, _1) {
         if (_function == "hash") /* #Mods */ return window.location.href.indexOf("#" + _1) != -1;
-        if (_function == "hashNoRe") /* #Mods With No Returning */ window.location.href.indexOf("#" + _1) != -1;
         if (_function == "prefix") return "JB_-";
       };
       if (store.get(mop("prefix") + "Main")) {
@@ -66,11 +65,11 @@ var startUp = function() {
       var TimePulse = function() {
         if (0 <= new Date().getHours() && new Date().getHours() < 12) {
           $("#main.main #form").attr({
-            "placeholder": moment(new Date()).format("[Hello, it's currently] dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, happy writing!]")
+            "placeholder": moment(new Date()).format("[Hello, it's currently] dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, happy writing, scroll further to see posts.]")
           });
         } else {
           $("#main.main #form").attr({
-            "placeholder": moment(new Date()).format("[Hows it going? it's ]dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, bye-bye!]")
+            "placeholder": moment(new Date()).format("[Hows it going? it's ]dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, bye-bye, scroll further to see posts.]")
           });
         }
       }; TimePulse();
