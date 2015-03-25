@@ -1,6 +1,6 @@
-window._idl = {}, _IDL = false, head_conf = {
-  html5: true
-};
+// window._idl = {}, _IDL = false, head_conf = {
+//   html5: true
+// };
 
 var startUp = function() {
   if (window.location.protocol == "http:") window.location.protocol = "https:";
@@ -65,11 +65,11 @@ var startUp = function() {
       var TimePulse = function() {
         if (0 <= new Date().getHours() && new Date().getHours() < 12) {
           $("#main.main #form").attr({
-            "placeholder": moment(new Date()).format("[Hello, it's currently] dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, happy writing, scroll further to see posts.]")
+            "placeholder": moment(new Date()).format("[Hello, it's currently] dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, happy writing, scroll down further to see posts.]")
           });
         } else {
           $("#main.main #form").attr({
-            "placeholder": moment(new Date()).format("[Hows it going? it's ]dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, bye-bye, scroll further to see posts.]")
+            "placeholder": moment(new Date()).format("[Hows it going? it's ]dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, bye-bye, scroll down further to see posts.]")
           });
         }
       }; TimePulse();
@@ -98,7 +98,7 @@ var startUp = function() {
           "hideEasing": "swing",
           "showMethod": "fadeIn",
           "hideMethod": "fadeOut"
-        }
+        };
       });
       if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
         // No mobile? window.location.href = "//jotboard.github.io/nomobile/";
