@@ -1,8 +1,4 @@
-// Oh looook a working JSON API :3
-
-load.js(["test.js"], function() {
-  console.log('Test API Loaded');
-});
+// Experimental JS
 
 var load = {
   js: function(_1, _2) {
