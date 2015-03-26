@@ -1,6 +1,6 @@
-// window._idl = {}, _IDL = false, head_conf = {
-//   html5: true
-// };
+window._idl = {}, _IDL = false, head_conf = {
+  html5: true
+};
 
 var startUp = function() {
   if (window.location.protocol == "http:") window.location.protocol = "https:";
