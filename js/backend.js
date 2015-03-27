@@ -1,4 +1,6 @@
-window._idl = {}, _IDL = false, head_conf = {
+window._idl = {};
+var _IDL = false;
+head_conf = {
   html5: true
 };
 
@@ -15,15 +17,12 @@ var startUp = function() {
       if (store.get(mop("prefix") + "Main")) {
         $("#main.main #form").val(store.get(mop("prefix") + "Main"));
         console.info("The main board is avalible.");
-      }
-      if (_IDL === true) {
-        head.load(('https:' == document.location.protocol ? 'https://' : 'http://')
-        + 'members.internetdefenseleague.org/include/?url=' + _idl.url + '&campaign=' + _idl.campaign
-        + '&variant=modal');
+      } if (_IDL === true) {
+        head.load(('https:' == document.location.protocol ? 'https://' : 'http://') + 'members.internetdefenseleague.org/include/?url=' + _idl.url + '&campaign=' + _idl.campaign + '&variant=modal');
       }
       $(".jb-give .jb-realm").on("click", function() {
         window.open("/realm/", "_blank");
-      }).addClass("fa-important").addClass("fa-reddit");
+      }).addClass("fa-important").addClass("fa-users");
       $(".jb-give .jb-save").on("click", function() {
         if (!$("#namespace").val()) {
           store.set(mop("prefix") + "Main", $("#main.main #form").val());
