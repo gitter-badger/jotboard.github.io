@@ -22,7 +22,7 @@ var startUp = function() {
       }
       $(".jb-give .jb-realm").on("click", function() {
         window.open("/realm/", "_blank");
-      }).addClass("fa-important").addClass("fa-users");
+      }).addClass("fa-important").addClass("fa-heart");
       $(".jb-give .jb-save").on("click", function() {
         if (!$("#namespace").val()) {
           store.set(mop("prefix") + "Main", $("#main.main #form").val());
