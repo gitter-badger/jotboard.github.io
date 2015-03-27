@@ -1,1 +1,0 @@
-https://scotch.io/tutorials/using-git-inside-of-sublime-text-to-improve-workflow
