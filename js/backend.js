@@ -24,7 +24,7 @@ var startUp = function() {
         window.open("/r/realm.html/", "_blank");
       }).addClass("fa-important").addClass("fa-heart");
       $(".jb-give .jb-save").on("click", function() {
-        if (!$("#namespace").val()) {
+        if (!$("#namespace").val() || $("#namespace").val('Main')) {
           store.set(mop("prefix") + "Main", $("#main.main #form").val());
           console.info("Main > saved");
           toastr['info']("The main board has been saved.");
@@ -48,7 +48,7 @@ var startUp = function() {
     });
     head.load("js/depend/moment.js", function() {
       console.log("Moment.JS");
-      $.getJSON("//www.reddit.com/r/jotboard/top.json", function(data) {
+      $.getJSON("//www.reddit.com/r/jotboard/new.json", function(data) {
         $.each(data.data.children, function(i, item) {
           $("#community").append(
             '<div class="article">\n' +
