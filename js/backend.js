@@ -21,7 +21,7 @@ var startUp = function() {
         head.load(('https:' == document.location.protocol ? 'https://' : 'http://') + 'members.internetdefenseleague.org/include/?url=' + _idl.url + '&campaign=' + _idl.campaign + '&variant=modal');
       }
       $(".jb-give .jb-realm").on("click", function() {
-        window.open("/realm/", "_blank");
+        window.open("/r/realm.html/", "_blank");
       }).addClass("fa-important").addClass("fa-heart");
       $(".jb-give .jb-save").on("click", function() {
         if (!$("#namespace").val()) {
@@ -48,7 +48,7 @@ var startUp = function() {
     });
     head.load("js/depend/moment.js", function() {
       console.log("Moment.JS");
-      $.getJSON("//www.reddit.com/r/jotboard/.json", function(data) {
+      $.getJSON("//www.reddit.com/r/jotboard/top.json", function(data) {
         $.each(data.data.children, function(i, item) {
           $("#community").append(
             '<div class="article">\n' +
@@ -82,28 +82,27 @@ var startUp = function() {
       head.load(["css/depend/toastr.css", "js/depend/toastr.js"], function() {
         console.log("Toastr CSS and JS");
         toastr.options = {
-          "closeButton": true,
+          "closeButton": false,
           "debug": false,
           "newestOnTop": false,
           "progressBar": true,
-          "positionClass": "toast-bottom-center",
+          "positionClass": "toast-bottom-left",
           "preventDuplicates": false,
           "onclick": null,
-          "showDuration": "250",
+          "showDuration": "350",
           "hideDuration": "630",
-          "timeOut": "3000",
+          "timeOut": "2500",
           "extendedTimeOut": "1000",
           "showEasing": "swing",
           "hideEasing": "swing",
-          "showMethod": "fadeIn",
-          "hideMethod": "fadeOut"
+          "showMethod": "linear",
+          "hideMethod": "linear"
         };
       });
-      if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-        // No mobile? window.location.href = "//jotboard.github.io/nomobile/";
-      } else console.log("Not on mobile.");
+      if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) $('#container').remove();
+      else console.log("Not on mobile.");
       $(function() {
-        /* Themes JS ;3 */
+        /* Themes JS */
         if (window.location.href.indexOf("#markiplier") != -1) {
           $("body").addClass("markiplier");
           console.info("HELLO EVERYBODY! My Name is *not* Markiplier and welcome to Jotboard: Markiplier Edition");
@@ -113,7 +112,7 @@ var startUp = function() {
         } else {
           console.error("No theme activated.");
         }
-        /* Themes JS ;3 */
+        /* Themes JS */
       });
     });
   }
