@@ -8,8 +8,19 @@
 #main {
   background: #2A2A2A;
   padding: 1.5%;
-  height: calc(100vh - 60px);
+  height: 115px;
   width: 100vw;
+}
+
+[data-title]:hover:after {
+  content: attr(data-title);
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  padding: .5%;
+  font: 12px 'Roboto', san-serif;
+  color: #FFF;
+  background-color: rgba( 0, 0, 0, .7);
 }
 
 #form {
@@ -35,7 +46,7 @@
 } .navigation {
   width: 100vw;
   min-height: 60px;
-  padding: 0 1.5vw 0 1.5vw;
+  padding: 0 1.3vw 0 1.3vw;
   background: rgb(67, 109, 219);
 }
 
