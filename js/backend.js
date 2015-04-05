@@ -16,14 +16,14 @@ var startUp = function() {
           $('#_').toggleClass('soft-remove').toggleClass('soft-no-remove');
           $('body').css('overflow', 'hidden');
           $('.navigation, .main, #community').remove();
-          document.getElementById('_').setAttribute('src', '//www.youtube.com/embed/' + window.location.hash.substr('4', '11') + '?fs=0&autohide=1');
+          document.getElementById('_').setAttribute('src', '//www.youtube.com/embed/' + window.location.hash.substr('3', '11') + '?fs=0&autohide=0');
         }
         // Chunker: Playlist
         if (window.location.hash.substr('0', '3') == '#p:') {
           $('#_').toggleClass('soft-remove').toggleClass('soft-no-remove');
           $('body').css('overflow', 'hidden');
           $('.navigation, .main, #community').remove();
-          document.getElementById('_').setAttribute('src', '//www.youtube.com/embed/?list=' + window.location.hash.substr('3') + '&listType=playlist&fs=0&autohide=1');
+          document.getElementById('_').setAttribute('src', '//www.youtube.com/embed/?list=' + window.location.hash.substr('3') + '&listType=playlist&fs=0&autohide=0');
         }
       });
       var mop = function(_function, _1) {
