@@ -10,6 +10,18 @@ var startUp = function() {
     head.load(["js/depend/store.js", "js/depend/jquery.js"], function() {
       // Form is $("#main.main #form");
       // Namespace is $("#namespace");
+      $(function() {
+        // Chunker: Video
+        if (window.location.hash.substr('5') == '#c:v:') {
+          $('#_').toggleClass('soft-remove').toggleClass('soft-no-remove');
+          document.getElementById('_').setAttribute('src', '//www.youtube.com/embed/' + window.location.hash.substr('4', '11') + '?fs=0&autohide=1');
+        }
+        // Chunker: Playlist
+        if (window.location.hash.substr('5') == '#c:p:') {
+          $('#_').toggleClass('soft-remove').toggleClass('soft-no-remove');
+          document.getElementById('_').setAttribute('src', '//www.youtube.com/embed/?list=' + window.location.hash.substr('4') + '&listType=playlist&fs=0&autohide=1');
+        }
+      });
       var mop = function(_function, _1) {
         if (_function == "hash") /* #Mods */ return window.location.href.indexOf("#" + _1) != -1;
         if (_function == "prefix") return "JB_-";
@@ -24,7 +36,7 @@ var startUp = function() {
         window.open("/r/realm.html/", "_blank");
       }).addClass("fa-important").addClass("fa-heart");
       $(".jb-give .jb-save").on("click", function() {
-        if (!$("#namespace").val() || $("#namespace").val('Main')) {
+        if ($('#namespace').val('')) {
           store.set(mop("prefix") + "Main", $("#main.main #form").val());
           console.info("Main > saved");
           toastr['info']("The main board has been saved.");
