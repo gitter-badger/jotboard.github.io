@@ -14,11 +14,15 @@ var startUp = function() {
         // Chunker: Video
         if (window.location.hash.substr('0', '3') == '#v:') {
           $('#_').toggleClass('soft-remove').toggleClass('soft-no-remove');
+          $('body').css('overflow', 'hidden');
+          $('.navigation, .main, #community').remove();
           document.getElementById('_').setAttribute('src', '//www.youtube.com/embed/' + window.location.hash.substr('4', '11') + '?fs=0&autohide=1');
         }
         // Chunker: Playlist
         if (window.location.hash.substr('0', '3') == '#p:') {
           $('#_').toggleClass('soft-remove').toggleClass('soft-no-remove');
+          $('body').css('overflow', 'hidden');
+          $('.navigation, .main, #community').remove();
           document.getElementById('_').setAttribute('src', '//www.youtube.com/embed/?list=' + window.location.hash.substr('4') + '&listType=playlist&fs=0&autohide=1');
         }
       });
