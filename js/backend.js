@@ -12,12 +12,12 @@ var startUp = function() {
       // Namespace is $("#namespace");
       $(function() {
         // Chunker: Video
-        if (window.location.hash.substr('5') == '#c:v:') {
+        if (window.location.hash.substr('0', '3') == '#v:') {
           $('#_').toggleClass('soft-remove').toggleClass('soft-no-remove');
           document.getElementById('_').setAttribute('src', '//www.youtube.com/embed/' + window.location.hash.substr('4', '11') + '?fs=0&autohide=1');
         }
         // Chunker: Playlist
-        if (window.location.hash.substr('5') == '#c:p:') {
+        if (window.location.hash.substr('0', '3') == '#p:') {
           $('#_').toggleClass('soft-remove').toggleClass('soft-no-remove');
           document.getElementById('_').setAttribute('src', '//www.youtube.com/embed/?list=' + window.location.hash.substr('4') + '&listType=playlist&fs=0&autohide=1');
         }
