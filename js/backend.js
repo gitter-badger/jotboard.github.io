@@ -115,7 +115,9 @@ var startUp = function() {
           "hideMethod": "linear"
         };
       });
-      if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) $('#container').remove();
+      if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        // This is if I give up on making mobile-specific rebuffs and s*** $('#container').remove();
+      }
       else console.log("Not on mobile.");
       $(function() {
         /* Themes JS */
