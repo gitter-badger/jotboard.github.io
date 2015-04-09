@@ -15,14 +15,14 @@ var startUp = function() {
         if (window.location.hash.substr('0', '3') == '#v:') {
           $('#_').toggleClass('soft-remove').toggleClass('soft-no-remove');
           $('body').css('overflow', 'hidden');
-          $('.navigation, .main, #community').remove();
+          $('.navigation, .main').remove();
           document.getElementById('_').setAttribute('src', '//www.youtube.com/embed/' + window.location.hash.substr('3', '11') + '?fs=0&autohide=0');
         }
         // Chunker: Playlist
         if (window.location.hash.substr('0', '3') == '#p:') {
           $('#_').toggleClass('soft-remove').toggleClass('soft-no-remove');
           $('body').css('overflow', 'hidden');
-          $('.navigation, .main, #community').remove();
+          $('.navigation, .main').remove();
           document.getElementById('_').setAttribute('src', '//www.youtube.com/embed/?list=' + window.location.hash.substr('3') + '&listType=playlist&fs=0&autohide=0');
         }
       });
@@ -30,6 +30,7 @@ var startUp = function() {
         if (_function == "hash") /* #Mods */ return window.location.href.indexOf("#" + _1) != -1;
         if (_function == "prefix") return "JB_-";
       };
+      /* Data Binding and Shit */
       if (store.get(mop("prefix") + "Main")) {
         $("#main.main #form").val(store.get(mop("prefix") + "Main"));
         console.info("The main board is avalible.");
@@ -40,7 +41,7 @@ var startUp = function() {
         window.open("/r/realm.html/", "_blank");
       }).addClass("fa-important").addClass("fa-heart");
       $(".jb-give .jb-save").on("click", function() {
-        if ($('#namespace').val('')) {
+        if (!$('#namespace').val()) {
           store.set(mop("prefix") + "Main", $("#main.main #form").val());
           console.info("Main > saved");
           toastr['info']("The main board has been saved.");
