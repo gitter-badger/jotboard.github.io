@@ -1,3 +1,10 @@
+// Quick Banner
+var pragma = {
+  id: "1",
+  title: "Jotboard is open-source!",
+  href: "https://github.com/jotboard/jotboard.github.io",
+};
+
 window._idl = {};
 var _IDL = false;
 head_conf = {
@@ -12,16 +19,14 @@ var startUp = function() {
       // Namespace is $("#namespace");
       $(function() {
         // Chunker: Video
-        if (window.location.hash.substr('0', '3') == '#v:') {
+        if (window.location.hash.substr('0', '3') == '#v=') {
           $('#_').toggleClass('soft-remove').toggleClass('soft-no-remove');
-          $('body').css('overflow', 'hidden');
           $('.navigation, .main').remove();
           document.getElementById('_').setAttribute('src', '//www.youtube.com/embed/' + window.location.hash.substr('3', '11') + '?fs=0&autohide=0');
         }
         // Chunker: Playlist
-        if (window.location.hash.substr('0', '3') == '#p:') {
+        if (window.location.hash.substr('0', '3') == '#p=') {
           $('#_').toggleClass('soft-remove').toggleClass('soft-no-remove');
-          $('body').css('overflow', 'hidden');
           $('.navigation, .main').remove();
           document.getElementById('_').setAttribute('src', '//www.youtube.com/embed/?list=' + window.location.hash.substr('3') + '&listType=playlist&fs=0&autohide=0');
         }
@@ -44,28 +49,32 @@ var startUp = function() {
         if (!$('#namespace').val()) {
           store.set(mop("prefix") + "Main", $("#main.main #form").val());
           console.info("Main > saved");
-          toastr['info']("The main board has been saved.");
         } else {
           store.set(mop("prefix") + $("#namespace").val(), $("#main.main #form").val());
           console.info($("#namespace").val() + " > saved");
-          toastr['info']($("#namespace").val() + " has been saved.");
         }
       }).addClass("fa-important").addClass("fa-cloud-upload");
       $(".jb-give .jb-load").on("click", function() {
         if (!$("#namespace").val()) {
           $("#main.main #form").val(store.get(mop("prefix") + "Main"));
           console.info("Main > loaded");
-          toastr['info']("The main board has been loaded.");
         } else {
           $("#main.main #form").val(store.get(mop("prefix") + $("#namespace").val()));
           console.info($("#namespace").val() + " > loaded");
-          toastr['info']($("#namespace").val() + " has been loaded.");
         }
       }).addClass("fa-important").addClass("fa-cloud-download");
     });
     head.load("js/depend/moment.js", function() {
       console.log("Moment.JS");
       $.getJSON("//www.reddit.com/r/jotboard/new.json", function(data) {
+        if (!localStorage["pragma-" + pragma.id]) {
+          $('.navigation').after(
+            "<div class='pragma'>" +
+              "<a href='" + pragma.href + "'>" + pragma.title + "</a>" +
+            "</div>"
+          );
+          localStorage["pragma-" + pragma.id] = true;
+        }
         $.each(data.data.children, function(i, item) {
           $("#community").append(
             '<div class="article">\n' +

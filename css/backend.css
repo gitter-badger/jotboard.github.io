@@ -8,7 +8,7 @@
 #main {
   background: #2A2A2A;
   padding: 1.5%;
-  height: calc(93% - 60px);
+  height: calc(40% - 60px);
   width: 100vw;
 }
 
@@ -53,6 +53,17 @@
   min-height: 60px;
   padding: 0 1.3vw 0 1.3vw;
   background: rgb(67, 109, 219);
+}
+
+div.pragma {
+    width: 100%;
+    padding: 4vh 0 4vh 0;
+    background-color: #325CCA;
+    text-align: center;
+    font: 150% 'Lato', sans-serif;
+} div.pragma * {
+    color: #FFF !important;
+    text-decoration: none;
 }
 
 #community {
