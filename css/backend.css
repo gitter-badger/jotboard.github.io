@@ -123,7 +123,6 @@ div.pragma {
 
 .jb-give {
   width: 135px;
-  float: right;
 } .jb-give .nav-select {
   cursor: pointer;
   color: #F9F9F9;
@@ -183,8 +182,6 @@ div.pragma {
 * { box-sizing: border-box; }
 .toast { font-family: 'Lato', san-serif; }
 .fa-important { font-family: FontAwesome !important; }
-
-/* Float Classes */
 .float-right { float: right; }
 .float-left { float: left; }
 
