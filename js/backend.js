@@ -1,8 +1,8 @@
 // Quick Banner
 var pragma = {
-  id: "2",
-  title: "Check out the Realm!",
-  href: "//www.reddit.com/r/jotboard/",
+  id: "3",
+  title: "TYLER THE CREATOR'S NEW TRACK: F***ING YOUNG",
+  href: "//www.youtube.com/watch?v=SCcVrLcGD7k",
 };
 
 window._idl = {};
