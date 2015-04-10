@@ -35,17 +35,24 @@ var startUp = function() {
         if (_function == "hash") /* #Mods */ return window.location.href.indexOf("#" + _1) != -1;
         if (_function == "prefix") return "JB_-";
       };
-      /* Data Binding and Shit */
+      /* Realm */
+      $(".jb-realm .jb-home").on("click", function() {
+        window.open("//www.reddit.com/r/jotboard/", "_blank");
+      }).addClass("fa-important").addClass("fa-heart");
+      $(".jb-realm .jb-newtext").on("click", function() {
+        window.open("//www.reddit.com/r/jotboard/submit?selftext=true", "_blank");
+      }).addClass("fa-important").addClass("fa-file-text");
+      $(".jb-realm .jb-newlink").on("click", function() {
+        window.open("//www.reddit.com/r/jotboard/submit", "_blank");
+      }).addClass("fa-important").addClass("fa-link");
+      /* Data */
       if (store.get(mop("prefix") + "Main")) {
         $("#main.main #form").val(store.get(mop("prefix") + "Main"));
         console.info("The main board is avalible.");
       } if (_IDL === true) {
         head.load(('https:' == document.location.protocol ? 'https://' : 'http://') + 'members.internetdefenseleague.org/include/?url=' + _idl.url + '&campaign=' + _idl.campaign + '&variant=modal');
       }
-      $(".jb-give .jb-realm").on("click", function() {
-        window.open("/r/realm.html/", "_blank");
-      }).addClass("fa-important").addClass("fa-heart");
-      $(".jb-give .jb-save").on("click", function() {
+      $(".jb-data .jb-save").on("click", function() {
         if (!$('#namespace').val()) {
           store.set(mop("prefix") + "Main", $("#main.main #form").val());
           console.info("Main > saved");
@@ -54,7 +61,7 @@ var startUp = function() {
           console.info($("#namespace").val() + " > saved");
         }
       }).addClass("fa-important").addClass("fa-cloud-upload");
-      $(".jb-give .jb-load").on("click", function() {
+      $(".jb-data .jb-load").on("click", function() {
         if (!$("#namespace").val()) {
           $("#main.main #form").val(store.get(mop("prefix") + "Main"));
           console.info("Main > loaded");
