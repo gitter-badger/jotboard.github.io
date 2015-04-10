@@ -184,6 +184,10 @@ div.pragma {
 .toast { font-family: 'Lato', san-serif; }
 .fa-important { font-family: FontAwesome !important; }
 
+/* Float Classes */
+.float-right { float: right; }
+.float-left { float: left; }
+
 /* Themes ;3 */
 /* Markiplier */
 .markiplier #container .navigation {
