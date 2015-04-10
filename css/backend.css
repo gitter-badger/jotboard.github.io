@@ -32,16 +32,16 @@
   font: 16.5px 'Source Code Pro', sans-serif;
   color: #E0E0E0;
 } #form::-webkit-input-placeholder {
-  font: 19px 'Roboto', san-serif;
+  font: 16.5px 'Roboto', san-serif;
   color: #E0E0E0;
 } #form:-o-placeholder {
-  font: 19px 'Roboto', san-serif;
+  font: 16.5px 'Roboto', san-serif;
   color: #E0E0E0;
 } #form::-moz-placeholder {
-  font: 19px 'Roboto', san-serif;
+  font: 16.5px 'Roboto', san-serif;
   color: #E0E0E0;
 } #form::-ms-input-placeholder {
-  font: 19px 'Roboto', san-serif;
+  font: 16.5px 'Roboto', san-serif;
   color: #E0E0E0;
 }
 

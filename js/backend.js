@@ -1,8 +1,8 @@
 // Quick Banner
 var pragma = {
-  id: "1",
-  title: "Jotboard is open-source!",
-  href: "https://github.com/jotboard/jotboard.github.io",
+  id: "2",
+  title: "Check out the Realm!",
+  href: "//www.reddit.com/r/jotboard/",
 };
 
 window._idl = {};
@@ -19,16 +19,16 @@ var startUp = function() {
       // Namespace is $("#namespace");
       $(function() {
         // Chunker: Video
-        if (window.location.hash.substr('0', '3') == '#v=') {
+        if (window.location.hash.substr('0', '3') == '#yt:v=') {
           $('#_').toggleClass('soft-remove').toggleClass('soft-no-remove');
           $('.navigation, .main').remove();
-          document.getElementById('_').setAttribute('src', '//www.youtube.com/embed/' + window.location.hash.substr('3', '11') + '?fs=0&autohide=0');
+          document.getElementById('_').setAttribute('src', '//www.youtube.com/embed/' + window.location.hash.substr('6', '11') + '?fs=0&autohide=0');
         }
         // Chunker: Playlist
-        if (window.location.hash.substr('0', '3') == '#p=') {
+        if (window.location.hash.substr('0', '3') == '#yt:p=') {
           $('#_').toggleClass('soft-remove').toggleClass('soft-no-remove');
           $('.navigation, .main').remove();
-          document.getElementById('_').setAttribute('src', '//www.youtube.com/embed/?list=' + window.location.hash.substr('3') + '&listType=playlist&fs=0&autohide=0');
+          document.getElementById('_').setAttribute('src', '//www.youtube.com/embed/?list=' + window.location.hash.substr('6') + '&listType=playlist&fs=0&autohide=0');
         }
       });
       var mop = function(_function, _1) {
