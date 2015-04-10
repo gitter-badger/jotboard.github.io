@@ -184,6 +184,12 @@ div.pragma {
 * { box-sizing: border-box; }
 .fa-important { font-family: FontAwesome !important; }
 
+#_ {
+  background-color: #000;
+  width: 100vw;
+  height: 99vh;
+}
+
 /* Themes ;3 */
 /* Markiplier */
 .markiplier #container .navigation {
