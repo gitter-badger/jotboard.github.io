@@ -8,7 +8,7 @@
 #main {
   background: #2A2A2A;
   padding: 1.5%;
-  height: calc(40% - 60px);
+  height: calc(60% - 60px);
   width: 100vw;
 }
 
@@ -46,7 +46,8 @@
 }
 
 .navigation .container form {
-  width: calc(100% - 135px - 1%);
+  width: calc(100% - 190px);
+  padding: 0 .5% 0 0;
   float: left;
 } .navigation {
   width: 100vw;
@@ -95,7 +96,7 @@ div.pragma {
   font: 12px 'Lato', sans-serif;
   margin: 4px 7px 4px 0;
   text-decoration: none;
-} #community .article .points:hover {
+} #community .article .points {
   cursor: default;
   text-decoration: none;
 }
@@ -121,20 +122,21 @@ div.pragma {
   color: #E0E0E0;
 }
 
-.jb-give {
-  width: 135px;
-} .jb-give .nav-select {
+.jb-btn {
+  width: 190px;
+  float: right;
+} .nav-select {
   cursor: pointer;
+  float: inherit;
   color: #F9F9F9;
   text-align: center;
-  width: 32%;
+  width: 19%;
   font-size: 20px;
   margin: 0 1% 0 0;
-  padding: calc(3% + .5px) 0 calc(4% + .5px) 0;
+  padding: 3% 2% 3% 2%;
   transition: box-shadow 200ms cubic-bezier(.4, 0, .2, 1), background-color 210ms cubic-bezier(.4, 0, .2, 1);
-  float: right;
   border-radius: 2px;
-} .jb-give .nav-select:hover {
+} .nav-select:hover {
   box-shadow: 0 1px 3px rgba(0, 0, 0, .55);
   background-color: rgb(76, 142, 250);
 }
@@ -167,7 +169,7 @@ div.pragma {
 .navigation::-ms-scrollbar { width: 0; }
 /* Nav (if needed) Scrollbar */
 
-.navigation .container form, .jb-give {
+.navigation .container form, .jb-btn {
   margin: 15px 0 0 0;
 } #form {
   background: transparent;
@@ -180,10 +182,7 @@ div.pragma {
 } .remove { display: none; }
 *:focus { outline: none; }
 * { box-sizing: border-box; }
-.toast { font-family: 'Lato', san-serif; }
 .fa-important { font-family: FontAwesome !important; }
-.float-right { float: right; }
-.float-left { float: left; }
 
 /* Themes ;3 */
 /* Markiplier */

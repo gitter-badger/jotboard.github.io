@@ -19,13 +19,13 @@ var startUp = function() {
       // Namespace is $("#namespace");
       $(function() {
         // Chunker: Video
-        if (window.location.hash.substr('0', '3') == '#yt:v=') {
+        if (window.location.hash.substr('0', '6') == '#yt:v=') {
           $('#_').toggleClass('soft-remove').toggleClass('soft-no-remove');
           $('.navigation, .main').remove();
           document.getElementById('_').setAttribute('src', '//www.youtube.com/embed/' + window.location.hash.substr('6', '11') + '?fs=0&autohide=0');
         }
         // Chunker: Playlist
-        if (window.location.hash.substr('0', '3') == '#yt:p=') {
+        if (window.location.hash.substr('0', '6') == '#yt:p=') {
           $('#_').toggleClass('soft-remove').toggleClass('soft-no-remove');
           $('.navigation, .main').remove();
           document.getElementById('_').setAttribute('src', '//www.youtube.com/embed/?list=' + window.location.hash.substr('6') + '&listType=playlist&fs=0&autohide=0');
@@ -35,24 +35,24 @@ var startUp = function() {
         if (_function == "hash") /* #Mods */ return window.location.href.indexOf("#" + _1) != -1;
         if (_function == "prefix") return "JB_-";
       };
-      /* Realm */
-      $(".jb-realm .jb-home").on("click", function() {
+      // Realm
+      $(".jb-btn .jb-home").on("click", function() {
         window.open("//www.reddit.com/r/jotboard/", "_blank");
       }).addClass("fa-important").addClass("fa-heart");
-      $(".jb-realm .jb-newtext").on("click", function() {
+      $(".jb-btn .jb-newtext").on("click", function() {
         window.open("//www.reddit.com/r/jotboard/submit?selftext=true", "_blank");
       }).addClass("fa-important").addClass("fa-file-text");
-      $(".jb-realm .jb-newlink").on("click", function() {
+      $(".jb-btn .jb-newlink").on("click", function() {
         window.open("//www.reddit.com/r/jotboard/submit", "_blank");
       }).addClass("fa-important").addClass("fa-link");
-      /* Data */
+      // Data
       if (store.get(mop("prefix") + "Main")) {
         $("#main.main #form").val(store.get(mop("prefix") + "Main"));
         console.info("The main board is avalible.");
       } if (_IDL === true) {
         head.load(('https:' == document.location.protocol ? 'https://' : 'http://') + 'members.internetdefenseleague.org/include/?url=' + _idl.url + '&campaign=' + _idl.campaign + '&variant=modal');
       }
-      $(".jb-data .jb-save").on("click", function() {
+      $(".jb-btn .jb-save").on("click", function() {
         if (!$('#namespace').val()) {
           store.set(mop("prefix") + "Main", $("#main.main #form").val());
           console.info("Main > saved");
@@ -61,7 +61,7 @@ var startUp = function() {
           console.info($("#namespace").val() + " > saved");
         }
       }).addClass("fa-important").addClass("fa-cloud-upload");
-      $(".jb-data .jb-load").on("click", function() {
+      $(".jb-btn .jb-load").on("click", function() {
         if (!$("#namespace").val()) {
           $("#main.main #form").val(store.get(mop("prefix") + "Main"));
           console.info("Main > loaded");
@@ -97,11 +97,11 @@ var startUp = function() {
       var TimePulse = function() {
         if (0 <= new Date().getHours() && new Date().getHours() < 12) {
           $("#main.main #form").attr({
-            "placeholder": moment(new Date()).format("[Hello, it's currently] dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, happy writing, scroll down further to see posts.]")
+            "placeholder": moment(new Date()).format("[Hi, it's currently] dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, happy writing, scroll down to see posts.]")
           });
         } else {
           $("#main.main #form").attr({
-            "placeholder": moment(new Date()).format("[Hows it going? it's ]dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, bye-bye, scroll down further to see posts.]")
+            "placeholder": moment(new Date()).format("[Hows it going? it's ]dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, bye-bye, scroll down to see posts.]")
           });
         }
       }; TimePulse();
