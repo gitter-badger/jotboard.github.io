@@ -56,14 +56,14 @@
 }
 
 div.pragma {
-    width: 100%;
-    padding: 4vh 0 4vh 0;
-    background-color: #325CCA;
-    text-align: center;
-    font: 150% 'Lato', sans-serif;
+  width: 100%;
+  padding: 4vh 0 4vh 0;
+  background-color: #325CCA;
+  text-align: center;
+  font: 150% 'Lato', sans-serif;
 } div.pragma * {
-    color: #FFF !important;
-    text-decoration: none;
+  color: #FFF !important;
+  text-decoration: none;
 }
 
 #community {
@@ -72,7 +72,7 @@ div.pragma {
   padding: 2% 2% calc(2% - 7px) 2%;
   overflow-x: hidden;
 } #community:empty {
-    display: none;
+  display: none;
 } #community .article {
   width: 100%;
   float: left;
