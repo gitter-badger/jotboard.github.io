@@ -36,7 +36,6 @@ var startUp = function() {
           $('.navigation, .main').remove();
           document.getElementById('_').setAttribute('src', '//www.twitch.tv/' + window.location.hash.substr('6') + '/embed');
         }
-
       });
       var mop = function(_function, _1) {
         if (_function == "hash") /* #Mods */ return window.location.href.indexOf("#" + _1) != -1;
