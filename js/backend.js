@@ -18,18 +18,25 @@ var startUp = function() {
       // Form is $("#main.main #form");
       // Namespace is $("#namespace");
       $(function() {
-        // Chunker: Video
+        // Chunker: Video (YouTube)
         if (window.location.hash.substr('0', '6') == '#yt:v=') {
           $('#_').toggleClass('soft-remove').toggleClass('soft-no-remove');
           $('.navigation, .main').remove();
           document.getElementById('_').setAttribute('src', '//www.youtube.com/embed/' + window.location.hash.substr('6', '11') + '?fs=0&autohide=0');
         }
-        // Chunker: Playlist
+        // Chunker: Playlist (YouTube)
         if (window.location.hash.substr('0', '6') == '#yt:p=') {
           $('#_').toggleClass('soft-remove').toggleClass('soft-no-remove');
           $('.navigation, .main').remove();
           document.getElementById('_').setAttribute('src', '//www.youtube.com/embed/?list=' + window.location.hash.substr('6') + '&listType=playlist&fs=0&autohide=0');
         }
+        // Chunker: Stream (Twitch)
+        if (window.location.hash.substr('0', '6') == '#tw:v=') {
+          $('#_').toggleClass('soft-remove').toggleClass('soft-no-remove');
+          $('.navigation, .main').remove();
+          document.getElementById('_').setAttribute('src', '//www.twitch.tv/' + window.location.hash.substr('6') + '/embed');
+        }
+
       });
       var mop = function(_function, _1) {
         if (_function == "hash") /* #Mods */ return window.location.href.indexOf("#" + _1) != -1;
