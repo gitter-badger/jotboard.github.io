@@ -45,12 +45,9 @@ var startUp = function() {
       $(".jb-btn .jb-home").on("click", function() {
         window.open("//www.reddit.com/r/jotboard/", "_blank");
       }).addClass("fa-important").addClass("fa-heart");
-      $(".jb-btn .jb-newtext").on("click", function() {
-        window.open("//www.reddit.com/r/jotboard/submit?selftext=true", "_blank");
-      }).addClass("fa-important").addClass("fa-file-text");
-      $(".jb-btn .jb-newlink").on("click", function() {
+      $(".jb-btn .jb-new").on("click", function() {
         window.open("//www.reddit.com/r/jotboard/submit", "_blank");
-      }).addClass("fa-important").addClass("fa-link");
+      }).addClass("fa-important").addClass("fa-plus");
       // Data
       if (store.get(mop("prefix") + "Main")) {
         $("#main.main #form").val(store.get(mop("prefix") + "Main"));
