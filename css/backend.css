@@ -182,13 +182,11 @@ div.pragma {
   border: none;
 } .remove { display: none; }
 *:focus { outline: none; }
-
 * {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   box-sizing: border-box;
-} .fa-important {
-  font-family: FontAwesome !important;
 }
+.fa-important { font-family: FontAwesome !important; }
 
 #_ {
   background-color: #000;
