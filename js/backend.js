@@ -1,7 +1,7 @@
 // Quick Banner
 var pragma = {
-  id: "4",
-  title: "TYLER THE CREATOR'S NEW TRACK: F***ING YOUNG",
+  id: "5",
+  title: "F***ING YOUNG/DEATHCAMP",
   href: "//www.youtube.com/watch?v=SCcVrLcGD7k",
 };
 
@@ -12,26 +12,26 @@ head_conf = {
 };
 
 var startUp = function() {
-  if (window.location.protocol == "http:") window.location.protocol = "https:";
-  if (window.location.protocol == "https:") {
+//  if (window.location.protocol == "http:") window.location.protocol = "https:";
+//  if (window.location.protocol == "https:") {
     head.load(["js/depend/store.js", "js/depend/jquery.js"], function() {
       // Form is $("#main.main #form");
       // Namespace is $("#namespace");
       $(function() {
         // Chunker: Video (YouTube)
-        if (window.location.hash.substr('0', '6') == '#yt:v=') {
+        if (window.location.hash.substr('0', '3') == '#v=') {
           $('#_').toggleClass('soft-remove').toggleClass('soft-no-remove');
           $('.navigation, .main').remove();
-          document.getElementById('_').setAttribute('src', '//www.youtube.com/embed/' + window.location.hash.substr('6', '11') + '?fs=0&autohide=0');
+          document.getElementById('_').setAttribute('src', '//www.youtube.com/embed/' + window.location.hash.substr('3', '11') + '?fs=0&autohide=1');
         }
         // Chunker: Playlist (YouTube)
-        if (window.location.hash.substr('0', '6') == '#yt:p=') {
+        if (window.location.hash.substr('0', '3') == '#p=') {
           $('#_').toggleClass('soft-remove').toggleClass('soft-no-remove');
           $('.navigation, .main').remove();
-          document.getElementById('_').setAttribute('src', '//www.youtube.com/embed/?list=' + window.location.hash.substr('6') + '&listType=playlist&fs=0&autohide=0');
+          document.getElementById('_').setAttribute('src', '//www.youtube.com/embed/?list=' + window.location.hash.substr('3') + '&listType=playlist&fs=0&autohide=1');
         }
         // Chunker: Stream (Twitch)
-        if (window.location.hash.substr('0', '6') == '#tw:v=') {
+        if (window.location.hash.substr('0', '6') == '#s=') {
           $('#_').toggleClass('soft-remove').toggleClass('soft-no-remove');
           $('.navigation, .main').remove();
           document.getElementById('_').setAttribute('src', '//www.twitch.tv/' + window.location.hash.substr('6') + '/embed');
@@ -40,6 +40,7 @@ var startUp = function() {
       var mop = function(_function, _1) {
         if (_function == "hash") /* #Mods */ return window.location.href.indexOf("#" + _1) != -1;
         if (_function == "prefix") return "JB_-";
+        if (_function == "home-namespace") return "Main";
       };
       // Realm
       $(".jb-btn .jb-home").on("click", function() {
@@ -153,5 +154,5 @@ var startUp = function() {
         /* Themes JS */
       });
     });
-  }
+//  }
 }; startUp();
