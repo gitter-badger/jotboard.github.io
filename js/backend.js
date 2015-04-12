@@ -6,41 +6,42 @@ var pragma = {
 };
 
 window._idl = {};
-var _IDL = false;
+var _IDL = true;
 head_conf = {
   html5: true
 };
 
 var startUp = function() {
-//  if (window.location.protocol == "http:") window.location.protocol = "https:";
-//  if (window.location.protocol == "https:") {
+  if (window.location.protocol == "http:") window.location.protocol = "https:";
+  if (window.location.protocol == "https:") {
     head.load(["js/depend/store.js", "js/depend/jquery.js"], function() {
       // Form is $("#main.main #form");
       // Namespace is $("#namespace");
       $(function() {
         // Chunker: Video (YouTube)
         if (window.location.hash.substr('0', '3') == '#v=') {
-          $('#_').toggleClass('soft-remove').toggleClass('soft-no-remove');
-          $('.navigation, .main').remove();
-          document.getElementById('_').setAttribute('src', '//www.youtube.com/embed/' + window.location.hash.substr('3', '11') + '?fs=0&autohide=1');
+          $("#_").toggleClass("soft-remove").toggleClass("soft-no-remove");
+          $(".navigation, .main-box").remove();
+          document.getElementById("_").setAttribute("src", "//www.youtube.com/embed/" + window.location.hash.substr("3", "11") + "?fs=0&autohide=1");
         }
         // Chunker: Playlist (YouTube)
         if (window.location.hash.substr('0', '3') == '#p=') {
-          $('#_').toggleClass('soft-remove').toggleClass('soft-no-remove');
-          $('.navigation, .main').remove();
-          document.getElementById('_').setAttribute('src', '//www.youtube.com/embed/?list=' + window.location.hash.substr('3') + '&listType=playlist&fs=0&autohide=1');
+          $("#_").toggleClass("soft-remove").toggleClass("soft-no-remove");
+          $(".navigation, .main-box").remove();
+          document.getElementById("_").setAttribute("src", "//www.youtube.com/embed/?list=" + window.location.hash.substr("3") + "&listType=playlist&fs=0&autohide=1");
         }
         // Chunker: Stream (Twitch)
         if (window.location.hash.substr('0', '6') == '#s=') {
-          $('#_').toggleClass('soft-remove').toggleClass('soft-no-remove');
-          $('.navigation, .main').remove();
-          document.getElementById('_').setAttribute('src', '//www.twitch.tv/' + window.location.hash.substr('6') + '/embed');
+          $("#_").toggleClass("soft-remove").toggleClass("soft-no-remove");
+          $(".navigation, .main-box").remove();
+          document.getElementById("_").setAttribute("src", "//www.twitch.tv/" + window.location.hash.substr("6") + "/embed");
         }
       });
       var mop = function(_function, _1) {
-        if (_function == "hash") /* #Mods */ return window.location.href.indexOf("#" + _1) != -1;
-        if (_function == "prefix") return "JB_-";
-        if (_function == "home-namespace") return "Main";
+        if (_function == 'protocol') return ('https:' == document.location.protocol ? 'https://' : 'http://');
+        if (_function == 'hash') return window.location.href.indexOf("#" + _1) != -1;
+        if (_function == 'prefix') return "JB_-";
+        if (_function == 'home-namespace') return "Main";
       };
       // Realm
       $(".jb-btn .jb-home").on("click", function() {
@@ -51,40 +52,40 @@ var startUp = function() {
       }).addClass("fa-important").addClass("fa-plus");
       // Data
       if (store.get(mop("prefix") + "Main")) {
-        $("#main.main #form").val(store.get(mop("prefix") + "Main"));
+        $(".main-box #form").val(store.get(mop("prefix") + "Main"));
         console.info("The main board is avalible.");
       } if (_IDL === true) {
-        head.load(('https:' == document.location.protocol ? 'https://' : 'http://') + 'members.internetdefenseleague.org/include/?url=' + _idl.url + '&campaign=' + _idl.campaign + '&variant=modal');
+        head.load(mop('protocol') + 'members.internetdefenseleague.org/include/?url=' + _idl.url + '&campaign=' + _idl.campaign + '&variant=modal');
       }
       $(".jb-btn .jb-save").on("click", function() {
         if (!$('#namespace').val()) {
-          store.set(mop("prefix") + "Main", $("#main.main #form").val());
+          store.set(mop("prefix") + "Main", $(".main-box #form").val());
           console.info("Main > saved");
         } else {
-          store.set(mop("prefix") + $("#namespace").val(), $("#main.main #form").val());
+          store.set(mop("prefix") + $("#namespace").val(), $(".main-box #form").val());
           console.info($("#namespace").val() + " > saved");
         }
       }).addClass("fa-important").addClass("fa-cloud-upload");
       $(".jb-btn .jb-load").on("click", function() {
         if (!$("#namespace").val()) {
-          $("#main.main #form").val(store.get(mop("prefix") + "Main"));
-          console.info("Main > loaded");
+          $(".main-box #form").val(store.get(mop('prefix') + 'Main'));
+          console.info('Main > loaded');
         } else {
-          $("#main.main #form").val(store.get(mop("prefix") + $("#namespace").val()));
+          $(".main-box #form").val(store.get(mop("prefix") + $("#namespace").val()));
           console.info($("#namespace").val() + " > loaded");
         }
       }).addClass("fa-important").addClass("fa-cloud-download");
     });
-    head.load("js/depend/moment.js", function() {
-      console.log("Moment.JS");
-      $.getJSON("//www.reddit.com/r/jotboard/new.json", function(data) {
-        if (!localStorage["pragma-" + pragma.id]) {
+    head.load('js/depend/moment.js', function() {
+      console.log('Moment.JS');
+      $.getJSON('//www.reddit.com/r/jotboard/new.json', function(data) {
+        if (!localStorage['pragma-' + pragma.id]) {
           $('.navigation').after(
-            "<div class='pragma'>" +
-              "<a href='" + pragma.href + "'>" + pragma.title + "</a>" +
-            "</div>"
+            '<div class="pragma">' +
+              '<a href="' + pragma.href + '">' + pragma.title + '</a>' +
+            '</div>'
           );
-          localStorage["pragma-" + pragma.id] = true;
+          localStorage['pragma-' + pragma.id] = true;
         }
         $.each(data.data.children, function(i, item) {
           $("#community").append(
@@ -100,11 +101,11 @@ var startUp = function() {
       });
       var TimePulse = function() {
         if (0 <= new Date().getHours() && new Date().getHours() < 12) {
-          $("#main.main #form").attr({
+          $(".main-box #form").attr({
             "placeholder": moment(new Date()).format("[Hi, it's currently] dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, happy writing, scroll down to see posts.]")
           });
         } else {
-          $("#main.main #form").attr({
+          $(".main-box #form").attr({
             "placeholder": moment(new Date()).format("[Hows it going? it's ]dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, bye-bye, scroll down to see posts.]")
           });
         }
@@ -116,32 +117,11 @@ var startUp = function() {
       head.load("//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css", function() {
         console.log("Font Awesome");
       });
-      head.load(["css/depend/toastr.css", "js/depend/toastr.js"], function() {
-        console.log("Toastr CSS and JS");
-        toastr.options = {
-          "closeButton": false,
-          "debug": false,
-          "newestOnTop": false,
-          "progressBar": true,
-          "positionClass": "toast-bottom-left",
-          "preventDuplicates": false,
-          "onclick": null,
-          "showDuration": "350",
-          "hideDuration": "630",
-          "timeOut": "2500",
-          "extendedTimeOut": "1000",
-          "showEasing": "swing",
-          "hideEasing": "swing",
-          "showMethod": "linear",
-          "hideMethod": "linear"
-        };
-      });
-      if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-        // This is if I give up on making mobile-specific rebuffs and s*** $('#container').remove();
-      }
-      else console.log("Not on mobile.");
       $(function() {
-        /* Themes JS */
+        // Mobile
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) $("#container").remove();
+        else console.log("Not on mobile.");
+        // Themes JS
         if (window.location.href.indexOf("#markiplier") != -1) {
           $("body").addClass("markiplier");
           console.info("HELLO EVERYBODY! My Name is *not* Markiplier and welcome to Jotboard: Markiplier Edition");
@@ -151,8 +131,7 @@ var startUp = function() {
         } else {
           console.error("No theme activated.");
         }
-        /* Themes JS */
       });
     });
-//  }
+  }
 }; startUp();
