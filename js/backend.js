@@ -15,25 +15,25 @@ var startUp = function() {
   if (window.location.protocol == "http:") window.location.protocol = "https:";
   if (window.location.protocol == "https:") {
     head.load(["js/depend/store.js", "js/depend/jquery.js"], function() {
-      // Form is $("#main.main #form");
+      // Form is $("[main] #form");
       // Namespace is $("#namespace");
       $(function() {
         // Chunker: Video (YouTube)
         if (window.location.hash.substr('0', '3') == '#v=') {
           $("#_").toggleClass("soft-remove").toggleClass("soft-no-remove");
-          $(".navigation, .main-box").remove();
+          $(".navigation, [main]").remove();
           document.getElementById("_").setAttribute("src", "//www.youtube.com/embed/" + window.location.hash.substr("3", "11") + "?fs=0&autohide=1");
         }
         // Chunker: Playlist (YouTube)
         if (window.location.hash.substr('0', '3') == '#p=') {
           $("#_").toggleClass("soft-remove").toggleClass("soft-no-remove");
-          $(".navigation, .main-box").remove();
+          $(".navigation, [main]").remove();
           document.getElementById("_").setAttribute("src", "//www.youtube.com/embed/?list=" + window.location.hash.substr("3") + "&listType=playlist&fs=0&autohide=1");
         }
         // Chunker: Stream (Twitch)
         if (window.location.hash.substr('0', '6') == '#s=') {
           $("#_").toggleClass("soft-remove").toggleClass("soft-no-remove");
-          $(".navigation, .main-box").remove();
+          $(".navigation, [main]").remove();
           document.getElementById("_").setAttribute("src", "//www.twitch.tv/" + window.location.hash.substr("6") + "/embed");
         }
       });
@@ -41,7 +41,6 @@ var startUp = function() {
         if (_function == 'protocol') return ('https:' == document.location.protocol ? 'https://' : 'http://');
         if (_function == 'hash') return window.location.href.indexOf("#" + _1) != -1;
         if (_function == 'prefix') return "JB_-";
-        if (_function == 'home-namespace') return "Main";
       };
       // Realm
       $(".jb-btn .jb-home").on("click", function() {
@@ -52,26 +51,24 @@ var startUp = function() {
       }).addClass("fa-important").addClass("fa-plus");
       // Data
       if (store.get(mop("prefix") + "Main")) {
-        $(".main-box #form").val(store.get(mop("prefix") + "Main"));
+        $("[main] #form").val(store.get(mop("prefix") + "Main"));
         console.info("The main board is avalible.");
-      } if (_IDL === true) {
-        head.load(mop('protocol') + 'members.internetdefenseleague.org/include/?url=' + _idl.url + '&campaign=' + _idl.campaign + '&variant=modal');
       }
       $(".jb-btn .jb-save").on("click", function() {
         if (!$('#namespace').val()) {
-          store.set(mop("prefix") + "Main", $(".main-box #form").val());
+          store.set(mop("prefix") + "Main", $("[main] #form").val());
           console.info("Main > saved");
         } else {
-          store.set(mop("prefix") + $("#namespace").val(), $(".main-box #form").val());
+          store.set(mop("prefix") + $("#namespace").val(), $("[main] #form").val());
           console.info($("#namespace").val() + " > saved");
         }
       }).addClass("fa-important").addClass("fa-cloud-upload");
       $(".jb-btn .jb-load").on("click", function() {
         if (!$("#namespace").val()) {
-          $(".main-box #form").val(store.get(mop('prefix') + 'Main'));
-          console.info('Main > loaded');
+          $("[main] #form").val(store.get(mop("prefix") + "Main"));
+          console.info("Main > loaded");
         } else {
-          $(".main-box #form").val(store.get(mop("prefix") + $("#namespace").val()));
+          $("[main] #form").val(store.get(mop("prefix") + $("#namespace").val()));
           console.info($("#namespace").val() + " > loaded");
         }
       }).addClass("fa-important").addClass("fa-cloud-download");
@@ -80,7 +77,7 @@ var startUp = function() {
       console.log('Moment.JS');
       $.getJSON('//www.reddit.com/r/jotboard/new.json', function(data) {
         if (!localStorage['pragma-' + pragma.id]) {
-          $('.navigation').after(
+          $('.navigation').before(
             '<div class="pragma">' +
               '<a href="' + pragma.href + '">' + pragma.title + '</a>' +
             '</div>'
@@ -101,11 +98,11 @@ var startUp = function() {
       });
       var TimePulse = function() {
         if (0 <= new Date().getHours() && new Date().getHours() < 12) {
-          $(".main-box #form").attr({
+          $("[main] #form").attr({
             "placeholder": moment(new Date()).format("[Hi, it's currently] dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, happy writing, scroll down to see posts.]")
           });
         } else {
-          $(".main-box #form").attr({
+          $("[main] #form").attr({
             "placeholder": moment(new Date()).format("[Hows it going? it's ]dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, bye-bye, scroll down to see posts.]")
           });
         }
@@ -118,6 +115,8 @@ var startUp = function() {
         console.log("Font Awesome");
       });
       $(function() {
+        // IDL
+        if (_IDL === true) head.load(mop('protocol') + 'members.internetdefenseleague.org/include/?url=' + _idl.url + '&campaign=' + _idl.campaign + '&variant=modal');
         // Mobile
         if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) $("#container").remove();
         else console.log("Not on mobile.");

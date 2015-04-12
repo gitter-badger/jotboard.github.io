@@ -5,7 +5,7 @@
   margin: 0;
 }
 
-.main-body {
+[main] {
   background: #2A2A2A;
   padding: 1.5%;
   height: calc(60% - 60px);
