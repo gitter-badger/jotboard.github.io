@@ -20,8 +20,8 @@
   bottom: 0;
   width: 100%;
   padding: 1%;
-  font-size: 12.5px;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font: 12.5px;
+  font-family: 'Futura', 'Trebuchet MS', 'Arial', sans-serif;
   color: #FFF;
   cursor: default;
   border-top: 1px solid rgba(0, 0, 0, 1);
@@ -184,7 +184,7 @@ div.pragma {
 *:focus { outline: none; }
 
 * {
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-family: 'Futura', 'Trebuchet MS', 'Arial', sans-serif;
   box-sizing: border-box;
 } .fa-important {
   font-family: FontAwesome !important;
