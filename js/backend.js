@@ -31,7 +31,7 @@ var startUp = function() {
           document.getElementById("_").setAttribute("src", "//www.youtube.com/embed/?list=" + window.location.hash.substr("3") + "&listType=playlist&fs=0&autohide=1");
         }
         // Chunker: Stream (Twitch)
-        if (window.location.hash.substr('0', '6') == '#s=') {
+        if (window.location.hash.substr('0', '3') == '#s=') {
           $("#_").toggleClass("soft-remove").toggleClass("soft-no-remove");
           $(".navigation, [main]").remove();
           document.getElementById("_").setAttribute("src", "//www.twitch.tv/" + window.location.hash.substr("3") + "/embed");
