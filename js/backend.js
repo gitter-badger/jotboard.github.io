@@ -38,7 +38,6 @@ var startUp = function() {
         }
       });
       var mop = function(_function, _1) {
-        if (_function == 'protocol') return ('https:' == document.location.protocol ? 'https://' : 'http://');
         if (_function == 'hash') return window.location.href.indexOf("#" + _1) != -1;
         if (_function == 'prefix') return "JB_-";
       };
@@ -116,7 +115,9 @@ var startUp = function() {
       });
       $(function() {
         // IDL
-        if (_IDL === true) head.load(mop('protocol') + 'members.internetdefenseleague.org/include/?url=' + _idl.url + '&campaign=' + _idl.campaign + '&variant=modal');
+        if (_IDL === true) {
+          head.load(('https:' == document.location.protocol ? 'https://' : 'http://') + 'members.internetdefenseleague.org/include/?url=' + _idl.url + '&campaign=' + _idl.campaign + '&variant=modal');
+        }
         // Mobile
         if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) $("#container").remove();
         else console.log("Not on mobile.");
