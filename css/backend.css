@@ -19,8 +19,7 @@
   left: 0;
   bottom: 0;
   width: 100%;
-  height: calc(22vh - 59px);
-  padding: calc(4%);
+  padding: 1%;
   font: 14px 'Futura', 'Trebuchet MS', 'Arial', sans-serif;
   color: #FFF;
   cursor: default;
