@@ -19,13 +19,12 @@
   left: 0;
   bottom: 0;
   width: 100%;
-  padding: 1%;
-  font: 12.5px;
-  font-family: 'Futura', 'Trebuchet MS', 'Arial', sans-serif;
+  height: calc(22vh - 59px);
+  padding: calc(4%);
+  font: 14px 'Futura', 'Trebuchet MS', 'Arial', sans-serif;
   color: #FFF;
   cursor: default;
-  border-top: 1px solid rgba(0, 0, 0, 1);
-  background-color: rgba(0, 0, 0, .7);
+  background-color: #333;
   box-shadow: 0 1px 3px rgba(0, 0, 0, .55);
 }
 
