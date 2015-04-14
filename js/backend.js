@@ -34,7 +34,7 @@ var startUp = function() {
         if (window.location.hash.substr('0', '6') == '#s=') {
           $("#_").toggleClass("soft-remove").toggleClass("soft-no-remove");
           $(".navigation, [main]").remove();
-          document.getElementById("_").setAttribute("src", "//www.twitch.tv/" + window.location.hash.substr("6") + "/embed");
+          document.getElementById("_").setAttribute("src", "//www.twitch.tv/" + window.location.hash.substr("3") + "/embed");
         }
       });
       var mop = function(_function, _1) {
