@@ -70,33 +70,31 @@ var startUp = function() {
               '<br>\n' +
               '<a class="author" href="//www.reddit.com/user/' + item.data.author + '">' + item.data.author + '</a>\n' +
               '<a class="thread" href="//www.reddit.com' + item.data.permalink + '" class="thread">Comments</a>\n' +
-              '<a class="points">' + item.data.score + ' Point/s</a>\n' +
+              '<a class="points">' + item.data.score + '</a>\n' +
             '</div>'
           );
         });
-        $(function() {
-          // Chunker: Video (YouTube)
-          if (window.location.href.substr('0', '30') == 'https://jotboard.github.io/?v=') {
-            $("#_").toggleClass("soft-remove").toggleClass("soft-no-remove");
-            $(".navigation, [main]").remove();
-            document.getElementById("_").setAttribute("src", "//www.youtube.com/embed/" + window.location.href.substr("30", "41") + "?fs=0&autohide=1");
-          }
-          // Chunker: Playlist (YouTube)
-          if (window.location.href.substr('0', '30') == 'https://jotboard.github.io/?p=') {
-            $("#_").toggleClass("soft-remove").toggleClass("soft-no-remove");
-            $(".navigation, [main]").remove();
-            document.getElementById("_").setAttribute("src", "//www.youtube.com/embed/?list=" + window.location.href.substr("30") + "&listType=playlist&fs=0&autohide=1");
-          }
-          // Chunker: Stream (Twitch)
-          if (window.location.href.substr('0', '30') == 'https://jotboard.github.io/?s=') {
-            $("#_").toggleClass("soft-remove").toggleClass("soft-no-remove");
-            $(".navigation, [main]").remove();
-            document.getElementById("_").setAttribute("src", "//www.twitch.tv/" + window.location.href.substr("30") + "/embed");
-          }
-          $('#community [href], .pragma a[href]').on('click', function(hrefEvent) {
-            window.location.href = $(this).attr("href");
-            hrefEvent.preventDefault();
-          });
+        // Chunker: Video (YouTube)
+        if (window.location.href.substr('0', '30') == 'https://jotboard.github.io/?v=') {
+          $("#_").toggleClass("soft-remove").toggleClass("soft-no-remove");
+          $(".navigation, [main]").remove();
+          document.getElementById("_").setAttribute("src", "//www.youtube.com/embed/" + window.location.href.substr("30", "41") + "?fs=0&autohide=1");
+        }
+        // Chunker: Playlist (YouTube)
+        if (window.location.href.substr('0', '30') == 'https://jotboard.github.io/?p=') {
+          $("#_").toggleClass("soft-remove").toggleClass("soft-no-remove");
+          $(".navigation, [main]").remove();
+          document.getElementById("_").setAttribute("src", "//www.youtube.com/embed/?list=" + window.location.href.substr("30") + "&listType=playlist&fs=0&autohide=1");
+        }
+        // Chunker: Stream (Twitch)
+        if (window.location.href.substr('0', '30') == 'https://jotboard.github.io/?s=') {
+          $("#_").toggleClass("soft-remove").toggleClass("soft-no-remove");
+          $(".navigation, [main]").remove();
+          document.getElementById("_").setAttribute("src", "//www.twitch.tv/" + window.location.href.substr("30") + "/embed");
+        }
+        $('#community [href], .pragma a[href]').on('click', function(hrefEvent) {
+          window.location.href = $(this).attr("href");
+          hrefEvent.preventDefault();
         });
       });
       var TimePulse = function() {
@@ -119,9 +117,7 @@ var startUp = function() {
       });
       $(function() {
         // IDL
-        if (_IDL === true) {
-          head.load(('https:' == document.location.protocol ? 'https://' : 'http://') + 'members.internetdefenseleague.org/include/?url=' + _idl.url + '&campaign=' + _idl.campaign + '&variant=modal');
-        }
+        if (_IDL === true) head.load(('https:' == document.location.protocol ? 'https://' : 'http://') + 'members.internetdefenseleague.org/include/?url=' + _idl.url + '&campaign=' + _idl.campaign + '&variant=modal');
         // Mobile
         if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) $("#container").remove();
         else console.log("Not on mobile.");
