@@ -193,7 +193,7 @@ div.pragma {
   width: 100%;
   height: 83.5%;
   padding: 1.8vh 4% 1.8vh 4%;
-  transition: background-color 820ms linear, padding 640ms ease, height 320ms ease;
+  transition: background-color 1000ms ease;
 } #_:hover {
   padding: 1.8vh;
   height: 98.3%;
