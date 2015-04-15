@@ -189,9 +189,10 @@ div.pragma {
 }
 
 #_ {
-  background-color: #000;
+  background-color: #181818;
   width: 100vw;
-  height: 100vh;
+  height: 97vh;
+  padding: 2% 1% 2% 1%;
 }
 
 /* Themes ;3 */
