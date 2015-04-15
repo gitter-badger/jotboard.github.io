@@ -19,22 +19,22 @@ var startUp = function() {
       // Namespace is $("#namespace");
       $(function() {
         // Chunker: Video (YouTube)
-        if (window.location.hash.substr('0', '3') == '?v=') {
+        if (window.location.href.substr('0', '30') == 'https://jotboard.github.io/?v=') {
           $("#_").toggleClass("soft-remove").toggleClass("soft-no-remove");
           $(".navigation, [main]").remove();
-          document.getElementById("_").setAttribute("src", "//www.youtube.com/embed/" + window.location.hash.substr("3", "11") + "?fs=0&autohide=1");
+          document.getElementById("_").setAttribute("src", "//www.youtube.com/embed/" + window.location.hash.substr("30", "41") + "?fs=0&autohide=1");
         }
         // Chunker: Playlist (YouTube)
-        if (window.location.hash.substr('0', '3') == '?p=') {
+        if (window.location.href.substr('0', '30') == 'https://jotboard.github.io/?p=') {
           $("#_").toggleClass("soft-remove").toggleClass("soft-no-remove");
           $(".navigation, [main]").remove();
-          document.getElementById("_").setAttribute("src", "//www.youtube.com/embed/?list=" + window.location.hash.substr("3") + "&listType=playlist&fs=0&autohide=1");
+          document.getElementById("_").setAttribute("src", "//www.youtube.com/embed/?list=" + window.location.hash.substr("30") + "&listType=playlist&fs=0&autohide=1");
         }
         // Chunker: Stream (Twitch)
-        if (window.location.hash.substr('0', '3') == '?s=') {
+        if (window.location.href.substr('0', '30') == 'https://jotboard.github.io/?s=') {
           $("#_").toggleClass("soft-remove").toggleClass("soft-no-remove");
           $(".navigation, [main]").remove();
-          document.getElementById("_").setAttribute("src", "//www.twitch.tv/" + window.location.hash.substr("3") + "/embed");
+          document.getElementById("_").setAttribute("src", "//www.twitch.tv/" + window.location.href.substr("30") + "/embed");
         }
       });
       var mop = function(_function, _1) {
