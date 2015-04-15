@@ -1,8 +1,8 @@
 // Quick Banner
 var pragma = {
-  id: "5",
+  id: "6",
   title: "F***ING YOUNG/DEATHCAMP",
-  href: "//www.youtube.com/watch?v=SCcVrLcGD7k",
+  href: "//jotboard.github.io/?v=SCcVrLcGD7k",
 };
 
 window._idl = {};
