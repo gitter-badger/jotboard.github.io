@@ -1,12 +1,10 @@
-// Quick Banner
+window._idl = {};
+var _IDL = true;
 var pragma = {
   id: "5",
   title: "F***ING YOUNG/DEATHCAMP",
   href: "//jotboard.github.io/?v=SCcVrLcGD7k",
 };
-
-window._idl = {};
-var _IDL = true;
 head_conf = {
   html5: true
 };
@@ -29,10 +27,7 @@ var startUp = function() {
         window.open("//www.reddit.com/r/jotboard/submit", "_blank");
       }).addClass("fa-important").addClass("fa-plus");
       // Data
-      if (store.get(mop("prefix") + "Main")) {
-        $("[main] #form").val(store.get(mop("prefix") + "Main"));
-        console.info("The main board is avalible.");
-      }
+      if (store.get(mop("prefix") + "Main")) $("[main] #form").val(store.get(mop("prefix") + "Main"));
       $(".jb-btn .jb-save").on("click", function() {
         if (!$('#namespace').val()) {
           store.set(mop("prefix") + "Main", $("[main] #form").val());
