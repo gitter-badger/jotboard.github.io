@@ -191,11 +191,12 @@ div.pragma {
 #_ {
   background-color: #000;
   width: 100%;
-  height: 350px;
-  padding: 1.2vh 1.7% 1.2vh 1.7%;
+  height: 98%;
+  max-height: 350px;
+  padding: 1.2% 1.7% 1.2% 1.7%;
   transition: background-color 700ms ease;
 } #_:hover {
-  height: 98%;
+  padding: 1.2%;
   background-color: #191919;
 }
 
