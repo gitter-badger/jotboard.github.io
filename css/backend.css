@@ -189,15 +189,16 @@ div.pragma {
 }
 
 #_ {
-  background-color: #181818;
+  background-color: #000;
   width: 100%;
   height: 83.5%;
-  padding: 1.8vh 4% 1.8vh 4%;
-  transition: background-color 1000ms ease;
+  padding: 1.2vh 4% 1.2vh 4%;
+  transition: background-color 700ms ease;
 } #_:hover {
-  padding: 1.8vh;
-  height: 98.3%;
-  background-color: #000;
+  padding: 1.2vh;
+  height: 98.5%;
+  width: 100%;
+  background-color: #272727;
 }
 
 /* Themes ;3 */
