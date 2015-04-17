@@ -1,5 +1,6 @@
 #container, html, body {
   -webkit-font-smoothing: antialiased;
+  background-color: #2D2D2D;
   width: 100vw;
   height: 100vh;
   padding: 0;
