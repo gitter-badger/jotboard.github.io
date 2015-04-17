@@ -30,7 +30,7 @@
 
 #community a[href*="//jotboard.github.io/?v="], #community a[href*="//jotboard.github.io/?p="], #community a[href*="//jotboard.github.io/?s="] {
   border-bottom: 1px dotted #D3323E !important;
-  margin-bottom: 1px;
+  padding-bottom: 1px;
 }
 
 #form {

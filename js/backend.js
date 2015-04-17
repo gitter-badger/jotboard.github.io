@@ -88,7 +88,7 @@ var startUp = function() {
           if (window.location.href == 'https://jotboard.github.io/?s=') return false;
           $("#_").toggleClass("soft-remove").toggleClass("soft-no-remove");
           $(".navigation, [main]").remove();
-          document.getElementById("_").setAttribute("src", "//www.twitch.tv/" + window.location.href.substr("30") + "/embed");
+          document.getElementById("_").setAttribute("src", "//www.twitch.tv/" + window.location.href.substr("30") + "/popout/");
         }
         $('#community a[href*="//jotboard.github.io/?v="], #community a[href*="//jotboard.github.io/?p="], #community a[href*="//jotboard.github.io/?s="]').on('click', function(hrefEvent) {
           window.location.href = $(this).attr("href");
