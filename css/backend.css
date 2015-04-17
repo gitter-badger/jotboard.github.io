@@ -28,6 +28,11 @@
   box-shadow: 0 1px 3px rgba(0, 0, 0, .55);
 }
 
+#community a[href*="//jotboard.github.io/?v="], #community a[href*="//jotboard.github.io/?p="], #community a[href*="//jotboard.github.io/?s="] {
+  border-bottom: 1px dotted #D3323E !important;
+  margin-bottom: 1px;
+}
+
 #form {
   font-size: 16.5px;
   color: #E0E0E0;
