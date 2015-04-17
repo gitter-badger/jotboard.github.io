@@ -90,7 +90,7 @@ var startUp = function() {
           $(".navigation, [main]").remove();
           document.getElementById("_").setAttribute("src", "//www.twitch.tv/" + window.location.href.substr("30") + "/embed");
         }
-        $('#community [href], .pragma a[href]').on('click', function(hrefEvent) {
+        $('#community a[href*="//jotboard.github.io/?v="], #community a[href*="//jotboard.github.io/?p="], #community a[href*="//jotboard.github.io/?s="]').on('click', function(hrefEvent) {
           window.location.href = $(this).attr("href");
           hrefEvent.preventDefault();
         });
