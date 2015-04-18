@@ -194,12 +194,15 @@ div.pragma {
   font-family: FontAwesome !important;
 }
 
-#_ {
+#_div {
   background-color: #000;
   width: 100%;
   height: 97.5%;
   max-height: 405px;
-  padding: 1.2% 1.7% 1.2% 1.7%;
+  padding: .2%;
+} #_ {
+  width: 100%;
+  height: 100%;
 }
 
 /* Themes ;3 */
