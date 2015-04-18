@@ -2,8 +2,8 @@ window._idl = {};
 var _IDL = false;
 var pragma = {
   id: "6",
-  title: "F***ING YOUNG/DEATHCAMP",
-  href: "//jotboard.github.io/?v=SCcVrLcGD7k",
+  title: "Realmcast?",
+  href: "//jotboard.github.io/realm/podcast/",
 };
 head_conf = {
   html5: true
@@ -13,7 +13,7 @@ var startUp = function() {
   if (window.location.protocol == "http:") window.location.protocol = "https:";
   if (window.location.protocol == "https:") {
     head.load(["js/depend/store.js", "js/depend/jquery.js"], function() {
-      // 
+      // MOP
       var mop = function(_function, _1) {
         if (_function == 'hash') return window.location.href.indexOf("#" + _1) != -1;
         if (_function == 'prefix') return "JB_-";
@@ -55,7 +55,16 @@ var startUp = function() {
               '<a href="' + pragma.href + '">' + pragma.title + '</a>' +
             '</div>'
           );
-          localStorage['pragma-' + pragma.id] = true;
+          store.set('pragma-' + pragma.id, true);
+          store.forEach(function(_, __) {
+            if (_ == "pragma-1") store.remove('pragma-1');
+            if (_ == "pragma-2") store.remove('pragma-2');
+            if (_ == "pragma-3") store.remove('pragma-3');
+            if (_ == "pragma-4") store.remove('pragma-4');
+            if (_ == "pragma-5") store.remove('pragma-5');
+            if (_ == "pragma-6") store.remove('pragma-6');
+            // if (_ == "pragma-7") store.remove('pragma-7');
+          });
         }
         $.each(data.data.children, function(i, item) {
           $("#community").append(

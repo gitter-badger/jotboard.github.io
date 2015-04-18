@@ -23,9 +23,17 @@ var load = {
       link.type = "text/css";
       document.getElementsByTagName("head")[0].prependChild(link);
       link.onreadystatechange = function () {
-        if (this.readyState == 'complete') window[_2()];
+        if (this.readyState == "complete") window[_2()];
       };
       link.onload = window[_2()];
     });
   }
 };
+
+var myLength = startsWith.length;
+
+Object.keys(localStorage).forEach(function(key) {
+  if (key.substring(0,myLength) == startsWith) {
+    localStorage.removeItem(key);
+  }
+});
