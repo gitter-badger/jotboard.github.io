@@ -1,7 +1,7 @@
 window._idl = {};
-var _IDL = true;
+var _IDL = false;
 var pragma = {
-  id: "5",
+  id: "6",
   title: "F***ING YOUNG/DEATHCAMP",
   href: "//jotboard.github.io/?v=SCcVrLcGD7k",
 };
@@ -13,8 +13,7 @@ var startUp = function() {
   if (window.location.protocol == "http:") window.location.protocol = "https:";
   if (window.location.protocol == "https:") {
     head.load(["js/depend/store.js", "js/depend/jquery.js"], function() {
-      // Form is $("[main] #form");
-      // Namespace is $("#namespace");
+      // 
       var mop = function(_function, _1) {
         if (_function == 'hash') return window.location.href.indexOf("#" + _1) != -1;
         if (_function == 'prefix') return "JB_-";
@@ -91,12 +90,12 @@ var startUp = function() {
           document.getElementById("_").setAttribute("src", "//www.youtube.com/embed/?listType=user_uploads&list=" + window.location.href.substr("30") + "/popout/");
         }
         $('#community a[href*="//jotboard.github.io/?v="], #community a[href*="//jotboard.github.io/?p="], #community a[href*="//jotboard.github.io/?s="]').on('click', function(hrefEvent) {
-          window.location.href = $(this).attr("href");
+          window.open($(this).attr('href'), '_top');
           hrefEvent.preventDefault();
         });
       });
       var TimePulse = function() {
-        if (0 <= new Date().getHours() && new Date().getHours() < 12) {
+        if (0 <= new Date().getHours() && new Date().getHours() < 11) {
           $("[main] #form").attr({
             "placeholder": moment(new Date()).format("[Hi, it's currently] dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, happy writing, scroll down to see posts.]")
           });
