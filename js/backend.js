@@ -56,15 +56,6 @@ var startUp = function() {
             '</div>'
           );
           store.set('pragma-' + pragma.id, true);
-          store.forEach(function(_, __) {
-            if (_ == "pragma-1") store.remove('pragma-1');
-            if (_ == "pragma-2") store.remove('pragma-2');
-            if (_ == "pragma-3") store.remove('pragma-3');
-            if (_ == "pragma-4") store.remove('pragma-4');
-            if (_ == "pragma-5") store.remove('pragma-5');
-            if (_ == "pragma-6") store.remove('pragma-6');
-            // if (_ == "pragma-7") store.remove('pragma-7');
-          });
         }
         $.each(data.data.children, function(i, item) {
           $("#community").append(
