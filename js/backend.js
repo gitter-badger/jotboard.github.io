@@ -71,22 +71,19 @@ var startUp = function() {
         // Chunker: Video (YouTube)
         if (window.location.href.substr('0', '30') == 'https://jotboard.github.io/?v=') {
           if (window.location.href == 'https://jotboard.github.io/?v=') return false;
-          $("[nav], [main]").css("display", "none");
-          $("[_]").css("display", "block");
+          $("[nav], [main], [_]").toggleClass("soft-remove").toggleClass("soft-no-remove");
           $("[_] #_").attr("src", "//www.youtube.com/embed/" + window.location.href.substr("30", "41") + "?fs=0&autohide=1&autoplay=1");
         }
         // Chunker: Playlist (YouTube)
         if (window.location.href.substr('0', '30') == 'https://jotboard.github.io/?p=') {
           if (window.location.href == 'https://jotboard.github.io/?p=') return false;
-          $("[nav], [main]").css("display", "none");
-          $("[_]").css("display", "block");
+          $("[nav], [main], [_]").toggleClass("soft-remove").toggleClass("soft-no-remove");
           $("[_] #_").attr("src", "//www.youtube.com/embed/?list=" + window.location.href.substr("30") + "&listType=playlist&fs=0&autohide=1&autoplay=0");
         }
         // Chunker: Channel (YouTube)
         if (window.location.href.substr('0', '30') == 'https://jotboard.github.io/?u=') {
           if (window.location.href == 'https://jotboard.github.io/?u=') return false;
-          $("[nav], [main]").css("display", "none");
-          $("[_]").css("display", "block");
+          $("[nav], [main], [_]").toggleClass("soft-remove").toggleClass("soft-no-remove");
           $("[_] #_").attr("src", "//www.youtube.com/embed/?listType=user_uploads&list=" + window.location.href.substr("30") + "/popout/");
         }
         $('#community a[href*="//jotboard.github.io/?v="], #community a[href*="//jotboard.github.io/?p="], #community a[href*="//jotboard.github.io/?s="]').on('click', function(hrefEvent) {
