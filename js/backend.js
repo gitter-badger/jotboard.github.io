@@ -50,7 +50,7 @@ var startUp = function() {
       console.log('Moment.JS');
       $.getJSON('//www.reddit.com/r/jotboard/new.json', function(data) {
         if (!localStorage['pragma-' + pragma.id]) {
-          $('.navigation').before(
+          $('[nav]').before(
             '<div class="pragma">' +
               '<a href="' + pragma.href + '">' + pragma.title + '</a>' +
             '</div>'
@@ -71,8 +71,8 @@ var startUp = function() {
         // Chunker: Video (YouTube)
         if (window.location.href.substr('0', '30') == 'https://jotboard.github.io/?v=') {
           if (window.location.href == 'https://jotboard.github.io/?v=') return false;
-          $(".navigation, [main]").remove();
-          $("[_]").toggleClass("soft-remove").toggleClass("soft-no-remove");
+          $("[nav], [main]").remove();
+          $("[_]").css("display", "block");
           $("[_] #_").attr({
             "src": "//www.youtube.com/embed/" + window.location.href.substr("30", "41") + "?fs=0&autohide=1&autoplay=1"
           });
@@ -80,19 +80,25 @@ var startUp = function() {
         // Chunker: Playlist (YouTube)
         if (window.location.href.substr('0', '30') == 'https://jotboard.github.io/?p=') {
           if (window.location.href == 'https://jotboard.github.io/?p=') return false;
-          $(".navigation, [main]").remove();
-          $("[_]").toggleClass("soft-remove").toggleClass("soft-no-remove");
+          $("[nav], [main]").remove();
+          $("[_]").css("display", "block");
           $("[_] #_").attr({
             "src": "//www.youtube.com/embed/?list=" + window.location.href.substr("30") + "&listType=playlist&fs=0&autohide=1&autoplay=0"
+          });
+          $("[nav], [main]").css({
+            "display": "block"
           });
         }
         // Chunker: Channel (YouTube)
         if (window.location.href.substr('0', '30') == 'https://jotboard.github.io/?u=') {
           if (window.location.href == 'https://jotboard.github.io/?u=') return false;
-          $(".navigation, [main]").remove();
-          $("[_]").toggleClass("soft-remove").toggleClass("soft-no-remove");
+          $("[nav], [main]").remove();
+          $("[_]").css("display", "block");
           $("[_] #_").attr({
             "src": "//www.youtube.com/embed/?listType=user_uploads&list=" + window.location.href.substr("30") + "/popout/"
+          });
+          $("[nav], [main]").css({
+            "display": "block"
           });
         }
         $('#community a[href*="//jotboard.github.io/?v="], #community a[href*="//jotboard.github.io/?p="], #community a[href*="//jotboard.github.io/?s="]').on('click', function(hrefEvent) {

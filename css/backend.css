@@ -45,11 +45,11 @@
   color: #E0E0E0;
 }
 
-.navigation .container form {
+[nav] .container form {
   width: calc(100% - 190px);
   padding: 0 .5% 0 0;
   float: left;
-} .navigation {
+} [nav] {
   width: 100vw;
   min-height: 60px;
   padding: 0 1.3vw 0 1.3vw;
@@ -162,13 +162,13 @@ div.pragma {
 /* Form Scrollbar */
 
 /* Nav (if needed) Scrollbar */
-.navigation::-webkit-scrollbar { width: 0; }
-.navigation::-moz-scrollbar { width: 0; }
-.navigation::-o-scrollbar { width: 0; }
-.navigation::-ms-scrollbar { width: 0; }
+[nav]::-webkit-scrollbar { width: 0; }
+[nav]::-moz-scrollbar { width: 0; }
+[nav]::-o-scrollbar { width: 0; }
+[nav]::-ms-scrollbar { width: 0; }
 /* Nav (if needed) Scrollbar */
 
-.navigation .container form, .jb-btn {
+[nav] .container form, .jb-btn {
   margin: 15px 0 0 0;
 } #form {
   background: transparent;
@@ -200,7 +200,7 @@ div.pragma {
 
 /* Themes ;3 */
 /* Markiplier */
-.markiplier #container .navigation {
+.markiplier #container [nav] {
   background-image: url('img/themes/MarkiplierNav.png');
   background-repeat: no-repeat;
   background-position: center -80px;
@@ -212,7 +212,7 @@ div.pragma {
   background-size: cover;
 }
 /* /r/MontageParodies */
-.montageparodies #container .navigation {
+.montageparodies #container [nav] {
   background-image: url('img/themes/MontageParodiesNav.png');
   background-repeat: no-repeat;
   background-position: center 0;
