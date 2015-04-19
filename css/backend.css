@@ -188,6 +188,14 @@ div.pragma {
   font-family: FontAwesome !important;
 }
 
+[nav] *, [main], #community {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
 [_] {
   background-color: #000;
   width: 100%;
