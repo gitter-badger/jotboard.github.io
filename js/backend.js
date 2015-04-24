@@ -68,7 +68,7 @@ var startUp = function() {
             '</div>'
           );
         });
-        $('#community a[href*="//jotboard.github.io/?v="], #community a[href*="//jotboard.github.io/?p="], #community a[href*="//jotboard.github.io/?s="]').on('click', function(hrefEvent) {
+        $('#community a[href*="//jotboard.github.io/?v="], #community a[href*="//jotboard.github.io/?p="], #community a[href*="//jotboard.github.io/?u="]').on('click', function(hrefEvent) {
           // Chunker-based links open in the same window.
           window.open($(this).attr('href'), '_top');
           hrefEvent.preventDefault();
