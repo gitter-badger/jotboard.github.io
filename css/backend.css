@@ -1,10 +1,20 @@
-#container, html, body {
-  -webkit-font-smoothing: antialiased;
-  background-color: #202020;
+#container {
   width: 100vw;
-  height: 99vh;
+  height: 100vh;
   padding: 0;
   margin: 0;
+}
+
+html, body {
+  background-color: #202020;
+  width: 100vw;
+  height: 100vh;
+  padding: 0px;
+  margin: 0px;
+}
+
+a, p * {
+  -webkit-font-smoothing: antialiased;
 }
 
 [main] {
@@ -49,13 +59,11 @@
   padding: 0 .5% 0 0;
   float: left;
 } [nav] {
-  width: 99vw;
+  width: 100vw;
   min-height: 60px;
   padding: 0 1vw 0 1vw;
-  margin: .5vw 0 0 .5vw;
   background: rgb(34, 81, 202);
   box-shadow: 0 0 3px rgb(34, 81, 202);
-  border-radius: 3px;
 }
 
 div.pragma {
@@ -70,15 +78,14 @@ div.pragma {
 }
 
 #community {
-  width: 99%;
+  width: 100%;
   background-color: rgb(34, 81, 202);
   box-shadow: 0 0 4.5px rgb(34, 81, 202);
-  border-radius: 3px;
   padding: 2% 2% calc(2% - 7px) 2%;
   overflow-x: hidden;
-  margin: .5% 0 .5% .5%;
 } #community:empty {
-  opacity: .2;
+  opacity: .5;
+  height: 10%;
 } #community a[href]:after {
   font-size: 15px;
 } #community .article {
@@ -191,7 +198,7 @@ div.pragma {
 
 * {
   font-family: 'Futura', 'Trebuchet MS', 'Arial', sans-serif;
-  box-sizing: border-box;
+  box-sizing: border-box !important;
 } .fa-important {
   font-family: FontAwesome !important;
 }
