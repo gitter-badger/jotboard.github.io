@@ -69,7 +69,7 @@ var startUp = function() {
             '</div>'
           );
         });
-        $('#community a[href]').on('click', function(hrefEvent) {
+        $('#community a.title[href]').on('click', function(hrefEvent) {
           /* YouTube */
             // Video
             if ($(this).attr('href').substr('0', '31') == 'http://www.youtube.com/watch?v=') {
