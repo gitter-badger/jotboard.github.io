@@ -46,7 +46,7 @@ var startUp = function() {
         }
       }).addClass("fa-important").addClass("fa-cloud-download");
       $(".jb-btn .jb-reset").on("click", function() {
-        window.open("/", "_blank");
+        window.open("/", "_top");
       }).addClass("fa-important").addClass("fa-home");
     });
     head.load('js/depend/moment.js', function() {
