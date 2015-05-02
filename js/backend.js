@@ -97,9 +97,7 @@ var startUp = function() {
               window.open($(this).attr('href'), '_top');
             }
           /* Chunker */
-          else {
-            window.open($(this).attr('href'), "_blank");
-          }
+          else window.open($(this).attr('href'), "_blank");
           hrefEvent.preventDefault();
         });
       });

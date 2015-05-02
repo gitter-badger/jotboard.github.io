@@ -252,24 +252,28 @@ div.pragma {
 /* Themes ;3 */
 /* Markiplier */
 .markiplier #container [nav] {
-  background-image: url('img/themes/MarkiplierNav.png');
+  background-image: url('/img/themes/MarkiplierNav.png');
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
   background-repeat: no-repeat;
   background-position: center -80px;
   background-size: cover;
 } .markiplier #container #community {
-  background-image: url('img/themes/MarkiplierCommunity.jpg');
+  background-image: url('/img/themes/MarkiplierCommunity.jpg');
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
 }
 /* /r/MontageParodies */
 .montageparodies #container [nav] {
-  background-image: url('img/themes/MontageParodiesNav.png');
+  background-image: url('/img/themes/MontageParodiesNav.png');
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
   background-repeat: no-repeat;
   background-position: center 0;
   background-size: cover;
 } .montageparodies #container #community {
-  background-image: url('img/themes/MontageParodiesCommunity.png');
+  background-image: url('/img/themes/MontageParodiesCommunity.png');
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
   background-repeat: no-repeat;
   background-position: center 0;
   background-color: #FFF;
