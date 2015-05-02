@@ -20,7 +20,6 @@ var startUp = function() {
       };
       // Realm
       $(".jb-btn .jb-home").on("click", function() {
-        ga("send", "event", "Nav Button", "Home");
         window.open("//www.reddit.com/r/jotboard/", "_blank");
       }).addClass("fa-important").addClass("fa-heart");
       $(".jb-btn .jb-new").on("click", function() {

@@ -19,7 +19,7 @@ a, p * {
 
 [main] {
   padding: 1.5%;
-  height: calc(90% - 60px);
+  height: calc(65% - 60px);
   width: 100vw;
 }
 
@@ -84,8 +84,9 @@ div.pragma {
   padding: 2% 2% calc(2% - 7px) 2%;
   overflow-x: hidden;
 } #community:empty {
-  opacity: .5;
-  height: 10%;
+  background-color: rgb(34, 81, 202);
+  box-shadow: 0 0 0 rgb(0, 0, 0);
+  height: 35%;
 } #community a[href]:after {
   font-size: 15px;
 } #community .article {
@@ -113,6 +114,11 @@ div.pragma {
 } #community .article .points {
   cursor: default;
   text-decoration: none;
+} #community .jb-btn {
+  margin: 0 25% 3px 25%;
+  width: 50%;
+} #community .jb-btn .nav-select {
+  width: 49%;
 }
 
 #namespace {
