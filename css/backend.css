@@ -61,7 +61,7 @@ a, p * {
 } [nav] {
   width: 100vw;
   min-height: 60px;
-  padding: 0 1vw 0 1vw;
+  padding: 0 1.5vw 0 2vw;
   background: rgb(34, 81, 202);
   box-shadow: 0 0 3px rgb(34, 81, 202);
 }
@@ -115,10 +115,17 @@ div.pragma {
   cursor: default;
   text-decoration: none;
 } #community .jb-btn {
-  margin: 2% 10% 1% 10%;
+  margin: 1.5% 10% 1.5% 10%;
   width: 80%;
-} #community .jb-btn .nav-select {
+}
+
+#community .jb-btn .nav-select {
   width: 49%;
+  font-size: 45px;
+  text-shadow: 0 0 25px #333;
+} #community .jb-btn .nav-select:hover {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .55);
+  background-color: rgb(76, 111, 250);
 }
 
 #namespace {
