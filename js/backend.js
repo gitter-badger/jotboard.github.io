@@ -64,7 +64,7 @@ var startUp = function() {
               '<br>\n' +
               '<a class="author" href="//www.reddit.com/user/' + item.data.author + '">' + item.data.author + '</a>\n' +
               '<a class="thread" href="//www.reddit.com' + item.data.permalink + '" class="thread">Comments</a>\n' +
-              '<a class="points">' + item.data.score + '^</a>\n' +
+              '<a class="points">' + item.data.score + ' ^</a>\n' +
             '</div>'
           );
         });
