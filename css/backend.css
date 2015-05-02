@@ -13,7 +13,7 @@ html, body {
   margin: 0px;
 }
 
-a, p * {
+a, * * {
   -webkit-font-smoothing: antialiased;
 }
 
@@ -27,14 +27,14 @@ a, p * {
   content: attr(data-title);
   position: fixed;
   left: 0;
-  top: 60px;
+  bottom: 0;
   width: 100%;
-  padding: .6%;
-  font: 15px 'Futura', 'Trebuchet MS', 'Arial', sans-serif;
-  color: #FFF;
+  padding: 1% 0 .8% 0;
+  font: 14.5px 'Futura', 'Trebuchet MS', 'Arial', sans-serif;
+  color: #E9E9E9;
   cursor: default;
-  background-color: #000;
-  box-shadow: 0 0 5px rgba(0, 0, 0, .55);
+  background-color: rgb(0, 139, 255);
+  box-shadow: 0 0 5px rgb(0, 139, 255);
 }
 
 #form {
@@ -126,6 +126,9 @@ div.pragma {
 } #community .jb-btn .nav-select:hover {
   box-shadow: 0 1px 3px rgba(0, 0, 0, .55);
   background-color: rgb(76, 111, 250);
+} #community .jb-btn .nav-select:first-child {
+    width: 33.33%;
+    margin: 0 0 0 0;
 }
 
 #namespace {

@@ -136,8 +136,8 @@ var startUp = function() {
         // IDL
         if (_IDL === true) head.load(('https:' == document.location.protocol ? 'https://' : 'http://') + 'members.internetdefenseleague.org/include/?url=' + _idl.url + '&campaign=' + _idl.campaign + '&variant=modal');
         // Mobile
-        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) $("#container").remove();
-        else console.log("Not on mobile.");
+        // if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) $("#container").remove();
+        // else console.log("Not on mobile.");
         // Themes JS
         if (window.location.href.indexOf("#markiplier") != -1) {
           $("body").addClass("markiplier");
