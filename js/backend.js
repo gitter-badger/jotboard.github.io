@@ -45,6 +45,9 @@ var startUp = function() {
           console.info($("#namespace").val() + " > loaded");
         }
       }).addClass("fa-important").addClass("fa-cloud-download");
+      $(".jb-btn .jb-reset").on("click", function() {
+        window.open("/", "_blank");
+      }).addClass("fa-important").addClass("fa-home");
     });
     head.load('js/depend/moment.js', function() {
       console.log('Moment.JS');
