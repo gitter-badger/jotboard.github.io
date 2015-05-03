@@ -75,29 +75,29 @@ var startUp = function() {
           /* YouTube */
             // Video
             if ($(this).attr('href').substr('0', '31') == 'http://www.youtube.com/watch?v=') {
-              window.open('https://jotboard.github.io/?v=' + $(this).attr('href').substr('31', '42'), '_top');
+              window.open('https://jotboard.github.io/?v=' + $(this).attr('href').substr('31', '42'), '_self');
             } if ($(this).attr('href').substr('0', '32') == 'https://www.youtube.com/watch?v=') {
-              window.open('https://jotboard.github.io/?v=' + $(this).attr('href').substr('32', '43'), '_top');
+              window.open('https://jotboard.github.io/?v=' + $(this).attr('href').substr('32', '43'), '_self');
             }
             // Playlist
             if ($(this).attr('href').substr('0', '37') == 'http://www.youtube.com/playlist?list=') {
-              window.open('https://jotboard.github.io/?p=' + $(this).attr('href').substr('37'), '_blank');
+              window.open('https://jotboard.github.io/?p=' + $(this).attr('href').substr('37'), '_self');
             } if ($(this).attr('href').substr('0', '38') == 'https://www.youtube.com/playlist?list=') {
-              window.open('https://jotboard.github.io/?p=' + $(this).attr('href').substr('38'), '_blank');
+              window.open('https://jotboard.github.io/?p=' + $(this).attr('href').substr('38'), '_self');
             }
           /* YouTube */
           /* Chunker */
             // Video
             if ($(this).attr('href').substr('0', '30') == 'http://jotboard.github.io/?v=') {
-              window.open($(this).attr('href'), '_top');
+              window.open($(this).attr('href'), '_self');
             } if ($(this).attr('href').substr('0', '31') == 'https://jotboard.github.io/?v=') {
-              window.open($(this).attr('href'), '_top');
+              window.open($(this).attr('href'), '_self');
             }
             // Playlist
             if ($(this).attr('href').substr('0', '30') == 'http://jotboard.github.io/?p=') {
-              window.open($(this).attr('href'), '_top');
+              window.open($(this).attr('href'), '_self');
             } if ($(this).attr('href').substr('0', '31') == 'https://jotboard.github.io/?p=') {
-              window.open($(this).attr('href'), '_top');
+              window.open($(this).attr('href'), '_self');
             }
           /* Chunker */
           else window.open($(this).attr('href'), "_blank");
