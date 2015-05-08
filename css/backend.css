@@ -77,7 +77,7 @@ div.pragma {
   width: 100%;
   background-color: rgb(34, 81, 202);
   box-shadow: 0 0 4.5px rgb(34, 81, 202);
-  padding: 0 2% 0 2%;
+  padding: 0 2% 9px 2%;
   overflow-x: hidden;
 } #community:empty {
   background-color: rgb(34, 81, 202);
@@ -160,16 +160,18 @@ div.pragma {
   cursor: pointer;
   color: #FFF;
   text-align: center;
-  width: 32.74%;
-  font-size: 70px;
+  width: 33%;
+  font-size: 40px;
   margin: 0;
-  padding: 3.5% 2% 3.5% 2%;
+  padding: 1% 2% 1% 2%;
   transition: box-shadow 200ms cubic-bezier(0.51, -0.21, 0, 1.1), background-color 410ms cubic-bezier(0.51, -0.21, 0, 2.1);
   border-radius: 3px;
-} .com-select:hover {
+}
+
+/* .com-select:hover {
   box-shadow: 0 1px 3px rgba(0, 0, 0, .55);
   background-color: rgb(76, 142, 250);
-}
+} */
 
 /* Body Scrollbar */
 #body::-webkit-scrollbar { width: 0; }
