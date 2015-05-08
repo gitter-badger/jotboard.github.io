@@ -75,7 +75,7 @@ var startUp = function() {
           if ($(this).attr('href').substr('0', '32') == 'https://www.youtube.com/watch?v=') {
             $("[_] #_").attr("src", "//www.youtube.com/embed/" + $(this).attr('href').substr("32", "43") + "?fs=0&autohide=1&autoplay=1");
             $("[_]").toggleClass("soft-remove").toggleClass("soft-no-remove");
-            $("[nav], [main]").remove();
+            $("[nav], [main], #community .article").remove();
           }
           else window.open($(this).attr('href'), "_blank");
           hrefEvent.preventDefault();
