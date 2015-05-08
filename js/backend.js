@@ -72,23 +72,12 @@ var startUp = function() {
           );
         });
         $('#community a.title[href]').on('click', function(hrefEvent) {
-          /* YouTube */
-            // Video
-            if ($(this).attr('href').substr('0', '32') == 'https://www.youtube.com/watch?v=') {
-              $("[_]").toggleClass("soft-remove").toggleClass("soft-no-remove");
-              $("[nav], [main], #community .article").remove();
-              window.open("//www.youtube.com/embed/" + $(this).attr('href').substr("32", "43") + "?fs=0&autohide=1&autoplay=1", "_");
-              hrefEvent.preventDefault();
-            }
-            // Playlist
-            if ($(this).attr('href').substr('0', '37') == 'http://www.youtube.com/playlist?list=') {
-              $("[_]").toggleClass("soft-remove").toggleClass("soft-no-remove");
-              $("[nav], [main], #community .article").remove();
-              window.open('https://jotboard.github.io/?p=' + $(this).attr('href').substr('37'), '_');
-              hrefEvent.preventDefault();
-            }
-          /* YouTube */
-          else window.open($(this).attr('href'), "_blank");
+          if ($(this).attr('href').substr('0', '32') == 'https://www.youtube.com/watch?v=') {
+            $("[_]").toggleClass("soft-remove").toggleClass("soft-no-remove");
+            $("[nav], [main], #community .article").remove();
+            $("[_] #_").attr("src", "//www.youtube.com/embed/" + $(this).attr('href').substr("32", "43") + "?fs=0&autohide=1&autoplay=1");
+          }
+          else window.open($(this).attr('href').substr("0", "43"), "_blank");
           hrefEvent.preventDefault();
         });
       });
