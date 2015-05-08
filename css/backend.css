@@ -239,8 +239,6 @@ div.pragma {
 } #community a.title[href*="//twitter.com/"]:after,
 #community a.title[href*="//t.co/"]:after {
   content: " [Twitter]";
-} #community a.title[href*="//jotboard.github.io/"]:after {
-  content: " [Chnk]";
 } #community a.title[href*="//change.org/"]:after,
 #community a.title[href*="//www.change.org/"]:after {
   content: " [Change.org]";
