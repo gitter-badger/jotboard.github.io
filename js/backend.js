@@ -78,12 +78,14 @@ var startUp = function() {
               $("[_]").toggleClass("soft-remove").toggleClass("soft-no-remove");
               $("[nav], [main], #community .article").remove();
               window.open("//www.youtube.com/embed/" + $(this).attr('href').substr("32", "43") + "?fs=0&autohide=1&autoplay=1", "_");
+              hrefEvent.preventDefault();
             }
             // Playlist
             if ($(this).attr('href').substr('0', '37') == 'http://www.youtube.com/playlist?list=') {
               $("[_]").toggleClass("soft-remove").toggleClass("soft-no-remove");
               $("[nav], [main], #community .article").remove();
               window.open('https://jotboard.github.io/?p=' + $(this).attr('href').substr('37'), '_');
+              hrefEvent.preventDefault();
             }
           /* YouTube */
           else window.open($(this).attr('href'), "_blank");
