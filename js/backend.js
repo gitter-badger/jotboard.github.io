@@ -18,16 +18,23 @@ var startUp = function() {
         if (_function == 'hash') return window.location.href.indexOf("#" + _1) != -1;
         if (_function == 'prefix') return "JB_-";
       };
-      // Realm
-      $(".com-btn .jb-home").on("click", function() {
+      // new text
+      $(".com-btn .jb-new-text").on("click", function() {
+        window.open("//www.reddit.com/r/jotboard/submit", "_blank");
+      }).addClass("fa-important").addClass("fa-file-text-o");
+      // new link
+      $(".com-btn .jb-new-link").on("click", function() {
+        window.open("//www.reddit.com/r/jotboard/submit", "_blank");
+      }).addClass("fa-important").addClass("fa-link");
+      // realm
+      $(".com-btn .jb-realm").on("click", function() {
         window.open("//www.reddit.com/r/jotboard/", "_blank");
       }).addClass("fa-important").addClass("fa-heart");
-      $(".com-btn .jb-new").on("click", function() {
-        window.open("//www.reddit.com/r/jotboard/submit", "_blank");
-      }).addClass("fa-important").addClass("fa-plus");
+      // reset
       $(".com-btn .jb-reset").on("click", function() {
         window.open("/", "_top");
-      }).addClass("fa-important").addClass("fa-home");
+      }).addClass("fa-important").addClass("fa-refresh");
+
       // Data
       if (store.get(mop("prefix") + "Main")) $("[main] #form").val(store.get(mop("prefix") + "Main"));
       $(".jb-btn .jb-save").on("click", function() {
