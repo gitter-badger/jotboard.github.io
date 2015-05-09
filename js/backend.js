@@ -89,13 +89,12 @@ var startUp = function() {
         });
       });
       $(function() {
-        if (window.location.href.substr('0', '30') == 'https://jotboard.github.io/?v=' ||
-          window.location.href.substr('0', '29') == 'http://jotboard.github.io/?v=') {
-          $('[_] #_').attr('src', '//www.youtube.com/embed/' + (window.location.href.substr('30', '41') || window.location.href.substr('29', '40')) + '?fs=0&autohide=1&autoplay=1');
+        if (window.location.href.substr('0', '30') == 'https://jotboard.github.io/?v=') {
+          $('[_] #_').attr('src', '//www.youtube.com/embed/' + window.location.href.substr('30', '41') + '?fs=0&autohide=1&autoplay=1');
           $('[_]').toggleClass('soft-remove').toggleClass('soft-no-remove');
           $('[nav], [main], #community .article, #community .com-btn .form').remove();
         } if (window.location.href.substr('0', '30') == 'https://jotboard.github.io/?p=') {
-          $('[_] #_').attr('src', '//www.youtube.com/embed/?listType=playlist&list=' + window.location.href.substr('30') + '&autoplay=1&rel=0&autohide=1');
+          $('[_] #_').attr('src', '//www.youtube.com/embed/?listType=playlist&list=' + window.location.href.substr('30') + '&autoplay=1&rel=0&autohide=0');
           $('[_]').toggleClass('soft-remove').toggleClass('soft-no-remove');
           $('[nav], [main], #community .article, #community .com-btn .form').remove();
         } else return false;
