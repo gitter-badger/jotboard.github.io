@@ -88,10 +88,10 @@ var startUp = function() {
         });
       });
       $(function() {
-        if (window.location.href.substr('0', '30') == 'https://jotboard.github.io/?v=') {
+        if (window.location.href.substr('0', '30') === 'https://jotboard.github.io/?v=') {
           $("[_] #_").attr("src", "//www.youtube.com/embed/" + $(this).attr('href').substr("30", "41") + "?fs=0&autohide=1&autoplay=1");
           $("[nav], [main], #community .article, #community .com-btn .form, [_]").toggleClass("soft-remove").toggleClass("soft-no-remove");
-        } if (window.location.href.substr('0', '30') == 'https://jotboard.github.io/?p=') {
+        } if (window.location.href.substr('0', '30') === 'https://jotboard.github.io/?p=') {
           $("[_] #_").attr("src", "//www.youtube.com/embed/?listType=playlist&list=" + $(this).attr('href').substr("30") + "&autoplay=1&rel=0&autohide=1");
           $("[nav], [main], #community .article, #community .com-btn .form, [_]").toggleClass("soft-remove").toggleClass("soft-no-remove");
         } else return false;
