@@ -135,7 +135,11 @@ div.pragma {
 
 #community .com-btn form {
     width: 100%;
-    padding: 1% 0 1% 0;
+    padding: 1.5% 0 1.5% 0;
+    margin: 8px 0 8px 0;
+    background-color: rgb(34, 100, 202);
+    box-shadow: 0 .5px 2.5px rgb(34, 100, 202);
+    border-radius: 2px;
 } #community .com-btn form input {
     text-align: center;
     width: 100%;
