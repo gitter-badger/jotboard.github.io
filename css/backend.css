@@ -112,7 +112,7 @@ div.pragma {
   text-decoration: none;
 }
 
-#namespace {
+#jb-input {
   text-align: left;
   float: left;
   width: 100%;
@@ -123,24 +123,24 @@ div.pragma {
   color: #E0E0E0;
   border: 0;
   border-radius: 2px;
-} #namespace::-webkit-input-placeholder {
+} #jb-input::-webkit-input-placeholder {
   color: #E0E0E0;
-} #namespace:-moz-placeholder {
+} #jb-input:-moz-placeholder {
   color: #E0E0E0;
-} #namespace::-moz-placeholder {
+} #jb-input::-moz-placeholder {
   color: #E0E0E0;
-} #namespace::-ms-input-placeholder {
+} #jb-input::-ms-input-placeholder {
   color: #E0E0E0;
 }
 
-#community .com-btn form {
+#community .com-btn .form {
   width: 100%;
   padding: 1.5% 0 1.5% 0;
   margin: 0 0 1.5% 0;
   background-color: rgb(34, 100, 202);
   box-shadow: 0 .5px 2.5px rgb(34, 100, 202);
   border-radius: 2px;
-} #community .com-btn form input {
+} #community .com-btn .form #namespace {
   text-align: center;
   width: calc(97%);
   padding: 0;
@@ -148,17 +148,17 @@ div.pragma {
   font-size: 40px;
   /* line-height: 1.24; */
   background-color: transparent;
-  color: #E0E0E0;
+  color: #FFF;
   border: 0;
   border-radius: 2px;
-} #community .com-btn form input::-webkit-input-placeholder {
-  color: #E0E0E0;
-} #community .com-btn form input:-moz-placeholder {
-  color: #E0E0E0;
-} #community .com-btn form input::-moz-placeholder {
-  color: #E0E0E0;
-} #community .com-btn form input::-ms-input-placeholder {
-  color: #E0E0E0;
+} #community .com-btn .form #namespace::-webkit-input-placeholder {
+  color: #FFF;
+} #community .com-btn .form #namespace:-moz-placeholder {
+  color: #FFF;
+} #community .com-btn .form #namespace::-moz-placeholder {
+  color: #FFF;
+} #community .com-btn .form #namespace::-ms-input-placeholder {
+  color: #FFF;
 }
 
 .jb-btn {
