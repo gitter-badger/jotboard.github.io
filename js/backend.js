@@ -69,7 +69,7 @@ var startUp = function() {
         }
         $.each(data.data.children, function(i, item) {
           $("#community").append(
-            '<div class="article">\n' +
+            '<div class="article soft-no-remove">\n' +
               '<a class="title" href="' + item.data.url + '">' + item.data.title + '</a>\n' +
               '<br>\n' +
               '<a class="author" href="//www.reddit.com/user/' + item.data.author + '">' + item.data.author + '</a>\n' +
@@ -81,12 +81,20 @@ var startUp = function() {
         $('#community a.title[href]').on('click', function(hrefEvent) {
           if ($(this).attr('href').substr('0', '32') == 'https://www.youtube.com/watch?v=') {
             $("[_] #_").attr("src", "//www.youtube.com/embed/" + $(this).attr('href').substr("32", "43") + "?fs=0&autohide=1&autoplay=1");
-            $("[_]").toggleClass("soft-remove").toggleClass("soft-no-remove");
-            $("[nav], [main], #community .article, #community .com-btn .form").remove();
+            $("[nav], [main], #community .article, #community .com-btn .form, [_]").toggleClass("soft-remove").toggleClass("soft-no-remove");
           }
           else window.open($(this).attr('href'), "_blank");
           hrefEvent.preventDefault();
         });
+      });
+      $(function() {
+        if (window.location.href.substr('0', '30') == 'https://jotboard.github.io/?v=') {
+          $("[_] #_").attr("src", "//www.youtube.com/embed/" + $(this).attr('href').substr("30", "41") + "?fs=0&autohide=1&autoplay=1");
+          $("[nav], [main], #community .article, #community .com-btn .form, [_]").toggleClass("soft-remove").toggleClass("soft-no-remove");
+        } if (window.location.href.substr('0', '30') == 'https://jotboard.github.io/?p=') {
+          $("[_] #_").attr("src", "//www.youtube.com/embed/?listType=playlist&list=" + $(this).attr('href').substr("30") + "&autoplay=1&rel=0&autohide=1");
+          $("[nav], [main], #community .article, #community .com-btn .form, [_]").toggleClass("soft-remove").toggleClass("soft-no-remove");
+        } else return false;
       });
       var TimePulse = function() {
         if (0 <= new Date().getHours() && new Date().getHours() < 11) {
