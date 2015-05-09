@@ -65,7 +65,7 @@ var startUp = function() {
         }
         $.each(data.data.children, function(i, item) {
           $("#community").append(
-            '<div class="article soft-no-remove">\n' +
+            '<div class="article">\n' +
               '<a class="title" href="' + item.data.url + '">' + item.data.title + '</a>\n' +
               '<br>\n' +
               '<a class="author" href="//www.reddit.com/user/' + item.data.author + '">' + item.data.author + '</a>\n' +
