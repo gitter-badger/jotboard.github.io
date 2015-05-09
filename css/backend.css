@@ -181,7 +181,7 @@ div.pragma {
 }
 
 .com-btn {
-  margin: calc(1.5% + 5px) 10% 1.5% 10%;
+  margin: 1.5% 10% 1.5% 10%;
   width: 80%;
 }.com-select {
   display: inline-block;
@@ -191,6 +191,7 @@ div.pragma {
   width: 24.433%;
   font-size: 40px;
   padding: 1% 2% 1% 2%;
+  margin-top: 5px;
   transition: box-shadow 200ms cubic-bezier(0.51, -0.21, 0, 1.1), background-color 410ms cubic-bezier(0.51, -0.21, 0, 2.1);
   border-radius: 3px;
 }
