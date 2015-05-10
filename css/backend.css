@@ -102,34 +102,57 @@ div.pragma {
 
 #community .com-btn .form {
   display: inline-block;
-  width: 300px;
+  width: 500px;
   padding: 1%;
   background-color: rgb(34, 100, 202);
   border-radius: 3px;
-} #community .com-btn .form #namespace {
+} #namespace {
+  display: inline-block;
   text-align: left;
-  width: 100%;
+  float: left;
+  width: 50%;
   padding: 0;
   margin: 0;
   font-size: 40px;
-  /* line-height: 1.24; */
+  line-height: 1.24 !important;
   background-color: transparent;
+  border-left: 2px solid #333;
   color: #FFF;
   border: 0;
   border-radius: 2px;
-} #community .com-btn .form #namespace::-webkit-input-placeholder {
+} #namespace::-webkit-input-placeholder {
   color: #FFF;
-} #community .com-btn .form #namespace:-moz-placeholder {
+} #namespace:-moz-placeholder {
   color: #FFF;
-} #community .com-btn .form #namespace::-moz-placeholder {
+} #namespace::-moz-placeholder {
   color: #FFF;
-} #community .com-btn .form #namespace::-ms-input-placeholder {
+} #namespace::-ms-input-placeholder {
   color: #FFF;
 }
 
 .com-btn {
   margin: 1% 0 0 0;
   width: 100%;
+} #jb-input {
+  text-align: right;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  font-size: 40px;
+  line-height: 1.24 !important;
+  background-color: transparent;
+  border-left: 2px solid #333;
+  color: #FFF;
+  border: 0;
+  border-radius: 2px;
+} #jb-input::-webkit-input-placeholder {
+  color: #FFF;
+} #jb-input:-moz-placeholder {
+  color: #FFF;
+} #jb-input::-moz-placeholder {
+  color: #FFF;
+} #jb-input::-ms-input-placeholder {
+  color: #FFF;
 } .com-select {
   display: inline-block;
   float: right;
