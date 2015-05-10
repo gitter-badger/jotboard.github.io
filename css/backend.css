@@ -15,7 +15,7 @@ html, body {
 
 [main] {
   padding: 1.1%;
-  height: calc(65% - 60px);
+  height: 65%;
   width: 100%;
 }
 
@@ -48,18 +48,6 @@ html, body {
 } #form::-ms-input-placeholder {
   font-size: 16.5px;
   color: #E0E0E0;
-}
-
-[nav] .container form {
-  width: calc(100% - 90px);
-  padding: 0 .5% 0 0;
-  float: left;
-} [nav] {
-  width: 100%;
-  min-height: 60px;
-  padding: 0 1.5% 0 1.65%;
-  background: rgb(34, 81, 202);
-  box-shadow: 0 0 3px rgb(34, 81, 202);
 }
 
 div.pragma {
@@ -112,39 +100,17 @@ div.pragma {
   text-decoration: none;
 }
 
-#jb-input {
-  text-align: left;
-  float: left;
-  width: 100%;
-  padding: 0;
-  font-size: 24.6px;
-  line-height: 1.24;
-  background-color: transparent;
-  color: #E0E0E0;
-  border: 0;
-  border-radius: 2px;
-} #jb-input::-webkit-input-placeholder {
-  color: #E0E0E0;
-} #jb-input:-moz-placeholder {
-  color: #E0E0E0;
-} #jb-input::-moz-placeholder {
-  color: #E0E0E0;
-} #jb-input::-ms-input-placeholder {
-  color: #E0E0E0;
-}
-
 #community .com-btn .form {
-  width: 100%;
-  padding: 1.5% 0 1.5% 0;
-  margin: 0 0 1.5% 0;
+  display: inline-block;
+  width: 300px;
+  padding: 1%;
   background-color: rgb(34, 100, 202);
-  box-shadow: 0 .5px 2.5px rgb(34, 100, 202);
-  border-radius: 2px;
+  border-radius: 3px;
 } #community .com-btn .form #namespace {
-  text-align: center;
-  width: calc(97%);
+  text-align: left;
+  width: 100%;
   padding: 0;
-  margin: 0 1.5% 0 1.5%;
+  margin: 0;
   font-size: 40px;
   /* line-height: 1.24; */
   background-color: transparent;
@@ -161,42 +127,22 @@ div.pragma {
   color: #FFF;
 }
 
-.jb-btn {
-  width: 90px;
-  float: right;
-} .jb-btn .nav-select {
-  cursor: pointer;
-  float: inherit;
-  color: #F9F9F9;
-  text-align: center;
-  width: 50%;
-  font-size: 20px;
-  margin: 0;
-  padding: 5% 2% 5% 2%;
-  transition: box-shadow 200ms cubic-bezier(0.22, 0.61, 0.36, 1), background-color 210ms cubic-bezier(0.51, -0.21, 0, 1.1);
-  border-radius: 2px;
-} .jb-btn .nav-select:hover {
-  box-shadow: 0 1px 3px rgba(0, 0, 0, .55);
-  background-color: rgb(76, 142, 250);
-}
-
 .com-btn {
-  margin: 1.5% 10% 1.5% 10%;
-  width: 80%;
+  margin: 1% 0 0 0;
+  width: 100%;
 } .com-select {
   display: inline-block;
+  float: right;
   cursor: pointer;
   color: #FFF;
+  background-color: rgb(34, 100, 202);
   text-align: center;
-  width: calc(24% + 1px);
+  width: 100px;
   font-size: 50px;
-  padding: 1.5% 2% 1.5% 2%;
-  margin: 5px 0 5px 0;
+  padding: 1%;
+  margin: 0 1% 1% 0;
   transition: box-shadow 200ms cubic-bezier(0.51, -0.21, 0, 1.1), background-color 410ms cubic-bezier(0.51, -0.21, 0, 2.1);
   border-radius: 3px;
-} .com-select:hover {
-  box-shadow: 0 1px 3px rgba(0, 0, 0, .55);
-  background-color: rgb(76, 142, 250);
 }
 
 /* Body Scrollbar */
@@ -220,16 +166,7 @@ div.pragma {
 #form::-ms-scrollbar { width: 0; }
 /* Form Scrollbar */
 
-/* Nav (if needed) Scrollbar */
-[nav]::-webkit-scrollbar { width: 0; }
-[nav]::-moz-scrollbar { width: 0; }
-[nav]::-o-scrollbar { width: 0; }
-[nav]::-ms-scrollbar { width: 0; }
-/* Nav (if needed) Scrollbar */
-
-[nav] .container form, .jb-btn {
-  margin: 15px 0 0 0;
-} #form {
+#form {
   background: transparent;
   padding: 0;
   width: 100%;
@@ -249,7 +186,7 @@ div.pragma {
   font-family: FontAwesome !important;
 }
 
-[nav] *, [main], #community {
+[main], #community {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -282,13 +219,7 @@ div.pragma {
 
 /* Themes ;3 */
 /* Markiplier */
-.markiplier #container [nav] {
-  background-image: url('/img/themes/MarkiplierNav.png');
-  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
-  background-repeat: no-repeat;
-  background-position: center -80px;
-  background-size: cover;
-} .markiplier #container #community {
+.markiplier #container #community {
   background-color: rgba(221, 33, 84, 1);
   box-shadow: 0 0 0 rgba(0, 0, 0, 0);
   background-repeat: no-repeat;
@@ -296,13 +227,7 @@ div.pragma {
   background-size: cover;
 }
 /* /r/MontageParodies */
-.montageparodies #container [nav] {
-  background-image: url('/img/themes/MontageParodiesNav.png');
-  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
-  background-repeat: no-repeat;
-  background-position: center 0;
-  background-size: cover;
-} .montageparodies #container #community {
+.montageparodies #container #community {
   background-image: url('/img/themes/MontageParodiesCommunity.png');
   box-shadow: 0 0 0 rgba(0, 0, 0, 0);
   background-repeat: no-repeat;

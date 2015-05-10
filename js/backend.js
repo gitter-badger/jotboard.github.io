@@ -18,22 +18,9 @@ var startUp = function() {
         if (_function == 'hash') return window.location.href.indexOf("#" + _1) != -1;
         if (_function == 'prefix') return "JB_-";
       };
-      // Buttons
-      $(".com-btn .jb-new-text").on("click", function() {
-        window.open("//www.reddit.com/r/jotboard/submit", "_blank");
-      }).addClass("fa-important").addClass("fa-file-text-o");
-      $(".com-btn .jb-new-link").on("click", function() {
-        window.open("//www.reddit.com/r/jotboard/submit", "_blank");
-      }).addClass("fa-important").addClass("fa-link");
-      $(".com-btn .jb-realm").on("click", function() {
-        window.open("//www.reddit.com/r/jotboard/", "_blank");
-      }).addClass("fa-important").addClass("fa-heart");
-      $(".com-btn .jb-reset").on("click", function() {
-        window.open("/", "_top");
-      }).addClass("fa-important").addClass("fa-refresh");
       // Data
       if (store.get(mop("prefix") + "Main")) $("[main] #form").val(store.get(mop("prefix") + "Main"));
-      $(".jb-btn .jb-save").on("click", function() {
+      $(".jb-save").on("click", function() {
         if (!$('#namespace').val()) {
           store.set(mop("prefix") + "Main", $("[main] #form").val());
           console.info("Main > saved");
@@ -42,7 +29,7 @@ var startUp = function() {
           console.info($("#namespace").val() + " > saved");
         }
       }).addClass("fa-important").addClass("fa-cloud-upload");
-      $(".jb-btn .jb-load").on("click", function() {
+      $(".jb-load").on("click", function() {
         if (!$("#namespace").val()) {
           $("[main] #form").val(store.get(mop("prefix") + "Main"));
           console.info("Main > loaded");
@@ -51,6 +38,19 @@ var startUp = function() {
           console.info($("#namespace").val() + " > loaded");
         }
       }).addClass("fa-important").addClass("fa-cloud-download");
+      // Buttons
+      $(".jb-new-text").on("click", function() {
+        window.open("//www.reddit.com/r/jotboard/submit", "_blank");
+      }).addClass("fa-important").addClass("fa-file-text-o");
+      $(".jb-new-link").on("click", function() {
+        window.open("//www.reddit.com/r/jotboard/submit", "_blank");
+      }).addClass("fa-important").addClass("fa-link");
+      $(".jb-realm").on("click", function() {
+        window.open("//www.reddit.com/r/jotboard/", "_blank");
+      }).addClass("fa-important").addClass("fa-heart");
+      $(".jb-reset").on("click", function() {
+        window.open("/", "_top");
+      }).addClass("fa-important").addClass("fa-refresh");
     });
     head.load('js/depend/moment.js', function() {
       console.log('Moment.JS');
@@ -78,7 +78,7 @@ var startUp = function() {
           if ($(this).attr('href').substr('0', '32') == 'https://www.youtube.com/watch?v=') {
             $("[_] #_").attr("src", "//www.youtube.com/embed/" + $(this).attr('href').substr("32", "43") + "?fs=0&autohide=1&autoplay=1");
             $("[_]").toggleClass("soft-remove").toggleClass("soft-no-remove");
-            $("[nav], [main], #community .article, #community .com-btn .form").remove();
+            $("[main], #community .article, #community .com-btn .form").remove();
           }
           else window.open($(this).attr('href'), "_blank");
           hrefEvent.preventDefault();
@@ -88,11 +88,11 @@ var startUp = function() {
         if (window.location.href.substr('0', '30') == 'https://jotboard.github.io/?v=') {
           $('[_] #_').attr('src', '//www.youtube.com/embed/' + window.location.href.substr('30', '41') + '?fs=0&autohide=1&autoplay=1');
           $('[_]').toggleClass('soft-remove').toggleClass('soft-no-remove');
-          $('[nav], [main], #community .article, #community .com-btn .form').remove();
+          $('[main], #community .article, #community .com-btn .form').remove();
         } if (window.location.href.substr('0', '30') == 'https://jotboard.github.io/?p=') {
           $('[_] #_').attr('src', '//www.youtube.com/embed/?listType=playlist&list=' + window.location.href.substr('30') + '&autoplay=1&rel=0&autohide=0');
           $('[_]').toggleClass('soft-remove').toggleClass('soft-no-remove');
-          $('[nav], [main], #community .article, #community .com-btn .form').remove();
+          $('[main], #community .article, #community .com-btn .form').remove();
         } else return false;
       });
       var TimePulse = function() {
