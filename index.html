@@ -73,18 +73,6 @@
       <div _ class="soft-remove">
         <iframe src="about:blank" id="_" frameborder="0" allowfullscreen></iframe>
       </div>
-      <div nav>
-        <div class="container">
-          <div class="jb-btn">
-            <div class="jb-load nav-select" data-title="Load's the relevent text according to the name in Herobar (Main if empty)"></div>
-            <div class="jb-save nav-select" data-title="Save's the current text in form with current namespace in Herobar (Saves to Main if Herobar is empty)"></div>
-          </div>
-          <form action="//www.reddit.com/r/jotboard/search" method="GET" target="_blank">
-            <input tabindex="1" type="text" name="q" id="jb-input" title="Lookup Realm Content" placeholder="Jotboard" />
-            <input type="hidden" name="restrict_sr" value="on" />
-          </form>
-        </div>
-      </div>
       <div main>
         <textarea tabindex="2" id="form"></textarea>
       </div>
@@ -92,7 +80,13 @@
         <div class="com-btn">
           <div class="form">
             <input tabindex="3" id="namespace" placeholder="Board." title="Make, Load, Overwrite your Content" type="text" />
+            <form action="//www.reddit.com/r/jotboard/search" method="GET" target="_blank">
+              <input tabindex="1" type="text" name="q" id="jb-input" title="Lookup Realm Content" placeholder="Jotboard" />
+              <input type="hidden" name="restrict_sr" value="on" />
+            </form>
           </div>
+          <div class="jb-load com-select" data-title="Load's the relevent text according to the name in Herobar (Main if empty)"></div>
+          <div class="jb-save com-select" data-title="Save's the current text in form with current namespace in Herobar (Saves to Main if Herobar is empty)"></div>
           <div class="jb-new-text com-select" data-title="New Text Post"></div>
           <div class="jb-new-link com-select" data-title="New Link Post"></div>
           <div class="jb-realm com-select" data-title="Jotboard Realm Homepage"></div>
