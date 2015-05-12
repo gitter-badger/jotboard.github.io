@@ -177,26 +177,18 @@ div.pragma {
   color: #FFF;
 }
 
-/* Body Scrollbar */
-#body::-webkit-scrollbar { width: 0; }
-#body::-moz-scrollbar { width: 0; }
-#body::-o-scrollbar { width: 0; }
-#body::-ms-scrollbar { width: 0; }
-/* Body Scrollbar */
-
-/* Realm Scrollbar */
+/* Scrollbar */
+/* Realm */
 #community::-webkit-scrollbar { width: 0; }
 #community::-moz-scrollbar { width: 0; }
 #community::-o-scrollbar { width: 0; }
 #community::-ms-scrollbar { width: 0; }
-/* Realm Scrollbar */
-
-/* Form Scrollbar */
+/* Form */
 #form::-webkit-scrollbar { width: 0; }
 #form::-moz-scrollbar { width: 0; }
 #form::-o-scrollbar { width: 0; }
 #form::-ms-scrollbar { width: 0; }
-/* Form Scrollbar */
+/* Scrollbar */
 
 #form {
   background: transparent;
