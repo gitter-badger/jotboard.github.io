@@ -1,35 +1,35 @@
 var jtb = {
   // START Variable Body
-  idl: false,
-  prefx: respond('JB_-'),
+  idl: function() { return false; },
+  prefx: function() { return 'JB_-'; },
   protoc: {
     // jtb.protoc.http,https
-    http: respond('http:'),
-    https: respond('https:')
+    http: function() { return 'http:'; },
+    https: function() { return 'https:'; }
   },
   noticeboard: {
     // jtb.noticeboard.id,title,href
-    id: respond("6"),
-    title: respond("Realmcast?"),
-    href: respond("//jotboard.github.io/realm/podcast/")
+    id: function() { return "6"; },
+    title: function() { return "Realmcast?"; },
+    href: function() { return "//jotboard.github.io/realm/podcast/"; }
   },
   timepulse: {
-    timeTo: respond(9000),
-    stamp: respond(0 <= new Date().getHours() && new Date().getHours() < 11),
-    day: respond("[Hi, it's currently] dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, happy writing, scroll down to see posts.]"),
-    night: respond("[Hows it going? it's ]dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, bye-bye, scroll down to see posts.]")
+    timeTo: function() { return 9000; },
+    stamp: function() { return 0 <= new Date().getHours() && new Date().getHours() < 11; },
+    day: function() { return "[Hi, it's currently] dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, happy writing, scroll down to see posts.]"; },
+    night: function() { "[Hows it going? it's ]dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, bye-bye, scroll down to see posts.]"; }
   },
   mobile: {
     // jtb.mobile.agent
-    agent: respond(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))
+    agent: function() { return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent); }
   },
   hash: function(_1) {
     return window.location.href.indexOf("#" + _1) != -1;
   },
   themes: {
-    markiplier: respond("HELLO EVERYBODY! My Name is *not* Markiplier and welcome to Jotboard: Markiplier Edition"),
-    montageparodies: respond("Sup figit, preper to get hecked to deth by Jotboard: /r/MontageParodies Edition"),
-    none: respond("No theme in use.")
+    markiplier: function() { return "HELLO EVERYBODY! My Name is *not* Markiplier and welcome to Jotboard: Markiplier Edition"; },
+    montageparodies: function() { return "Sup figit, preper to get hecked to deth by Jotboard: /r/MontageParodies Edition"; },
+    none: function() { return "No theme in use."; }
   },
   // END Variable Body
 }, head_conf = {
