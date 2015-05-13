@@ -1,8 +1,6 @@
 var jtb = {
   // jtb.idl
   idl: false,
-  // jtb.prefx
-  prefx: 'JB_-',
   noticeboard: {
     // jtb.noticeboard.id,title,href
     id: "6",
@@ -19,24 +17,24 @@ var startUp = function() {
   if (window.location.protocol == "http:") window.location.protocol = "https:";
   if (window.location.protocol == "https:") {
     head.load(["js/depend/store.js", "js/depend/jquery.js"], function() {
-      // window._idl = {};
+      var prefix = "JB_-";
       // Data
-      if (store.get(jtb.prefx() + "Main")) $("[main] #form").val(store.get(jtb.prefx() + "Main"));
+      if (store.get(prefix + "Main")) $("[main] #form").val(store.get(prefix + "Main"));
       $(".jb-save").on("click", function() {
         if (!$('#namespace').val()) {
-          store.set(jtb.prefx() + "Main", $("[main] #form").val());
+          store.set(prefix + "Main", $("[main] #form").val());
           console.info("Main > saved");
         } else {
-          store.set(jtb.prefx() + $("#namespace").val(), $("[main] #form").val());
+          store.set(prefix + $("#namespace").val(), $("[main] #form").val());
           console.info($("#namespace").val() + " > saved");
         }
       }).addClass("fa-important").addClass("fa-cloud-upload");
       $(".jb-load").on("click", function() {
         if (!$("#namespace").val()) {
-          $("[main] #form").val(store.get(jtb.prefx() + "Main"));
+          $("[main] #form").val(store.get(prefix + "Main"));
           console.info("Main > loaded");
         } else {
-          $("[main] #form").val(store.get(jtb.prefx() + $("#namespace").val()));
+          $("[main] #form").val(store.get(prefix + $("#namespace").val()));
           console.info($("#namespace").val() + " > loaded");
         }
       }).addClass("fa-important").addClass("fa-cloud-download");
