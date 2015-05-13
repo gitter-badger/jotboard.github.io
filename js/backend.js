@@ -1,36 +1,14 @@
 var jtb = {
-  // START Variable Body
-  idl: function() { return false; },
-  prefx: function() { return 'JB_-'; },
-  protoc: {
-    // jtb.protoc.http,https
-    http: function() { return 'http:'; },
-    https: function() { return 'https:'; }
-  },
+  // jtb.idl
+  idl: false,
+  // jtb.prefx
+  prefx: 'JB_-',
   noticeboard: {
     // jtb.noticeboard.id,title,href
-    id: function() { return "6"; },
-    title: function() { return "Realmcast?"; },
-    href: function() { return "//jotboard.github.io/realm/podcast/"; }
-  },
-  timepulse: {
-    timeTo: function() { return 9000; },
-    stamp: function() { return 0 <= new Date().getHours() && new Date().getHours() < 11; },
-    day: function() { return "[Hi, it's currently] dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, happy writing, scroll down to see posts.]"; },
-    night: function() { "[Hows it going? it's ]dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, bye-bye, scroll down to see posts.]"; }
-  },
-  mobile: {
-    // jtb.mobile.agent
-    agent: function() { return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent); }
-  },
-  hash: function(_1) {
-    return window.location.href.indexOf("#" + _1) != -1;
-  },
-  themes: {
-    markiplier: function() { return "HELLO EVERYBODY! My Name is *not* Markiplier and welcome to Jotboard: Markiplier Edition"; },
-    montageparodies: function() { return "Sup figit, preper to get hecked to deth by Jotboard: /r/MontageParodies Edition"; },
-    none: function() { return "No theme in use."; }
-  },
+    id: "6",
+    title: "Realmcast?",
+    href: "//jotboard.github.io/realm/podcast/"
+  }
   // END Variable Body
 }, head_conf = {
   html5: true
@@ -38,10 +16,10 @@ var jtb = {
 window._idl = {};
 
 var startUp = function() {
-  if (window.location.protocol == jtb.protoc.http()) window.location.protocol = jtb.protoc.https();
-  if (window.location.protocol == jtb.protoc.https()) {
+  if (window.location.protocol == "http:") window.location.protocol = "https:";
+  if (window.location.protocol == "https:") {
     head.load(["js/depend/store.js", "js/depend/jquery.js"], function() {
-      window._idl = {};
+      // window._idl = {};
       // Data
       if (store.get(jtb.prefx() + "Main")) $("[main] #form").val(store.get(jtb.prefx() + "Main"));
       $(".jb-save").on("click", function() {
@@ -120,17 +98,17 @@ var startUp = function() {
         } else return false;
       });
       var pulse = function() {
-        if (jtb.timepulse.stamp()) {
+        if (0 <= new Date().getHours() && new Date().getHours() < 11) {
           $("[main] #form").attr({
-            "placeholder": moment(new Date()).format(jtb.timepulse.day())
+            "placeholder": moment(new Date()).format("[Hi, it's currently] dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, happy writing, scroll down to see posts.]")
           });
         } else {
           $("[main] #form").attr({
-            "placeholder": moment(new Date()).format(jtb.timepulse.night())
+            "placeholder": moment(new Date()).format("[Hows it going? it's ]dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, bye-bye, scroll down to see posts.]")
           });
         }
       }; pulse();
-      setInterval(pulse, timepulse.timeTo());
+      setInterval(pulse, 9000);
     });
     head.load("js/depend/prefixfree.js", function() {
       console.log("Prefixfree");
@@ -138,19 +116,26 @@ var startUp = function() {
         console.log("Font Awesome");
       });
       $(function() {
-        // IDL
-        if (jtb.idl === true) head.load(('https:' == document.location.protocol ? 'https://' : 'http://') + 'members.internetdefenseleague.org/include/?url=' + _idl.url + '&campaign=' + _idl.campaign + '&variant=modal');
-        // Mobile
-        if (jtb.mobile.agent()) $("#container").remove();
-        else console.log("Not on mobile.");
+        $(function() {
+          // Mobile
+          if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            $("#container").remove();
+          } else console.log("Not on mobile.");
+        });
         // Themes JS
         if (window.location.href.indexOf("#markiplier") != -1) {
           $("body").addClass("markiplier");
-          console.info(jtb.themes.markiplier());
+          console.info("HELLO EVERYBODY! My Name is *not* Markiplier and welcome to Jotboard: Markiplier Edition");
         } if (window.location.href.indexOf("#montageparodies") != -1) {
           $("body").addClass("montageparodies");
-          console.info(jtb.themes.montageparodies());
-        } else console.log(jtb.themes.none());
+          console.info("Sup figit, preper to get hecked to deth by Jotboard: /r/MontageParodies Edition");
+        } else console.log("No themes being used.");
+        // IDL
+        if (jtb.idl !== true) {
+          head.load(('https:' == document.location.protocol ? 'https://' : 'http://') +
+          'members.internetdefenseleague.org/include/?url=' + _idl.url +
+          '&campaign=' + _idl.campaign + '&variant=modal');
+        }
       });
     });
   }
