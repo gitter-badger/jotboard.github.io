@@ -1,7 +1,7 @@
 var jtb = {
   // START Variable Body
   idl: false,
-  prefx: 'JB_-',
+  prefx: function(){return 'JB_-';},
   protoc: {
     // jtb.protoc.http,https
     http: function(){return 'http:';},
@@ -14,14 +14,14 @@ var jtb = {
     href: "//jotboard.github.io/realm/podcast/"
   },
   timepulse: {
-    timeTo: 9000,
+    timeTo: function(){return 9000;},
     stamp: 0 <= new Date().getHours() && new Date().getHours() < 11,
     day: "[Hi, it's currently] dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, happy writing, scroll down to see posts.]",
     night: "[Hows it going? it's ]dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, bye-bye, scroll down to see posts.]"
   },
   mobile: {
     // jtb.mobile.agent
-    agent: /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+    agent: function(){return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);}
   },
   hash: function(_1) {
     return window.location.href.indexOf("#" + _1) != -1;
