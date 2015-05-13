@@ -4,8 +4,8 @@ var jtb = {
   prefx: 'JB_-',
   protoc: {
     // jtb.protoc.http,https
-    http: 'http:',
-    https: 'https:'
+    http: function() {return 'http:';},
+    https: function(){return 'https:';}
   },
   noticeboard: {
     // jtb.noticeboard.id,title,href
