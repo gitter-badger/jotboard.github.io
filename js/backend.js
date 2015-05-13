@@ -1,46 +1,70 @@
-window._idl = {};
-var _IDL = false;
-var pragma = {
-  id: "6",
-  title: "Realmcast?",
-  href: "//jotboard.github.io/realm/podcast/",
-};
-head_conf = {
+var jtb = {
+  // START Variable Body
+  idl: false,
+  prefx: 'JB_-',
+  protoc: {
+    // jtb.protoc.http,https
+    http: 'http:',
+    https: 'https:'
+  },
+  noticeboard: {
+    // jtb.noticeboard.id,title,href
+    id: "6",
+    title: "Realmcast?",
+    href: "//jotboard.github.io/realm/podcast/"
+  },
+  timepulse: {
+    timeTo: 9000,
+    stamp: 0 <= new Date().getHours() && new Date().getHours() < 11,
+    day: "[Hi, it's currently] dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, happy writing, scroll down to see posts.]",
+    night: "[Hows it going? it's ]dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, bye-bye, scroll down to see posts.]"
+  },
+  mobile: {
+    // jtb.mobile.agent
+    agent: /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+  },
+  hash: function(_1) {
+    return window.location.href.indexOf("#" + _1) != -1;
+  },
+  themes: {
+    markiplier: "HELLO EVERYBODY! My Name is *not* Markiplier and welcome to Jotboard: Markiplier Edition",
+    montageparodies: "Sup figit, preper to get hecked to deth by Jotboard: /r/MontageParodies Edition",
+    none: "No theme in use."
+  },
+  // END Variable Body
+}, head_conf = {
   html5: true
 };
+window._idl = {};
 
 var startUp = function() {
-  if (window.location.protocol == "http:") window.location.protocol = "https:";
-  if (window.location.protocol == "https:") {
+  if (window.location.protocol == jtb.protoc.http()) window.location.protocol = jtb.protoc.https();
+  if (window.location.protocol == jtb.protoc.https()) {
     head.load(["js/depend/store.js", "js/depend/jquery.js"], function() {
-      // MOP
-      var mop = function(_function, _1) {
-        if (_function == 'hash') return window.location.href.indexOf("#" + _1) != -1;
-        if (_function == 'prefix') return "JB_-";
-      };
+      window._idl = {};
       // Data
-      if (store.get(mop("prefix") + "Main")) $("[main] #form").val(store.get(mop("prefix") + "Main"));
+      if (store.get(jtb.prefx() + "Main")) $("[main] #form").val(store.get(jtb.prefx() + "Main"));
       $(".jb-save").on("click", function() {
         if (!$('#namespace').val()) {
-          store.set(mop("prefix") + "Main", $("[main] #form").val());
+          store.set(jtb.prefx() + "Main", $("[main] #form").val());
           console.info("Main > saved");
         } else {
-          store.set(mop("prefix") + $("#namespace").val(), $("[main] #form").val());
+          store.set(jtb.prefx() + $("#namespace").val(), $("[main] #form").val());
           console.info($("#namespace").val() + " > saved");
         }
       }).addClass("fa-important").addClass("fa-cloud-upload");
       $(".jb-load").on("click", function() {
         if (!$("#namespace").val()) {
-          $("[main] #form").val(store.get(mop("prefix") + "Main"));
+          $("[main] #form").val(store.get(jtb.prefx() + "Main"));
           console.info("Main > loaded");
         } else {
-          $("[main] #form").val(store.get(mop("prefix") + $("#namespace").val()));
+          $("[main] #form").val(store.get(jtb.prefx() + $("#namespace").val()));
           console.info($("#namespace").val() + " > loaded");
         }
       }).addClass("fa-important").addClass("fa-cloud-download");
       // Buttons
       $(".jb-new-text").on("click", function() {
-        window.open("//www.reddit.com/r/jotboard/submit", "_blank");
+        window.open("//www.reddit.com/r/jotboard/submit?selftext=true", "_blank");
       }).addClass("fa-important").addClass("fa-file-text-o");
       $(".jb-new-link").on("click", function() {
         window.open("//www.reddit.com/r/jotboard/submit", "_blank");
@@ -55,21 +79,21 @@ var startUp = function() {
     head.load('js/depend/moment.js', function() {
       console.log('Moment.JS');
       $.getJSON('//www.reddit.com/r/jotboard/new.json', function(data) {
-        if (!localStorage['pragma-' + pragma.id]) {
+        if (!localStorage['pragma-' + jtb.noticeboard.id]) {
           $('#community').before(
             '<div class="pragma">' +
-              '<a href="' + pragma.href + '">' + pragma.title + '</a>' +
+              '<a href="' + jtb.noticeboard.href + '">' + jtb.noticeboard.title + '</a>' +
             '</div>'
           );
-          store.set('pragma-' + pragma.id, true);
+          store.set('pragma-' + jtb.noticeboard.id, true);
         }
         $.each(data.data.children, function(i, item) {
           $("#community").append(
             '<div class="article">\n' +
               '<a class="title" href="' + item.data.url + '">' + item.data.title + '</a>\n' +
               '<br>\n' +
-              '<a class="author" href="//www.reddit.com/user/' + item.data.author + '">' + item.data.author + '</a>\n' +
-              '<a class="thread" href="//www.reddit.com' + item.data.permalink + '" class="thread">Comments</a>\n' +
+              '<a class="author" target="_blank" href="//www.reddit.com/user/' + item.data.author + '">' + item.data.author + '</a>\n' +
+              '<a class="thread" target="_blank" href="//www.reddit.com' + item.data.permalink + '" class="thread">Comments</a>\n' +
               '<a class="points">' + item.data.score + ' ^</a>\n' +
             '</div>'
           );
@@ -80,7 +104,7 @@ var startUp = function() {
             $("[_]").toggleClass("soft-remove").toggleClass("soft-no-remove");
             $("[main], .article, .com-btn .form, .jb-save, .jb-load").remove();
           }
-          else window.open($(this).attr('href'), "_blank");
+          else window.open($(this).attr('href'), '_blank');
           hrefEvent.preventDefault();
         });
       });
@@ -95,18 +119,18 @@ var startUp = function() {
           $("[main], .article, .com-btn .form, .jb-save, .jb-load").remove();
         } else return false;
       });
-      var TimePulse = function() {
-        if (0 <= new Date().getHours() && new Date().getHours() < 11) {
+      var pulse = function() {
+        if (jtb.timepulse.stamp()) {
           $("[main] #form").attr({
-            "placeholder": moment(new Date()).format("[Hi, it's currently] dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, happy writing, scroll down to see posts.]")
+            "placeholder": moment(new Date()).format(jtb.timepulse.day())
           });
         } else {
           $("[main] #form").attr({
-            "placeholder": moment(new Date()).format("[Hows it going? it's ]dddd[, the] Do [of] MMMM YYYY[ and the time is] h:mm a[, bye-bye, scroll down to see posts.]")
+            "placeholder": moment(new Date()).format(jtb.timepulse.night())
           });
         }
-      }; TimePulse();
-      setInterval(TimePulse, 9000);
+      }; pulse();
+      setInterval(pulse, timepulse.timeTo());
     });
     head.load("js/depend/prefixfree.js", function() {
       console.log("Prefixfree");
@@ -115,20 +139,18 @@ var startUp = function() {
       });
       $(function() {
         // IDL
-        if (_IDL === true) head.load(('https:' == document.location.protocol ? 'https://' : 'http://') + 'members.internetdefenseleague.org/include/?url=' + _idl.url + '&campaign=' + _idl.campaign + '&variant=modal');
+        if (jtb.idl === true) head.load(('https:' == document.location.protocol ? 'https://' : 'http://') + 'members.internetdefenseleague.org/include/?url=' + _idl.url + '&campaign=' + _idl.campaign + '&variant=modal');
         // Mobile
-        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) $("#container").remove();
+        if (jtb.mobile.agent()) $("#container").remove();
         else console.log("Not on mobile.");
         // Themes JS
         if (window.location.href.indexOf("#markiplier") != -1) {
           $("body").addClass("markiplier");
-          console.info("HELLO EVERYBODY! My Name is *not* Markiplier and welcome to Jotboard: Markiplier Edition");
+          console.info(jtb.themes.markiplier());
         } if (window.location.href.indexOf("#montageparodies") != -1) {
           $("body").addClass("montageparodies");
-          console.info("Sup figit, preper to get hecked to deth by Jotboard: /r/MontageParodies Edition");
-        } else {
-          console.log("No theme in use.");
-        }
+          console.info(jtb.themes.montageparodies());
+        } else console.log(jtb.themes.none());
       });
     });
   }

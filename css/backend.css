@@ -111,25 +111,28 @@ div.pragma {
   display: inline-block;
 }
 
-#community .com-btn .form form {
-  width: 50%;
-} #community .com-btn .form {
-  width: 50%;
-  min-width: 360px;
-  padding: 1%;
-  background-color: rgb(34, 100, 202);
-  border-radius: 3px;
-} #namespace {
-  text-align: left;
-  float: left;
-  width: 50%;
+/* #namespace, #jb-input */
+#namespace, #jb-input {
+  text-align: center;
   padding: 0;
   font-size: 40px;
-  line-height: 1.24 !important;
   background-color: transparent;
   color: #FFF;
   border: 0;
   border-radius: 2px;
+}
+/* #namespace, #jb-input */
+
+/* .com-select, #namespace, #jb-input */
+.com-select, #namespace, #jb-input {
+  line-height: 1.24 !important;
+}
+/* .com-select, #namespace, #jb-input */
+
+/* #namespace */
+#namespace {
+  float: left;
+  width: 50%;
 } #namespace::-webkit-input-placeholder {
   color: #FFF;
 } #namespace:-moz-placeholder {
@@ -139,8 +142,18 @@ div.pragma {
 } #namespace::-ms-input-placeholder {
   color: #FFF;
 }
+/* #namespace */
 
-.com-btn {
+/* #jb-input, .com-btn, .com-select */
+#community .com-btn .form form {
+  width: 50%;
+} #community .com-btn .form {
+  width: 50%;
+  min-width: 360px;
+  padding: 1%;
+  background-color: rgb(34, 100, 202);
+  border-radius: 3px;
+} .com-btn {
   margin: 1.5% 0 1.5% 0;
   width: 100%;
 } .com-select {
@@ -149,24 +162,16 @@ div.pragma {
   background-color: rgb(34, 100, 202);
   text-align: center;
   width: calc(8.33333333% - 1%);
-  font-size: 40px;
-  line-height: 1.24;
+  font-size: 41px;
   padding: 1% 0 1% 0;
   transition: box-shadow 200ms cubic-bezier(0.51, -0.21, 0, 1.1), background-color 410ms cubic-bezier(0.51, -0.21, 0, 2.1);
   border-radius: 3px;
 }
+/* #jb-input, .com-btn, .com-select */
 
+/* #jb-input */
 #jb-input {
-  text-align: right;
   width: 100%;
-  padding: 0;
-  margin: 0;
-  font-size: 40px;
-  line-height: 1.24 !important;
-  background-color: transparent;
-  color: #FFF;
-  border: 0;
-  border-radius: 2px;
 } #jb-input::-webkit-input-placeholder {
   color: #FFF;
 } #jb-input:-moz-placeholder {
@@ -176,6 +181,7 @@ div.pragma {
 } #jb-input::-ms-input-placeholder {
   color: #FFF;
 }
+/* #jb-input */
 
 /* Scrollbar */
 /* Realm */
@@ -198,7 +204,9 @@ div.pragma {
   resize: none;
   outline: none;
   border: none;
-} .remove { display: none; }
+} .remove {
+  display: none;
+}
 
 *:focus {
   outline: none;
