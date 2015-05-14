@@ -116,6 +116,7 @@ div.pragma {
   text-align: center;
   padding: 0;
   font-size: 40px;
+  font-family: "Noto Sans", san-serif;
   background-color: transparent;
   color: #FFF;
   border: 0;
@@ -234,6 +235,7 @@ body::-webkit-scrollbar:horizontal {
   font-family: 'Roboto Draft', sans-serif;
   box-sizing: border-box !important;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 } .fa-important {
   font-family: FontAwesome !important;
 }

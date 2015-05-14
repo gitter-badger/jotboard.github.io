@@ -112,8 +112,8 @@ var startUp = function() {
       console.log("Prefixfree");
       head.load("//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css", function() {
         console.log("Font Awesome");
-        head.load("css/depend/roboto-draft.css", function() {
-          console.log("Roboto Draft");
+        head.load("css/depend/font-draft.css", function() {
+          console.log("Font Draft");
         });
       });
       $(function() {
