@@ -15,11 +15,11 @@ html, body {
 
 [main] {
   height: 35%;
-  transition: height 220ms cubic-bezier(0.7, -0.23, 0.08, 1.07);
+  transition: height 220ms cubic-bezier(0.75, -0.07, 0.07, 1.03);
   width: 100%;
   padding: 1%;
 } [main]:hover {
-  height: 45%;
+  height: 60%;
   width: 100%;
 }
 
@@ -205,10 +205,15 @@ div.pragma {
   width: 0;
 }
 /* Body */
-#body::-webkit-scrollbar:horizontal { width: 0; }
-#body::-moz-scrollbar:horizontal { width: 0; }
-#body::-o-scrollbar:horizontal { width: 0; }
-#body::-ms-scrollbar:horizontal { width: 0; }
+body::-webkit-scrollbar:horizontal {
+  width: 2px;
+} body::-moz-scrollbar:horizontal {
+  width: 0;
+} body::-o-scrollbar:horizontal {
+  width: 0;
+} body::-ms-scrollbar:horizontal {
+  width: 0;
+}
 /* Scrollbar */
 
 #form {
@@ -240,17 +245,10 @@ div.pragma {
   -o-user-select: none;
 }
 
-#community a.title[href*="//vid.me/"]:after {
-  content: " [Vidme]";
-} #community a.title[href*="//www.youtube.com/"]:after,
+#community a.title[href*="//vid.me/"]:after,
+#community a.title[href*="//www.youtube.com/"]:after,
 #community a.title[href*="//youtu.be/"]:after {
-  content: " [YouTube]";
-} #community a.title[href*="//twitter.com/"]:after,
-#community a.title[href*="//t.co/"]:after {
-  content: " [Twitter]";
-} #community a.title[href*="//change.org/"]:after,
-#community a.title[href*="//www.change.org/"]:after {
-  content: " [Change.org]";
+  content: " [Video]";
 }
 
 [_] {
