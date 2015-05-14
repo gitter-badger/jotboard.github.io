@@ -206,8 +206,10 @@ div.pragma {
   width: 0;
 }
 /* Body */
-#body::-webkit-scrollbar {
+#body::-webkit-scrollbar:horizontal {
   width: 2px;
+  background-color: #FFF;
+  box-shadow: 0 0 5px rgba(255, 255, 255, .5);
 } #body::-moz-scrollbar {
   width: 2px;
 } #body::-o-scrollbar {
