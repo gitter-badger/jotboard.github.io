@@ -231,7 +231,7 @@ body::-webkit-scrollbar:horizontal {
 *:focus {
   outline: none;
 } * {
-  font-family: 'Futura', 'Trebuchet MS', 'Arial', sans-serif;
+  font-family: 'Roboto Draft', sans-serif;
   box-sizing: border-box !important;
   -webkit-font-smoothing: antialiased;
 } .fa-important {
