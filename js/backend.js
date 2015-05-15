@@ -68,8 +68,8 @@ var startUp = function() {
             "<div class='article'>\n" +
               "<a class='title' load='" + item.data.url + "'>" + item.data.title + "</a>\n" +
               "<br>\n" +
-              "<a class='author' load='realmOpen(&quot;" + "https://www.reddit.com/u/" + item.data.author + "&quot;)'>" + item.data.author + "</a>\n" +
-              "<a class='thread' load='" + item.data.permalink + "'>Comments</a>\n" +
+              "<a class='author' load='" + "https://www.reddit.com/u/" + item.data.author + "'>" + item.data.author + "</a>\n" +
+              "<a class='thread' load='https://www.reddit.com" + item.data.permalink + "'>Comments</a>\n" +
               "<a class='points'>" + item.data.score + " ^</a>\n" +
             "</div>"
           );
@@ -85,7 +85,6 @@ var startUp = function() {
             $("[_]").toggleClass("soft-remove").toggleClass("soft-no-remove");
             $("[main], .article, .com-btn .form, .jb-save, .jb-load").remove();
           }
-          else window.open($(this).attr('load'), '_blank');
         });
       });
       $(function() {
