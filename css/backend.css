@@ -1,5 +1,6 @@
 #container {
   width: 100%;
+  min-width: 730px;
   height: 100%;
   padding: 0;
   margin: 0;
@@ -67,7 +68,6 @@ div.pragma {
 
 #community {
   width: 100%;
-  min-width: 730px;
   background-color: rgb(34, 81, 202);
   box-shadow: 0 0 4.5px rgb(34, 81, 202);
   padding: 0 2% 0 2%;
@@ -76,8 +76,6 @@ div.pragma {
   background-color: rgb(34, 81, 202);
   box-shadow: 0 0 0 rgb(0, 0, 0);
   height: 35%;
-} #community a[href]:after {
-  font-size: 15px;
 } #community .article {
   width: 100%;
   background-color: rgb(34, 100, 202);
@@ -93,6 +91,8 @@ div.pragma {
   text-decoration: none;
   padding: 0 3px 2.5px 0;
   color: #F0F0F0;
+} #community a.title[load]:after {
+  font-size: 15px;
 } #community .article .thread, #community .article .author, #community .article .points {
   float: right;
   color: #F0F0F0;
@@ -206,13 +206,13 @@ div.pragma {
   width: 0;
 }
 /* Body */
-body::-webkit-scrollbar:horizontal {
-  width: 2px;
-} body::-moz-scrollbar:horizontal {
+body::-webkit-scrollbar {
   width: 0;
-} body::-o-scrollbar:horizontal {
+} body::-moz-scrollbar {
   width: 0;
-} body::-ms-scrollbar:horizontal {
+} body::-o-scrollbar {
+  width: 0;
+} body::-ms-scrollbar {
   width: 0;
 }
 /* Scrollbar */
