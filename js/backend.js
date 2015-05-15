@@ -68,7 +68,7 @@ var startUp = function() {
             "<div class='article'>\n" +
               "<a class='title' onclick='realmOpen(" + item.data.url + ")'>" + item.data.title + "</a>\n" +
               "<br>\n" +
-              "<a class='author' onclick='realmOpen(" + "https://www.reddit.com/u/" + item.data.author + ")'>" + item.data.author + "</a>\n" +
+              "<a class='author' onclick='realmOpen(&quot;" + "https://www.reddit.com/u/" + item.data.author + "&quot;)'>" + item.data.author + "</a>\n" +
               "<a class='thread' onclick='realmOpen(" + item.data.permalink + ")'>Comments</a>\n" +
               "<a class='points'>" + item.data.score + " ^</a>\n" +
             "</div>"
