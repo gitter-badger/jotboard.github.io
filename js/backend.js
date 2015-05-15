@@ -65,29 +65,42 @@ var startUp = function() {
         }
         $.each(data.data.children, function(i, item) {
           $("#community").append(
-            '<div class="article">\n' +
-              '<a class="title" href="' + item.data.url + '">' + item.data.title + '</a>\n' +
-              '<br>\n' +
-              '<a class="author" target="_blank" href="//www.reddit.com/user/' + item.data.author + '">' + item.data.author + '</a>\n' +
-              '<a class="thread" target="_blank" href="//www.reddit.com' + item.data.permalink + '" class="thread">Comments</a>\n' +
-              '<a class="points">' + item.data.score + ' ^</a>\n' +
-            '</div>'
+            "<div class='article'>\n" +
+              "<a class='title' onclick='realmOpen(" + item.data.url + ")'>" + item.data.title + "</a>\n" +
+              "<br>\n" +
+              "<a class='author' onclick='realmOpen(" + "https://www.reddit.com/u/" + item.data.author + ")'>" + item.data.author + "</a>\n" +
+              "<a class='thread' onclick='realmOpen(" + item.data.permalink + ")'>Comments</a>\n" +
+              "<a class='points'>" + item.data.score + " ^</a>\n" +
+            "</div>"
           );
         });
-        $('#community a.title[href]').on('click', function(hrefEvent) {
-          if ($(this).attr('href').substr('0', '32') == 'https://www.youtube.com/watch?v=') {
+        var realmOpen = function(_1) {
+          if (_1.substr('0', '32') == 'https://www.youtube.com/watch?v=') {
             $("[_] #_").attr("src", "//www.youtube.com/embed/" + $(this).attr('href').substr('32', '43') + "?fs=0&autohide=1&autoplay=1");
             $("[_]").toggleClass("soft-remove").toggleClass("soft-no-remove");
             $("[main], .article, .com-btn .form, .jb-save, .jb-load").remove();
           }
-          if ($(this).attr('href').substr('0', '30') == 'https://jotboard.github.io/?v=') {
+          if (_1.substr('0', '30') == 'https://jotboard.github.io/?v=') {
             $("[_] #_").attr("src", "//www.youtube.com/embed/" + $(this).attr('href').substr('30', '41') + "?fs=0&autohide=1&autoplay=1");
             $("[_]").toggleClass("soft-remove").toggleClass("soft-no-remove");
             $("[main], .article, .com-btn .form, .jb-save, .jb-load").remove();
           }
           else window.open($(this).attr('href'), '_blank');
-          hrefEvent.preventDefault();
-        });
+        };
+        // $('#community a.title[onclick*=]').on('click', function(hrefEvent) {
+        //   if ($(this).attr('href').substr('0', '32') == 'https://www.youtube.com/watch?v=') {
+        //     $("[_] #_").attr("src", "//www.youtube.com/embed/" + $(this).attr('href').substr('32', '43') + "?fs=0&autohide=1&autoplay=1");
+        //     $("[_]").toggleClass("soft-remove").toggleClass("soft-no-remove");
+        //     $("[main], .article, .com-btn .form, .jb-save, .jb-load").remove();
+        //   }
+        //   if ($(this).attr('href').substr('0', '30') == 'https://jotboard.github.io/?v=') {
+        //     $("[_] #_").attr("src", "//www.youtube.com/embed/" + $(this).attr('href').substr('30', '41') + "?fs=0&autohide=1&autoplay=1");
+        //     $("[_]").toggleClass("soft-remove").toggleClass("soft-no-remove");
+        //     $("[main], .article, .com-btn .form, .jb-save, .jb-load").remove();
+        //   }
+        //   else window.open($(this).attr('href'), '_blank');
+        //   hrefEvent.preventDefault();
+        // });
       });
       $(function() {
         if (window.location.href.substr('0', '30') == 'https://jotboard.github.io/?v=') {
