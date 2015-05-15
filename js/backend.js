@@ -86,10 +86,6 @@ var startUp = function() {
               $("[_]").toggleClass("soft-remove").toggleClass("soft-no-remove");
               $("[main], .article, .com-btn .form, .jb-save, .jb-load").remove();
             }
-            else {
-              loadEvent.preventDefault();
-              window.open($(this).attr("load"), "_blank");
-            }
           });
         });
       });
