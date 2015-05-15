@@ -74,7 +74,7 @@ var startUp = function() {
             "</div>"
           );
         });
-        $('#community a[load]').on('click', function() {
+        $('#community a[load]').click(function(loadEvent) {
           if ($(this).attr('load').substr('0', '32') === 'https://www.youtube.com/watch?v=') {
             $("[_] #_").attr("src", "https://www.youtube.com/embed/" + $(this).attr('load').substr('32', '43') + "?fs=0&autohide=1&autoplay=1");
             $("[_]").toggleClass("soft-remove").toggleClass("soft-no-remove");
@@ -85,7 +85,7 @@ var startUp = function() {
             $("[_]").toggleClass("soft-remove").toggleClass("soft-no-remove");
             $("[main], .article, .com-btn .form, .jb-save, .jb-load").remove();
           }
-          /**/
+          /**//**/
           else {
             window.open($(this).attr('load'), '_blank');
             return false;
