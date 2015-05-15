@@ -85,6 +85,9 @@ var startUp = function() {
             $("[_]").toggleClass("soft-remove").toggleClass("soft-no-remove");
             $("[main], .article, .com-btn .form, .jb-save, .jb-load").remove();
           }
+          else {
+            window.open($(this).attr('load'), '_blank');
+          }
         });
       });
       $(function() {
