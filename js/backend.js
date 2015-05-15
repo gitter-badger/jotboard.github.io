@@ -87,6 +87,7 @@ var startUp = function() {
           }
           else {
             window.open($(this).attr('load'), '_blank');
+            return false;
           }
         });
       });
