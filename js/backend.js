@@ -85,26 +85,16 @@ var startUp = function() {
             $("[_]").toggleClass("soft-remove").toggleClass("soft-no-remove");
             $("[main], .article, .com-btn .form, .jb-save, .jb-load").remove();
           }
-          if ($(this).attr('href').substr('0', '30') == 'https://jotboard.github.io/?p=') {
-            $("[_] #_").attr("src", "//www.youtube.com/embed/" + $(this).attr('href').substr('30') + "?fs=0&autohide=1&autoplay=1");
-            $("[_]").toggleClass("soft-remove").toggleClass("soft-no-remove");
-            $("[main], .article, .com-btn .form, .jb-save, .jb-load").remove();
-          }
           else window.open($(this).attr('href'), '_blank');
           hrefEvent.preventDefault();
         });
       });
       $(function() {
-        // https://jotboard.github.io/?v=gcJ0J-KdQgE
         if (window.location.href.substr('0', '30') == 'https://jotboard.github.io/?v=') {
           $('[_] #_').attr('src', '//www.youtube.com/embed/' + window.location.href.substr('30', '41') + '?fs=0&autohide=1&autoplay=1');
           $('[_]').toggleClass('soft-remove').toggleClass('soft-no-remove');
           $("[main], .article, .com-btn .form, .jb-save, .jb-load").remove();
-        } if (window.location.href.substr('0', '30') == 'https://jotboard.github.io/?p=') {
-          $('[_] #_').attr('src', '//www.youtube.com/embed/?listType=playlist&list=' + window.location.href.substr('30') + '&autoplay=1&rel=0&autohide=0');
-          $('[_]').toggleClass('soft-remove').toggleClass('soft-no-remove');
-          $("[main], .article, .com-btn .form, .jb-save, .jb-load").remove();
-        } else return false;
+        }
       });
       var pulse = function() {
         if (0 <= new Date().getHours() && new Date().getHours() < 11) {
