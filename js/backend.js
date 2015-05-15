@@ -85,7 +85,11 @@ var startUp = function() {
             $("[_]").toggleClass("soft-remove").toggleClass("soft-no-remove");
             $("[main], .article, .com-btn .form, .jb-save, .jb-load").remove();
           }
-          else {
+          /**//**/
+          if (!$(this).attr('load').substr('0', '30') == 'https://jotboard.github.io/?v=') {
+            window.open($(this).attr('load'), '_blank');
+            return false;
+          } if (!$(this).attr('load').substr('0', '32') == 'https://www.youtube.com/watch?v=') {
             window.open($(this).attr('load'), '_blank');
             return false;
           }
