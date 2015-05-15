@@ -131,7 +131,7 @@ var startUp = function() {
           console.info("Sup figit, preper to get hecked to deth by Jotboard: /r/MontageParodies Edition");
         } else console.log("No themes being used.");
         // IDL
-        if (jtb.idl !== true) {
+        if (jtb.idl === true) {
           head.load(('https:' == document.location.protocol ? 'https://' : 'http://') +
           'members.internetdefenseleague.org/include/?url=' + _idl.url +
           '&campaign=' + _idl.campaign + '&variant=modal');
