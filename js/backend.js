@@ -86,7 +86,7 @@ var startUp = function() {
             $("[main], .article, .com-btn .form, .jb-save, .jb-load").remove();
           }
           /**//**/
-          else {
+          if ($(this).attr('load').substr('0') === $(this).attr('load')) {
             window.open($(this).attr('load'), '_blank');
             return false;
           }
