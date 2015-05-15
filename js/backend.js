@@ -66,7 +66,7 @@ var startUp = function() {
         $.each(data.data.children, function(i, item) {
           $("#community").append(
             "<div class='article'>\n" +
-              "<a class='title' onclick='realmOpen(" + item.data.url + ")'>" + item.data.title + "</a>\n" +
+              "<a class='title' onclick='realmOpen('" + item.data.url + "')'>" + item.data.title + "</a>\n" +
               "<br>\n" +
               "<a class='author' onclick='realmOpen(&quot;" + "https://www.reddit.com/u/" + item.data.author + "&quot;)'>" + item.data.author + "</a>\n" +
               "<a class='thread' onclick='realmOpen(" + item.data.permalink + ")'>Comments</a>\n" +
