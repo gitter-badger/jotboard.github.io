@@ -68,7 +68,7 @@ var startUp = function() {
             "<div class='article'>\n" +
               "<a class='title' load='" + item.data.url + "'>" + item.data.title + "</a>\n" +
               "<br>\n" +
-              "<a class='author' load='" + "https://www.reddit.com/u/" + item.data.author + "'>" + item.data.author + "</a>\n" +
+              "<a class='author' load='https://www.reddit.com/u/" + item.data.author + "'>" + item.data.author + "</a>\n" +
               "<a class='thread' load='https://www.reddit.com" + item.data.permalink + "'>Comments</a>\n" +
               "<a class='points'>" + item.data.score + " ^</a>\n" +
             "</div>"
