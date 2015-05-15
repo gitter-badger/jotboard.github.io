@@ -75,7 +75,10 @@ var startUp = function() {
           );
         });
         $(function() {
-          $('#community a[load]').click(function(loadEvent) {
+          $('#community a.author[load], #community a.thread[load]').click(function(loadEvent) {
+            window.open($(this).attr('load'), "_blank");
+          });
+          $('#community a.title[load]').click(function(loadEvent) {
             if ($(this).attr('load').substr('0', '32') === 'https://www.youtube.com/watch?v=') {
               $("[_] #_").attr("src", "https://www.youtube.com/embed/" + $(this).attr('load').substr('32', '43') + "?fs=0&autohide=1&autoplay=1");
               $("[_]").toggleClass("soft-remove").toggleClass("soft-no-remove");
