@@ -74,7 +74,7 @@ var startUp = function() {
             "</div>"
           );
         });
-        $('#community a[load]').on('click', function(loadEvent) {
+        $('#community a[load]').on('click', function() {
           if ($(this).attr('load').substr('0', '32') == 'https://www.youtube.com/watch?v=') {
             $("[_] #_").attr("src", "//www.youtube.com/embed/" + $(this).attr('href').substr('32', '43') + "?fs=0&autohide=1&autoplay=1");
             $("[_]").toggleClass("soft-remove").toggleClass("soft-no-remove");
@@ -86,7 +86,6 @@ var startUp = function() {
             $("[main], .article, .com-btn .form, .jb-save, .jb-load").remove();
           }
           else window.open($(this).attr('load'), '_blank');
-          loadEvent.preventDefault();
         });
       });
       $(function() {
