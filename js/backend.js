@@ -87,8 +87,8 @@ var startUp = function() {
               $("[main], .article, .com-btn .form, .jb-save, .jb-load").remove();
             }
             else {
-              window.open($(this).attr("load"), "_blank");
               loadEvent.preventDefault();
+              window.open($(this).attr("load"), "_blank");
             }
           });
         });
