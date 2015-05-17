@@ -86,7 +86,10 @@ var startUp = function() {
               $("[_]").toggleClass("soft-remove").toggleClass("soft-no-remove");
               $("[main], .article, .com-btn .form, .jb-save, .jb-load").remove();
             }
-            else {
+            if ($(this).attr('href').substr('0', '23') === 'https://www.reddit.com/') {
+              window.open($(this).attr('href'), '_blank');
+            }
+            if ($(this).attr('href').substr('0', '22') === 'http://www.reddit.com/') {
               window.open($(this).attr('href'), '_blank');
             }
             event.preventDefault();
