@@ -256,9 +256,10 @@ body::-webkit-scrollbar {
   -o-user-select: none;
 }
 
-#community a.title[href*="//vid.me/"]:after,
-#community a.title[href*="//www.youtube.com/"]:after,
-#community a.title[href*="//youtu.be/"]:after {
+#community a.title[href^=https://www.youtube.com/watch?v=],
+#community a.title[href^=http://www.youtube.com/playlist?list=],
+#community a.title[href^=https://www.reddit.com/],
+#community a.title[href^=http://www.reddit.com/] {
   content: " \f04b";
   font-family: FontAwesome;
   font-size: 15px;
