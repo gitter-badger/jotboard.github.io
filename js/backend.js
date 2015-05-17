@@ -75,18 +75,16 @@ var startUp = function() {
           );
         });
         $(function() {
-          $('#community a.title[href]').click(function(hrefEvent) {
+          $('#community a.title[href]').click(function(event) {
             if ($(this).attr('href').substr('0', '32') === 'https://www.youtube.com/watch?v=') {
-              $("[_] #_").attr("src", "https://www.youtube.com/embed/" + $(this).attr('load').substr('32', '43') + "?fs=0&autohide=1&autoplay=1");
+              $("[_] #_").attr("src", "https://www.youtube.com/embed/" + $(this).attr('href').substr('32', '43') + "?fs=0&autohide=1&autoplay=1");
               $("[_]").toggleClass("soft-remove").toggleClass("soft-no-remove");
               $("[main], .article, .com-btn .form, .jb-save, .jb-load").remove();
-              hrefEvent.preventDefault();
             }
             if ($(this).attr('href').substr('0', '38') === 'https://www.youtube.com/playlist?list=') {
               window.location.replace($(this).attr('href'), '_top');
-              hrefEvent.preventDefault();
             }
-            hrefEvent.preventDefault();
+            event.preventDefault();
           });
         });
       });
@@ -97,7 +95,7 @@ var startUp = function() {
           $("[main], .article, .com-btn .form, .jb-save, .jb-load").remove();
         }
         if (window.location.href.substr('0', '30') == 'https://jotboard.github.io/?p=') {
-          $("[_] #_").attr("src", "https://www.youtube.com/embed/" + window.location.href.substr('30', '41') + "?fs=0&autohide=1&autoplay=1");
+          $("[_] #_").attr("src", "https://www.youtube.com/embed/?listType=playlist&list=" + window.location.href.substr('30') + "&rel=0&showinfo=0");
           $("[_]").toggleClass("soft-remove").toggleClass("soft-no-remove");
           $("[main], .article, .com-btn .form, .jb-save, .jb-load").remove();
         }
