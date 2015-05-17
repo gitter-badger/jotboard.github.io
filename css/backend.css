@@ -91,8 +91,6 @@ div.pragma {
   text-decoration: none;
   padding: 0 3px 2.5px 0;
   color: #F0F0F0;
-} #community a.title:after {
-  font-size: 15px;
 } #community .article .thread,
 #community .article .author,
 #community .article .points {
@@ -147,10 +145,10 @@ div.pragma {
 }
 /* #namespace */
 
-/* #jb-input, .com-btn, .com-select */
-#community .com-btn .form form {
+/* .com-btn, .com-select */
+.com-btn .form form {
   width: 50%;
-} #community .com-btn .form {
+} .com-btn .form {
   width: 50%;
   padding: 1%;
   background-color: rgb(34, 100, 202);
@@ -169,7 +167,7 @@ div.pragma {
   transition: box-shadow 200ms cubic-bezier(0.51, -0.21, 0, 1.1);
   border-radius: 3px;
 }
-/* #jb-input, .com-btn, .com-select */
+/* .com-btn, .com-select */
 
 /* #jb-input */
 #jb-input {
@@ -261,7 +259,9 @@ body::-webkit-scrollbar {
 #community a.title[href*="//vid.me/"]:after,
 #community a.title[href*="//www.youtube.com/"]:after,
 #community a.title[href*="//youtu.be/"]:after {
-  content: " [Video]";
+  content: " \f04b";
+  font-family: FontAwesome;
+  font-size: 15px;
 }
 
 [_] {
