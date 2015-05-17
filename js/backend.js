@@ -66,35 +66,36 @@ var startUp = function() {
         $.each(data.data.children, function(i, item) {
           $("#community").append(
             "<div class='article'>\n" +
-              "<a class='title' load='" + item.data.url + "'>" + item.data.title + "</a>\n" +
+              "<a class='title' href='" + item.data.url + "'>" + item.data.title + "</a>\n" +
               "<br>\n" +
-              "<a class='author' load='https://www.reddit.com/u/" + item.data.author + "'>" + item.data.author + "</a>\n" +
-              "<a class='thread' load='https://www.reddit.com" + item.data.permalink + "'>Comments</a>\n" +
+              "<a class='author' href='https://www.reddit.com/u/" + item.data.author + "'>" + item.data.author + "</a>\n" +
+              "<a class='thread' href='https://www.reddit.com" + item.data.permalink + "'>Comments</a>\n" +
               "<a class='points'>" + item.data.score + " ^</a>\n" +
             "</div>"
           );
         });
         $(function() {
-          $('#community a.author[load], #community a.thread[load]').click(function(loadEvent) {
-            window.open($(this).attr('load'), "_blank");
-          });
-          $('#community a.title[load]').click(function(loadEvent) {
-            if ($(this).attr('load').substr('0', '32') === 'https://www.youtube.com/watch?v=') {
+          $('#community a.title[href]').click(function(hrefEvent) {
+            if ($(this).attr('href').substr('0', '32') === 'https://www.youtube.com/watch?v=') {
               $("[_] #_").attr("src", "https://www.youtube.com/embed/" + $(this).attr('load').substr('32', '43') + "?fs=0&autohide=1&autoplay=1");
               $("[_]").toggleClass("soft-remove").toggleClass("soft-no-remove");
               $("[main], .article, .com-btn .form, .jb-save, .jb-load").remove();
             }
-            if ($(this).attr('load').substr('0', '30') === 'https://jotboard.github.io/?v=') {
-              $("[_] #_").attr("src", "https://www.youtube.com/embed/" + $(this).attr('load').substr('30', '41') + "?fs=0&autohide=1&autoplay=1");
-              $("[_]").toggleClass("soft-remove").toggleClass("soft-no-remove");
-              $("[main], .article, .com-btn .form, .jb-save, .jb-load").remove();
+            if ($(this).attr('href').substr('0', '38') === 'https://www.youtube.com/playlist?list=') {
+              window.location.replace($(this).attr('href'), '_top');
             }
+            hrefEvent.preventDefault();
           });
         });
       });
       $(function() {
         if (window.location.href.substr('0', '30') == 'https://jotboard.github.io/?v=') {
-          $("[_] #_").attr("src", "https://www.youtube.com/embed/" + $(this).attr('load').substr('30', '41') + "?fs=0&autohide=1&autoplay=1");
+          $("[_] #_").attr("src", "https://www.youtube.com/embed/" + window.location.href.substr('30', '41') + "?fs=0&autohide=1&autoplay=1");
+          $("[_]").toggleClass("soft-remove").toggleClass("soft-no-remove");
+          $("[main], .article, .com-btn .form, .jb-save, .jb-load").remove();
+        }
+        if (window.location.href.substr('0', '30') == 'https://jotboard.github.io/?v=') {
+          $("[_] #_").attr("src", "https://www.youtube.com/embed/" + window.location.href.substr('30', '41') + "?fs=0&autohide=1&autoplay=1");
           $("[_]").toggleClass("soft-remove").toggleClass("soft-no-remove");
           $("[main], .article, .com-btn .form, .jb-save, .jb-load").remove();
         }
