@@ -82,7 +82,12 @@ var startUp = function() {
               $("[main], .article, .com-btn .form, .jb-save, .jb-load").remove();
             }
             if ($(this).attr('href').substr('0', '38') === 'https://www.youtube.com/playlist?list=') {
-              window.location.replace($(this).attr('href'), '_top');
+              $("[_] #_").attr("src", "https://www.youtube.com/embed/?listType=playlist&list=" + window.location.href.substr('38') + "&rel=0&showinfo=0");
+              $("[_]").toggleClass("soft-remove").toggleClass("soft-no-remove");
+              $("[main], .article, .com-btn .form, .jb-save, .jb-load").remove();
+            }
+            else {
+              window.open($(this).attr('href'), '_blank');
             }
             event.preventDefault();
           });
