@@ -80,9 +80,11 @@ var startUp = function() {
               $("[_] #_").attr("src", "https://www.youtube.com/embed/" + $(this).attr('load').substr('32', '43') + "?fs=0&autohide=1&autoplay=1");
               $("[_]").toggleClass("soft-remove").toggleClass("soft-no-remove");
               $("[main], .article, .com-btn .form, .jb-save, .jb-load").remove();
+              hrefEvent.preventDefault();
             }
             if ($(this).attr('href').substr('0', '38') === 'https://www.youtube.com/playlist?list=') {
               window.location.replace($(this).attr('href'), '_top');
+              hrefEvent.preventDefault();
             }
             hrefEvent.preventDefault();
           });
@@ -94,7 +96,7 @@ var startUp = function() {
           $("[_]").toggleClass("soft-remove").toggleClass("soft-no-remove");
           $("[main], .article, .com-btn .form, .jb-save, .jb-load").remove();
         }
-        if (window.location.href.substr('0', '30') == 'https://jotboard.github.io/?v=') {
+        if (window.location.href.substr('0', '30') == 'https://jotboard.github.io/?p=') {
           $("[_] #_").attr("src", "https://www.youtube.com/embed/" + window.location.href.substr('30', '41') + "?fs=0&autohide=1&autoplay=1");
           $("[_]").toggleClass("soft-remove").toggleClass("soft-no-remove");
           $("[main], .article, .com-btn .form, .jb-save, .jb-load").remove();
