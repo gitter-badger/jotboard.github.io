@@ -91,9 +91,11 @@ div.pragma {
   text-decoration: none;
   padding: 0 3px 2.5px 0;
   color: #F0F0F0;
-} #community a.title[load]:after {
+} #community a.title:after {
   font-size: 15px;
-} #community .article .thread, #community .article .author, #community .article .points {
+} #community .article .thread,
+#community .article .author,
+#community .article .points {
   float: right;
   color: #F0F0F0;
   font-size: 13.5px;
