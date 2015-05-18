@@ -79,12 +79,12 @@ var startUp = function() {
             if ($(this).attr('href').substr('0', '32') === 'https://www.youtube.com/watch?v=') {
               $("[_] #_").attr("src", "https://www.youtube.com/embed/" + $(this).attr('href').substr('32', '43') + "?fs=0&autohide=1&autoplay=1");
               $("[_]").toggleClass("soft-remove").toggleClass("soft-no-remove");
-              $("[main], .article, .com-btn .form, .jb-save, .jb-load").remove();
+              $("[main], #community .article, .com-btn .form, .jb-save, .jb-load").remove();
             }
             if ($(this).attr('href').substr('0', '38') === 'https://www.youtube.com/playlist?list=') {
               $("[_] #_").attr("src", "https://www.youtube.com/embed/?listType=playlist&list=" + window.location.href.substr('38') + "&rel=0&showinfo=0");
               $("[_]").toggleClass("soft-remove").toggleClass("soft-no-remove");
-              $("[main], .article, .com-btn .form, .jb-save, .jb-load").remove();
+              $("[main], #community .article, .com-btn .form, .jb-save, .jb-load").remove();
             }
             if ($(this).attr('href').substr('0', '23') === 'https://www.reddit.com/') {
               window.open($(this).attr('href'), '_blank');
@@ -100,12 +100,12 @@ var startUp = function() {
         if (window.location.href.substr('0', '30') == 'https://jotboard.github.io/?v=') {
           $("[_] #_").attr("src", "https://www.youtube.com/embed/" + window.location.href.substr('30', '41') + "?fs=0&autohide=1&autoplay=1");
           $("[_]").toggleClass("soft-remove").toggleClass("soft-no-remove");
-          $("[main], .article, .com-btn .form, .jb-save, .jb-load").remove();
+          $("[main], #community .article, .com-btn .form, .jb-save, .jb-load").remove();
         }
         if (window.location.href.substr('0', '30') == 'https://jotboard.github.io/?p=') {
           $("[_] #_").attr("src", "https://www.youtube.com/embed/?listType=playlist&list=" + window.location.href.substr('30') + "&rel=0&showinfo=0");
           $("[_]").toggleClass("soft-remove").toggleClass("soft-no-remove");
-          $("[main], .article, .com-btn .form, .jb-save, .jb-load").remove();
+          $("[main], #community .article, .com-btn .form, .jb-save, .jb-load").remove();
         }
       });
       var pulse = function() {
