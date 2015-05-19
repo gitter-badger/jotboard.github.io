@@ -1,4 +1,4 @@
-var chunker; chunker = false;
+var chunker = false;
 var jtb = {
   // jtb.idl
   idl: false,
