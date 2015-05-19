@@ -67,7 +67,7 @@ var startUp = function() {
         $.each(data.data.children, function(i, item) {
           $("#community").append(
             "<div class='article'>\n" +
-              "<a class='title' href='" + item.data.url + "'>" + item.data.title + "</a>\n" +
+              "<a class='title' load='" + item.data.url + "'>" + item.data.title + "</a>\n" +
               "<br>\n" +
               "<a class='author' href='https://www.reddit.com/u/" + item.data.author + "'>" + item.data.author + "</a>\n" +
               "<a class='thread' href='https://www.reddit.com" + item.data.permalink + "'>Comments</a>\n" +
@@ -77,32 +77,32 @@ var startUp = function() {
         });
       });
       $(function() {
-        $('#community a.title[href]').click(function(event) {
-          if ($(this).attr('href').substr('0', '32') === 'https://www.youtube.com/watch?v=') {
+        $('#community a.title[load]').click(function(event) {
+          if ($(this).attr('load').substr('0', '32') === 'https://www.youtube.com/watch?v=') {
             if (chunker === false) {
               chunker = true;
-              $("[_] #_").attr("src", "https://www.youtube.com/embed/" + $(this).attr('href').substr('32', '43') + "?fs=0&autohide=1&autoplay=1");
+              $("[_] #_").attr("src", "https://www.youtube.com/embed/" + $(this).attr('load').substr('32', '43') + "?fs=0&autohide=1&autoplay=1");
               $("[_]").toggleClass("soft-remove").toggleClass("soft-no-remove");
               $("[main], .com-btn .form, .jb-save, .jb-load").remove();
             } if (chunker === true) {
-              $("[_] #_").attr("src", "https://www.youtube.com/embed/" + $(this).attr('href').substr('32', '43') + "?fs=0&autohide=1&autoplay=1");
+              $("[_] #_").attr("src", "https://www.youtube.com/embed/" + $(this).attr('load').substr('32', '43') + "?fs=0&autohide=1&autoplay=1");
             }
           }
-          if ($(this).attr('href').substr('0', '38') == 'https://www.youtube.com/playlist?list=') {
+          if ($(this).attr('load').substr('0', '38') == 'https://www.youtube.com/playlist?list=') {
             if (chunker === false) {
               chunker = true;
-              $("[_] #_").attr("src", "https://www.youtube.com/embed/?listType=playlist&list=" + window.location.href.substr('38') + "&rel=0&showinfo=0");
+              $("[_] #_").attr("src", "https://www.youtube.com/embed/?listType=playlist&list=" + $(this).attr('load').substr('38') + "&rel=0&showinfo=0");
               $("[_]").toggleClass("soft-remove").toggleClass("soft-no-remove");
               $("[main] .com-btn .form, .jb-save, .jb-load").remove();
             } if (chunker === true) {
-              $("[_] #_").attr("src", "https://www.youtube.com/embed/?listType=playlist&list=" + window.location.href.substr('38') + "&rel=0&showinfo=0");
+              $("[_] #_").attr("src", "https://www.youtube.com/embed/?listType=playlist&list=" + $(this).attr('load').substr('38') + "&rel=0&showinfo=0");
             }
           }
-          if ($(this).attr('href').substr('0', '23') === 'https://www.reddit.com/') {
-            window.open($(this).attr('href'), '_blank');
+          if ($(this).attr('load').substr('0', '23') === 'https://www.reddit.com/') {
+            window.open($(this).attr('load'), '_blank');
           }
-          if ($(this).attr('href').substr('0', '22') === 'http://www.reddit.com/') {
-            window.open($(this).attr('href'), '_blank');
+          if ($(this).attr('load').substr('0', '22') === 'http://www.reddit.com/') {
+            window.open($(this).attr('load'), '_blank');
           }
           event.preventDefault();
         });
