@@ -78,7 +78,7 @@ var startUp = function() {
       });
       $(function() {
         $('#community a.title[href]').click(function(event) {
-          if ($(this).attr('href').substr('0', '32') === 'https://www.youtube.com/watch?v=') {
+          if ($(this).attr('href').substr('0', '32') == 'https://www.youtube.com/watch?v=') {
             if (chunker == false) {
               var chunker = true;
               $("[_] #_").attr("src", "https://www.youtube.com/embed/" + $(this).attr('href').substr('32', '43') + "?fs=0&autohide=1&autoplay=1");
@@ -88,7 +88,7 @@ var startUp = function() {
               $("[_] #_").attr("src", "https://www.youtube.com/embed/?listType=playlist&list=" + window.location.href.substr('38') + "&rel=0&showinfo=0");
             }
           }
-          if ($(this).attr('href').substr('0', '38') === 'https://www.youtube.com/playlist?list=') {
+          if ($(this).attr('href').substr('0', '38') == 'https://www.youtube.com/playlist?list=') {
             if (chunker == false) {
               var chunker = true;
               $("[_] #_").attr("src", "https://www.youtube.com/embed/?listType=playlist&list=" + window.location.href.substr('38') + "&rel=0&showinfo=0");
