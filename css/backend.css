@@ -260,8 +260,8 @@ body::-webkit-scrollbar {
 #community a.title[href^=http://www.youtube.com/playlist?list=],
 #community a.title[href^=https://www.reddit.com/],
 #community a.title[href^=http://www.reddit.com/] {
-  content: " \f04b";
-  font-family: FontAwesome;
+  content: " &f04b;";
+  font-family: FontAwesome !important;
   font-size: 15px;
 }
 
