@@ -85,7 +85,7 @@ var startUp = function() {
               $("[_]").toggleClass("soft-remove").toggleClass("soft-no-remove");
               $("[main], .com-btn .form, .jb-save, .jb-load").remove();
             } if (chunker === true) {
-              $("[_] #_").attr("src", "https://www.youtube.com/embed/?listType=playlist&list=" + window.location.href.substr('38') + "&rel=0&showinfo=0");
+              $("[_] #_").attr("src", "https://www.youtube.com/embed/" + $(this).attr('href').substr('32', '43') + "?fs=0&autohide=1&autoplay=1");
             }
           }
           if ($(this).attr('href').substr('0', '38') == 'https://www.youtube.com/playlist?list=') {
