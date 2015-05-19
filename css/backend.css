@@ -1,6 +1,5 @@
 #container {
   width: 100%;
-  min-width: 780px;
   height: 100%;
   padding: 0;
   margin: 0;
@@ -68,6 +67,7 @@ div.pragma {
 
 #community {
   width: 100%;
+  min-width: 780px;
   background-color: rgb(34, 81, 202);
   box-shadow: 0 0 4.5px rgb(34, 81, 202);
   padding: 0 2% 0 2%;
@@ -90,6 +90,7 @@ div.pragma {
   float: left;
   text-decoration: none;
   padding: 0 3px 2.5px 0;
+  cursor: pointer;
   color: #F0F0F0;
 } #community .article .thread,
 #community .article .author,
@@ -256,10 +257,10 @@ body::-webkit-scrollbar {
   -o-user-select: none;
 }
 
-#community a.title[href^=https://www.youtube.com/watch?v=],
-#community a.title[href^=http://www.youtube.com/playlist?list=],
-#community a.title[href^=https://www.reddit.com/],
-#community a.title[href^=http://www.reddit.com/] {
+#community a.title[load^=https://www.youtube.com/watch?v=],
+#community a.title[load^=http://www.youtube.com/playlist?list=],
+#community a.title[load^=https://www.reddit.com/],
+#community a.title[load^=http://www.reddit.com/] {
   content: " &f04b;";
   font-family: FontAwesome !important;
   font-size: 15px;
