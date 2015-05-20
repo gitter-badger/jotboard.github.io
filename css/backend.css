@@ -14,14 +14,11 @@ html, body {
 }
 
 [main] {
-  height: 38%;
-  min-height: 110px;
+  height: 30%;
+  min-height: 130px;
   transition: height 220ms cubic-bezier(0.75, -0.07, 0.07, 1.03);
   width: 100%;
   padding: 1%;
-} [main]:hover {
-  height: 47%;
-  max-height: 240px;
 }
 
 [data-title]:hover:after {
