@@ -65,7 +65,6 @@ div.pragma {
 
 #community {
   width: 100%;
-  min-width: 720px;
   background-color: rgb(34, 81, 202);
   box-shadow: 0 0 4.5px rgb(34, 81, 202);
   padding: 0 2% 0 2%;
@@ -155,12 +154,14 @@ div.pragma {
 } .com-btn {
   margin: 1.5% 0 1.5% 0;
   width: 100%;
+  min-width: 875px;
+  overflow-x: auto;
 } .com-select {
   cursor: pointer;
   color: #FFF;
   background-color: rgb(34, 100, 202);
   text-align: center;
-  width: 7.75%;
+  width: 7.88%;
   font-size: 40px;
   padding: 1%;
   transition: box-shadow 200ms cubic-bezier(0.51, -0.21, 0, 1.1);
@@ -221,6 +222,16 @@ body::-webkit-scrollbar {
 } .com-select::-o-scrollbar {
   width: 0;
 } .com-select::-ms-scrollbar {
+  width: 0;
+}
+/* Buttons */
+.com-btn::-webkit-scrollbar {
+  width: 0;
+} .com-btn::-moz-scrollbar {
+  width: 0;
+} .com-btn::-o-scrollbar {
+  width: 0;
+} .com-btn::-ms-scrollbar {
   width: 0;
 }
 /* Scrollbar */
