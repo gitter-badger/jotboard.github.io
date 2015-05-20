@@ -14,7 +14,7 @@ html, body {
 }
 
 [main] {
-  height: 15%;
+  height: 50px;
   transition: height 220ms cubic-bezier(0.75, -0.07, 0.07, 1.03);
   width: 100%;
   padding: 1%;
