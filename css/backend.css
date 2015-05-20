@@ -21,7 +21,7 @@ html, body {
   padding: 1%;
 } [main]:hover {
   height: 97.5%;
-  max-height: 300px;
+  max-height: 210px;
 }
 
 [data-title]:hover:after {
