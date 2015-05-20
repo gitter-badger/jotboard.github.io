@@ -18,7 +18,7 @@ html, body {
   max-height: 80px;
   transition: max-height 220ms cubic-bezier(0.75, -0.07, 0.07, 1.03);
   width: 100%;
-  padding: 1%;
+  padding: .6% .8%;
 } [main]:hover {
   height: 97.5%;
   max-height: 120px;
