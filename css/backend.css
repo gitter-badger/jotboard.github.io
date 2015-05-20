@@ -147,21 +147,21 @@ div.pragma {
 .com-btn .form form {
   width: 50%;
 } .com-btn .form {
-  width: 50%;
+  width: 38%;
   padding: 1%;
   background-color: rgb(34, 100, 202);
   border-radius: 3px;
 } .com-btn {
   margin: 1.5% 0 1.5% 0;
   width: 100%;
-  min-width: 875px;
+  min-width: 500px;
   overflow-x: auto;
 } .com-select {
   cursor: pointer;
   color: #FFF;
   background-color: rgb(34, 100, 202);
   text-align: center;
-  width: 7.88%;
+  width: 9.5%;
   font-size: 40px;
   padding: 1%;
   transition: box-shadow 200ms cubic-bezier(0.51, -0.21, 0, 1.1);
