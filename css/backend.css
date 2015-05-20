@@ -263,7 +263,7 @@ body::-webkit-scrollbar {
 #community a.title[load^=http://www.youtube.com/playlist?list=],
 #community a.title[load^=https://www.reddit.com/],
 #community a.title[load^=http://www.reddit.com/] {
-  content: " &f04b;";
+  content: " &#f04b;";
   font-family: FontAwesome !important;
   font-size: 15px;
 }
