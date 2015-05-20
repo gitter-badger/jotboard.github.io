@@ -77,10 +77,7 @@ var startUp = function() {
         });
       });
       $(function() {
-        $('.pragma a[load]').on('click', function() {
-          window.open($(this).attr('load'), '_blank');
-        });
-        $('#community a.title[load]').on('click', function(event) {
+        $('#community a.title[load]').click(function(event) {
           if ($(this).attr('load').substr('0', '32') === 'https://www.youtube.com/watch?v=') {
             if (chunker === false) {
               chunker = true;
