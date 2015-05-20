@@ -15,16 +15,14 @@ html, body {
 
 [main] {
   height: 97.5%;
-  max-height: 70px;
-  transition: height 220ms cubic-bezier(0.75, -0.07, 0.07, 1.03);
+  max-height: 90px;
+  transition: max-height 220ms cubic-bezier(0.75, -0.07, 0.07, 1.03);
   width: 100%;
   padding: 1%;
+} [main]:hover {
+  height: 97.5%;
+  max-height: 300px;
 }
-
-/* [main]:hover { */
-/*   height: 17%; */
-/*   width: 100%; */
-/* } */
 
 [data-title]:hover:after {
   content: attr(data-title);
