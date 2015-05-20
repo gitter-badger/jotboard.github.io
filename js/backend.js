@@ -59,7 +59,7 @@ var startUp = function() {
         if (!localStorage['pragma-' + jtb.noticeboard.id]) {
           $('#community').before(
             '<div class="pragma">' +
-              '<a href="' + jtb.noticeboard.href + '">' + jtb.noticeboard.title + '</a>' +
+              '<a load="' + jtb.noticeboard.href + '">' + jtb.noticeboard.title + '</a>' +
             '</div>'
           );
           store.set('pragma-' + jtb.noticeboard.id, true);
@@ -77,12 +77,15 @@ var startUp = function() {
         });
       });
       $(function() {
-        $('#community a.title[load]').click(function(event) {
+        $('.pragma a[load]').on('click', function() {
+          window.open($(this).attr('load'), '_blank');
+        });
+        $('#community a.title[load]').on('click', function(event) {
           if ($(this).attr('load').substr('0', '32') === 'https://www.youtube.com/watch?v=') {
             if (chunker === false) {
               chunker = true;
               $("[_] #_").attr("src", "https://www.youtube.com/embed/" + $(this).attr('load').substr('32', '43') + "?fs=0&autohide=1&autoplay=1");
-              $("[_]").toggleClass("soft-remove").toggleClass("soft-no-remove");
+              $("[_], .com-select, #namespace, [main], .com-btn .form form, .com-btn .form").addClass("chunker");
             } if (chunker === true) {
               $("[_] #_").attr("src", "https://www.youtube.com/embed/" + $(this).attr('load').substr('32', '43') + "?fs=0&autohide=1&autoplay=1");
             }
@@ -91,7 +94,7 @@ var startUp = function() {
             if (chunker === false) {
               chunker = true;
               $("[_] #_").attr("src", "https://www.youtube.com/embed/?listType=playlist&list=" + $(this).attr('load').substr('38') + "&rel=0&showinfo=0");
-              $("[_]").toggleClass("soft-remove").toggleClass("soft-no-remove");
+              $("[_], .com-select, #namespace, [main], .com-btn .form form, .com-btn .form").addClass("chunker");
             } if (chunker === true) {
               $("[_] #_").attr("src", "https://www.youtube.com/embed/?listType=playlist&list=" + $(this).attr('load').substr('38') + "&rel=0&showinfo=0");
             }
@@ -108,7 +111,7 @@ var startUp = function() {
           if (chunker === false) {
             chunker = true;
             $("[_] #_").attr("src", "https://www.youtube.com/embed/" + window.location.href.substr('30', '41') + "?fs=0&autohide=1&autoplay=1");
-            $("[_]").toggleClass("soft-remove").toggleClass("soft-no-remove");
+            $("[_], .com-select, #namespace, [main], .com-btn .form form, .com-btn .form").addClass("chunker");
           }
           if (chunker === true) {
             $("[_] #_").attr("src", "https://www.youtube.com/embed/" + window.location.href.substr('30', '41') + "?fs=0&autohide=1&autoplay=1");
@@ -118,7 +121,7 @@ var startUp = function() {
           if (chunker === false) {
             chunker = true;
             $("[_] #_").attr("src", "https://www.youtube.com/embed/?listType=playlist&list=" + window.location.href.substr('30') + "&rel=0&showinfo=0");
-            $("[_]").toggleClass("soft-remove").toggleClass("soft-no-remove");
+            $("[_], .com-select, #namespace, [main], .com-btn .form form, .com-btn .form").addClass("chunker");
           } if (chunker === true) {
             $("[_] #_").attr("src", "https://www.youtube.com/embed/?listType=playlist&list=" + window.location.href.substr('30') + "&rel=0&showinfo=0");
           }
