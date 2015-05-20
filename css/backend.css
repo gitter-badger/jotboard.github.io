@@ -283,7 +283,7 @@ body::-webkit-scrollbar {
   width: 100% !important;
 } .com-btn .form.chunker {
   width: 32% !important;
-} [main].chunker, #namespace.chunker, .jb-save, .jb-load {
+} [main].chunker, #namespace.chunker, .jb-save.chunker, .jb-load.chunker {
   display: none !important;
 } .com-select.chunker {
   width: 11%;
