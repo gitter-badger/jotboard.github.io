@@ -69,29 +69,29 @@ div.pragma {
   box-shadow: 0 0 4.5px rgb(34, 81, 202);
   padding: 0 2% 0 2%;
   overflow-x: hidden;
-} #community:empty {
-  background-color: rgb(34, 81, 202);
-  box-shadow: 0 0 0 rgb(0, 0, 0);
-  height: 35%;
-} #community .article {
+} .article {
   width: 100%;
   background-color: rgb(34, 100, 202);
-  box-shadow: 0 .5px 2.5px rgb(34, 100, 202);
+  transition: box-shadow 100ms cubic-bezier(0.5, 0.5, 1, 1);
   padding: 1%;
   border-radius: 2px;
-  margin: 0 0 1.5% 0;
-} #community .article:last-child {
   margin: 0 0 2% 0;
-} #community .article .title {
+} .article:hover {
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16), 0 2px 5px 0 rgba(0, 0, 0, .23);
+} .article:active{
+  box-shadow: 0 10px 10px 0 rgba(0, 0, 0, .19), 0 6px 3px 0 rgba(0, 0, 0, .23);
+} .article:last-child {
+  margin: 0 0 2% 0;
+} .article .title {
   font-size: 16.5px;
   float: left;
   text-decoration: none;
   padding: 0 3px 2.5px 0;
   cursor: pointer;
   color: #F0F0F0;
-} #community .article .thread,
-#community .article .author,
-#community .article .points {
+} .article .thread,
+.article .author,
+.article .points {
   float: right;
   color: #F0F0F0;
   font-size: 13.5px;
@@ -102,10 +102,12 @@ div.pragma {
   text-decoration: none;
 }
 
-.com-select, #namespace, #jb-input,
-#community .com-btn .form,
-#community .com-btn .form form,
-#community .article {
+.com-select,
+#namespace,
+#jb-input,
+.com-btn .form,
+.com-btn .form form,
+.article {
   display: inline-block;
 }
 
@@ -147,24 +149,22 @@ div.pragma {
 .com-btn .form form {
   width: 50%;
 } .com-btn .form {
-  width: 38%;
+  width: 40%;
   padding: 1%;
   background-color: rgb(34, 100, 202);
   border-radius: 3px;
 } .com-btn {
-  margin: 1.5% 0 1.5% 0;
+  margin: 1.8% 0 1.7% 0;
   width: 100%;
-  min-width: 500px;
-  overflow-x: auto;
+  min-width: 679.688px;
 } .com-select {
   cursor: pointer;
   color: #FFF;
   background-color: rgb(34, 100, 202);
   text-align: center;
-  width: 9.5%;
+  width: 9.41%;
   font-size: 40px;
   padding: 1%;
-  transition: box-shadow 200ms cubic-bezier(0.51, -0.21, 0, 1.1);
   border-radius: 3px;
 }
 /* .com-btn, .com-select */
