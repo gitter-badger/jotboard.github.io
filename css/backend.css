@@ -293,12 +293,13 @@ body::-webkit-scrollbar {
   display: block;
 } .com-btn .form form.chunker {
   width: 100% !important;
-} .com-btn .form.chunker {
-  width: 32% !important;
-} [main].chunker, #namespace.chunker, .jb-save.chunker, .jb-load.chunker {
+} [main].chunker,
+#namespace.chunker,
+.jb-save.chunker,
+.jb-load.chunker {
   display: none !important;
 } .com-select.chunker {
-  width: 11%;
+  width: 50px;
 }
 
 /* Themes ;3 */

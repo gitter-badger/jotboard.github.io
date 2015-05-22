@@ -82,7 +82,7 @@ var startUp = function() {
             if (chunker === false) {
               chunker = true;
               $("[_] #_").attr("src", "https://www.youtube.com/embed/" + $(this).attr('load').substr('32', '43') + "?fs=0&autohide=1&autoplay=1");
-              $("[_], .com-select, .jb-save, .jb-load, #namespace, [main], .com-btn .form form, .com-btn .form").addClass("chunker");
+              $("[_], [main], .com-btn .form form, #namespace, .jb-save, .jb-load, .com-select").addClass("chunker");
             } if (chunker === true) {
               $("[_] #_").attr("src", "https://www.youtube.com/embed/" + $(this).attr('load').substr('32', '43') + "?fs=0&autohide=1&autoplay=1");
             }
