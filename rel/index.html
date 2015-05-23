@@ -67,10 +67,10 @@
   <body>
     <script>
       var _ = function(_) {
-        if (window.location.href.substr('0', '32') === 'https://jotboard.github.io/rel/@') {
-          window.location.href.replace('https://www.reddit.com/r/jotboard/comments/' + window.location.href.substr('32', '38') + '/');
-        } if (!window.location.href.substr('0', '32') === 'https://jotboard.github.io/rel/@') {
-          window.location.href.replace('https://www.reddit.com/r/jotboard/');
+        if (window.location.hash) {
+          window.location.replace('https://www.reddit.com/r/jotboard/comments/' + window.location.hash.substr('1', '7') + '/');
+        } if (!window.location.hash) {
+          window.location.replace('https://www.reddit.com/r/jotboard/');
         }
       }; _();
       (function (i, s, o, g, r, a, m) {
