@@ -67,16 +67,17 @@ div.pragma {
   width: 100%;
   background-color: rgb(34, 81, 202);
   box-shadow: 0 0 4.5px rgb(34, 81, 202);
-  padding: 0 2% 0 2%;
+  padding: 0 1% 0 1%;
   overflow-x: hidden;
 } .article {
-  width: 100%;
+  width: 49%;
+  float: left;
   background-color: rgb(34, 100, 202);
   box-shadow: 0 1px 1.5px 0 rgba(0, 0, 0, .12), 0 1px 1px 0 rgba(0, 0, 0, .24);
   transition: box-shadow 160ms cubic-bezier(.4, 0, .2, 1);
   padding: 1%;
   border-radius: 2px;
-  margin: 0 0 2% 0;
+  margin: .5%;
 } .article:hover {
   box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 5px 0 rgba(0, 0, 0, .23);
 } .article:active{
@@ -116,7 +117,7 @@ div.pragma {
 #namespace, #jb-input {
   text-align: center;
   padding: 0;
-  font-size: 24px;
+  font-size: 25px;
   font-family: "Droid Sans", san-serif;
   background-color: transparent;
   color: #FFF;
@@ -150,22 +151,21 @@ div.pragma {
 .com-btn .form form {
   width: 50%;
 } .com-btn .form {
-  width: 200px;
-  padding: 4px 7px;
+  width: 208px;
+  padding: 6px 9px;
   background-color: rgb(34, 100, 202);
   border-radius: 3px;
 } .com-btn {
-  margin: 1.1% 0 1.1% 0;
-  width: 100%;
-  min-width: 460px;
+  margin: 1% .5% 1% .5%;
+  width: 540px;
 } .com-select {
   cursor: pointer;
   color: #FFF;
   background-color: rgb(34, 100, 202);
   text-align: center;
-  width: 40px;
-  font-size: 24px;
-  padding: 4px 7px;
+  width: 50px;
+  font-size: 25px;
+  padding: 6px 0;
   border-radius: 3px;
 }
 /* .com-btn, .com-select */
@@ -298,8 +298,6 @@ body::-webkit-scrollbar {
 .jb-save.chunker,
 .jb-load.chunker {
   display: none !important;
-} .com-select.chunker {
-  width: 50px;
 }
 
 /* Themes ;3 */
