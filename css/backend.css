@@ -96,12 +96,12 @@ div.pragma {
   float: right;
   color: #F0F0F0;
   font-size: 13.5px;
-  margin: 10px 6px 4px 0;
+  margin: 9px 2% 5px 0;
   text-decoration: none;
 } #community .article .points {
   cursor: default;
   text-decoration: none;
-  margin: 10px 0 4px 0;
+  margin: 9px 4px 5px 0;
 }
 
 [realm] {
