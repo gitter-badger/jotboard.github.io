@@ -85,9 +85,9 @@ div.pragma {
   margin: 0 0 2% 0;
 } .article .title {
   font-size: 16.5px;
+  width: 100%;
   float: left;
   text-decoration: none;
-  padding: 0 3px 2.5px 0;
   cursor: pointer;
   color: #F0F0F0;
 } .article .thread,
@@ -96,11 +96,12 @@ div.pragma {
   float: right;
   color: #F0F0F0;
   font-size: 13.5px;
-  margin: 3px 7px 3px 0;
+  margin: 10px 6px 4px 0;
   text-decoration: none;
 } #community .article .points {
   cursor: default;
   text-decoration: none;
+  margin: 10px 0 4px 0;
 }
 
 [realm] {
