@@ -71,7 +71,6 @@ div.pragma {
   overflow-x: hidden;
 } .article {
   width: 49%;
-  float: left;
   background-color: rgb(34, 100, 202);
   box-shadow: 0 1px 1.5px 0 rgba(0, 0, 0, .12), 0 1px 1px 0 rgba(0, 0, 0, .24);
   transition: box-shadow 160ms cubic-bezier(.4, 0, .2, 1);
@@ -102,6 +101,10 @@ div.pragma {
 } #community .article .points {
   cursor: default;
   text-decoration: none;
+}
+
+[realm] {
+    width: 100%;
 }
 
 .com-select,
