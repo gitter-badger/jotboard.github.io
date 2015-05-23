@@ -57,7 +57,7 @@ var startUp = function() {
       console.log('Moment.JS');
       $.getJSON('//www.reddit.com/r/jotboard/new.json', function(data) {
         if (!localStorage['pragma-' + jtb.noticeboard.id]) {
-          $('#community').before(
+          $('[realm]').before(
             '<div class="pragma">' +
               '<a load="' + jtb.noticeboard.href + '">' + jtb.noticeboard.title + '</a>' +
             '</div>'
@@ -65,7 +65,7 @@ var startUp = function() {
           store.set('pragma-' + jtb.noticeboard.id, true);
         }
         $.each(data.data.children, function(i, item) {
-          $("#community").append(
+          $("[realm]").append(
             "<div class='article'>\n" +
               "<a class='title' load='" + item.data.url + "'>" + item.data.title + "</a>\n" +
               "<br>\n" +
@@ -77,7 +77,7 @@ var startUp = function() {
         });
       });
       $(function() {
-        $('#community a.title[load]').click(function(event) {
+        $('[realm] a.title[load]').click(function(event) {
           if ($(this).attr('load').substr('0', '32') === 'https://www.youtube.com/watch?v=') {
             if (chunker === false) {
               chunker = true;
