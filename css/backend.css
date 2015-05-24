@@ -71,11 +71,10 @@ div.pragma {
   overflow-x: hidden;
 } .article {
   width: 49%;
-  background-color: rgb(34, 100, 202);
-  box-shadow: 0 1px 1.5px 0 rgba(0, 0, 0, .12), 0 1px 1px 0 rgba(0, 0, 0, .24);
+  background: rgb(34, 100, 202);
   transition: box-shadow 160ms cubic-bezier(.4, 0, .2, 1);
   padding: 1%;
-  border-radius: 2px;
+  border-radius: 3px;
   margin: .5%;
 } .article:hover {
   box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 5px 0 rgba(0, 0, 0, .23);
@@ -160,7 +159,7 @@ div.pragma {
   background-color: rgb(34, 100, 202);
   border-radius: 3px;
 } .com-btn {
-  margin: 1% .5% 1% .5%;
+  margin: 1% 0 .5% 0;
   width: 540px;
 } .com-btn.chunker {
     width: 425px;
