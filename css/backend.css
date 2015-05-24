@@ -67,7 +67,7 @@ div.pragma {
   width: 100%;
   background-color: rgb(34, 81, 202);
   box-shadow: 0 0 4.5px rgb(34, 81, 202);
-  padding: 0 1% 0 1%;
+  padding: 0 1.5% 0 1.5%;
   overflow-x: hidden;
 } .article {
   width: 49%;
@@ -159,10 +159,8 @@ div.pragma {
   background-color: rgb(34, 100, 202);
   border-radius: 3px;
 } .com-btn {
-  margin: 1% 0 .5% 0;
-  width: 540px;
-} .com-btn.chunker {
-    width: 425px;
+  margin: 1% .5% 1% .5%;
+  width: 100%;
 } .com-select {
   cursor: pointer;
   color: #FFF;
