@@ -159,7 +159,7 @@ div.pragma {
   background-color: rgb(34, 100, 202);
   border-radius: 3px;
 } .com-btn {
-  margin: 1% .5% 1% .5%;
+  padding: 1% .5% .5% .5%;
   width: 100%;
 } .com-select {
   cursor: pointer;
