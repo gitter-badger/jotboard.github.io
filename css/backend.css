@@ -6,15 +6,11 @@
 }
 
 html, body {
-  background-color: #212121;
+  background-color: #1B1B1B;
   width: 100%;
   height: 100%;
   padding: 0;
   margin: 0;
-}
-
-.com-select, #namespace, #jb-input, .com-btn .form, .com-btn .form form, .article {
-  display: inline-block;
 }
 
 [main] {
@@ -88,9 +84,9 @@ div.pragma {
 } .article:last-child {
   margin: 0 0 2% 0;
 } .article .title {
-  display: inline-block;
   font-size: 16.5px;
   width: 100%;
+  float: left;
   text-decoration: none;
   cursor: pointer;
   color: #F0F0F0;
@@ -110,6 +106,15 @@ div.pragma {
 
 [realm] {
     width: 100%;
+}
+
+.com-select,
+#namespace,
+#jb-input,
+.com-btn .form,
+.com-btn .form form,
+.article {
+  display: inline-block;
 }
 
 /* #namespace, #jb-input */
@@ -155,9 +160,10 @@ div.pragma {
   background-color: rgb(34, 100, 202);
   border-radius: 3px;
 } .com-btn {
-  padding: 1% 1% .5% .5%;
-  width: 100%;
-  min-width: 535px;
+  margin: 1% .5% 1% .5%;
+  width: 540px;
+} .com-btn.chunker {
+    width: 425px;
 } .com-select {
   cursor: pointer;
   color: #FFF;
