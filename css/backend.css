@@ -50,13 +50,13 @@ html, body {
   color: #E0E0E0;
 }
 
-div.pragma {
+.pragma {
   width: 100%;
   padding: 2.5% 1% 2.5% 1%;
   background-color: rgb(34, 94, 202);
   text-align: center;
   font-size: 150%;
-} div.pragma * {
+} .pragma * {
   color: #F0F0F0 !important;
   text-decoration: none;
 }
@@ -66,8 +66,8 @@ div.pragma {
   box-shadow: 0 0 4.5px rgb(30, 126, 143);
   overflow-x: hidden;
 } [realm] {
-    width: 100%;
-    background-color: rgb(174, 36, 36);
+  width: 100%;
+  background-color: rgb(174, 36, 36);
 } .article .points {
   cursor: default;
   text-decoration: none;
@@ -107,7 +107,7 @@ div.pragma {
   text-align: center;
   padding: 0;
   font-size: 25px;
-  font-family: "Droid Sans", san-serif;
+  font-family: 'Droid Sans', san-serif;
   background-color: transparent;
   color: #FFF;
   border: 0;

@@ -53,7 +53,7 @@ var startUp = function() {
         window.open("/", "_top");
       }).addClass("fa-important").addClass("fa-refresh");
       $(".jb-horn").on("click", function() {
-        window.open("/", "_blank");
+        window.open("https://www.reddit.com/message/compose?to=/r/jotboard", "_blank");
       }).addClass("fa-important").addClass("fa-bullhorn");
     });
     head.load('js/depend/moment.js', function() {
