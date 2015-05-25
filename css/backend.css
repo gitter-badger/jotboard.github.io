@@ -1,12 +1,9 @@
 #container {
   width: 100%;
   height: 100%;
-  padding: 0;
-  margin: 0;
 }
 
 html, body {
-  background-color: #1B1B1B;
   width: 100%;
   height: 100%;
   padding: 0;
@@ -14,7 +11,8 @@ html, body {
 }
 
 [main] {
-  height: 30%;
+  height: 25%;
+  background-color: rgb(27, 27, 27);
   min-height: 130px;
   transition: height 220ms cubic-bezier(0.75, -0.07, 0.07, 1.03);
   width: 100%;
@@ -23,13 +21,13 @@ html, body {
 
 [data-title]:hover:after {
   content: attr(data-title);
-  font: 14.5px 'Arial', sans-serif;
+  font: 14px 'Arial', sans-serif;
   color: #FFF;
-  background-color: rgb(0, 0, 0);
-  box-shadow: 0 0 5px rgb(0, 0, 0);
+  background-color: rgb(34, 34, 34);
+  box-shadow: 0 0 5px rgb(18, 18, 18);
   position: fixed;
   left: 0;
-  bottom: 0;
+  top: 0;
   width: 100%;
   padding: 1% 0 1% 0;
   cursor: default;
@@ -65,24 +63,21 @@ div.pragma {
 
 #community {
   width: 100%;
-  background-color: rgb(34, 81, 202);
-  box-shadow: 0 0 4.5px rgb(34, 81, 202);
+  box-shadow: 0 0 4.5px rgb(30, 126, 143);
   overflow-x: hidden;
+} [realm] {
+    width: 100%;
+    background-color: rgb(174, 36, 36);
+} .article .points {
+  cursor: default;
+  text-decoration: none;
+  margin: 10px 5px 5px 0;
 } .article {
-  width: 49%;
-  background: rgb(34, 100, 202);
-  transition: box-shadow 160ms cubic-bezier(.4, 0, .2, 1);
+  width: 50%;
+  background: rgb(34, 176, 202);
   padding: 1%;
-  border-radius: 3px;
-  margin: .5%;
-} .article:hover {
-  box-shadow: 0 1px 1.5px 0 rgba(0, 0, 0, .12), 0 1px 1px 0 rgba(0, 0, 0, .24);
-} .article:active{
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16), 0 2px 5px 0 rgba(0, 0, 0, .23);
-} .article:last-child {
-  margin: 0 0 2% 0;
 } .article .title {
-  font-size: 16.5px;
+  font-size: 17.5px;
   width: 100%;
   float: left;
   text-decoration: none;
@@ -93,15 +88,9 @@ div.pragma {
 .article .points {
   float: right;
   color: #F0F0F0;
-  font-size: 13.5px;
-  margin: 9px 2% 5px 0;
+  font-size: 14px;
+  margin: 10px 2% 0 0;
   text-decoration: none;
-} [realm] .article .points {
-  cursor: default;
-  text-decoration: none;
-  margin: 9px 4px 5px 0;
-} [realm] {
-    width: 100%;
 }
 
 .com-select,
@@ -122,7 +111,6 @@ div.pragma {
   background-color: transparent;
   color: #FFF;
   border: 0;
-  border-radius: 2px;
 }
 /* #namespace, #jb-input */
 
@@ -135,7 +123,7 @@ div.pragma {
 /* #namespace */
 #namespace {
   float: left;
-  width: 50%;
+  width: 55%;
 } #namespace::-webkit-input-placeholder {
   color: #FFF;
 } #namespace:-moz-placeholder {
@@ -149,24 +137,23 @@ div.pragma {
 
 /* .com-btn, .com-select */
 .com-btn .form form {
-  width: 50%;
+  width: 45%;
 } .com-btn .form {
   width: 208px;
   padding: 6px 9px;
-  background-color: rgb(34, 100, 202);
-  border-radius: 3px;
+  background-color: rgb(32, 162, 185);
 } .com-btn {
-  padding: .5% .5% .25% .5%;
+  background-color: rgb(30, 126, 143);
+  padding: 1%;
   width: 100%;
 } .com-select {
   cursor: pointer;
   color: #FFF;
-  background-color: rgb(34, 100, 202);
+  background-color: rgb(32, 162, 185);
   text-align: center;
   width: 50px;
   font-size: 25px;
   padding: 6px 0;
-  border-radius: 3px;
 }
 /* .com-btn, .com-select */
 
@@ -268,15 +255,16 @@ body::-webkit-scrollbar {
   -o-user-select: none;
 }
 
-#community a.title[load^=https://www.youtube.com/watch?v=],
-#community a.title[load^=http://www.youtube.com/playlist?list=],
-#community a.title[load^=https://www.reddit.com/],
-#community a.title[load^=http://www.reddit.com/] {
+[realm] .article .title[load^=https://www.youtube.com/watch?v=],
+[realm] .article .title[load^=http://www.youtube.com/playlist?list=],
+[realm] .article .title[load^=https://www.reddit.com/],
+[realm] .article .title[load^=http://www.reddit.com/] {
   content: " &#f04b;";
   font-family: FontAwesome !important;
   font-size: 15px;
 }
 
+/* Chunker State */
 [_] {
   display: none;
   background-color: rgb(0, 0, 0);
@@ -287,8 +275,6 @@ body::-webkit-scrollbar {
   width: 100%;
   height: 100%;
 }
-
-/* Chunker State */
 [_].chunker {
   display: block;
 } .com-btn .form form.chunker {
@@ -298,23 +284,4 @@ body::-webkit-scrollbar {
 .jb-save.chunker,
 .jb-load.chunker {
   display: none !important;
-}
-
-/* Themes ;3 */
-/* Markiplier */
-.markiplier #container #community {
-  background-color: rgba(221, 33, 84, 1);
-  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-}
-/* /r/MontageParodies */
-.montageparodies #container #community {
-  background-image: url('/img/themes/MontageParodiesCommunity.png');
-  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
-  background-repeat: no-repeat;
-  background-position: center 0;
-  background-color: #FFF;
-  background-size: contain;
 }

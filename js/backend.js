@@ -52,6 +52,9 @@ var startUp = function() {
       $(".jb-reset").on("click", function() {
         window.open("/", "_top");
       }).addClass("fa-important").addClass("fa-refresh");
+      $(".jb-horn").on("click", function() {
+        window.open("/", "_blank");
+      }).addClass("fa-important").addClass("fa-bullhorn");
     });
     head.load('js/depend/moment.js', function() {
       console.log('Moment.JS');
