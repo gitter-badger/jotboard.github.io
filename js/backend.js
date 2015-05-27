@@ -73,10 +73,10 @@ var startUp = function() {
         $.each(data.data.children, function(i, item) {
           $("[realm]").append(
             "<div class='article'>\n" +
-              "<a class='title' data-title='" + encodeURIComponent(item.data.title) + "' load='" + item.data.url + "'>" + item.data.title + "</a>\n" +
+              "<a class='title' load='" + item.data.url + "'>" + item.data.title + "</a>\n" +
               "<br>\n" +
               "<a class='points sub'>" + item.data.score + " ^</a>\n" +
-              "<a class='author sub' data-title='" + encodeURIComponent(item.data.author_flair_text) + "' href='https://www.reddit.com/u/" + item.data.author + "'>" + item.data.author + "</a>\n" +
+              "<a class='author sub' href='https://www.reddit.com/u/" + item.data.author + "'>" + item.data.author + "</a>\n" +
               "<a class='thread sub' href='https://www.reddit.com" + item.data.permalink + "'>Comments</a>\n" +
             "</div>"
           );
