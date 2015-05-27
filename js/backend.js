@@ -72,10 +72,9 @@ var startUp = function() {
             "<div class='article'>\n" +
               "<a class='title' data-title='" + item.data.url + "' load='" + item.data.url + "'>" + item.data.title + "</a>\n" +
               "<br>\n" +
-              "<a class='points'>" + item.data.score + " ^</a>\n" +
-              "<a class='author' data-title='" + item.data.author_flair_text + "' href='https://www.reddit.com/u/" + item.data.author + "'>" + item.data.author + "</a>\n" +
-              "<a class='thread' href='https://www.reddit.com" + item.data.permalink + "'>Comments</a>\n" +
-              "<a class='time'>" + moment(moment(item.data.created_utc).format()).fromNow() + "</a>\n" +
+              "<a class='points sub'>" + item.data.score + " ^</a>\n" +
+              "<a class='author sub' data-title='" + item.data.author_flair_text + "' href='https://www.reddit.com/u/" + item.data.author + "'>" + item.data.author + "</a>\n" +
+              "<a class='thread sub' href='https://www.reddit.com" + item.data.permalink + "'>Comments</a>\n" +
             "</div>"
           );
         });

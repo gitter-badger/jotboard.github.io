@@ -86,9 +86,7 @@ html, body {
   text-decoration: none;
   cursor: pointer;
   color: #FFF;
-} .article .thread,
-.article .author,
-.article .points {
+} .article .sub {
   float: right;
   color: #FFF;
   font-size: 15px;
@@ -261,6 +259,6 @@ html, body {
 #namespace.chunker,
 .jb-save.chunker,
 .jb-load.chunker {
-  display: none !important;
+  display: none;
   visibility: hidden;
 }
