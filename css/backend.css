@@ -197,16 +197,6 @@ html, body {
 } #body::-ms-scrollbar {
   width: 0;
 }
-/* Body */
-.com-btn::-webkit-scrollbar {
-  width: 0;
-} .com-btn::-moz-scrollbar {
-  width: 0;
-} .com-btn::-o-scrollbar {
-  width: 0;
-} .com-btn::-ms-scrollbar {
-  width: 0;
-}
 /* Scrollbar */
 
 #form {
