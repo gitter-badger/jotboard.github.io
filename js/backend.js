@@ -9,6 +9,7 @@ var jtb = {
     title: "Realmcast?",
     href: "//jotboard.github.io/realm/podcast/"
   },
+  realm: "",
   // jtb.realm_request
   realm_request: function() {
     $("[realm]").empty();
@@ -24,32 +25,32 @@ var jtb = {
           "</div>"
         );
       });
-    });
-    $('[realm] a.title[load]').click(function(event) {
-      if ($(this).attr('load').substr('0', '32') === 'https://www.youtube.com/watch?v=') {
-        if (jtb.chunker === false) {
-          jtb.chunker = true;
-          $("[_] #_").attr("src", "https://www.youtube.com/embed/" + $(this).attr('load').substr('32', '43') + "?fs=0&autohide=1&autoplay=1");
-          $("[_], [main], .com-btn .form form, #namespace, .jb-save, .jb-load, .com-select").addClass("chunker");
-        } if (jtb.chunker === true) {
-          $("[_] #_").attr("src", "https://www.youtube.com/embed/" + $(this).attr('load').substr('32', '43') + "?fs=0&autohide=1&autoplay=1");
+      $('[realm] .title[load]').click(function(event) {
+        if ($(this).attr('load').substr('0', '32') === 'https://www.youtube.com/watch?v=') {
+          if (jtb.chunker === false) {
+            jtb.chunker = true;
+            $("[_] #_").attr("src", "https://www.youtube.com/embed/" + $(this).attr('load').substr('32', '43') + "?fs=0&autohide=1&autoplay=1");
+            $("[_], [main], .com-btn .form form, #namespace, .jb-save, .jb-load, .com-select").addClass("chunker");
+          } if (jtb.chunker === true) {
+            $("[_] #_").attr("src", "https://www.youtube.com/embed/" + $(this).attr('load').substr('32', '43') + "?fs=0&autohide=1&autoplay=1");
+          }
         }
-      }
-      if ($(this).attr('load').substr('0', '38') == 'https://www.youtube.com/playlist?list=') {
-        if (jtb.chunker === false) {
-          jtb.chunker = true;
-          $("[_] #_").attr("src", "https://www.youtube.com/embed/?listType=playlist&list=" + $(this).attr('load').substr('38') + "&rel=0&showinfo=0");
-          $("[_], [main], .com-btn .form form, #namespace, .jb-save, .jb-load, .com-select").addClass("chunker");
-        } if (jtb.chunker === true) {
-          $("[_] #_").attr("src", "https://www.youtube.com/embed/?listType=playlist&list=" + $(this).attr('load').substr('38') + "&rel=0&showinfo=0");
+        if ($(this).attr('load').substr('0', '38') == 'https://www.youtube.com/playlist?list=') {
+          if (jtb.chunker === false) {
+            jtb.chunker = true;
+            $("[_] #_").attr("src", "https://www.youtube.com/embed/?listType=playlist&list=" + $(this).attr('load').substr('38') + "&rel=0&showinfo=0");
+            $("[_], [main], .com-btn .form form, #namespace, .jb-save, .jb-load, .com-select").addClass("chunker");
+          } if (jtb.chunker === true) {
+            $("[_] #_").attr("src", "https://www.youtube.com/embed/?listType=playlist&list=" + $(this).attr('load').substr('38') + "&rel=0&showinfo=0");
+          }
         }
-      }
-      if ($(this).attr('load').substr('0', '23') === 'https://www.reddit.com/') {
-        window.open($(this).attr('load'), '_blank');
-      }
-      if ($(this).attr('load').substr('0', '22') === 'http://www.reddit.com/') {
-        window.open($(this).attr('load'), '_blank');
-      }
+        if ($(this).attr('load').substr('0', '23') === 'https://www.reddit.com/') {
+          window.open($(this).attr('load'), '_blank');
+        }
+        if ($(this).attr('load').substr('0', '22') === 'http://www.reddit.com/') {
+          window.open($(this).attr('load'), '_blank');
+        }
+      });
     });
   }
 }, head_conf = {
