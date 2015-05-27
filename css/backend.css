@@ -28,16 +28,17 @@ html, body {
   font: 40px 'Roboto Draft', sans-serif;
   text-shadow: none;
   /**/
+  text-align: right;
   white-space: nowrap;
   overflow-x: hidden;
   text-overflow: ellipsis;
-  max-width: 100%;
+  max-width: 99%;
   /**/
   color: #212121;
   position: fixed;
   right: 0;
   bottom: 0;
-  padding: 2%;
+  padding: 1%;
   cursor: default;
 }
 
@@ -232,13 +233,10 @@ html, body {
   -o-user-select: none;
 }
 
-[realm] .article .title[load^=https://www.youtube.com/watch?v=],
-[realm] .article .title[load^=http://www.youtube.com/playlist?list=],
-[realm] .article .title[load^=https://www.reddit.com/],
-[realm] .article .title[load^=http://www.reddit.com/] {
-  content: " &#f04b;";
+.article .title[load^=https://www.youtube.com/watch?v=]:before,
+.article .title[load^=http://www.youtube.com/playlist?list=]:before {
+  content: " \f04b" !important;
   font-family: FontAwesome !important;
-  font-size: 15px;
 }
 
 /* Chunker CSS */
