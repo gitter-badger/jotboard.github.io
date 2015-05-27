@@ -124,7 +124,7 @@ var startUp = function() {
             jtb.chunker = true;
             $("[_] #_").attr("src", "https://www.youtube.com/embed/?listType=playlist&list=" + window.location.href.substr('30') + "&rel=0&showinfo=0");
             $("[_], [main], .com-btn .form form, #namespace, .jb-save, .jb-load, .com-select").addClass("chunker");
-          } if (jtb.chunker === true) {
+          } if (jtb.chunker === true) { 
             $("[_] #_").attr("src", "https://www.youtube.com/embed/?listType=playlist&list=" + window.location.href.substr('30') + "&rel=0&showinfo=0");
           }
         }
