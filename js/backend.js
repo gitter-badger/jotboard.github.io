@@ -11,8 +11,8 @@ var jtb = {
   },
   // jtb.realm_request
   realm_request: function() {
+    $("[realm]").empty();
     $.getJSON('//www.reddit.com/r/jotboard/new.json', function(data) {
-      $("[realm]").empty();
       $.each(data.data.children, function(i, item) {
         $("[realm]").append(
           "<div class='article'>\n" +
@@ -50,7 +50,6 @@ var jtb = {
       if ($(this).attr('load').substr('0', '22') === 'http://www.reddit.com/') {
         window.open($(this).attr('load'), '_blank');
       }
-      event.preventDefault();
     });
   }
 }, head_conf = {
@@ -111,6 +110,7 @@ var startUp = function() {
         store.set('pragma-' + jtb.noticeboard.id, true);
       }
       $(function() {
+        jtb.realm_request();
         if (window.location.href.substr('0', '30') === 'https://jotboard.github.io/?v=') {
           if (jtb.chunker === false) {
             jtb.chunker = true;
@@ -127,6 +127,9 @@ var startUp = function() {
             $("[_], [main], .com-btn .form form, #namespace, .jb-save, .jb-load, .com-select").addClass("chunker");
           } if (jtb.chunker === true) {
             $("[_] #_").attr("src", "https://www.youtube.com/embed/?listType=playlist&list=" + window.location.href.substr('30') + "&rel=0&showinfo=0");
+          }
+          if (jtb.idl === true) {
+            head.load(('https:' == document.location.protocol ? 'https://' : 'http://') + 'members.internetdefenseleague.org/include/?url=' + _idl.url + '&campaign=' + _idl.campaign + '&variant=modal');
           }
         }
       });
@@ -150,18 +153,6 @@ var startUp = function() {
         head.load("css/depend/font-draft.css", function() {
           console.log("Font Draft");
         });
-      });
-      $(function() {
-        // $(function() {
-          // Mobile
-          // if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-          //   $("#container").remove();
-          // } else console.log("Not on mobile.");
-        // });
-        // IDL
-        if (jtb.idl === true) {
-          head.load(('https:' == document.location.protocol ? 'https://' : 'http://') + 'members.internetdefenseleague.org/include/?url=' + _idl.url + '&campaign=' + _idl.campaign + '&variant=modal');
-        }
       });
     });
   }
