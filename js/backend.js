@@ -1,5 +1,3 @@
-// var chunker = false;
-
 var jtb = {
   // jtb.idl
   idl: false,
@@ -10,8 +8,51 @@ var jtb = {
     id: "6",
     title: "Realmcast?",
     href: "//jotboard.github.io/realm/podcast/"
+  },
+  // jtb.realm_request
+  realm_request: function() {
+    $.getJSON('//www.reddit.com/r/jotboard/new.json', function(data) {
+      $("[realm]").empty();
+      $.each(data.data.children, function(i, item) {
+        $("[realm]").append(
+          "<div class='article'>\n" +
+            "<a class='title' load='" + item.data.url + "'>" + item.data.title + "</a>\n" +
+            "<br>\n" +
+            "<a class='points sub'>" + item.data.score + " ^</a>\n" +
+            "<a class='author sub' href='https://www.reddit.com/u/" + item.data.author + "'>" + item.data.author + "</a>\n" +
+            "<a class='thread sub' href='https://www.reddit.com" + item.data.permalink + "'>Comments</a>\n" +
+          "</div>"
+        );
+      });
+    });
+    $('[realm] a.title[load]').click(function(event) {
+      if ($(this).attr('load').substr('0', '32') === 'https://www.youtube.com/watch?v=') {
+        if (jtb.chunker === false) {
+          jtb.chunker = true;
+          $("[_] #_").attr("src", "https://www.youtube.com/embed/" + $(this).attr('load').substr('32', '43') + "?fs=0&autohide=1&autoplay=1");
+          $("[_], [main], .com-btn .form form, #namespace, .jb-save, .jb-load, .com-select").addClass("chunker");
+        } if (jtb.chunker === true) {
+          $("[_] #_").attr("src", "https://www.youtube.com/embed/" + $(this).attr('load').substr('32', '43') + "?fs=0&autohide=1&autoplay=1");
+        }
+      }
+      if ($(this).attr('load').substr('0', '38') == 'https://www.youtube.com/playlist?list=') {
+        if (jtb.chunker === false) {
+          jtb.chunker = true;
+          $("[_] #_").attr("src", "https://www.youtube.com/embed/?listType=playlist&list=" + $(this).attr('load').substr('38') + "&rel=0&showinfo=0");
+          $("[_], [main], .com-btn .form form, #namespace, .jb-save, .jb-load, .com-select").addClass("chunker");
+        } if (jtb.chunker === true) {
+          $("[_] #_").attr("src", "https://www.youtube.com/embed/?listType=playlist&list=" + $(this).attr('load').substr('38') + "&rel=0&showinfo=0");
+        }
+      }
+      if ($(this).attr('load').substr('0', '23') === 'https://www.reddit.com/') {
+        window.open($(this).attr('load'), '_blank');
+      }
+      if ($(this).attr('load').substr('0', '22') === 'http://www.reddit.com/') {
+        window.open($(this).attr('load'), '_blank');
+      }
+      event.preventDefault();
+    });
   }
-  // END Variable Body
 }, head_conf = {
   html5: true
 };
@@ -52,8 +93,8 @@ var startUp = function() {
       $(".jb-realm").on("click", function() {
         window.open("//www.reddit.com/r/jotboard/", "_blank");
       }).addClass("fa-important").addClass("fa-heart");
-      $(".jb-reset").on("click", function() {
-        window.open("/", "_top");
+      $(".jb-refresh").on("click", function() {
+        jtb.realm_request();
       }).addClass("fa-important").addClass("fa-refresh");
       $(".jb-horn").on("click", function() {
         window.open("https://www.reddit.com/message/compose?to=/r/jotboard", "_blank");
@@ -61,60 +102,20 @@ var startUp = function() {
     });
     head.load('js/depend/moment.js', function() {
       console.log('Moment.JS');
-      $.getJSON('//www.reddit.com/r/jotboard/new.json', function(data) {
-        if (!localStorage['pragma-' + jtb.noticeboard.id]) {
-          $('[realm]').before(
-            '<div class="pragma">' +
-              '<a load="' + jtb.noticeboard.href + '">' + jtb.noticeboard.title + '</a>' +
-            '</div>'
-          );
-          store.set('pragma-' + jtb.noticeboard.id, true);
-        }
-        $.each(data.data.children, function(i, item) {
-          $("[realm]").append(
-            "<div class='article'>\n" +
-              "<a class='title' load='" + item.data.url + "'>" + item.data.title + "</a>\n" +
-              "<br>\n" +
-              "<a class='points sub'>" + item.data.score + " ^</a>\n" +
-              "<a class='author sub' href='https://www.reddit.com/u/" + item.data.author + "'>" + item.data.author + "</a>\n" +
-              "<a class='thread sub' href='https://www.reddit.com" + item.data.permalink + "'>Comments</a>\n" +
-            "</div>"
-          );
-        });
-      });
+      if (!localStorage['pragma-' + jtb.noticeboard.id]) {
+        $('[realm]').before(
+          '<div class="pragma">' +
+            '<a load="' + jtb.noticeboard.href + '">' + jtb.noticeboard.title + '</a>' +
+          '</div>'
+        );
+        store.set('pragma-' + jtb.noticeboard.id, true);
+      }
       $(function() {
-        $('[realm] a.title[load]').click(function(event) {
-          if ($(this).attr('load').substr('0', '32') === 'https://www.youtube.com/watch?v=') {
-            if (jtb.chunker === false) {
-              jtb.chunker = true;
-              $("[_] #_").attr("src", "https://www.youtube.com/embed/" + $(this).attr('load').substr('32', '43') + "?fs=0&autohide=1&autoplay=1");
-              $("[_], [main], .com-btn .form form, #namespace, .jb-save, .jb-load, .com-select").addClass("chunker");
-            } if (jtb.chunker === true) {
-              $("[_] #_").attr("src", "https://www.youtube.com/embed/" + $(this).attr('load').substr('32', '43') + "?fs=0&autohide=1&autoplay=1");
-            }
-          }
-          if ($(this).attr('load').substr('0', '38') == 'https://www.youtube.com/playlist?list=') {
-            if (jtb.chunker === false) {
-              jtb.chunker = true;
-              $("[_] #_").attr("src", "https://www.youtube.com/embed/?listType=playlist&list=" + $(this).attr('load').substr('38') + "&rel=0&showinfo=0");
-              $("[_], [main], .com-btn .form form, #namespace, .jb-save, .jb-load, .com-select").addClass("chunker");
-            } if (jtb.chunker === true) {
-              $("[_] #_").attr("src", "https://www.youtube.com/embed/?listType=playlist&list=" + $(this).attr('load').substr('38') + "&rel=0&showinfo=0");
-            }
-          }
-          if ($(this).attr('load').substr('0', '23') === 'https://www.reddit.com/') {
-            window.open($(this).attr('load'), '_blank');
-          }
-          if ($(this).attr('load').substr('0', '22') === 'http://www.reddit.com/') {
-            window.open($(this).attr('load'), '_blank');
-          }
-          event.preventDefault();
-        });
         if (window.location.href.substr('0', '30') === 'https://jotboard.github.io/?v=') {
           if (jtb.chunker === false) {
             jtb.chunker = true;
             $("[_] #_").attr("src", "https://www.youtube.com/embed/" + window.location.href.substr('30', '41') + "?fs=0&autohide=1&autoplay=1");
-              $("[_], [main], .com-btn .form form, #namespace, .jb-save, .jb-load, .com-select").addClass("chunker");
+            $("[_], [main], .com-btn .form form, #namespace, .jb-save, .jb-load, .com-select").addClass("chunker");
           } if (jtb.chunker === true) {
             $("[_] #_").attr("src", "https://www.youtube.com/embed/" + window.location.href.substr('30', '41') + "?fs=0&autohide=1&autoplay=1");
           }
