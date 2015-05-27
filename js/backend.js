@@ -1,7 +1,10 @@
-var chunker = false;
+// var chunker = false;
+
 var jtb = {
   // jtb.idl
   idl: false,
+  // jtb.chunker
+  chunker: false,
   noticeboard: {
     // jtb.noticeboard.id,title,href
     id: "6",
@@ -70,7 +73,7 @@ var startUp = function() {
         $.each(data.data.children, function(i, item) {
           $("[realm]").append(
             "<div class='article'>\n" +
-              "<a class='title' data-title='" + item.data.url + "' load='" + item.data.url + "'>" + item.data.title + "</a>\n" +
+              "<a class='title' data-title='" + item.data.title + "' load='" + item.data.url + "'>" + item.data.title + "</a>\n" +
               "<br>\n" +
               "<a class='points sub'>" + item.data.score + " ^</a>\n" +
               "<a class='author sub' data-title='" + item.data.author_flair_text + "' href='https://www.reddit.com/u/" + item.data.author + "'>" + item.data.author + "</a>\n" +
@@ -82,20 +85,20 @@ var startUp = function() {
       $(function() {
         $('[realm] a.title[load]').click(function(event) {
           if ($(this).attr('load').substr('0', '32') === 'https://www.youtube.com/watch?v=') {
-            if (chunker === false) {
-              chunker = true;
+            if (jtb.chunker === false) {
+              jtb.chunker = true;
               $("[_] #_").attr("src", "https://www.youtube.com/embed/" + $(this).attr('load').substr('32', '43') + "?fs=0&autohide=1&autoplay=1");
               $("[_], [main], .com-btn .form form, #namespace, .jb-save, .jb-load, .com-select").addClass("chunker");
-            } if (chunker === true) {
+            } if (jtb.chunker === true) {
               $("[_] #_").attr("src", "https://www.youtube.com/embed/" + $(this).attr('load').substr('32', '43') + "?fs=0&autohide=1&autoplay=1");
             }
           }
           if ($(this).attr('load').substr('0', '38') == 'https://www.youtube.com/playlist?list=') {
-            if (chunker === false) {
-              chunker = true;
+            if (jtb.chunker === false) {
+              jtb.chunker = true;
               $("[_] #_").attr("src", "https://www.youtube.com/embed/?listType=playlist&list=" + $(this).attr('load').substr('38') + "&rel=0&showinfo=0");
               $("[_], [main], .com-btn .form form, #namespace, .jb-save, .jb-load, .com-select").addClass("chunker");
-            } if (chunker === true) {
+            } if (jtb.chunker === true) {
               $("[_] #_").attr("src", "https://www.youtube.com/embed/?listType=playlist&list=" + $(this).attr('load').substr('38') + "&rel=0&showinfo=0");
             }
           }
@@ -108,20 +111,20 @@ var startUp = function() {
           event.preventDefault();
         });
         if (window.location.href.substr('0', '30') === 'https://jotboard.github.io/?v=') {
-          if (chunker === false) {
-            chunker = true;
+          if (jtb.chunker === false) {
+            jtb.chunker = true;
             $("[_] #_").attr("src", "https://www.youtube.com/embed/" + window.location.href.substr('30', '41') + "?fs=0&autohide=1&autoplay=1");
               $("[_], [main], .com-btn .form form, #namespace, .jb-save, .jb-load, .com-select").addClass("chunker");
-          } if (chunker === true) {
+          } if (jtb.chunker === true) {
             $("[_] #_").attr("src", "https://www.youtube.com/embed/" + window.location.href.substr('30', '41') + "?fs=0&autohide=1&autoplay=1");
           }
         }
         if (window.location.href.substr('0', '30') === 'https://jotboard.github.io/?p=') {
-          if (chunker === false) {
-            chunker = true;
+          if (jtb.chunker === false) {
+            jtb.chunker = true;
             $("[_] #_").attr("src", "https://www.youtube.com/embed/?listType=playlist&list=" + window.location.href.substr('30') + "&rel=0&showinfo=0");
-              $("[_], [main], .com-btn .form form, #namespace, .jb-save, .jb-load, .com-select").addClass("chunker");
-          } if (chunker === true) {
+            $("[_], [main], .com-btn .form form, #namespace, .jb-save, .jb-load, .com-select").addClass("chunker");
+          } if (jtb.chunker === true) {
             $("[_] #_").attr("src", "https://www.youtube.com/embed/?listType=playlist&list=" + window.location.href.substr('30') + "&rel=0&showinfo=0");
           }
         }
@@ -148,25 +151,15 @@ var startUp = function() {
         });
       });
       $(function() {
-        $(function() {
+        // $(function() {
           // Mobile
-          if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-            $("#container").remove();
-          } else console.log("Not on mobile.");
-        });
-        // Themes JS
-        if (window.location.href.indexOf("#markiplier") != -1) {
-          $("body").addClass("markiplier");
-          console.info("HELLO EVERYBODY! My Name is *not* Markiplier and welcome to Jotboard: Markiplier Edition");
-        } if (window.location.href.indexOf("#montageparodies") != -1) {
-          $("body").addClass("montageparodies");
-          console.info("Sup figit, preper to get hecked to deth by Jotboard: /r/MontageParodies Edition");
-        } else console.log("No themes being used.");
+          // if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+          //   $("#container").remove();
+          // } else console.log("Not on mobile.");
+        // });
         // IDL
         if (jtb.idl === true) {
-          head.load(('https:' == document.location.protocol ? 'https://' : 'http://') +
-          'members.internetdefenseleague.org/include/?url=' + _idl.url +
-          '&campaign=' + _idl.campaign + '&variant=modal');
+          head.load(('https:' == document.location.protocol ? 'https://' : 'http://') + 'members.internetdefenseleague.org/include/?url=' + _idl.url + '&campaign=' + _idl.campaign + '&variant=modal');
         }
       });
     });
