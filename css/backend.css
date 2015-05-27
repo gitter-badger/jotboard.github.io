@@ -25,15 +25,19 @@ html, body {
 
 [data-title]:hover:after {
   content: attr(data-title);
-  font: 14px 'Arial', sans-serif;
-  color: #FFF;
-  background-color: rgb(34, 34, 34);
-  box-shadow: 0 0 5px rgb(18, 18, 18);
+  font: 40px 'Roboto Draft', sans-serif;
+  text-shadow: none;
+  /**/
+  white-space: nowrap;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  /**/
+  color: #212121;
   position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  padding: 1% 0 1% 0;
+  right: 0;
+  bottom: 0;
+  padding: 2%;
   cursor: default;
 }
 
