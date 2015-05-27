@@ -9,7 +9,6 @@ var jtb = {
     title: "Realmcast?",
     href: "//jotboard.github.io/realm/podcast/"
   },
-  realm: "",
   // jtb.realm_request
   realm_request: function() {
     $("[realm]").empty();
