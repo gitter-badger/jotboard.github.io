@@ -1,10 +1,55 @@
 var jtb = {
   // jtb.prefx
   prefx: "JB_-",
+  // jtb.data_push
+  data_save: function() {
+    if (!$('#namespace').val()) {
+      store.set(jtb.prefx + "Main", $("[main] #form").val());
+      console.info("Main > saved");
+    } else {
+      store.set(jtb.prefx + $("#namespace").val(), $("[main] #form").val());
+      console.info($("#namespace").val() + " > saved");
+    }
+  },
+  // jtb.data_load
+  data_load: function() {
+    if (!$("#namespace").val()) {
+      $("[main] #form").val(store.get(jtb.prefx + "Main"));
+      console.info("Main > loaded");
+    } else {
+      $("[main] #form").val(store.get(jtb.prefx + $("#namespace").val()));
+      console.info($("#namespace").val() + " > loaded");
+    }
+  },
   // jtb.idl
   idl: false,
   // jtb.chunker
   chunker: false,
+  // jtb.chunker_url_push
+  chunker_url_push: function() {
+    if (window.location.href.substr('0', '30') === 'https://jotboard.github.io/?v=') {
+      if (jtb.chunker === false) {
+        jtb.chunker = true;
+        $("[_] #_").attr("src", "https://www.youtube.com/embed/" + window.location.href.substr('30', '41') + "?fs=0&autohide=1&autoplay=1");
+        $(jtb.realm_would_dis).addClass("chunker");
+      } if (jtb.chunker === true) {
+        $("[_] #_").attr("src", "https://www.youtube.com/embed/" + window.location.href.substr('30', '41') + "?fs=0&autohide=1&autoplay=1");
+      }
+    }
+    if (window.location.href.substr('0', '30') === 'https://jotboard.github.io/?p=') {
+      if (jtb.chunker === false) {
+        jtb.chunker = true;
+        $("[_] #_").attr("src", "https://www.youtube.com/embed/?listType=playlist&list=" + window.location.href.substr('30') + "&rel=0&showinfo=0");
+        $(jtb.realm_would_dis).addClass("chunker");
+      } if (jtb.chunker === true) {
+        $("[_] #_").attr("src", "https://www.youtube.com/embed/?listType=playlist&list=" + window.location.href.substr('30') + "&rel=0&showinfo=0");
+      }
+      if (jtb.idl === true) {
+        head.load(('https:' == document.location.protocol ? 'https://' : 'http://') + 'members.internetdefenseleague.org/include/?url=' + _idl.url + '&campaign=' + _idl.campaign + '&variant=modal');
+        console.info("If theres room for change, than so be it.");
+      }
+    }
+  },
   // jtb.noticeboard.id/title/href
   noticeboard: {
     id: "6",
@@ -12,7 +57,7 @@ var jtb = {
     href: "//jotboard.github.io/realm/podcast/"
   },
   // jtb.realm_would_dis
-  realm_would_dis: "[_], [main], .com-btn .form form, #namespace, .jb-save, .jb-load, .com-select",
+  realm_would_dis: "[_], [main], .com-btn .form form, #namespace, .jb-save, .jb-load, .jb-chunker-off",
   // jtb.realm_request
   realm_request: function() {
     $("[realm]").empty();
@@ -68,22 +113,10 @@ var startUp = function() {
       // Data
       if (store.get(jtb.prefx + "Main")) $("[main] #form").val(store.get(jtb.prefx + "Main"));
       $(".jb-save").on("click", function() {
-        if (!$('#namespace').val()) {
-          store.set(jtb.prefx + "Main", $("[main] #form").val());
-          console.info("Main > saved");
-        } else {
-          store.set(jtb.prefx + $("#namespace").val(), $("[main] #form").val());
-          console.info($("#namespace").val() + " > saved");
-        }
+        jtb.data_save();
       }).addClass("fa-important").addClass("fa-cloud-upload");
       $(".jb-load").on("click", function() {
-        if (!$("#namespace").val()) {
-          $("[main] #form").val(store.get(jtb.prefx + "Main"));
-          console.info("Main > loaded");
-        } else {
-          $("[main] #form").val(store.get(jtb.prefx + $("#namespace").val()));
-          console.info($("#namespace").val() + " > loaded");
-        }
+        jtb.data_load();
       }).addClass("fa-important").addClass("fa-cloud-download");
       // Buttons
       $(".jb-new-text").on("click", function() {
@@ -119,28 +152,7 @@ var startUp = function() {
       }
       $(function() {
         jtb.realm_request();
-        if (window.location.href.substr('0', '30') === 'https://jotboard.github.io/?v=') {
-          if (jtb.chunker === false) {
-            jtb.chunker = true;
-            $("[_] #_").attr("src", "https://www.youtube.com/embed/" + window.location.href.substr('30', '41') + "?fs=0&autohide=1&autoplay=1");
-            $(jtb.realm_would_dis).addClass("chunker");
-          } if (jtb.chunker === true) {
-            $("[_] #_").attr("src", "https://www.youtube.com/embed/" + window.location.href.substr('30', '41') + "?fs=0&autohide=1&autoplay=1");
-          }
-        }
-        if (window.location.href.substr('0', '30') === 'https://jotboard.github.io/?p=') {
-          if (jtb.chunker === false) {
-            jtb.chunker = true;
-            $("[_] #_").attr("src", "https://www.youtube.com/embed/?listType=playlist&list=" + window.location.href.substr('30') + "&rel=0&showinfo=0");
-            $(jtb.realm_would_dis).addClass("chunker");
-          } if (jtb.chunker === true) {
-            $("[_] #_").attr("src", "https://www.youtube.com/embed/?listType=playlist&list=" + window.location.href.substr('30') + "&rel=0&showinfo=0");
-          }
-          if (jtb.idl === true) {
-            head.load(('https:' == document.location.protocol ? 'https://' : 'http://') + 'members.internetdefenseleague.org/include/?url=' + _idl.url + '&campaign=' + _idl.campaign + '&variant=modal');
-            console.info("If theres room for change, than so be it.");
-          }
-        }
+        jtb.chunker_url_push();
       });
       var pulse = function() {
         if (0 <= new Date().getHours() && new Date().getHours() < 11) {
