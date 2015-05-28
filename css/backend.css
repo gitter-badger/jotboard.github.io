@@ -183,6 +183,16 @@ html, body {
 } #body::-ms-scrollbar {
   width: 0;
 }
+/* Button Pane */
+.com-btn::-webkit-scrollbar {
+  width: 1 !important;
+} .com-btn::-moz-scrollbar {
+  width: 1 !important;
+} .com-btn::-o-scrollbar {
+  width: 1 !important;
+} .com-btn::-ms-scrollbar {
+  width: 1 !important;
+}
 /* Scrollbar */
 
 #form {
