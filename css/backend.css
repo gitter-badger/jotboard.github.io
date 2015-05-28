@@ -226,12 +226,6 @@ html, body {
   -o-user-select: none;
 }
 
-.article .title[load^=https://www.youtube.com/watch?v=]:before,
-.article .title[load^=http://www.youtube.com/playlist?list=]:before {
-  content: " \f04b" !important;
-  font-family: FontAwesome !important;
-}
-
 /* Chunker CSS */
 [_] {
   background-color: rgb(0, 0, 0);
