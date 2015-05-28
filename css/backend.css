@@ -1,6 +1,7 @@
 #container {
   width: 100%;
   height: 100%;
+  background-color: rgb(240, 248, 255);
 }
 
 .com-select, .com-btn .form, [realm] {
@@ -21,25 +22,6 @@ html, body {
   transition: height 220ms cubic-bezier(0.75, -0.07, 0.07, 1.03);
   width: 100%;
   padding: 1%;
-}
-
-[data-title]:hover:after {
-  content: attr(data-title);
-  font: 40px 'Roboto Draft', sans-serif;
-  text-shadow: none;
-  /**/
-  text-align: right;
-  white-space: nowrap;
-  overflow-x: hidden;
-  text-overflow: ellipsis;
-  max-width: 99%;
-  /**/
-  color: #212121;
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  padding: 1%;
-  cursor: default;
 }
 
 #form {
@@ -150,7 +132,8 @@ html, body {
   padding: 5px 15px;
 } .com-btn {
   background-color: rgb(30, 126, 143);
-  padding: 4px;
+  box-shadow: 0 0 20px rgb(30, 126, 143);
+  padding: 6px;
   white-space: nowrap;
   overflow-x: auto;
   overflow-y: hidden;
