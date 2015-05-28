@@ -138,6 +138,7 @@ var startUp = function() {
       $(".jb-chunker-off").on("click", function() {
         jtb.chunker = false;
         $(jtb.realm_would_dis).removeClass("chunker");
+        $("[_]").removeClass("chunker");
       }).addClass("fa-important").addClass("fa-times");
     });
     head.load('js/depend/moment.js', function() {
