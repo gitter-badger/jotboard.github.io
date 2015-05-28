@@ -234,8 +234,8 @@ html, body {
   height: 100%;
 }
 [_].chunker {
-  height: 97.5%;
-  max-height: 400px;
+  height: 25%;
+  min-height: 400px;
 } .com-btn .form form.chunker {
   width: 100% !important;
 }
