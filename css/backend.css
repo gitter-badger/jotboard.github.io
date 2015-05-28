@@ -263,10 +263,8 @@ html, body {
 .jb-load.chunker {
   display: none;
   visibility: hidden;
-}
-
-.jb-chunker-off {
+} .jb-chunker-off {
   display: none;
 } .jb-chunker-off.chunker {
-  display: block;
+  display: inline-block;
 }
